@@ -43,7 +43,7 @@
 
 
 |Key|Movement|
-|--|--|
+|--|:--|
 |w|front of next word|
 |b|front of previous word|
 |0|start of line|
