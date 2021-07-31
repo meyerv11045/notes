@@ -1,0 +1,43 @@
+site_name: Personal Notes
+site_url: https://meyerv11045.github.com/notes
+docs_dir: notes
+
+nav:
+  - Basics:
+    - 'Object Oriented Programming': 'basics/oop.md'
+    - 'Regex': 'basics/regex.md'
+    - 'Terminal Commands': 'basics/terminal_cmds.md'
+  - Data Structures:
+    - 'Linked List': 'data_structures/linked_list.md'
+    - 'Stack': 'data_structures/stack.md'
+    - 'Queue': 'data_structures/queue.md'
+    - 'Tree': 'data_structures/tree.md'
+    - 'Graph': 'data_structures/graph.md'
+    - 'Hash Table': 'data_structures/hash_table.md'
+    - 'Heap': 'data_structures/heap.md'
+  - Databases:
+    - "DBMS": 'databases/dbms.md'
+    - 'SQL Overview': 'databases/sql.md'
+    - 'SQL': 'databases/sql_cmds.md'
+  - System Design:
+    - Docker: 
+      - 'Overview': 'system_design/docker/overview.md'
+      - 'Tags': 'system_design/docker/tags.md'
+      - 'Compose': 'system_design/docker/compose.md'
+      - 'Cloud': 'system_design/docker/cloud.md'
+    - 'Microservices': 'system_design/microservices.md'
+  - Web Development:
+    - Javascript:
+      - 'Basics': 'web_dev/js/basics.md'
+      - 'Classes': 'web_dev/js/classes.md'
+      - 'Objects': 'web_dev/js/objects.md'
+      - 'Modules': 'web_dev/js/modules.md'
+      - 'Promises': 'web_dev/js/promises.md'
+      - 'jQuery': 'web_dev/js/jQuery.md'
+      - 'Node Pkgs': 'web_dev/js/using_node_pkgs.md'
+      - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
+    - HTML & CSS:
+      - 'Sass': 'web_dev/html-css/sass.md'
+  - Machine Learning:
+    - 'Reinforcement Learning': 'machine_learning/reinforcement_learning.md'
+    - 'Activation Functions': 'machine_learning/activation_functions.md'

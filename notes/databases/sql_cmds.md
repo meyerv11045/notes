@@ -1,4 +1,4 @@
-## SQL Data Types
+## SQL
 
 ```SQL
 -- DATATYPES
