@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/browser_compatibility/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Browser Compatibility - Personal Notes</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../basics/oop/" class="dropdown-item">Object Oriented Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/terminal_cmds/" class="dropdown-item">Terminal Commands</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../data_structures/linked_list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/tree/" class="dropdown-item">Tree</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/graph/" class="dropdown-item">Graph</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/hash_table/" class="dropdown-item">Hash Table</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+                                    
+<li>
+    <a href="../../../databases/sql/" class="dropdown-item">SQL Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../../databases/sql_cmds/" class="dropdown-item">SQL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">System Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../system_design/docker/overview/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/tags/" class="dropdown-item">Tags</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/compose/" class="dropdown-item">Compose</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/cloud/" class="dropdown-item">Cloud</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../basics/" class="dropdown-item">Basics</a>
+</li>
+            
+<li>
+    <a href="../classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="../objects/" class="dropdown-item">Objects</a>
+</li>
+            
+<li>
+    <a href="../modules/" class="dropdown-item">Modules</a>
+</li>
+            
+<li>
+    <a href="../promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
+</li>
+                                    
+<li>
+    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../using_node_pkgs/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../html-css/sass/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="browser-compatibility">Browser Compatibility</h3>
+<ul>
+<li>Some ES6 features, like modules, are still not supported by most web browsers</li>
+<li><a href="http://caniuse.com/">caniuse.com</a> is the bset resource for finding browser compatiblity info on a feature-by-feature basis</li>
+<li>ES5 updated to ES6:</li>
+<li>Better readability and requires fewer characters</li>
+<li>Fixes ES5 bugs common from the syntax</li>
+<li>Syntax more similar to other OOP languages</li>
+<li>Ecma (Organization in charge of JS standards) made ES6 backwards compatible meaning it can be mapped to ES5</li>
+<li>Backwards compatibility helps decrease browser compatibility issues</li>
+<li><strong>Babel</strong> is a library that <em>transpiles</em> ES6 to ES5 JavaScript</li>
+<li>Transpilation- the process of converting one programming language to another</li>
+<li><code>babel-cli</code>- Node package w/ command line tools for Babel</li>
+<li><code>babel-preset-env</code>- Node package w/ ES6+ to ES5 syntax mapping information</li>
+</ul>
+<hr />
+<h4 id="transpilation-detailed-notes">Transpilation (Detailed Notes)</h4>
+<ol>
+<li>Setup the project using the specified file structure and npm</li>
+</ol>
+<p><code>bash
+   project
+   |_ src
+   |___ main.js
+   |_ package.json</code></p>
+<ul>
+<li>
+<p>Run <code>npm init</code> to create a <strong>package.json</strong> file in the root directory that contains info about the current project:</p>
+<ul>
+<li>Metdata- Project Title, Description, Authors, etc</li>
+<li>List of Required Node Packages- npm downloads the packages in this list when other developers want to run your project</li>
+<li>Key-value pairs for command line scripts- can use npm to run these shorthand scripts to perform some process</li>
+</ul>
+</li>
+<li>
+<p>Install necessary Babel packages using node package manager (npm)</p>
+</li>
+</ul>
+<p><code>bash
+   npm install babel-cli -D
+   npm install babel-preset-env -D</code></p>
+<ul>
+<li><code>install</code> creates a folder called <strong>node_modules</strong> and copies the package files to it while also installing all the dependencies for the given package</li>
+<li><code>-D</code> flag instructs npm to add each package to a property called <code>devDependencies</code> in <strong>package.json</strong> <ul>
+<li><code>devDependencies</code> allows other developers to run your project without installing each package separately </li>
+<li>Instead they can run <code>npm install</code> to instruct npm to look inside <strong>package.json</strong> and download all the packages listed in <code>devDependencies</code></li>
+</ul>
+</li>
+<li>New Directory Structure: (<code>...</code> indicates 100+ packages that npm installed)</li>
+</ul>
+<p><code>bash
+   project
+   |_ node_modules
+   |___ .bin
+   |___ ...
+   |_ src
+   |___ main.js
+   |_ package.json</code></p>
+<ol>
+<li>
+<p>Specify the initial JS version in <strong>.babelrc</strong></p>
+</li>
+<li>
+<p>Run <code>touch .babelrc</code> in the root directory to create the file</p>
+</li>
+<li>Define the preset for the source JS file (<code>["env"]</code> insrtucts Babel to transpile any code from ES6+)</li>
+</ol>
+<p><code>{
+    "presets": ["env"]
+   }</code></p>
+<ol>
+<li>
+<p>Specify a script in <strong>package.json</strong> that initiates ES6+ to ES5 transpilation</p>
+</li>
+<li>
+<p>In the "scripts" object, add a property called "build" below "test"</p>
+</li>
+<li><code>"build"</code>'s value (<code>babel src -d lib</code>) is a command line method that trasnpiles ES6+ code to ES5 <ul>
+<li><code>babel</code> — The Babel command call responsible for transpiling code.</li>
+<li><code>src</code> — Instructs Babel to transpile all JavaScript code inside the <strong>src</strong> directory.</li>
+<li><code>-d</code> — Instructs Babel to write the transpiled code to a directory.</li>
+<li><code>lib</code> — Babel writes the transpiled code to a directory called <code>lib</code>.</li>
+</ul>
+</li>
+</ol>
+<p><code>json
+   ...
+   "scripts": {
+     "test": "echo \"Error: no test specified\" &amp;&amp; exit 1",
+     "build": "babel src -d lib"
+   }, ...</code></p>
+<ol>
+<li>
+<p>Type <code>npm run build</code> to build the transpile the code to ES5 where it is stored in a directory called <strong>lib</strong> as a file with the same name as the original file (./lib/main.js)</p>
+</li>
+<li>
+<p>The command runs the <code>build</code> script in <strong>package.json</strong></p>
+</li>
+<li>The one command transpiles all code in <strong>src</strong>- good for larger projects with numerous JS files</li>
+</ol>
+<hr />
+<h4 id="transpilation-process-summary">Transpilation Process (Summary):</h4>
+<ol>
+<li>
+<p>Initialize your project using <code>npm init</code> and create a directory called <strong>src</strong></p>
+</li>
+<li>
+<p>Install babel dependencies by running</p>
+</li>
+</ol>
+<p><code>npm install babel-cli -D
+   npm install babel-preset-env -D</code></p>
+<ol>
+<li>Create a <strong>.babelrc</strong> file inside your project and add the following code inside it:</li>
+</ol>
+<p><code>{
+     "presets": ["env"]
+   }</code></p>
+<ol>
+<li>Add the following script to your <code>scripts</code> object in package.json:</li>
+</ol>
+<p><code>json
+   "build": "babel src -d lib"</code></p>
+<ol>
+<li>Run <code>npm run build</code> whenever you want to transpile your code from your <strong>src</strong> to <strong>lib</strong> directories</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

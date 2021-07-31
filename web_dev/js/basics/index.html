@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/basics/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Basics - Personal Notes</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../basics/oop/" class="dropdown-item">Object Oriented Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/terminal_cmds/" class="dropdown-item">Terminal Commands</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../data_structures/linked_list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/tree/" class="dropdown-item">Tree</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/graph/" class="dropdown-item">Graph</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/hash_table/" class="dropdown-item">Hash Table</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+                                    
+<li>
+    <a href="../../../databases/sql/" class="dropdown-item">SQL Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../../databases/sql_cmds/" class="dropdown-item">SQL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">System Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../system_design/docker/overview/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/tags/" class="dropdown-item">Tags</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/compose/" class="dropdown-item">Compose</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/cloud/" class="dropdown-item">Cloud</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="./" class="dropdown-item active">Basics</a>
+</li>
+            
+<li>
+    <a href="../classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="../objects/" class="dropdown-item">Objects</a>
+</li>
+            
+<li>
+    <a href="../modules/" class="dropdown-item">Modules</a>
+</li>
+            
+<li>
+    <a href="../promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="../browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
+</li>
+                                    
+<li>
+    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../../system_design/microservices/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../classes/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="what-is-javascript">What is JavaScript</h3>
+<ul>
+<li>Dynamic Programming Language (operations done at run-time)</li>
+<li>E.g. Possible to change variable type or add new properties/methods to an object while the program is running</li>
+<li>Dynamically-Typed Language (Interpreter assigns variables a type at runtime based on its current value)</li>
+<li>Can provide interactivity on websites when applied to an html document</li>
+<li>Interpreted language (Doesn't have to be compiled)</li>
+<li>Runs on the client's computer/browser</li>
+<li>Object Based</li>
+<li>Prototype based instead of class based like Java</li>
+<li>Scripting language (lightweight)</li>
+</ul>
+<hr />
+<h3 id="uses-for-javascript">Uses for JavaScript:</h3>
+<ul>
+<li>Put content in an HTML page on the fly</li>
+<li>Make webpages responsive</li>
+<li>Detect a user's browser and other info</li>
+<li>Create cookies</li>
+<li>Validate forms</li>
+<li>Create animations, slideshows, scrollers, etc</li>
+<li>Build apps w/ JS frameworks (ex: angularJS, reactJS, etc)</li>
+</ul>
+<hr />
+<h3 id="primitive-data-types">Primitive Data Types</h3>
+<ul>
+<li>Number- integers and decimals</li>
+<li>String- use single or double quotes (single preferred)</li>
+<li><code>.length</code> property</li>
+<li>Boolean- <code>true</code> or <code>false</code></li>
+<li>Null- intentional absence of a value represnted by <code>null</code></li>
+<li>Undefined- absence of a valuae represented by <code>undefined</code> and is different than <code>null</code></li>
+<li>Symbol- unique identifiers and useful in more complex coding</li>
+</ul>
+<hr />
+<h3 id="variables">Variables</h3>
+<ul>
+<li>When declaring variables without assigning a value, their inital value is set to <code>undefined</code></li>
+<li>Prior to ES6, <code>var</code> was the only keyword to declare variables (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">More Info</a>)</li>
+<li>Variables declared using <code>var</code> are created before any code is executed in a process known as hoisting<ul>
+<li>A variable's initial value is <code>undefined</code> and its actual value is intialized when the assignment statement is reached in execution</li>
+</ul>
+</li>
+<li>This means a variable can be used before it is declared in the code since hoisting results in the equivalent of all variables being declared at the top</li>
+<li>In ES6, <code>let</code> and <code>const</code> were introduced</li>
+<li><code>let</code> signals that the variable can be reassigned a different value</li>
+<li><code>const</code> signals that the variable is a constant and cannot be reassigned <ul>
+<li>Reassigning a <code>const</code> will throw a <code>TypeError</code></li>
+</ul>
+</li>
+<li>Variables can be transformed using mathematical asignment operators (<code>+=</code>,<code>*=</code>,<code>/=</code>) and increment/decrement operators (<code>++</code>,<code>--</code>)</li>
+<li>In ES6, we can insert (or interpolate) variables into strings using <em>template literals</em> </li>
+<li>Uses backticks instead of single/double quotes</li>
+</ul>
+<pre><code class="language-javascript">const myPet = 'armadillo';
+console.log(`I own a pet ${myPet}`);
+// Output: I own a pet armadillo.
+</code></pre>
+<ul>
+<li><code>typeof</code> operator will return a string of the data type of the value to its right (e.g. typeof 'hello' returns 'string') </li>
+</ul>
+<hr />
+<h3 id="conditional-statements">Conditional Statements</h3>
+<pre><code class="language-javascript">if (greeting) {
+    console.log('Hello World!')
+} else if (goodbye){
+    console.log('Bye World!')           
+} else {
+  console.log('IDK')
+}
+</code></pre>
+<ul>
+<li>Comparison Operators: <code>&lt;</code> ,<code>&gt;</code>,<code>&lt;=</code>,<code>&gt;=</code>,<code>===</code>,<code>!==</code></li>
+<li>Don't use <code>==</code> or <code>!=</code> b/c types are not considered <a href="https://stackoverflow.com/questions/359494/which-equals-operator-vs-should-be-used-in-javascript-comparisons">(Read More)</a></li>
+<li>Logical Operators: and <code>&amp;&amp;</code>, or <code>||</code>, not: <code>!</code></li>
+<li>Values that are not explicitly true/false but evaluate to true/false are called truthy/falsy</li>
+<li>Falsy: <code>0</code>,empty strings, <code>null</code>, <code>undefined</code>, <code>NaN</code></li>
+<li>Truthy: If a variable's value exists, it evaluates to true in a logical comparison</li>
+</ul>
+<pre><code class="language-javascript">let defaultName;
+if (username) {
+    defaultName = username;
+} else {
+    defaultName = 'Stranger';
+}
+//Is equivalent to 
+let defaultName = username || 'Stranger'; //Stranger is the default if usrname is falsy (DNE)
+</code></pre>
+<ul>
+<li>A ternary operator can condense if...else statements</li>
+<li>If the condition before the <code>?</code> is true, the 1st expression executes. If false, the 2nd expression executes</li>
+</ul>
+<pre><code class="language-javascript">let isNight = true;
+if (isNight){
+  console.log('Sleep')
+} else {
+  console.log('Wakeup')
+}
+//Is equivalent to:
+isNight ? console.log('Sleep') : console.log('Wakeup');
+</code></pre>
+<ul>
+<li>Supports <code>switch</code> statements for easier syntax than numerous <code>else if</code> statements</li>
+</ul>
+<pre><code class="language-javascript">let item = 'Pie'
+switch (item) {
+  case 'bread':
+        //Do something
+    break;
+  case 'muffin':
+    //Do something else
+    break;
+  default:
+    //Last resort
+    break;
+}
+</code></pre>
+<hr />
+<h3 id="functions">Functions</h3>
+<ul>
+<li>Hoisting applies to functions as well, allowing a function to be called before it is defined in the code</li>
+<li>Not good code practice though</li>
+<li>A function declaration binds a function to an identifier like <code>getUser()</code> using the <code>function</code> keyword</li>
+<li>ES6 added the ability to use default parameters</li>
+</ul>
+<pre><code class="language-javascript">function calcArea(width,height=10){
+    return width * height;
+}
+</code></pre>
+<ul>
+<li>Helper functions- functions called within another function</li>
+<li><em>Function Expressions</em> are another way to define a function </li>
+<li>The anonymous functions created by function expressions are stored in variables so they can be referenced</li>
+<li>const is used to declare the variable</li>
+</ul>
+<pre><code class="language-javascript">const calcArea = function(width,height){
+    return width * height;
+}
+</code></pre>
+<ul>
+<li>ES6 introduced <em>arrow function syntax</em> as a shorter way to write functions <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">(Documentation)</a></li>
+<li>Remove the need to type out the function keyword</li>
+<li>Include parameters inside the parentheses and add an arrow <code>=&gt;</code> pointing to the function body</li>
+</ul>
+<pre><code class="language-javascript">const calcArea = (width,height) =&gt; {
+    return width * height;
+}
+</code></pre>
+<ul>
+<li><em>Conscise Body Arrow Functions</em> </li>
+<li>Functions taking 1 parameter don't need parentheses but 0 &amp; 2+ parameters require parentheses</li>
+<li>Pushing the function to the single-line eliminates need for curly braces and return statement (implicitly returns the contents of the block)</li>
+</ul>
+<pre><code class="language-javascript">const sumNums = num =&gt; num + num; //Will return num + num
+</code></pre>
+<hr />
+<h3 id="scope">Scope</h3>
+<ul>
+<li>Defines where variablescan be accessed or referenced</li>
+<li>In <em>block scope</em> variables are declared inside a block (set of <code>{}</code>) and are called <em>local variables</em></li>
+<li>Local variables can only be accessed within the block</li>
+<li>In <em>global scope</em> variables are declared outside of a block and are called <em>global variables</em></li>
+<li>Global variables can be accessed by any code in the program</li>
+<li>The <em>global namespace</em> is where global variables go and it allows them to be accessed anywhere in the program</li>
+<li><em>Scope Pollution</em> occurs when too many global variables exist in the global namespace or when variables are reused across different scopes</li>
+<li>Best practice not to define variables in the global scope to avoid this proble</li>
+<li>Scope variables as tightly as possible using block scope</li>
+<li>Makes code more legible &amp; understandable since blocks organize the code into discrete sections</li>
+<li>Easier to maintain the modular code</li>
+<li>Saves memory b/c the variables are automatically erased after the block is finished running</li>
+</ul>
+<hr />
+<h3 id="arrays">Arrays</h3>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Documentation</a></li>
+<li>Can store any combination of data types( <code>const list = ['Hello',45,true]</code>)</li>
+<li>Traditional array access &amp; updates(<code>list[0]</code> and <code>list[1] = 56</code>)</li>
+<li>Can change the contents of an array declared with <code>const</code> but cannot reassign a new array or different value to the variable</li>
+<li><code>.length</code> property just like strings</li>
+<li><code>.push(item)</code> adds items to the end of an array  &amp; <code>.unshift(item)</code> adds items to the beginning ofan array</li>
+<li>Can take multipe arguments to add multiple items at a time</li>
+<li>Changes/mutates the original array (Also classified as a destructive array method since it changes the initial array )</li>
+<li><code>.pop()</code> removes the last item of an array &amp; <code>.shift()</code> removes the first item (Neither take any arguments)</li>
+<li>Changes/mutates the original array</li>
+<li><code>.indexOf(item)</code> returns the index of an item in the array (not found = -1)</li>
+<li><code>.slice()</code> copies an array ( <code>let copy = og.slice();</code>)</li>
+<li><code>.splice(pos,n)</code> removes the item at <code>pos</code> <code>n</code> times</li>
+<li>Changes the original array and returns the removed items as another array</li>
+<li><em>Pass-by-Reference</em> is when an array is passed into a function, if the array is mutated inside the function, that change will be maintained outside the function as well </li>
+<li>Works because the argument to the function is just a reference to where the variable is stored in memory, allowing the memory of the array to be changed</li>
+<li>Nested arrays can be accessed by chaining on more bracket notation with index values (e.g. <code>arry[1][3]</code>)</li>
+</ul>
+<pre><code class="language-javascript">let nums = [1,5,7,3,9];
+let num2 = new Array(1,3,6,'Hi',3,7);
+nums.push(10);
+nums.length
+num2.sort() //Strings come last
+nums.reverse() //Reverses order
+</code></pre>
+<hr />
+<h3 id="loops">Loops</h3>
+<ul>
+<li>for loop consists of an initialization, stopping condition, and iteration statement</li>
+<li>Do while loops run a piece of code then check the condition compared to while loops that check the condition and then run the code</li>
+<li>Do while loops run at least once whether or not the condition evaluates to true</li>
+<li><code>break</code> keyword allows programs to break out of a loop within the loop's block</li>
+</ul>
+<pre><code class="language-javascript">for (let i = 0; i &lt; 5, i++){}
+for (let i = items.length - 1; i &gt;= 0; i--){} //Reverse through a list 
+
+while (condition) {} //Avoid infinite loops!
+
+do {} while (condition)
+</code></pre>
+<hr />
+<h3 id="higher-order-functions">Higher-Order Functions</h3>
+<ul>
+<li>Functions that accept other functions as arguments and/or return functions as output </li>
+<li><em>Callback Functions</em> are functions that are passed as arguments and invoked <ul>
+<li>Get called during the excution of the higher-order function</li>
+<li>To pass a callback function as ana argument, the name is typed w/o the parentheses so that the reference to the function is passed, not the value from invoking the function</li>
+<li>Anonymous functions can be passed as arguments as well (they are defined in the higher-order function's call)</li>
+</ul>
+</li>
+<li>Adds another level of abstraction to a program to make it more modular &amp; easier to read/debug</li>
+<li>JS functions are <em>first class objects</em> meaning that like other objects, JS functions can have properties and methods</li>
+<li>Functions are special b/c they can be invoked and treated like any other type of data </li>
+<li>Every JS function is actually a <code>Function</code> object (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Documentation</a>)</li>
+</ul>
+<hr />
+<h3 id="iterators">Iterators</h3>
+<ul>
+<li>These iterators take a callback function as an argument and execute the callback function for each element in the array</li>
+<li><code>.forEach()</code> </li>
+</ul>
+<pre><code class="language-javascript">const fruits = ['mango', 'papaya', 'pineapple', 'apple'];
+fruits.forEach(elem=&gt;console.log(`I want to eat a ${elem}`));
+//I want to eat a mango...papaya...etc.
+</code></pre>
+<ul>
+<li><code>.map()</code> returns a new array unlike forEach which mutates the original array </li>
+</ul>
+<pre><code class="language-javascript">const nums = [1,2,3,4];
+const bigNums = nums.map(number =&gt; number * 10); //[10,20,30,40]
+</code></pre>
+<ul>
+<li><code>.filter()</code> takes a boolean callback function (returns T/F) as an argument. Returns a new array </li>
+</ul>
+<pre><code class="language-javascript">const favoriteWords = ['nostalgia', 'hyperbole', 'fervent', 'esoteric', 'serene'];
+const longFavoriteWords = favoriteWords.filter(elem=&gt; {
+  return elem.length &gt; 7;
+});
+</code></pre>
+<ul>
+<li><code>.findIndex()</code>Returns the <em>index</em> of the first element that evaluates to true in the boolean callback function</li>
+<li>No element that satisfies the callback returns -1 </li>
+</ul>
+<p>``` javascript
+const jumbledNums = [123, 25, 78, 5, 9]; 
+const lessThanTen = jumbledNums.findIndex(num =&gt; {
+  return num &lt; 10;
+}); //3</p>
+<pre><code>
+- `.reduce()` returns a single value after iterating through the elements of an array (Consists of an accumulator and iterator)
+  - The optional 2nd argument sets the initial value for accumulator 
+
+```javascript
+const nums = [1,2,3,4];
+const summedNums = nums.reduce((accumulator,currentVal) =&gt; {
+  console.log('The value of accumulator: ', accumulator);
+  console.log('The value of currentValue: ', currentValue);
+  return accumulator + currentVal;
+},100); //110
+</code></pre>
+<hr /></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

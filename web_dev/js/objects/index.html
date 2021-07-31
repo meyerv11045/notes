@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/objects/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Objects - Personal Notes</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../basics/oop/" class="dropdown-item">Object Oriented Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/terminal_cmds/" class="dropdown-item">Terminal Commands</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../data_structures/linked_list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/tree/" class="dropdown-item">Tree</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/graph/" class="dropdown-item">Graph</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/hash_table/" class="dropdown-item">Hash Table</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+                                    
+<li>
+    <a href="../../../databases/sql/" class="dropdown-item">SQL Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../../databases/sql_cmds/" class="dropdown-item">SQL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">System Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../system_design/docker/overview/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/tags/" class="dropdown-item">Tags</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/compose/" class="dropdown-item">Compose</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/cloud/" class="dropdown-item">Cloud</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../basics/" class="dropdown-item">Basics</a>
+</li>
+            
+<li>
+    <a href="../classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Objects</a>
+</li>
+            
+<li>
+    <a href="../modules/" class="dropdown-item">Modules</a>
+</li>
+            
+<li>
+    <a href="../promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="../browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
+</li>
+                                    
+<li>
+    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../classes/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../modules/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="objects">Objects</h3>
+<ul>
+<li>Are <em>passed by reference</em> meaning the variable assigned to an object points to the space in memory holding the object when passed into a function as an argument</li>
+<li>Functions that change object properties actually mutate the object permanently even when assigned to a <code>const</code> variable</li>
+<li>Can be iterated through using the <code>for...in</code> syntax that executes a given block of code for each property in an object (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">Documentation</a>)</li>
+</ul>
+<pre><code class="language-javascript">for (let member in spaceship.crew) {}
+</code></pre>
+<hr />
+<h3 id="object-literal">Object Literal:</h3>
+<ul>
+<li>Data is organized into key-value pairs where a key points to a location in memory that holds a value</li>
+<li>Keys are strings but values can be any data type</li>
+<li>When the keys don't have special characters, JS allows the quotation marks to be omitted</li>
+<li>Key serves as a method's name and the value is an anonymous function expression</li>
+<li>ES6 syntax allows omission of the colon and <code>function</code> keyword</li>
+</ul>
+<pre><code class="language-javascript">let person = {
+  firstName: 'John',
+  secondName: 'Doe',
+  age: 30,
+  children: ['Bob','Joe']
+  //Embedded Object
+  address : {
+    street: '555 Heaven Ave',
+    city: 'Boston',
+    state: 'MA'
+  },
+  fullName: function(){
+    return this.firstname + ' ' + this.lastName;
+  }
+    //Same as
+    fullName2 () {
+        console.log(this.firstname)
+  }
+}
+</code></pre>
+<ul>
+<li>There are 2 notations used for accessing object properties: dot and bracket</li>
+<li>Braket notation must be used when accessing keys that have numbers, spaces, or special characters</li>
+<li>Also used for property assignment/creation</li>
+<li>Can't reassign an object declared with <code>const</code></li>
+<li><code>delete</code> operator is used to delete properties</li>
+</ul>
+<pre><code class="language-javascript">//Dot Notation
+person.age; 
+person.children[0];
+person.address.street;
+//Bracket Notation
+property = 'age';
+person[property];
+person['children'][0];
+person['address']['street'];
+</code></pre>
+<hr />
+<h3 id="object-constructor">Object Constructor:</h3>
+<pre><code class="language-javascript">let apple = new Object();
+apple.color = 'red';
+apple.shape = 'round';
+apple.describe = function(){
+  return &quot;Color: &quot; +this.color+' Shape: '+this.shape;
+}
+</code></pre>
+<h3 id="constructor-pattern">Constructor Pattern:</h3>
+<pre><code class="language-javascript">function Fruit(name,color,shape){
+  this.name = name;
+  this.color = color;
+  this.shape = shape;
+  this.describe = function(){
+    return &quot;This is &quot;+this.color;
+  }
+}
+let apple = new Fruit('apple','red','round');
+</code></pre>
+<hr />
+<h3 id="this-keyword"><code>this</code> Keyword</h3>
+<ul>
+<li>Similar functionality to <code>self</code> keyword used for clases in python</li>
+<li>Used to reference other properties/methods of an object from within the object</li>
+<li><code>this</code> references the <em>calling object</em> which provides access to the calling object's properties</li>
+<li>A <code>ReferenceError</code> is thrown if <code>this</code> is not used</li>
+</ul>
+<pre><code class="language-javascript">const goat = {
+  dietType: 'herbivore',
+  diet() {
+    console.log(this.dietType); 
+  }
+};
+goat.diet(); //Output: herbivore
+</code></pre>
+<ul>
+<li>arrow functions bind/tie <code>this</code> to the function itself, not the calling object </li>
+<li>In the below example, the value of <code>this</code> is the global object (an object that exists in the global scope), which doesn't have a <code>dietType</code> property, therefore returnining <code>undefined</code></li>
+<li><em>Avoid</em> using arrow functions when using <code>this</code> in a method</li>
+</ul>
+<pre><code class="language-javascript">const goat = {
+  dietType: 'herbivore',
+  diet: () =&gt; {
+    console.log(this.dietType);
+  }
+};
+goat.diet(); // Prints undefined
+</code></pre>
+<hr />
+<h3 id="privacy">Privacy</h3>
+<ul>
+<li>Only certain properties should be mutable/able to change in value</li>
+<li>JS does not have privacy built-in for objects</li>
+<li>Naming conventions indicate how a developer should interact with a property </li>
+<li>Underscores <code>_</code> before the name of a property: do not alter</li>
+<li><em>Getters</em> are used to return internal properties of an object</li>
+<li>Syntax: <code>get</code> keyword followed by a function(){}</li>
+<li>Can perform an action on the data when getting a property</li>
+<li>Can return different values using conditionals</li>
+<li>Easier readability</li>
+</ul>
+<pre><code class="language-javascript">const person = {
+  _firstName: 'John',
+  _lastName: 'Doe',
+  get fullName() {
+    if (this._firstName &amp;&amp; this._lastName){
+      return `${this._firstName} ${this._lastName}`;
+    } else {
+      return 'Missing a first name or a last name.';
+    }
+  }
+}
+//Using a Getter
+person.fullName; // 'John Doe'
+</code></pre>
+<ul>
+<li><em>Setters</em> are used to reassign values of an object's properties</li>
+</ul>
+<pre><code class="language-javascript">const person = {
+  _age: 37,
+  set age(newAge){
+    if (typeof newAge === 'number'){
+      this._age = newAge;
+    } else {
+      console.log('You must assign a number to age');
+    }
+  }
+};
+
+//Using a Setter
+person.age = 40
+console.log(person._age) //40 
+</code></pre>
+<hr />
+<h3 id="factory-functions">Factory Functions</h3>
+<ul>
+<li>Returns an object that can be reused to make multiple object instances</li>
+<li>Simply returns an object</li>
+<li>Can have parameters allowing customization of the returned object</li>
+</ul>
+<pre><code class="language-javascript">const monsterFactory = (name, age, energySource, catchPhrase) =&gt; {
+  return { 
+    name: name,
+    age: age, 
+    energySource: energySource,
+    scare() {
+      console.log(catchPhrase);
+    } 
+  }
+};  
+const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+ghost.scare(); // 'BOO!'
+</code></pre>
+<hr />
+<h3 id="destructuring">Destructuring</h3>
+<ul>
+<li>An ES6 shortcut for assigning an object's properties to variables</li>
+<li><em>Property Value Shorthand</em> can be used in creating factory functions where the property's name is the same as the variable it is being assigned to </li>
+</ul>
+<pre><code class="language-javascript">const monsterFactory = (name, age) =&gt; {
+  return { 
+    name,
+    age 
+  }
+};
+</code></pre>
+<ul>
+<li><em>Destructured Assignment</em> is similar to unpacking in python where an object's properties can be concisely assigned to new variables</li>
+</ul>
+<pre><code class="language-javascript">const vampire = {
+  name: 'Dracula',
+  residence: 'Transylvania',
+  preferences: {
+    day: 'stay inside',
+    night: 'satisfy appetite'
+  }
+};
+
+const {residence} = vampire; //Transylvania
+const {day} = vampire.preferences //Stay inside
+
+</code></pre>
+<hr />
+<h3 id="built-in-object-methods">Built-In Object Methods</h3>
+<ul>
+<li>Object Instance Methods: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods">(Documentation)</a></li>
+<li><code>.hasOwnProperty()</code>, <code>.valueOf()</code></li>
+<li>Object Class Methods:</li>
+<li><code>Object.keys(name_of_obj)</code>: Returns an array of the keys/property names of an object</li>
+<li><code>Object.entries(name_of_obj)</code>: Returns an array containing arrays that have the key &amp; value for each property</li>
+<li><code>Object.assign(target_obj,src_object)</code>: Copies properties from the source object (s) to the target object and returns the target object </li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

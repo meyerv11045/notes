@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/basics/regex/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Regex - Personal Notes</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Personal Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../oop/" class="dropdown-item">Object Oriented Programming</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../terminal_cmds/" class="dropdown-item">Terminal Commands</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data_structures/linked_list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/tree/" class="dropdown-item">Tree</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/hash_table/" class="dropdown-item">Hash Table</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+                                    
+<li>
+    <a href="../../databases/sql/" class="dropdown-item">SQL Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../databases/sql_cmds/" class="dropdown-item">SQL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">System Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../system_design/docker/overview/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../system_design/docker/tags/" class="dropdown-item">Tags</a>
+</li>
+            
+<li>
+    <a href="../../system_design/docker/compose/" class="dropdown-item">Compose</a>
+</li>
+            
+<li>
+    <a href="../../system_design/docker/cloud/" class="dropdown-item">Cloud</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/js/basics/" class="dropdown-item">Basics</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/objects/" class="dropdown-item">Objects</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/modules/" class="dropdown-item">Modules</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
+</li>
+                                    
+<li>
+    <a href="../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../oop/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../terminal_cmds/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<p>Regular expressions operate by moving character by character, from left to right, through a piece of text. When the regular expression finds a character that matches the first piece of the expression, it looks to find a continuous sequence of matching characters.</p>
+<hr />
+<p><strong>Alternation</strong> is performed in regular expressions with the pipe symbol, <code>|</code>, allowing us to match either the characters preceding the <code>|</code> OR the characters after the <code>|</code>.</p>
+<p><strong>Grouping</strong>, denoted with the open parenthesis <code>(</code> and the closing parenthesis <code>)</code>, lets us group parts of a regular expression together, and allows us to limit alternation to part of the regex.</p>
+<hr />
+<p><strong>Character sets</strong>, denoted by a pair of brackets <code>[]</code>, let us match <em>one</em> character from a series of characters, allowing for matches with incorrect or different spellings.</p>
+<p><strong>Negated Character Sets</strong>:  at the front of a character set, the <code>^</code> negates the set, matching any character that is <em>not</em> stated. Thus the regex <code>[^cat]</code> will match any character that is not <code>c</code>, <code>a</code>, <em>or</em> <code>t</code>, and would completely match each character <code>d</code>, <code>o</code> <em>or</em> <code>g</code>.</p>
+<hr />
+<p><strong>Wildcards</strong> <code>.</code> will match any single character (letter, number, symbol or whitespace) in a piece of text. We can use the escape character, <code>\</code>, to escape the wildcard functionality of the <code>.</code> and match an actual period.</p>
+<p><strong>Ranges</strong> allow us to specify a range of characters in which we can make a match without having to type out each individual character. The <code>-</code> character allows us to specify that we are interested in matching a range of characters.</p>
+<hr />
+<p><strong>Shorthand Character Classes</strong> represent common ranges and make writing regular expressions much simpler:</p>
+<ul>
+<li><code>\w</code>: the “word character” class represents the regex range <code>[A-Za-z0-9_]</code>, and it matches a single uppercase character, lowercase character, digit or underscore</li>
+<li><code>\d</code>: the “digit character” class represents the regex range <code>[0-9]</code>, and it matches a single digit character</li>
+<li><code>\s</code>: the “whitespace character” class represents the regex range <code>[ \t\r\n\f\v]</code>, matching a single space, tab, carriage return, line break, form feed, or vertical tab</li>
+</ul>
+<p><strong>Negated Character Classes</strong> are shorthands that match any character not in the regular shorthand classes:</p>
+<ul>
+<li><code>\W</code>: the “non-word character” class represents the regex range <code>[^A-Za-z0-9_]</code>, matching any character that is not included in the range represented by <code>\w</code></li>
+<li><code>\D</code>: the “non-digit character” class represents the regex range <code>[^0-9]</code>, matching any character that is not included in the range represented by <code>\d</code></li>
+<li><code>\S</code>: the “non-whitespace character” class represents the regex range <code>[^ \t\r\n\f\v]</code>, matching any character that is not included in the range represented by <code>\s</code></li>
+</ul>
+<hr />
+<p><strong>Fixed quantifiers</strong>, denoted with curly braces <code>{}</code>, let us indicate the exact quantity of a character we wish to match, or allow us to provide a quantity range to match on.</p>
+<ul>
+<li><code>\w{3}</code> will match <em>exactly</em> 3 word characters</li>
+<li><code>\w{4,7}</code> will match <em>at minimum</em> 4 word characters and <em>at maximum</em> 7 word characters</li>
+</ul>
+<p>An important note is that quantifiers are considered to be <em>greedy</em>. This means that they will match the greatest quantity of characters they possibly can. For example, the regex <code>mo{2,4}</code> will match the text <code>moooo</code> in the string <code>moooo</code>, and not return a match of <code>moo</code>, or <code>mooo</code>.</p>
+<p><strong>Optional quantifiers</strong>, indicated by the question mark <code>?</code>, allow us to indicate a character in a regex is optional, or can appear either <code>0</code> times or <code>1</code> time. The <code>?</code> <em>only</em> applies to the character/grouping directly before it. Use the escape character in your regex in order to match a question mark <code>?</code> in a piece of text. </p>
+<hr />
+<p>The <strong>Kleene star</strong>, denoted with the asterisk <code>*</code>, is also a quantifier, and matches the preceding character <code>0</code> or more times. This means that the character doesn’t need to appear, can appear once, or can appear many many times.</p>
+<p>The <strong>Kleene plus</strong>, denoted by the plus <code>+</code> matches the preceding character <code>1</code> or more times.</p>
+<p>The <strong>anchors</strong> hat <code>^</code> and dollar sign <code>$</code> are used to match text at the start and the end of a string, respectively. </p>
+<ul>
+<li>The regex <code>^Monkeys: my mortal enemy$</code> will completely match the text <code>Monkeys: my mortal enemy</code> but not match <code>Spider Monkeys: my mortal enemy in the wild</code> </li>
+</ul>
+<hr />
+<h3 id="summary">Summary:</h3>
+<ul>
+<li><em>Regular expressions</em> are special sequences of characters that describe a pattern of text that is to be matched</li>
+<li>We can use <em>literals</em> to match the exact characters that we desire</li>
+<li><em>Alternation</em>, using the pipe symbol <code>|</code>, allows us to match the text preceding or following the <code>|</code></li>
+<li><em>Character sets</em>, denoted by a pair of brackets <code>[]</code>, let us match one character from a series of characters</li>
+<li><em>Wildcards</em>, represented by the period or dot <code>.</code>, will match any single character (letter, number, symbol or whitespace)</li>
+<li><em>Ranges</em> allow us to specify a range of characters in which we can make a match</li>
+<li><em>Shorthand character classes</em> like <code>\w</code>, <code>\d</code> and <code>\s</code> represent the ranges representing word characters, digit characters, and whitespace characters, respectively</li>
+<li><em>Groupings</em>, denoted with parentheses <code>()</code>, group parts of a regular expression together, and allows us to limit alternation to part of a regex</li>
+<li><em>Fixed quantifiers</em>, represented with curly braces <code>{}</code>, let us indicate the exact quantity or a range of quantity of a character we wish to match</li>
+<li><em>Optional quantifiers</em>, indicated by the question mark <code>?</code>, allow us to indicate a character in a regex is optional, or can appear either <code>0</code> times or <code>1</code> time</li>
+<li>The <em>Kleene star</em>, denoted with the asterisk <code>*</code>, is a quantifier that matches the preceding character <code>0</code> or more times</li>
+<li>The <em>Kleene plus</em>, denoted by the plus <code>+</code>, matches the preceding character <code>1</code> or more times</li>
+<li>The <em>anchor</em> symbols hat <code>^</code> and dollar sign <code>$</code> are used to match text at the start and end of a string, respectively</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

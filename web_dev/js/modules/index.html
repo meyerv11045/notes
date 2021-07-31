@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/modules/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Modules - Personal Notes</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../basics/oop/" class="dropdown-item">Object Oriented Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/terminal_cmds/" class="dropdown-item">Terminal Commands</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../data_structures/linked_list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/tree/" class="dropdown-item">Tree</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/graph/" class="dropdown-item">Graph</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/hash_table/" class="dropdown-item">Hash Table</a>
+</li>
+                                    
+<li>
+    <a href="../../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+                                    
+<li>
+    <a href="../../../databases/sql/" class="dropdown-item">SQL Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../../databases/sql_cmds/" class="dropdown-item">SQL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">System Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Docker</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../system_design/docker/overview/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/tags/" class="dropdown-item">Tags</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/compose/" class="dropdown-item">Compose</a>
+</li>
+            
+<li>
+    <a href="../../../system_design/docker/cloud/" class="dropdown-item">Cloud</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Development <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../basics/" class="dropdown-item">Basics</a>
+</li>
+            
+<li>
+    <a href="../classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="../objects/" class="dropdown-item">Objects</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Modules</a>
+</li>
+            
+<li>
+    <a href="../promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="../browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
+</li>
+                                    
+<li>
+    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../objects/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../promises/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            
+            
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h3 id="modules-overview">Modules Overview</h3>
+<ul>
+<li>Reusable pieces of code that can be exported from one program and imported for use in another program</li>
+<li>Benefits of Using Modules:</li>
+<li>Find, fix, and debug code more easily</li>
+<li>Reuse and recycle logic defined in different parts of our application</li>
+<li>Keep information private and protected from other modules</li>
+<li>Prevent pollution of the global namespace and potential naming collisions, by cautiously selecting variables and behavior we load into a program</li>
+<li>Two Ways of Implementing Modules:</li>
+<li>Node.js's <code>module.exports</code> and <code>require()</code> syntax</li>
+<li>ES6 <code>import</code>/<code>export</code> syntax</li>
+</ul>
+<hr />
+<h3 id="nodejs-syntax">Node.js Syntax</h3>
+<h4 id="moduleexports">module.exports</h4>
+<ul>
+<li>Every JavaScript file run in Node has a local <code>module</code> object with an <code>exports</code> property used to define what should be exported from the file</li>
+<li>The pattern we use to export modules:</li>
+<li>Create an object to represent the module.</li>
+<li>Add properties or methods to the module object.</li>
+<li>Export the module with <code>module.exports</code>.</li>
+</ul>
+<pre><code class="language-javascript">let Menu = {};
+Menu.specialty = &quot;Roasted Beet Burger with Mint Sauce&quot;;
+
+module.exports = Menu; 
+</code></pre>
+<ul>
+<li>Can also wrap any collection of data/functions in an object and export the object (Equivalent to above block) </li>
+</ul>
+<pre><code class="language-javascript">module.exports = {
+  specialty: &quot;Roasted Beet Burger with Mint Sauce&quot;,
+  getSpecialty: function() {
+    return this.specialty;
+  } 
+}; 
+</code></pre>
+<h4 id="require">require()</h4>
+<ul>
+<li>Used in Node to import the exported module into another file so its defined behavior can be used</li>
+<li>Takes a file path argument pointing to the original module file</li>
+<li>The .js extension in the file path is optional and will be assumed if not included</li>
+<li>The pattern to import a module:</li>
+<li>Import the module with <code>require()</code> and assign it to a local variable.</li>
+<li>Use the module and its properties within a program.</li>
+</ul>
+<pre><code class="language-javascript">const Menu = require('./menu.js');
+
+function placeOrder() {
+  console.log('My order is: ' + Menu.specialty);
+}
+placeOrder();
+</code></pre>
+<hr />
+<h3 id="es6-syntax">ES6 Syntax</h3>
+<h4 id="export-default">export default</h4>
+<ul>
+<li>Works similarly to the <code>module.exports</code> syntax, allowing us to export 1 module per file</li>
+<li>Not supported in Node.js so this syntax is used for front-end development </li>
+</ul>
+<pre><code class="language-javascript">let Menu = {};
+export default Menu; 
+</code></pre>
+<h4 id="import">import</h4>
+<ul>
+<li>The name following <code>import</code> specifies the name of the variable to store the default export in </li>
+<li>When specifying the path name after <code>from</code>, .js is left off because it specifically refers to the name of the file w/o the extension of the file when dealing with local files</li>
+</ul>
+<pre><code class="language-javascript">import Menu from './menu';
+</code></pre>
+<h4 id="named-exports">Named Exports</h4>
+<ul>
+<li>Allow us to export data through the use of variables</li>
+</ul>
+<pre><code class="language-javascript">let specialty = '';
+function isVegetarian() {}; 
+
+export { specialty, isVegetarian };
+</code></pre>
+<ul>
+<li>Named exports can have their name changed when exported using <code>as</code></li>
+</ul>
+<pre><code class="language-javascript">let specialty = '';
+let isVegetarian = function() {}; 
+
+export { specialty as chefsSpecial, isVegetarian as isVeg };
+</code></pre>
+<ul>
+<li>Variables can be exported as soon as they are declared by placing <code>export</code> in front of variable declarations</li>
+</ul>
+<pre><code class="language-javascript">export let specialty = '';
+export function isVegetarian() {}; 
+</code></pre>
+<ul>
+<li>Named exports and default exports can be used together </li>
+<li>Best not to use both methods but can occasionally be useful<ul>
+<li>Ex: If you suspect developers may only be interested in importing a specific function and won’t need to import the entire default export. </li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-javascript">let specialty = '';
+function isVegetarian() {};  
+function isGlutenFree() {};
+
+export { specialty as chefsSpecial, isVegetarian as isVeg };
+export default isGlutenFree;
+</code></pre>
+<h4 id="named-imports">Named Imports</h4>
+<ul>
+<li>To import objects stored in a variable, we use the <code>import</code> keyword and include the variables in a set of <code>{}</code></li>
+<li>Don't have to import all the variables exported in the other module</li>
+</ul>
+<pre><code class="language-javascript">import { specialty, isVegetarian } from './menu';
+console.log(specialty);
+</code></pre>
+<ul>
+<li>Named exports can have their name changed when exported/imported using <code>as</code></li>
+</ul>
+<pre><code class="language-javascript">import {speciality as chefsSpecial, isVegetarian as isVeg} from './menu';
+//or
+import * as Carte from './menu';
+Carte.speciality;
+Carte.isVegetarian();
+</code></pre>
+<ul>
+<li>Named imports and normal imports can be used together</li>
+</ul>
+<pre><code class="language-javascript">import { specialty, isVegetarian } from './menu';
+import GlutenFree from './menu';
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
