@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/classes/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Classes - Personal Notes</title>
+        <title>Classes - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <a class="navbar-brand" href="../../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,11 @@
 </li>
                                     
 <li>
-    <a href="../../../basics/terminal-cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="../../../basics/python/" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/macos/" class="dropdown-item">MacOS</a>
 </li>
                                 </ul>
                             </li>
@@ -113,7 +117,7 @@
 </li>
                                     
 <li>
-    <a href="../../../system_design/overview.md" class="dropdown-item">Docker</a>
+    <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -171,19 +175,6 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -232,15 +223,33 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
-            
+            <li class="nav-item" data-level="1"><a href="#classes" class="nav-link">Classes</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#constructor" class="nav-link">Constructor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#instances" class="nav-link">Instances</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#methods" class="nav-link">Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#inheritance" class="nav-link">Inheritance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="constructor">Constructor</h3>
+<h1 id="classes">Classes</h1>
+<h2 id="constructor">Constructor</h2>
 <ul>
 <li>JavaScript calls the <code>constructor()</code> method every time it creates a new <em>instance</em> of a class.</li>
 </ul>
@@ -252,7 +261,7 @@
 }
 </code></pre>
 <hr />
-<h3 id="instances">Instances</h3>
+<h2 id="instances">Instances</h2>
 <ul>
 <li>An <em>instance</em> is an object that contains the property names and methods of a class, but with unique property values.</li>
 </ul>
@@ -260,7 +269,7 @@
 console.log(halley.name); // Output: 'Halley'
 </code></pre>
 <hr />
-<h3 id="methods">Methods</h3>
+<h2 id="methods">Methods</h2>
 <ul>
 <li>Class method and getter syntax is the same as it is for objects except you can not include commas between methods.</li>
 </ul>
@@ -299,7 +308,7 @@ console.log(Animal.generateName()); // returns a name
 
 </code></pre>
 <hr />
-<h3 id="inheritance">Inheritance</h3>
+<h2 id="inheritance">Inheritance</h2>
 <ul>
 <li>Create a <em>parent</em> class (also known as a superclass) with properties and methods that multiple <em>child</em> classes (also known as subclasses) share </li>
 <li>Child classes inherit the properties and methods from their parent class</li>

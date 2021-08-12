@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/promises/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Promises - Personal Notes</title>
+        <title>Promises - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <a class="navbar-brand" href="../../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,11 @@
 </li>
                                     
 <li>
-    <a href="../../../basics/terminal-cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="../../../basics/python/" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/macos/" class="dropdown-item">MacOS</a>
 </li>
                                 </ul>
                             </li>
@@ -113,7 +117,7 @@
 </li>
                                     
 <li>
-    <a href="../../../system_design/overview.md" class="dropdown-item">Docker</a>
+    <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -171,19 +175,6 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -232,22 +223,38 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#ayscnhronous-programming" class="nav-link">Ayscnhronous Programming</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#what-is-a-promise" class="nav-link">What is a Promise?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#constructing-a-promise-object" class="nav-link">Constructing a Promise Object</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#settimeout-in-node" class="nav-link">setTimeout() in Node:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="ayscnhronous-programming">Ayscnhronous Programming</h3>
+<h2 id="ayscnhronous-programming">Ayscnhronous Programming</h2>
 <ul>
 <li>An <em>asynchronous operation</em> is one that allows the computer to “move on” to other tasks while waiting for the asynchronous operation to complete</li>
 <li>Asynchronous programming means that time-consuming operations don’t have to bring everything else in our programs to a halt</li>
 <li>JS handles asynchronicity using the <code>Promise</code> object, introduced with ES6 </li>
 </ul>
 <hr />
-<h3 id="what-is-a-promise">What is a Promise?</h3>
+<h2 id="what-is-a-promise">What is a Promise?</h2>
 <ul>
 <li>Promises are objects that represent the eventual outcome of an asynchronous operation </li>
 <li>A <code>Promise</code> object can be in one of three states:</li>
@@ -260,7 +267,7 @@
 <li>Promises are returned from a asyncrhonous operations</li>
 </ul>
 <hr />
-<h3 id="constructing-a-promise-object">Constructing a Promise Object</h3>
+<h2 id="constructing-a-promise-object">Constructing a Promise Object</h2>
 <ul>
 <li><code>Promise</code> constructor takes a function called the <em>executor function</em> as an argument</li>
 <li><em>Executor Function</em> runs automatically when constructor is called, generally starts an asynchronous operation, and dictates how the promsie should be settled</li>
@@ -279,12 +286,11 @@
 }
 const myPromise = new Promise(executorFunction)
 </code></pre>
-<h3 id="settimeout-in-node">setTimeout() in Node:</h3>
+<h2 id="settimeout-in-node">setTimeout() in Node:</h2>
 <ul>
 <li>Takes a callback function and delay in milliseconds as arguments</li>
 <li>The callback function will execute in <em>at least</em> the passed in delay (Could be longer)</li>
-<li>This happens b/c after the delay, the line of code is added to be run but any synchronous code from the program will run before it, possibly delaying the callback functions execution </li>
-<li></li>
+<li>This happens b/c after the delay, the line of code is added to be run but any synchronous code from the program will run before it, possibly delaying the callback functions execution</li>
 </ul></div>
             </div>
         </div>

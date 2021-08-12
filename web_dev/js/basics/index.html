@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/basics/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Basics - Personal Notes</title>
+        <title>Basics - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <a class="navbar-brand" href="../../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,11 @@
 </li>
                                     
 <li>
-    <a href="../../../basics/terminal-cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="../../../basics/python/" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/macos/" class="dropdown-item">MacOS</a>
 </li>
                                 </ul>
                             </li>
@@ -113,7 +117,7 @@
 </li>
                                     
 <li>
-    <a href="../../../system_design/overview.md" class="dropdown-item">Docker</a>
+    <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -171,19 +175,6 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -205,7 +196,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../../system_design/microservices/" class="nav-link">
+                                <a rel="prev" href="../../../system_design/docker/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -232,22 +223,66 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#what-is-javascript" class="nav-link">What is JavaScript</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#uses-for-javascript" class="nav-link">Uses for JavaScript:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#primitive-data-types" class="nav-link">Primitive Data Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#variables" class="nav-link">Variables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#conditional-statements" class="nav-link">Conditional Statements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#functions" class="nav-link">Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#scope" class="nav-link">Scope</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#arrays" class="nav-link">Arrays</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#loops" class="nav-link">Loops</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#higher-order-functions" class="nav-link">Higher-Order Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#iterators" class="nav-link">Iterators</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="what-is-javascript">What is JavaScript</h3>
+<h2 id="what-is-javascript">What is JavaScript</h2>
 <ul>
 <li>Dynamic Programming Language (operations done at run-time)</li>
 <li>E.g. Possible to change variable type or add new properties/methods to an object while the program is running</li>
@@ -260,7 +295,7 @@
 <li>Scripting language (lightweight)</li>
 </ul>
 <hr />
-<h3 id="uses-for-javascript">Uses for JavaScript:</h3>
+<h2 id="uses-for-javascript">Uses for JavaScript:</h2>
 <ul>
 <li>Put content in an HTML page on the fly</li>
 <li>Make webpages responsive</li>
@@ -271,7 +306,7 @@
 <li>Build apps w/ JS frameworks (ex: angularJS, reactJS, etc)</li>
 </ul>
 <hr />
-<h3 id="primitive-data-types">Primitive Data Types</h3>
+<h2 id="primitive-data-types">Primitive Data Types</h2>
 <ul>
 <li>Number- integers and decimals</li>
 <li>String- use single or double quotes (single preferred)</li>
@@ -282,7 +317,7 @@
 <li>Symbol- unique identifiers and useful in more complex coding</li>
 </ul>
 <hr />
-<h3 id="variables">Variables</h3>
+<h2 id="variables">Variables</h2>
 <ul>
 <li>When declaring variables without assigning a value, their inital value is set to <code>undefined</code></li>
 <li>Prior to ES6, <code>var</code> was the only keyword to declare variables (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">More Info</a>)</li>
@@ -309,7 +344,7 @@ console.log(`I own a pet ${myPet}`);
 <li><code>typeof</code> operator will return a string of the data type of the value to its right (e.g. typeof 'hello' returns 'string') </li>
 </ul>
 <hr />
-<h3 id="conditional-statements">Conditional Statements</h3>
+<h2 id="conditional-statements">Conditional Statements</h2>
 <pre><code class="language-javascript">if (greeting) {
     console.log('Hello World!')
 } else if (goodbye){
@@ -365,7 +400,7 @@ switch (item) {
 }
 </code></pre>
 <hr />
-<h3 id="functions">Functions</h3>
+<h2 id="functions">Functions</h2>
 <ul>
 <li>Hoisting applies to functions as well, allowing a function to be called before it is defined in the code</li>
 <li>Not good code practice though</li>
@@ -403,7 +438,7 @@ switch (item) {
 <pre><code class="language-javascript">const sumNums = num =&gt; num + num; //Will return num + num
 </code></pre>
 <hr />
-<h3 id="scope">Scope</h3>
+<h2 id="scope">Scope</h2>
 <ul>
 <li>Defines where variablescan be accessed or referenced</li>
 <li>In <em>block scope</em> variables are declared inside a block (set of <code>{}</code>) and are called <em>local variables</em></li>
@@ -419,7 +454,7 @@ switch (item) {
 <li>Saves memory b/c the variables are automatically erased after the block is finished running</li>
 </ul>
 <hr />
-<h3 id="arrays">Arrays</h3>
+<h2 id="arrays">Arrays</h2>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array">Documentation</a></li>
 <li>Can store any combination of data types( <code>const list = ['Hello',45,true]</code>)</li>
@@ -447,7 +482,7 @@ num2.sort() //Strings come last
 nums.reverse() //Reverses order
 </code></pre>
 <hr />
-<h3 id="loops">Loops</h3>
+<h2 id="loops">Loops</h2>
 <ul>
 <li>for loop consists of an initialization, stopping condition, and iteration statement</li>
 <li>Do while loops run a piece of code then check the condition compared to while loops that check the condition and then run the code</li>
@@ -462,7 +497,7 @@ while (condition) {} //Avoid infinite loops!
 do {} while (condition)
 </code></pre>
 <hr />
-<h3 id="higher-order-functions">Higher-Order Functions</h3>
+<h2 id="higher-order-functions">Higher-Order Functions</h2>
 <ul>
 <li>Functions that accept other functions as arguments and/or return functions as output </li>
 <li><em>Callback Functions</em> are functions that are passed as arguments and invoked <ul>
@@ -477,7 +512,7 @@ do {} while (condition)
 <li>Every JS function is actually a <code>Function</code> object (<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function">Documentation</a>)</li>
 </ul>
 <hr />
-<h3 id="iterators">Iterators</h3>
+<h2 id="iterators">Iterators</h2>
 <ul>
 <li>These iterators take a callback function as an argument and execute the callback function for each element in the array</li>
 <li><code>.forEach()</code> </li>

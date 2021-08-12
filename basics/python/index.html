@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/python/tips/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/basics/python/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Tips - Personal Notes</title>
+        <title>Python - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">Personal Notes</a>
+                <a class="navbar-brand" href="../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -33,28 +33,32 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../basics/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../../basics/paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../../basics/oop/" class="dropdown-item">Object Oriented Programming</a>
+    <a href="../oop/" class="dropdown-item">Object Oriented Programming</a>
 </li>
                                     
 <li>
-    <a href="../../basics/regex/" class="dropdown-item">Regex</a>
+    <a href="../regex/" class="dropdown-item">Regex</a>
 </li>
                                     
 <li>
-    <a href="../../basics/terminal-cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="./" class="dropdown-item active">Python</a>
+</li>
+                                    
+<li>
+    <a href="../macos/" class="dropdown-item">MacOS</a>
 </li>
                                 </ul>
                             </li>
@@ -113,7 +117,7 @@
 </li>
                                     
 <li>
-    <a href="../../system_design/overview.md" class="dropdown-item">Docker</a>
+    <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -171,19 +175,6 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -204,6 +195,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../regex/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../macos/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -222,8 +223,36 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#python-tips-and-tricks" class="nav-link">Python Tips and Tricks</a>
+            <li class="nav-item" data-level="1"><a href="#python" class="nav-link">Python</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ternary-conditionals" class="nav-link">Ternary Conditionals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#number-formatting" class="nav-link">Number Formatting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#context-managers" class="nav-link">Context Managers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#enumerate-functions" class="nav-link">Enumerate Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#zip-function" class="nav-link">Zip Function</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#unpacking" class="nav-link">Unpacking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#python-executable" class="nav-link">Python Executable</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -231,43 +260,41 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="python-tips-and-tricks">Python Tips and Tricks</h2>
-<pre><code class="language-python">#Ternary Conditionals
-condition = True
+<h1 id="python">Python</h1>
+<hr />
+<h2 id="ternary-conditionals">Ternary Conditionals</h2>
+<pre><code class="language-python">condition = True
 x = 1 if condition else 0
-
-#Underscore Placeholders
-num1 = 1_000_000_000
+</code></pre>
+<h2 id="number-formatting">Number Formatting</h2>
+<pre><code class="language-python">num1 = 1_000_000_000
 num2 = 10_000_000
 total = num1 + num2
 print(f'{total:,}') #Uses f-string to format output w/ commas
-
-#Context Managers- manage resources for you by opening and closing resources automatically 
-with open('test.txt','r') as f:
+</code></pre>
+<h2 id="context-managers">Context Managers</h2>
+<p>Manage resources such as IO connections, threads, db connections, etc. by opening &amp; closing resources automatically</p>
+<pre><code class="language-python">with open('test.txt','r') as f:
   file_contents = f.read()
-  #Works w/ other resources like threads, DB connections, etc
-
-#Enumerate Function
-names = ['Bob','Steve','Jim']
+</code></pre>
+<h2 id="enumerate-functions">Enumerate Functions</h2>
+<pre><code class="language-python">names = ['Bob','Steve','Jim']
 for index,name in enumerate(names):
   print(index,name)
 
 for index,name in enumerate(names, start=1): #Can specify starting index value
   print(index,name)
-
-#Zip Function- loops over n lists at once
-#when lists are different lengths, it stops at the end of the shortest list
-names = []
-heroes = []
-universes = []
-for name,hero,universe in zip(names,heroes,universes):
+</code></pre>
+<h2 id="zip-function">Zip Function</h2>
+<p>Loops over <code>n</code> lists at once. When lists are different lengths, it stops at the end of the shortest list</p>
+<pre><code class="language-python">for name, hero, universe in zip(names, heroes, universes):
   print(name,hero)
 
-for value in zip(names,heroes,universes):
+for value in zip(names, heroes, universes):
   print(value) #Value is a tuple of the results of the 3 lists
-
-#Unpacking
-a,b = (1,2)
+</code></pre>
+<h2 id="unpacking">Unpacking</h2>
+<pre><code class="language-python">a,b = (1,2)
 print(a) #1
 print(b) #2
 c,_ = (4,5) #use underscore when you don't want to use a variable
@@ -280,8 +307,22 @@ print(z) #[3,5,6,7]
 
 x,y,*_, z = (1,2,3,4,6,7,) #ignores all values after 1 &amp; 2 but until 7, which is stored in z
 </code></pre>
-<p><code>python3 -m module_name</code> Searches Sys.path for named module and excecutes its contents as the main module
-Runs the specified module even if it isnt in the cwd </p></div>
+<h2 id="python-executable">Python Executable</h2>
+<ul>
+<li>MacOS installs python 2.7 by default and should not be deleted <ul>
+<li><code>/usr/bin/python</code> and <code>/usr/bin/python2</code> are symlinks to default install: <code>System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7</code></li>
+</ul>
+</li>
+<li>Python 3+ versions are installed in <ul>
+<li><code>/usr/local/bin/python3</code> is a symlink to version 3.5 installed in <code>/Library/Frameworks/Python.framework/Versions/3.5</code> by downloading python from internet</li>
+<li><code>/usr/local/bin/python3.9</code> is a symlink to version 3.9 installed in <code>/usr/local/Cellar</code> by homebrew (same goes for <code>pip3.9</code>) </li>
+<li><code>/usr/bin/python3</code> is the actual install of version 3.8. Note sure how it got there but it is currently looked at on the path after the other version of python3 in the local/bin so it is not found unless the version is being explicitly looked for</li>
+<li>All 3 versions of python3 are needed for ROS stuff so thats fun</li>
+</ul>
+</li>
+<li><code>python3 -m module_name</code> Searches the path for the module and excecutes its contents as the main module (Runs the specified module even if it isnt in the cwd)</li>
+<li>Note: find symlinks using <code>ls -l</code></li>
+</ul></div>
             </div>
         </div>
 

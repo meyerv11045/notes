@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/modules/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Modules - Personal Notes</title>
+        <title>Modules - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <a class="navbar-brand" href="../../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,11 @@
 </li>
                                     
 <li>
-    <a href="../../../basics/terminal-cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="../../../basics/python/" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/macos/" class="dropdown-item">MacOS</a>
 </li>
                                 </ul>
                             </li>
@@ -113,7 +117,7 @@
 </li>
                                     
 <li>
-    <a href="../../../system_design/overview.md" class="dropdown-item">Docker</a>
+    <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -171,19 +175,6 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -232,14 +223,24 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
+            <li class="nav-item" data-level="1"><a href="#modules-overview" class="nav-link">Modules Overview</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#nodejs-syntax" class="nav-link">Node.js Syntax</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#es6-syntax" class="nav-link">ES6 Syntax</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="modules-overview">Modules Overview</h3>
+<h1 id="modules-overview">Modules Overview</h1>
 <ul>
 <li>Reusable pieces of code that can be exported from one program and imported for use in another program</li>
 <li>Benefits of Using Modules:</li>
@@ -252,8 +253,8 @@
 <li>ES6 <code>import</code>/<code>export</code> syntax</li>
 </ul>
 <hr />
-<h3 id="nodejs-syntax">Node.js Syntax</h3>
-<h4 id="moduleexports">module.exports</h4>
+<h2 id="nodejs-syntax">Node.js Syntax</h2>
+<h3 id="moduleexports">module.exports</h3>
 <ul>
 <li>Every JavaScript file run in Node has a local <code>module</code> object with an <code>exports</code> property used to define what should be exported from the file</li>
 <li>The pattern we use to export modules:</li>
@@ -276,7 +277,7 @@ module.exports = Menu;
   } 
 }; 
 </code></pre>
-<h4 id="require">require()</h4>
+<h3 id="require">require()</h3>
 <ul>
 <li>Used in Node to import the exported module into another file so its defined behavior can be used</li>
 <li>Takes a file path argument pointing to the original module file</li>
@@ -293,8 +294,8 @@ function placeOrder() {
 placeOrder();
 </code></pre>
 <hr />
-<h3 id="es6-syntax">ES6 Syntax</h3>
-<h4 id="export-default">export default</h4>
+<h2 id="es6-syntax">ES6 Syntax</h2>
+<h3 id="export-default">export default</h3>
 <ul>
 <li>Works similarly to the <code>module.exports</code> syntax, allowing us to export 1 module per file</li>
 <li>Not supported in Node.js so this syntax is used for front-end development </li>
@@ -302,14 +303,14 @@ placeOrder();
 <pre><code class="language-javascript">let Menu = {};
 export default Menu; 
 </code></pre>
-<h4 id="import">import</h4>
+<h3 id="import">import</h3>
 <ul>
 <li>The name following <code>import</code> specifies the name of the variable to store the default export in </li>
 <li>When specifying the path name after <code>from</code>, .js is left off because it specifically refers to the name of the file w/o the extension of the file when dealing with local files</li>
 </ul>
 <pre><code class="language-javascript">import Menu from './menu';
 </code></pre>
-<h4 id="named-exports">Named Exports</h4>
+<h3 id="named-exports">Named Exports</h3>
 <ul>
 <li>Allow us to export data through the use of variables</li>
 </ul>
@@ -346,7 +347,7 @@ function isGlutenFree() {};
 export { specialty as chefsSpecial, isVegetarian as isVeg };
 export default isGlutenFree;
 </code></pre>
-<h4 id="named-imports">Named Imports</h4>
+<h3 id="named-imports">Named Imports</h3>
 <ul>
 <li>To import objects stored in a variable, we use the <code>import</code> keyword and include the variables in a set of <code>{}</code></li>
 <li>Don't have to import all the variables exported in the other module</li>

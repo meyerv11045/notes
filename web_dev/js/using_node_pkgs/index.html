@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/using_node_pkgs/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Node Pkgs - Personal Notes</title>
+        <title>Node Pkgs - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <a class="navbar-brand" href="../../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,11 @@
 </li>
                                     
 <li>
-    <a href="../../../basics/terminal-cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="../../../basics/python/" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/macos/" class="dropdown-item">MacOS</a>
 </li>
                                 </ul>
                             </li>
@@ -113,7 +117,7 @@
 </li>
                                     
 <li>
-    <a href="../../../system_design/overview.md" class="dropdown-item">Docker</a>
+    <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -171,19 +175,6 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -232,13 +223,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#using-node-packages-in-a-project" class="nav-link">Using Node Packages in a Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#scripts" class="nav-link">Scripts:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="using-node-packages-in-a-project">Using Node Packages in a Project</h3>
+<h2 id="using-node-packages-in-a-project">Using Node Packages in a Project</h2>
 <ol>
 <li>
 <p>Initialize the project with <code>npm init</code></p>
@@ -267,8 +266,8 @@
 </li>
 </ol>
 <hr />
-<h3 id="scripts">Scripts:</h3>
-<h5 id="sass-css-pre-compiler">Sass (CSS Pre-Compiler):</h5>
+<h2 id="scripts">Scripts:</h2>
+<h4 id="sass-css-pre-compiler">Sass (CSS Pre-Compiler):</h4>
 <ul>
 <li><code>node-sass</code> package should be saved to devDependencies</li>
 </ul>
@@ -278,13 +277,13 @@
 <li>Command watches (-w) the scss folder and outputs (-o) the compiled css to the css folder in the dist directory </li>
 <li>--recursive prevets issues with partials and auto-reloading </li>
 </ul>
-<h5 id="jest-js-testing-framework">Jest (JS Testing Framework):</h5>
+<h4 id="jest-js-testing-framework">Jest (JS Testing Framework):</h4>
 <ul>
 <li><code>jest</code> package should be saved to devDependencies</li>
 </ul>
 <pre><code class="language-json">&quot;test&quot;: &quot;jest&quot;
 </code></pre>
-<h5 id="babel-es6-to-es5-transpilation">Babel (ES6+ to ES5 Transpilation):</h5>
+<h4 id="babel-es6-to-es5-transpilation">Babel (ES6+ to ES5 Transpilation):</h4>
 <ul>
 <li><code>babel-cli</code> and <code>babel-preset-env</code> packes should be saved to devDependencies</li>
 </ul>

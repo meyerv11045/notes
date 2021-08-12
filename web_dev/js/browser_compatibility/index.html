@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/browser_compatibility/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Browser Compatibility - Personal Notes</title>
+        <title>Browser Compatibility - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <a class="navbar-brand" href="../../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,11 @@
 </li>
                                     
 <li>
-    <a href="../../../basics/terminal-cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="../../../basics/python/" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/macos/" class="dropdown-item">MacOS</a>
 </li>
                                 </ul>
                             </li>
@@ -113,7 +117,7 @@
 </li>
                                     
 <li>
-    <a href="../../../system_design/overview.md" class="dropdown-item">Docker</a>
+    <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -171,19 +175,6 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -232,12 +223,24 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="1"><a href="#browser-compatibility" class="nav-link">Browser Compatibility</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#transpilation-detailed-notes" class="nav-link">Transpilation (Detailed Notes)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#transpilation-process-summary" class="nav-link">Transpilation Process (Summary):</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="browser-compatibility">Browser Compatibility</h3>
+<h1 id="browser-compatibility">Browser Compatibility</h1>
 <ul>
 <li>Some ES6 features, like modules, are still not supported by most web browsers</li>
 <li><a href="http://caniuse.com/">caniuse.com</a> is the bset resource for finding browser compatiblity info on a feature-by-feature basis</li>
@@ -253,7 +256,7 @@
 <li><code>babel-preset-env</code>- Node package w/ ES6+ to ES5 syntax mapping information</li>
 </ul>
 <hr />
-<h4 id="transpilation-detailed-notes">Transpilation (Detailed Notes)</h4>
+<h2 id="transpilation-detailed-notes">Transpilation (Detailed Notes)</h2>
 <ol>
 <li>Setup the project using the specified file structure and npm</li>
 </ol>
@@ -338,7 +341,7 @@
 <li>The one command transpiles all code in <strong>src</strong>- good for larger projects with numerous JS files</li>
 </ol>
 <hr />
-<h4 id="transpilation-process-summary">Transpilation Process (Summary):</h4>
+<h2 id="transpilation-process-summary">Transpilation Process (Summary):</h2>
 <ol>
 <li>
 <p>Initialize your project using <code>npm init</code> and create a directory called <strong>src</strong></p>

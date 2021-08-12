@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/web_dev/js/objects/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Objects - Personal Notes</title>
+        <title>Objects - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../../..">Personal Notes</a>
+                <a class="navbar-brand" href="../../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -54,7 +54,11 @@
 </li>
                                     
 <li>
-    <a href="../../../basics/terminal-cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="../../../basics/python/" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="../../../basics/macos/" class="dropdown-item">MacOS</a>
 </li>
                                 </ul>
                             </li>
@@ -113,7 +117,7 @@
 </li>
                                     
 <li>
-    <a href="../../../system_design/overview.md" class="dropdown-item">Docker</a>
+    <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -171,19 +175,6 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                    
-<li>
-    <a href="../../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -232,20 +223,46 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#objects" class="nav-link">Objects</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#object-literal" class="nav-link">Object Literal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#object-constructor" class="nav-link">Object Constructor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#privacy" class="nav-link">Privacy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#factory-functions" class="nav-link">Factory Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
+            <li class="nav-item" data-level="2"><a href="#destructuring" class="nav-link">Destructuring</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             
-            
-            
+            <li class="nav-item" data-level="2"><a href="#built-in-object-methods" class="nav-link">Built-In Object Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="objects">Objects</h3>
+<h2 id="objects">Objects</h2>
 <ul>
 <li>Are <em>passed by reference</em> meaning the variable assigned to an object points to the space in memory holding the object when passed into a function as an argument</li>
 <li>Functions that change object properties actually mutate the object permanently even when assigned to a <code>const</code> variable</li>
@@ -254,7 +271,7 @@
 <pre><code class="language-javascript">for (let member in spaceship.crew) {}
 </code></pre>
 <hr />
-<h3 id="object-literal">Object Literal:</h3>
+<h2 id="object-literal">Object Literal</h2>
 <ul>
 <li>Data is organized into key-value pairs where a key points to a location in memory that holds a value</li>
 <li>Keys are strings but values can be any data type</li>
@@ -300,7 +317,7 @@ person['children'][0];
 person['address']['street'];
 </code></pre>
 <hr />
-<h3 id="object-constructor">Object Constructor:</h3>
+<h2 id="object-constructor">Object Constructor</h2>
 <pre><code class="language-javascript">let apple = new Object();
 apple.color = 'red';
 apple.shape = 'round';
@@ -349,7 +366,7 @@ goat.diet(); //Output: herbivore
 goat.diet(); // Prints undefined
 </code></pre>
 <hr />
-<h3 id="privacy">Privacy</h3>
+<h2 id="privacy">Privacy</h2>
 <ul>
 <li>Only certain properties should be mutable/able to change in value</li>
 <li>JS does not have privacy built-in for objects</li>
@@ -394,7 +411,7 @@ person.age = 40
 console.log(person._age) //40 
 </code></pre>
 <hr />
-<h3 id="factory-functions">Factory Functions</h3>
+<h2 id="factory-functions">Factory Functions</h2>
 <ul>
 <li>Returns an object that can be reused to make multiple object instances</li>
 <li>Simply returns an object</li>
@@ -414,7 +431,7 @@ const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
 ghost.scare(); // 'BOO!'
 </code></pre>
 <hr />
-<h3 id="destructuring">Destructuring</h3>
+<h2 id="destructuring">Destructuring</h2>
 <ul>
 <li>An ES6 shortcut for assigning an object's properties to variables</li>
 <li><em>Property Value Shorthand</em> can be used in creating factory functions where the property's name is the same as the variable it is being assigned to </li>
@@ -443,7 +460,7 @@ const {day} = vampire.preferences //Stay inside
 
 </code></pre>
 <hr />
-<h3 id="built-in-object-methods">Built-In Object Methods</h3>
+<h2 id="built-in-object-methods">Built-In Object Methods</h2>
 <ul>
 <li>Object Instance Methods: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods">(Documentation)</a></li>
 <li><code>.hasOwnProperty()</code>, <code>.valueOf()</code></li>
