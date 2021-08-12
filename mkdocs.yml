@@ -4,28 +4,25 @@ docs_dir: notes
 
 nav:
   - Basics:
+    - 'Software Engineering Notebook': 'basics/swe-notes.md'
+    - 'Programming Paradigms': 'basics/paradigms.md'
     - 'Object Oriented Programming': 'basics/oop.md'
     - 'Regex': 'basics/regex.md'
-    - 'Terminal Commands': 'basics/terminal_cmds.md'
+    - 'Terminal Commands': 'basics/terminal-cmds.md'
   - Data Structures:
-    - 'Linked List': 'data_structures/linked_list.md'
+    - 'Linked List': 'data_structures/linked-list.md'
     - 'Stack': 'data_structures/stack.md'
     - 'Queue': 'data_structures/queue.md'
     - 'Tree': 'data_structures/tree.md'
     - 'Graph': 'data_structures/graph.md'
-    - 'Hash Table': 'data_structures/hash_table.md'
+    - 'Hash Table': 'data_structures/hash-table.md'
     - 'Heap': 'data_structures/heap.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
-    - 'SQL Overview': 'databases/sql.md'
-    - 'SQL': 'databases/sql_cmds.md'
+    - 'SQL': 'databases/sql.md'
   - System Design:
-    - Docker: 
-      - 'Overview': 'system_design/docker/overview.md'
-      - 'Tags': 'system_design/docker/tags.md'
-      - 'Compose': 'system_design/docker/compose.md'
-      - 'Cloud': 'system_design/docker/cloud.md'
     - 'Microservices': 'system_design/microservices.md'
+    - 'Docker': 'system_design/overview.md'
   - Web Development:
     - Javascript:
       - 'Basics': 'web_dev/js/basics.md'
@@ -41,3 +38,6 @@ nav:
   - Machine Learning:
     - 'Reinforcement Learning': 'machine_learning/reinforcement_learning.md'
     - 'Activation Functions': 'machine_learning/activation_functions.md'
+  - Hardware:
+    - '3D Printing': 'hardware/3d-printing.md'
+    - 'Raspberry Pi': 'hardware/raspberry-pi.md'
