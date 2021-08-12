@@ -1,4 +1,4 @@
-### Objects
+## Objects
 
 - Are *passed by reference* meaning the variable assigned to an object points to the space in memory holding the object when passed into a function as an argument
   - Functions that change object properties actually mutate the object permanently even when assigned to a `const` variable
@@ -10,7 +10,7 @@ for (let member in spaceship.crew) {}
 
 ---
 
-### Object Literal:
+## Object Literal
 
 - Data is organized into key-value pairs where a key points to a location in memory that holds a value
   - Keys are strings but values can be any data type
@@ -59,7 +59,7 @@ person['address']['street'];
 
 ---
 
-### Object Constructor:
+## Object Constructor
 
 ```javascript
 let apple = new Object();
@@ -118,7 +118,7 @@ goat.diet(); // Prints undefined
 
 ---
 
-### Privacy
+## Privacy
 
 - Only certain properties should be mutable/able to change in value
 - JS does not have privacy built-in for objects
@@ -167,7 +167,7 @@ console.log(person._age) //40
 
 ---
 
-### Factory Functions
+## Factory Functions
 
 - Returns an object that can be reused to make multiple object instances
   - Simply returns an object
@@ -190,7 +190,7 @@ ghost.scare(); // 'BOO!'
 
 ---
 
-### Destructuring
+## Destructuring
 
 - An ES6 shortcut for assigning an object's properties to variables
 - *Property Value Shorthand* can be used in creating factory functions where the property's name is the same as the variable it is being assigned to 
@@ -223,7 +223,7 @@ const {day} = vampire.preferences //Stay inside
 
 ---
 
-### Built-In Object Methods
+## Built-In Object Methods
 
 - Object Instance Methods: [(Documentation)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods)
   - `.hasOwnProperty()`, `.valueOf()`

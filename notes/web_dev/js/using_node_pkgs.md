@@ -1,4 +1,4 @@
-### Using Node Packages in a Project
+## Using Node Packages in a Project
 
 1. Initialize the project with `npm init`
 
@@ -17,9 +17,9 @@
 
 ---
 
-### Scripts:
+## Scripts:
 
-##### Sass (CSS Pre-Compiler): 
+#### Sass (CSS Pre-Compiler): 
 
 - `node-sass` package should be saved to devDependencies
 
@@ -30,7 +30,7 @@
 - Command watches (-w) the scss folder and outputs (-o) the compiled css to the css folder in the dist directory 
 - --recursive prevets issues with partials and auto-reloading 
 
-##### Jest (JS Testing Framework):
+#### Jest (JS Testing Framework):
 
 - `jest` package should be saved to devDependencies
 
@@ -38,7 +38,7 @@
 "test": "jest"
 ```
 
-##### Babel (ES6+ to ES5 Transpilation):
+#### Babel (ES6+ to ES5 Transpilation):
 
 - `babel-cli` and `babel-preset-env` packes should be saved to devDependencies
 

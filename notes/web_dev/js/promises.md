@@ -1,4 +1,4 @@
-### Ayscnhronous Programming
+## Ayscnhronous Programming
 
 - An *asynchronous operation* is one that allows the computer to “move on” to other tasks while waiting for the asynchronous operation to complete
 - Asynchronous programming means that time-consuming operations don’t have to bring everything else in our programs to a halt
@@ -6,7 +6,7 @@
 
 ---
 
-### What is a Promise?
+## What is a Promise?
 
 - Promises are objects that represent the eventual outcome of an asynchronous operation 
 - A `Promise` object can be in one of three states:
@@ -20,7 +20,7 @@
 
 ---
 
-### Constructing a Promise Object
+## Constructing a Promise Object
 
 - `Promise` constructor takes a function called the *executor function* as an argument
 - *Executor Function* runs automatically when constructor is called, generally starts an asynchronous operation, and dictates how the promsie should be settled
@@ -41,9 +41,8 @@ const executorFunction = (resolve,reject) => {
 const myPromise = new Promise(executorFunction)
 ```
 
-### setTimeout() in Node:
+## setTimeout() in Node:
 
 - Takes a callback function and delay in milliseconds as arguments
 - The callback function will execute in *at least* the passed in delay (Could be longer)
-  - This happens b/c after the delay, the line of code is added to be run but any synchronous code from the program will run before it, possibly delaying the callback functions execution 
-- 
+  - This happens b/c after the delay, the line of code is added to be run but any synchronous code from the program will run before it, possibly delaying the callback functions execution

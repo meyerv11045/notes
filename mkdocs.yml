@@ -1,4 +1,4 @@
-site_name: Personal Notes
+site_name: The Notebook
 site_url: https://meyerv11045.github.com/notes
 docs_dir: notes
 
@@ -8,7 +8,8 @@ nav:
     - 'Programming Paradigms': 'basics/paradigms.md'
     - 'Object Oriented Programming': 'basics/oop.md'
     - 'Regex': 'basics/regex.md'
-    - 'Terminal Commands': 'basics/terminal-cmds.md'
+    - 'Python': 'basics/python.md'
+    - 'MacOS': 'basics/macos.md'
   - Data Structures:
     - 'Linked List': 'data_structures/linked-list.md'
     - 'Stack': 'data_structures/stack.md'
@@ -22,7 +23,7 @@ nav:
     - 'SQL': 'databases/sql.md'
   - System Design:
     - 'Microservices': 'system_design/microservices.md'
-    - 'Docker': 'system_design/overview.md'
+    - 'Docker': 'system_design/docker.md'
   - Web Development:
     - Javascript:
       - 'Basics': 'web_dev/js/basics.md'
@@ -35,9 +36,6 @@ nav:
       - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
     - HTML & CSS:
       - 'Sass': 'web_dev/html-css/sass.md'
-  - Machine Learning:
-    - 'Reinforcement Learning': 'machine_learning/reinforcement_learning.md'
-    - 'Activation Functions': 'machine_learning/activation_functions.md'
   - Hardware:
     - '3D Printing': 'hardware/3d-printing.md'
     - 'Raspberry Pi': 'hardware/raspberry-pi.md'

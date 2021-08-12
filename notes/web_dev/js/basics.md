@@ -1,4 +1,4 @@
-### What is JavaScript
+## What is JavaScript
 
 - Dynamic Programming Language (operations done at run-time)
   - E.g. Possible to change variable type or add new properties/methods to an object while the program is running
@@ -12,7 +12,7 @@
 
 ---
 
-### Uses for JavaScript:
+## Uses for JavaScript:
 
 - Put content in an HTML page on the fly
 - Make webpages responsive
@@ -24,7 +24,7 @@
 
 ---
 
-### Primitive Data Types
+## Primitive Data Types
 
 - Number- integers and decimals
 - String- use single or double quotes (single preferred)
@@ -36,7 +36,7 @@
 
 ---
 
-### Variables
+## Variables
 
 - When declaring variables without assigning a value, their inital value is set to `undefined`
 - Prior to ES6, `var` was the only keyword to declare variables ([More Info](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var))
@@ -61,7 +61,7 @@ console.log(`I own a pet ${myPet}`);
 
 ---
 
-### Conditional Statements
+## Conditional Statements
 
 ``` javascript
 if (greeting) {
@@ -124,7 +124,7 @@ switch (item) {
 
 ---
 
-### Functions
+## Functions
 
 - Hoisting applies to functions as well, allowing a function to be called before it is defined in the code
   - Not good code practice though
@@ -168,7 +168,7 @@ const sumNums = num => num + num; //Will return num + num
 
 ---
 
-### Scope
+## Scope
 
 - Defines where variablescan be accessed or referenced
 - In *block scope* variables are declared inside a block (set of `{}`) and are called *local variables*
@@ -185,7 +185,7 @@ const sumNums = num => num + num; //Will return num + num
 
 ---
 
-### Arrays
+## Arrays
 
 - [Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
 - Can store any combination of data types( `const list = ['Hello',45,true]`)
@@ -216,7 +216,7 @@ nums.reverse() //Reverses order
 
 ---
 
-### Loops
+## Loops
 
 - for loop consists of an initialization, stopping condition, and iteration statement
 - Do while loops run a piece of code then check the condition compared to while loops that check the condition and then run the code
@@ -234,7 +234,7 @@ do {} while (condition)
 
 ---
 
-### Higher-Order Functions
+## Higher-Order Functions
 
 - Functions that accept other functions as arguments and/or return functions as output 
   - *Callback Functions* are functions that are passed as arguments and invoked 
@@ -248,7 +248,7 @@ do {} while (condition)
 
 ---
 
-### Iterators
+## Iterators
 
 - These iterators take a callback function as an argument and execute the callback function for each element in the array
 - `.forEach()` 
@@ -296,6 +296,4 @@ const summedNums = nums.reduce((accumulator,currentVal) => {
   return accumulator + currentVal;
 },100); //110
 ```
-
 ---
-

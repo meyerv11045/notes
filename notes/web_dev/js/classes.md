@@ -1,4 +1,6 @@
-### Constructor 
+# Classes
+
+## Constructor 
 
 -  JavaScript calls the `constructor()` method every time it creates a new *instance* of a class.
 
@@ -13,7 +15,7 @@ class Dog {
 
 ---
 
-### Instances
+## Instances
 
 - An *instance* is an object that contains the property names and methods of a class, but with unique property values.
 
@@ -24,7 +26,7 @@ console.log(halley.name); // Output: 'Halley'
 
 ---
 
-### Methods
+## Methods
 
 - Class method and getter syntax is the same as it is for objects except you can not include commas between methods.
 
@@ -64,12 +66,9 @@ class Animal {
 console.log(Animal.generateName()); // returns a name
 
 ```
-
-
-
 ---
 
-### Inheritance
+## Inheritance
 
 - Create a *parent* class (also known as a superclass) with properties and methods that multiple *child* classes (also known as subclasses) share 
   - Child classes inherit the properties and methods from their parent class
@@ -103,4 +102,3 @@ class Cat extends Animal {
   }
 }
 ```
-

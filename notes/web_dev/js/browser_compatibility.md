@@ -1,4 +1,4 @@
-### Browser Compatibility
+# Browser Compatibility
 
 - Some ES6 features, like modules, are still not supported by most web browsers
 - [caniuse.com](http://caniuse.com/) is the bset resource for finding browser compatiblity info on a feature-by-feature basis
@@ -15,7 +15,7 @@
 
 ---
 
-#### Transpilation (Detailed Notes)
+## Transpilation (Detailed Notes)
 
 1. Setup the project using the specified file structure and npm
 
@@ -89,7 +89,7 @@
 
 ---
 
-#### Transpilation Process (Summary):
+## Transpilation Process (Summary):
 
 1. Initialize your project using `npm init` and create a directory called **src**
 

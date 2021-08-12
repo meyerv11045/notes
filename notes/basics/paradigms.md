@@ -25,5 +25,5 @@
 - Writing a list of instructions to tell the computer what to do step by step 
   - Relies on procedures/routines 
 
-[Resource](Taken from https://medium.com/@LiliOuakninFelsen/functional-vs-object-oriented-vs procedural-programming-a3d4585557f3)
+[Resource](https://medium.com/@LiliOuakninFelsen/functional-vs-object-oriented-vs-procedural-programming-a3d4585557f3)
 

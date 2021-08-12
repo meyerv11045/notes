@@ -1,4 +1,4 @@
-### Modules Overview
+# Modules Overview
 
 - Reusable pieces of code that can be exported from one program and imported for use in another program
 - Benefits of Using Modules:
@@ -12,9 +12,9 @@
 
 ---
 
-### Node.js Syntax
+## Node.js Syntax
 
-#### module.exports
+### module.exports
 
 - Every JavaScript file run in Node has a local `module` object with an `exports` property used to define what should be exported from the file
 - The pattern we use to export modules:
@@ -40,7 +40,7 @@ module.exports = {
 }; 
 ```
 
-#### require()
+### require()
 
 - Used in Node to import the exported module into another file so its defined behavior can be used
 - Takes a file path argument pointing to the original module file
@@ -60,9 +60,9 @@ placeOrder();
 
 ---
 
-### ES6 Syntax
+## ES6 Syntax
 
-#### export default
+### export default
 
 - Works similarly to the `module.exports` syntax, allowing us to export 1 module per file
 - Not supported in Node.js so this syntax is used for front-end development 
@@ -72,7 +72,7 @@ let Menu = {};
 export default Menu; 
 ```
 
-#### import
+### import
 
 - The name following `import` specifies the name of the variable to store the default export in 
 - When specifying the path name after `from`, .js is left off because it specifically refers to the name of the file w/o the extension of the file when dealing with local files
@@ -81,7 +81,7 @@ export default Menu;
 import Menu from './menu';
 ```
 
-#### Named Exports
+### Named Exports
 
 - Allow us to export data through the use of variables
 
@@ -123,7 +123,7 @@ export default isGlutenFree;
 
 
 
-#### Named Imports
+### Named Imports
 
 - To import objects stored in a variable, we use the `import` keyword and include the variables in a set of `{}`
   - Don't have to import all the variables exported in the other module
