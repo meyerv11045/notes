@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/databases/sql/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>SQL Overview - Personal Notes</title>
+        <title>SQL - Personal Notes</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,6 +38,14 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
+    <a href="../../basics/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+</li>
+                                    
+<li>
+    <a href="../../basics/paradigms/" class="dropdown-item">Programming Paradigms</a>
+</li>
+                                    
+<li>
     <a href="../../basics/oop/" class="dropdown-item">Object Oriented Programming</a>
 </li>
                                     
@@ -46,7 +54,7 @@
 </li>
                                     
 <li>
-    <a href="../../basics/terminal_cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="../../basics/terminal-cmds/" class="dropdown-item">Terminal Commands</a>
 </li>
                                 </ul>
                             </li>
@@ -55,7 +63,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../data_structures/linked_list/" class="dropdown-item">Linked List</a>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
@@ -75,7 +83,7 @@
 </li>
                                     
 <li>
-    <a href="../../data_structures/hash_table/" class="dropdown-item">Hash Table</a>
+    <a href="../../data_structures/hash-table/" class="dropdown-item">Hash Table</a>
 </li>
                                     
 <li>
@@ -92,11 +100,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">SQL Overview</a>
-</li>
-                                    
-<li>
-    <a href="../sql_cmds/" class="dropdown-item">SQL</a>
+    <a href="./" class="dropdown-item active">SQL</a>
 </li>
                                 </ul>
                             </li>
@@ -104,30 +108,12 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">System Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Docker</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../system_design/docker/overview/" class="dropdown-item">Overview</a>
-</li>
-            
-<li>
-    <a href="../../system_design/docker/tags/" class="dropdown-item">Tags</a>
-</li>
-            
-<li>
-    <a href="../../system_design/docker/compose/" class="dropdown-item">Compose</a>
-</li>
-            
-<li>
-    <a href="../../system_design/docker/cloud/" class="dropdown-item">Cloud</a>
-</li>
-    </ul>
-  </li>
-                                    
 <li>
     <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                    
+<li>
+    <a href="../../system_design/overview.md" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -197,6 +183,19 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../hardware/3d-printing/" class="dropdown-item">3D Printing</a>
+</li>
+                                    
+<li>
+    <a href="../../hardware/raspberry-pi/" class="dropdown-item">Raspberry Pi</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -211,7 +210,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../sql_cmds/" class="nav-link">
+                                <a rel="next" href="../../system_design/microservices/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -233,12 +232,43 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#sql" class="nav-link">SQL</a>
+            <li class="nav-item" data-level="2"><a href="#structured-query-language-sql" class="nav-link">Structured Query Language (SQL)</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#4-types-of-languages-in-sql" class="nav-link">4 Types of Languages in SQL:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#keys" class="nav-link">Keys</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-level="2"><a href="#datatypes" class="nav-link">Datatypes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#functions" class="nav-link">Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#queries" class="nav-link">Queries</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#tables" class="nav-link">Tables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#insert-update-delete" class="nav-link">Insert, Update, Delete</a>
+              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -246,40 +276,104 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="sql">SQL</h1>
-<hr />
-<h3 id="structured-query-language-sql">Structured Query Language (SQL)</h3>
+<h2 id="structured-query-language-sql">Structured Query Language (SQL)</h2>
 <ul>
 <li>Standardized language for interacting w/ RDBMS</li>
 <li>used to perform CRUD operations and other admin tasks(e.g user managment, security, backup, etc)</li>
 <li>SQL code on one RDBMS might not be portable to a different RDBMS b/c SQL implementations vary btw systems</li>
 </ul>
-<hr />
-<h3 id="4-types-of-languages-in-sql">4 Types of Languages in SQL:</h3>
+<h2 id="4-types-of-languages-in-sql">4 Types of Languages in SQL:</h2>
 <ol>
 <li><strong>Data Query Language (DQL)</strong>- queries the DB for stored info</li>
 <li><strong>Data Definition Language (DDL)</strong>- defines database schemas </li>
 <li><strong>Data Control Language (DCL)</strong>- controls access to data in DB &amp; manages users and permissions</li>
 <li><strong>Data Manipulation Laguage (DML)</strong>- inserts, updates, and deletes data from DB</li>
 </ol>
-<hr />
-<h3 id="database-queries">Database Queries</h3>
-<ul>
-<li>Requests made to RDBMS for specific info</li>
-<li>Become more complex as DB's structure grows </li>
-</ul>
-<hr />
 <h2 id="keys">Keys</h2>
-<hr />
-<p><strong>Primary Key</strong>- attribute that is unique for each row in the table</p>
-<p><strong>Surrogate Key</strong>- type of primary key that has no mapping to anything in the real world </p>
-<p><strong>Natural Key</strong>- type of primary key that has a mapping to the real world (e.g. SSN)</p>
-<p><strong>Foreign Key</strong>- stores the primary key of a row in another database table (Link to another table)
-  - Defines relationships btw two tables
-    - Can define relationships w/in a table using foreign keys
-  - Can have multiple foreign keys in a table</p>
-<p><strong>Composite Key</strong>- type of primary key that is made up of two attributes
-  - Used when either of the attributes on their own do not uniquely identify a row</p></div>
+<ul>
+<li><strong>Primary Key</strong>- attribute that is unique for each row in the table<ul>
+<li><strong>Surrogate Key</strong>- type of primary key that has no mapping to anything in the real world </li>
+<li><strong>Natural Key</strong>- type of primary key that has a mapping to the real world (e.g. SSN)</li>
+</ul>
+</li>
+<li><strong>Foreign Key</strong>- stores the primary key of a row in another database table (Link to another table)<ul>
+<li>Can define relationships between tables or within a table</li>
+</ul>
+</li>
+<li><strong>Composite Key</strong>- type of primary key that is made up of two attributes<ul>
+<li>Used when either of the attributes on their own do not uniquely identify a row</li>
+</ul>
+</li>
+</ul>
+<h2 id="datatypes">Datatypes</h2>
+<pre><code class="language-SQL">INT
+DECIMAL(M,N)  -- m: total # digits, n: # digits after decimal place
+VARCHAR(L)    -- String of text of max length L
+BLOB          -- Binary large objects, stores large data like images
+DATE          -- 'YYYY-MM-DD'
+TIMESTAMP     -- 'YYYY-MM-DD HH:MM:SS'
+</code></pre>
+<h2 id="functions">Functions</h2>
+<pre><code class="language-SQL">--Find Num of Students
+SELECT COUNT(student_id)
+FROM students;
+
+--Find Num of female student born after 1980
+SELECT COUNT(student_id)
+FROM students
+WHERE sex = 'F' AND birth_date &gt; '1981-01-01';
+
+--Find avg male salary
+SELECT AVG(salary)
+FROM employees
+WHERE sex = 'M';
+
+--Find sum of all salaries
+SELECT SUM(salary)
+FROM employees;
+
+--Find num of males &amp; females
+SELECT COUNT(sex), sex
+FROM employe
+GROUP BY sex; --Group By command used for aggregation
+</code></pre>
+<h2 id="queries">Queries</h2>
+<pre><code class="language-SQL">SELECT student.name AS forename, student.major
+FROM student 
+ORDER BY name DESC --Descending alphabetical order
+LIMIT 20; --limits # of entries returned
+
+-- Comparison Operators: &lt;, &gt;, &lt;=, &gt;=, =, AND, OR, &lt;&gt; (not equal to)
+</code></pre>
+<h2 id="tables">Tables</h2>
+<pre><code class="language-SQL">CREATE TABLE student (
+  student_id INT AUTO_INCREMENT, -- you don't have to insert a primary key b/c its auto incremented
+  name VARCHAR(20) UNIQUE, 
+  major VARCHAR(20) DEFAULT 'undecided', 
+  PRIMARY KEY(student_id)
+);
+
+-- Delete a Table
+DROP TABLE student;
+
+--Show the table schema
+DESCRIBE student; 
+
+-- Add &amp; Drop Attributes
+ALTER TABLE student ADD gpa DECIMAL(3,2);
+ALTER TABLE student DROP COLUMN gpa;
+</code></pre>
+<h2 id="insert-update-delete">Insert, Update, Delete</h2>
+<pre><code class="language-sql">INSERT INTO student VALUES(1,'Jack','Biology');
+INSERT INTO student(name) VALUES('Kate');  
+
+UPDATE student
+SET major = 'Computer Science and Engineering'
+WHERE major = 'Computer Science' OR major = 'Computer Engineering';
+
+DELETE FROM student
+WHERE student_id &gt; 100;
+</code></pre></div>
             </div>
         </div>
 

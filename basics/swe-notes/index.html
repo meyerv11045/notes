@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/databases/sql_cmds/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/basics/swe-notes/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>SQL - Personal Notes</title>
+        <title>Software Engineering Notebook - Personal Notes</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,20 +33,28 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../basics/oop/" class="dropdown-item">Object Oriented Programming</a>
+    <a href="./" class="dropdown-item active">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../../basics/regex/" class="dropdown-item">Regex</a>
+    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../../basics/terminal_cmds/" class="dropdown-item">Terminal Commands</a>
+    <a href="../oop/" class="dropdown-item">Object Oriented Programming</a>
+</li>
+                                    
+<li>
+    <a href="../regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../terminal-cmds/" class="dropdown-item">Terminal Commands</a>
 </li>
                                 </ul>
                             </li>
@@ -55,7 +63,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../data_structures/linked_list/" class="dropdown-item">Linked List</a>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
@@ -75,7 +83,7 @@
 </li>
                                     
 <li>
-    <a href="../../data_structures/hash_table/" class="dropdown-item">Hash Table</a>
+    <a href="../../data_structures/hash-table/" class="dropdown-item">Hash Table</a>
 </li>
                                     
 <li>
@@ -83,20 +91,16 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../dbms/" class="dropdown-item">DBMS</a>
+    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
 </li>
                                     
 <li>
-    <a href="../sql/" class="dropdown-item">SQL Overview</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">SQL</a>
+    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
 </li>
                                 </ul>
                             </li>
@@ -104,30 +108,12 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">System Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Docker</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../system_design/docker/overview/" class="dropdown-item">Overview</a>
-</li>
-            
-<li>
-    <a href="../../system_design/docker/tags/" class="dropdown-item">Tags</a>
-</li>
-            
-<li>
-    <a href="../../system_design/docker/compose/" class="dropdown-item">Compose</a>
-</li>
-            
-<li>
-    <a href="../../system_design/docker/cloud/" class="dropdown-item">Cloud</a>
-</li>
-    </ul>
-  </li>
-                                    
 <li>
     <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                    
+<li>
+    <a href="../../system_design/overview.md" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -197,6 +183,19 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../hardware/3d-printing/" class="dropdown-item">3D Printing</a>
+</li>
+                                    
+<li>
+    <a href="../../hardware/raspberry-pi/" class="dropdown-item">Raspberry Pi</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -206,12 +205,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../sql/" class="nav-link">
+                                <a rel="prev" class="nav-link disabled">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../system_design/docker/overview/" class="nav-link">
+                                <a rel="next" href="../paradigms/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -233,23 +232,44 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#sql" class="nav-link">SQL</a>
+            <li class="nav-item" data-level="1"><a href="#software-engineering-notebook" class="nav-link">Software Engineering Notebook</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#code-readability" class="nav-link">Code Readability</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#sql-functions" class="nav-link">SQL Functions</a>
+            <li class="nav-item" data-level="2"><a href="#commentingdocumentation" class="nav-link">Commenting/Documentation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#sql-queries" class="nav-link">SQL Queries</a>
+            <li class="nav-item" data-level="2"><a href="#software-design-patterns" class="nav-link">Software Design Patterns</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#sql-commands" class="nav-link">SQL Commands</a>
+            <li class="nav-item" data-level="2"><a href="#building-a-software-stack" class="nav-link">Building a Software Stack</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#debugging" class="nav-link">Debugging</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#problem-solving" class="nav-link">Problem Solving</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#general-tips" class="nav-link">General Tips</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#notes-on-swe" class="nav-link">Notes on SWE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resources" class="nav-link">Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -257,82 +277,123 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="sql">SQL</h2>
-<pre><code class="language-SQL">-- DATATYPES
-INT -- Whole Numbers
-DECIMAL(M,N) -- Decimal Numbers: m is total # digits, n is # digits after decimal place
-VARCHAR(L) -- String of text of max length L
-BLOB --Binary large objects, stores large data (e.g. images, files)
-DATE -- 'YYYY-MM-DD'
-TIMESTAMP -- 'YYYY-MM-DD HH:MM:SS'
-</code></pre>
-<h2 id="sql-functions">SQL Functions</h2>
-<pre><code class="language-SQL">--Find Num of Students
-SELECT COUNT(student_id)
-FROM students;
-
---Find Num of female student born after 1980
-SELECT COUNT(student_id)
-FROM students
-WHERE sex = 'F' AND birth_date &gt; '1981-01-01';
-
---Find avg male salary
-SELECT AVG(salary)
-FROM employees
-WHERE sex = 'M';
-
---Find sum of all salaries
-SELECT SUM(salary)
-FROM employees;
-
---Find num of males &amp; females
-SELECT COUNT(sex), sex
-FROM employe
-GROUP BY sex; --Group By command used for aggregation
-</code></pre>
-<h2 id="sql-queries">SQL Queries</h2>
-<pre><code class="language-SQL">SELECT student.name AS forename, student.major
-FROM student 
-ORDER BY name DESC --Descending alphabetical order
-LIMIT 20; --limits # of entries returned
-
--- Comparison Operators: &lt;, &gt;, &lt;=, &gt;=, =, AND, OR, &lt;&gt; (not equal to)
-</code></pre>
-<h2 id="sql-commands">SQL Commands</h2>
-<pre><code class="language-SQL">--Create a Table
-CREATE TABLE student (
-  student_id INT AUTO_INCREMENT, --Automatically increments the value of the primary key so you don't have to insert it
-  name VARCHAR(20) UNIQUE, --Constraint on what can be entered into table 
-  major VARCHAR(20) DEFAULT 'undecided', 
-  PRIMARY KEY(student_id)
-);
-
--- Delete a Table
-DROP TABLE student;
-
---Show the table schema
-DESCRIBE student; 
-
--- Add &amp; Drop Attributes
-ALTER TABLE student ADD gpa DECIMAL(3,2);
-ALTER TABLE student DROP COLUMN gpa;
-
---Show all elements in a table
-SELECT * FROM student;
-
---Inserting Elements into a Table
-INSERT INTO student VALUES(1,'Jack','Biology');
-INSERT INTO student(name) VALUES('Kate'); -- Allows you to enter only specific attributes for a row 
-
--- Update Values for an Attribute
-UPDATE student
-SET major = 'Computer Science and Engineering'
-WHERE major = 'Computer Science' OR major = 'Computer Engineering'; --Any conditional can be used here
-
---Delete rows 
-DELETE FROM student
-WHERE student_id &gt; 100;
-</code></pre></div>
+<h1 id="software-engineering-notebook">Software Engineering Notebook</h1>
+<h3 id="uml-class-diagram">UML Class Diagram</h3>
+<ul>
+<li>Visual diagram used to demonstrate classes, their attributes/functions, and the relationships between classes</li>
+<li>Useful to start one before a large project to see how all the components interact</li>
+<li><a href="https://www.youtube.com/watch?v=UI6lqHOVHic">Youtube Tutorial</a></li>
+<li><a href="https://www.lucidchart.com/">Lucid Chart</a> (Online software used by numerous Fortune 500 companies for creating visual workspaces w/ things like UML diagrams)</li>
+</ul>
+<h3 id="class-construction">Class Construction</h3>
+<ul>
+<li>Declare all fields as private/protected whenever possible<ul>
+<li>Use getter and setter functions to access and update class fields</li>
+</ul>
+</li>
+<li>Initialize the fields in the constructor</li>
+</ul>
+<h2 id="code-readability">Code Readability</h2>
+<ul>
+<li>Readability and maintainability separate coders from good coders</li>
+<li>Focus on being able to read and understand parts of parts of code (e.g. modules/functions) without having to read entire rest of codebase</li>
+<li>Code should be Intuitive and self-documenting</li>
+<li>Readability &gt; Cleverness/Shortness<ul>
+<li>If you write the code as clever as possible, you will not be smart enough to debug it </li>
+</ul>
+</li>
+<li>Consistency in style (e.g. spacing, braces)</li>
+</ul>
+<h2 id="commentingdocumentation">Commenting/Documentation</h2>
+<ul>
+<li>Learning to write good comments is a skill</li>
+<li>Any good developer can figure out <em>what</em> your code does so your comments should explain <em>why</em> it does it that way<ul>
+<li>Comment on why you made the decisions you did in your code</li>
+</ul>
+</li>
+</ul>
+<h2 id="software-design-patterns">Software Design Patterns</h2>
+<ul>
+<li>Use encapsulation in order to separate concerns (i.e. possible points of breakdown in locally important assumptions such as object types) </li>
+<li>Try to limit managing global states (e.g. updating/referencing) since that can easily get messy, complicated, and buggy<ul>
+<li>Clarity of a codebase greatly improves when pure functions that access no external state are used </li>
+<li>Functional languages like Haskell do this really well</li>
+</ul>
+</li>
+<li>Don’t switch between programming designs (e.g. pub/sub, actors, MVC) in connected parts of a codebase</li>
+<li>Create Data Abstraction Layers<ul>
+<li>Ex: Don’t have queries for your database in your application code. Instead create a separate library between the database and application that handles all the queries and provides easy to use getter functions like load_users(). </li>
+<li>Creates consistent styles in queries</li>
+<li>Limits the number of places to change queries if the DB schema changes</li>
+</ul>
+</li>
+</ul>
+<h2 id="building-a-software-stack">Building a Software Stack</h2>
+<ul>
+<li>Don’t reinvent the wheel when not necessary</li>
+<li>Reliance on 3rd-party/open source software does leave you vulnerable to their security issues and makes you reliant on other people’s maintenance of the dependencies </li>
+<li>Choose Appropriate Database:<ul>
+<li>SQL: Postgres / MySQL / MariaDB / MemSQL / Amazon RDS</li>
+<li>Key Value Stores: Redis / Memcache / Riak</li>
+<li>NoSQL: MongoDB / Cassandra</li>
+<li>Hosted DBs: AWS RDS / DynamoDB / AppEngine Datastore </li>
+<li>Heavy Lifting: Amazon MR / Hadoop (Hive/Pig) / Cloudera / Google Big Query</li>
+</ul>
+</li>
+</ul>
+<h2 id="debugging">Debugging</h2>
+<ol>
+<li>Come up w/ a hypothesis and test it (repeat until you fix the bug) </li>
+<li>Think like a scientist when debugging </li>
+<li>Record hypothesis and result</li>
+<li>Reproduce the bug locally rather than on a server (if convenient) </li>
+<li>Once you can fix it locally (which is faster &amp; easier) you can change it on the server version</li>
+<li>Read the source code carefully and make minor alterations according to your hypothesis</li>
+<li>Use debuggers instead of messy print statements</li>
+</ol>
+<h2 id="problem-solving">Problem Solving</h2>
+<ol>
+<li>Define the problem</li>
+<li>Brainstorm (no idea is a bad idea)</li>
+<li>Pseudo-Code (don’t worry about syntax- get the ideas down)</li>
+<li>Whiteboarding/writing is useful</li>
+<li>Implement (test as you go and make sure each component works before moving on)</li>
+<li>Avoid building out a whole solution w/o testing any of the parts</li>
+<li>Optimize efficiency (Go back and try to condense code, make more efficient, etc.)</li>
+<li>Time, memory, etc.</li>
+<li>Don't optimize too soon or overoptimize something that is fine</li>
+<li>Transition solution to another language if learning a new language</li>
+</ol>
+<h2 id="general-tips">General Tips</h2>
+<ul>
+<li>You are responsible for code quality</li>
+<li>Use meaningful names</li>
+<li>Write code that expresses intent</li>
+<li>Code should speak for itself (Less comments = Less maintenance)</li>
+<li>Leave the code better than you found it</li>
+<li>Single-responsibility code</li>
+<li>Function does one thing well</li>
+<li>Less arguments = better function</li>
+<li>Tests! (Test Driven Development)</li>
+<li>Work on the big picture skeleton for the program and then fill in the details later</li>
+<li>Interface first, implementation later</li>
+<li>Independent components that can be used in different places</li>
+<li>Master your craft</li>
+<li>Create a minimum viable product (MVP) with the base functionality and then iterate by adding more features</li>
+</ul>
+<h2 id="notes-on-swe">Notes on SWE</h2>
+<ul>
+<li>Not an industry, it’s a skill achieved with lots of practice</li>
+<li>Applicable to all industries available today (i.e. software runs everything)</li>
+<li>Solving problems is an art form-- you get better with lifelong practice</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ol>
+<li><a href="https://www.toptal.com/software/six-commandments-of-good-code">Readability &amp; Software Design Practices</a></li>
+<li><a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code (Book)</a></li>
+<li><a href="https://levelup.gitconnected.com/youre-commenting-your-code-too-much-and-other-controversial-thoughts-on-documentation-1ee617ed46af">Commenting Less</a></li>
+<li><a href="https://medium.com/better-programming/restful-api-design-step-by-step-guide-2f2c9f9fcdbf">REST API Design</a></li>
+</ol></div>
             </div>
         </div>
 

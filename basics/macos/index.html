@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/basics/terminal_cmds/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/basics/macos/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Terminal Commands - Personal Notes</title>
+        <title>MacOS Overview - Personal Notes</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,9 +33,17 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+</li>
+                                    
+<li>
+    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
+</li>
                                     
 <li>
     <a href="../oop/" class="dropdown-item">Object Oriented Programming</a>
@@ -46,7 +54,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Terminal Commands</a>
+    <a href="../terminal-cmds/" class="dropdown-item">Terminal Commands</a>
 </li>
                                 </ul>
                             </li>
@@ -55,7 +63,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../data_structures/linked_list/" class="dropdown-item">Linked List</a>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
@@ -75,7 +83,7 @@
 </li>
                                     
 <li>
-    <a href="../../data_structures/hash_table/" class="dropdown-item">Hash Table</a>
+    <a href="../../data_structures/hash-table/" class="dropdown-item">Hash Table</a>
 </li>
                                     
 <li>
@@ -92,11 +100,7 @@
 </li>
                                     
 <li>
-    <a href="../../databases/sql/" class="dropdown-item">SQL Overview</a>
-</li>
-                                    
-<li>
-    <a href="../../databases/sql_cmds/" class="dropdown-item">SQL</a>
+    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
 </li>
                                 </ul>
                             </li>
@@ -104,30 +108,12 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">System Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
-  <li class="dropdown-submenu">
-    <a href="#" class="dropdown-item">Docker</a>
-    <ul class="dropdown-menu">
-            
-<li>
-    <a href="../../system_design/docker/overview/" class="dropdown-item">Overview</a>
-</li>
-            
-<li>
-    <a href="../../system_design/docker/tags/" class="dropdown-item">Tags</a>
-</li>
-            
-<li>
-    <a href="../../system_design/docker/compose/" class="dropdown-item">Compose</a>
-</li>
-            
-<li>
-    <a href="../../system_design/docker/cloud/" class="dropdown-item">Cloud</a>
-</li>
-    </ul>
-  </li>
-                                    
 <li>
     <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                    
+<li>
+    <a href="../../system_design/overview.md" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -197,6 +183,19 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../hardware/3d-printing/" class="dropdown-item">3D Printing</a>
+</li>
+                                    
+<li>
+    <a href="../../hardware/raspberry-pi/" class="dropdown-item">Raspberry Pi</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -205,16 +204,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../regex/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../../data_structures/linked_list/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -233,12 +222,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#terminal-commands-mac" class="nav-link">Terminal Commands (Mac)</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#vim-commands" class="nav-link">Vim Commands</a>
+            <li class="nav-item" data-level="1"><a href="#macos-overview" class="nav-link">MacOS Overview</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -247,106 +231,179 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="terminal-commands-mac">Terminal Commands (Mac)</h2>
-<h4 id="navigation">Navigation:</h4>
+<h1 id="macos-overview">MacOS Overview</h1>
+<h3 id="executable-path">Executable PATH</h3>
 <ul>
-<li><code>cd {/path/to/folder}</code>: changes directory to specified path</li>
-<li><code>cd /</code>: goes to root directory</li>
-<li><code>cd ~</code>: goes to user directory</li>
-<li><code>ls</code>: lists all files/folders in the current working directory</li>
-<li><code>pwd</code>: prints the path to the current working directory|</li>
+<li>
+<p><code>PATH</code> is an environment variable that contains a colon-seperated list of directories where your shell will look for executables that are called by name on the command line without an explicit path to them </p>
+</li>
+<li>
+<p>Ex: <code>/usr/bin:/bin:/home/bin</code></p>
+</li>
+<li>
+<p>Any executable called by name will be searched for in these directories in the order from left to right</p>
+</li>
+<li>if an executable exists in 2 directories, the one that is found first is executed</li>
+<li>
+<p>If no executable is found in any of the directories on the path, the shell will not execute the command and will throw a command not recognized error</p>
+</li>
+<li>
+<p><code>/etc/paths</code> sets the PATH system wide for all users (macOS specific)</p>
+</li>
+<li>
+<p><code>.~/zsh_profile</code> sets per-user preferences (<code>~</code> is the user's home directory)</p>
+</li>
+<li>
+<p><code>PATH</code>, <code>$PATH</code>, and <code>${PATH}</code> all reference the same variable just in different contexts</p>
+</li>
+<li>
+<p><code>PATH</code> is for setting the variable (e.g. <code>PATH=/usr/bin</code>) </p>
+</li>
+<li><code>$</code> denotes an environment variable</li>
+<li>variable names are case sensitive so PATH is different than Path</li>
 </ul>
-<h4 id="creating-deleting">Creating &amp; Deleting:</h4>
+<h3 id="bashzsh-profile-vs-rc">Bash/zsh Profile vs RC:</h3>
 <ul>
-<li><code>mkdir {foldername}</code>: makes a folder with the specified nam</li>
-<li><code>rm {filename}</code>: removes the specified file</li>
-<li><code>rm -r {foldername}</code>: removes the specified folder recursively</li>
-<li><code>touch {filename}</code>: creates the specified file|</li>
-<li><code>mv {filename} {new filename}</code>: renames the file/folder to the 2nd name</li>
+<li><code>.bash_profile</code> is executed for login shells (e.g. logging into machine via console or via ssh)</li>
+<li><code>.bashrc</code> is executed for interactive non-login shells (e.g. already logged in and open a new terminal window)</li>
+<li>Also run when starting a new bash instance by typing <code>/bin/bash</code> such as the shebang at the top of some python scripts</li>
+<li>In OSX, terminal runs a login shell every time by default unlike other operating systems </li>
 </ul>
-<h4 id="opening-filesfolders">Opening Files/Folders:</h4>
+<h3 id="filesystem">Filesystem</h3>
 <ul>
-<li><code>open {filename}</code>: opens the file with the default program</li>
-<li><code>open {filename} -a "{program name}"</code>: opens the file in the specified application</li>
-<li><code>open .</code>:  opens the current folder in finder</li>
-<li><code>open . -a "{program name}"</code> opens the folder in the specified application</li>
-</ul>
-<h3 id="terminal-commands-different-in-windows">Terminal Commands Different in Windows:</h3>
+<li>
+<p>Does not follow the Filesystem Hierarchy Standard that Linux operating systems do so there are some similarities and differences</p>
+</li>
+<li>
+<p><code>/</code> is the root of the MacOS filesystem</p>
+</li>
+<li>
+<p><code>/System/Library/Kernels</code>: Contains the OS kernel (replaces <code>/boot</code> folder in FHS)</p>
+</li>
+<li>
+<p><code>/Users</code>: replaces the <code>/home</code> folder in FHS</p>
+</li>
+<li>
+<p><code>/var/root/</code>: replaces the <code>/root</code> folder in FHS </p>
+</li>
+<li>
+<p><code>/usr</code> contains user installed utilities and apps</p>
+</li>
+<li>
+<p><em>user commands:</em></p>
 <ul>
-<li>dir - list files</li>
-<li>echo &gt; {filename} - create an empty file</li>
-<li>del {filename} - remove a file</li>
-<li>rmdir {directory name} - remove a directory and all files within</li>
-<li>rename {filename} {new filename} - rename a file or folder</li>
-<li>start {filename} - open file in default program</li>
-<li>start . - open current directory</li>
-<li>cls - clear the terminal screen</li>
+<li><code>/usr/bin</code> for normal users</li>
+<li><code>/usr/sbin</code> for admin users</li>
 </ul>
-<h2 id="vim-commands">Vim Commands</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>i</td>
-<td>insert/typing mode</td>
-</tr>
-<tr>
-<td>esc</td>
-<td>leave insert mode</td>
-</tr>
-<tr>
-<td>:w</td>
-<td>save additions</td>
-</tr>
-<tr>
-<td>:wq</td>
-<td>save &amp; quit</td>
-</tr>
-<tr>
-<td>:q!</td>
-<td>quit &amp; discard changes</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th align="left">Movement</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>w</td>
-<td align="left">front of next word</td>
-</tr>
-<tr>
-<td>b</td>
-<td align="left">front of previous word</td>
-</tr>
-<tr>
-<td>0</td>
-<td align="left">start of line</td>
-</tr>
-<tr>
-<td>$</td>
-<td align="left">end of line</td>
-</tr>
-<tr>
-<td>g</td>
-<td align="left">last line</td>
-</tr>
-<tr>
-<td>a</td>
-<td align="left">append to final line</td>
-</tr>
-</tbody>
-</table></div>
+</li>
+<li>shared libraries:<ul>
+<li><code>/usr/lib</code></li>
+</ul>
+</li>
+<li>Man pages (manual page- software documentation)<ul>
+<li><code>/usr/share/man</code></li>
+</ul>
+</li>
+<li>executables that shouldn't directly be run by users<ul>
+<li><code>/usr/libexec</code></li>
+</ul>
+</li>
+<li>
+<p><em>a subdirectory to place programs, libraries, and other files that don't come with the base OS</em></p>
+<ul>
+<li><code>/usr/local</code></li>
+</ul>
+</li>
+<li>
+<p><code>/dev</code> contains device files </p>
+</li>
+<li>
+<p><code>/etc</code> contains system configuration files and scripts</p>
+</li>
+<li>
+<p><code>/etc/paths</code> contains a list of paths used by <code>path_helper</code> to build and set the PATH to search for commands along</p>
+</li>
+<li>
+<p><code>/bin</code>  contians executables to provide essential user utilities (e.g common command line commands like ls or pwd or cd)</p>
+</li>
+</ul>
+<p><code>man hier</code>:</p>
+<pre><code class="language-wiki"> /             root directory of the filesystem
+
+ /bin/         user utilities fundamental to both single-user and multi-user environments
+
+ /dev/         block and character device files
+
+
+ /etc/         system configuration files and scripts
+
+ /mach_kernel  kernel executable (the operating system loaded into memory at boot time).
+
+ /sbin/        system programs and administration utilities fundamental to both single-user and multi-
+               user environments
+
+ /tmp/         temporary files
+
+ /usr/         contains the majority of user utilities and applications
+
+               bin/      common utilities, programming tools, and apps
+               include/  standard C include files
+
+                         arpa/       C include files for Internet service protocols
+                         hfs/        C include files for HFS
+                         machine/    machine specific C include files
+                         net/        misc network C include files
+                         netinet/    C include files for Internet standard protocols; see inet(4)
+                         nfs/        C include files for NFS (Network File System)
+                         objc/       C include files for Objective-C
+                         protocols/  C include files for Berkeley service protocols
+                         sys/        system C include files (kernel data structures)
+                         ufs/        C include files for UFS
+
+               lib/      archive libraries
+               libexec/  system daemons &amp; system utilities (executed by other programs)
+               local/    executables, libraries, etc. not included by the basic OS
+               sbin/     system daemons &amp; system utilities (executed by users)
+               share/    architecture-independent data files
+
+                         calendar/  a variety of pre-fab calendar files
+                         dict/      word lists
+                         man/       manual pages
+                         misc/      misc system-wide ascii text files
+                         mk/        templates for make
+                         skel/      example . (dot) files for new accounts
+                         tabset/    tab description files 
+                         zoneinfo/  timezone configuration information
+ /var/         multi-purpose log, temporary, transient, and spool files
+
+               at/        timed command scheduling files; see at(1)
+               backups/   misc. backup files
+               db/        misc. automatically generated system-specific database files
+               log/       misc. system log files
+               mail/      user mailbox files
+               run/       system information files describing various info about system since it was booted
+
+               rwho/      rwho data files
+               spool/     misc. printer and mail system spooling directories
+               tmp/       temporary files that are kept between system reboots
+               folders/   per-user temporary files and caches
+</code></pre>
+<h3 id="useful-commands">Useful Commands</h3>
+<ul>
+<li><code>man cmd</code> will display the manual page for the terminal command (useful for getting the flag descriptions for commands like <code>ls</code>)</li>
+<li><code>|</code> pipe operator is great for doing additional commands to the output of the first command</li>
+<li><code>echo "source /opt/ros/foxy/setup.zsh" &gt;&gt; .zshrc</code> is useful for adding things to the <code>.zshrc</code> without opening it up in an editor </li>
+<li><code>which python3</code> is usefull for figuring out where commands/executables are installed on the PATH</li>
+<li><code>compaudit | xargs chmod g-w</code> basically runs an audit for insecure directories (usually related to read-write permissions) and removes any write permissions that should not be on directories (<a href="https://www.wezm.net/technical/2008/09/zsh-cygwin-and-insecure-directories/">Source</a>)</li>
+<li>needed to use this to fix a compaudit warning when sourcing ros2-foxy-base</li>
+</ul>
+<h4 id="resources">Resources</h4>
+<ol>
+<li><a href="https://apple.stackexchange.com/questions/119230/what-is-standard-for-os-x-filesystem-e-g-opt-vs-usr">MacOS Filesystem</a></li>
+<li><a href="https://unix.stackexchange.com/questions/111550/what-is-path-on-a-mac-os">PATH Explanation</a></li>
+<li><a href="https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc">Bash Profile vs RC</a></li>
+<li><a href="https://stackoverflow.com/questions/35337601/why-is-there-a-usr-local-opt-directory-created-by-homebrew-and-should-i-use-it">Homebrew symlinks in /usr/local/opt to /usr/local/Cellar</a></li>
+</ol></div>
             </div>
         </div>
 
