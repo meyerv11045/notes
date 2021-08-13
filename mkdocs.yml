@@ -12,7 +12,6 @@ nav:
     - 'Regex': 'general/regex.md'
     - 'Hardware': 'general/hardware.md'
   - Data Structures:
-    - 'Pointers': 'data_structures/cs2201/02-pointers.md'
     - 'Linked List': 'data_structures/linked-list.md'
     - 'Stack': 'data_structures/stack.md'
     - 'Queue': 'data_structures/queue.md'
@@ -39,6 +38,3 @@ nav:
       - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
     - HTML & CSS:
       - 'Sass': 'web_dev/html-css/sass.md'
-  - Hardware:
-    - '3D Printing': 'hardware/3d-printing.md'
-    - 'Raspberry Pi': 'hardware/raspberry-pi.md'
