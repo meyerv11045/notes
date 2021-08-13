@@ -16,7 +16,7 @@
 
 - Based on the concept of “objects” which may contain data in the form of fields/attributes and code in the form of procedures/methods 
 - Encapsulating data & behavior into objects that interact with other elements and can perform certain actions 
-- More details in aother note section
+- Read more [here](oop.md)
 
 ## Procedural Programming (PP):
 

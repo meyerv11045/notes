@@ -4,13 +4,15 @@ docs_dir: notes
 
 nav:
   - Basics:
-    - 'Software Engineering Notebook': 'basics/swe-notes.md'
-    - 'Programming Paradigms': 'basics/paradigms.md'
-    - 'Object Oriented Programming': 'basics/oop.md'
-    - 'Regex': 'basics/regex.md'
-    - 'Python': 'basics/python.md'
-    - 'MacOS': 'basics/macos.md'
+    - 'Software Engineering Notebook': 'general/swe-notes.md'
+    - 'Git': 'general/git.md'
+    - 'Python': 'general/python.md'
+    - 'MacOS': 'general/macos.md'
+    - 'Programming Paradigms': 'general/paradigms.md'
+    - 'Regex': 'general/regex.md'
+    - 'Hardware': 'general/hardware.md'
   - Data Structures:
+    - 'Pointers': 'data_structures/cs2201/02-pointers.md'
     - 'Linked List': 'data_structures/linked-list.md'
     - 'Stack': 'data_structures/stack.md'
     - 'Queue': 'data_structures/queue.md'
@@ -21,6 +23,7 @@ nav:
   - Databases:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'
+    - 'MySQL': 'databases/mysql.md'
   - System Design:
     - 'Microservices': 'system_design/microservices.md'
     - 'Docker': 'system_design/docker.md'
