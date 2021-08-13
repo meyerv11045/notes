@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/system_design/microservices/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/general/macos/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Microservices - The Notebook</title>
+        <title>MacOS - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,36 +33,36 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../../general/git/" class="dropdown-item">Git</a>
+    <a href="../git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
-    <a href="../../general/python/" class="dropdown-item">Python</a>
+    <a href="../python/" class="dropdown-item">Python</a>
 </li>
                                     
 <li>
-    <a href="../../general/macos/" class="dropdown-item">MacOS</a>
+    <a href="./" class="dropdown-item active">MacOS</a>
 </li>
                                     
 <li>
-    <a href="../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../../general/regex/" class="dropdown-item">Regex</a>
+    <a href="../regex/" class="dropdown-item">Regex</a>
 </li>
                                     
 <li>
-    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
+    <a href="../hardware/" class="dropdown-item">Hardware</a>
 </li>
                                 </ul>
                             </li>
@@ -120,16 +120,16 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">System Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Microservices</a>
+    <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
 </li>
                                     
 <li>
-    <a href="../docker/" class="dropdown-item">Docker</a>
+    <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -208,12 +208,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../databases/mysql/" class="nav-link">
+                                <a rel="prev" href="../python/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../docker/" class="nav-link">
+                                <a rel="next" href="../paradigms/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -235,34 +235,166 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
+            <li class="nav-item" data-level="1"><a href="#macos-overview" class="nav-link">MacOS Overview</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#executable-path" class="nav-link">Executable PATH</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bashzsh-profile-vs-rc" class="nav-link">Bash/zsh Profile vs RC:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#filesystem" class="nav-link">Filesystem</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#useful-commands" class="nav-link">Useful Commands</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resources" class="nav-link">Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="microservice-architectual-style">Microservice Architectual Style:</h3>
+<h1 id="macos-overview">MacOS Overview</h1>
+<h2 id="executable-path">Executable PATH</h2>
 <ul>
-<li>Developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanics, often an HTTP resource API</li>
-<li>Encourages modularity and seperation of concerns</li>
-<li>ability to horizontally scale and partition the workload</li>
-<li>Microservices contain many aspects in reality:</li>
-<li>Clients, Caches, and Databases are all included in a microservice in conjuction with the service itself</li>
+<li><code>PATH</code> is an environment variable that contains a colon-seperated list of directories where your shell will look for executables that are called by name on the command line without an explicit path to them </li>
+<li>Ex: <code>/usr/bin:/bin:/home/bin</code><ul>
+<li>Any executable called by name will be searched for in these directories in the order from left to right</li>
+<li>if an executable exists in 2 directories, the one that is found first is executed</li>
+<li>If no executable is found in any of the directories on the path, the shell will not execute the command and will throw a command not recognized error</li>
 </ul>
-<h3 id="stateless-service">Stateless Service:</h3>
-<ul>
-<li>Not a cache or database</li>
-<li>Frequently accessed metadata</li>
-<li>no instance affinity</li>
-<li>Losing a node is not a big deal and can be easily fixed</li>
+</li>
+<li><code>/etc/paths</code> sets the PATH system wide for all users (macOS specific)</li>
+<li><code>.~/zsh_profile</code> sets per-user preferences (<code>~</code> is the user's home directory)</li>
+<li><code>PATH</code>, <code>$PATH</code>, and <code>${PATH}</code> all reference the same variable just in different contexts<ul>
+<li><code>PATH</code> is for setting the variable (e.g. <code>PATH=/usr/bin</code>) </li>
+<li><code>$</code> denotes an environment variable</li>
+<li>variable names are case sensitive so PATH is different than Path</li>
 </ul>
-<h3 id="stateful-service">Stateful Service:</h3>
+</li>
+</ul>
+<h2 id="bashzsh-profile-vs-rc">Bash/zsh Profile vs RC:</h2>
 <ul>
-<li>Databases &amp; caches</li>
-<li>Custom apps which holds lots of data</li>
-<li>Losing a node is a notable event and it might take hours to get it fixed</li>
-</ul></div>
+<li><code>.bash_profile</code> is executed for login shells (e.g. logging into machine via console or via ssh)</li>
+<li><code>.bashrc</code> is executed for interactive non-login shells (e.g. already logged in and open a new terminal window)</li>
+<li>Also run when starting a new bash instance by typing <code>/bin/bash</code> such as the shebang at the top of some python scripts</li>
+<li>In OSX, terminal runs a login shell every time by default unlike other operating systems </li>
+</ul>
+<h2 id="filesystem">Filesystem</h2>
+<ul>
+<li>Does not follow the Filesystem Hierarchy Standard that Linux operating systems do so there are some similarities and differences</li>
+<li><code>/</code> is the root of the MacOS filesystem</li>
+<li><code>/System/Library/Kernels</code>: Contains the OS kernel (replaces <code>/boot</code> folder in FHS)</li>
+<li><code>/Users</code>: replaces the <code>/home</code> folder in FHS</li>
+<li><code>/var/root/</code>: replaces the <code>/root</code> folder in FHS </li>
+<li><code>/usr</code> contains user installed utilities and apps<ul>
+<li><em>user commands:</em></li>
+<li><code>/usr/bin</code> for normal users</li>
+<li><code>/usr/sbin</code> for admin users</li>
+<li>shared libraries:</li>
+<li><code>/usr/lib</code></li>
+<li>Man pages (manual page- software documentation)</li>
+<li><code>/usr/share/man</code></li>
+<li>executables that shouldn't directly be run by users</li>
+<li><code>/usr/libexec</code></li>
+<li><em>a subdirectory to place programs, libraries, and other files that don't come with the base OS</em></li>
+<li><code>/usr/local</code></li>
+</ul>
+</li>
+<li><code>/dev</code> contains device files </li>
+<li><code>/etc</code> contains system configuration files and scripts<ul>
+<li><code>/etc/paths</code> contains a list of paths used by <code>path_helper</code> to build and set the PATH to search for commands along</li>
+</ul>
+</li>
+<li><code>/bin</code>  contians executables to provide essential user utilities (e.g common command line commands like ls or pwd or cd)</li>
+</ul>
+<p><code>man hier</code>:</p>
+<pre><code class="language-wiki"> /             root directory of the filesystem
+
+ /bin/         user utilities fundamental to both single-user and multi-user environments
+
+ /dev/         block and character device files
+
+
+ /etc/         system configuration files and scripts
+
+ /mach_kernel  kernel executable (the operating system loaded into memory at boot time).
+
+ /sbin/        system programs and administration utilities fundamental to both single-user and multi-
+               user environments
+
+ /tmp/         temporary files
+
+ /usr/         contains the majority of user utilities and applications
+
+               bin/      common utilities, programming tools, and apps
+               include/  standard C include files
+
+                         arpa/       C include files for Internet service protocols
+                         hfs/        C include files for HFS
+                         machine/    machine specific C include files
+                         net/        misc network C include files
+                         netinet/    C include files for Internet standard protocols; see inet(4)
+                         nfs/        C include files for NFS (Network File System)
+                         objc/       C include files for Objective-C
+                         protocols/  C include files for Berkeley service protocols
+                         sys/        system C include files (kernel data structures)
+                         ufs/        C include files for UFS
+
+               lib/      archive libraries
+               libexec/  system daemons &amp; system utilities (executed by other programs)
+               local/    executables, libraries, etc. not included by the basic OS
+               sbin/     system daemons &amp; system utilities (executed by users)
+               share/    architecture-independent data files
+
+                         calendar/  a variety of pre-fab calendar files
+                         dict/      word lists
+                         man/       manual pages
+                         misc/      misc system-wide ascii text files
+                         mk/        templates for make
+                         skel/      example . (dot) files for new accounts
+                         tabset/    tab description files 
+                         zoneinfo/  timezone configuration information
+ /var/         multi-purpose log, temporary, transient, and spool files
+
+               at/        timed command scheduling files; see at(1)
+               backups/   misc. backup files
+               db/        misc. automatically generated system-specific database files
+               log/       misc. system log files
+               mail/      user mailbox files
+               run/       system information files describing various info about system since it was booted
+
+               rwho/      rwho data files
+               spool/     misc. printer and mail system spooling directories
+               tmp/       temporary files that are kept between system reboots
+               folders/   per-user temporary files and caches
+</code></pre>
+<h2 id="useful-commands">Useful Commands</h2>
+<ul>
+<li><code>man cmd</code> will display the manual page for the terminal command (useful for getting the flag descriptions for commands like <code>ls</code>)</li>
+<li><code>|</code> pipe operator is great for doing additional commands to the output of the first command</li>
+<li><code>echo "source /opt/ros/foxy/setup.zsh" &gt;&gt; .zshrc</code> is useful for adding things to the <code>.zshrc</code> without opening it up in an editor </li>
+<li><code>which python3</code> is usefull for figuring out where commands/executables are installed on the PATH</li>
+<li><code>compaudit | xargs chmod g-w</code> basically runs an audit for insecure directories (usually related to read-write permissions) and removes any write permissions that should not be on directories (<a href="https://www.wezm.net/technical/2008/09/zsh-cygwin-and-insecure-directories/">Source</a>)</li>
+<li>needed to use this to fix a compaudit warning when sourcing ros2-foxy-base</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ol>
+<li><a href="https://apple.stackexchange.com/questions/119230/what-is-standard-for-os-x-filesystem-e-g-opt-vs-usr">MacOS Filesystem</a></li>
+<li><a href="https://unix.stackexchange.com/questions/111550/what-is-path-on-a-mac-os">PATH Explanation</a></li>
+<li><a href="https://apple.stackexchange.com/questions/51036/what-is-the-difference-between-bash-profile-and-bashrc">Bash Profile vs RC</a></li>
+<li><a href="https://stackoverflow.com/questions/35337601/why-is-there-a-usr-local-opt-directory-created-by-homebrew-and-should-i-use-it">Homebrew symlinks in /usr/local/opt to /usr/local/Cellar</a></li>
+</ol></div>
             </div>
         </div>
 

@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/basics/paradigms/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/general/terminal-cmds/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Programming Paradigms - The Notebook</title>
+        <title>Terminal cmds - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,7 +33,7 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -42,15 +42,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Programming Paradigms</a>
-</li>
-                                    
-<li>
-    <a href="../oop/" class="dropdown-item">Object Oriented Programming</a>
-</li>
-                                    
-<li>
-    <a href="../regex/" class="dropdown-item">Regex</a>
+    <a href="../git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
@@ -60,11 +52,27 @@
 <li>
     <a href="../macos/" class="dropdown-item">MacOS</a>
 </li>
+                                    
+<li>
+    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
+</li>
+                                    
+<li>
+    <a href="../regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../hardware/" class="dropdown-item">Hardware</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data_structures/cs2201/02-pointers.md" class="dropdown-item">Pointers</a>
+</li>
                                     
 <li>
     <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
@@ -105,6 +113,10 @@
                                     
 <li>
     <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+</li>
+                                    
+<li>
+    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
 </li>
                                 </ul>
                             </li>
@@ -179,11 +191,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../hardware/3d-printing/" class="dropdown-item">3D Printing</a>
+    <a href="../../hardware/3d-printing.md" class="dropdown-item">3D Printing</a>
 </li>
                                     
 <li>
-    <a href="../../hardware/raspberry-pi/" class="dropdown-item">Raspberry Pi</a>
+    <a href="../../hardware/raspberry-pi.md" class="dropdown-item">Raspberry Pi</a>
 </li>
                                 </ul>
                             </li>
@@ -195,16 +207,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../swe-notes/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../oop/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -223,22 +225,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#what-is-a-programming-paradigm" class="nav-link">What is a Programming Paradigm?</a>
+            <li class="nav-item" data-level="2"><a href="#terminal-commands-mac" class="nav-link">Terminal Commands (Mac)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#functional-programming-fp" class="nav-link">Functional Programming (FP):</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#object-oriented-programming-oop" class="nav-link">Object Oriented Programming (OOP):</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#procedural-programming-pp" class="nav-link">Procedural Programming (PP):</a>
+            <li class="nav-item" data-level="2"><a href="#vim-commands" class="nav-link">Vim Commands</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -247,34 +239,106 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="what-is-a-programming-paradigm">What is a Programming Paradigm?</h2>
+<h2 id="terminal-commands-mac">Terminal Commands (Mac)</h2>
+<h4 id="navigation">Navigation:</h4>
 <ul>
-<li>A style of programming/way of thinking about software architecture</li>
-<li>A way/methodology, not a language</li>
-<li>Some languages are better for some paradigms than others </li>
+<li><code>cd {/path/to/folder}</code>: changes directory to specified path</li>
+<li><code>cd /</code>: goes to root directory</li>
+<li><code>cd ~</code>: goes to user directory</li>
+<li><code>ls</code>: lists all files/folders in the current working directory</li>
+<li><code>pwd</code>: prints the path to the current working directory|</li>
 </ul>
-<h2 id="functional-programming-fp">Functional Programming (FP):</h2>
+<h4 id="creating-deleting">Creating &amp; Deleting:</h4>
 <ul>
-<li>Treats computation as the the evaluation of math functions and avoids changing-state and mutable data</li>
-<li>Passing data from function to function to get a result</li>
-<li>Functions are threatened as data (you can use them as parameters, return them, build functions from other functions, and build custom functions</li>
-<li>Have to be pure functions- not dependent on local/global states  </li>
-<li>Good for modularity since each function will return the same output given the same input </li>
+<li><code>mkdir {foldername}</code>: makes a folder with the specified nam</li>
+<li><code>rm {filename}</code>: removes the specified file</li>
+<li><code>rm -r {foldername}</code>: removes the specified folder recursively</li>
+<li><code>touch {filename}</code>: creates the specified file|</li>
+<li><code>mv {filename} {new filename}</code>: renames the file/folder to the 2nd name</li>
 </ul>
-<h2 id="object-oriented-programming-oop">Object Oriented Programming (OOP):</h2>
+<h4 id="opening-filesfolders">Opening Files/Folders:</h4>
 <ul>
-<li>Based on the concept of “objects” which may contain data in the form of fields/attributes and code in the form of procedures/methods </li>
-<li>Encapsulating data &amp; behavior into objects that interact with other elements and can perform certain actions </li>
-<li>More details in aother note section</li>
+<li><code>open {filename}</code>: opens the file with the default program</li>
+<li><code>open {filename} -a "{program name}"</code>: opens the file in the specified application</li>
+<li><code>open .</code>:  opens the current folder in finder</li>
+<li><code>open . -a "{program name}"</code> opens the folder in the specified application</li>
 </ul>
-<h2 id="procedural-programming-pp">Procedural Programming (PP):</h2>
+<h3 id="terminal-commands-different-in-windows">Terminal Commands Different in Windows:</h3>
 <ul>
-<li>Based on the concept of procedure call where procedures/routines/subroutines/functions simply contain a series of computational steps to be carried out • </li>
-<li>AKA inline programming and it takes a top-down approach • </li>
-<li>Writing a list of instructions to tell the computer what to do step by step </li>
-<li>Relies on procedures/routines </li>
+<li>dir - list files</li>
+<li>echo &gt; {filename} - create an empty file</li>
+<li>del {filename} - remove a file</li>
+<li>rmdir {directory name} - remove a directory and all files within</li>
+<li>rename {filename} {new filename} - rename a file or folder</li>
+<li>start {filename} - open file in default program</li>
+<li>start . - open current directory</li>
+<li>cls - clear the terminal screen</li>
 </ul>
-<p><a href="https://medium.com/@LiliOuakninFelsen/functional-vs-object-oriented-vs-procedural-programming-a3d4585557f3">Resource</a></p></div>
+<h2 id="vim-commands">Vim Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i</td>
+<td>insert/typing mode</td>
+</tr>
+<tr>
+<td>esc</td>
+<td>leave insert mode</td>
+</tr>
+<tr>
+<td>:w</td>
+<td>save additions</td>
+</tr>
+<tr>
+<td>:wq</td>
+<td>save &amp; quit</td>
+</tr>
+<tr>
+<td>:q!</td>
+<td>quit &amp; discard changes</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th align="left">Movement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w</td>
+<td align="left">front of next word</td>
+</tr>
+<tr>
+<td>b</td>
+<td align="left">front of previous word</td>
+</tr>
+<tr>
+<td>0</td>
+<td align="left">start of line</td>
+</tr>
+<tr>
+<td>$</td>
+<td align="left">end of line</td>
+</tr>
+<tr>
+<td>g</td>
+<td align="left">last line</td>
+</tr>
+<tr>
+<td>a</td>
+<td align="left">append to final line</td>
+</tr>
+</tbody>
+</table></div>
             </div>
         </div>
 

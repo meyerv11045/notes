@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/hardware/3d-printing/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/general/python/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>3D Printing - The Notebook</title>
+        <title>Python - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,38 +33,46 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Basics <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../basics/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../../basics/paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
-    <a href="../../basics/oop/" class="dropdown-item">Object Oriented Programming</a>
+    <a href="./" class="dropdown-item active">Python</a>
 </li>
                                     
 <li>
-    <a href="../../basics/regex/" class="dropdown-item">Regex</a>
+    <a href="../macos/" class="dropdown-item">MacOS</a>
 </li>
                                     
 <li>
-    <a href="../../basics/python/" class="dropdown-item">Python</a>
+    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../../basics/macos/" class="dropdown-item">MacOS</a>
+    <a href="../regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../hardware/" class="dropdown-item">Hardware</a>
 </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data_structures/cs2201/02-pointers.md" class="dropdown-item">Pointers</a>
+</li>
                                     
 <li>
     <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
@@ -105,6 +113,10 @@
                                     
 <li>
     <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+</li>
+                                    
+<li>
+    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
 </li>
                                 </ul>
                             </li>
@@ -174,16 +186,16 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Hardware <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">3D Printing</a>
+    <a href="../../hardware/3d-printing.md" class="dropdown-item">3D Printing</a>
 </li>
                                     
 <li>
-    <a href="../raspberry-pi/" class="dropdown-item">Raspberry Pi</a>
+    <a href="../../hardware/raspberry-pi.md" class="dropdown-item">Raspberry Pi</a>
 </li>
                                 </ul>
                             </li>
@@ -196,12 +208,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../web_dev/html-css/sass/" class="nav-link">
+                                <a rel="prev" href="../git/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../raspberry-pi/" class="nav-link">
+                                <a rel="next" href="../macos/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -223,8 +235,56 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#3d-modeling-and-printing" class="nav-link">3D Modeling and Printing</a>
+            <li class="nav-item" data-level="1"><a href="#python" class="nav-link">Python</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#ternary-conditionals" class="nav-link">Ternary Conditionals</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#number-formatting" class="nav-link">Number Formatting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#context-managers" class="nav-link">Context Managers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#enumerate-functions" class="nav-link">Enumerate Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#zip-function" class="nav-link">Zip Function</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#unpacking" class="nav-link">Unpacking</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#requests-library" class="nav-link">Requests Library</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#environment-variables" class="nav-link">Environment Variables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#memoizationcaching" class="nav-link">Memoization/Caching</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#config-parser" class="nav-link">Config Parser</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#csv-files" class="nav-link">CSV Files</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#python-executable" class="nav-link">Python Executable</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -232,22 +292,147 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="3d-modeling-and-printing">3D Modeling and Printing</h1>
-<h3 id="process">Process</h3>
-<ol>
-<li>Design or download a model (.stl file)</li>
-<li>Import the stl file(s) to slicing software (e.g. IdeaMaker)</li>
-<li>Slice the object</li>
-<li>Slicing takes the model and does the math on it to create gcode instructions for the 3D printer</li>
-<li>Export the gcode instructions to a usb drive or SD card depending on the printer</li>
-<li>Plug in drive to printer and begin the 3D print</li>
-</ol>
-<h3 id="notes">Notes</h3>
+<h1 id="python">Python</h1>
+<hr />
+<h2 id="ternary-conditionals">Ternary Conditionals</h2>
+<pre><code class="language-python">condition = True
+x = 1 if condition else 0
+</code></pre>
+<h2 id="number-formatting">Number Formatting</h2>
+<pre><code class="language-python">num1 = 1_000_000_000
+num2 = 10_000_000
+total = num1 + num2
+print(f'{total:,}') #Uses f-string to format output w/ commas
+</code></pre>
+<h2 id="context-managers">Context Managers</h2>
+<p>Manage resources such as IO connections, threads, db connections, etc. by opening &amp; closing resources automatically</p>
+<pre><code class="language-python">with open('test.txt','r') as f:
+  file_contents = f.read()
+</code></pre>
+<h2 id="enumerate-functions">Enumerate Functions</h2>
+<pre><code class="language-python">names = ['Bob','Steve','Jim']
+for index,name in enumerate(names):
+  print(index,name)
+
+for index,name in enumerate(names, start=1): #Can specify starting index value
+  print(index,name)
+</code></pre>
+<h2 id="zip-function">Zip Function</h2>
+<p>Loops over <code>n</code> lists at once. When lists are different lengths, it stops at the end of the shortest list</p>
+<pre><code class="language-python">for name, hero, universe in zip(names, heroes, universes):
+  print(name,hero)
+
+for value in zip(names, heroes, universes):
+  print(value) #Value is a tuple of the results of the 3 lists
+</code></pre>
+<h2 id="unpacking">Unpacking</h2>
+<pre><code class="language-python">a,b = (1,2)
+print(a) #1
+print(b) #2
+c,_ = (4,5) #use underscore when you don't want to use a variable
+print(c) #4
+
+x,y,*z = (1,2,3,5,6,7)
+print(x) #1
+print(y) #2
+print(z) #[3,5,6,7]
+
+x,y,*_, z = (1,2,3,4,6,7,) #ignores all values after 1 &amp; 2 but until 7, which is stored in z
+</code></pre>
+<h2 id="requests-library">Requests Library</h2>
+<pre><code class="language-python">import requests
+
+url_params = {'page' : 2, 'count' : 25}
+r = requests.get(&quot;https://httpbin.org/get&quot;, params=url_params)
+
+body = {'username' : 'corey', 'password' : 'testing'}
+r = requests.post(&quot;https://httpbin.org/post&quot;, data=body, timeout=3) 
+
+#include the timeout argument to Raise a ReadTimeout Error if the website does not respond in time
+r_dict = r.json() 
+</code></pre>
+<h2 id="environment-variables">Environment Variables</h2>
+<p>MacOS terminal: 
+- <code>export &lt;var-name&gt;=&lt;var-value&gt;</code> (add new env var)
+- <code>export &lt;existing-var-name&gt;=&lt;var-value&gt;:$&lt;existing-var-name&gt;</code> (prepend values to an existing env var)
+- <code>unset &lt;var-name&gt;</code> (remove env var)</p>
+<p><code>os.environ</code> acts like a python dictionary </p>
+<p>If you have other scripts updating the environment while your python script is running, calling os.environ again will not reflect the latest values since the mapping is only read when the python script is initially run.</p>
+<pre><code class="language-python">import os
+
+os.environ['DB_USER'] = str(123) # env vars must always be strings
+
+db_user = os.environ['DB_USER'] 
+db_user = os.environ.get('DB_USER') # safe way of accessing potentially undefined env vars
+</code></pre>
+<h2 id="memoizationcaching">Memoization/Caching</h2>
+<p>Examples calculate the nth term of the fibonacci sequence
+Basic implementation with dictionary</p>
+<pre><code class="language-python">fibonacci_cache = {}
+
+def fibonacci(n):
+    if n in fibonacci_cache:
+        return fibonacci_cache[n]
+    elif n == 1 or n == 2:
+        value = 1
+    else:
+        value = fibonacci(n-1) + fibonacci(n-2)
+
+    fibonacci_cache[n] = value 
+    return value 
+</code></pre>
+<p>Optimized implementation with function tools</p>
+<pre><code class="language-python">from functools import lru_cache
+
+@lru_cache(maxsize=1000)
+def fibonacci(n):
+    if n == 1 or n ==2:
+        return 1
+    else:
+        return fibonacci(n-1)+fibonacci(n-2)
+</code></pre>
+<h2 id="config-parser">Config Parser</h2>
+<p><a href="https://docs.python.org/3/library/configparser.html">Documentation</a>. Configuration file format:</p>
+<pre><code class="language-ini">[section]
+option1 = value1
+option2 = value2
+</code></pre>
+<p>Reading the configuration file:</p>
+<pre><code class="language-python">from configparser import ConfigParser
+
+parser = ConfigParser()
+parser.read('file.ini')
+
+if parser.has_section('database'):
+    items = parser.items('database')
+</code></pre>
+<p>Its good to store things that could change in the configuration file (e.g. endpoints, db logins/tables/sprocs)</p>
+<h2 id="csv-files">CSV Files</h2>
+<pre><code class="language-python">import csv
+
+with open(file1, 'r'), open(file2, 'w') as f1, f2:
+  csv_read = csv.reader(f1)
+  csv_writer = csv.writer(f2)
+  next(csv_read) # Skip header row
+
+  for line in csv_reader:
+      csv_writer.writerow([line[0],&quot;extra col&quot;])
+</code></pre>
+<h2 id="python-executable">Python Executable</h2>
 <ul>
-<li>PLA is a common plastic used b/c it is softer (less wear &amp; tear on printer) and needs less heat to be melted</li>
-<li>ABS is a harder plastic that is used and thus requires more heat to melt it</li>
-<li>A variety of different filaments can be used to print things</li>
-<li>Tiny errors in a 3D printer’s movement results in big errors with the print b/c movements are done hundreds of times</li>
+<li>MacOS installs python 2.7 by default and should not be deleted <ul>
+<li><code>/usr/bin/python</code> and <code>/usr/bin/python2</code> are symlinks to default install: <code>System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7</code></li>
+</ul>
+</li>
+<li>Python 3+ versions are installed in <ul>
+<li><code>/usr/local/bin/python3</code> is a symlink to version 3.5 installed in <code>/Library/Frameworks/Python.framework/Versions/3.5</code> by downloading python from internet</li>
+<li><code>/usr/local/bin/python3.9</code> is a symlink to version 3.9 installed in <code>/usr/local/Cellar</code> by homebrew (same goes for <code>pip3.9</code>) </li>
+<li><code>/usr/bin/python3</code> is the actual install of version 3.8. Note sure how it got there but it is currently looked at on the path after the other version of python3 in the local/bin so it is not found unless the version is being explicitly looked for</li>
+<li>All 3 versions of python3 are needed for ROS stuff so thats fun</li>
+</ul>
+</li>
+<li><code>python3 -m module_name</code> Searches the path for the module and excecutes its contents as the main module (Runs the specified module even if it isnt in the cwd)</li>
+<li>Note: find symlinks using <code>ls -l</code></li>
 </ul></div>
             </div>
         </div>

@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/basics/oop/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/general/git/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Object Oriented Programming - The Notebook</title>
+        <title>Git - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -42,15 +42,7 @@
 </li>
                                     
 <li>
-    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active">Object Oriented Programming</a>
-</li>
-                                    
-<li>
-    <a href="../regex/" class="dropdown-item">Regex</a>
+    <a href="./" class="dropdown-item active">Git</a>
 </li>
                                     
 <li>
@@ -60,11 +52,27 @@
 <li>
     <a href="../macos/" class="dropdown-item">MacOS</a>
 </li>
+                                    
+<li>
+    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
+</li>
+                                    
+<li>
+    <a href="../regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../hardware/" class="dropdown-item">Hardware</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data_structures/cs2201/02-pointers.md" class="dropdown-item">Pointers</a>
+</li>
                                     
 <li>
     <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
@@ -105,6 +113,10 @@
                                     
 <li>
     <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+</li>
+                                    
+<li>
+    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
 </li>
                                 </ul>
                             </li>
@@ -179,11 +191,11 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../hardware/3d-printing/" class="dropdown-item">3D Printing</a>
+    <a href="../../hardware/3d-printing.md" class="dropdown-item">3D Printing</a>
 </li>
                                     
 <li>
-    <a href="../../hardware/raspberry-pi/" class="dropdown-item">Raspberry Pi</a>
+    <a href="../../hardware/raspberry-pi.md" class="dropdown-item">Raspberry Pi</a>
 </li>
                                 </ul>
                             </li>
@@ -196,12 +208,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../paradigms/" class="nav-link">
+                                <a rel="prev" href="../swe-notes/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../regex/" class="nav-link">
+                                <a rel="next" href="../python/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -223,8 +235,24 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#object-oriented-programming" class="nav-link">Object Oriented Programming:</a>
+            <li class="nav-item" data-level="1"><a href="#git-cheat-sheet" class="nav-link">Git Cheat Sheet</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#setup-repo" class="nav-link">Setup Repo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#add-branch" class="nav-link">Add Branch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#delete-branch" class="nav-link">Delete Branch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#stash-changes" class="nav-link">Stash Changes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -232,139 +260,40 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="object-oriented-programming">Object Oriented Programming:</h2>
-<h3 id="what-is-a-class">What is a Class:</h3>
+<h1 id="git-cheat-sheet">Git Cheat Sheet</h1>
+<h2 id="setup-repo">Setup Repo</h2>
 <ul>
-<li>A blueprint</li>
-<li>Fields (instance variables)</li>
-<li>What an object knows</li>
-<li>Methods(Functions)</li>
-<li>What an object does</li>
+<li><code>git init</code> initializes an existing directory as a git repo</li>
+<li><code>git clone &lt;url&gt;</code> retrieves an entire remote repository </li>
 </ul>
-<h3 id="what-is-inheritance">What is Inheritance:</h3>
+<h2 id="add-branch">Add Branch</h2>
 <ul>
-<li>Parent/Super class that shares fields/methods with its subclasses that also have their own fields &amp; methods</li>
-<li>Subclasses abstract out the super class's features</li>
-<li>Subclasses can override or extend methods that don't work</li>
-<li>Subclasses only define the changes since the super's fields &amp; methods are already defined when you extend the super class</li>
-<li>Use is A? principle to decide whether to extend a class</li>
-<li>Ex: Is a Dog an Animal?<ul>
-<li>Yes, so Dog extends Animal</li>
+<li>Local: <code>git branch &lt;new-branch&gt;</code> will create a new local branch from the branch you are currently located on but will not automatically check it out <ul>
+<li><code>git checkout -b &lt;new-branch&gt;</code> will create and automatically checkout a new local-branch</li>
 </ul>
 </li>
-<li>Ex: Is a Dog a cat?<ul>
-<li>No, so Dog doesn't extend Cat</li>
+<li>Remote: <code>git push --set-upstream origin &lt;local-branch&gt;</code> will add your new local branch to the remote repo<ul>
+<li><code>git push -u origin &lt;local-branch&gt;</code> uses the <code>-u</code> flag as shorthand </li>
 </ul>
 </li>
-<li>Use inheritance when a subclass needs most of the methods in the superclass</li>
-<li>Do not use inheritance just to reuse code if is A? doesn't work</li>
 </ul>
-<pre><code class="language-Java">class Animal{
-  private String name;
-  private double height;
-  private int weight;
-  private String sound;
-
-  public void setName(String newName){
-    name = newName;
-  }
-  public void setSound(String newSound){
-    sound = newSound;
-  }
-}
-
-class Dog extends Animal{
-  public Dog(){
-    super(); //Calls super constructor
-    setSound(&quot;Bark&quot;);
-  }
-  public void digHole(){
-    System.out.println(&quot;Hole dug&quot;);
-  }
-
-}
-</code></pre>
-<h3 id="what-is-encapsulation">What is Encapsulation:</h3>
+<h2 id="delete-branch">Delete Branch</h2>
 <ul>
-<li>Protects data</li>
-<li>Use private fields</li>
-<li>Do not set fields directly </li>
-<li>Use public getter &amp; setter functions to access &amp; change the data</li>
-<li>Setter = Mutator</li>
-<li>Getter = Accessor </li>
+<li>Local: <code>git branch -d &lt;local-branch&gt;</code><ul>
+<li><code>-d</code> flag will refuse to delete the branch when it contains commits not merged into other local branches or pushed to a remote repo</li>
+<li><code>-D</code> flag will delete such a branch regardless (force deletion)</li>
 </ul>
-<pre><code class="language-Java">class Dog{
-  private double height;
-
-  public void setHeight(newHeight){
-    if(newHeight &gt; 0){
-      height = newHeight;
-    }
-    else{
-      //Throw an Error
-    }
-  }
-}
-</code></pre>
-<h3 id="instance-vs-local-variables">Instance vs. Local Variables:</h3>
+</li>
+<li>Remote: <code>git push origin --delete &lt;remote-branch-name&gt;</code></li>
+</ul>
+<h2 id="stash-changes">Stash Changes</h2>
 <ul>
-<li>Instance Variable(AKA fields) are declared in a class</li>
-<li>Local Variables are declared in a method</li>
-</ul>
-<h3 id="what-is-polymorphism">What is Polymorphism:</h3>
-<ul>
-<li>Allows you to write methods that don't need to change if new subclasses are created</li>
-<li>Ex: Dog can add a new method w/o changing Animal</li>
-<li>Allows you to put diff subclasses in one array</li>
-</ul>
-<pre><code class="language-Java">Animal doggy = new Dog();
-Animal kitty = new Cat();
-Animal[] animals = [doggy,kitty];
-kitty.getSound(); //Returns Meow 
-doggy.digHole(); //Would not work 
-((Dog)doggy).digHole(); //Would Work
-</code></pre>
-<ul>
-<li>You can't access methods this way if they are only in the subclass</li>
-<li>Need to cast the object to the subclass that contains that method</li>
-<li>Cannot reference non-static variables or non-static-methods(w/o an object) in a static method</li>
-<li>Cannot access private methods outside of a subclass/class</li>
-</ul>
-<h3 id="what-is-an-abstract-class">What is an Abstract Class:</h3>
-<ul>
-<li>Gives power of polymorphism w/o all the work</li>
-<li>There are no abstract fields but can have protected variables that are rewritten as private fields in subclasses</li>
-<li>All methods do not have to be abstract w/in an abstract class</li>
-<li>You can have static methods w/in abstract classes</li>
-<li>Cannot create objects from abstract classes but subclasses can extend them and be made into objects</li>
-<li>Have to override abstract methods in the subclass in order to extend the class</li>
-</ul>
-<pre><code class="language-Java">  abstract public Class Creature{
-    protected String name;
-
-    public abstract void setName(newName);
-
-  }
-</code></pre>
-<h3 id="what-is-an-interface">What is an Interface:</h3>
-<ul>
-<li>A class w/ only abstract methods</li>
-<li>Can implement as many interfaces to a class as you want</li>
-<li>Can only use public static and final fields </li>
-<li>Provide the ultimate flexibility</li>
-<li>Classes from different inheritance trees can use a common interface </li>
-<li>Avoid using interfaces just to force the creation of a method</li>
-</ul>
-<pre><code class="language-Java">public interface Living {
-  public void setName(String newName);
-}
-public class Monkey implements Living{
-  private name;
-  public void setName(String newName){
-    name = newName;
-  }
-}
-</code></pre></div>
+<li>Stashing can be used to temporaliy store modified, tracked files in order to change branches</li>
+<li><code>git stash</code> saves the modified and staged changes</li>
+<li><code>git stash list</code> lists the stack of stashed file changes</li>
+<li><code>git stash pop</code> writes working from the top of the stash stack</li>
+<li><code>git stash drop</code> discards the changes from the top of the stash stack</li>
+</ul></div>
             </div>
         </div>
 
