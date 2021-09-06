@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/general/terminal-cmds/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/pointers/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Terminal cmds - The Notebook</title>
+        <title>Pointers - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,31 +38,31 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../git/" class="dropdown-item">Git</a>
+    <a href="../../general/git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
-    <a href="../python/" class="dropdown-item">Python</a>
+    <a href="../../general/python/" class="dropdown-item">Python</a>
 </li>
                                     
 <li>
-    <a href="../macos/" class="dropdown-item">MacOS</a>
+    <a href="../../general/macos/" class="dropdown-item">MacOS</a>
 </li>
                                     
 <li>
-    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../regex/" class="dropdown-item">Regex</a>
+    <a href="../../general/regex/" class="dropdown-item">Regex</a>
 </li>
                                     
 <li>
-    <a href="../hardware/" class="dropdown-item">Hardware</a>
+    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
 </li>
                                 </ul>
                             </li>
@@ -99,20 +99,20 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../software_design/pointers/" class="dropdown-item">Pointers</a>
+    <a href="./" class="dropdown-item active">Pointers</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/big3/" class="dropdown-item">The Big 3</a>
+    <a href="../big3/" class="dropdown-item">The Big 3</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/misc/" class="dropdown-item">Misc</a>
+    <a href="../misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
                             </li>
@@ -207,6 +207,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../data_structures/heap/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../big3/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -225,13 +235,40 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#terminal-commands-mac" class="nav-link">Terminal Commands (Mac)</a>
+            <li class="nav-item" data-level="1"><a href="#pointers" class="nav-link">Pointers</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#why-use-them" class="nav-link">Why use them?</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#vim-commands" class="nav-link">Vim Commands</a>
+            <li class="nav-item" data-level="2"><a href="#common-errors" class="nav-link">Common Errors</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#dereferencing" class="nav-link">Dereferencing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#member-access-operator" class="nav-link">Member Access Operator</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#memory-regions" class="nav-link">Memory Regions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#arrays" class="nav-link">Arrays</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#strings" class="nav-link">Strings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resources" class="nav-link">Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -239,106 +276,97 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="terminal-commands-mac">Terminal Commands (Mac)</h2>
-<h4 id="navigation">Navigation:</h4>
+<h1 id="pointers">Pointers</h1>
 <ul>
-<li><code>cd {/path/to/folder}</code>: changes directory to specified path</li>
-<li><code>cd /</code>: goes to root directory</li>
-<li><code>cd ~</code>: goes to user directory</li>
-<li><code>ls</code>: lists all files/folders in the current working directory</li>
-<li><code>pwd</code>: prints the path to the current working directory|</li>
+<li>A pointer is a variable that contains a memory address<ul>
+<li>Has a data type that indicates the type of data being stored at the memory address</li>
+<li>Declared using <code>*</code> operator like: <code>int* a;</code></li>
 </ul>
-<h4 id="creating-deleting">Creating &amp; Deleting:</h4>
+</li>
+<li><strong>Refrence Operator:</strong> <code>&amp;</code> obtains a variable's memory address</li>
+<li><strong>Dereference Operator:</strong> <code>*</code> retrieves the data at the memory address a pointer stores</li>
+<li>When declared, pointers hold an unknown address until initialized</li>
+<li>To indicate pointing at nothing, use <code>nullptr</code></li>
+</ul>
+<h2 id="why-use-them">Why use them?</h2>
+<p>Pointers are all 8-bytes (64-bits on 64-bit machines, 32-bits on 32-bit) so it is much more efficient to use memory addresses of large objects like images or videos than to actually move around the object and make copies of it when doing things like passing them to a function.</p>
+<h2 id="common-errors">Common Errors</h2>
+<h3 id="syntax">Syntax</h3>
+<p><strong>Using the dereference operator when initializing a pointer</strong></p>
+<pre><code class="language-c++">int* a;
+int b = 20;
+*a = &amp;b;    // error b/c using derefence operator
+a = &amp;b      // correct
+</code></pre>
+<p>The 3rd line is an error b/c <code>*a</code> refers to data being stored at the unknown memory address <code>a</code> was initialized to. This will set the data at <code>a</code> to the memory address of <code>b</code> instead of making <code>a</code> point at <code>b</code>'s memory address.</p>
+<p>Note this will note cause a compiler error, just a tricky to find bug.</p>
+<p>However, this is valid and perform the desired functionality because <code>*</code> is not being used for dereferencing but rather declaring a pointer:</p>
+<pre><code class="language-c++">int b = 20;
+int *a = &amp;b;
+</code></pre>
+<p><strong>Forgetting the <code>*</code> before each pointer when declaring multiple on the same line</strong></p>
+<pre><code class="language-c++">int* ptr1, ptr2; // ptr1 will be an int pointer but ptr2 will just be an int
+int *ptr1, *ptr2; // makes both of them int pointers
+</code></pre>
+<p>Good practice to declare one pointer per line to avoid this.</p>
+<h3 id="runtime">Runtime</h3>
+<p><strong>Using a derefence operator <code>*</code> when the pointer has not been intialized.</strong> This causes undefined behavior meaning the program could crash if the pointer holds an address the program is not allowed to access.</p>
+<p><strong>Dereferencing a null pointer.</strong> This causes the program to crash.</p>
+<p>Memory overflow can be dangerous b/c it results in overwriting data anywhere in memory (can be OS, other programs, etc.)
+Aliasing- changing the memory address a pointer points to</p>
+<h2 id="dereferencing">Dereferencing</h2>
+<p>Derefencing a pointer means accessing the value stored at the memory address the pointer contains</p>
+<pre><code class="language-c++">char* p = &quot;abc&quot; // stores 'a', 'b', 'c' in 3 continuous chunks of memory and p points to the location of a
+
+// Pointer arithmetic can be used to access b and c
+assert(*p == 'a');  // The first character at address p will be 'a'
+assert(p[1] == 'b'); // p[1] actually dereferences the pointer: p + 1 * (size of p in memory)
+assert(*(p + 1) == 'b');  // Another notation for p[1]
+</code></pre>
+<p>Change data at the address pointed to by derferencing the pointer:</p>
+<pre><code class="language-c++">*p = 'z' // now the string of chars is zbc
+assert(*p = 'z')
+</code></pre>
+<p>Move pointers through the data:</p>
+<pre><code class="language-c++">++p;  // Increment p so now it points to 'b'
+assert(*p == 'b');
+</code></pre>
+<h2 id="member-access-operator">Member Access Operator</h2>
+<pre><code class="language-c++">struct SomeStruct {int a;};
+
+SomeStruct s;
+SomeStruct* structPtr = s;
+structPtr-&gt;a = 1;
+// is cleaner than:
+(*structPtr).a = 1;
+</code></pre>
+<h2 id="memory-regions">Memory Regions</h2>
+<p>A program's memory usage includes 3 different regions:
+1. <strong>Static Memory</strong>- where global &amp; static local variables are allocated
+    - Static variables are allocated once and stay in the same memory location for the duration of the program's execution
+2. <strong>Stack</strong>- each function call alloocates a new block of memory called a stack frame to holds its local variables. The stack frames are part of the stack
+      - Managed by the run-time system 
+3. <strong>Heap</strong>- where the <code>new</code> operator allocates memory and the <code>delete</code> operator deallocates memory
+      - Managed by the programmer (aka the free store)</p>
+<p>In classical architectures, the stack and heap grow toward each other to maximize the available space</p>
+<h2 id="arrays">Arrays</h2>
 <ul>
-<li><code>mkdir {foldername}</code>: makes a folder with the specified nam</li>
-<li><code>rm {filename}</code>: removes the specified file</li>
-<li><code>rm -r {foldername}</code>: removes the specified folder recursively</li>
-<li><code>touch {filename}</code>: creates the specified file|</li>
-<li><code>mv {filename} {new filename}</code>: renames the file/folder to the 2nd name</li>
+<li>Represented internally as a pointer to the first element</li>
+<li>Accessing elements using indexing is actually just using pointer arithmetic</li>
+<li>A variable declared as an array is the same as a variable declared as a pointer</li>
+<li>When passing an array to a function, only the address of the array is copied into the parameter so any changes to the array in the function will cause a change to the original array b/c its shared</li>
 </ul>
-<h4 id="opening-filesfolders">Opening Files/Folders:</h4>
+<h2 id="strings">Strings</h2>
 <ul>
-<li><code>open {filename}</code>: opens the file with the default program</li>
-<li><code>open {filename} -a "{program name}"</code>: opens the file in the specified application</li>
-<li><code>open .</code>:  opens the current folder in finder</li>
-<li><code>open . -a "{program name}"</code> opens the folder in the specified application</li>
+<li>represented internally as a character array ending with the null character <code>\0</code></li>
+<li>since it is a character array, pointer arithmetic and everything can be done on strings</li>
 </ul>
-<h3 id="terminal-commands-different-in-windows">Terminal Commands Different in Windows:</h3>
+<h2 id="resources">Resources</h2>
 <ul>
-<li>dir - list files</li>
-<li>echo &gt; {filename} - create an empty file</li>
-<li>del {filename} - remove a file</li>
-<li>rmdir {directory name} - remove a directory and all files within</li>
-<li>rename {filename} {new filename} - rename a file or folder</li>
-<li>start {filename} - open file in default program</li>
-<li>start . - open current directory</li>
-<li>cls - clear the terminal screen</li>
-</ul>
-<h2 id="vim-commands">Vim Commands</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>i</td>
-<td>insert/typing mode</td>
-</tr>
-<tr>
-<td>esc</td>
-<td>leave insert mode</td>
-</tr>
-<tr>
-<td>:w</td>
-<td>save additions</td>
-</tr>
-<tr>
-<td>:wq</td>
-<td>save &amp; quit</td>
-</tr>
-<tr>
-<td>:q!</td>
-<td>quit &amp; discard changes</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th align="left">Movement</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>w</td>
-<td align="left">front of next word</td>
-</tr>
-<tr>
-<td>b</td>
-<td align="left">front of previous word</td>
-</tr>
-<tr>
-<td>0</td>
-<td align="left">start of line</td>
-</tr>
-<tr>
-<td>$</td>
-<td align="left">end of line</td>
-</tr>
-<tr>
-<td>g</td>
-<td align="left">last line</td>
-</tr>
-<tr>
-<td>a</td>
-<td align="left">append to final line</td>
-</tr>
-</tbody>
-</table></div>
+<li><a href="https://en.cppreference.com/w/c/language/operator_member_access">(Reference) Access Operators</a></li>
+<li><a href="https://cs.stanford.edu/people/eroberts/courses/cs106b/handouts/21-MemoryAndC++.pdf">(Slides) Pointers</a></li>
+<li><a href="https://www.geeksforgeeks.org/difference-between-p-p-and-p/">(Article) Weird Pointer Expressions</a></li>
+</ul></div>
             </div>
         </div>
 

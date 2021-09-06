@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/general/terminal-cmds/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/big3/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Terminal cmds - The Notebook</title>
+        <title>The Big 3 - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,31 +38,31 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../git/" class="dropdown-item">Git</a>
+    <a href="../../general/git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
-    <a href="../python/" class="dropdown-item">Python</a>
+    <a href="../../general/python/" class="dropdown-item">Python</a>
 </li>
                                     
 <li>
-    <a href="../macos/" class="dropdown-item">MacOS</a>
+    <a href="../../general/macos/" class="dropdown-item">MacOS</a>
 </li>
                                     
 <li>
-    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../regex/" class="dropdown-item">Regex</a>
+    <a href="../../general/regex/" class="dropdown-item">Regex</a>
 </li>
                                     
 <li>
-    <a href="../hardware/" class="dropdown-item">Hardware</a>
+    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
 </li>
                                 </ul>
                             </li>
@@ -99,20 +99,20 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../software_design/pointers/" class="dropdown-item">Pointers</a>
+    <a href="../pointers/" class="dropdown-item">Pointers</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/big3/" class="dropdown-item">The Big 3</a>
+    <a href="./" class="dropdown-item active">The Big 3</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/misc/" class="dropdown-item">Misc</a>
+    <a href="../misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
                             </li>
@@ -207,6 +207,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../pointers/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../misc/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -225,13 +235,36 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#terminal-commands-mac" class="nav-link">Terminal Commands (Mac)</a>
+            <li class="nav-item" data-level="1"><a href="#classes" class="nav-link">Classes</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#base-member-initialization-list" class="nav-link">Base Member Initialization List</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#vim-commands" class="nav-link">Vim Commands</a>
+            <li class="nav-item" data-level="2"><a href="#big-3" class="nav-link">Big 3</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#destructor" class="nav-link">Destructor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#copy-constructor" class="nav-link">Copy Constructor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#copy-assignment-operator" class="nav-link">Copy Assignment Operator</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#specifying-default-and-delete-behavior" class="nav-link">Specifying Default and Delete Behavior</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#garbage-collection" class="nav-link">Garbage Collection</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -239,106 +272,106 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="terminal-commands-mac">Terminal Commands (Mac)</h2>
-<h4 id="navigation">Navigation:</h4>
+<h1 id="classes">Classes</h1>
 <ul>
-<li><code>cd {/path/to/folder}</code>: changes directory to specified path</li>
-<li><code>cd /</code>: goes to root directory</li>
-<li><code>cd ~</code>: goes to user directory</li>
-<li><code>ls</code>: lists all files/folders in the current working directory</li>
-<li><code>pwd</code>: prints the path to the current working directory|</li>
+<li>Separate the public interface from the specifics of the implementation</li>
+<li>Everything is private by default (public in a struct)</li>
+<li>public interface provides the abstraction</li>
+<li>Encapsulation separates the implementation details from the public interface <ul>
+<li>Data Hiding- one of type of encapsulation where we use private data members/functions</li>
 </ul>
-<h4 id="creating-deleting">Creating &amp; Deleting:</h4>
+</li>
+</ul>
+<h2 id="base-member-initialization-list">Base Member Initialization List</h2>
+<p>Every variable will be constructed before getting into the body of the constructor as a result of the compiler. Therefore we want to use the BMI to prevent doubling the work. Initialize all variables in the BMI (lots of things are able to be initialized including arrays). Order of initialization in BMI should be the same as order declared in the header (compiler doesn't care but good for consistency).</p>
+<p>Note the upper most base class is always initialized first.</p>
+<p>Initialization is the process of turning raw storage into an object.
+Assignment is the process of replacing the existing state of a well-defined object with a new state (never performed on raw storage).</p>
+<h2 id="big-3">Big 3</h2>
+<ol>
+<li>Destructor</li>
+<li>Copy Constructor</li>
+<li>Copy Assignment Operator</li>
+</ol>
+<p>When one of the big 3 needs custom behavior, all of them probably will. Best practice to explicitly define the behavior of the big 3 even if it uses default functionality (serves as documentation).</p>
+<p><a href="https://gcallah.github.io/OOP2/big3.html">Resource</a></p>
+<h2 id="destructor">Destructor</h2>
+<p><strong>Purpose:</strong> destroy items that are allocated onto the heap</p>
 <ul>
-<li><code>mkdir {foldername}</code>: makes a folder with the specified nam</li>
-<li><code>rm {filename}</code>: removes the specified file</li>
-<li><code>rm -r {foldername}</code>: removes the specified folder recursively</li>
-<li><code>touch {filename}</code>: creates the specified file|</li>
-<li><code>mv {filename} {new filename}</code>: renames the file/folder to the 2nd name</li>
+<li>Default destructor does not cause memory leaks for primitve data types.</li>
+<li>Default destructor causes memory leaks when using pointers in complex data types because the data at the allocated memory address is not freed up (memory leak)</li>
+<li>Should not be called explicitly<ul>
+<li>Called by compiler when object goes out of scope or when <code>delete</code> is called on an object</li>
 </ul>
-<h4 id="opening-filesfolders">Opening Files/Folders:</h4>
+</li>
+<li>Called in reverse order of the constructors for a heierachy of base classes</li>
+</ul>
+<h2 id="copy-constructor">Copy Constructor</h2>
+<p><strong>Purpose:</strong> Creates a new object instance with same values as existing object</p>
+<p>Different from the assignment operator in that it creates a new object instead of just setting existing objects to be equal to another</p>
+<p>Copying involves allocating memory for the data members and then initializing the data members to be the same as those of the referenced object.</p>
+<p>Called in 3 instances:
+1. Traditional use
+   <code>c++
+      SomeClass a;
+      SomeClass b(a);</code>
+2. Assignment operator is not called because <code>b</code> hasn't been initialized
+   <code>c++
+      SomeClass a;
+      SomeClass b = a;</code>
+3. Passing or returning an object by value creates a copy of that object</p>
+<p>Default copy constructor does member wise copy which results in a shallow copies when dealing with pointers. Therefore, we define our own copy ctor for most classes we write</p>
+<p><strong>Example Copy Constructor:</strong>
+An object of the same type is passed by constant (don't want to change existing object) reference (can't be passed by value since that would require copy constructor).</p>
+<pre><code class="language-c++">SomeClass(const SomeClass &amp;rhs ) 
+{
+      // Any pointer manipulation to prevent shallow copies     
+}
+</code></pre>
+<h2 id="copy-assignment-operator">Copy Assignment Operator</h2>
+<p><strong>Purpose:</strong> set an existing object to be the same as another existing object of the same type</p>
+<p>Often overloaded to eliminate the problems caused by memberwise assignment when using pointers.</p>
+<p>Assignment involves:
+1. Check for self assignment (assignining an object to itself)
+2. Deleting the original items stored in the object's data members 
+3. Allocating memory for new items
+4. Copying the other object's data members to the current object 
+   - Best practice to use copy constructor to keep code DRY
+5. Return the object (allows for chaining assignment operators)</p>
+<h2 id="specifying-default-and-delete-behavior">Specifying Default and Delete Behavior</h2>
 <ul>
-<li><code>open {filename}</code>: opens the file with the default program</li>
-<li><code>open {filename} -a "{program name}"</code>: opens the file in the specified application</li>
-<li><code>open .</code>:  opens the current folder in finder</li>
-<li><code>open . -a "{program name}"</code> opens the folder in the specified application</li>
+<li>Set copy ctor or assignment operatort to equal <code>delete</code> in the header to make it clear the user should not use them<ul>
+<li>Will generate a compiler error if used</li>
+<li>Prevents the compiler from generating default implementations</li>
+<li>Certain cases (e.g. cout and files) its not acceptable to make copies or assignments</li>
 </ul>
-<h3 id="terminal-commands-different-in-windows">Terminal Commands Different in Windows:</h3>
+</li>
+</ul>
+<pre><code class="language-c++">Stack(const Stack &amp;rhs) = delete;
+Stack &amp;operator=(const Stack &amp;rhs) = delete;
+</code></pre>
 <ul>
-<li>dir - list files</li>
-<li>echo &gt; {filename} - create an empty file</li>
-<li>del {filename} - remove a file</li>
-<li>rmdir {directory name} - remove a directory and all files within</li>
-<li>rename {filename} {new filename} - rename a file or folder</li>
-<li>start {filename} - open file in default program</li>
-<li>start . - open current directory</li>
-<li>cls - clear the terminal screen</li>
+<li>Set copy ctor or assignment operatort to equal <code>default</code> in the header to make it clear the compiler will generate default implementations<ul>
+<li>Serves as good documentation for user of the class</li>
 </ul>
-<h2 id="vim-commands">Vim Commands</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>i</td>
-<td>insert/typing mode</td>
-</tr>
-<tr>
-<td>esc</td>
-<td>leave insert mode</td>
-</tr>
-<tr>
-<td>:w</td>
-<td>save additions</td>
-</tr>
-<tr>
-<td>:wq</td>
-<td>save &amp; quit</td>
-</tr>
-<tr>
-<td>:q!</td>
-<td>quit &amp; discard changes</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th align="left">Movement</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>w</td>
-<td align="left">front of next word</td>
-</tr>
-<tr>
-<td>b</td>
-<td align="left">front of previous word</td>
-</tr>
-<tr>
-<td>0</td>
-<td align="left">start of line</td>
-</tr>
-<tr>
-<td>$</td>
-<td align="left">end of line</td>
-</tr>
-<tr>
-<td>g</td>
-<td align="left">last line</td>
-</tr>
-<tr>
-<td>a</td>
-<td align="left">append to final line</td>
-</tr>
-</tbody>
-</table></div>
+</li>
+</ul>
+<pre><code class="language-c++">Stack(const Stack &amp;rhs) = default;
+Stack &amp;operator=(const Stack &amp;rhs) = default;
+</code></pre>
+<h2 id="garbage-collection">Garbage Collection</h2>
+<ul>
+<li>A program's executable includes automatic behavior that at various intervals finds all unreachable allocated memory locations (e.g., by comparing all reachable memory with all previously-allocated memory), and automatically frees such unreachable memory</li>
+<li>Can reduce the impact of memory leaks at the expense of runtime overhead</li>
+<li>Not implemented in standard C++ but is used in higher-level languages like Python and Java<ul>
+<li>All C++ does is call destructor when variables/objects go out of the scope they were initialized in <ul>
+<li>Therefore, C++ doesn't call the destructor on reference variables passed into functions when that function's scope ends</li>
+</ul>
+</li>
+<li>Destructors for primitive data types works fine but destructors for more complex objects must be defined by user</li>
+</ul>
+</li>
+</ul></div>
             </div>
         </div>
 

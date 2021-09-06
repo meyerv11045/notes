@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/general/terminal-cmds/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/dig_sys/ch1/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Terminal cmds - The Notebook</title>
+        <title>Ch. 1 - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -38,31 +38,31 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../git/" class="dropdown-item">Git</a>
+    <a href="../../general/git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
-    <a href="../python/" class="dropdown-item">Python</a>
+    <a href="../../general/python/" class="dropdown-item">Python</a>
 </li>
                                     
 <li>
-    <a href="../macos/" class="dropdown-item">MacOS</a>
+    <a href="../../general/macos/" class="dropdown-item">MacOS</a>
 </li>
                                     
 <li>
-    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../regex/" class="dropdown-item">Regex</a>
+    <a href="../../general/regex/" class="dropdown-item">Regex</a>
 </li>
                                     
 <li>
-    <a href="../hardware/" class="dropdown-item">Hardware</a>
+    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
 </li>
                                 </ul>
                             </li>
@@ -225,13 +225,24 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#terminal-commands-mac" class="nav-link">Terminal Commands (Mac)</a>
+            <li class="nav-item" data-level="1"><a href="#ch-1" class="nav-link">Ch. 1</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#the-3-ys" class="nav-link">The 3 y's</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#vim-commands" class="nav-link">Vim Commands</a>
+            <li class="nav-item" data-level="2"><a href="#binary" class="nav-link">Binary</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#hexadecimal" class="nav-link">Hexadecimal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#signed-binary-numbers" class="nav-link">Signed Binary Numbers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -239,106 +250,27 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="terminal-commands-mac">Terminal Commands (Mac)</h2>
-<h4 id="navigation">Navigation:</h4>
+<h1 id="ch-1">Ch. 1</h1>
+<h2 id="the-3-ys">The 3 y's</h2>
+<ol>
+<li>Hierarchy- a system is divided into modules and submodules </li>
+<li>Modularity- having well-defined functions and interfaces</li>
+<li>Regularity- encourages uniformity so modules can be easily reused</li>
+</ol>
+<h2 id="binary">Binary</h2>
 <ul>
-<li><code>cd {/path/to/folder}</code>: changes directory to specified path</li>
-<li><code>cd /</code>: goes to root directory</li>
-<li><code>cd ~</code>: goes to user directory</li>
-<li><code>ls</code>: lists all files/folders in the current working directory</li>
-<li><code>pwd</code>: prints the path to the current working directory|</li>
+<li>Digital systems use discrete values of 1 and 0 and to represent data compared to analog systems which use continuous values<ul>
+<li>1: TRUE, HIGH (voltage)</li>
+<li>0: FALSE, LOW (voltage)</li>
 </ul>
-<h4 id="creating-deleting">Creating &amp; Deleting:</h4>
-<ul>
-<li><code>mkdir {foldername}</code>: makes a folder with the specified nam</li>
-<li><code>rm {filename}</code>: removes the specified file</li>
-<li><code>rm -r {foldername}</code>: removes the specified folder recursively</li>
-<li><code>touch {filename}</code>: creates the specified file|</li>
-<li><code>mv {filename} {new filename}</code>: renames the file/folder to the 2nd name</li>
+</li>
+<li>Digital sytems use voltage levels to represent 1 and 0 </li>
 </ul>
-<h4 id="opening-filesfolders">Opening Files/Folders:</h4>
-<ul>
-<li><code>open {filename}</code>: opens the file with the default program</li>
-<li><code>open {filename} -a "{program name}"</code>: opens the file in the specified application</li>
-<li><code>open .</code>:  opens the current folder in finder</li>
-<li><code>open . -a "{program name}"</code> opens the folder in the specified application</li>
-</ul>
-<h3 id="terminal-commands-different-in-windows">Terminal Commands Different in Windows:</h3>
-<ul>
-<li>dir - list files</li>
-<li>echo &gt; {filename} - create an empty file</li>
-<li>del {filename} - remove a file</li>
-<li>rmdir {directory name} - remove a directory and all files within</li>
-<li>rename {filename} {new filename} - rename a file or folder</li>
-<li>start {filename} - open file in default program</li>
-<li>start . - open current directory</li>
-<li>cls - clear the terminal screen</li>
-</ul>
-<h2 id="vim-commands">Vim Commands</h2>
-<table>
-<thead>
-<tr>
-<th>Command</th>
-<th>Function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>i</td>
-<td>insert/typing mode</td>
-</tr>
-<tr>
-<td>esc</td>
-<td>leave insert mode</td>
-</tr>
-<tr>
-<td>:w</td>
-<td>save additions</td>
-</tr>
-<tr>
-<td>:wq</td>
-<td>save &amp; quit</td>
-</tr>
-<tr>
-<td>:q!</td>
-<td>quit &amp; discard changes</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>Key</th>
-<th align="left">Movement</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>w</td>
-<td align="left">front of next word</td>
-</tr>
-<tr>
-<td>b</td>
-<td align="left">front of previous word</td>
-</tr>
-<tr>
-<td>0</td>
-<td align="left">start of line</td>
-</tr>
-<tr>
-<td>$</td>
-<td align="left">end of line</td>
-</tr>
-<tr>
-<td>g</td>
-<td align="left">last line</td>
-</tr>
-<tr>
-<td>a</td>
-<td align="left">append to final line</td>
-</tr>
-</tbody>
-</table></div>
+<h2 id="hexadecimal">Hexadecimal</h2>
+<h2 id="signed-binary-numbers">Signed Binary Numbers</h2>
+<p>unsigned represent ositive numbers
+- Sign/Magnitude numbers
+  - N bits: 1 sign bit, N-1 magnitude bits </p></div>
             </div>
         </div>
 

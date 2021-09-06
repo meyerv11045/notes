@@ -100,6 +100,23 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../software_design/pointers/" class="dropdown-item">Pointers</a>
+</li>
+                                    
+<li>
+    <a href="../../software_design/big3/" class="dropdown-item">The Big 3</a>
+</li>
+                                    
+<li>
+    <a href="../../software_design/misc/" class="dropdown-item">Misc</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -236,6 +253,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#commit-hashes" class="nav-link">Commit Hashes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -276,6 +297,15 @@
 <li><code>git stash list</code> lists the stack of stashed file changes</li>
 <li><code>git stash pop</code> writes working from the top of the stash stack</li>
 <li><code>git stash drop</code> discards the changes from the top of the stash stack</li>
+</ul>
+<h2 id="commit-hashes">Commit Hashes</h2>
+<ul>
+<li>Git generates a unique SHA-1 hash (40 char string of hex digits) for every commit and refers to commits by this ID (usually only displays first 7 digits)</li>
+<li>SHA-1 has been compromised (can spoof hashes) so they are moving to SHA-256</li>
+<li>Making changes to previous commits in <code>.git</code> can be detected b/c each commit's hash is based on the previous commit's hash so the change to a previous commit would be easily detected<ul>
+<li>Simple blockchain of basing commit hashes on previous commits and verifying chains of hashes</li>
+</ul>
+</li>
 </ul></div>
             </div>
         </div>
