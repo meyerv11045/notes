@@ -19,6 +19,10 @@ nav:
     - 'Graph': 'data_structures/graph.md'
     - 'Hash Table': 'data_structures/hash-table.md'
     - 'Heap': 'data_structures/heap.md'
+  - Software Design:
+    - 'Pointers': 'software_design/pointers.md'
+    - 'The Big 3': 'software_design/big3.md'
+    - 'Misc': 'software_design/misc.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'

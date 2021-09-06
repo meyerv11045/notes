@@ -22,3 +22,10 @@
 - `git stash list` lists the stack of stashed file changes
 - `git stash pop` writes working from the top of the stash stack
 - `git stash drop` discards the changes from the top of the stash stack
+
+
+## Commit Hashes
+- Git generates a unique SHA-1 hash (40 char string of hex digits) for every commit and refers to commits by this ID (usually only displays first 7 digits)
+- SHA-1 has been compromised (can spoof hashes) so they are moving to SHA-256
+- Making changes to previous commits in `.git` can be detected b/c each commit's hash is based on the previous commit's hash so the change to a previous commit would be easily detected
+    - Simple blockchain of basing commit hashes on previous commits and verifying chains of hashes
