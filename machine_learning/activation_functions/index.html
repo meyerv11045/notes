@@ -112,6 +112,10 @@
 </li>
                                     
 <li>
+    <a href="../../software_design/exceptions/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
     <a href="../../software_design/misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
@@ -199,6 +203,23 @@
   </li>
                                 </ul>
                             </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../map/" class="dropdown-item">Map of ML</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Activation Functions</a>
+</li>
+                                    
+<li>
+    <a href="../reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -207,6 +228,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../map/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../reinforcement_learning/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -269,8 +300,12 @@
 </ul>
 <h2 id="sigmoidlogistic">Sigmoid/Logistic</h2>
 <p><img alt="Sigmoid or logistic activation function" src="https://missinglink.ai/wp-content/uploads/2018/11/sigmoidlogisticgraph.png" /></p>
-<p>$\sigma(x) = \dfrac{1}{1 + e^{-x}}$</p>
-<p>$\dfrac{d}{dx}\sigma(x) = \sigma(x)(1 - \sigma(x))$</p>
+<p>
+<script type="math/tex">\sigma(x) = \dfrac{1}{1 + e^{-x}}</script>
+</p>
+<p>
+<script type="math/tex">\dfrac{d}{dx}\sigma(x) = \sigma(x)(1 - \sigma(x))</script>
+</p>
 <p>Pros: </p>
 <ul>
 <li><em>Smooth Gradient</em> prevents jumps in the output values</li>
@@ -285,7 +320,9 @@
 <li><em>Computationally expensive</em></li>
 </ul>
 <p>Detailed Derivation:</p>
-<p>$$ \begin{align}\dfrac{d}{dx} \sigma(x) &amp;= \dfrac{d}{dx} \left[ \dfrac{1}{1 + e^{-x}} \right] \ &amp;= \dfrac{d}{dx} \left( 1 + \mathrm{e}^{-x} \right)^{-1} \ &amp;= -(1 + e^{-x})^{-2}(-e^{-x}) \ &amp;= \dfrac{e^{-x}}{\left(1 + e^{-x}\right)^2} \ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{e^{-x}}{1 + e^{-x}}  \ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{(1 + e^{-x}) - 1}{1 + e^{-x}}  \ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( \dfrac{1 + e^{-x}}{1 + e^{-x}} - \dfrac{1}{1 + e^{-x}} \right) \ &amp;= \dfrac{1}{1 + e^{-x}\ } \cdot \left( 1 - \dfrac{1}{1 + e^{-x}} \right) \ &amp;= \sigma(x) \cdot (1 - \sigma(x)) \end{align} $$</p>
+<p>
+<script type="math/tex; mode=display"> \begin{align}\dfrac{d}{dx} \sigma(x) &= \dfrac{d}{dx} \left[ \dfrac{1}{1 + e^{-x}} \right] \\ &= \dfrac{d}{dx} \left( 1 + \mathrm{e}^{-x} \right)^{-1} \\ &= -(1 + e^{-x})^{-2}(-e^{-x}) \\ &= \dfrac{e^{-x}}{\left(1 + e^{-x}\right)^2} \\ &= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{e^{-x}}{1 + e^{-x}}  \\ &= \dfrac{1}{1 + e^{-x}\ } \cdot \dfrac{(1 + e^{-x}) - 1}{1 + e^{-x}}  \\ &= \dfrac{1}{1 + e^{-x}\ } \cdot \left( \dfrac{1 + e^{-x}}{1 + e^{-x}} - \dfrac{1}{1 + e^{-x}} \right) \\ &= \dfrac{1}{1 + e^{-x}\ } \cdot \left( 1 - \dfrac{1}{1 + e^{-x}} \right) \\ &= \sigma(x) \cdot (1 - \sigma(x)) \end{align} </script>
+</p>
 <hr />
 <h2 id="tanh-hyperbolic-tangent">TanH/ Hyperbolic Tangent</h2>
 <p><img alt="TanH or hyperbolic tangent activation function" src="https://missinglink.ai/wp-content/uploads/2018/11/tanhhyperbolic.png" /></p>
@@ -325,6 +362,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
         <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

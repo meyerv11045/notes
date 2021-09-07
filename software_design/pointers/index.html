@@ -112,6 +112,10 @@
 </li>
                                     
 <li>
+    <a href="../exceptions/" class="dropdown-item">Exception Handling</a>
+</li>
+                                    
+<li>
     <a href="../misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
@@ -199,6 +203,23 @@
   </li>
                                 </ul>
                             </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../machine_learning/map/" class="dropdown-item">Map of ML</a>
+</li>
+                                    
+<li>
+    <a href="../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
+</li>
+                                    
+<li>
+    <a href="../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
+</li>
+                                </ul>
+                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -262,6 +283,14 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#strings" class="nav-link">Strings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#new-and-delete-operators" class="nav-link">New and Delete Operators</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#memory-leaks" class="nav-link">Memory Leaks</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -361,8 +390,37 @@ structPtr-&gt;a = 1;
 <li>represented internally as a character array ending with the null character <code>\0</code></li>
 <li>since it is a character array, pointer arithmetic and everything can be done on strings</li>
 </ul>
+<h2 id="new-and-delete-operators">New and Delete Operators</h2>
+<ul>
+<li><code>new</code> allocates memory for the given type and returns a pointer to the allocated memory<ul>
+<li>If the type is a class, it calls the constructor after allocating memory for the class's data members</li>
+<li>Can pass arguments to the constructor by passing them in parentheses after the class name (ex: <code>ClassA a = new ClassA("Test")</code>)</li>
+<li>To allocate a continuous chunk of memory for an array of objects use <code>new SomeClass[size]</code> </li>
+<li>Default constructor called for each object in array (class must have a constructor that can take 0 arguments otherwise a compiler error will occur)</li>
+</ul>
+</li>
+<li><code>delete</code> deallocates/frees a block of memory allocated with <code>new</code><ul>
+<li>No effect if used on <code>nullptr</code></li>
+<li>Dereferencing after using <code>delete</code> will cause undefined behavior if pointer is not set to <code>nullptr</code></li>
+<li>Calling <code>delete</code> on pointer not allocated with <code>new</code> has undefined behavior and is a logic error</li>
+<li>Must be called on a pointer to memory allocated using <code>new</code></li>
+<li>Doesn't set a pointer to <code>nullptr</code> just frees the memory (must be done manually)</li>
+<li>To delete an array of objects use <code>delete[] array</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="memory-leaks">Memory Leaks</h2>
+<ul>
+<li>Occur when a program that allocates memory loses the ability to access the allocated memory (</li>
+<li>Typically due to failure to properly destroy/free dynamically allocated memory that is no longer being used</li>
+<li>Can cause a program to occupy more and more memory as the program runs, slowing its runtime</li>
+<li>Can cause a program to fail if memory becomes completely full and additional memory cannot be allocated</li>
+<li>Programs left running for long periods such as web browsers suffer from known memory leaks</li>
+<li>Occur at the program level so when the program terminates, all the memory allocated by the program is freed</li>
+</ul>
 <h2 id="resources">Resources</h2>
 <ul>
+<li><a href="https://stackoverflow.com/questions/4955198/what-does-dereferencing-a-pointer-mean/4955297">(Stack  Overflow) Dereferencing Pointers</a></li>
 <li><a href="https://en.cppreference.com/w/c/language/operator_member_access">(Reference) Access Operators</a></li>
 <li><a href="https://cs.stanford.edu/people/eroberts/courses/cs106b/handouts/21-MemoryAndC++.pdf">(Slides) Pointers</a></li>
 <li><a href="https://www.geeksforgeeks.org/difference-between-p-p-and-p/">(Article) Weird Pointer Expressions</a></li>
@@ -379,6 +437,7 @@ structPtr-&gt;a = 1;
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
         <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
