@@ -2,6 +2,13 @@ site_name: The Notebook
 site_url: https://meyerv11045.github.com/notes
 docs_dir: notes
 
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+
+markdown_extensions:
+    - mdx_math:
+        enable_dollar_delimiter: True
+
 nav:
   - Basics:
     - 'Software Engineering Notebook': 'general/swe-notes.md'
@@ -22,6 +29,7 @@ nav:
   - Software Design:
     - 'Pointers': 'software_design/pointers.md'
     - 'The Big 3': 'software_design/big3.md'
+    - 'Exception Handling': 'software_design/exceptions.md'
     - 'Misc': 'software_design/misc.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
@@ -42,3 +50,7 @@ nav:
       - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
     - HTML & CSS:
       - 'Sass': 'web_dev/html-css/sass.md'
+  - Machine Learning:
+      - 'Map of ML': 'machine_learning/map.md'
+      - 'Activation Functions': 'machine_learning/activation_functions.md'
+      - 'Reinforcement Learning': 'machine_learning/reinforcement_learning.md'

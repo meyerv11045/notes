@@ -12,3 +12,8 @@ This forces the network to learn a compressed representation of the data. A simp
 Relies on the input data having features (completely random noise would be tough to learn anything from)
 
 Mathematically, it can be thought of as trying to learn an approximation to the identity function so the output is similar to the input. Allows us to discover interesting structure about the data.
+
+## Reinforcement Learning
+A control policy $\pi$ maps the continuous state vector $x$ to a continuous action vector $u$ (often a control vector).
+
+$u = \pi(x,t,\theta)$ where $\theta$ is the set of parameters to be learned by the control policy and $t$ is the specific timestep

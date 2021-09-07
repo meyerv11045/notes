@@ -106,9 +106,30 @@ In classical architectures, the stack and heap grow toward each other to maximiz
 - represented internally as a character array ending with the null character `\0`
 - since it is a character array, pointer arithmetic and everything can be done on strings
 
+## New and Delete Operators
+- `new` allocates memory for the given type and returns a pointer to the allocated memory
+    - If the type is a class, it calls the constructor after allocating memory for the class's data members
+    - Can pass arguments to the constructor by passing them in parentheses after the class name (ex: `ClassA a = new ClassA("Test")`)
+    - To allocate a continuous chunk of memory for an array of objects use `new SomeClass[size]` 
+      - Default constructor called for each object in array (class must have a constructor that can take 0 arguments otherwise a compiler error will occur)
+- `delete` deallocates/frees a block of memory allocated with `new`
+    - No effect if used on `nullptr`
+    - Dereferencing after using `delete` will cause undefined behavior if pointer is not set to `nullptr`
+    - Calling `delete` on pointer not allocated with `new` has undefined behavior and is a logic error
+    - Must be called on a pointer to memory allocated using `new`
+    - Doesn't set a pointer to `nullptr` just frees the memory (must be done manually)
+    - To delete an array of objects use `delete[] array`
 
+## Memory Leaks
+- Occur when a program that allocates memory loses the ability to access the allocated memory (
+- Typically due to failure to properly destroy/free dynamically allocated memory that is no longer being used
+- Can cause a program to occupy more and more memory as the program runs, slowing its runtime
+- Can cause a program to fail if memory becomes completely full and additional memory cannot be allocated
+- Programs left running for long periods such as web browsers suffer from known memory leaks
+- Occur at the program level so when the program terminates, all the memory allocated by the program is freed
 
 ## Resources
+- [(Stack  Overflow) Dereferencing Pointers](https://stackoverflow.com/questions/4955198/what-does-dereferencing-a-pointer-mean/4955297)
 - [(Reference) Access Operators](https://en.cppreference.com/w/c/language/operator_member_access)
 - [(Slides) Pointers](https://cs.stanford.edu/people/eroberts/courses/cs106b/handouts/21-MemoryAndC++.pdf)
 - [(Article) Weird Pointer Expressions](https://www.geeksforgeeks.org/difference-between-p-p-and-p/)
