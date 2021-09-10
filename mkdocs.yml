@@ -50,7 +50,3 @@ nav:
       - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
     - HTML & CSS:
       - 'Sass': 'web_dev/html-css/sass.md'
-  - Machine Learning:
-      - 'Map of ML': 'machine_learning/map.md'
-      - 'Activation Functions': 'machine_learning/activation_functions.md'
-      - 'Reinforcement Learning': 'machine_learning/reinforcement_learning.md'

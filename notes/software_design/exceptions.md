@@ -5,10 +5,13 @@
 
 ``` c++
 try {
-    throw Exception("Something went wrong");
+    throw std::overflow_error("overflow error in push")
 }
-catch () {
-
+catch (std::overflow_error &excep) {
+    std::cout << excep.what() << std::endl;
+}
+catch (...) {
+    std::cout << "Unknown exception" << std::endl;
 }
 ```
 
@@ -19,3 +22,6 @@ Properly written exception safe code employs relatively few `try` blocks
 ## Throw
 - Can throw anything but error types in standard library are typically used
 - If a function throws a `const` object, the catch handler argument type must be declared `const` 
+- Throw lists are bad practice but you will see them in legacy code
+- Exceptions thrown in constructors will cause the destructors to be called for any objects built as part of the object being constructed *before* the exception is thrown
+- Don't throw exceptions in a destructor

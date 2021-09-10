@@ -11,3 +11,16 @@
 
 - Clang and Gcc compiler will be used. 
 - Undefined behaviors are different between C++ compilers
+
+## Command Line Arguments
+``` c++
+int main(int argc, char **argv) {
+
+}
+```
+`argc` is the number of command line arguments (strings)
+`**argv` is a pointer to an array (a pointer) containing pointers to the command line strings
+
+Always one argument (the name of your program itself) 
+
+When running a program the OS loader finds the executable on disk and passes in any additional arguments from the command line to the main function
