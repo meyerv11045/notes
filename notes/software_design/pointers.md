@@ -1,8 +1,9 @@
 # Pointers
-- A pointer is a variable that contains a memory address
+- A pointer is a variable that contains a memory address as its value
+    - Memory address points to the actual data
     - Has a data type that indicates the type of data being stored at the memory address
     - Declared using `*` operator like: `int* a;`
-- **Refrence Operator:** `&` obtains a variable's memory address
+- **Refrence/Address Operator:** `&` obtains a variable's memory address
 - **Dereference Operator:** `*` retrieves the data at the memory address a pointer stores
 - When declared, pointers hold an unknown address until initialized
 - To indicate pointing at nothing, use `nullptr`
@@ -90,10 +91,27 @@ structPtr->a = 1;
 - Accessing elements using indexing is actually just using pointer arithmetic
 - A variable declared as an array is the same as a variable declared as a pointer
 - When passing an array to a function, only the address of the array is copied into the parameter so any changes to the array in the function will cause a change to the original array b/c its shared
+- `void f1(int array[]) = void f1(int *array)` 
+    - `[]` and `*` are effectively the same but `[]` provides better documentation/readability
+- Array of pointers (multi-dimensional arrays): 
+    - `**` or `*[]` can be used to declare arrays of pointers
+    - Allows a program to contain elements that vary in size (saves memory which is important for programs using large data objects) 
 
 ## Strings
 - represented internally as a character array ending with the null character `\0`
 - since it is a character array, pointer arithmetic and everything can be done on strings
+
+## Const
+- `const` ensures data cannot be modified and the compiler will enforce this constraint
+    - Use as much as possible
+
+``` c++
+const int num;
+num = 10; // error!
+
+const char let = 'a'; // good!
+let = 'b'; // error
+```
 
 ## New and Delete Operators
 - `new` allocates memory for the given type and returns a pointer to the allocated memory
@@ -123,19 +141,48 @@ A program's memory usage includes 3 different regions:
       - Allocated on the program's execution stack 
       - Allocated at run time as control flow enters and deallocated as flow exits 
       - Managed by the run-time system 
-3. **Dynamic Memory (heap)**- where the `new` operator allocates memory and the `delete` operator deallocates memory
+3. **Dynamic Memory (heap)**- where the `new` operator allocates memory and the `delete` operator deallocates memory during runtime
       - Managed by the programmer (aka the free store)
+      - Can only have as much physical memory as the machine or OS can make available (mismanaged memory in large programs can lead to it running out of memory and crashing)
 
 In classical architectures, the stack and heap grow toward each other to maximize the available space
 
-
 ## Memory Leaks
-- Occur when a program that allocates memory loses the ability to access the allocated memory (
+- Occur when a program that allocates memory loses the ability to access the allocated memory
 - Typically due to failure to properly destroy/free dynamically allocated memory that is no longer being used
 - Can cause a program to occupy more and more memory as the program runs, slowing its runtime
 - Can cause a program to fail if memory becomes completely full and additional memory cannot be allocated
 - Programs left running for long periods such as web browsers suffer from known memory leaks
 - Occur at the program level so when the program terminates, all the memory allocated by the program is freed
+
+## const and pointers
+- A `const` pointer cannot be changed to point at something else
+- `const` data cannot be modified
+
+``` c++
+char greeting[] = "Hello";
+
+char *p = greeting;             // non-const pointer, non-const data (unfixed at what it points to & read/write)
+const char *p = greeting;       // non-const pointer, const data (unfixed at what it points to & readonly)
+const * char p = greeting;      // const pointerm, non-const data (fixed at what it points to & read/write)
+const char * const p = greeting // const pointer, const data (fixed at what it points & readonly)
+```
+
+``` c++
+// const anywhere to the left of * means its const data
+void f1(const Widget *pw) // preferred
+void f2(Widget const *pw ) // same as above
+```
+
+- non-const --> const is common
+- const --> non-const is bad and should be avoided
+
+## this pointer
+- `this` pointer in a non-const member function of a class X is type: `X * const` (can change the data of the class but can't change where `this` is pointing)
+    - constant pointer to non-constant object
+
+## returning objects
+- Objects can be returned from functions 
 
 ## Resources
 - [(Stack  Overflow) Dereferencing Pointers](https://stackoverflow.com/questions/4955198/what-does-dereferencing-a-pointer-mean/4955297)
