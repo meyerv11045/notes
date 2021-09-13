@@ -116,6 +116,10 @@
 </li>
                                     
 <li>
+    <a href="../templates/" class="dropdown-item">Templates</a>
+</li>
+                                    
+<li>
     <a href="../misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
@@ -203,23 +207,6 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../machine_learning/map/" class="dropdown-item">Map of ML</a>
-</li>
-                                    
-<li>
-    <a href="../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                    
-<li>
-    <a href="../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                </ul>
-                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -274,10 +261,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#memory-regions" class="nav-link">Memory Regions</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#arrays" class="nav-link">Arrays</a>
               <ul class="nav flex-column">
               </ul>
@@ -286,11 +269,31 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#const" class="nav-link">Const</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#new-and-delete-operators" class="nav-link">New and Delete Operators</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#memory-regions" class="nav-link">Memory Regions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#memory-leaks" class="nav-link">Memory Leaks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#const-and-pointers" class="nav-link">const and pointers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#this-pointer" class="nav-link">this pointer</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#returning-objects" class="nav-link">returning objects</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -307,12 +310,13 @@
 
 <h1 id="pointers">Pointers</h1>
 <ul>
-<li>A pointer is a variable that contains a memory address<ul>
+<li>A pointer is a variable that contains a memory address as its value<ul>
+<li>Memory address points to the actual data</li>
 <li>Has a data type that indicates the type of data being stored at the memory address</li>
 <li>Declared using <code>*</code> operator like: <code>int* a;</code></li>
 </ul>
 </li>
-<li><strong>Refrence Operator:</strong> <code>&amp;</code> obtains a variable's memory address</li>
+<li><strong>Refrence/Address Operator:</strong> <code>&amp;</code> obtains a variable's memory address</li>
 <li><strong>Dereference Operator:</strong> <code>*</code> retrieves the data at the memory address a pointer stores</li>
 <li>When declared, pointers hold an unknown address until initialized</li>
 <li>To indicate pointing at nothing, use <code>nullptr</code></li>
@@ -369,27 +373,40 @@ structPtr-&gt;a = 1;
 // is cleaner than:
 (*structPtr).a = 1;
 </code></pre>
-<h2 id="memory-regions">Memory Regions</h2>
-<p>A program's memory usage includes 3 different regions:
-1. <strong>Static Memory</strong>- where global &amp; static local variables are allocated
-    - Static variables are allocated once and stay in the same memory location for the duration of the program's execution
-2. <strong>Stack</strong>- each function call alloocates a new block of memory called a stack frame to holds its local variables. The stack frames are part of the stack
-      - Managed by the run-time system 
-3. <strong>Heap</strong>- where the <code>new</code> operator allocates memory and the <code>delete</code> operator deallocates memory
-      - Managed by the programmer (aka the free store)</p>
-<p>In classical architectures, the stack and heap grow toward each other to maximize the available space</p>
 <h2 id="arrays">Arrays</h2>
 <ul>
 <li>Represented internally as a pointer to the first element</li>
 <li>Accessing elements using indexing is actually just using pointer arithmetic</li>
 <li>A variable declared as an array is the same as a variable declared as a pointer</li>
 <li>When passing an array to a function, only the address of the array is copied into the parameter so any changes to the array in the function will cause a change to the original array b/c its shared</li>
+<li><code>void f1(int array[]) = void f1(int *array)</code> <ul>
+<li><code>[]</code> and <code>*</code> are effectively the same but <code>[]</code> provides better documentation/readability</li>
+</ul>
+</li>
+<li>Array of pointers (multi-dimensional arrays): <ul>
+<li><code>**</code> or <code>*[]</code> can be used to declare arrays of pointers</li>
+<li>Allows a program to contain elements that vary in size (saves memory which is important for programs using large data objects) </li>
+</ul>
+</li>
 </ul>
 <h2 id="strings">Strings</h2>
 <ul>
 <li>represented internally as a character array ending with the null character <code>\0</code></li>
 <li>since it is a character array, pointer arithmetic and everything can be done on strings</li>
 </ul>
+<h2 id="const">Const</h2>
+<ul>
+<li><code>const</code> ensures data cannot be modified and the compiler will enforce this constraint<ul>
+<li>Use as much as possible</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">const int num;
+num = 10; // error!
+
+const char let = 'a'; // good!
+let = 'b'; // error
+</code></pre>
 <h2 id="new-and-delete-operators">New and Delete Operators</h2>
 <ul>
 <li><code>new</code> allocates memory for the given type and returns a pointer to the allocated memory<ul>
@@ -406,17 +423,66 @@ structPtr-&gt;a = 1;
 <li>Must be called on a pointer to memory allocated using <code>new</code></li>
 <li>Doesn't set a pointer to <code>nullptr</code> just frees the memory (must be done manually)</li>
 <li>To delete an array of objects use <code>delete[] array</code></li>
+<li>Calling destructor instead of delete fails to actually free up the memory</li>
 </ul>
 </li>
 </ul>
+<h2 id="memory-regions">Memory Regions</h2>
+<p>A program's memory usage includes 3 different regions:
+1. <strong>Static Memory</strong>- where global &amp; static local variables are allocated at compilation time (fixed size)
+    - Reserved at compile time in the program's data segment
+    - Allocated as a fixed block of memory
+    - Stores any global and static local variables
+    - Stores the actual code
+    - Alllocated when program starts and deallocated when program exists
+2. <strong>Automatic Memory (stack)</strong>- each function call allocates a new block of memory called a stack frame to holds its local variables. The stack frames are part of the stack
+      - Starts where static memory ends and grows towards the end of memory 
+      - Allocated on the program's execution stack 
+      - Allocated at run time as control flow enters and deallocated as flow exits 
+      - Managed by the run-time system 
+3. <strong>Dynamic Memory (heap)</strong>- where the <code>new</code> operator allocates memory and the <code>delete</code> operator deallocates memory during runtime
+      - Managed by the programmer (aka the free store)
+      - Can only have as much physical memory as the machine or OS can make available (mismanaged memory in large programs can lead to it running out of memory and crashing)</p>
+<p>In classical architectures, the stack and heap grow toward each other to maximize the available space</p>
 <h2 id="memory-leaks">Memory Leaks</h2>
 <ul>
-<li>Occur when a program that allocates memory loses the ability to access the allocated memory (</li>
+<li>Occur when a program that allocates memory loses the ability to access the allocated memory</li>
 <li>Typically due to failure to properly destroy/free dynamically allocated memory that is no longer being used</li>
 <li>Can cause a program to occupy more and more memory as the program runs, slowing its runtime</li>
 <li>Can cause a program to fail if memory becomes completely full and additional memory cannot be allocated</li>
 <li>Programs left running for long periods such as web browsers suffer from known memory leaks</li>
 <li>Occur at the program level so when the program terminates, all the memory allocated by the program is freed</li>
+</ul>
+<h2 id="const-and-pointers">const and pointers</h2>
+<ul>
+<li>A <code>const</code> pointer cannot be changed to point at something else</li>
+<li><code>const</code> data cannot be modified</li>
+</ul>
+<pre><code class="language-c++">char greeting[] = &quot;Hello&quot;;
+
+char *p = greeting;             // non-const pointer, non-const data (unfixed at what it points to &amp; read/write)
+const char *p = greeting;       // non-const pointer, const data (unfixed at what it points to &amp; readonly)
+const * char p = greeting;      // const pointerm, non-const data (fixed at what it points to &amp; read/write)
+const char * const p = greeting // const pointer, const data (fixed at what it points &amp; readonly)
+</code></pre>
+<pre><code class="language-c++">// const anywhere to the left of * means its const data
+void f1(const Widget *pw) // preferred
+void f2(Widget const *pw ) // same as above
+</code></pre>
+<ul>
+<li>non-const --&gt; const is common</li>
+<li>const --&gt; non-const is bad and should be avoided</li>
+</ul>
+<h2 id="this-pointer">this pointer</h2>
+<ul>
+<li><code>this</code> pointer in a non-const member function of a class X is type: <code>X * const</code> (can change the data of the class but can't change where <code>this</code> is pointing)<ul>
+<li>constant pointer to non-constant object</li>
+</ul>
+</li>
+</ul>
+<h2 id="returning-objects">returning objects</h2>
+<ul>
+<li>Objects can be returned from functions </li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>

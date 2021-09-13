@@ -116,6 +116,10 @@
 </li>
                                     
 <li>
+    <a href="../templates/" class="dropdown-item">Templates</a>
+</li>
+                                    
+<li>
     <a href="../misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
@@ -203,23 +207,6 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../machine_learning/map/" class="dropdown-item">Map of ML</a>
-</li>
-                                    
-<li>
-    <a href="../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                    
-<li>
-    <a href="../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                </ul>
-                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -234,7 +221,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../misc/" class="nav-link">
+                                <a rel="next" href="../templates/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -262,6 +249,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#constructors-destructors" class="nav-link">Constructors &amp; Destructors</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -273,21 +264,43 @@
 <ul>
 <li>Purpose: permit the program to catch and handle errors rather than let it occur and suffer the consequences</li>
 <li>Used when system can recover from the error causing the exception</li>
-<li>Exception Handler- Recovery procedure</li>
+<li>Exception Handler- recovery procedure</li>
+<li>If no catch function, the <code>terminate</code> function is called (terminate calls <code>abort</code> function that aborts the program)</li>
+<li>Properly written exception safe code employs relatively few <code>try</code> blocks</li>
 </ul>
 <pre><code class="language-c++">try {
-    throw Exception(&quot;Something went wrong&quot;);
+    throw std::overflow_error(&quot;overflow error in push&quot;)
 }
-catch () {
-
+catch (std::overflow_error &amp;excep) {
+    // exception handler is here
+    std::cout &lt;&lt; excep.what() &lt;&lt; std::endl;
+}
+catch (...) {
+    std::cout &lt;&lt; &quot;Unknown exception&quot; &lt;&lt; std::endl;
 }
 </code></pre>
-<p>If no catch function, the <code>terminate</code> function is called (terminate calls <code>abort</code> function that aborts the program)</p>
-<p>Properly written exception safe code employs relatively few <code>try</code> blocks</p>
 <h2 id="throw">Throw</h2>
 <ul>
 <li>Can throw anything but error types in standard library are typically used</li>
 <li>If a function throws a <code>const</code> object, the catch handler argument type must be declared <code>const</code> </li>
+<li>Throw lists for functions are bad practice but you will see them in legacy code</li>
+<li>Unwinding the stack refers to when an expection is thrown</li>
+</ul>
+<pre><code class="language-c++">void func(int x)
+{
+    char* fizz = new char[1024];
+    std::string s(&quot;Test&quot;);
+
+    if(x) throw std::runtime_error(&quot;explosion&quot;);
+
+    delete[] test;
+}
+</code></pre>
+<p>In the above example, memory allocated for <code>fizz</code> will be leaked if an exception is thrown b/c <code>delete[] fizz</code> is never reached. However, memory allocated for <code>s</code> will be properly destructed b/c throwing an exception <strong>unwinds the stack</strong> meaning the destructor will be called on objects in each of the stack frames until a <code>try catch</code> block is reached. Since <code>std::string</code> has a properly defined destructor, <code>s</code> will not create a memory leak when an exception is thrown.</p>
+<h2 id="constructors-destructors">Constructors &amp; Destructors</h2>
+<ul>
+<li>Exceptions thrown in constructors will cause the destructors to be called for any objects built as part of the object being constructed <em>before</em> the exception is thrown</li>
+<li>Don't throw exceptions in a destructor</li>
 </ul></div>
             </div>
         </div>

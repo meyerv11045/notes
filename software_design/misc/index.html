@@ -116,6 +116,10 @@
 </li>
                                     
 <li>
+    <a href="../templates/" class="dropdown-item">Templates</a>
+</li>
+                                    
+<li>
     <a href="./" class="dropdown-item active">Misc</a>
 </li>
                                 </ul>
@@ -203,23 +207,6 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Machine Learning <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../machine_learning/map/" class="dropdown-item">Map of ML</a>
-</li>
-                                    
-<li>
-    <a href="../../machine_learning/activation_functions/" class="dropdown-item">Activation Functions</a>
-</li>
-                                    
-<li>
-    <a href="../../machine_learning/reinforcement_learning/" class="dropdown-item">Reinforcement Learning</a>
-</li>
-                                </ul>
-                            </li>
                         </ul>
 
                     <ul class="nav navbar-nav ml-auto">
@@ -229,7 +216,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../exceptions/" class="nav-link">
+                                <a rel="prev" href="../templates/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -258,6 +245,26 @@
             
             <li class="nav-item" data-level="1"><a href="#c-compiler" class="nav-link">C++ Compiler</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#command-line-arguments" class="nav-link">Command Line Arguments</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#explicit-vs-automatic-conversions" class="nav-link">Explicit vs. Automatic Conversions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#reference" class="nav-link">Reference</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#function-calls" class="nav-link">Function Calls:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#debugger" class="nav-link">Debugger</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -278,6 +285,95 @@
 <ul>
 <li>Clang and Gcc compiler will be used. </li>
 <li>Undefined behaviors are different between C++ compilers</li>
+</ul>
+<h2 id="command-line-arguments">Command Line Arguments</h2>
+<pre><code class="language-c++">int main(int argc, char **argv) {
+
+}
+</code></pre>
+<p><code>argc</code> is the number of command line arguments (strings)
+<code>**argv</code> is a pointer to an array (a pointer) containing pointers to the command line strings</p>
+<p>Always one argument (the name of your program itself) </p>
+<p>When running a program the OS loader finds the executable on disk and passes in any additional arguments from the command line to the main function</p>
+<h2 id="explicit-vs-automatic-conversions">Explicit vs. Automatic Conversions</h2>
+<p>A single argument constructor provides the aiblity to convert the value of the argument to the clas type.</p>
+<p>implicit conversion converts the statement to a </p>
+<pre><code class="language-c++">Class A {
+public:
+      A();
+      A(int);
+      A(const char*, int=0);
+}
+
+// implicit conversion:
+A c = 1; // same as A c = A(1)
+A c = &quot;someword&quot; // same as A c = A(&quot;someword&quot;)
+</code></pre>
+<pre><code class="language-c++">Class A {
+public:
+      A();
+      // don't need to give params names in the header but its helpful, only required in the cpp implementation
+      explicit A(int);
+      explicit A(const char*, int=0);
+}
+
+// implicit conversion no longer allowed
+A c = 1; // will now throw compiler errors
+A c = &quot;someword&quot; // same as A c = A(&quot;someword&quot;)
+
+// allows:
+A a1;
+A a2 = A(1);
+A a3(1);
+A a4 = A(&quot;Test&quot;);
+A a6 = static_cast&lt;A&gt;(1);
+A* p = new A(1);
+</code></pre>
+<h2 id="reference">Reference</h2>
+<ul>
+<li>Another name for an existing object</li>
+<li>Not a pointer and doesn't behave like a pointer</li>
+<li>3 Major differences from a pointer:<ul>
+<li>1) No null references</li>
+<li>2) All references require initialization when they are declared</li>
+<li>3) A reference always refers to the object with which it is initialized (cannot be made to refer to a different object later)</li>
+</ul>
+</li>
+</ul>
+<h3 id="references-and-const">References and Const</h3>
+<ul>
+<li>reference to a non const cannot be initialized with a literal or temporary value </li>
+<li>a refernce to a const can be initialized with a literal or a temporary value</li>
+</ul>
+<pre><code class="language-c++">double &amp;cd = 12.3; // error!
+const double &amp;cd = 12.3; //no error
+</code></pre>
+<h2 id="function-calls">Function Calls:</h2>
+<ul>
+<li>1) Pass by value: calls copy constructor</li>
+<li>2) Pass by pointer<ul>
+<li>Function call must send address of the variable: <code>f(&amp;&lt;var-name&gt;)</code></li>
+<li>Function def must use <code>*</code> to create an alias for the variable: <code>&lt;return-type&gt; f(&lt;data-type&gt;* &lt;var-name&gt;) { ... }</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">int test(char* letter) {
+      return int(*letter)
+}
+
+char testLetter = 'a';
+std::cout &lt;&lt; test(&amp;testLetter) &lt;&lt; std::endl; // prints a
+</code></pre>
+<ul>
+<li>3) Pass by reference: allow</li>
+</ul>
+<p>types not matching causes attempt to implicitly cast to the correct type which effectively causes a copy call when making a temp copy</p>
+<p>therefore, types have to match</p>
+<h2 id="debugger">Debugger</h2>
+<ul>
+<li>Can set breakpoints to run the program until a certain line</li>
+<li>Can set watch points to run the program until a certain condition</li>
+<li>LLVM/GDB debuggers can be used from the terminal</li>
 </ul></div>
             </div>
         </div>
