@@ -296,8 +296,8 @@
 <p>Always one argument (the name of your program itself) </p>
 <p>When running a program the OS loader finds the executable on disk and passes in any additional arguments from the command line to the main function</p>
 <h2 id="explicit-vs-automatic-conversions">Explicit vs. Automatic Conversions</h2>
-<p>A single argument constructor provides the aiblity to convert the value of the argument to the clas type.</p>
-<p>implicit conversion converts the statement to a </p>
+<p>A single argument constructor provides the ability to convert the value of the argument to the clas type.</p>
+<p>Implicit conversion converts the statement to a </p>
 <pre><code class="language-c++">Class A {
 public:
       A();
@@ -351,7 +351,7 @@ const double &amp;cd = 12.3; //no error
 <h2 id="function-calls">Function Calls:</h2>
 <ul>
 <li>1) Pass by value: calls copy constructor</li>
-<li>2) Pass by pointer<ul>
+<li>2) Pass by pointer:<ul>
 <li>Function call must send address of the variable: <code>f(&amp;&lt;var-name&gt;)</code></li>
 <li>Function def must use <code>*</code> to create an alias for the variable: <code>&lt;return-type&gt; f(&lt;data-type&gt;* &lt;var-name&gt;) { ... }</code></li>
 </ul>
@@ -367,8 +367,7 @@ std::cout &lt;&lt; test(&amp;testLetter) &lt;&lt; std::endl; // prints a
 <ul>
 <li>3) Pass by reference: allow</li>
 </ul>
-<p>types not matching causes attempt to implicitly cast to the correct type which effectively causes a copy call when making a temp copy</p>
-<p>therefore, types have to match</p>
+<p>Types not matching causes an attempt to implicitly cast to the correct type which effectively causes a copy call when making a temp copy</p>
 <h2 id="debugger">Debugger</h2>
 <ul>
 <li>Can set breakpoints to run the program until a certain line</li>
