@@ -26,10 +26,9 @@ Always one argument (the name of your program itself)
 When running a program the OS loader finds the executable on disk and passes in any additional arguments from the command line to the main function
 
 ## Explicit vs. Automatic Conversions
-A single argument constructor provides the aiblity to convert the value of the argument to the clas type.
+A single argument constructor provides the ability to convert the value of the argument to the clas type.
 
-
-implicit conversion converts the statement to a 
+Implicit conversion converts the statement to a 
 
 ``` c++
 Class A {
@@ -84,7 +83,7 @@ const double &cd = 12.3; //no error
 
 ## Function Calls:
 - 1) Pass by value: calls copy constructor
-- 2) Pass by pointer
+- 2) Pass by pointer:
     - Function call must send address of the variable: `f(&<var-name>)`
     - Function def must use `*` to create an alias for the variable: `<return-type> f(<data-type>* <var-name>) { ... }`
 ``` c++
@@ -97,10 +96,7 @@ std::cout << test(&testLetter) << std::endl; // prints a
 ```
 - 3) Pass by reference: allow
 
-types not matching causes attempt to implicitly cast to the correct type which effectively causes a copy call when making a temp copy
-
-therefore, types have to match
-
+Types not matching causes an attempt to implicitly cast to the correct type which effectively causes a copy call when making a temp copy
 
 ## Debugger
 - Can set breakpoints to run the program until a certain line
