@@ -95,5 +95,4 @@ template <typename T> T Stack<T>::sum() const {
   }
   return value;
 }
-
 ```
