@@ -432,21 +432,35 @@ let = 'b'; // error
 </li>
 </ul>
 <h2 id="memory-regions">Memory Regions</h2>
-<p>A program's memory usage includes 3 different regions:
-1. <strong>Static Memory</strong>- where global &amp; static local variables are allocated at compilation time (fixed size)
-    - Reserved at compile time in the program's data segment
-    - Allocated as a fixed block of memory
-    - Stores any global and static local variables
-    - Stores the actual code
-    - Alllocated when program starts and deallocated when program exists
-2. <strong>Automatic Memory (stack)</strong>- each function call allocates a new block of memory called a stack frame to holds its local variables. The stack frames are part of the stack
-      - Starts where static memory ends and grows towards the end of memory 
-      - Allocated on the program's execution stack 
-      - Allocated at run time as control flow enters and deallocated as flow exits 
-      - Managed by the run-time system 
-3. <strong>Dynamic Memory (heap)</strong>- where the <code>new</code> operator allocates memory and the <code>delete</code> operator deallocates memory during runtime
-      - Managed by the programmer (aka the free store)
-      - Can only have as much physical memory as the machine or OS can make available (mismanaged memory in large programs can lead to it running out of memory and crashing)</p>
+<p>A program's memory usage includes 3 different regions:</p>
+<ol>
+<li>
+<p><strong>Static Memory</strong>- where global &amp; static local variables are allocated at compilation time (fixed size)</p>
+<ul>
+<li>Reserved at compile time in the program's data segment</li>
+<li>Allocated as a fixed block of memory</li>
+<li>Stores any global and static local variables</li>
+<li>Stores the actual code</li>
+<li>Alllocated when program starts and deallocated when program exists</li>
+</ul>
+</li>
+<li>
+<p><strong>Automatic Memory (stack)</strong>- each function call allocates a new block of memory called a stack frame to holds its local variables. The stack frames are part of the stack</p>
+<ul>
+<li>Starts where static memory ends and grows towards the end of memory </li>
+<li>Allocated on the program's execution stack </li>
+<li>Allocated at run time as control flow enters and deallocated as flow exits </li>
+<li>Managed by the run-time system </li>
+</ul>
+</li>
+<li>
+<p><strong>Dynamic Memory (heap)</strong>- where the <code>new</code> operator allocates memory and the <code>delete</code> operator deallocates memory during runtime</p>
+<ul>
+<li>Managed by the programmer (aka the free store)</li>
+<li>Can only have as much physical memory as the machine or OS can make available (mismanaged memory in large programs can lead to it running out of memory and crashing)</li>
+</ul>
+</li>
+</ol>
 <p>In classical architectures, the stack and heap grow toward each other to maximize the available space</p>
 <h2 id="memory-leaks">Memory Leaks</h2>
 <ul>

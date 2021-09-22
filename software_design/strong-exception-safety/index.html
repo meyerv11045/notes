@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/operator-overloading/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/strong-exception-safety/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Operator Overloading - The Notebook</title>
+        <title>Strong Exception Safety - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -99,7 +99,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -120,7 +120,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Operator Overloading</a>
+    <a href="../operator-overloading/" class="dropdown-item">Operator Overloading</a>
 </li>
                                     
 <li>
@@ -219,16 +219,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../templates/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../misc/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -247,21 +237,29 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#operator-overloading" class="nav-link">Operator Overloading</a>
+            <li class="nav-item" data-level="1"><a href="#strong-exception-safety" class="nav-link">Strong Exception Safety</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#friendship" class="nav-link">Friendship</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#overloading-unary-operators" class="nav-link">Overloading Unary Operators</a>
+            <li class="nav-item" data-level="2"><a href="#noexcept-specfication" class="nav-link">noexcept Specfication</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#subscript-operator" class="nav-link">Subscript Operator</a>
+            <li class="nav-item" data-level="2"><a href="#general-principles" class="nav-link">General Principles</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#overloading-vs-overriding" class="nav-link">Overloading vs. Overriding</a>
+            <li class="nav-item" data-level="2"><a href="#standard-exception-class-heierarchy" class="nav-link">Standard Exception Class Heierarchy</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#mutex" class="nav-link">Mutex</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#exception-safety" class="nav-link">Exception Safety</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#raii" class="nav-link">RAII</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -272,133 +270,76 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="operator-overloading">Operator Overloading</h1>
+<h1 id="strong-exception-safety">Strong Exception Safety</h1>
 <ul>
-<li>Allows a programmer to define behaviors when built-in operators are applied to user defined types</li>
-<li><code>operator&lt;symbol&gt;</code> is used for the function name of the operator to be overloaded  </li>
+<li>Very large and old software systems with ad hoc resource managment cannot use exceptions.</li>
 </ul>
-<pre><code class="language-c++">class String {
-public:    
-    String &amp;operator=(const String &amp;); // assignment: returns by referenceto allow chaining/compounding assignments
-    String operator+(const String &amp;) const; // addition: const method b/c it does not alter the object, but returns a new one
-    String operator-() const; // unary negator
-...
-};
-</code></pre>
-<pre><code class="language-c++">a = b
-// equivalent
-a.operator=(b)
-</code></pre>
+<h2 id="noexcept-specfication">noexcept Specfication</h2>
 <ul>
-<li>Compiler generates default implementation for assignment (=) and address (&amp;) operator</li>
-<li>Overloading an operator does not change:<ul>
-<li>Operator precedence</li>
-<li>Associativity of the operator (important for unary operator)</li>
-<li>Arity of the operator (can't turn unary operator into a binary operator or vice versa)</li>
-<li>Meaning of how the operator works on objects of built-in types</li>
+<li>Functions that guarantee they will not throw an exception should specify that like so: <code>void foo (...) noexcept;</code></li>
+<li>Can also be used as an operator that returns true at compile time if a given expression is guaranteed to not throw an exception</li>
+</ul>
+<h2 id="general-principles">General Principles</h2>
+<ul>
+<li>Can design every function to:<ul>
+<li>1) Complete successfully</li>
+<li>2) Fail in a well-defined manner</li>
+</ul>
+</li>
+<li>Assume every function that can throw an exception will throw one and incorporate it into your code/design</li>
+<li>Never delete a peice of information before the replacement info is ready for use</li>
+<li>Basic Tools:<ul>
+<li>Try-blocks</li>
+<li>Support from Resource Acquisition Is Initialization (RAII) technique</li>
+</ul>
+</li>
+<li>Throw and catch exceptions only when absolutely necessary</li>
+<li>When exception is thrown:<ul>
+<li>Leak no resources</li>
+<li>Don't permit data structures to become corrupted</li>
+</ul>
+</li>
+<li></li>
+</ul>
+<h2 id="standard-exception-class-heierarchy">Standard Exception Class Heierarchy</h2>
+<pre><code>exception
+    logic_error
+        domain_error
+        length_error
+        invalid_argument
+        out_of_range
+    runtime_error
+        range_error
+        overflow_error
+        underflow_error
+</code></pre>
+<h2 id="mutex">Mutex</h2>
+<ul>
+<li><strong>Mu</strong>tual <strong>ex</strong>clusion object</li>
+<li>An object that allows multiple program threads to share the same resource (e.g. file access) but not simultaneously </li>
+<li>Mutex is locked when being used and unlocked when no longer needed</li>
+<li><code>std::lock_guard&lt;std::mutex&gt; mutex(exMutex)</code> will automatically lock and unlock the mutex when<ul>
+<li>Strong exception safety because mutex will be unlocked if exception is thrown and will not freeze program b/c of never reaching the unlock call</li>
+<li>Example of using RAII to destroy local variables when they go out of scope</li>
 </ul>
 </li>
 </ul>
-<h2 id="friendship">Friendship</h2>
-<p>Used for sharing private data members between classes</p>
-<pre><code class="language-c++">class A{
-public:
-    int  operator+(const B &amp;rhs) {
-        return this-&gt;foo + 
-    }    
-private:
-    int foo;
-}
-
-class B {
-public:
-    friend class A; // any object A and all of its functions have access to private members in class B
-    friend int A::operator+(const B &amp;rhs); // grants only this method in class A access to private member variables in class B
-private:
-    int bar;
-}
-
-</code></pre>
-<p>Implementing an operator function as a non-member function of a class (often used for overloading the insertion/extraction operator):</p>
-<pre><code class="language-c++">// .h 
-class A{
-public:
-    A(std::string a, std::string b, std::string c);
-    friend std::ostream &amp;operator&lt;&lt;(std::ostream &amp;lhs, const A &amp;rhs); // gives method access to the private member variables
-private:
-    std::string a, b, c;
-
-}
-std::ostream &amp;operator&lt;&lt;(std::ostream &amp;lhs, const A &amp;rhs);
-
-// .cpp
-
-A:A(std::string a, std::string b, std::string c): 
-    a(a), b(b), c(c) {}
-
-// returns a reference to the ostream that was passed in and modified by adding the data from the rhs object which is not modified in the process
-std::ostream &amp;operator&lt;&lt;(std::ostream &amp;lhs, const A &amp;rhs)
-{
-    lhs &lt;&lt; rhs.a &lt;&lt; &quot; &quot; &lt;&lt; rhs.b &lt;&lt; &quot; &quot; &lt;&lt; rhs.c &lt;&lt;std::endl;
-    return lhs;
-}
-</code></pre>
-<h2 id="overloading-unary-operators">Overloading Unary Operators</h2>
+<h2 id="exception-safety">Exception Safety</h2>
+<p>Exception safe functions provide one of four guarantees for if an exception is thrown:
+1. No Safety- code is in bad place
+2. Weak/Basic- everything in function remains in a valid state, but exact state may be unknown
+3. Strong- state of program is unchanged
+4. Nothrow- function always works and never throws an exception</p>
+<p>operating overloading can cause exceptions on user defined types because they are function calls
+combining operating overloading with templates makes things very complicated depending on whether the type is a primitive or user defined</p>
+<h2 id="raii">RAII</h2>
 <ul>
-<li>Prefix (increment and return the incremented value) and postfix (increment and return the value before it was incremented)<ul>
-<li>Prefix is faster b/c it doesn't have to make a temp copy</li>
+<li>Only code guaranteed to be executed after an exception is thrown are the destructors of objects residing on the stack (local variables)</li>
+<li>Vital to writing exception safe C++ code<ul>
+<li>REquired so resources are released before permitting exceptions to propagate</li>
 </ul>
 </li>
-</ul>
-<pre><code class="language-c++">class A {
-    public:
-    A &amp;operator++();        // prefix
-    const A operator++(int) // postfix- called as A.operator(0);
-
-    A &amp;operator--();        // prefix
-    const A operator--(int) // postfix
-}
-
-A &amp;A::operator++() {
-    ++*this;
-    return this;
-}
-
-const A A::operator++(int) {
-    A temp(*this);
-    ++*this;
-    return temp;
-}
-</code></pre>
-<h2 id="subscript-operator">Subscript Operator</h2>
-<ul>
-<li><code>operator []</code> can be overloadded to return an object of a new class or return an element of the original array</li>
-<li>Usually a const and non-const version for reading and writing</li>
-</ul>
-<h2 id="overloading-vs-overriding">Overloading vs. Overriding</h2>
-<ul>
-<li><strong>Overloading</strong>- multiple functions w/ same name in same scope, but different signatures (e.g. different argument/return types, different parameters, etc.)<ul>
-<li>When overloading functions, use the copy constructor to create new objects </li>
-</ul>
-</li>
-<li><strong>Overriding</strong>- derived class function has the same name and signature as a base class virtual function<ul>
-<li>Overrriden mthods in a derived class will cause any methods of the same name (regardless of signature) in the base class to be hidden meaning they can't be used by the derived class</li>
-<li>Can override this default hiding behavior with a <code>using class::method;</code> line inside the derived class</li>
-</ul>
-</li>
-</ul>
-<pre><code class="language-c++">class A {
-public:
-    bool process(Credit &amp;);
-    bool process(Acceptance &amp;);
-}
-
-class B : public A{
-public:
-    using A::process; // no hiding of A's process methods
-    bool process(Rejection &amp;)
-}
-</code></pre></div>
+</ul></div>
             </div>
         </div>
 
