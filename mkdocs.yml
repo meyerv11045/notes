@@ -32,6 +32,7 @@ nav:
     - 'Exception Handling': 'software_design/exceptions.md'
     - 'Templates': 'software_design/templates.md'
     - 'Operator Overloading': 'software_design/operator-overloading.md'
+    - 'Strong Exception Safety': 'software_design/strong-exception-safety.md'
     - 'Misc': 'software_design/misc.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
