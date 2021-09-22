@@ -73,3 +73,54 @@ std::ostream &operator<<(std::ostream &lhs, const A &rhs)
     return lhs;
 }
 ```
+
+## Overloading Unary Operators
+
+- Prefix (increment and return the incremented value) and postfix (increment and return the value before it was incremented)
+    - Prefix is faster b/c it doesn't have to make a temp copy
+``` c++
+class A {
+    public:
+    A &operator++();        // prefix
+    const A operator++(int) // postfix- called as A.operator(0);
+
+    A &operator--();        // prefix
+    const A operator--(int) // postfix
+}
+
+A &A::operator++() {
+    ++*this;
+    return this;
+}
+
+const A A::operator++(int) {
+    A temp(*this);
+    ++*this;
+    return temp;
+}
+```
+
+## Subscript Operator
+- `operator []` can be overloadded to return an object of a new class or return an element of the original array
+- Usually a const and non-const version for reading and writing
+
+## Overloading vs. Overriding
+- **Overloading**- multiple functions w/ same name in same scope, but different signatures (e.g. different argument/return types, different parameters, etc.)
+    - When overloading functions, use the copy constructor to create new objects 
+- **Overriding**- derived class function has the same name and signature as a base class virtual function
+    - Overrriden mthods in a derived class will cause any methods of the same name (regardless of signature) in the base class to be hidden meaning they can't be used by the derived class
+    - Can override this default hiding behavior with a `using class::method;` line inside the derived class
+
+``` c++
+class A {
+public:
+    bool process(Credit &);
+    bool process(Acceptance &);
+}
+
+class B : public A{
+public:
+    using A::process; // no hiding of A's process methods
+    bool process(Rejection &)
+}
+```

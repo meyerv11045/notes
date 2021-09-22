@@ -130,17 +130,20 @@ let = 'b'; // error
 
 ## Memory Regions
 A program's memory usage includes 3 different regions:
+
 1. **Static Memory**- where global & static local variables are allocated at compilation time (fixed size)
     - Reserved at compile time in the program's data segment
     - Allocated as a fixed block of memory
     - Stores any global and static local variables
     - Stores the actual code
     - Alllocated when program starts and deallocated when program exists
+
 2. **Automatic Memory (stack)**- each function call allocates a new block of memory called a stack frame to holds its local variables. The stack frames are part of the stack
       - Starts where static memory ends and grows towards the end of memory 
       - Allocated on the program's execution stack 
       - Allocated at run time as control flow enters and deallocated as flow exits 
       - Managed by the run-time system 
+
 3. **Dynamic Memory (heap)**- where the `new` operator allocates memory and the `delete` operator deallocates memory during runtime
       - Managed by the programmer (aka the free store)
       - Can only have as much physical memory as the machine or OS can make available (mismanaged memory in large programs can lead to it running out of memory and crashing)
