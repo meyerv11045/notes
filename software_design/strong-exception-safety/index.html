@@ -259,7 +259,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#raii" class="nav-link">RAII</a>
+            <li class="nav-item" data-level="2"><a href="#resource-acquisition-is-initialization-raii" class="nav-link">Resource Acquisition Is Initialization (RAII)</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -272,7 +272,7 @@
 
 <h1 id="strong-exception-safety">Strong Exception Safety</h1>
 <ul>
-<li>Very large and old software systems with ad hoc resource managment cannot use exceptions.</li>
+<li>Very large and old software systems with ad hoc resource managment cannot use exceptions</li>
 </ul>
 <h2 id="noexcept-specfication">noexcept Specfication</h2>
 <ul>
@@ -296,10 +296,13 @@
 <li>Throw and catch exceptions only when absolutely necessary</li>
 <li>When exception is thrown:<ul>
 <li>Leak no resources</li>
-<li>Don't permit data structures to become corrupted</li>
+<li>Don't permit data structures to become corrupted  </li>
 </ul>
 </li>
-<li></li>
+<li>Golden Rule: when an exception is propagated, try to leave the object in the state it had when the function was called<ul>
+<li>Avoid side effects in expressions that may propagate exceptions</li>
+</ul>
+</li>
 </ul>
 <h2 id="standard-exception-class-heierarchy">Standard Exception Class Heierarchy</h2>
 <pre><code>exception
@@ -325,20 +328,50 @@
 </li>
 </ul>
 <h2 id="exception-safety">Exception Safety</h2>
-<p>Exception safe functions provide one of four guarantees for if an exception is thrown:
-1. No Safety- code is in bad place
-2. Weak/Basic- everything in function remains in a valid state, but exact state may be unknown
-3. Strong- state of program is unchanged
-4. Nothrow- function always works and never throws an exception</p>
-<p>operating overloading can cause exceptions on user defined types because they are function calls
-combining operating overloading with templates makes things very complicated depending on whether the type is a primitive or user defined</p>
-<h2 id="raii">RAII</h2>
+<ul>
+<li>
+<p>Exception safe functions provide one of four guarantees for if an exception is thrown:</p>
+</li>
+<li>
+<p>No Safety- code is in bad place</p>
+</li>
+<li>Weak/Basic- everything in function remains in a valid state, but exact state may be unknown</li>
+<li>Strong- state of program is unchanged</li>
+<li>
+<p>Nothrow- function always works and never throws an exception</p>
+</li>
+<li>
+<p>Arithmetic operations on primitive types do not throw exceptions</p>
+</li>
+<li><code>delete</code> is no throw because we need to be able to reliably delete things<ul>
+<li>For same reason, destructors should be nothrow</li>
+</ul>
+</li>
+<li>Operating overloading can cause exceptions on user defined types because they are function calls</li>
+<li>Combining operating overloading with templates makes things very complicated since depending on whether the type is a primitive or user defined, exceptions may be possible with simple operator calls</li>
+</ul>
+<h2 id="resource-acquisition-is-initialization-raii">Resource Acquisition Is Initialization (RAII)</h2>
 <ul>
 <li>Only code guaranteed to be executed after an exception is thrown are the destructors of objects residing on the stack (local variables)</li>
 <li>Vital to writing exception safe C++ code<ul>
-<li>REquired so resources are released before permitting exceptions to propagate</li>
+<li>Required so that resources are released before permitting exceptions to propagate (in order to avoid resource leaks) </li>
 </ul>
 </li>
+<li>Source code of <code>std::lock_gaurd</code> demonstrating wrapping a resource in a class that can be used as a local variable so that its destructor is called when exceptions are thrown and the resource is properly dealt with:</li>
+</ul>
+<pre><code class="language-c++">namespace std{
+    template &lt;typename MUTEX&gt;
+    class lock_gaurd {
+    public:
+        lock_guard(MUTEX &amp;m) : m(m) {m.lock();}
+        ~lock_guard() {m.unlock();}
+    private:
+        MUTEX &amp;m;
+    }    
+}
+</code></pre>
+<ul>
+<li>RAII is used with Strings, vectors, list, etc. </li>
 </ul></div>
             </div>
         </div>

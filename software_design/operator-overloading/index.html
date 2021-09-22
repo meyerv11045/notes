@@ -290,12 +290,26 @@ public:
 a.operator=(b)
 </code></pre>
 <ul>
-<li>Compiler generates default implementation for assignment (=) and address (&amp;) operator</li>
+<li>Compiler generates default implementation for assignment (<code>=</code>) and address (<code>&amp;</code>) operator</li>
+<li>Cannot overload <code>.</code>, <code>.*</code>, <code>::</code>, <code>?:</code>, and <code>sizeof</code> operators</li>
 <li>Overloading an operator does not change:<ul>
 <li>Operator precedence</li>
 <li>Associativity of the operator (important for unary operator)</li>
 <li>Arity of the operator (can't turn unary operator into a binary operator or vice versa)</li>
 <li>Meaning of how the operator works on objects of built-in types</li>
+</ul>
+</li>
+<li>Overloading <code>=</code> and <code>-</code> operators does not overload <code>-=</code> operator</li>
+<li>An overloaded operator must have at least one operand that is a user defined type</li>
+<li>Cannot be used to create new operator symbols</li>
+<li>
+<p>Overloaded oeprators must adhere to syntax of original operator</p>
+</li>
+<li>
+<p>Operator functions:</p>
+<ul>
+<li>1) Member functions- usually use the <code>this</code> pointer implicity </li>
+<li>2) Non-member functions- made friends so they have access to internal state of the user defined object</li>
 </ul>
 </li>
 </ul>
@@ -319,7 +333,7 @@ private:
 }
 
 </code></pre>
-<p>Implementing an operator function as a non-member function of a class (often used for overloading the insertion/extraction operator):</p>
+<p>Implementing an operator function as a non-member function of a class (e.g. overloading the insertion/extraction operator):</p>
 <pre><code class="language-c++">// .h 
 class A{
 public:
@@ -345,13 +359,14 @@ std::ostream &amp;operator&lt;&lt;(std::ostream &amp;lhs, const A &amp;rhs)
 </code></pre>
 <h2 id="overloading-unary-operators">Overloading Unary Operators</h2>
 <ul>
+<li>Preference is to make the operator functions class members rather than non-member friend functions</li>
 <li>Prefix (increment and return the incremented value) and postfix (increment and return the value before it was incremented)<ul>
 <li>Prefix is faster b/c it doesn't have to make a temp copy</li>
 </ul>
 </li>
 </ul>
 <pre><code class="language-c++">class A {
-    public:
+public:
     A &amp;operator++();        // prefix
     const A operator++(int) // postfix- called as A.operator(0);
 
@@ -370,11 +385,39 @@ const A A::operator++(int) {
     return temp;
 }
 </code></pre>
+<ul>
+<li><code>++</code> and <code>--</code> are often overloaded to support iterators and smart pointers</li>
+<li>When overloading <code>++</code> and <code>--</code>, both prefix and postfix must be overloaded and each version will have a distinct signature due to the use of dummy parameters in the postfix operators</li>
+</ul>
 <h2 id="subscript-operator">Subscript Operator</h2>
 <ul>
 <li><code>operator []</code> can be overloadded to return an object of a new class or return an element of the original array</li>
-<li>Usually a const and non-const version for reading and writing</li>
+<li>Usually a const and non-const version for reading and writing<ul>
+<li>Can use <code>const_cast</code> to reduce code duplication and increase maintainability</li>
 </ul>
+</li>
+</ul>
+<pre><code class="language-c++">class TextBlock {
+public:
+    ...
+    const char&amp; operator[](std::size_t position) const {
+        // bounds checking
+        // log access data
+        // verify data integrity
+        return text[position];
+    }
+
+    char&amp; operator[](std::size_t position) {
+        return const_cast&lt;char&amp;&gt;(
+            const_cast&lt;const TextBlock&amp;&gt;(*this)][position]
+        );
+        // 1) adds const to *this
+        // 2) calls const operator[]
+        // 3) cast away const from returned value
+    }
+    ...
+}
+</code></pre>
 <h2 id="overloading-vs-overriding">Overloading vs. Overriding</h2>
 <ul>
 <li><strong>Overloading</strong>- multiple functions w/ same name in same scope, but different signatures (e.g. different argument/return types, different parameters, etc.)<ul>
