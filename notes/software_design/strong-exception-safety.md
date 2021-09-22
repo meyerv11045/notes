@@ -1,5 +1,5 @@
 # Strong Exception Safety
-- Very large and old software systems with ad hoc resource managment cannot use exceptions.
+- Very large and old software systems with ad hoc resource managment cannot use exceptions
 
 ## noexcept Specfication
 - Functions that guarantee they will not throw an exception should specify that like so: `void foo (...) noexcept;`
@@ -17,8 +17,9 @@
 - Throw and catch exceptions only when absolutely necessary
 - When exception is thrown:
     - Leak no resources
-    - Don't permit data structures to become corrupted
--  
+    - Don't permit data structures to become corrupted  
+- Golden Rule: when an exception is propagated, try to leave the object in the state it had when the function was called
+    - Avoid side effects in expressions that may propagate exceptions
 
 ## Standard Exception Class Heierarchy
 ```
@@ -43,17 +44,36 @@ exception
     - Example of using RAII to destroy local variables when they go out of scope
 
 ## Exception Safety
-Exception safe functions provide one of four guarantees for if an exception is thrown:
+- Exception safe functions provide one of four guarantees for if an exception is thrown:
+
 1. No Safety- code is in bad place
 2. Weak/Basic- everything in function remains in a valid state, but exact state may be unknown
 3. Strong- state of program is unchanged
 4. Nothrow- function always works and never throws an exception
 
+- Arithmetic operations on primitive types do not throw exceptions
+- `delete` is no throw because we need to be able to reliably delete things
+    - For same reason, destructors should be nothrow
+- Operating overloading can cause exceptions on user defined types because they are function calls
+- Combining operating overloading with templates makes things very complicated since depending on whether the type is a primitive or user defined, exceptions may be possible with simple operator calls
 
-operating overloading can cause exceptions on user defined types because they are function calls
-combining operating overloading with templates makes things very complicated depending on whether the type is a primitive or user defined
-
-## RAII
+## Resource Acquisition Is Initialization (RAII)
 - Only code guaranteed to be executed after an exception is thrown are the destructors of objects residing on the stack (local variables)
 - Vital to writing exception safe C++ code
-    - REquired so resources are released before permitting exceptions to propagate
+    - Required so that resources are released before permitting exceptions to propagate (in order to avoid resource leaks) 
+- Source code of `std::lock_gaurd` demonstrating wrapping a resource in a class that can be used as a local variable so that its destructor is called when exceptions are thrown and the resource is properly dealt with:
+
+``` c++
+namespace std{
+    template <typename MUTEX>
+    class lock_gaurd {
+    public:
+        lock_guard(MUTEX &m) : m(m) {m.lock();}
+        ~lock_guard() {m.unlock();}
+    private:
+        MUTEX &m;
+    }    
+}
+```
+- RAII is used with Strings, vectors, list, etc. 
+
