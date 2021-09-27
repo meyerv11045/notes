@@ -1,7 +1,7 @@
 # Strong Exception Safety
 - Very large and old software systems with ad hoc resource managment cannot use exceptions
 
-## noexcept Specfication
+## Noexcept Specfication
 - Functions that guarantee they will not throw an exception should specify that like so: `void foo (...) noexcept;`
 - Can also be used as an operator that returns true at compile time if a given expression is guaranteed to not throw an exception
 
@@ -75,5 +75,9 @@ namespace std{
     }    
 }
 ```
-- RAII is used with Strings, vectors, list, etc. 
+- RAII is used with strings, vectors, list, etc. 
+- `std::shared_ptr` and `std::unique_ptr` is the same concept and is a local variable that destroys what is being pointed to when they go out of scope
 
+## Exception Handling Guidlines
+- always rethrow an exception caught in `catch(...)` if another `catch` can deal with the exception
+    - Don't strip info from the exception and 

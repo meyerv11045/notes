@@ -33,6 +33,8 @@ nav:
     - 'Templates': 'software_design/templates.md'
     - 'Operator Overloading': 'software_design/operator-overloading.md'
     - 'Strong Exception Safety': 'software_design/strong-exception-safety.md'
+    - 'Smart Pointers': 'software_design/smart-pointers.md'
+    - 'Inheritance': 'software_design/inheritance.md'
     - 'Misc': 'software_design/misc.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
