@@ -56,3 +56,63 @@ class C: private A {
 - Defined as any class that contains at least one pure virtual function (declare but provide no implementation of)
     - Pure virtual function: `virtual void func() const = 0;` 
     - The equals zero makes the func *pure* virtual instead of just virtual
+
+## Virtual Function
+- A function that is expected to be overriden by a derived class
+- Incudes full method signature, return type, and may provide default implementation
+- Declared in public portion of the class
+- Must not be static or a friend of another class
+- Pure virtual functions must be overridden
+    - If derived class doesn't implement a pure virtual function, the derived class is also an abstract base class
+- Non-pure virtual functions can be overidden but do not have to be
+- A function defined as virtual in the base class makes it virutal for *all* classes derived from the base class
+- Class with virtual functions should contain a virtual destructor
+    - Ensures the correct sequence of destructors is called
+    - Base class dtor must be virtual
+
+## Dynamic Binding
+- A virtual function invoked using a reference to an objcet
+- Allows program to choose appropraite method designed to identify the method for a particular object type at runtime
+
+# Polymorphism
+- Occurs whens multiple objects from different classes are related by inheritance from the same base class
+- Most useful when there are a series of related objects that need to be trated in a uniform manner
+    
+## Virtual Function Table
+- `vtable` is used in the program to determine which
+- Created at compile time and put in static memory
+- Used at runtime
+- Compiler generates a vtable for each class with at least one method marked as virtual
+- Only virtual methods are included in the vtable
+- Example vtable for the shape example code from lecture 9:
+
+| Shape Class |   |   |
+|---|---|---|
+|~Shape   | local {} | compiler default implementation  |
+| area() const   | {} | own implementation |
+| volume() const  | {} | own implementation  |
+| pShapeName() const | =0 | no implementation/pure virtual |
+| print() const | = 0 | pure virtual |
+Shape class is abstract since there are pure virtual methods in the vtable
+
+| Point Class |   |   |
+|---|---|---|
+|~Point   | local {} | compiler default implementation  |
+| area() const   | Shape::area | implementation in shape class |
+| volume() const  | Shape::volume | implementation in shape class  |
+| pShapeName() const | {} | own implementation |
+| print() const | {} | own implementation |
+Point class is concrete since there are no pure virtual methods in the vtable
+
+| Circle Class |   |   |
+|---|---|---|
+|~Circle   | local {} | compiler default implementation  |
+| area() const   | {} | own implementation |
+| volume() const  | Shape::volume | implementation in shape class  |
+| pShapeName() const | {} | own implementation |
+| print() const | {} | own implementation |
+Point class is concrete since there are no pure virtual methods in the vtable
+
+- Every instance of a concrete class will allocate a pointer to the class's vtable. 
+- Function call involves following two pointers to the correct function implementation
+    - Very efficient since all the heavy costs of determining relationships between types is done at compile time and then fast lookups can be done at runtime
