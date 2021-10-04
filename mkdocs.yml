@@ -10,7 +10,7 @@ markdown_extensions:
         enable_dollar_delimiter: True
 
 nav:
-  - Basics:
+  - General:
     - 'Software Engineering Notebook': 'general/swe-notes.md'
     - 'Git': 'general/git.md'
     - 'Python': 'general/python.md'
@@ -18,6 +18,8 @@ nav:
     - 'Programming Paradigms': 'general/paradigms.md'
     - 'Regex': 'general/regex.md'
     - 'Hardware': 'general/hardware.md'
+    - 'Microservices': 'system_design/microservices.md'
+    - 'Docker': 'system_design/docker.md'
   - Data Structures:
     - 'Linked List': 'data_structures/linked-list.md'
     - 'Stack': 'data_structures/stack.md'
@@ -40,9 +42,6 @@ nav:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'
     - 'MySQL': 'databases/mysql.md'
-  - System Design:
-    - 'Microservices': 'system_design/microservices.md'
-    - 'Docker': 'system_design/docker.md'
   - Web Dev:
     - Javascript:
       - 'Basics': 'web_dev/js/basics.md'
@@ -55,3 +54,7 @@ nav:
       - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
     - HTML & CSS:
       - 'Sass': 'web_dev/html-css/sass.md'
+  - Math & Science:
+    - 'The Brain': 'math_science/brain.md'
+    - Physics: 
+      - 'Current & Resistance': 'math_science/physics/ch25.md'
