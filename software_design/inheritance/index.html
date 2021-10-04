@@ -171,7 +171,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Development <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Dev <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
@@ -291,6 +291,14 @@
             <li class="nav-item" data-level="1"><a href="#polymorphism" class="nav-link">Polymorphism</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#virtual-function-table" class="nav-link">Virtual Function Table</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#function-overloading-vs-overriding" class="nav-link">Function Overloading vs Overriding</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#design-considerations" class="nav-link">Design Considerations</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -551,9 +559,94 @@ class C: private A {
 </tbody>
 </table>
 <ul>
-<li>Every instance of a concrete class will allocate a pointer to the class's vtable. </li>
+<li>Every instance of a concrete class with a vtable will allocate a pointer to the class's vtable. </li>
 <li>Function call involves following two pointers to the correct function implementation<ul>
 <li>Very efficient since all the heavy costs of determining relationships between types is done at compile time and then fast lookups can be done at runtime</li>
+</ul>
+</li>
+</ul>
+<h2 id="function-overloading-vs-overriding">Function Overloading vs Overriding</h2>
+<ul>
+<li>
+<p>hiding and overloading with virtual functions being overrideen in the derived class is the same</p>
+</li>
+<li>
+<p>if marked virtual but not pure virtual, the class will provide its own implementation for it</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Processor Class</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~Processor</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>process(Credit&amp;)</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>process(Acceptance&amp;)</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>process(OrderForm&amp;)</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>process(Rejection&amp;)</td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>MyProcessor Class</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~Processor</td>
+<td>{}</td>
+</tr>
+<tr>
+<td>process(Credit&amp;)</td>
+<td>Processor::process(Credit&amp;)</td>
+</tr>
+<tr>
+<td>process(Acceptance&amp;)</td>
+<td>Processor::process(Acceptance&amp;)</td>
+</tr>
+<tr>
+<td>process(OrderForm&amp;)</td>
+<td>Processor::process(OrderForm&amp;)</td>
+</tr>
+<tr>
+<td>process(Rejection&amp;)</td>
+<td>{}</td>
+</tr>
+</tbody>
+</table>
+<p>Inherits all of the virtual functions from Processor class.</p>
+<p>Polymorphism and use of vtable will be used when the method is marked as virtual and the method is called via a pointer or reference. This means functions in base class with same name will not be hidden like they are when doing override and using concrete instances</p>
+<p>Concrete instance of MyProcessor will still do the standard hiding when the function is overriden.</p>
+<p>Overload, override, &amp; hide vs. polymorphism details can be understood throgh lec9b code</p>
+<h2 id="design-considerations">Design Considerations</h2>
+<ul>
+<li>Only use inheritance where additional layers of abstraction makes sense<ul>
+<li>Class hierarchies promote code reuse</li>
+</ul>
+</li>
+<li>Stand alone class --&gt; bsase classes can make refactoring difficult<ul>
+<li>Can create issues with slicing as a result of concrete base classes being able to be instantiated</li>
+<li>Should make base classes abstract</li>
 </ul>
 </li>
 </ul></div>

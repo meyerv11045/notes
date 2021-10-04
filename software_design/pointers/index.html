@@ -171,7 +171,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Development <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Dev <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
   <li class="dropdown-submenu">
@@ -444,20 +444,22 @@ let = 'b'; // error
 </li>
 </ul>
 <h2 id="memory-regions">Memory Regions</h2>
+<p>Memory has 3 different regions: data, stack, and heap.</p>
+<p>There are 3 types of memory allocation: static, dynamic, and automatic</p>
 <p>A program's memory usage includes 3 different regions:</p>
 <ol>
 <li>
-<p><strong>Static Memory</strong>- where global &amp; static local variables are allocated at compilation time (fixed size)</p>
+<p><strong>Static</strong>- global &amp; static local variables are allocated at compilation time (fixed size)</p>
 <ul>
 <li>Reserved at compile time in the program's data segment</li>
 <li>Allocated as a fixed block of memory</li>
 <li>Stores any global and static local variables</li>
 <li>Stores the actual code</li>
-<li>Alllocated when program starts and deallocated when program exists</li>
+<li>Allocated when program starts and deallocated when program exists</li>
 </ul>
 </li>
 <li>
-<p><strong>Automatic Memory (stack)</strong>- each function call allocates a new block of memory called a stack frame to holds its local variables. The stack frames are part of the stack</p>
+<p><strong>Automatic</strong>- each function call allocates a new block of memory called a stack frame to holds its local variables. The stack frames are part of the stack</p>
 <ul>
 <li>Starts where static memory ends and grows towards the end of memory </li>
 <li>Allocated on the program's execution stack </li>
@@ -466,9 +468,10 @@ let = 'b'; // error
 </ul>
 </li>
 <li>
-<p><strong>Dynamic Memory (heap)</strong>- where the <code>new</code> operator allocates memory and the <code>delete</code> operator deallocates memory during runtime</p>
+<p><strong>Dynamic Memory</strong>- where the <code>new</code> operator allocates memory and the <code>delete</code> operator deallocates memory during runtime</p>
 <ul>
 <li>Managed by the programmer (aka the free store)</li>
+<li>Dynamic memory is stored on the heap</li>
 <li>Can only have as much physical memory as the machine or OS can make available (mismanaged memory in large programs can lead to it running out of memory and crashing)</li>
 </ul>
 </li>
