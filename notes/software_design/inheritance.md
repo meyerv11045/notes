@@ -69,35 +69,46 @@ class C: private A {
 - Class with virtual functions should contain a virtual destructor
     - Ensures the correct sequence of destructors is called
     - Base class dtor must be virtual
+- Should be accessed using pointer or reference of base class type to achieve run time polymorphism
+
+## Why use Virtual Functions?
+- Basic inheritance and overriding gives us the expected behavior with concrete instances
+- Virtual functions allow us to work with a pointer to the base class
+- Virtual functions defined in the base classes permit dynamic binding allowing runtime polymorphism
+
 
 ## Dynamic Binding
 - A virtual function invoked using a reference to an objcet
 - Allows program to choose appropraite method designed to identify the method for a particular object type at runtime
+    - Static binding requires object type to be defined at compile time
+- Achieved using vtables
 
 # Polymorphism
 - Occurs whens multiple objects from different classes are related by inheritance from the same base class
-- Most useful when there are a series of related objects that need to be trated in a uniform manner
+- Most useful when there are a series of related objects that need to be treated in a uniform manner
+- Polymorphic means having many forms 
+    - Can have multiple behaviors for the same function depending on the context
+- Achieved by using virtual functions and overriding these methods in derived classes
     
 ## Virtual Function Table
-- `vtable` is used in the program to determine which
 - Created at compile time and put in static memory
-- Used at runtime
+- Used at runtime to achieve dynamic binding and runtime polymorphism
 - Compiler generates a vtable for each class with at least one method marked as virtual
 - Only virtual methods are included in the vtable
 - Example vtable for the shape example code from lecture 9:
 
 | Shape Class |   |   |
 |---|---|---|
-|~Shape   | local {} | compiler default implementation  |
-| area() const   | {} | own implementation |
-| volume() const  | {} | own implementation  |
-| pShapeName() const | =0 | no implementation/pure virtual |
+|~Shape   | local or {} | local implementation  |
+| area() const   | {} | local implementation |
+| volume() const  | {} | local implementation  |
+| pShapeName() const | =0 | pure virtual |
 | print() const | = 0 | pure virtual |
 Shape class is abstract since there are pure virtual methods in the vtable
 
 | Point Class |   |   |
 |---|---|---|
-|~Point   | local {} | compiler default implementation  |
+|~Point   | local {} | local implementation  |
 | area() const   | Shape::area | implementation in shape class |
 | volume() const  | Shape::volume | implementation in shape class  |
 | pShapeName() const | {} | own implementation |
@@ -106,46 +117,22 @@ Point class is concrete since there are no pure virtual methods in the vtable
 
 | Circle Class |   |   |
 |---|---|---|
-|~Circle   | local {} | compiler default implementation  |
-| area() const   | {} | own implementation |
+|~Circle   | local {} | local implementation  |
+| area() const   | {} | local implementation |
 | volume() const  | Shape::volume | implementation in shape class  |
-| pShapeName() const | {} | own implementation |
-| print() const | {} | own implementation |
+| pShapeName() const | {} | local implementation |
+| print() const | {} | local implementation |
 Point class is concrete since there are no pure virtual methods in the vtable
 
-- Every instance of a concrete class with a vtable will allocate a pointer to the class's vtable. 
-- Function call involves following two pointers to the correct function implementation
-    - Very efficient since all the heavy costs of determining relationships between types is done at compile time and then fast lookups can be done at runtime
-
-## Function Overloading vs Overriding
-- hiding and overloading with virtual functions being overrideen in the derived class is the same
-  
-- if marked virtual but not pure virtual, the class will provide its own implementation for it
-
-| Processor Class |   |
-|---|---|
-|~Processor   | {} |
-| process(Credit&) | {} |
-| process(Acceptance&)  | {} |
-| process(OrderForm&) | {} |
-| process(Rejection&) | {} |
-
-
-| MyProcessor Class |   |
-|---|---|
-|~Processor   | {} |
-| process(Credit&) | Processor::process(Credit&) |
-| process(Acceptance&)  | Processor::process(Acceptance&) |
-| process(OrderForm&) | Processor::process(OrderForm&) |
-| process(Rejection&) | {} |
-
-Inherits all of the virtual functions from Processor class.
-
-Polymorphism and use of vtable will be used when the method is marked as virtual and the method is called via a pointer or reference. This means functions in base class with same name will not be hidden like they are when doing override and using concrete instances
-
-Concrete instance of MyProcessor will still do the standard hiding when the function is overriden.
-
-Overload, override, & hide vs. polymorphism details can be understood throgh lec9b code
+- When an object of a class containing virtual functions is instantiated, the compiler attaches a pointer to the class's vtable at the front of the object
+- Memory and processing costs associated with virtual functions
+    - Increased size of object to hold vtable's address
+    - Increased compile time to create the vtable for each class with virtual functions
+        - More efficient to compute lookup table at compile time rather than determining these relationships at runtime 
+    - For each function call, there is an extra step of looking up the address  in the table to the correct implementation
+- If marked virtual but not pure virtual, the class will provide its own implementation for it
+- Derived class inherits all of the virtual functions from base class
+- Polymorphism and use of vtable will be used when the method is marked as virtual and the method is called via a pointer or reference. This means functions in base class with same name will not be hidden like they are when doing override and using concrete instances
 
 ## Design Considerations
 - Only use inheritance where additional layers of abstraction makes sense
@@ -153,3 +140,13 @@ Overload, override, & hide vs. polymorphism details can be understood throgh lec
 - Stand alone class --> bsase classes can make refactoring difficult
     - Can create issues with slicing as a result of concrete base classes being able to be instantiated
     - Should make base classes abstract
+
+## Clarifications
+- Overloading is creating a method with the same name as an existing method but with different parameters
+- Overriding is creating a method in a derived class with the same name and parameters (same signature) as an existing method in its base class
+- Polymorphism- ability of different object to be accessed by a common interface
+- Polymorphism and overloading are related but not the same 
+- Standard hiding of methods of the same name in the base class will occur when the derived class has a concrete instance created
+- Dynamic binding and runtime polymorphism occurs when using pointers/references of the base class to point to instances of the derived classes (gives standard interface to access different, but related objects --> definition of polymorphism)
+  
+![Polymorphism Diagram](https://www.fayewilliams.com/wp-content/uploads/2014/08/polymorphism.gif)
