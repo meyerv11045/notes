@@ -281,6 +281,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#why-use-virtual-functions" class="nav-link">Why use Virtual Functions?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#dynamic-binding" class="nav-link">Dynamic Binding</a>
               <ul class="nav flex-column">
               </ul>
@@ -294,11 +298,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#function-overloading-vs-overriding" class="nav-link">Function Overloading vs Overriding</a>
+            <li class="nav-item" data-level="2"><a href="#design-considerations" class="nav-link">Design Considerations</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#design-considerations" class="nav-link">Design Considerations</a>
+            <li class="nav-item" data-level="2"><a href="#clarifications" class="nav-link">Clarifications</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -415,22 +419,37 @@ class C: private A {
 <li>Base class dtor must be virtual</li>
 </ul>
 </li>
+<li>Should be accessed using pointer or reference of base class type to achieve run time polymorphism</li>
+</ul>
+<h2 id="why-use-virtual-functions">Why use Virtual Functions?</h2>
+<ul>
+<li>Basic inheritance and overriding gives us the expected behavior with concrete instances</li>
+<li>Virtual functions allow us to work with a pointer to the base class</li>
+<li>Virtual functions defined in the base classes permit dynamic binding allowing runtime polymorphism</li>
 </ul>
 <h2 id="dynamic-binding">Dynamic Binding</h2>
 <ul>
 <li>A virtual function invoked using a reference to an objcet</li>
-<li>Allows program to choose appropraite method designed to identify the method for a particular object type at runtime</li>
+<li>Allows program to choose appropraite method designed to identify the method for a particular object type at runtime<ul>
+<li>Static binding requires object type to be defined at compile time</li>
+</ul>
+</li>
+<li>Achieved using vtables</li>
 </ul>
 <h1 id="polymorphism">Polymorphism</h1>
 <ul>
 <li>Occurs whens multiple objects from different classes are related by inheritance from the same base class</li>
-<li>Most useful when there are a series of related objects that need to be trated in a uniform manner</li>
+<li>Most useful when there are a series of related objects that need to be treated in a uniform manner</li>
+<li>Polymorphic means having many forms <ul>
+<li>Can have multiple behaviors for the same function depending on the context</li>
+</ul>
+</li>
+<li>Achieved by using virtual functions and overriding these methods in derived classes</li>
 </ul>
 <h2 id="virtual-function-table">Virtual Function Table</h2>
 <ul>
-<li><code>vtable</code> is used in the program to determine which</li>
 <li>Created at compile time and put in static memory</li>
-<li>Used at runtime</li>
+<li>Used at runtime to achieve dynamic binding and runtime polymorphism</li>
 <li>Compiler generates a vtable for each class with at least one method marked as virtual</li>
 <li>Only virtual methods are included in the vtable</li>
 <li>Example vtable for the shape example code from lecture 9:</li>
@@ -446,23 +465,23 @@ class C: private A {
 <tbody>
 <tr>
 <td>~Shape</td>
-<td>local {}</td>
-<td>compiler default implementation</td>
+<td>local or {}</td>
+<td>local implementation</td>
 </tr>
 <tr>
 <td>area() const</td>
 <td>{}</td>
-<td>own implementation</td>
+<td>local implementation</td>
 </tr>
 <tr>
 <td>volume() const</td>
 <td>{}</td>
-<td>own implementation</td>
+<td>local implementation</td>
 </tr>
 <tr>
 <td>pShapeName() const</td>
 <td>=0</td>
-<td>no implementation/pure virtual</td>
+<td>pure virtual</td>
 </tr>
 <tr>
 <td>print() const</td>
@@ -488,7 +507,7 @@ class C: private A {
 <tr>
 <td>~Point</td>
 <td>local {}</td>
-<td>compiler default implementation</td>
+<td>local implementation</td>
 </tr>
 <tr>
 <td>area() const</td>
@@ -529,12 +548,12 @@ class C: private A {
 <tr>
 <td>~Circle</td>
 <td>local {}</td>
-<td>compiler default implementation</td>
+<td>local implementation</td>
 </tr>
 <tr>
 <td>area() const</td>
 <td>{}</td>
-<td>own implementation</td>
+<td>local implementation</td>
 </tr>
 <tr>
 <td>volume() const</td>
@@ -544,12 +563,12 @@ class C: private A {
 <tr>
 <td>pShapeName() const</td>
 <td>{}</td>
-<td>own implementation</td>
+<td>local implementation</td>
 </tr>
 <tr>
 <td>print() const</td>
 <td>{}</td>
-<td>own implementation</td>
+<td>local implementation</td>
 </tr>
 <tr>
 <td>Point class is concrete since there are no pure virtual methods in the vtable</td>
@@ -559,85 +578,20 @@ class C: private A {
 </tbody>
 </table>
 <ul>
-<li>Every instance of a concrete class with a vtable will allocate a pointer to the class's vtable. </li>
-<li>Function call involves following two pointers to the correct function implementation<ul>
-<li>Very efficient since all the heavy costs of determining relationships between types is done at compile time and then fast lookups can be done at runtime</li>
+<li>When an object of a class containing virtual functions is instantiated, the compiler attaches a pointer to the class's vtable at the front of the object</li>
+<li>Memory and processing costs associated with virtual functions<ul>
+<li>Increased size of object to hold vtable's address</li>
+<li>Increased compile time to create the vtable for each class with virtual functions<ul>
+<li>More efficient to compute lookup table at compile time rather than determining these relationships at runtime </li>
 </ul>
 </li>
+<li>For each function call, there is an extra step of looking up the address  in the table to the correct implementation</li>
 </ul>
-<h2 id="function-overloading-vs-overriding">Function Overloading vs Overriding</h2>
-<ul>
-<li>
-<p>hiding and overloading with virtual functions being overrideen in the derived class is the same</p>
 </li>
-<li>
-<p>if marked virtual but not pure virtual, the class will provide its own implementation for it</p>
-</li>
+<li>If marked virtual but not pure virtual, the class will provide its own implementation for it</li>
+<li>Derived class inherits all of the virtual functions from base class</li>
+<li>Polymorphism and use of vtable will be used when the method is marked as virtual and the method is called via a pointer or reference. This means functions in base class with same name will not be hidden like they are when doing override and using concrete instances</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>Processor Class</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>~Processor</td>
-<td>{}</td>
-</tr>
-<tr>
-<td>process(Credit&amp;)</td>
-<td>{}</td>
-</tr>
-<tr>
-<td>process(Acceptance&amp;)</td>
-<td>{}</td>
-</tr>
-<tr>
-<td>process(OrderForm&amp;)</td>
-<td>{}</td>
-</tr>
-<tr>
-<td>process(Rejection&amp;)</td>
-<td>{}</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>MyProcessor Class</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>~Processor</td>
-<td>{}</td>
-</tr>
-<tr>
-<td>process(Credit&amp;)</td>
-<td>Processor::process(Credit&amp;)</td>
-</tr>
-<tr>
-<td>process(Acceptance&amp;)</td>
-<td>Processor::process(Acceptance&amp;)</td>
-</tr>
-<tr>
-<td>process(OrderForm&amp;)</td>
-<td>Processor::process(OrderForm&amp;)</td>
-</tr>
-<tr>
-<td>process(Rejection&amp;)</td>
-<td>{}</td>
-</tr>
-</tbody>
-</table>
-<p>Inherits all of the virtual functions from Processor class.</p>
-<p>Polymorphism and use of vtable will be used when the method is marked as virtual and the method is called via a pointer or reference. This means functions in base class with same name will not be hidden like they are when doing override and using concrete instances</p>
-<p>Concrete instance of MyProcessor will still do the standard hiding when the function is overriden.</p>
-<p>Overload, override, &amp; hide vs. polymorphism details can be understood throgh lec9b code</p>
 <h2 id="design-considerations">Design Considerations</h2>
 <ul>
 <li>Only use inheritance where additional layers of abstraction makes sense<ul>
@@ -649,7 +603,17 @@ class C: private A {
 <li>Should make base classes abstract</li>
 </ul>
 </li>
-</ul></div>
+</ul>
+<h2 id="clarifications">Clarifications</h2>
+<ul>
+<li>Overloading is creating a method with the same name as an existing method but with different parameters</li>
+<li>Overriding is creating a method in a derived class with the same name and parameters (same signature) as an existing method in its base class</li>
+<li>Polymorphism- ability of different object to be accessed by a common interface</li>
+<li>Polymorphism and overloading are related but not the same </li>
+<li>Standard hiding of methods of the same name in the base class will occur when the derived class has a concrete instance created</li>
+<li>Dynamic binding and runtime polymorphism occurs when using pointers/references of the base class to point to instances of the derived classes (gives standard interface to access different, but related objects --&gt; definition of polymorphism)</li>
+</ul>
+<p><img alt="Polymorphism Diagram" src="https://www.fayewilliams.com/wp-content/uploads/2014/08/polymorphism.gif" /></p></div>
             </div>
         </div>
 
