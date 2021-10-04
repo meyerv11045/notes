@@ -43,7 +43,7 @@ Software used for designing circuits and implementing them on a board such as th
     - View -> Fit in Window
 - Insert all the input and output nodes
     - Only ones that were compiled will show up
-- Edit -> Value -> Overwrite Clock to set the period to 2 microseconds, 4 microseconds, etc. 
+- Edit -> Value -> Overwrite Clock (Ctrl + Alt + K) to set the period to 2 microseconds, 4 microseconds, etc. 
     - This simulates counting and is setup manually
     - can setup automatic counting by grouping inputs together
 - Simulation -> Run Functional Simulation

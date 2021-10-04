@@ -4,6 +4,7 @@
 ## Noexcept Specfication
 - Functions that guarantee they will not throw an exception should specify that like so: `void foo (...) noexcept;`
 - Can also be used as an operator that returns true at compile time if a given expression is guaranteed to not throw an exception
+- `delete`, `return` and `std::swap` are all noexcept
 
 ## General Principles
 - Can design every function to:

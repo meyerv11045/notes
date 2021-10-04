@@ -43,7 +43,7 @@ nav:
   - System Design:
     - 'Microservices': 'system_design/microservices.md'
     - 'Docker': 'system_design/docker.md'
-  - Web Development:
+  - Web Dev:
     - Javascript:
       - 'Basics': 'web_dev/js/basics.md'
       - 'Classes': 'web_dev/js/classes.md'

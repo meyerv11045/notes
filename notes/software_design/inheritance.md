@@ -113,6 +113,43 @@ Point class is concrete since there are no pure virtual methods in the vtable
 | print() const | {} | own implementation |
 Point class is concrete since there are no pure virtual methods in the vtable
 
-- Every instance of a concrete class will allocate a pointer to the class's vtable. 
+- Every instance of a concrete class with a vtable will allocate a pointer to the class's vtable. 
 - Function call involves following two pointers to the correct function implementation
     - Very efficient since all the heavy costs of determining relationships between types is done at compile time and then fast lookups can be done at runtime
+
+## Function Overloading vs Overriding
+- hiding and overloading with virtual functions being overrideen in the derived class is the same
+  
+- if marked virtual but not pure virtual, the class will provide its own implementation for it
+
+| Processor Class |   |
+|---|---|
+|~Processor   | {} |
+| process(Credit&) | {} |
+| process(Acceptance&)  | {} |
+| process(OrderForm&) | {} |
+| process(Rejection&) | {} |
+
+
+| MyProcessor Class |   |
+|---|---|
+|~Processor   | {} |
+| process(Credit&) | Processor::process(Credit&) |
+| process(Acceptance&)  | Processor::process(Acceptance&) |
+| process(OrderForm&) | Processor::process(OrderForm&) |
+| process(Rejection&) | {} |
+
+Inherits all of the virtual functions from Processor class.
+
+Polymorphism and use of vtable will be used when the method is marked as virtual and the method is called via a pointer or reference. This means functions in base class with same name will not be hidden like they are when doing override and using concrete instances
+
+Concrete instance of MyProcessor will still do the standard hiding when the function is overriden.
+
+Overload, override, & hide vs. polymorphism details can be understood throgh lec9b code
+
+## Design Considerations
+- Only use inheritance where additional layers of abstraction makes sense
+    - Class hierarchies promote code reuse
+- Stand alone class --> bsase classes can make refactoring difficult
+    - Can create issues with slicing as a result of concrete base classes being able to be instantiated
+    - Should make base classes abstract
