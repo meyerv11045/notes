@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/system_design/microservices/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/stl/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Microservices - The Notebook</title>
+        <title>STL - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,7 +33,7 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -66,11 +66,11 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Microservices</a>
+    <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
 </li>
                                     
 <li>
-    <a href="../docker/" class="dropdown-item">Docker</a>
+    <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -107,52 +107,52 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../software_design/pointers/" class="dropdown-item">Pointers</a>
+    <a href="../pointers/" class="dropdown-item">Pointers</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/big3/" class="dropdown-item">The Big 3</a>
+    <a href="../big3/" class="dropdown-item">The Big 3</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/exceptions/" class="dropdown-item">Exception Handling</a>
+    <a href="../exceptions/" class="dropdown-item">Exception Handling</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/templates/" class="dropdown-item">Templates</a>
+    <a href="../templates/" class="dropdown-item">Templates</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+    <a href="../operator-overloading/" class="dropdown-item">Operator Overloading</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+    <a href="../strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+    <a href="../smart-pointers/" class="dropdown-item">Smart Pointers</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/inheritance/" class="dropdown-item">Inheritance</a>
+    <a href="../inheritance/" class="dropdown-item">Inheritance</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/iterators/" class="dropdown-item">Iterators</a>
+    <a href="../iterators/" class="dropdown-item">Iterators</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/stl/" class="dropdown-item">STL</a>
+    <a href="./" class="dropdown-item active">STL</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/misc/" class="dropdown-item">Misc</a>
+    <a href="../misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
                             </li>
@@ -268,12 +268,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../general/hardware/" class="nav-link">
+                                <a rel="prev" href="../iterators/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../docker/" class="nav-link">
+                                <a rel="next" href="../misc/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -295,33 +295,105 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
+            <li class="nav-item" data-level="1"><a href="#standard-template-library" class="nav-link">Standard Template Library</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#stl-containers" class="nav-link">STL Containers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="microservice-architectual-style">Microservice Architectual Style:</h3>
+<h1 id="standard-template-library">Standard Template Library</h1>
 <ul>
-<li>Developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanics, often an HTTP resource API</li>
-<li>Encourages modularity and seperation of concerns</li>
-<li>ability to horizontally scale and partition the workload</li>
-<li>Microservices contain many aspects in reality:</li>
-<li>Clients, Caches, and Databases are all included in a microservice in conjuction with the service itself</li>
+<li>Contains generic template classes and functions for containers, iterators, &amp; algorithms</li>
+<li>Allows for development of generic programs that are independent of the underlying container </li>
 </ul>
-<h3 id="stateless-service">Stateless Service:</h3>
+<h2 id="stl-containers">STL Containers</h2>
 <ul>
-<li>Not a cache or database</li>
-<li>Frequently accessed metadata</li>
-<li>no instance affinity</li>
-<li>Losing a node is not a big deal and can be easily fixed</li>
+<li>Are abstract data types (ADTs) that hold data for manipulation</li>
+<li>3 types<ul>
+<li>1) <strong>Sequential</strong>- arrange data in a linear manner<ul>
+<li>vector, deque, list</li>
 </ul>
-<h3 id="stateful-service">Stateful Service:</h3>
+</li>
+<li>2) <strong>Associative</strong>- maintain data in structures suitable for fast associative operations<ul>
+<li>set, multiset, map, multimap</li>
+<li>Implemented as balanced binary trees</li>
+<li>Supports efficient operations on elements using keys ordered by <code>operator&lt;</code></li>
+</ul>
+</li>
+<li>3) <strong>Adaptors</strong>- provide different ways to access sequential and associative containers<ul>
+<li>stack, queue, priority queue</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="vector"><code>vector</code></h3>
 <ul>
-<li>Databases &amp; caches</li>
-<li>Custom apps which holds lots of data</li>
-<li>Losing a node is a notable event and it might take hours to get it fixed</li>
+<li>Can change size dynamically (resizable array)</li>
+<li>Provides best random-access performance<ul>
+<li>Supports random access iterator</li>
+</ul>
+</li>
+<li>Insertions/deletions at the back of the vector (<code>push_back()</code> and <code>pop_back()</code>)</li>
+<li><code>push_back</code>- used when we can only copy</li>
+<li><code>emplace_back</code>- used when we do not need to copy for speed increase</li>
+<li>Pros:<ul>
+<li>Const time access elements by index</li>
+<li>Linear time iteration over all elements</li>
+<li>Const amortized (avg) time for adding/removing elements from the end<ul>
+<li>
+<script type="math/tex">O(N)/N</script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>consume more memory than arrays due to automatic resizing</li>
+</ul>
+</li>
+<li>Memory is gauranteed to be contiguous so can use pointer arithmetic</li>
+</ul>
+<h3 id="deque"><code>deque</code></h3>
+<ul>
+<li>Pronounced "deck"</li>
+<li>Double ended queue</li>
+<li>Advantages:<ul>
+<li>Provides efficient index access to data</li>
+<li>Efficient insertions/deletions at both front and back of queue<ul>
+<li><code>push_back()</code>, <code>push_front()</code>, <code>pop_back()</code>, <code>pop_front()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Uses a index lookup table to optimize memory and lookup efficiency <ul>
+<li>Vector will be slightly faster b/c it doesnt need the lookup table due to only pushing back</li>
+<li>Elements not guaranteeed to be in contiguous storage locations so pointer arithmetic not safe</li>
+</ul>
+</li>
+</ul>
+<h3 id="list"><code>list</code></h3>
+<ul>
+<li>Implements a doubly linked-list</li>
+<li>Advantages:<ul>
+<li>Const time insertion/removal of elements anywhere in the container</li>
+<li>Const time moving elements and blocks of elements within the container or even between different containers<ul>
+<li>It just requires pointer assignments instead of copying values and allocating new arrays</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Disadvantages:<ul>
+<li>No support for random-access iterator</li>
+</ul>
+</li>
 </ul></div>
             </div>
         </div>

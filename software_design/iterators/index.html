@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/system_design/microservices/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/iterators/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Microservices - The Notebook</title>
+        <title>Iterators - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,7 +33,7 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -66,11 +66,11 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Microservices</a>
+    <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
 </li>
                                     
 <li>
-    <a href="../docker/" class="dropdown-item">Docker</a>
+    <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -107,52 +107,52 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../software_design/pointers/" class="dropdown-item">Pointers</a>
+    <a href="../pointers/" class="dropdown-item">Pointers</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/big3/" class="dropdown-item">The Big 3</a>
+    <a href="../big3/" class="dropdown-item">The Big 3</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/exceptions/" class="dropdown-item">Exception Handling</a>
+    <a href="../exceptions/" class="dropdown-item">Exception Handling</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/templates/" class="dropdown-item">Templates</a>
+    <a href="../templates/" class="dropdown-item">Templates</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+    <a href="../operator-overloading/" class="dropdown-item">Operator Overloading</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+    <a href="../strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+    <a href="../smart-pointers/" class="dropdown-item">Smart Pointers</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/inheritance/" class="dropdown-item">Inheritance</a>
+    <a href="../inheritance/" class="dropdown-item">Inheritance</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/iterators/" class="dropdown-item">Iterators</a>
+    <a href="./" class="dropdown-item active">Iterators</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/stl/" class="dropdown-item">STL</a>
+    <a href="../stl/" class="dropdown-item">STL</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/misc/" class="dropdown-item">Misc</a>
+    <a href="../misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
                             </li>
@@ -268,12 +268,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../general/hardware/" class="nav-link">
+                                <a rel="prev" href="../inheritance/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../docker/" class="nav-link">
+                                <a rel="next" href="../stl/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -295,34 +295,125 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
+            <li class="nav-item" data-level="1"><a href="#iterators" class="nav-link">Iterators</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#iterator-design-pattern" class="nav-link">Iterator Design Pattern</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#stl-iterators" class="nav-link">STL Iterators</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#using-iterators" class="nav-link">Using Iterators</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="microservice-architectual-style">Microservice Architectual Style:</h3>
+<h1 id="iterators">Iterators</h1>
 <ul>
-<li>Developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanics, often an HTTP resource API</li>
-<li>Encourages modularity and seperation of concerns</li>
-<li>ability to horizontally scale and partition the workload</li>
-<li>Microservices contain many aspects in reality:</li>
-<li>Clients, Caches, and Databases are all included in a microservice in conjuction with the service itself</li>
+<li>Allow a program to access aggregated data in a container<ul>
+<li>Allow us to write programs that do not depend on the type of container (e.g. array, vector, tree, etc.)</li>
 </ul>
-<h3 id="stateless-service">Stateless Service:</h3>
-<ul>
-<li>Not a cache or database</li>
-<li>Frequently accessed metadata</li>
-<li>no instance affinity</li>
-<li>Losing a node is not a big deal and can be easily fixed</li>
+</li>
+<li>The details of accessing the aggregated data iis hidden via the iterator interface</li>
+<li>Our code then interacts with the iterator, not the container directly</li>
+<li>Every container has its own class for its iterator</li>
 </ul>
-<h3 id="stateful-service">Stateful Service:</h3>
+<h2 id="iterator-design-pattern">Iterator Design Pattern</h2>
+<h3 id="intent">Intent</h3>
+<p>Access elements of a container (aggregate) without exposing its representation</p>
+<h3 id="applicability">Applicability</h3>
 <ul>
-<li>Databases &amp; caches</li>
-<li>Custom apps which holds lots of data</li>
-<li>Losing a node is a notable event and it might take hours to get it fixed</li>
-</ul></div>
+<li>Require multiple traversal algorthims over a container</li>
+<li>Require a uniform traversal interface over different containers</li>
+<li>When container classes and traversal algorithms must vary independently</li>
+</ul>
+<h3 id="structure">Structure</h3>
+<p><img alt="Iterator Pattern" src="../static/iterator-pattern.png" /></p>
+<ul>
+<li><code>Aggregate</code> is an abstract base class used for creating containers.</li>
+<li><code>ConcreteAggregate</code> is a derived class that is a specific type of container (e.g. tree, hash map, list, etc.)</li>
+<li><code>Iterator</code> is an abstract base class used for creating iterators on containers</li>
+<li><code>ConcreteIterator</code> is a derived class that is a specific iterator implementation corresponding to the strucutre of a concrete container</li>
+<li>The use of <code>Aggregate</code> and <code>Iterator</code> abstract base classes lets client code be written against any generic container with an iterator<ul>
+<li>Looping directly over linear containers like arrays make assumption on the subscript operators definition meaning it interacts directly with the container</li>
+<li>Using iterators makes algorithms more general and independent of the container since the iterators handle differencs between data structures such as linear vs tree</li>
+</ul>
+</li>
+</ul>
+<h2 id="stl-iterators">STL Iterators</h2>
+<ul>
+<li>C++ implementation of the iterator pattern</li>
+<li>Generalization of pointers since they are objects that point to other objects</li>
+<li>Central to generic programming b/c they are an interface btw containers and algorithms</li>
+<li>STL algorithms typically take iterators as arugments<ul>
+<li>A container only needs to provide a way to access its elements using iterators</li>
+<li>Useful to add iterators to your own classes so they can be used with STL algorithms</li>
+</ul>
+</li>
+<li>Not all containers support random-access (e.g. specifying the ith item to access)</li>
+<li>Containers that support random-access iterators can be used with all STL algos</li>
+</ul>
+<h3 id="input-iterators">Input Iterators</h3>
+<ul>
+<li>Used to read from a container </li>
+<li>Dereferenced to refer to some object</li>
+<li>Incremented to obtain next iterator in a sequence</li>
+<li>Must allow following operations:<ul>
+<li>Copy Ctor and assignment operator</li>
+<li><code>==</code> and <code>!=</code> for comparison with other iterators of the same type</li>
+<li><code>*</code> and <code>++</code> for incrementing which object is being pointed to</li>
+<li>Can be const</li>
+<li>prefix and postfix</li>
+</ul>
+</li>
+</ul>
+<h3 id="output-iterators">Output Iterators</h3>
+<ul>
+<li>Used to write to a container</li>
+<li>More restrictive interface:<ul>
+<li><code>=</code>, <code>==</code>, and <code>!=</code> don't need to be defined</li>
+<li>Must support non-const <code>operator*</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="iterator-types">Iterator Types</h3>
+<ul>
+<li>Iterator categories depend on type parameterization rather than inheritance</li>
+<li>Iterator categories are hierarchical with more refined categories adding constraints<ul>
+<li><strong>Forward</strong>- start to end of container (supports <code>++</code>)</li>
+<li><strong>Bidirectional</strong>- iterate through elements forward and backward (supports <code>++</code>, <code>--</code>) <ul>
+<li>list, set, multiset, map, &amp; multimap</li>
+</ul>
+</li>
+<li><strong>Random Access</strong>- go forward n elements, get nth element (supports <code>[]</code>)<ul>
+<li>vector and deque </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="using-iterators">Using Iterators</h2>
+<ul>
+<li><code>begin()</code> is the first element</li>
+<li><code>end()</code> is whatever it means to be just after the last element</li>
+<li><code>begin()/end()</code> are used to traverse front to back</li>
+<li><code>rbegin()/rend()</code> are used to traverse back to front</li>
+<li>Range based for loops use iterators to easily go through containers:</li>
+</ul>
+<pre><code class="language-c++">vector&lt;int&gt; = {1,2,3,4};
+
+for(int i : v) {
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+}
+</code></pre></div>
             </div>
         </div>
 
