@@ -37,6 +37,8 @@ nav:
     - 'Strong Exception Safety': 'software_design/strong-exception-safety.md'
     - 'Smart Pointers': 'software_design/smart-pointers.md'
     - 'Inheritance': 'software_design/inheritance.md'
+    - 'Iterators': 'software_design/iterators.md'
+    - 'STL': 'software_design/stl.md'
     - 'Misc': 'software_design/misc.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
