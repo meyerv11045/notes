@@ -60,3 +60,6 @@ nav:
     - 'The Brain': 'math_science/brain.md'
     - Physics: 
       - 'Current & Resistance': 'math_science/physics/ch25.md'
+    - Prob & Stats:
+      - 'Random Variables': 'math_science/prob_stats/rv.md'
+      - '10/6 Class Notes': 'math_science/prob_stats/10-6.md'
