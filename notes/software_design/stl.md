@@ -11,10 +11,12 @@
         - set, multiset, map, multimap
         - Implemented as balanced binary trees
         - Supports efficient operations on elements using keys ordered by `operator<`
+        - Provide efficient, direct accessto store and retrieve elements via a key
+        - Keys are maintained in ascending order
     - 3) **Adaptors**- provide different ways to access sequential and associative containers
         - stack, queue, priority queue
   
-### `vector`
+## `vector`
 - Can change size dynamically (resizable array)
 - Provides best random-access performance
     - Supports random access iterator
@@ -30,7 +32,7 @@
     - consume more memory than arrays due to automatic resizing
 - Memory is gauranteed to be contiguous so can use pointer arithmetic
 
-### `deque`
+## `deque`
 - Pronounced "deck"
 - Double ended queue
 - Advantages:
@@ -41,7 +43,7 @@
     - Vector will be slightly faster b/c it doesnt need the lookup table due to only pushing back
     - Elements not guaranteeed to be in contiguous storage locations so pointer arithmetic not safe
 
-### `list`
+## `list`
 - Implements a doubly linked-list
 - Advantages:
     - Const time insertion/removal of elements anywhere in the container
@@ -49,3 +51,52 @@
         - It just requires pointer assignments instead of copying values and allocating new arrays
 - Disadvantages:
     - No support for random-access iterator
+
+## `set`
+- provides rapid look-up but does not permit duplicates
+- $O(logn)$ amortized time complexity for insertion and deletion 
+    - Because its stored as a balanced binary tree- usually a red-black tree
+
+``` c++
+
+// Create an output stream iterator with " " as a delimeter
+std::ostream_iterator<double> output(std::cout, " ");
+
+std::set<double> doubleSet;
+
+// insert on a set returns a pair: an iterator to the value and T if it was inserted, F if it already existed
+std::pair<std::set<double>::const_iterator, bool> pairValue;
+pairValue = doubleSet.insert(13.2)
+
+// or simply use auto to infer the type
+auto pairValue = doubleSet.insert(13.2)
+
+std::cout << *(pairValue.first) << (pairValue.second ? "was" : "was not") << "inserted" << std::endl;
+std::cout << "Set contains: ";
+std::copy(doubleSet.begin(),doubleSet.end(),output);
+```
+
+### `multiset`
+- provides rapid look-up but permits duplicates
+- Order of data determined by a comparator function
+
+``` c++
+std::multiset<int> intMultiSet;
+
+// insert on a multiset just returns an iterator
+intMultiSet.insert(1);
+
+// check for an item
+if (intMultiSet.find(2) == intMultiSet.end())
+    std::cout << "Not found"
+```
+
+## `map`
+- Provides lookup using a rapid key based lookup
+- Each value is associated with a unique key (no duplicate keys)
+- AKA associative array
+- Implemented as either a hashtable or red-black tree depending on the compiler
+
+## `multimap` 
+- Allows duplicate keys
+- No index operator notation since ambiguity in which key is being referred to
