@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/math_science/prob_stats/10-6/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/math_science/prob_stats/joint-distributions/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>10/6 Class Notes - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
@@ -295,9 +295,21 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#class-notes-106" class="nav-link">Class Notes- 10/6</a>
+            <li class="nav-item" data-level="1"><a href="#joint-probability-distributions" class="nav-link">Joint Probability Distributions</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#joint-pmf-for-2-drvs" class="nav-link">Joint PMF for 2 DRVs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#joint-pdf-for-2-crvs" class="nav-link">Joint PDF for 2 CRVs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#independence-of-2-rv" class="nav-link">Independence of 2 RV</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#independence-of-n-rv" class="nav-link">Independence of n RV</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -309,6 +321,18 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#correlation" class="nav-link">Correlation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#transformations-of-rvs" class="nav-link">Transformations of RVs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#change-of-variables-formula-for-2-rvs" class="nav-link">Change of Variables Formula for 2 RVs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -316,12 +340,55 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="class-notes-106">Class Notes- 10/6</h1>
-<h2 id="independence-of-2-rv">Independence of 2 RV</h2>
-<p>Def: <script type="math/tex">x_1 ... x_n</script> are independent RV if (for any subset <script type="math/tex">a_1</script> to <script type="math/tex">a_r</script>) </p>
-<p>for DRV <script type="math/tex">P(x_{a_1}, .. x_{a_r}) = P(x_{a_1}) * ... *P(x_{a_r})</script>
+<h1 id="joint-probability-distributions">Joint Probability Distributions</h1>
+<p>Many problems involves several random variables, thus it is useful to have models for the joint behavior of several random variables, especially the case where the variables are independent of each other.</p>
+<h2 id="joint-pmf-for-2-drvs">Joint PMF for 2 DRVs</h2>
+<p>A single pmf for a DRV <script type="math/tex">X</script> specifies the amount of mass for each possible value of <script type="math/tex">X</script>. The joint pmf of DRVs <script type="math/tex">X</script> and <script type="math/tex">Y</script> describes the amount of mass for each possible pair of values <script type="math/tex">(x,y)</script>. </p>
+<p>Let <script type="math/tex">X</script> and <script type="math/tex">Y</script> be two DRVs defined on sample space <script type="math/tex">S</script> of an experiment:</p>
+<p>
+<script type="math/tex; mode=display">p(x,y) = P(X = x \cap Y = y) = \sum_x sum_y p(x,y)</script>
 </p>
-<p>for CRV <script type="math/tex">f(x_{a_1}, .. x_{a_r}) = f(x_{a_1}) * ... *f(x_{a_r})</script>
+<p>The marginal pmfs of X and Y:</p>
+<p>
+<script type="math/tex; mode=display">p_X(x) = \sum_y p(x,y)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">p_Y(y) = \sum_x p(x,y)</script>
+</p>
+<p>This makes sense since order to get the probability of a certain value of x, we take its probability as the sum over all possible y values. The marginal pmfs are useful for computing probabilites of events involving only one of the RVs.</p>
+<h2 id="joint-pdf-for-2-crvs">Joint PDF for 2 CRVs</h2>
+<p>A single pdf for a CRV <script type="math/tex">X</script> specifies the amount of mass per unit length for each possible value of <script type="math/tex">X</script> on an interval/set. A joint pdf of CRVs <script type="math/tex">X</script> and <script type="math/tex">Y</script> specifies the amount of mass per unit area for each possible pair of values <script type="math/tex">(x,y)</script>. </p>
+<p>Let <script type="math/tex">X</script> and <script type="math/tex">Y</script> be two CRVs and <script type="math/tex">A</script> a two-dimensional set.</p>
+<p>
+<script type="math/tex; mode=display">P[(X,Y) \in A] = \int_A \int f(x,y)dx dy</script>
+</p>
+<p>Then <script type="math/tex">f(x,y)</script> is the joint pdf with properties:
+1) <script type="math/tex">f(x,y) \geq 0</script>
+2) <script type="math/tex">\int_{-\infty}^\infty \int_{-\infty}^\infty f(x,y) dx dy = 1</script>
+</p>
+<p><img alt="" src="../../static/crv2-pdf.png" /></p>
+<p>If <script type="math/tex">A</script> is a two-dimensional rectangle:</p>
+<p>
+<script type="math/tex; mode=display">P(a \leq X \leq b, c \leq Y \leq d) = \int_a^b \int_c^d f(x,y)dy dx</script>
+</p>
+<p>The marginal pdfs for <script type="math/tex">X</script> and <script type="math/tex">Y</script>:
+<script type="math/tex; mode=display">f_X(x) = \int_{-\infty}^{\infty} f(x,y) dy </script>
+</p>
+<p>
+<script type="math/tex; mode=display">f_Y(y) = \int_{-\infty}^{\infty} f(x,y) dx </script>
+</p>
+<h2 id="independence-of-2-rv">Independence of 2 RV</h2>
+<p>DEF: Two RVs <script type="math/tex">X</script> and <script type="math/tex">Y</script> are independent if <script type="math/tex">\forall (x,y)</script>
+</p>
+<p>
+<script type="math/tex">p(x,y) = p_X(x)*p_Y(y)</script> for DRVs</p>
+<p>
+<script type="math/tex">f(x,y) = f_X(x)*f_Y(y)</script> for CRVs</p>
+<h2 id="independence-of-n-rv">Independence of n RV</h2>
+<p>Def: <script type="math/tex">x_1 ... x_n</script> are independent RV if (for any subset <script type="math/tex">a_1</script> to <script type="math/tex">a_r</script>) </p>
+<p>for DRV <script type="math/tex">P(x_{a_1}, ..., x_{a_r}) = P(x_{a_1}) * ... *P(x_{a_r})</script>
+</p>
+<p>for CRV <script type="math/tex">f(x_{a_1}, ..., x_{a_r}) = f(x_{a_1}) * ... *f(x_{a_r})</script>
 </p>
 <hr />
 <h2 id="multinomial-distribution">Multinomial Distribution</h2>
@@ -378,15 +445,9 @@
 </li>
 </ul>
 <h3 id="examples">Examples</h3>
-<p>INSERT GRAPH of POINTS positively sloping up</p>
-<p>This distribution of points results in a large positive covariance</p>
-<p>Highly related in normal proportional way</p>
-<p>INSERT GRAPH of Points negatively sloping down</p>
-<p>This distribution of points results in a large negative covariance.
-This can be interpreted as when <script type="math/tex">X</script> increases, <script type="math/tex">Y</script> decreases and when <script type="math/tex">X</script> decresases, <script type="math/tex">Y</script> increases.</p>
-<p>Highly related in inverse way</p>
-<p>INSERT GRAPH of Circle of points</p>
-<p>This distribution will have a covariance close to 0</p>
+<p><img alt="Graph of covariances" src="../../static/covariance.jpg" /></p>
+<p>The leftmost graph reprsents <script type="math/tex">X</script> and <script type="math/tex">Y</script> variables highly related in an inversely proportional way meaning when <script type="math/tex">X</script> increases, <script type="math/tex">Y</script> decreases and when <script type="math/tex">X</script> decresases, <script type="math/tex">Y</script> increases.</p>
+<p>The rightmost graph represents <script type="math/tex">X</script> and <script type="math/tex">Y</script> variables highly related in a directly proprtional way.</p>
 <h3 id="properties">Properties</h3>
 <p>
 <script type="math/tex; mode=display">Cov(aX,Z) = aCov(X,Z)</script>
@@ -394,7 +455,49 @@ This can be interpreted as when <script type="math/tex">X</script> increases, <s
 <p>This implies <script type="math/tex">Cov(aX,aX) = a^2Cov(X,X)</script>.</p>
 <p>
 <script type="math/tex; mode=display">Cov(aX + bY, Z) =  aCov(X,Z) + bCov(Y,Z)</script>
-</p></div>
+</p>
+<h2 id="correlation">Correlation</h2>
+<p>DEF: <script type="math/tex">X</script> and <script type="math/tex">Y</script> are random vars.<br />
+<script type="math/tex; mode=display">Corr(X,Y) = \delta_{x,y} = \frac{Cov(X,Y)}{\sigma_x \sigma_y}</script>
+</p>
+<p>Properties:
+1) <script type="math/tex">a,c > 0</script> or <script type="math/tex">a, c <0 </script> implies <script type="math/tex">Corr(aX+b, cY+d) = Corr(X,Y)</script>
+2) <script type="math/tex">-1 \leq Corr(X,Y) \leq 1</script>
+3) <script type="math/tex">Corr(X,Y) = \pm 1</script> iff <script type="math/tex">Y = aX +b</script> for some <script type="math/tex">a \neq 0</script>
+</p>
+<p>Correlation is unrelated to the value of the slope.
+Simply means when it is one, the slope is positive/increasing. WHen it is negative one, the slope is negative/decreasing. Correlation of 0 means no relation between the points (points are distributed roughly as a circle/sphere). As the correlation approaches -1 or 1, the circle of points flattens, with the spread increasing.</p>
+<p>Independent random variables will have a correlation of 0.
+However, uncorrelated random variables do not imply independence.</p>
+<p>Correlation does not imply causation!</p>
+<p>From a dataset we can compute correlation with the following formula:</p>
+<p>
+<script type="math/tex; mode=display">\delta_{x,y}  = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{(n-1)s_x s_y}</script>
+</p>
+<h2 id="transformations-of-rvs">Transformations of RVs</h2>
+<p>
+<script type="math/tex">X</script> is a CRV and <script type="math/tex">Y = h(X)</script>.</p>
+<p>Goal: Find the pdf of <script type="math/tex">Y</script> from the pdf of <script type="math/tex">X</script>.</p>
+<p>Assume <script type="math/tex">h</script> has an inverse.
+<script type="math/tex; mode=display">F_Y(y) = P(Y \leq y) = P(h(X) \leq y) = P(X \leq h^{-1}(y) = F_X(h^{-1}(y)</script>
+</p>
+<p>Therefore, <script type="math/tex">f_Y(y) = f_X(h^{-1}(y)) \frac{dh^{-1}}{dy}(y)</script>
+</p>
+<p>If h has a decreasing inverse, <script type="math/tex">f_Y(y) = -f_X(h^{-1}(y)) \frac{dh^{-1}}{dy}(y)</script>
+</p>
+<p>
+<script type="math/tex">P(h(X) \leq y) = P(X \leq h^{-1}(y)</script> only holds if <script type="math/tex">h^{-1}</script> is increasing. If <script type="math/tex">h^{-1}</script> is decreasing then <script type="math/tex">P(h(X) \leq y) = P(X \geq h^{-1}(y)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">f_Y(h(x)) = f_X(x) \lvert \frac{1}{h'(x)} \rvert</script>
+</p>
+<h2 id="change-of-variables-formula-for-2-rvs">Change of Variables Formula for 2 RVs</h2>
+<p>X Y are CRV
+U, V = h(X, Y)</p>
+<p>
+<script type="math/tex; mode=display">f_{(u,v)}(h(x,y)) = f_{x,y}(x,y)\lvert \frac{1}{\frac{\partial u,v}{\partial x,y}} \rvert</script>
+</p>
+<p>In the equation above, the denominator is the determinant of the jacobian. This represents the change in areas from X,Y to U,V (remember 3Blue1Brown determinant visualization intuition of differencec between areas).</p></div>
             </div>
         </div>
 

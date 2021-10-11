@@ -253,7 +253,7 @@
 </li>
             
 <li>
-    <a href="../../math_science/prob_stats/10-6/" class="dropdown-item">10/6 Class Notes</a>
+    <a href="../../math_science/prob_stats/joint-distributions/" class="dropdown-item">10/6 Class Notes</a>
 </li>
     </ul>
   </li>
@@ -301,6 +301,30 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#vector" class="nav-link">vector</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#deque" class="nav-link">deque</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#list" class="nav-link">list</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#set" class="nav-link">set</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#map" class="nav-link">map</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#multimap" class="nav-link">multimap</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -325,6 +349,8 @@
 <li>set, multiset, map, multimap</li>
 <li>Implemented as balanced binary trees</li>
 <li>Supports efficient operations on elements using keys ordered by <code>operator&lt;</code></li>
+<li>Provide efficient, direct accessto store and retrieve elements via a key</li>
+<li>Keys are maintained in ascending order</li>
 </ul>
 </li>
 <li>3) <strong>Adaptors</strong>- provide different ways to access sequential and associative containers<ul>
@@ -334,7 +360,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="vector"><code>vector</code></h3>
+<h2 id="vector"><code>vector</code></h2>
 <ul>
 <li>Can change size dynamically (resizable array)</li>
 <li>Provides best random-access performance<ul>
@@ -361,7 +387,7 @@
 </li>
 <li>Memory is gauranteed to be contiguous so can use pointer arithmetic</li>
 </ul>
-<h3 id="deque"><code>deque</code></h3>
+<h2 id="deque"><code>deque</code></h2>
 <ul>
 <li>Pronounced "deck"</li>
 <li>Double ended queue</li>
@@ -379,7 +405,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="list"><code>list</code></h3>
+<h2 id="list"><code>list</code></h2>
 <ul>
 <li>Implements a doubly linked-list</li>
 <li>Advantages:<ul>
@@ -394,6 +420,58 @@
 <li>No support for random-access iterator</li>
 </ul>
 </li>
+</ul>
+<h2 id="set"><code>set</code></h2>
+<ul>
+<li>provides rapid look-up but does not permit duplicates</li>
+<li>
+<script type="math/tex">O(logn)</script> amortized time complexity for insertion and deletion <ul>
+<li>Because its stored as a balanced binary tree- usually a red-black tree</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-c++">
+// Create an output stream iterator with &quot; &quot; as a delimeter
+std::ostream_iterator&lt;double&gt; output(std::cout, &quot; &quot;);
+
+std::set&lt;double&gt; doubleSet;
+
+// insert on a set returns a pair: an iterator to the value and T if it was inserted, F if it already existed
+std::pair&lt;std::set&lt;double&gt;::const_iterator, bool&gt; pairValue;
+pairValue = doubleSet.insert(13.2)
+
+// or simply use auto to infer the type
+auto pairValue = doubleSet.insert(13.2)
+
+std::cout &lt;&lt; *(pairValue.first) &lt;&lt; (pairValue.second ? &quot;was&quot; : &quot;was not&quot;) &lt;&lt; &quot;inserted&quot; &lt;&lt; std::endl;
+std::cout &lt;&lt; &quot;Set contains: &quot;;
+std::copy(doubleSet.begin(),doubleSet.end(),output);
+</code></pre>
+<h3 id="multiset"><code>multiset</code></h3>
+<ul>
+<li>provides rapid look-up but permits duplicates</li>
+<li>Order of data determined by a comparator function</li>
+</ul>
+<pre><code class="language-c++">std::multiset&lt;int&gt; intMultiSet;
+
+// insert on a multiset just returns an iterator
+intMultiSet.insert(1);
+
+// check for an item
+if (intMultiSet.find(2) == intMultiSet.end())
+    std::cout &lt;&lt; &quot;Not found&quot;
+</code></pre>
+<h2 id="map"><code>map</code></h2>
+<ul>
+<li>Provides lookup using a rapid key based lookup</li>
+<li>Each value is associated with a unique key (no duplicate keys)</li>
+<li>AKA associative array</li>
+<li>Implemented as either a hashtable or red-black tree depending on the compiler</li>
+</ul>
+<h2 id="multimap"><code>multimap</code></h2>
+<ul>
+<li>Allows duplicate keys</li>
+<li>No index operator notation since ambiguity in which key is being referred to</li>
 </ul></div>
             </div>
         </div>
