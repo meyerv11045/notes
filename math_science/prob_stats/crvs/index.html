@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/math_science/physics/ch25/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/math_science/prob_stats/crvs/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Current & Resistance - The Notebook</title>
+        <title>Continuous Random Variables - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -206,7 +206,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="./" class="dropdown-item active">Current & Resistance</a>
+    <a href="../../physics/ch25/" class="dropdown-item">Current & Resistance</a>
 </li>
     </ul>
   </li>
@@ -216,15 +216,15 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../prob_stats/rv/" class="dropdown-item">Random Variables</a>
+    <a href="../rv/" class="dropdown-item">Random Variables</a>
 </li>
             
 <li>
-    <a href="../../prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
+    <a href="./" class="dropdown-item active">Continuous Random Variables</a>
 </li>
             
 <li>
-    <a href="../../prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+    <a href="../joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
 </li>
     </ul>
   </li>
@@ -239,12 +239,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../brain/" class="nav-link">
+                                <a rel="prev" href="../rv/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../prob_stats/rv/" class="nav-link">
+                                <a rel="next" href="../joint-distributions/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -266,14 +266,37 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#current" class="nav-link">Current</a>
+            <li class="nav-item" data-level="1"><a href="#continuous-random-variables" class="nav-link">Continuous Random Variables</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#probability-density-function" class="nav-link">Probability Density Function</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="1"><a href="#resistance" class="nav-link">Resistance</a>
+            <li class="nav-item" data-level="2"><a href="#cumulative-distribution-function" class="nav-link">Cumulative Distribution Function</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#factors-affecting-resistance" class="nav-link">Factors affecting Resistance</a>
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#propositions" class="nav-link">Propositions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pdfs-and-cdfs" class="nav-link">PDFs and CDFs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#variance" class="nav-link">Variance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#expected-value" class="nav-link">Expected Value</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#approximating" class="nav-link">Approximating</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#moment-generating-functions" class="nav-link">Moment Generating Functions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -284,30 +307,89 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="current">Current</h1>
-<p><strong>Current</strong> is the movement of net charges. More formally it is defined as the rate at which net charge flows past any section of a conductor.</p>
-<p>The unit of current is the ampere (1 A = 1 C/sec)</p>
-<p><strong>Current density</strong> is the amount of net charge flowing through a unit area.</p>
-<p>
-<script type="math/tex; mode=display">J = nev_d</script>
+<h1 id="continuous-random-variables">Continuous Random Variables</h1>
+<p>A CRV <script type="math/tex">X</script> satisifes:
+1) Possible values of <script type="math/tex">X</script> make up an interval or union of disjoint intervals
+2) <script type="math/tex">P(X = c) = 0)</script> for any<script type="math/tex">c</script> that is a possible value of <script type="math/tex">X</script>
 </p>
-<p>The relation between current density and current is intuitively going to be the sum of the current density at each point times the area of each point. This can be expressed in general using a surface integral:</p>
+<h2 id="probability-density-function">Probability Density Function</h2>
+<p>DEF: Let <script type="math/tex">X</script> be a CRV. Then a probability density function of <script type="math/tex">X</script> is a function <script type="math/tex">f</script> s.t.</p>
 <p>
-<script type="math/tex; mode=display">I = \int \int J \cdot dA</script>
+<script type="math/tex; mode=display">P(a \leq X \leq b) = \int_a^b f(x) dx</script>
 </p>
-<p>If the current density <script type="math/tex">J</script> is uniform and the area <script type="math/tex">A</script> is flat, we get a simplified <script type="math/tex">I = J \cdot A</script> which for simple wires where the angle between the flow and the area is 0, yields the equation <script type="math/tex">I = JA</script>.</p>
-<h1 id="resistance">Resistance</h1>
-<p>Voltage and current are observed to be proportional in most materials. The constant that relates the voltage and current for a given material is called the resistance <script type="math/tex">R</script>: <script type="math/tex">V = RI</script>. The resistance can be thought of as a measure of how difficult it is for current to flow. When free electrons are flowing through a material, they will inevitably collide with the nuclei of the materials' atoms. Certain materials will have nuclei arrangmenets that will result in more collisions, corresponding to lower current flow and a higher resistance value.</p>
-<p>This relationship of <script type="math/tex">V = RI</script> is known as Ohm's law after being discovered by George Ohm in 1827. Materials that are observed to follow Ohm's law are known as ohmic materials while ones that do not are known as nonohmic materials.</p>
-<p>Resistance has numerous applications such as being used to design circuit boards as well as its use in the myelin sheaths of our nerves to transmit electrical signals.</p>
-<h2 id="factors-affecting-resistance">Factors affecting Resistance</h2>
-<p>Resistance depends on the <strong>material</strong> and <strong>details/geometry of the sample</strong>.</p>
-<p>Resistivity is the resistance of a unit cube of a given material and depends on the material only. </p>
+<p>This can be interpreted as the probability that <script type="math/tex">X</script> takes on a value in the interval <script type="math/tex">[a,b]</script> is the area above the interval and under the graph of the density function.</p>
+<p><img alt="pdf" src="../../static/pdf.png" /></p>
+<p>Properties of pdfs:
+1) <script type="math/tex">f(x) \geq 0</script> for all <script type="math/tex">x</script>
+2) <script type="math/tex">\int_{-\infty}^\infty f(x)dx = 1</script> (area under the entire graph of <script type="math/tex">f(x)</script>)</p>
+<h2 id="cumulative-distribution-function">Cumulative Distribution Function</h2>
 <p>
-<script type="math/tex; mode=display">\rho = \frac{E}{J}</script>
+<script type="math/tex; mode=display">F(x) = P(X \leq x) = \int_{-\infty}^x f(y) dy</script>
 </p>
-<p>Note that conductivtiy is simply the inverse of resistivity.</p>
-<p>Resistivity and thus resistance, depends on temperature. Higher temperatures will increase the resistivity and thus increase the resistance and vice versa.</p></div>
+<p>This can be interpreted as the area under the density curve to the left of <script type="math/tex">x</script>.</p>
+<p><img alt="pdf-cdf" src="../../static/pdf-cdf.png" /></p>
+<h2 id="propositions">Propositions</h2>
+<p>
+<script type="math/tex; mode=display">P(x > a) = 1 - F(a)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">P(a \leq X \leq b) = F(b) - F(a)</script>
+</p>
+<p>The <script type="math/tex">(100p)</script>th percentile of a CRV <script type="math/tex">X</script>:</p>
+<p>
+<script type="math/tex; mode=display">p = F[n(p)] = \int_{-\infty}^{n(p)} f(y) dy</script>
+</p>
+<p>where <script type="math/tex">n(p)</script> is the value on the measurement axis s.t. <script type="math/tex">100p</script>% of the area under the density curve is to left of <script type="math/tex">n(p)</script>
+</p>
+<p>Ex: <script type="math/tex">n(.75)</script> stands for the 75% percentile where 75% of the area is to the left of <script type="math/tex">n(.75)</script>
+</p>
+<p><img alt="percentile crv" src="../../static/percentile-crv.png" /></p>
+<h2 id="pdfs-and-cdfs">PDFs and CDFs</h2>
+<p>PDFs measure how much the mass changes per unit of length (aka contribution to mass per unit length)</p>
+<p>CDFs measure the total mass up to a pt x (achieves this my taking the integral on the desired interval to get the mass of that interval)</p>
+<p>
+<script type="math/tex; mode=display">F(x) = \int_{-\infty}^x f(y) dy</script>
+</p>
+<p>In the cdf's formula, the <script type="math/tex">dy</script> is a tiny length so <script type="math/tex">f(y)dy</script> is the contribution of mass by the point <script type="math/tex">y</script> so integrating (summing over an uncountable interval) the interval gives the total mass of probability.</p>
+<p>To get the cdf from the pdf, we integrate the pdf over the desired interval.</p>
+<p>To get the pdf from the cdf, we take the derivative of the cdf and evaluate it at the desired point.</p>
+<p>At every <script type="math/tex">x</script> which <script type="math/tex">F'(x)</script> exists, <script type="math/tex">F'(x) = f(x)</script>
+</p>
+<h2 id="variance">Variance</h2>
+<p>
+<script type="math/tex; mode=display">\sigma_X^2 = V(X)= \int_{-\infty}^\infty (x - \mu)^2 f(x) dx = E[(X - \mu)^2]</script>
+</p>
+<p>
+<script type="math/tex; mode=display">V(X) = E(X^2) - [E(X)]^2</script>
+</p>
+<p>
+<script type="math/tex; mode=display">V(aX + b) = a^2\sigma_X^2</script>
+</p>
+<h2 id="expected-value">Expected Value</h2>
+<p>
+<script type="math/tex; mode=display">E(aX + b) = aE(X) + b</script>
+</p>
+<p>If <script type="math/tex">X</script> is largely concentrated on an interval of values close to <script type="math/tex">\mu</script>, the mean value and variance of <script type="math/tex">Y = h(X)</script> can be approximated using the assumption that <script type="math/tex">h(x)</script> is differentiable.</p>
+<h2 id="approximating">Approximating</h2>
+<p>
+<script type="math/tex; mode=display">E[h(X)] \approx h(\mu)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">V[h(X)] \approx [h'(\mu)]^2 \sigma^2</script>
+</p>
+<p>These follow from approximating <script type="math/tex">h(X)</script> using a first order taylor series expansion about <script type="math/tex">(\mu,h(\mu))</script>:</p>
+<p>
+<script type="math/tex; mode=display">Y = h(X) \approx h(\mu) + h'(\mu)(X - \mu)</script>
+</p>
+<h2 id="moment-generating-functions">Moment Generating Functions</h2>
+<p>
+<script type="math/tex; mode=display">M_X(t) = E(e^{tX}) = \int_{-\infty}^{\infty} e^{tx}f(x)dx</script>
+</p>
+<p>Properties:</p>
+<p>
+<script type="math/tex; mode=display">M_X(0) = E(e^0) = \int_{-\infty}^{\infty} e^{0x}(fx)dx = \int_{-\infty}^{\infty} f(x)dx = 1</script>
+</p>
+<p>Let <script type="math/tex">Y = aX +b</script>. Then <script type="math/tex">M_Y(t) = e^{bt}M_X(at)</script>.</p></div>
             </div>
         </div>
 
