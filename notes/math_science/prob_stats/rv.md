@@ -76,3 +76,41 @@ $z_\alpha$ denotes the value on the measurement axis for which $\alpha$ of the a
 ![z-alpha](static/z-alpha.png)
 
 ## Gamma Distribution
+The gamma family of pdfs yield a wide variety of skewed distributional shapes that can be used for situations in which the symmetric normal disitrubtion does not accurately represent the skewed random variable.
+
+
+In order to define the family of gama distributions we first must define an important function in many areas of mathematics.
+
+DEF: For $\alpha > 0$, the gamma function $\Gamma(\alpha)$ is defined by:
+
+$$\Gamma(\alpha) = \int_0^\infty x^{\alpha - 1}e^{-x}dx$$
+
+With the gamma function, we can then define the gamma distribution for a CRV $X$:
+
+![gamma dist pdf](static/gamm-dist.png)
+
+where $\alpha > 0$ and $\beta > 0$.
+
+The **Standard Gamma Distribution** has $\beta = 1$. 
+
+$\beta$ is known as the *scale parameter* because values less than one compress the pdf in the x direction, and values greater than one stretch the pdf in the x direction
+
+$\alpha$ determines how far to the right the distribution's center is, with larger values making it centered more to the right.
+
+![gammas](static/gammas.png)
+
+$$E(X) = \alpha \beta$$
+$$V(X) = \alpha \beta^2$$
+
+$$M_X(t) = \frac{1}{(1- \beta t)^\alpha} $$
+
+### Incomplete Gamma Function
+The cdf when $X$ is a standard gamma rv, 
+  
+![](static/incomplete-gamma.png)
+
+The incomplete gamma can be used to compute any non standard gamma distibution's probabilities since it has been tabulated.
+
+For $X \sim G(\alpha,\beta)$,  the cdf of $X$ is the incomplete gamma function evaluated at $x/\beta$:
+
+$$F_X(x; \alpha,\beta) = F(\frac{x}{\beta};\alpha)$$
