@@ -1,21 +1,25 @@
 # Discrete Random Variables
-
+---
 ## Binomial Distribution
-
+---
 ## Negative Binomial Distribution
-
+---
 ## Hypergeometric Distribution
-
+---
 ## Geometric Distribution
-
+---
 ## Poisson Distribution
+
 
 # Continuous Random Variables
 
+---
 ## Uniform Distribution
 
+---
 ## Exponential Distribution
 
+---
 ## Normal Distribution
 DEF: A CRV $X$ has a normal/gaussian distribution with parameters $\mu$ and $\sigma$ (or $\sigma^2$) where $-\infty < \mu < \infty$ and $0 < \sigma$ if the pdf is:
 
@@ -25,7 +29,7 @@ $X \sim N(\mu,\sigma^2)$
 
 A large $\sigma$ implies a value far from $\mu$ is well observed whereas such a value is unlikely when $\sigma$ is small.
 
-![](/static/normal-curves.png)
+![normal curves](static/normal-curves.png)
 
 ### Standard Normal Distribution
 Since standard integration techniques cannot be used to evaluate the cdf of a normal distribution, the standard normal distribution ($\mu = 0$ and $\sigma = 1$) has been tabulated and can be used to compute probabilities for any other values of $\mu$ and $\sigma$.
@@ -75,6 +79,7 @@ $z_\alpha$ denotes the value on the measurement axis for which $\alpha$ of the a
 
 ![z-alpha](static/z-alpha.png)
 
+---
 ## Gamma Distribution
 The gamma family of pdfs yield a wide variety of skewed distributional shapes that can be used for situations in which the symmetric normal disitrubtion does not accurately represent the skewed random variable.
 
@@ -87,7 +92,13 @@ $$\Gamma(\alpha) = \int_0^\infty x^{\alpha - 1}e^{-x}dx$$
 
 With the gamma function, we can then define the gamma distribution for a CRV $X$:
 
-![gamma dist pdf](static/gamm-dist.png)
+$$f(x; \alpha, \beta) =  \begin{array}{cc}
+  \Bigg \{ & 
+    \begin{array}{cc}
+      \frac{1}{\beta^\alpha \Gamma(\alpha)}x^{\alpha - 1}e^{-x/\beta} &  x > 0 \\
+      0 & otherwise
+    \end{array}
+\end{array}$$
 
 where $\alpha > 0$ and $\beta > 0$.
 
@@ -105,9 +116,9 @@ $$V(X) = \alpha \beta^2$$
 $$M_X(t) = \frac{1}{(1- \beta t)^\alpha} $$
 
 ### Incomplete Gamma Function
-The cdf when $X$ is a standard gamma rv, 
+The cdf when $X$ is a standard gamma rv (for $x >0$), 
   
-![](static/incomplete-gamma.png)
+$$F(x; \alpha) = \int_0^x \frac{y^{\alpha - 1}e^{-y}}{\Gamma(\alpha)}dy  $$ 
 
 The incomplete gamma can be used to compute any non standard gamma distibution's probabilities since it has been tabulated.
 
