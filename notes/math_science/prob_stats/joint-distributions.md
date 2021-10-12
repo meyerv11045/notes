@@ -27,7 +27,7 @@ Then $f(x,y)$ is the joint pdf with properties:
 1) $f(x,y) \geq 0$
 2) $\int_{-\infty}^\infty \int_{-\infty}^\infty f(x,y) dx dy = 1$
 
-![](/static/crv2-pdf.png)
+![2 Crvs](./static/crv2-pdf.png)
 
 If $A$ is a two-dimensional rectangle:
 
@@ -109,7 +109,7 @@ $$
 - How linear is the relation between $X$ and $Y$
 
 ### Examples
-![Graph of covariances](/static/covariance.jpg)
+![Graph of covariances](./static/covariance.jpg)
 
 The leftmost graph reprsents $X$ and $Y$ variables highly related in an inversely proportional way meaning when $X$ increases, $Y$ decreases and when $X$ decresases, $Y$ increases.
 

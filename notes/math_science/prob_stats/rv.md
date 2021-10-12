@@ -1,26 +1,26 @@
 # Discrete Random Variables
 ---
-## Binomial Distribution
+## Binomial
 ---
-## Negative Binomial Distribution
+## Negative Binomial
 ---
-## Hypergeometric Distribution
+## Hypergeometric
 ---
-## Geometric Distribution
+## Geometric
 ---
-## Poisson Distribution
+## Poisson
 
 
 # Continuous Random Variables
 
 ---
-## Uniform Distribution
+## Uniform
 
 ---
-## Exponential Distribution
+## Exponential
 
 ---
-## Normal Distribution
+## Normal
 DEF: A CRV $X$ has a normal/gaussian distribution with parameters $\mu$ and $\sigma$ (or $\sigma^2$) where $-\infty < \mu < \infty$ and $0 < \sigma$ if the pdf is:
 
 $$f(x; \mu, \sigma) = \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
@@ -29,7 +29,7 @@ $X \sim N(\mu,\sigma^2)$
 
 A large $\sigma$ implies a value far from $\mu$ is well observed whereas such a value is unlikely when $\sigma$ is small.
 
-![normal curves](static/normal-curves.png)
+![normal curves](./static/normal-curves.png)
 
 ### Standard Normal Distribution
 Since standard integration techniques cannot be used to evaluate the cdf of a normal distribution, the standard normal distribution ($\mu = 0$ and $\sigma = 1$) has been tabulated and can be used to compute probabilities for any other values of $\mu$ and $\sigma$.
@@ -77,10 +77,10 @@ In statistical inference, we need values on the measurement axis that capture sm
 
 $z_\alpha$ denotes the value on the measurement axis for which $\alpha$ of the area under the z curve lies to the right of $z_\alpha$. Also is the $100(1-\alpha)$th percentile of the standard normal distribution.
 
-![z-alpha](static/z-alpha.png)
+![z-alpha](./static/z-alpha.png)
 
 ---
-## Gamma Distribution
+## Gamma
 The gamma family of pdfs yield a wide variety of skewed distributional shapes that can be used for situations in which the symmetric normal disitrubtion does not accurately represent the skewed random variable.
 
 
@@ -108,7 +108,7 @@ $\beta$ is known as the *scale parameter* because values less than one compress 
 
 $\alpha$ determines how far to the right the distribution's center is, with larger values making it centered more to the right.
 
-![gammas](static/gammas.png)
+![gammas](./static/gammas.png)
 
 $$E(X) = \alpha \beta$$
 $$V(X) = \alpha \beta^2$$

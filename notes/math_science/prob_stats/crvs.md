@@ -10,7 +10,7 @@ $$P(a \leq X \leq b) = \int_a^b f(x) dx$$
 
 This can be interpreted as the probability that $X$ takes on a value in the interval $[a,b]$ is the area above the interval and under the graph of the density function.
 
-![pdf](/static/pdf.png)
+![pdf](./static/pdf.png)
 
 Properties of pdfs:
 1) $f(x) \geq 0$ for all $x$
@@ -22,7 +22,7 @@ $$F(x) = P(X \leq x) = \int_{-\infty}^x f(y) dy$$
 
 This can be interpreted as the area under the density curve to the left of $x$.
   
-![pdf-cdf](../static/pdf-cdf.png)
+![pdf-cdf](./static/pdf-cdf.png)
 
 ## Propositions
 
@@ -38,7 +38,7 @@ where $n(p)$ is the value on the measurement axis s.t. $100p$% of the area under
 
 Ex: $n(.75)$ stands for the 75% percentile where 75% of the area is to the left of $n(.75)$
 
-![percentile crv](/static/percentile-crv.png)
+![percentile crv](./static/percentile-crv.png)
 
 ## PDFs and CDFs
 PDFs measure how much the mass changes per unit of length (aka contribution to mass per unit length)
