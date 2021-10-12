@@ -381,7 +381,37 @@
 <p>
 <script type="math/tex">z_\alpha</script> denotes the value on the measurement axis for which <script type="math/tex">\alpha</script> of the area under the z curve lies to the right of <script type="math/tex">z_\alpha</script>. Also is the <script type="math/tex">100(1-\alpha)</script>th percentile of the standard normal distribution.</p>
 <p><img alt="z-alpha" src="../static/z-alpha.png" /></p>
-<h2 id="gamma-distribution">Gamma Distribution</h2></div>
+<h2 id="gamma-distribution">Gamma Distribution</h2>
+<p>The gamma family of pdfs yield a wide variety of skewed distributional shapes that can be used for situations in which the symmetric normal disitrubtion does not accurately represent the skewed random variable.</p>
+<p>In order to define the family of gama distributions we first must define an important function in many areas of mathematics.</p>
+<p>DEF: For <script type="math/tex">\alpha > 0</script>, the gamma function <script type="math/tex">\Gamma(\alpha)</script> is defined by:</p>
+<p>
+<script type="math/tex; mode=display">\Gamma(\alpha) = \int_0^\infty x^{\alpha - 1}e^{-x}dx</script>
+</p>
+<p>With the gamma function, we can then define the gamma distribution for a CRV <script type="math/tex">X</script>:</p>
+<p><img alt="gamma dist pdf" src="../static/gamm-dist.png" /></p>
+<p>where <script type="math/tex">\alpha > 0</script> and <script type="math/tex">\beta > 0</script>.</p>
+<p>The <strong>Standard Gamma Distribution</strong> has <script type="math/tex">\beta = 1</script>. </p>
+<p>
+<script type="math/tex">\beta</script> is known as the <em>scale parameter</em> because values less than one compress the pdf in the x direction, and values greater than one stretch the pdf in the x direction</p>
+<p>
+<script type="math/tex">\alpha</script> determines how far to the right the distribution's center is, with larger values making it centered more to the right.</p>
+<p><img alt="gammas" src="../static/gammas.png" /></p>
+<p>
+<script type="math/tex; mode=display">E(X) = \alpha \beta</script>
+<script type="math/tex; mode=display">V(X) = \alpha \beta^2</script>
+</p>
+<p>
+<script type="math/tex; mode=display">M_X(t) = \frac{1}{(1- \beta t)^\alpha} </script>
+</p>
+<h3 id="incomplete-gamma-function">Incomplete Gamma Function</h3>
+<p>The cdf when <script type="math/tex">X</script> is a standard gamma rv, </p>
+<p><img alt="" src="../static/incomplete-gamma.png" /></p>
+<p>The incomplete gamma can be used to compute any non standard gamma distibution's probabilities since it has been tabulated.</p>
+<p>For <script type="math/tex">X \sim G(\alpha,\beta)</script>,  the cdf of <script type="math/tex">X</script> is the incomplete gamma function evaluated at <script type="math/tex">x/\beta</script>:</p>
+<p>
+<script type="math/tex; mode=display">F_X(x; \alpha,\beta) = F(\frac{x}{\beta};\alpha)</script>
+</p></div>
             </div>
         </div>
 
