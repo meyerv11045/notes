@@ -20,14 +20,14 @@ nav:
     - 'Hardware': 'general/hardware.md'
     - 'Microservices': 'system_design/microservices.md'
     - 'Docker': 'system_design/docker.md'
-  - Data Structures:
-    - 'Linked List': 'data_structures/linked-list.md'
-    - 'Stack': 'data_structures/stack.md'
-    - 'Queue': 'data_structures/queue.md'
-    - 'Tree': 'data_structures/tree.md'
-    - 'Graph': 'data_structures/graph.md'
-    - 'Hash Table': 'data_structures/hash-table.md'
-    - 'Heap': 'data_structures/heap.md'
+  # - Data Structures:
+  #   - 'Linked List': 'data_structures/linked-list.md'
+  #   - 'Stack': 'data_structures/stack.md'
+  #   - 'Queue': 'data_structures/queue.md'
+  #   - 'Tree': 'data_structures/tree.md'
+  #   - 'Graph': 'data_structures/graph.md'
+  #   - 'Hash Table': 'data_structures/hash-table.md'
+  #   - 'Heap': 'data_structures/heap.md'
   - Software Design:
     - 'Pointers': 'software_design/pointers.md'
     - 'The Big 3': 'software_design/big3.md'
@@ -62,4 +62,5 @@ nav:
       - 'Current & Resistance': 'math_science/physics/ch25.md'
     - Prob & Stats:
       - 'Random Variables': 'math_science/prob_stats/rv.md'
-      - '10/6 Class Notes': 'math_science/prob_stats/joint-distributions.md'
+      - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
+      - 'Joint Probability Distributions': 'math_science/prob_stats/joint-distributions.md'

@@ -19,7 +19,7 @@ There are many varities of neurons that range in size from 5 microns in diameter
 ## How are signals transferrred? 
 The science behind how electrical signals are transferred in the brain involves some physics and biology. 
 
-Cells have a higher concentration of positive ions on the outside than the inside which creates a higher potential on the outside. The $V_out = 0 mV$ while $V_in = -70 mV$.
+Cells have a higher concentration of positive ions on the outside than the inside which creates a higher potential on the outside. The $V_{out} = 0 mV$ while $V_{in} = -70 mV$.
 
 At the peak of the potential inside the nerve cell, the positive charges begin moving down the axon in order to maximize the distance between positive ions. This is the start of an electrical signal being transmitted.
 
