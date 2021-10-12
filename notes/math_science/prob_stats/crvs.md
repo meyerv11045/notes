@@ -3,16 +3,14 @@ A CRV $X$ satisifes:
 1) Possible values of $X$ make up an interval or union of disjoint intervals
 2) $P(X = c) = 0)$ for any$c$ that is a possible value of $X$
 
-
 ## Probability Density Function
-
 DEF: Let $X$ be a CRV. Then a probability density function of $X$ is a function $f$ s.t.
 
 $$P(a \leq X \leq b) = \int_a^b f(x) dx$$
 
 This can be interpreted as the probability that $X$ takes on a value in the interval $[a,b]$ is the area above the interval and under the graph of the density function.
 
-![pdf](../static/pdf.png)
+![pdf](/static/pdf.png)
 
 Properties of pdfs:
 1) $f(x) \geq 0$ for all $x$
@@ -40,7 +38,7 @@ where $n(p)$ is the value on the measurement axis s.t. $100p$% of the area under
 
 Ex: $n(.75)$ stands for the 75% percentile where 75% of the area is to the left of $n(.75)$
 
-![percentile crv](../static/percentile-crv.png)
+![percentile crv](/static/percentile-crv.png)
 
 ## PDFs and CDFs
 PDFs measure how much the mass changes per unit of length (aka contribution to mass per unit length)

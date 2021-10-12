@@ -27,7 +27,7 @@ Then $f(x,y)$ is the joint pdf with properties:
 1) $f(x,y) \geq 0$
 2) $\int_{-\infty}^\infty \int_{-\infty}^\infty f(x,y) dx dy = 1$
 
-![](../static/crv2-pdf.png)
+![](/static/crv2-pdf.png)
 
 If $A$ is a two-dimensional rectangle:
 
@@ -109,7 +109,7 @@ $$
 - How linear is the relation between $X$ and $Y$
 
 ### Examples
-![Graph of covariances](../static/covariance.jpg)
+![Graph of covariances](/static/covariance.jpg)
 
 The leftmost graph reprsents $X$ and $Y$ variables highly related in an inversely proportional way meaning when $X$ increases, $Y$ decreases and when $X$ decresases, $Y$ increases.
 
@@ -161,8 +161,8 @@ $P(h(X) \leq y) = P(X \leq h^{-1}(y)$ only holds if $h^{-1}$ is increasing. If $
 $$f_Y(h(x)) = f_X(x) \lvert \frac{1}{h'(x)} \rvert$$
 
 ## Change of Variables Formula for 2 RVs
-X Y are CRV
-U, V = h(X, Y)
+$X$ and $Y$ are CRV. 
+$U, V = h(X, Y)$
 
 $$f_{(u,v)}(h(x,y)) = f_{x,y}(x,y)\lvert \frac{1}{\frac{\partial u,v}{\partial x,y}} \rvert$$
 
