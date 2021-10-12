@@ -317,9 +317,9 @@
 <p>A single pmf for a DRV <script type="math/tex">X</script> specifies the amount of mass for each possible value of <script type="math/tex">X</script>. The joint pmf of DRVs <script type="math/tex">X</script> and <script type="math/tex">Y</script> describes the amount of mass for each possible pair of values <script type="math/tex">(x,y)</script>. </p>
 <p>Let <script type="math/tex">X</script> and <script type="math/tex">Y</script> be two DRVs defined on sample space <script type="math/tex">S</script> of an experiment:</p>
 <p>
-<script type="math/tex; mode=display">p(x,y) = P(X = x \cap Y = y) = \sum_x sum_y p(x,y)</script>
+<script type="math/tex; mode=display">p(x,y) = P(X = x \cap Y = y) = \sum_x \sum_y p(x,y)</script>
 </p>
-<p>The marginal pmfs of X and Y:</p>
+<p>The marginal pmfs of <script type="math/tex">X</script> and <script type="math/tex">Y</script>:</p>
 <p>
 <script type="math/tex; mode=display">p_X(x) = \sum_y p(x,y)</script>
 </p>
@@ -380,7 +380,7 @@
 <script type="math/tex; mode=display">E(Z) = \sum_X \sum_Y h(X,Y)P(X,Y)</script>
 </p>
 <p>CRV: 
-<script type="math/tex; mode=display">E(Z) = \int_{-\infin}^{\infin}\int_{-\infin}^{\infin} h(x,y) dy dx</script>
+<script type="math/tex; mode=display">E(Z) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} h(x,y) dy dx</script>
 </p>
 <p>Note: You can change the order of summation/integration when the series is convergent (i dont really understand why)</p>
 <p>Propositions:
