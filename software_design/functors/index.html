@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/databases/dbms/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/functors/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>DBMS - The Notebook</title>
+        <title>Functors - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -74,73 +74,73 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../software_design/pointers/" class="dropdown-item">Pointers</a>
+    <a href="../pointers/" class="dropdown-item">Pointers</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/big3/" class="dropdown-item">The Big 3</a>
+    <a href="../big3/" class="dropdown-item">The Big 3</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/exceptions/" class="dropdown-item">Exception Handling</a>
+    <a href="../exceptions/" class="dropdown-item">Exception Handling</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/templates/" class="dropdown-item">Templates</a>
+    <a href="../templates/" class="dropdown-item">Templates</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+    <a href="../operator-overloading/" class="dropdown-item">Operator Overloading</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+    <a href="../strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+    <a href="../smart-pointers/" class="dropdown-item">Smart Pointers</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/inheritance/" class="dropdown-item">Inheritance</a>
+    <a href="../inheritance/" class="dropdown-item">Inheritance</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/iterators/" class="dropdown-item">Iterators</a>
+    <a href="../iterators/" class="dropdown-item">Iterators</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/stl/" class="dropdown-item">STL</a>
+    <a href="../stl/" class="dropdown-item">STL</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/functors/" class="dropdown-item">Functors</a>
+    <a href="./" class="dropdown-item active">Functors</a>
 </li>
                                     
 <li>
-    <a href="../../software_design/misc/" class="dropdown-item">Misc</a>
+    <a href="../misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">DBMS</a>
+    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
 </li>
                                     
 <li>
-    <a href="../sql/" class="dropdown-item">SQL</a>
+    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
 </li>
                                     
 <li>
-    <a href="../mysql/" class="dropdown-item">MySQL</a>
+    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
 </li>
                                 </ul>
                             </li>
@@ -243,12 +243,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../software_design/misc/" class="nav-link">
+                                <a rel="prev" href="../stl/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../sql/" class="nav-link">
+                                <a rel="next" href="../misc/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -270,18 +270,16 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#database-mangament-systems-dbms" class="nav-link">Database Mangament Systems (DBMS)</a>
+            <li class="nav-item" data-level="1"><a href="#functors" class="nav-link">Functors</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#functions-vs-functors" class="nav-link">Functions vs Functors</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#relational-database-sql" class="nav-link">Relational Database (SQL)</a>
+            <li class="nav-item" data-level="2"><a href="#maintaining-state" class="nav-link">Maintaining State</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
-            <li class="nav-item" data-level="2"><a href="#non-relational-database-nosql" class="nav-link">Non-Relational Database (noSQL)</a>
-              <ul class="nav flex-column">
               </ul>
             </li>
         </ul>
@@ -289,30 +287,50 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="database-mangament-systems-dbms">Database Mangament Systems (DBMS)</h2>
+<h1 id="functors">Functors</h1>
 <ul>
-<li>Special software program to help create and maintain a database</li>
-<li>Easy to handle lots of info</li>
-<li>Handles security, Backups, import/exporting data, &amp; concurrency</li>
-<li>interacts w/ software apps and programming languages </li>
-<li>Ex: Amazon.com will interact w/ the DBMS in order to create, read, update, &amp; delete product info</li>
+<li>Any class that has overriden the parens/function operator <code>operator()</code><ul>
+<li>Allows an instance of the class to be called as a function</li>
 </ul>
-<h2 id="relational-database-sql">Relational Database (SQL)</h2>
-<ul>
-<li>organize data into 1 or more tables</li>
-<li>Each table has columns and rows </li>
-<li>A unique key identifies each row</li>
-<li>Relation Database Management Systems (RDBMS)</li>
-<li>mySQL,Oracle,postgreSQL,mariaDB,etc</li>
+</li>
+<li>Can do multiple overridings of <code>operator()</code> as long as they have different signatures</li>
+<li>Functors are just regular classes<ul>
+<li>Can have constructors &amp; destructores</li>
+<li>Can have private member variables and functions</li>
+<li>Can be a template class</li>
 </ul>
-<h2 id="non-relational-database-nosql">Non-Relational Database (noSQL)</h2>
+</li>
+<li>STL algorithms will return a copy of the functor being passed in so that we can access the final state after all iterations</li>
+</ul>
+<h2 id="functions-vs-functors">Functions vs Functors</h2>
+<p>The below code demonstrates how the same functionality would be implemented differently between just using a function and using a functor</p>
+<pre><code class="language-c++">void printIt(int i) {
+    std::cout &lt;&lt; i  &lt;&lt; &quot;:&quot;;
+}
+
+std::for_each(intArray.begin(), intArray.end(), printIt());
+std::cout &lt;&lt; std::endl;
+</code></pre>
+<pre><code class="language-c++">class PrintIt {
+    public:
+    // overloading the parens operator lets us treat an instance of this class as a function
+    void operator() (int i) { std::cout &lt;&lt; i  &lt;&lt; &quot;:&quot;; }
+};
+
+// creates instance of PrintIt for each integer in the array and call it as a function
+std::for_each(intArray.begin(), intArray.end(), PrintIt());
+std::cout &lt;&lt; std::endl;
+</code></pre>
+<h2 id="maintaining-state">Maintaining State</h2>
 <ul>
-<li>Not organized in traditional table</li>
-<li>Key-value stores, Documents, Graphs, Flexible Tablees, etc</li>
-<li>Non-Relational Database Management Systems (NRDBMS)</li>
-<li>mongoDB,dynamoDB,apache cassandra, firebase, etc</li>
-<li>no standard language b/c each implementation is language specific</li>
-</ul></div>
+<li>Functors allow us to better maintain state through an STL algorithm's iteration compared to regular functions</li>
+<li>Encapsulates the state within a class, preventing pollution of the global namespace with global state variables</li>
+<li>All state is encapsulated in normal class instance lifecycle:</li>
+</ul>
+<p>1) Constructor: initial state
+2) operator(): state mutation
+3) Accessor methods: state querying
+4) Destructor: state cleanup (as needed)</p></div>
             </div>
         </div>
 

@@ -119,6 +119,10 @@
 </li>
                                     
 <li>
+    <a href="../../../software_design/functors/" class="dropdown-item">Functors</a>
+</li>
+                                    
+<li>
     <a href="../../../software_design/misc/" class="dropdown-item">Misc</a>
 </li>
                                 </ul>
@@ -292,6 +296,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#covariance" class="nav-link">Covariance</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#properties" class="nav-link">Properties</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#correlation" class="nav-link">Correlation</a>
               <ul class="nav flex-column">
               </ul>
@@ -370,7 +382,7 @@
 <p>
 <script type="math/tex; mode=display">P(X_1, \cdots , X_r) = \frac{n!}{X_1!X_2! \cdots X_r!}P_1^{X_1}P_2^{X_2} \cdots P_r^{X_r}</script>
 </p>
-<p>Divide by the number of permutations of each element to remove permutations from the total number of ways the elements can be arranged/</p>
+<p>Divide by the number of permutations of each element to remove permutations from the total number of ways the elements can be arranged</p>
 <hr />
 <h2 id="expected-value-for-functions-of-2-rv">Expected Value for Functions of 2 RV</h2>
 <p>
@@ -399,8 +411,8 @@
 \end{aligned}
 </script>
 </p>
-<p>## Covariance
- DEF: <script type="math/tex">X,Y</script> are RV. Then <script type="math/tex">Cov(X,Y) = E((x- \mu_x)(Y-\mu_y)) = E(X,Y) - E(X)E(Y)</script>
+<h2 id="covariance">Covariance</h2>
+<p>DEF: <script type="math/tex">X,Y</script> are RV. Then <script type="math/tex">Cov(X,Y) = E((x- \mu_x)(Y-\mu_y)) = E(X,Y) - E(X)E(Y)</script>
 </p>
 <h3 id="interpretations">Interpretations</h3>
 <ul>
@@ -419,7 +431,7 @@
 <p><img alt="Graph of covariances" src="../static/covariance.jpg" /></p>
 <p>The leftmost graph reprsents <script type="math/tex">X</script> and <script type="math/tex">Y</script> variables highly related in an inversely proportional way meaning when <script type="math/tex">X</script> increases, <script type="math/tex">Y</script> decreases and when <script type="math/tex">X</script> decresases, <script type="math/tex">Y</script> increases.</p>
 <p>The rightmost graph represents <script type="math/tex">X</script> and <script type="math/tex">Y</script> variables highly related in a directly proprtional way.</p>
-<h3 id="properties">Properties</h3>
+<h2 id="properties">Properties</h2>
 <p>
 <script type="math/tex; mode=display">Cov(aX,Z) = aCov(X,Z)</script>
 </p>
