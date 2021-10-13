@@ -6,9 +6,9 @@ A single pmf for a DRV $X$ specifies the amount of mass for each possible value 
 
 Let $X$ and $Y$ be two DRVs defined on sample space $S$ of an experiment:
 
-$$p(x,y) = P(X = x \cap Y = y) = \sum_x sum_y p(x,y)$$
+$$p(x,y) = P(X = x \cap Y = y) = \sum_x \sum_y p(x,y)$$
 
-The marginal pmfs of X and Y:
+The marginal pmfs of $X$ and $Y$:
 
 $$p_X(x) = \sum_y p(x,y)$$
 
@@ -63,7 +63,7 @@ The jpmf of $X_1 ,... X_r$ has a multinomial distribution.
 
 $$P(X_1, \cdots , X_r) = \frac{n!}{X_1!X_2! \cdots X_r!}P_1^{X_1}P_2^{X_2} \cdots P_r^{X_r}$$ 
 
-Divide by the number of permutations of each element to remove permutations from the total number of ways the elements can be arranged/
+Divide by the number of permutations of each element to remove permutations from the total number of ways the elements can be arranged
 
 ---
 ## Expected Value for Functions of 2 RV
@@ -75,7 +75,7 @@ DRV:
 $$E(Z) = \sum_X \sum_Y h(X,Y)P(X,Y)$$
 
 CRV: 
-$$E(Z) = \int_{-\infin}^{\infin}\int_{-\infin}^{\infin} h(x,y) dy dx$$
+$$E(Z) = \int_{-\infty}^{\infty}\int_{-\infty}^{\infty} h(x,y) dy dx$$
 
 Note: You can change the order of summation/integration when the series is convergent (i dont really understand why)
 
@@ -97,8 +97,7 @@ $$
 \end{aligned}
 $$
 
-
- ## Covariance
+## Covariance
  DEF: $X,Y$ are RV. Then $Cov(X,Y) = E((x- \mu_x)(Y-\mu_y)) = E(X,Y) - E(X)E(Y)$
 
 ### Interpretations
@@ -115,7 +114,7 @@ The leftmost graph reprsents $X$ and $Y$ variables highly related in an inversel
 
 The rightmost graph represents $X$ and $Y$ variables highly related in a directly proprtional way.
 
-### Properties
+## Properties
 $$Cov(aX,Z) = aCov(X,Z)$$
 
 This implies $Cov(aX,aX) = a^2Cov(X,X)$.

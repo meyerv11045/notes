@@ -39,6 +39,7 @@ nav:
     - 'Inheritance': 'software_design/inheritance.md'
     - 'Iterators': 'software_design/iterators.md'
     - 'STL': 'software_design/stl.md'
+    - 'Functors': 'software_design/functors.md'
     - 'Misc': 'software_design/misc.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
