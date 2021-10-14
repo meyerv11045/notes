@@ -16,8 +16,14 @@
 ---
 ## Uniform
 
----
-## Exponential
+DEF: A CRV $X$ has a uniform distribution on the interval $[A,B]$ if the pdf for $A \leq X \leq B$ is:
+
+$$ f(x; A,B) = \frac{1}{B-A} $$
+
+$$ E(X) = \frac{A + B}{2} $$
+$$ V(X) = \frac{(B-A)^2}{12} $$
+
+$$M_X(t) = E(e^{tx}) = \frac{e^{tb} - e^{ta}}{t(b-a)}$$
 
 ---
 ## Normal
@@ -86,10 +92,17 @@ The gamma family of pdfs yield a wide variety of skewed distributional shapes th
 
 In order to define the family of gama distributions we first must define an important function in many areas of mathematics.
 
+
+### Gamma Function
 DEF: For $\alpha > 0$, the gamma function $\Gamma(\alpha)$ is defined by:
 
 $$\Gamma(\alpha) = \int_0^\infty x^{\alpha - 1}e^{-x}dx$$
 
+1) For any $\alpha > 1$, $\Gamma(\alpha) = (\alpha - 1) * \Gamma(\alpha - 1)$
+2) For any positive integer n, $\Gamma(n) = (n - 1)!$
+3) $\Gamma(\frac{1}{2}) = \sqrt{\pi}$
+
+### Distribution
 With the gamma function, we can then define the gamma distribution for a CRV $X$:
 
 $$f(x; \alpha, \beta) =  \begin{array}{cc}
@@ -125,3 +138,33 @@ The incomplete gamma can be used to compute any non standard gamma distibution's
 For $X \sim G(\alpha,\beta)$,  the cdf of $X$ is the incomplete gamma function evaluated at $x/\beta$:
 
 $$F_X(x; \alpha,\beta) = F(\frac{x}{\beta};\alpha)$$
+
+---
+## Exponential
+Often used to model the time elapsed between events
+
+DEF: A CRV $X$ has an exponential distribution with parameter $\lambda$ where $\lambda > 0$ if the pdf of $X$ is:
+
+$$f(x; \alpha, \beta) =  \begin{array}{cc}
+  \Bigg \{ & 
+    \begin{array}{cc}
+      \lambda e^{-\lambda x} &  x > 0 \\
+      0 & otherwise
+    \end{array}
+\end{array}$$
+
+Exponential pdf is special case of the gamma pdf where $\alpha = 1$ and $\beta = \frac{1}{\lambda}$. So we can use the expected value and variance formula for the gamma distribution to derive the mean and variance of the exponential distribution:
+
+$$E(X) = \alpha \beta = \frac{1}{\lambda}$$
+
+$$V(X) = \alpha \beta^2 = \frac{1}{\lambda^2}$$
+
+The pdf can be easily integrated unlike the general gamma pdf so the cdf is:
+
+$$F_X(x; \lambda) = \int_0^x \lambda e^{-\lambda x} dx = 1 - e^{-\lambda x}$$
+
+### Memoryless Property
+$$P(X \geq t + t_0 | X \geq t_0) = P(X \geq t_0)$$ 
+
+The above can be thought of through analogy:
+If we toss a coin several times until we observe heads, not getting heads for several tosses does not affect the probability of the next toss since they are independent. Memorylessness of the exponential distribution is basically this idea. Read More about memorylessness and approximating the geometric distribution [here](https://www.probabilitycourse.com/chapter4/4_2_2_exponential.php).
