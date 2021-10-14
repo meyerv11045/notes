@@ -301,15 +301,15 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#exponential" class="nav-link">Exponential</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#normal" class="nav-link">Normal</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#gamma" class="nav-link">Gamma</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#exponential" class="nav-link">Exponential</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -334,8 +334,17 @@
 <h1 id="continuous-random-variables">Continuous Random Variables</h1>
 <hr />
 <h2 id="uniform">Uniform</h2>
-<hr />
-<h2 id="exponential">Exponential</h2>
+<p>DEF: A CRV <script type="math/tex">X</script> has a uniform distribution on the interval <script type="math/tex">[A,B]</script> if the pdf for <script type="math/tex">A \leq X \leq B</script> is:</p>
+<p>
+<script type="math/tex; mode=display"> f(x; A,B) = \frac{1}{B-A} </script>
+</p>
+<p>
+<script type="math/tex; mode=display"> E(X) = \frac{A + B}{2} </script>
+<script type="math/tex; mode=display"> V(X) = \frac{(B-A)^2}{12} </script>
+</p>
+<p>
+<script type="math/tex; mode=display">M_X(t) = E(e^{tx}) = \frac{e^{tb} - e^{ta}}{t(b-a)}</script>
+</p>
 <hr />
 <h2 id="normal">Normal</h2>
 <p>DEF: A CRV <script type="math/tex">X</script> has a normal/gaussian distribution with parameters <script type="math/tex">\mu</script> and <script type="math/tex">\sigma</script> (or <script type="math/tex">\sigma^2</script>) where <script type="math/tex">-\infty < \mu < \infty</script> and <script type="math/tex">0 < \sigma</script> if the pdf is:</p>
@@ -397,10 +406,16 @@
 <h2 id="gamma">Gamma</h2>
 <p>The gamma family of pdfs yield a wide variety of skewed distributional shapes that can be used for situations in which the symmetric normal disitrubtion does not accurately represent the skewed random variable.</p>
 <p>In order to define the family of gama distributions we first must define an important function in many areas of mathematics.</p>
+<h3 id="gamma-function">Gamma Function</h3>
 <p>DEF: For <script type="math/tex">\alpha > 0</script>, the gamma function <script type="math/tex">\Gamma(\alpha)</script> is defined by:</p>
 <p>
 <script type="math/tex; mode=display">\Gamma(\alpha) = \int_0^\infty x^{\alpha - 1}e^{-x}dx</script>
 </p>
+<p>1) For any <script type="math/tex">\alpha > 1</script>, <script type="math/tex">\Gamma(\alpha) = (\alpha - 1) * \Gamma(\alpha - 1)</script>
+2) For any positive integer n, <script type="math/tex">\Gamma(n) = (n - 1)!</script>
+3) <script type="math/tex">\Gamma(\frac{1}{2}) = \sqrt{\pi}</script>
+</p>
+<h3 id="distribution">Distribution</h3>
 <p>With the gamma function, we can then define the gamma distribution for a CRV <script type="math/tex">X</script>:</p>
 <p>
 <script type="math/tex; mode=display">f(x; \alpha, \beta) =  \begin{array}{cc}
@@ -434,7 +449,37 @@
 <p>For <script type="math/tex">X \sim G(\alpha,\beta)</script>,  the cdf of <script type="math/tex">X</script> is the incomplete gamma function evaluated at <script type="math/tex">x/\beta</script>:</p>
 <p>
 <script type="math/tex; mode=display">F_X(x; \alpha,\beta) = F(\frac{x}{\beta};\alpha)</script>
-</p></div>
+</p>
+<hr />
+<h2 id="exponential">Exponential</h2>
+<p>Often used to model the time elapsed between events</p>
+<p>DEF: A CRV <script type="math/tex">X</script> has an exponential distribution with parameter <script type="math/tex">\lambda</script> where <script type="math/tex">\lambda > 0</script> if the pdf of <script type="math/tex">X</script> is:</p>
+<p>
+<script type="math/tex; mode=display">f(x; \alpha, \beta) =  \begin{array}{cc}
+  \Bigg \{ & 
+    \begin{array}{cc}
+      \lambda e^{-\lambda x} &  x > 0 \\
+      0 & otherwise
+    \end{array}
+\end{array}</script>
+</p>
+<p>Exponential pdf is special case of the gamma pdf where <script type="math/tex">\alpha = 1</script> and <script type="math/tex">\beta = \frac{1}{\lambda}</script>. So we can use the expected value and variance formula for the gamma distribution to derive the mean and variance of the exponential distribution:</p>
+<p>
+<script type="math/tex; mode=display">E(X) = \alpha \beta = \frac{1}{\lambda}</script>
+</p>
+<p>
+<script type="math/tex; mode=display">V(X) = \alpha \beta^2 = \frac{1}{\lambda^2}</script>
+</p>
+<p>The pdf can be easily integrated unlike the general gamma pdf so the cdf is:</p>
+<p>
+<script type="math/tex; mode=display">F_X(x; \lambda) = \int_0^x \lambda e^{-\lambda x} dx = 1 - e^{-\lambda x}</script>
+</p>
+<h3 id="memoryless-property">Memoryless Property</h3>
+<p>
+<script type="math/tex; mode=display">P(X \geq t + t_0 | X \geq t_0) = P(X \geq t_0)</script>
+</p>
+<p>The above can be thought of through analogy:
+If we toss a coin several times until we observe heads, not getting heads for several tosses does not affect the probability of the next toss since they are independent. Memorylessness of the exponential distribution is basically this idea. Read More about memorylessness and approximating the geometric distribution <a href="https://www.probabilitycourse.com/chapter4/4_2_2_exponential.php">here</a>.</p></div>
             </div>
         </div>
 
