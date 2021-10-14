@@ -11,6 +11,15 @@
 - Need to do a commonality and variability analysis 
     - Look for replication to idenfity when a template could instead be instantiated multiple times
 
+Example `A.h` for templatized A class:
+```c++
+template <typename T> class A {
+    ...
+}
+
+#include '../src/A.cpp'
+```
+
 ## Function Templates
 - Define a specific behavior that can be applied to any data type
     - Method overloading can be used to provide functionality for each data type

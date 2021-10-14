@@ -1,4 +1,4 @@
-# C++ Compiler
+## C++ Compiler
 4 Steps:
 1. Preprocessor: deletes comments, expands macros (anything with `#` prefix), replace file includes and constants with the values
       - `#include` brings in lots of files to create a larger temp file with everything needed
@@ -11,6 +11,23 @@
 
 - Clang and Gcc compiler will be used. 
 - Undefined behaviors are different between C++ compilers
+
+## Forward Declarations
+`LinkedList` will often depend on `LinkedListIter` which itself depends on `LinkedList`. This mutual depenedency causes an issue when trying to compile doing the standard `#include 'LinkedList.h'` at the top. 
+
+Forward declarations help get around this issue by declaring the dependency class exists without providing any of the details yet. The class's details are provided later to the compiler by moving `#include` to the bottom of the file so that the compiler will go back into the placeholder and fill in the missing symbols.
+
+Here is what `LinkedList.h` that depends on the LinkedListIter class would look like:
+``` c++
+class LinkedListIter;
+
+class LinkedList {
+...
+}
+
+
+#include 'LinkedListIter.h'
+```
 
 ## Command Line Arguments
 ``` c++
