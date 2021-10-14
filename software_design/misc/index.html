@@ -270,28 +270,38 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#c-compiler" class="nav-link">C++ Compiler</a>
+            <li class="nav-item" data-level="2"><a href="#c-compiler" class="nav-link">C++ Compiler</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#forward-declarations" class="nav-link">Forward Declarations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#command-line-arguments" class="nav-link">Command Line Arguments</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#explicit-vs-automatic-conversions" class="nav-link">Explicit vs. Automatic Conversions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#reference" class="nav-link">Reference</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#function-calls" class="nav-link">Function Calls:</a>
               <ul class="nav flex-column">
               </ul>
             </li>
+            
             <li class="nav-item" data-level="2"><a href="#debugger" class="nav-link">Debugger</a>
               <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -299,7 +309,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="c-compiler">C++ Compiler</h1>
+<h2 id="c-compiler">C++ Compiler</h2>
 <p>4 Steps:
 1. Preprocessor: deletes comments, expands macros (anything with <code>#</code> prefix), replace file includes and constants with the values
       - <code>#include</code> brings in lots of files to create a larger temp file with everything needed
@@ -313,6 +323,19 @@
 <li>Clang and Gcc compiler will be used. </li>
 <li>Undefined behaviors are different between C++ compilers</li>
 </ul>
+<h2 id="forward-declarations">Forward Declarations</h2>
+<p><code>LinkedList</code> will often depend on <code>LinkedListIter</code> which itself depends on <code>LinkedList</code>. This mutual depenedency causes an issue when trying to compile doing the standard <code>#include 'LinkedList.h'</code> at the top. </p>
+<p>Forward declarations help get around this issue by declaring the dependency class exists without providing any of the details yet. The class's details are provided later to the compiler by moving <code>#include</code> to the bottom of the file so that the compiler will go back into the placeholder and fill in the missing symbols.</p>
+<p>Here is what <code>LinkedList.h</code> that depends on the LinkedListIter class would look like:</p>
+<pre><code class="language-c++">class LinkedListIter;
+
+class LinkedList {
+...
+}
+
+
+#include 'LinkedListIter.h'
+</code></pre>
 <h2 id="command-line-arguments">Command Line Arguments</h2>
 <pre><code class="language-c++">int main(int argc, char **argv) {
 
