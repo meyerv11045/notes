@@ -74,6 +74,31 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../heap/" class="dropdown-item">Heap</a>
+</li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -242,6 +267,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../linked-list/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../queue/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -260,22 +295,87 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="1"><a href="#stack" class="nav-link">Stack</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#purpose" class="nav-link">Purpose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#big-o-analysis" class="nav-link">Big O Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h5 id="stacks">Stacks</h5>
+<h1 id="stack">Stack</h1>
+<p>Stores data in in a last in, first out (LIFO) manner or first in, last out (FILO)</p>
+<p>Can be implemented using either an array for when the max size of elements in the stack is known (e.g. deck of cards) or can be implemented using a linked list.</p>
+<h2 id="purpose">Purpose</h2>
+<p>Stacks are optimized for adding and removing things from often, where the order of addition and removal plays an important role in solving a certain problem (e.g. matching parentheses)</p>
+<p>Useful for:
+- Depth First Search
+- Backtracking algorithms (e.g. N queens)
+- Checking proper brackets/parentheses
+- Expression Conversions
+- String reversals
+- Solving towers of hanoi
+- Memory management</p>
+<h3 id="disadvantages">Disadvantages</h3>
 <ul>
-<li>Implemented using Linked Lists b/c it is more efficient than lists/arrays</li>
-<li>Contain data nodes</li>
-<li><em>Push</em> adds data to the top of the stack</li>
-<li><em>Pop</em> removes and provides data from the top of the stack</li>
-<li><em>Peek</em> reveals data on the top of the stack</li>
-<li>Can have a limited size</li>
-<li>Pushing data onto a full stack results in a stack overflow</li>
-<li>Stacks process data Last In, First Out (LIFO)</li>
-</ul></div>
+<li>Fixed size when implemented as static array</li>
+<li>Slow to grow when implemented as dynamic array</li>
+<li>New/delete operations are slower than array operations for linked list implementation</li>
+</ul>
+<h2 id="big-o-analysis">Big O Analysis</h2>
+<p>The follow operations are due to the linked list implementation</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Big O</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>push</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>pop</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>peek</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code">Code</h2>
+<pre><code class="language-python">from linked-list import DblyLinkedList
+
+class Stack:
+    def __init__(self):
+        self.top = DblyLinkedList()
+        self.size = 0
+
+    def push(self,data):
+        self.top.prepend(data)
+
+    def peek(self, data):
+        return self.top.head
+
+    def pop(self,data):
+        self.top.delete_front()
+</code></pre></div>
             </div>
         </div>
 

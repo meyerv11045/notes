@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/data_structures/linked-list/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Linked list - The Notebook</title>
+        <title>Linked List - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -71,6 +71,31 @@
                                     
 <li>
     <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../heap/" class="dropdown-item">Heap</a>
 </li>
                                 </ul>
                             </li>
@@ -242,6 +267,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../overview/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../stack/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -260,30 +295,278 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
+            <li class="nav-item" data-level="1"><a href="#linked-list" class="nav-link">Linked List</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#purpose" class="nav-link">Purpose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#big-o-analysis" class="nav-link">Big O Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h5 id="linked-lists">Linked Lists:</h5>
+<h1 id="linked-list">Linked List</h1>
+<p>A linked list is basically a data structure that consists of chunks of data that are connected to each other by references to where the next (and possibly previous) chunk is stored in the computer's memory. </p>
+<h2 id="purpose">Purpose</h2>
+<p>It is optimized for fast insertions/deletions as well as combining and making segments of lists since all of these things are quickly done with simple pointer assignments.</p>
+<p>Since linked lists point to different places in memory and require minimal copying of the actual data being stored, linked lists are ideal for storing large pieces of data in a program. For instance, a linked list would be ideal for storing a list of files/images/videos since it does not require actually copying them around when doing operations, it simply just changes the pointers to where they are located in memory.</p>
+<p>Linked lists are also useful for implementing other data structures such as stacks, queues, adjacency lists, and sparse matrices.</p>
+<h3 id="advantages">Advantages</h3>
 <ul>
-<li>Are comprised of nodes</li>
-<li>The nodes contain a link to the next node (and also the previous node for bidirectional linked lists)</li>
-<li>Can be unidirectional or bidirectional</li>
-<li>Are a basic data structure, and form the basis for many other data structures</li>
-<li>Have a single head node, which serves as the first node in the list</li>
-<li>Require some maintenance in order to add or remove nodes</li>
-<li>Nodes are not located sequentially in memory like arrays since they use pointers</li>
-<li>Allows for quick insertions/removals</li>
+<li>Constant time insertions/deletions to/from front and back of list<ul>
+<li>No sihifting elements up or down when insertions/deletions occur</li>
 </ul>
-<h5 id="common-functions-on-linked-lists">Common Functions on Linked Lists:</h5>
+</li>
+<li>Constant time splicing of multiple lists since its just pointer assignments</li>
+<li>Dynamic use of memory <ul>
+<li>Dynamically resizes without any additional copying costs</li>
+<li>No memory pre-allocated that might go unused</li>
+</ul>
+</li>
+<li>Efficient way to implement stacks and queues</li>
+<li>Circular linked lists do not have to deal with null pointers</li>
+</ul>
+<h3 id="disadvantages">Disadvantages</h3>
 <ul>
-<li>get the head node of the list (it’s like peeking at the first item in line)</li>
-<li>add a new node to the beginning of the list</li>
-<li>print out the list values in order</li>
-<li>remove a node that has a particular value</li>
-</ul></div>
+<li>Not stored in contiguous chunk of memory so no random access<ul>
+<li>Direct access to elements via indices is not possible without traversal</li>
+</ul>
+</li>
+<li>Take up more memory to store than an array due to the pointers</li>
+<li>Traversal is more time consuming compared to an array</li>
+<li>Singly linked list only allow forward traversal<ul>
+<li>Doubly linked lists allow bidirectoional traversal at the cost of an extra back pointer for each node (costly in terms of memory for large lists of millions of nodes)</li>
+</ul>
+</li>
+</ul>
+<h2 id="big-o-analysis">Big O Analysis</h2>
+<p><strong>Singly Linked List:</strong> with head and tail references</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Big O</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>append</td>
+<td>O(1)</td>
+<td>just change the tail node pointers</td>
+</tr>
+<tr>
+<td>prepend</td>
+<td>O(1)</td>
+<td>just change the head node pointers</td>
+</tr>
+<tr>
+<td>insert (index)</td>
+<td>O(n)</td>
+<td>traverse to index and then do pointer assignments</td>
+</tr>
+<tr>
+<td>delete front</td>
+<td>O(1)</td>
+<td>just change head pointer</td>
+</tr>
+<tr>
+<td>delete back</td>
+<td>O(n)</td>
+<td>traverse to 2nd to last node and change pointers</td>
+</tr>
+<tr>
+<td>delete (index)</td>
+<td>O(n)</td>
+<td>traverse to index and then change pointers</td>
+</tr>
+<tr>
+<td>traversal (index)</td>
+<td>O(n)</td>
+<td>follow chain of pointers</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Doubly Linked List:</strong> with head and tail references</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Big O</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>append</td>
+<td>O(1)</td>
+<td>just change the tail node pointers</td>
+</tr>
+<tr>
+<td>prepend</td>
+<td>O(1)</td>
+<td>just change the head node pointers</td>
+</tr>
+<tr>
+<td>insert (index)</td>
+<td>O(n)</td>
+<td>traverse to index and then do pointer assignments</td>
+</tr>
+<tr>
+<td>delete front</td>
+<td>O(1)</td>
+<td>just change head pointer</td>
+</tr>
+<tr>
+<td>delete back</td>
+<td>O(1)</td>
+<td>just change the end nodes' pointers (makes use of prev pointer)</td>
+</tr>
+<tr>
+<td>delete (index)</td>
+<td>O(n)</td>
+<td>traverse to index and then change pointers</td>
+</tr>
+<tr>
+<td>traversal (index)</td>
+<td>O(n)</td>
+<td>follow chain of pointers</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code">Code</h2>
+<p><strong>Singly Linked List:</strong></p>
+<pre><code class="language-python">class Node:
+    def __init__(self, data = None):
+        self.data = data
+        self.next = None
+
+class SinglyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+
+
+    def append(self,data):
+        if (self.head == None):
+            self.head = Node(data)
+            self.tail = self.head
+        else:
+            self.tail.next = Node(data)
+            self.tail = self.tail.next
+
+        self.length += 1
+
+    def prepend(self,data):
+        if (self.head == None):
+            self.head = Node(data)
+            self.tail = self.head
+        else:
+            temp = Node(data)
+            temp.next = self.head
+            self.head = temp
+
+        self.length += 1
+
+    def delete_front(self):
+        self.head = self.head.next
+        self.length -= 1
+</code></pre>
+<p><strong>Doubly Linked List</strong></p>
+<pre><code class="language-python">class Node:
+    def __init__(self, data = None):
+        self.data = data
+        self.next = None
+        self.prev = None
+
+class DblyLinkedList:
+    def __init__(self):
+        self.head = None
+        self.tail = None
+        self.length = 0
+
+    def append(self, data):
+        old_tail = self.tail
+        old_tail.next = Node(data)
+        self.tail = old_tail.next
+        self.tail.prev = old_tail
+
+        self.length += 1
+
+    def prepend(self, data):
+        new_node = Node(data)
+        self.head.prev = new_node
+        new_node.next = self.head        
+        self.head = new_node
+
+        self.length += 1
+
+    def delete_front(self):
+        self.head = self.head.next
+        self.head.prev = None
+
+        self.length -= 1
+
+    def delete_back(self):
+        new_end = self.tail.prev 
+        new_end.next = None
+        self.tail = new_end
+
+        self.length -= 1 
+</code></pre>
+<p><strong>Circular Linked List</strong>
+Implemented as a doubly linked list but could also be implemented as singly linked list that only uses a tail pointer where tail.next is the head.</p>
+<pre><code class="language-python">class Node:
+    def __init__(self,data=None, next_ = self, prev_ = self):
+        self.data = data
+        self.next = next_
+        self.prev = prev_
+
+class CircularLinkedList:
+    def __init__(self):
+        self.dummy = Node()
+        self.length = 0
+
+    def append(self,data):
+        temp = self.dummy.prev 
+        self.dummy.prev = Node(data,self.dummy,temp)
+        temp.next = self.dummy.prev
+
+        self.length += 1
+
+    def prepend(self,data):
+        temp = self.dummy.next
+        self.dummy.next = Node(data,temp,self.dummy)
+        temp.prev = self.dummy.next
+
+        self.length += 1
+
+    def delete_front(self):
+        del_head = self.dummy.next
+        self.dummy.next  = del_head.next
+        self.dummy.next.prev = self.dummy
+
+        self.length -= 1
+
+    def delete_back(self):
+        del_tail = self.dummy.prev
+        self.dummy.prev = del_tail.prev
+        self.dummy.prev.next = self.dummy
+
+        self.length -= 1
+</code></pre></div>
             </div>
         </div>
 

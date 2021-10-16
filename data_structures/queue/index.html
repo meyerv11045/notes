@@ -74,6 +74,31 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../heap/" class="dropdown-item">Heap</a>
+</li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -242,6 +267,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../stack/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../heap/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -260,26 +295,79 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="1"><a href="#queue" class="nav-link">Queue</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#purpose" class="nav-link">Purpose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#big-o-analysis" class="nav-link">Big O Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h4 id="queues">Queues</h4>
-<ul>
-<li><em>Enqueue</em> - adds data to the “back” or end of the queue</li>
-<li><em>Dequeue</em> - provides and removes data from the “front” or beginning of the queue</li>
-<li><em>Peek</em> - reveals data from the “front” of the queue without removing it</li>
-<li>Queues process data First In, First Out (FIFO)</li>
-<li>Implemented using a linked list </li>
-<li>Head Node- front of queue</li>
-<li>Tail Node- back of queue</li>
-<li><em>Bounded Queue</em>- a queue that has a limit on the amount of data that can be placed into it</li>
-<li><em>Queue Overflow</em>- attempting to enqueue data onto an already full queue </li>
-<li><em>Queue Underflow</em>- attempting to dequeue data from an empty queue</li>
-<li>Traversal or modification to other nodes within the linked list is disallowed</li>
-<li>Since both ends of the queue must be accessible, a reference to both the head node and the tail node must be maintained.</li>
-</ul></div>
+<h1 id="queue">Queue</h1>
+<p>Stores data in a first in, first out (FIFO) manner. Basically can be thought of like a line at a store or anywhere.</p>
+<h2 id="purpose">Purpose</h2>
+<p>Queues are great for use where the order of events occur is important</p>
+<p>Useful for
+- Breadth first search
+- Message or print queues
+- Simulations with ordered events</p>
+<h2 id="big-o-analysis">Big O Analysis</h2>
+<p>The follow operations are due to the linked list implementation</p>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Big O</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>push (front/back)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>pop (front/back)</td>
+<td>O(1)</td>
+</tr>
+<tr>
+<td>peek (front/back)</td>
+<td>O(1)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code">Code</h2>
+<pre><code class="language-python">from linked-list import DblyLinkedList
+
+class Queue:
+    def __init__(self):
+        self.list = DblyLinkedList()
+
+    def push_front(self,data):
+        self.list.prepend(data)
+    def push_back(self,data):
+        self.list.append(data)
+    def pop_front(self):
+        self.list.delete_front()
+    def pop_back(self):
+        self.list.delete_back()
+    def peek_front(self):
+        return self.list.head
+    def peek_back(self):
+        return self.list.tail
+</code></pre></div>
             </div>
         </div>
 

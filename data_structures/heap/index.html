@@ -74,6 +74,31 @@
 </li>
                                 </ul>
                             </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Heap</a>
+</li>
+                                </ul>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
@@ -242,6 +267,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../queue/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../software_design/pointers/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -260,35 +295,54 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="1"><a href="#heap" class="nav-link">Heap</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#purpose" class="nav-link">Purpose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h4 id="heaps">Heaps:</h4>
+<h1 id="heap">Heap</h1>
 <ul>
-<li>Used to maintain a maximum or minimum value in a dataset.</li>
-<li>Commonly used to create a priority queue.</li>
-<li>Heaps tracking the maximum or minimum value are max-heaps or min-heaps. </li>
-<li>Conceptually, the tree representation is beneficial for understanding. Practically, we implement heaps in a sequential data structure like an array or list for efficiency.</li>
-<li>Think of the min-heap as a binary tree with two qualities:</li>
-<li>The root is the minimum value of the dataset.</li>
-<li>Every child’s value is greater than its parent.</li>
-<li>These two properties are the defining characteristics of the min-heap. By maintaining these two properties, we can efficiently retrieve and update the minimum value.</li>
-<li>As we add elements to the heap, they’re added from left to right until we’ve filled the entire level.</li>
-<li>By filling the tree from left to right; we’re leaving no gaps in the array. The location of each child or parent derives from a formula using the index.</li>
-<li>left child: (index * 2) + 1</li>
-<li>right child: (index * 2) + 2</li>
-<li>parent: (index - 1) / 2 — not used on the root!</li>
-<li>Sometimes you will add an element to the heap that violates the heap’s essential properties.</li>
-<li>
-<p>Ex: adding 3 as a left child of 11 in a min-heap which violates the min-heap property that children must be larger or equal to their parent.</p>
+<li>Used to keep track of max or min values in a dataset</li>
+<li><strong>Max-Heap:</strong> Value of root node is the greatest of all the values in the tree<ul>
+<li>Must be true for all sub-trees </li>
+</ul>
 </li>
-<li>
-<p>Heapifying- restoring the fundamental heap properties through swapping elements in the tree</p>
+<li><strong>Min-Heap</strong> Value of the root node is the smallest of all the values in the tree<ul>
+<li>Must be true for all sub-trees</li>
+</ul>
 </li>
-<li>We’re adding an element to the bottom of the tree and moving upwards, so we’re heapifying up.</li>
-<li>As long as we’ve violated the heap properties, we’ll swap the offending child with its parent until we restore the properties, or until there’s no parent left. If there is no parent left, that element becomes the new root of the tree.</li>
+</ul>
+<p><img alt="Max-min-heap" src="https://www.geeksforgeeks.org/wp-content/uploads/MinHeapAndMaxHeap.png" /></p>
+<h2 id="implementation">Implementation</h2>
+<ul>
+<li>Binary tree representation is stored as an array </li>
+<li>Random access to nodes is very efficient compared to pointer traversals through a tree</li>
+</ul>
+<p><img alt="Level-order" src="https://www.geeksforgeeks.org/wp-content/uploads/binaryheap.png" /></p>
+<ul>
+<li>Elements are added left to right until an entire level is filled up<ul>
+<li>Leaves no gaps in the array</li>
+</ul>
+</li>
+</ul>
+<h2 id="purpose">Purpose</h2>
+<p>Useful for:</p>
+<ul>
+<li>Heap Sort- sort an array in <script type="math/tex">O(nlogn)</script> time</li>
+<li>Priority Queues- <code>insert()</code>, <code>delete()</code>, <code>extractMpax()</code> and <code>decreaseKey()</code> operations in <script type="math/tex">O(logn)</script> time</li>
+<li>Finding the <code>k</code>th largest element in an array</li>
 </ul></div>
             </div>
         </div>

@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/data_structures/tree/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/data_structures/template/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Tree - The Notebook</title>
+        <title>Data Structure - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -71,6 +71,31 @@
                                     
 <li>
     <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../heap/" class="dropdown-item">Heap</a>
 </li>
                                 </ul>
                             </li>
@@ -260,32 +285,64 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
+            <li class="nav-item" data-level="1"><a href="#data-structure" class="nav-link">Data Structure</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#purpose" class="nav-link">Purpose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#big-o-analysis" class="nav-link">Big O Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#next-steps" class="nav-link">Next Steps:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h5 id="trees">Trees:</h5>
+<h1 id="data-structure">Data Structure</h1>
+<p>explain like im five </p>
+<p>picture or visualization</p>
+<h2 id="purpose">Purpose</h2>
+<p>why does it exist?</p>
+<p>why would you ever choose this over other data structures?</p>
+<p>common </p>
+<p>what is the data structure optimized for? insertions/deletion? resizing? etc?</p>
+<h3 id="advantages">Advantages</h3>
+<h3 id="disadvantages">Disadvantages</h3>
+<h2 id="big-o-analysis">Big O Analysis</h2>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Big O</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>insertion</td>
+<td>O(1)</td>
+<td>just change the pointers of each node to insert</td>
+</tr>
+</tbody>
+</table>
+<h2 id="code">Code</h2>
+<h2 id="next-steps">Next Steps:</h2>
 <ul>
-<li>Wide- parent nodes referencing many child nodes.</li>
-<li>Deep- many parent-child relationships.</li>
-<li>Each time we move from a parent to a child, we’re moving down a level. Depending on the orientation we refer to this as the depth (counting levels down from the root node) or height (counting levels up from a leaf node).</li>
-<li>Useful for modeling data that has a hierarchical relationship which moves in the direction from parent to child. </li>
-<li>No child node will have more than one parent.</li>
-<li>root: A node which has no parent. One per tree.</li>
-<li>parent: A node which references other nodes.</li>
-<li>child: Nodes referenced by other nodes.</li>
-<li>sibling: Nodes which have the same parent.</li>
-<li>leaf: Nodes which have no children.</li>
-<li>level: The height or depth of the tree. Root nodes are at level 1, their children are at level 2, and so on.</li>
-</ul>
-<p><img alt="tree_diagram.png" src="/Users/admin/Desktop/Screenshots/tree_diagram.png" /></p>
-<h5 id="binary-search-trees">Binary Search Trees</h5>
-<ul>
-<li>Type of tree where each parent can have no more than two children, known as the left child and right child.</li>
-<li>Left child values must be lesser than their parent.</li>
-<li>Right child values must be greater than their parent.</li>
+<li>Anki flashcards from the notes</li>
+<li>Apply to problems that are designed for that data structure</li>
+<li>Apply to random problems that may or may not use the data structure (so you can begin to find patterns of when to apply the data structure)</li>
 </ul></div>
             </div>
         </div>
