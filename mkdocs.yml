@@ -20,14 +20,12 @@ nav:
     - 'Hardware': 'general/hardware.md'
     - 'Microservices': 'system_design/microservices.md'
     - 'Docker': 'system_design/docker.md'
-  # - Data Structures:
-  #   - 'Linked List': 'data_structures/linked-list.md'
-  #   - 'Stack': 'data_structures/stack.md'
-  #   - 'Queue': 'data_structures/queue.md'
-  #   - 'Tree': 'data_structures/tree.md'
-  #   - 'Graph': 'data_structures/graph.md'
-  #   - 'Hash Table': 'data_structures/hash-table.md'
-  #   - 'Heap': 'data_structures/heap.md'
+  - Data Structures:
+    - 'Overview': 'data_structures/overview.md'
+    - 'Linked List': 'data_structures/linked-list.md'
+    - 'Stack': 'data_structures/stack.md'
+    - 'Queue': 'data_structures/queue.md'
+    - 'Heap': 'data_structures/heap.md'
   - Software Design:
     - 'Pointers': 'software_design/pointers.md'
     - 'The Big 3': 'software_design/big3.md'
