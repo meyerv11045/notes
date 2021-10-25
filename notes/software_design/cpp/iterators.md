@@ -15,7 +15,7 @@ Access elements of a container (aggregate) without exposing its representation
 - When container classes and traversal algorithms must vary independently
 
 ### Structure
-![Iterator Pattern](static/iterator-pattern.png)
+![Iterator Pattern](../static/iterator-pattern.png)
 
 - `Aggregate` is an abstract base class used for creating containers.
 - `ConcreteAggregate` is a derived class that is a specific type of container (e.g. tree, hash map, list, etc.)

@@ -166,3 +166,39 @@ $U, V = h(X, Y)$
 $$f_{(u,v)}(h(x,y)) = f_{x,y}(x,y)\lvert \frac{1}{\frac{\partial u,v}{\partial x,y}} \rvert$$
 
 In the equation above, the denominator is the determinant of the jacobian. This represents the change in areas from X,Y to U,V (remember 3Blue1Brown determinant visualization intuition of differencec between areas).
+
+## Conditional Distributions
+DEF: the condititonal pmf of Y given $X = x$
+
+$$P_{Y|X}(Y|X) = \frac{P(X,Y)}{P_X(x)} = \frac{f_{x,y}(x,y)}{f_x(x)}$$
+
+Warning: notice that for 1 fixed $x$, $P_{Y|X}(Y | X = x)$ are pdfs and pmfs resp
+
+$$P_{Y|X}(Y | X = x) = \sum_y P_{Y|X}(Y|X =x) = \sum_y \frac{P(X = x,Y)}{P_X(x)} = \frac{1}{P_X(x)} \sum_y P(X,Y) = \frac{P_X(X)}{P_X(X)} = 1$$
+
+DEF:
+$$E(Y|X=x) = \sum_y y P(Y|X=x)$$
+$$E(g(Y) | X = x) = \sum_y g(y) P(Y|X=x)$$
+
+$$V(Y) = \sum_y [y - E(Y|X=x)]^2 P(Y|X=x)$$
+For CRV: similar formula with integrals instead of summation
+
+THM:
+1) $$E(Y) = E(E(Y|X))$$
+2) $$V(Y) = E(V(Y|X)) + V(E(Y|X))$$
+
+**Intuition for 1:** $E(Y|X)$ is a curve/RV since you evaluate it for all $X$ to give each x and expceted value of $Y$. So to get an expected value for $Y$, we simply take the weighted average (expected value) of all the possible values for the RV $E(Y|X)$.
+
+**Intuition for 2:** Varaiance of Y can be thought of as $Avg(spreads) + Spread(avgs)$
+
+**Proof for 1:**
+Assume $E(Y)$ is finite so we can flip the order of summation
+$$
+\begin{aligned}
+ E(E(Y|X))) &= \sum_x E(Y|X=x) P_X(x) \\
+    &= \sum_x \sum_y y P(Y|X=x)P_X(x) \\
+    &= \sum_y y \sum_x P(Y | X=x) P_X(x) \\
+    &= \sum_y y P_Y(y) \\
+    &= E(Y)
+\end{aligned}
+$$
