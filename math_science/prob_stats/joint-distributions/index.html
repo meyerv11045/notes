@@ -103,53 +103,73 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../../software_design/pointers/" class="dropdown-item">Pointers</a>
+    <a href="../../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
 </li>
+            
+<li>
+    <a href="../../../software_design/cpp/big3/" class="dropdown-item">The Big 3</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/exceptions/" class="dropdown-item">Exception Handling</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/templates/" class="dropdown-item">Templates</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/inheritance/" class="dropdown-item">Inheritance</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/iterators/" class="dropdown-item">Iterators</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/stl/" class="dropdown-item">STL</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/functors/" class="dropdown-item">Functors</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/lambda/" class="dropdown-item">Lambda Functions</a>
+</li>
+            
+<li>
+    <a href="../../../software_design/cpp/misc/" class="dropdown-item">Misc</a>
+</li>
+    </ul>
+  </li>
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Patterns</a>
+    <ul class="dropdown-menu">
+            
 <li>
-    <a href="../../../software_design/big3/" class="dropdown-item">The Big 3</a>
+    <a href="../../../software_design/patterns/patterns/" class="dropdown-item">Overview</a>
 </li>
-                                    
-<li>
-    <a href="../../../software_design/exceptions/" class="dropdown-item">Exception Handling</a>
-</li>
-                                    
-<li>
-    <a href="../../../software_design/templates/" class="dropdown-item">Templates</a>
-</li>
-                                    
-<li>
-    <a href="../../../software_design/operator-overloading/" class="dropdown-item">Operator Overloading</a>
-</li>
-                                    
-<li>
-    <a href="../../../software_design/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
-</li>
-                                    
-<li>
-    <a href="../../../software_design/smart-pointers/" class="dropdown-item">Smart Pointers</a>
-</li>
-                                    
-<li>
-    <a href="../../../software_design/inheritance/" class="dropdown-item">Inheritance</a>
-</li>
-                                    
-<li>
-    <a href="../../../software_design/iterators/" class="dropdown-item">Iterators</a>
-</li>
-                                    
-<li>
-    <a href="../../../software_design/stl/" class="dropdown-item">STL</a>
-</li>
-                                    
-<li>
-    <a href="../../../software_design/functors/" class="dropdown-item">Functors</a>
-</li>
-                                    
-<li>
-    <a href="../../../software_design/misc/" class="dropdown-item">Misc</a>
-</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -341,6 +361,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#conditional-distributions" class="nav-link">Conditional Distributions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -507,7 +531,43 @@ However, uncorrelated random variables do not imply independence.</p>
 <p>
 <script type="math/tex; mode=display">f_{(u,v)}(h(x,y)) = f_{x,y}(x,y)\lvert \frac{1}{\frac{\partial u,v}{\partial x,y}} \rvert</script>
 </p>
-<p>In the equation above, the denominator is the determinant of the jacobian. This represents the change in areas from X,Y to U,V (remember 3Blue1Brown determinant visualization intuition of differencec between areas).</p></div>
+<p>In the equation above, the denominator is the determinant of the jacobian. This represents the change in areas from X,Y to U,V (remember 3Blue1Brown determinant visualization intuition of differencec between areas).</p>
+<h2 id="conditional-distributions">Conditional Distributions</h2>
+<p>DEF: the condititonal pmf of Y given <script type="math/tex">X = x</script>
+</p>
+<p>
+<script type="math/tex; mode=display">P_{Y|X}(Y|X) = \frac{P(X,Y)}{P_X(x)} = \frac{f_{x,y}(x,y)}{f_x(x)}</script>
+</p>
+<p>Warning: notice that for 1 fixed <script type="math/tex">x</script>, <script type="math/tex">P_{Y|X}(Y | X = x)</script> are pdfs and pmfs resp</p>
+<p>
+<script type="math/tex; mode=display">P_{Y|X}(Y | X = x) = \sum_y P_{Y|X}(Y|X =x) = \sum_y \frac{P(X = x,Y)}{P_X(x)} = \frac{1}{P_X(x)} \sum_y P(X,Y) = \frac{P_X(X)}{P_X(X)} = 1</script>
+</p>
+<p>DEF:
+<script type="math/tex; mode=display">E(Y|X=x) = \sum_y y P(Y|X=x)</script>
+<script type="math/tex; mode=display">E(g(Y) | X = x) = \sum_y g(y) P(Y|X=x)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">V(Y) = \sum_y [y - E(Y|X=x)]^2 P(Y|X=x)</script>
+For CRV: similar formula with integrals instead of summation</p>
+<p>THM:
+1) <script type="math/tex; mode=display">E(Y) = E(E(Y|X))</script>
+2) <script type="math/tex; mode=display">V(Y) = E(V(Y|X)) + V(E(Y|X))</script>
+</p>
+<p><strong>Intuition for 1:</strong> <script type="math/tex">E(Y|X)</script> is a curve/RV since you evaluate it for all <script type="math/tex">X</script> to give each x and expceted value of <script type="math/tex">Y</script>. So to get an expected value for <script type="math/tex">Y</script>, we simply take the weighted average (expected value) of all the possible values for the RV <script type="math/tex">E(Y|X)</script>.</p>
+<p><strong>Intuition for 2:</strong> Varaiance of Y can be thought of as <script type="math/tex">Avg(spreads) + Spread(avgs)</script>
+</p>
+<p><strong>Proof for 1:</strong>
+Assume <script type="math/tex">E(Y)</script> is finite so we can flip the order of summation
+<script type="math/tex; mode=display">
+\begin{aligned}
+ E(E(Y|X))) &= \sum_x E(Y|X=x) P_X(x) \\
+    &= \sum_x \sum_y y P(Y|X=x)P_X(x) \\
+    &= \sum_y y \sum_x P(Y | X=x) P_X(x) \\
+    &= \sum_y y P_Y(y) \\
+    &= E(Y)
+\end{aligned}
+</script>
+</p></div>
             </div>
         </div>
 

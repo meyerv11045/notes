@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/pointers/">
-        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/cpp/pointers/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
         <title>Pointers - The Notebook</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">The Notebook</a>
+                <a class="navbar-brand" href="../../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -38,39 +38,39 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../../general/git/" class="dropdown-item">Git</a>
+    <a href="../../../general/git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
-    <a href="../../general/python/" class="dropdown-item">Python</a>
+    <a href="../../../general/python/" class="dropdown-item">Python</a>
 </li>
                                     
 <li>
-    <a href="../../general/macos/" class="dropdown-item">MacOS</a>
+    <a href="../../../general/macos/" class="dropdown-item">MacOS</a>
 </li>
                                     
 <li>
-    <a href="../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../../general/regex/" class="dropdown-item">Regex</a>
+    <a href="../../../general/regex/" class="dropdown-item">Regex</a>
 </li>
                                     
 <li>
-    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
+    <a href="../../../general/hardware/" class="dropdown-item">Hardware</a>
 </li>
                                     
 <li>
-    <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
+    <a href="../../../system_design/microservices/" class="dropdown-item">Microservices</a>
 </li>
                                     
 <li>
-    <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
+    <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -79,23 +79,23 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
+    <a href="../../../data_structures/overview/" class="dropdown-item">Overview</a>
 </li>
                                     
 <li>
-    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
+    <a href="../../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
-    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
+    <a href="../../../data_structures/stack/" class="dropdown-item">Stack</a>
 </li>
                                     
 <li>
-    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
+    <a href="../../../data_structures/queue/" class="dropdown-item">Queue</a>
 </li>
                                     
 <li>
-    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
+    <a href="../../../data_structures/heap/" class="dropdown-item">Heap</a>
 </li>
                                 </ul>
                             </li>
@@ -103,53 +103,73 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++</a>
+    <ul class="dropdown-menu">
+            
 <li>
     <a href="./" class="dropdown-item active">Pointers</a>
 </li>
-                                    
+            
 <li>
     <a href="../big3/" class="dropdown-item">The Big 3</a>
 </li>
-                                    
+            
 <li>
     <a href="../exceptions/" class="dropdown-item">Exception Handling</a>
 </li>
-                                    
+            
 <li>
     <a href="../templates/" class="dropdown-item">Templates</a>
 </li>
-                                    
+            
 <li>
     <a href="../operator-overloading/" class="dropdown-item">Operator Overloading</a>
 </li>
-                                    
+            
 <li>
     <a href="../strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
 </li>
-                                    
+            
 <li>
     <a href="../smart-pointers/" class="dropdown-item">Smart Pointers</a>
 </li>
-                                    
+            
 <li>
     <a href="../inheritance/" class="dropdown-item">Inheritance</a>
 </li>
-                                    
+            
 <li>
     <a href="../iterators/" class="dropdown-item">Iterators</a>
 </li>
-                                    
+            
 <li>
     <a href="../stl/" class="dropdown-item">STL</a>
 </li>
-                                    
+            
 <li>
     <a href="../functors/" class="dropdown-item">Functors</a>
 </li>
-                                    
+            
+<li>
+    <a href="../lambda/" class="dropdown-item">Lambda Functions</a>
+</li>
+            
 <li>
     <a href="../misc/" class="dropdown-item">Misc</a>
 </li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../patterns/patterns/" class="dropdown-item">Overview</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -157,15 +177,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
+    <a href="../../../databases/dbms/" class="dropdown-item">DBMS</a>
 </li>
                                     
 <li>
-    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+    <a href="../../../databases/sql/" class="dropdown-item">SQL</a>
 </li>
                                     
 <li>
-    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
+    <a href="../../../databases/mysql/" class="dropdown-item">MySQL</a>
 </li>
                                 </ul>
                             </li>
@@ -178,35 +198,35 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../web_dev/js/basics/" class="dropdown-item">Basics</a>
+    <a href="../../../web_dev/js/basics/" class="dropdown-item">Basics</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/classes/" class="dropdown-item">Classes</a>
+    <a href="../../../web_dev/js/classes/" class="dropdown-item">Classes</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/objects/" class="dropdown-item">Objects</a>
+    <a href="../../../web_dev/js/objects/" class="dropdown-item">Objects</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/modules/" class="dropdown-item">Modules</a>
+    <a href="../../../web_dev/js/modules/" class="dropdown-item">Modules</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/promises/" class="dropdown-item">Promises</a>
+    <a href="../../../web_dev/js/promises/" class="dropdown-item">Promises</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
+    <a href="../../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+    <a href="../../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+    <a href="../../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
 </li>
     </ul>
   </li>
@@ -216,7 +236,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
+    <a href="../../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
 </li>
     </ul>
   </li>
@@ -227,7 +247,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../math_science/brain/" class="dropdown-item">The Brain</a>
+    <a href="../../../math_science/brain/" class="dropdown-item">The Brain</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -235,7 +255,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
+    <a href="../../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
 </li>
     </ul>
   </li>
@@ -245,15 +265,15 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
+    <a href="../../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
 </li>
             
 <li>
-    <a href="../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
+    <a href="../../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
 </li>
             
 <li>
-    <a href="../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+    <a href="../../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
 </li>
     </ul>
   </li>
@@ -268,7 +288,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../data_structures/heap/" class="nav-link">
+                                <a rel="prev" href="../../../data_structures/heap/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -568,12 +588,12 @@ void f2(Widget const *pw ) // same as above
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "../..",
+            var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
+        <script src="../../../js/base.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
