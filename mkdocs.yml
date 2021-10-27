@@ -43,6 +43,7 @@ nav:
       - 'Misc': 'software_design/cpp/misc.md'
     - Patterns:
       - 'Overview': 'software_design/patterns/patterns.md'
+      - 'Adapter': 'software_design/patterns/adapter.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'
