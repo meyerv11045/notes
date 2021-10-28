@@ -311,11 +311,27 @@
             
             <li class="nav-item" data-level="1"><a href="#statistics-and-sampling-distributions" class="nav-link">Statistics and Sampling Distributions</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#examples-of-statistics" class="nav-link">Examples of Statistics</a>
+            <li class="nav-item" data-level="2"><a href="#deriving-the-sampling-distribution" class="nav-link">Deriving the Sampling Distribution</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#simulation-experiment" class="nav-link">Simulation Experiment</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sample-means-distribution" class="nav-link">Sample Mean's Distribution</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#central-limit-theorem" class="nav-link">Central Limit Theorem</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#law-of-large-numbers" class="nav-link">Law of Large Numbers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#summary" class="nav-link">Summary</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -327,45 +343,112 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="statistics-and-sampling-distributions">Statistics and Sampling Distributions</h1>
-<p>DEF: a <strong>statistic</strong> is any quantity that can be calculated from sampled data. It is one special case of random variable</p>
+<p>A sample mean will have variance since each new sample from the population will result in slightly different observed values. This uncertainty in the observed values means the resulting sample mean will also have uncertainty. This uncertainty means the sample mean can be represented with a distribution.</p>
+<p>DEF: a <strong>statistic</strong> is any quantity that can be calculated from sampled data. Prior to obtaining data, there is uncertainty as to what the value of the statistic will be so the statistic is a special case of a random variable.</p>
+<p>The probability distribution of a statistic is known as its <strong>sampling distribution</strong> to emphasize how its value varies across all possible samples.</p>
+<p>The probability distribution of a statistic depends not only on the population distribution (normal, uniform, etc.) and sample size <script type="math/tex">n</script>, but also on the method of sampling.</p>
 <p>The random variables <script type="math/tex">X_1, ... X_n</script> are said to form a simple random sample of size n if 
 1) <script type="math/tex">X_i</script>'s are independent
 2) Every <script type="math/tex">X_i</script> has the same probability distribution</p>
-<p>We often say that <script type="math/tex">X_i</script>'s are iid (independent and identically distributed random variables)</p>
-<p>If we sample without replacement, we can assume <script type="math/tex">X_i</script>;s are iid if sample size &lt;&lt; population size</p>
-<h2 id="examples-of-statistics">Examples of Statistics</h2>
+<p>The above properties are summarized by saying that <script type="math/tex">X_i</script>'s are iid (independent and identically distributed random variables).</p>
+<p>If we sample without replacement, we can assume <script type="math/tex">X_i</script>'s are iid if the sample size <script type="math/tex">n</script> is much smaller than the population size <script type="math/tex">N</script> (i.e. population size is so big that not replacing the sampled values does not really change the probability too much of what is sampeled next). In practice if <script type="math/tex">\frac{n}{N} \leq 0.05</script> (at most 5% of the population is sampeled), we can proceed as if the <script type="math/tex">X_i</script>'s form a random sample.</p>
+<p>There are two methods for obtaining information about a statistic's sampling distribution:
+1) Calculations based on info about <script type="math/tex">X_i</script>'s
+2) Simulation experiment</p>
+<h2 id="deriving-the-sampling-distribution">Deriving the Sampling Distribution</h2>
+<p><strong>Example 6.3</strong>: (in book)</p>
 <p>
-<script type="math/tex">\bar{x}</script>. The sample mean is random variable that is a statistic. (population mean would not be a statistic since there is no variance, there is only 1 true value for the entire population)</p>
-<p>Since these statistics are random variables, we should be able to compute their pdfs, pmfs, cdfs, etc. </p>
-<p>Method 1: Deduce from info about <script type="math/tex">X_i</script>'s
-Method 2: Experiment</p>
-<p>Example:
-<script type="math/tex">X_i ~ Exp(\alpha)</script> is iid for all i in range 1 to n.</p>
+<script type="math/tex">X_i \sim Exp(\lambda)</script> is iid for all i in range 1 to n where <script type="math/tex">X_i</script> represents the service time for customer <script type="math/tex">i</script>. The total service time could then be represented as <script type="math/tex">T_n = \sum_{i = i}^n X_i</script>.</p>
+<ol>
+<li>Set up the cdf using double integrals and a region of integration</li>
+<li>Differentiating the cdf to get the pdf of <script type="math/tex">T_n</script> will then yield an equation in the form of a gamma pdf with <script type="math/tex">\alpha = n</script> and <script type="math/tex">\beta = \frac{1}{\lambda}</script>.</li>
+</ol>
 <p>
-<script type="math/tex">T_n = \sum_{i = i}^n X_i</script>
-<script type="math/tex">T_n ~ Gamma(n, \frac{1}{\alpha})</script>
+<script type="math/tex; mode=display">T_n \sim Gamma(n, \frac{1}{\alpha})</script>
 </p>
-<p>
-<script type="math/tex">E(x_i) = \frac{1}{\alpha}</script> so <script type="math/tex">E(X_i) \approx \sum X_i / n</script>
-</p>
-<p>When we cannot deduce the distribution of a statistic, we run experiments (usually programatically):</p>
+<p>With the distribution for <script type="math/tex">T_n</script>, we can easily find the expected value, variance, etc. for the statistic.</p>
+<h2 id="simulation-experiment">Simulation Experiment</h2>
+<p>When we cannot derive the distribution of a statistic, we run experiments programmatically:</p>
 <p>We need the:
-1. Statistic we want
-2. Distribution of the <script type="math/tex">X_i</script>'s
+1. Statistic of interest (<script type="math/tex">\bar{X}, S,</script>, etc.)
+2. Population Distribution (i.e. distribution of the <script type="math/tex">X_i</script>'s)
+   - Ex: normal with <script type="math/tex">\mu = 100</script> and <script type="math/tex">\sigma = 15</script>
 3. Number of samples <script type="math/tex">n</script>
-4. Number of repetitions</p>
-<p>As you increase the number of samples, the resulting normal distribution of the statistic will converge to the true value of the statistic. This is the idea behind the central limit theorem. As <script type="math/tex">n</script> increases, the spread decreases. </p>
-<p>Example:
-We want a RV <script type="math/tex">Y</script> s,t. <script type="math/tex">F(y) = e^y</script>. We can get this using <script type="math/tex">X \sim Uniform[0,1]</script>
+4. Number of repetitions <script type="math/tex">k</script>
 </p>
-<p>Take <script type="math/tex">X = h^{-1}(y) = e^y</script> which implies <script type="math/tex">x = e^y</script> so <script type="math/tex">ln(x) = Y</script>.</p>
+<p>A computer then obtains <script type="math/tex">k</script> different random samples, each of size <script type="math/tex">n</script>, from the designated population distribution. For each of the <script type="math/tex">k</script> random samples, the value of the statistic is calculated and added to a histogram. The histogram gives the approximate sampling distribution of the statistic. Kernel density estimators perform a similer function except instead of using bins to approximate the pdf, it outputs a smooth line to approximate the pdf. This helps reduce information loss due to the width of bins.</p>
+<p><strong>The more repetitions <script type="math/tex">k</script>, the better the approximation</strong> since as <script type="math/tex">k \to \infty</script> the actual sampling distribution emerges. </p>
+<p>As you increase the number of samples <script type="math/tex">n</script>, the resulting normal distribution of the statistic will converge to the true value of the statistic. This is the idea behind the central limit theorem- <strong>As <script type="math/tex">n</script> increases, the spread decreases</strong> since the effect of one outlier is less when there are more data points being sampeled.</p>
+<h2 id="sample-means-distribution">Sample Mean's Distribution</h2>
+<p>Let <script type="math/tex">X_1, ..., X_n</script> be iid from a distribution with mean <script type="math/tex">\mu</script> and standard deviation <script type="math/tex">\sigma</script>. Then,</p>
+<ol>
+<li>
+<script type="math/tex">E(\bar{X}) = \mu_{\bar{X}} = \mu</script>
+</li>
+<li>
+<script type="math/tex">V(\bar{X}) = \sigma_{\bar{X}}^2 = \sigma^2/n</script>
+</li>
+</ol>
+<p>So the standard deviation <script type="math/tex">\sigma_{\bar{X}} = \sigma/\sqrt{n}</script>
+</p>
+<p>In addition where the sample total <script type="math/tex">T_n = X_1 + \dots + X_n</script>, <script type="math/tex">E(T_n) = n \mu</script> and <script type="math/tex">V(T_n) = n\sigma^2</script>.</p>
+<p>These results show that the <script type="math/tex">\bar{X}</script> distribution becomes more concentrated about the population mean as the sample size increases while the sample total's distribution spreads out more as sample size increases.</p>
+<p>Rough proof for property 1: <script type="math/tex">E(\bar{x}) = \sum E(x_i) / n = n \mu  /n = \mu</script> where <script type="math/tex">\mu</script> is the average of <script type="math/tex">X_i</script>.</p>
+<p>Lemma: <script type="math/tex">X_1, ..., X_n</script> independent random variables:</p>
+<p>
+<script type="math/tex; mode=display">E(a_1X_1 + ... + a_nX_n) = a_1E(X_1) + ... + a_nE(X_n)</script>
+<script type="math/tex; mode=display">V(a_1X_1 + ... + a_nX_n) = a_1^2V(X_1) + ... + a_n^2V(X_n)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">M_{a_1X_1 + ... + a_nX_n}(t) = M_{X_1}(a_1t) * ... * M_{X_n}(a_nt) </script>
+</p>
+<p>This property is the motivating idea behind moment generating function. Its the change of basis that diaglonizes the linear statistics. This is a probabilistic laplace transform.</p>
+<p>
+<script type="math/tex; mode=display">\begin{aligned} 
+M_{a_1x_1 + a_2x_2}(t) &= E(e^{t(a_1x_1 + a_2x_2)}) \\
+&= \int \int e^{t(a_1x_1 + a_2x_2)} * f_{X_1,X_2}(X_1,X_2) dX_1 dX_2 \\
+&= \int \int e^{ta_1x_1} * f_{X_1}(X_1) e^{ta_2x_2} * f_{X_2}(X_2) dX_1 dX_2  \\
+&= E(e^{ta_1x_1}) E(e^{ta_2x_2})
+\end{aligned}</script>
+</p>
+<p>Summing Distributions:
+<script type="math/tex; mode=display"> X_i \sim N(\mu_i, \sigma_i^2)</script>
+</p>
+<p>
+<script type="math/tex; mode=display">L = a_1X_1 + ... a_nX_n</script>
+</p>
+<p>
+<script type="math/tex; mode=display">M_{X_i} = e^{t\mu_i + t^2a_1^2\sigma^2/2} = e^{t(a_1\mu_1 + ... a_n\mu_n) + 0.5 t^2 (a_1^2\sigma_1^2 + ... ++ a_n^2\sigma_n^2)} </script>
+So 
+<script type="math/tex; mode=display">X \sim N(\sum a_i \mu_i, \sum a_i^2\sigma_i^2)</script>
+</p>
 <h2 id="central-limit-theorem">Central Limit Theorem</h2>
+<p>If <script type="math/tex">X_i</script> indepednent and identically distributed with mean <script type="math/tex">\mu</script> and variance <script type="math/tex">\sigma^2</script>, then</p>
 <p>
-<script type="math/tex">E(\bar{x}) = \sum E(x_i) / n = n \mu  /n = \mu</script> where <script type="math/tex">
-\mu</script> is the average of <script type="math/tex">X_i</script>.</p>
+<script type="math/tex; mode=display">\lim_{n \to \infty} P(\frac{\bar{X} - \mu}{\sigma / \sqrt{n}} \leq z) = P(Z \leq z) = \Phi(z)</script>
+</p>
+<p>and </p>
 <p>
-<script type="math/tex; mode=display"> lim_{n -> \infty}P(\frac{\bar{x} - \mu}{\sigma / \sqrt{n}} \leq Z)</script>
-</p></div>
+<script type="math/tex; mode=display"> \lim_{n \to \infty}P(\frac{T_n - n\mu}{\sqrt{n}\sigma} \leq z) = P( Z \leq z) = \Phi(z)</script>
+</p>
+<p>where <script type="math/tex">Z</script> is a standard normal random variable.</p>
+<p>NOTE: If <script type="math/tex">n >> 0</script> (<script type="math/tex">n > 30</script> is enough) then you can approximate the distribution of the mean by a normal distribution meaning the above central limit theorem holds.</p>
+<p>INTERPRETATION: When <script type="math/tex">n</script> is sufficiently large, <script type="math/tex">\bar{X}</script> has an approximately normal distribution with mean <script type="math/tex">\mu</script> and variance <script type="math/tex">\sigma^2/n</script>.</p>
+<p>The CLT is useful as a shortcut in computing probabilities involving the sample mean since it allows us to use a standard normal such that we don't have to actually find the sample mean distribution.</p>
+<h3 id="appling-the-clt">Appling the CLT:</h3>
+<p>
+<script type="math/tex">X \sim Gamma(\alpha, \beta)</script>. If <script type="math/tex">\alpha >> 0</script> then X is approximately normally distributed. This is true because <script type="math/tex">X = \sum_{i = 1}^\alpha X_i</script> where <script type="math/tex">X_i \sim Exp(\frac{1}{\beta})</script>. So <script type="math/tex">X = T_\alpha</script> of <script type="math/tex">X_i</script>'s so <script type="math/tex">X</script> is approximately normal according to the central limit theorem.</p>
+<p>
+<script type="math/tex">Y \sim Bi(n,p)</script> where <script type="math/tex">n >> 0</script>. Then <script type="math/tex">Y</script> is normally distributed since <script type="math/tex">Y = \sum_{i = 1}^n Y_i</script> where <script type="math/tex">Y_i</script> is 1 if success, 0 if failure. <script type="math/tex">Y \approx NormaL(np, \sqrt{n}\sqrt{p(1-p)})</script>
+</p>
+<h2 id="law-of-large-numbers">Law of Large Numbers</h2>
+<p>Two forms with different interpretations/strengths in their proof of convergence.</p>
+<p>The mean square of the variance of the mean approaches 0 as the number of samples increases. This requires afinite variance to demonstrate convergence of the mean.</p>
+<p>Chebyshev's inequality is stronger in demonstrating convergance as it does not require a finite variance.</p>
+<p>Take an interval around <script type="math/tex">\mu</script> of <script type="math/tex">[\mu - \epsilon, \mu + \epsilon]</script>.</p>
+<h2 id="summary">Summary</h2>
+<p>LLN tells us the average tends to the mean with increased number of observations</p>
+<p>CLT tells us the average tends to the mean in the shape of a normal distribution</p></div>
             </div>
         </div>
 
