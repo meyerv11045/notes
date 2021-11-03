@@ -172,6 +172,10 @@
 <li>
     <a href="../../../software_design/patterns/adapter/" class="dropdown-item">Adapter</a>
 </li>
+            
+<li>
+    <a href="../../../software_design/patterns/observer/" class="dropdown-item">Observer</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -349,6 +353,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#111" class="nav-link">11/1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -461,8 +469,32 @@ So
 <p>Chebyshev's inequality is stronger in demonstrating convergance as it does not require a finite variance.</p>
 <p>Take an interval around <script type="math/tex">\mu</script> of <script type="math/tex">[\mu - \epsilon, \mu + \epsilon]</script>.</p>
 <h2 id="summary">Summary</h2>
-<p>LLN tells us the average tends to the mean with increased number of observations</p>
-<p>CLT tells us the average tends to the mean in the shape of a normal distribution</p></div>
+<ul>
+<li>LLN tells us the average tends to the mean with increased number of observations</li>
+<li>CLT tells us the average tends to the mean in the shape of a normal distribution</li>
+<li>For linear statistics we can find the expected value, variance, and cdf from the sampled random variables using the mgf property</li>
+</ul>
+<h2 id="111">11/1</h2>
+<p>Sigma hat is an estimator (a random variable) while sigma squared is the variance of <script type="math/tex">X_i</script>
+<script type="math/tex; mode=display">\hat{\sigma}^2 = \sum (x_i - \mu)^2 / n</script>
+<script type="math/tex; mode=display">s^2 = \sum (x_i - \bar{x}) / n- 1 </script>
+</p>
+<p>
+<script type="math/tex; mode=display">E(\hat{\sigma}^2)  = \sigma^2</script>
+<script type="math/tex; mode=display">E(s^2) = \sigma^2</script>
+</p>
+<p>chi squared is a gamma distribution
+n is caled the dof o . how many indpendent normal squares we are adding
+<script type="math/tex; mode=display">n \hat{\sigma}^2/\sigma^2 \sim \chi_n^2</script>
+</p>
+<p>Claim: If <script type="math/tex">X_i, .., X_n</script> are iid <script type="math/tex">N(\mu, \sigma^2)</script> then <script type="math/tex">\bar{X}</script> and <script type="math/tex">S^2</script> are independent RVs</p>
+<p>Proof:
+<script type="math/tex; mode=display">\begin{aligned} 
+\sum_{i=1}^n(x_i - \mu)^2 &= \sum_{i=1}^n(x_i - \bar{x} + \bar{x} - \mu)^2 \\
+&= \sum_{i=1}^n(x_i - \bar{x})^2 + 2\sum_{i=1}^n(x_i - \bar{x})(\bar{x} - \mu) + \sum (\bar{x} - \mu)^2 \\
+&=    
+\end{aligned}</script>
+</p></div>
             </div>
         </div>
 

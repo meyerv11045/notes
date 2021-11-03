@@ -172,6 +172,10 @@
 <li>
     <a href="../../software_design/patterns/adapter/" class="dropdown-item">Adapter</a>
 </li>
+            
+<li>
+    <a href="../../software_design/patterns/observer/" class="dropdown-item">Observer</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -339,6 +343,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#traversal" class="nav-link">traversal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -383,7 +391,19 @@
 </li>
 <li>Array representation allows use of formulas to access specific nodes:</li>
 </ul>
-<h2 id="-binary-search-trees-special-case-of-a-binary-tree-where-the-left-child-values-are-less-than-the-parent-and-the-right-child-values-are-greater-than-the-parent">- <strong>Binary Search Trees:</strong> special case of a binary tree where the left child values are less than the parent and the right child values are greater than the parent</h2></div>
+<h2 id="-binary-search-trees-special-case-of-a-binary-tree-where-the-left-child-values-are-less-than-the-parent-and-the-right-child-values-are-greater-than-the-parent">- <strong>Binary Search Trees:</strong> special case of a binary tree where the left child values are less than the parent and the right child values are greater than the parent</h2>
+<h2 id="traversal">traversal</h2>
+<p><img alt="expression tree" src="../static/expression_tree.png" />
+- in-order: left, cur, right
+  - -, 5, <em>, 3, +, 4
+- pre-order: cur, left, right
+  - </em>, -, 5, +, 3, 4
+- post-order: left, right, cur
+  - 5,-,3,4,+,<em>
+  - easier for computers to compute in
+- level-order: across each level from left to right
+  - </em>, -, +, 5, 3, 4
+  - discards lots of info encoded in the tree so not as useful as the others</p></div>
             </div>
         </div>
 
