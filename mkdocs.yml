@@ -44,6 +44,7 @@ nav:
     - Patterns:
       - 'Overview': 'software_design/patterns/patterns.md'
       - 'Adapter': 'software_design/patterns/adapter.md'
+      - 'Observer': 'software_design/patterns/observer.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'
@@ -68,3 +69,4 @@ nav:
       - 'Random Variables': 'math_science/prob_stats/rv.md'
       - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
       - 'Joint Probability Distributions': 'math_science/prob_stats/joint-distributions.md'
+      - 'Statistics': 'math_science/prob_stats/stats.md'

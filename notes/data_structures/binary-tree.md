@@ -51,3 +51,17 @@ what is the data structure optimized for? insertions/deletion? resizing? etc?
 
 - **Binary Search Trees:** special case of a binary tree where the left child values are less than the parent and the right child values are greater than the parent
 - 
+
+
+## traversal
+![expression tree](static/expression_tree.png)
+- in-order: left, cur, right
+  - -, 5, *, 3, +, 4
+- pre-order: cur, left, right
+  - *, -, 5, +, 3, 4
+- post-order: left, right, cur
+  - 5,-,3,4,+,*
+  - easier for computers to compute in
+- level-order: across each level from left to right
+  - *, -, +, 5, 3, 4
+  - discards lots of info encoded in the tree so not as useful as the others

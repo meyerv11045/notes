@@ -121,6 +121,28 @@ Chebyshev's inequality is stronger in demonstrating convergance as it does not r
 Take an interval around $\mu$ of $[\mu - \epsilon, \mu + \epsilon]$.
 
 ## Summary
-LLN tells us the average tends to the mean with increased number of observations
+- LLN tells us the average tends to the mean with increased number of observations
+- CLT tells us the average tends to the mean in the shape of a normal distribution
+- For linear statistics we can find the expected value, variance, and cdf from the sampled random variables using the mgf property
 
-CLT tells us the average tends to the mean in the shape of a normal distribution
+
+## 11/1
+Sigma hat is an estimator (a random variable) while sigma squared is the variance of $X_i$
+$$\hat{\sigma}^2 = \sum (x_i - \mu)^2 / n$$
+$$s^2 = \sum (x_i - \bar{x}) / n- 1 $$
+
+$$E(\hat{\sigma}^2)  = \sigma^2$$
+$$E(s^2) = \sigma^2$$
+
+chi squared is a gamma distribution
+n is caled the dof o . how many indpendent normal squares we are adding
+$$n \hat{\sigma}^2/\sigma^2 \sim \chi_n^2$$
+
+Claim: If $X_i, .., X_n$ are iid $N(\mu, \sigma^2)$ then $\bar{X}$ and $S^2$ are independent RVs
+
+Proof:
+$$\begin{aligned} 
+\sum_{i=1}^n(x_i - \mu)^2 &= \sum_{i=1}^n(x_i - \bar{x} + \bar{x} - \mu)^2 \\
+&= \sum_{i=1}^n(x_i - \bar{x})^2 + 2\sum_{i=1}^n(x_i - \bar{x})(\bar{x} - \mu) + \sum (\bar{x} - \mu)^2 \\
+&=    
+\end{aligned}$$
