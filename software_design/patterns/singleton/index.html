@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/system_design/microservices/">
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Microservices - The Notebook</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/font-awesome.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/patterns/singleton/">
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Singleton - The Notebook</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
 
-        <script src="../../js/jquery-1.10.2.min.js" defer></script>
-        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="../../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../../js/bootstrap.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script> 
     </head>
@@ -23,7 +23,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="../..">The Notebook</a>
+                <a class="navbar-brand" href="../../..">The Notebook</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -33,44 +33,44 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../../general/git/" class="dropdown-item">Git</a>
+    <a href="../../../general/git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
-    <a href="../../general/python/" class="dropdown-item">Python</a>
+    <a href="../../../general/python/" class="dropdown-item">Python</a>
 </li>
                                     
 <li>
-    <a href="../../general/macos/" class="dropdown-item">MacOS</a>
+    <a href="../../../general/macos/" class="dropdown-item">MacOS</a>
 </li>
                                     
 <li>
-    <a href="../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../../general/regex/" class="dropdown-item">Regex</a>
+    <a href="../../../general/regex/" class="dropdown-item">Regex</a>
 </li>
                                     
 <li>
-    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
+    <a href="../../../general/hardware/" class="dropdown-item">Hardware</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Microservices</a>
+    <a href="../../../system_design/microservices/" class="dropdown-item">Microservices</a>
 </li>
                                     
 <li>
-    <a href="../docker/" class="dropdown-item">Docker</a>
+    <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                 </ul>
                             </li>
@@ -79,27 +79,27 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
+    <a href="../../../data_structures/overview/" class="dropdown-item">Overview</a>
 </li>
                                     
 <li>
-    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
+    <a href="../../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
-    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
+    <a href="../../../data_structures/stack/" class="dropdown-item">Stack</a>
 </li>
                                     
 <li>
-    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
+    <a href="../../../data_structures/queue/" class="dropdown-item">Queue</a>
 </li>
                                     
 <li>
-    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
+    <a href="../../../data_structures/heap/" class="dropdown-item">Heap</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -108,55 +108,55 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
+    <a href="../../cpp/pointers/" class="dropdown-item">Pointers</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/big3/" class="dropdown-item">The Big 3</a>
+    <a href="../../cpp/big3/" class="dropdown-item">The Big 3</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/exceptions/" class="dropdown-item">Exception Handling</a>
+    <a href="../../cpp/exceptions/" class="dropdown-item">Exception Handling</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/templates/" class="dropdown-item">Templates</a>
+    <a href="../../cpp/templates/" class="dropdown-item">Templates</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+    <a href="../../cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+    <a href="../../cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+    <a href="../../cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/inheritance/" class="dropdown-item">Inheritance</a>
+    <a href="../../cpp/inheritance/" class="dropdown-item">Inheritance</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/iterators/" class="dropdown-item">Iterators</a>
+    <a href="../../cpp/iterators/" class="dropdown-item">Iterators</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/stl/" class="dropdown-item">STL</a>
+    <a href="../../cpp/stl/" class="dropdown-item">STL</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/functors/" class="dropdown-item">Functors</a>
+    <a href="../../cpp/functors/" class="dropdown-item">Functors</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/lambda/" class="dropdown-item">Lambda Functions</a>
+    <a href="../../cpp/lambda/" class="dropdown-item">Lambda Functions</a>
 </li>
             
 <li>
-    <a href="../../software_design/cpp/misc/" class="dropdown-item">Misc</a>
+    <a href="../../cpp/misc/" class="dropdown-item">Misc</a>
 </li>
     </ul>
   </li>
@@ -166,19 +166,19 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../software_design/patterns/patterns/" class="dropdown-item">Overview</a>
+    <a href="../patterns/" class="dropdown-item">Overview</a>
 </li>
             
 <li>
-    <a href="../../software_design/patterns/adapter/" class="dropdown-item">Adapter</a>
+    <a href="../adapter/" class="dropdown-item">Adapter</a>
 </li>
             
 <li>
-    <a href="../../software_design/patterns/observer/" class="dropdown-item">Observer</a>
+    <a href="../observer/" class="dropdown-item">Observer</a>
 </li>
             
 <li>
-    <a href="../../software_design/patterns/singleton/" class="dropdown-item">Singleton</a>
+    <a href="./" class="dropdown-item active">Singleton</a>
 </li>
     </ul>
   </li>
@@ -189,15 +189,15 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
+    <a href="../../../databases/dbms/" class="dropdown-item">DBMS</a>
 </li>
                                     
 <li>
-    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+    <a href="../../../databases/sql/" class="dropdown-item">SQL</a>
 </li>
                                     
 <li>
-    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
+    <a href="../../../databases/mysql/" class="dropdown-item">MySQL</a>
 </li>
                                 </ul>
                             </li>
@@ -210,35 +210,35 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../web_dev/js/basics/" class="dropdown-item">Basics</a>
+    <a href="../../../web_dev/js/basics/" class="dropdown-item">Basics</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/classes/" class="dropdown-item">Classes</a>
+    <a href="../../../web_dev/js/classes/" class="dropdown-item">Classes</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/objects/" class="dropdown-item">Objects</a>
+    <a href="../../../web_dev/js/objects/" class="dropdown-item">Objects</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/modules/" class="dropdown-item">Modules</a>
+    <a href="../../../web_dev/js/modules/" class="dropdown-item">Modules</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/promises/" class="dropdown-item">Promises</a>
+    <a href="../../../web_dev/js/promises/" class="dropdown-item">Promises</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
+    <a href="../../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+    <a href="../../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
 </li>
             
 <li>
-    <a href="../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+    <a href="../../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
 </li>
     </ul>
   </li>
@@ -248,7 +248,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
+    <a href="../../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
 </li>
     </ul>
   </li>
@@ -259,7 +259,7 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../math_science/brain/" class="dropdown-item">The Brain</a>
+    <a href="../../../math_science/brain/" class="dropdown-item">The Brain</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -267,7 +267,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
+    <a href="../../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
 </li>
     </ul>
   </li>
@@ -277,23 +277,23 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
+    <a href="../../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
 </li>
             
 <li>
-    <a href="../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
+    <a href="../../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
 </li>
             
 <li>
-    <a href="../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+    <a href="../../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
 </li>
             
 <li>
-    <a href="../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
+    <a href="../../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
 </li>
             
 <li>
-    <a href="../../math_science/prob_stats/point-estimation/" class="dropdown-item">Point Estimation</a>
+    <a href="../../../math_science/prob_stats/point-estimation/" class="dropdown-item">Point Estimation</a>
 </li>
     </ul>
   </li>
@@ -308,12 +308,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../general/hardware/" class="nav-link">
+                                <a rel="prev" href="../observer/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../docker/" class="nav-link">
+                                <a rel="next" href="../../../databases/dbms/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -335,33 +335,107 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
+            <li class="nav-item" data-level="1"><a href="#singleton-pattern" class="nav-link">Singleton Pattern</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#intent" class="nav-link">Intent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#applicability" class="nav-link">Applicability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#structure" class="nav-link">Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#consequences" class="nav-link">Consequences</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sample-code" class="nav-link">Sample Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#known-uses" class="nav-link">Known Uses</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="microservice-architectual-style">Microservice Architectual Style:</h3>
+<h1 id="singleton-pattern">Singleton Pattern</h1>
+<h2 id="intent">Intent</h2>
+<p>Ensure a class only ever has one instance and provide a global point of access</p>
+<h2 id="applicability">Applicability</h2>
 <ul>
-<li>Developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanics, often an HTTP resource API</li>
-<li>Encourages modularity and seperation of concerns</li>
-<li>ability to horizontally scale and partition the workload</li>
-<li>Microservices contain many aspects in reality:</li>
-<li>Clients, Caches, and Databases are all included in a microservice in conjuction with the service itself</li>
+<li>When there must be exactly one instance of a class and it must be accessible from a well-known access point</li>
+<li>When the sole instance should be extensible by subclassing, and clients should be able to use an extended instance without modifying their code</li>
 </ul>
-<h3 id="stateless-service">Stateless Service:</h3>
+<h2 id="structure">Structure</h2>
+<p><img alt="singleton" src="../../static/singleton.png" /></p>
+<h2 id="consequences">Consequences</h2>
 <ul>
-<li>Not a cache or database</li>
-<li>Frequently accessed metadata</li>
-<li>no instance affinity</li>
-<li>Losing a node is not a big deal and can be easily fixed</li>
+<li>(+) Reduces namespace pollution</li>
+<li>(+) easy to change and allow multiple instances</li>
+<li>(+) allow extension by subclassing</li>
+<li>(-) Same drawbacks of a global if misused </li>
+<li>(-) Implementation may be less efficient than a global variable</li>
+<li>(-) Concurrency pitfalls and communication overhead</li>
 </ul>
-<h3 id="stateful-service">Stateful Service:</h3>
+<h2 id="implementation">Implementation</h2>
 <ul>
-<li>Databases &amp; caches</li>
-<li>Custom apps which holds lots of data</li>
-<li>Losing a node is a notable event and it might take hours to get it fixed</li>
+<li>Static instance operation</li>
+<li>Registering the singleton instance<ul>
+<li>runtime though instead of compiletime</li>
+</ul>
+</li>
+<li>Deleting singletons</li>
+<li>Not automatically destroyed by anything</li>
+<li>Usually use a shared pointer instead of raw pointer to deal with this</li>
+<li>Lifecycle is not as well defined as simple variables</li>
+</ul>
+<h2 id="sample-code">Sample Code</h2>
+<pre><code class="language-c++">class Singleton {
+
+public:
+    static Singleton&amp; getInstance()
+    {
+        if (inst == nullptr) inst = new Singleton();
+
+        return *inst;
+    }
+
+    Singleton(Singleton const&amp;) = delete;
+    void operator=(Singleton const&amp;) = delete;
+
+private:
+    static Singleton* inst;
+    Singleton() {}
+};
+
+// must provide initial value for static variable outside of class
+Singleton* Singleton::inst = nullptr;
+</code></pre>
+<p>Then a singleton would be created like:</p>
+<pre><code class="language-c++">int main() {
+    Singleton&amp; one = Singleton::getInstance();
+    Singleton&amp; two = Singleton::getInstance();
+  return 0;
+}
+</code></pre>
+<h2 id="known-uses">Known Uses</h2>
+<ul>
+<li>Hardware interface access</li>
+<li>Logger: so everything is logged to same place in correct order using access protections</li>
 </ul></div>
             </div>
         </div>
@@ -371,12 +445,12 @@
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
         <script>
-            var base_url = "../..",
+            var base_url = "../../..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="../../js/base.js" defer></script>
+        <script src="../../../js/base.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
-        <script src="../../search/main.js" defer></script>
+        <script src="../../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
