@@ -46,6 +46,9 @@ nav:
       - 'Adapter': 'software_design/patterns/adapter.md'
       - 'Observer': 'software_design/patterns/observer.md'
       - 'Singleton': 'software_design/patterns/singleton.md'
+      - 'Composite': 'software_design/patterns/composite.md'
+      - 'Interpreter': 'software_design/patterns/interpreter.md'
+      - 'Builder': 'software_design/patterns/builder.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'

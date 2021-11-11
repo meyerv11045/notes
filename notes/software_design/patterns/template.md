@@ -4,9 +4,6 @@ any aliases this pattern is known by
 ## Intent
 short description of the pattern and its purpose
 
-## Motivation
-motivating scenario demonstrating pattern's use
-
 ## Applicability
 circumstances in which pattern applies
 
