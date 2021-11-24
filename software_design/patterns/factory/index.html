@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/math_science/prob_stats/point-estimation/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/patterns/factory/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Point Estimation - The Notebook</title>
+        <title>Factory - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -72,6 +72,10 @@
 <li>
     <a href="../../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
+                                    
+<li>
+    <a href="../../../ai/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -99,7 +103,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -108,55 +112,55 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
+    <a href="../../cpp/pointers/" class="dropdown-item">Pointers</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/big3/" class="dropdown-item">The Big 3</a>
+    <a href="../../cpp/big3/" class="dropdown-item">The Big 3</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/exceptions/" class="dropdown-item">Exception Handling</a>
+    <a href="../../cpp/exceptions/" class="dropdown-item">Exception Handling</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/templates/" class="dropdown-item">Templates</a>
+    <a href="../../cpp/templates/" class="dropdown-item">Templates</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+    <a href="../../cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+    <a href="../../cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+    <a href="../../cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/inheritance/" class="dropdown-item">Inheritance</a>
+    <a href="../../cpp/inheritance/" class="dropdown-item">Inheritance</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/iterators/" class="dropdown-item">Iterators</a>
+    <a href="../../cpp/iterators/" class="dropdown-item">Iterators</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/stl/" class="dropdown-item">STL</a>
+    <a href="../../cpp/stl/" class="dropdown-item">STL</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/functors/" class="dropdown-item">Functors</a>
+    <a href="../../cpp/functors/" class="dropdown-item">Functors</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/lambda/" class="dropdown-item">Lambda Functions</a>
+    <a href="../../cpp/lambda/" class="dropdown-item">Lambda Functions</a>
 </li>
             
 <li>
-    <a href="../../../software_design/cpp/misc/" class="dropdown-item">Misc</a>
+    <a href="../../cpp/misc/" class="dropdown-item">Misc</a>
 </li>
     </ul>
   </li>
@@ -166,31 +170,51 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../../software_design/patterns/patterns/" class="dropdown-item">Overview</a>
+    <a href="../patterns/" class="dropdown-item">Overview</a>
 </li>
             
 <li>
-    <a href="../../../software_design/patterns/adapter/" class="dropdown-item">Adapter</a>
+    <a href="../adapter/" class="dropdown-item">Adapter</a>
 </li>
             
 <li>
-    <a href="../../../software_design/patterns/observer/" class="dropdown-item">Observer</a>
+    <a href="../observer/" class="dropdown-item">Observer</a>
 </li>
             
 <li>
-    <a href="../../../software_design/patterns/singleton/" class="dropdown-item">Singleton</a>
+    <a href="../singleton/" class="dropdown-item">Singleton</a>
 </li>
             
 <li>
-    <a href="../../../software_design/patterns/composite/" class="dropdown-item">Composite</a>
+    <a href="../composite/" class="dropdown-item">Composite</a>
 </li>
             
 <li>
-    <a href="../../../software_design/patterns/interpreter/" class="dropdown-item">Interpreter</a>
+    <a href="../interpreter/" class="dropdown-item">Interpreter</a>
 </li>
             
 <li>
-    <a href="../../../software_design/patterns/builder/" class="dropdown-item">Builder</a>
+    <a href="../builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="../visitor/" class="dropdown-item">Visitor</a>
+</li>
+            
+<li>
+    <a href="../../../software_desgign/patterns/iterator.md" class="dropdown-item">Iterator</a>
+</li>
+            
+<li>
+    <a href="../bridge/" class="dropdown-item">Bridge</a>
+</li>
+            
+<li>
+    <a href="../command/" class="dropdown-item">Command</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Factory</a>
 </li>
     </ul>
   </li>
@@ -266,12 +290,12 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Math & Science <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../brain/" class="dropdown-item">The Brain</a>
+    <a href="../../../math_science/brain/" class="dropdown-item">The Brain</a>
 </li>
                                     
   <li class="dropdown-submenu">
@@ -279,7 +303,7 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../physics/ch25/" class="dropdown-item">Current & Resistance</a>
+    <a href="../../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
 </li>
     </ul>
   </li>
@@ -289,23 +313,19 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../rv/" class="dropdown-item">Random Variables</a>
+    <a href="../../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
 </li>
             
 <li>
-    <a href="../crvs/" class="dropdown-item">Continuous Random Variables</a>
+    <a href="../../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
 </li>
             
 <li>
-    <a href="../joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+    <a href="../../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
 </li>
             
 <li>
-    <a href="../stats/" class="dropdown-item">Statistics</a>
-</li>
-            
-<li>
-    <a href="./" class="dropdown-item active">Point Estimation</a>
+    <a href="../../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
 </li>
     </ul>
   </li>
@@ -320,12 +340,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../stats/" class="nav-link">
+                                <a rel="prev" href="../command/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" class="nav-link disabled">
+                                <a rel="next" href="../../../databases/dbms/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -347,9 +367,54 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#point-estimation" class="nav-link">Point Estimation</a>
+            <li class="nav-item" data-level="1"><a href="#factory-pattern" class="nav-link">Factory Pattern</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#objective" class="nav-link">Objective</a>
+            <li class="nav-item" data-level="2"><a href="#intent" class="nav-link">Intent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#applicability" class="nav-link">Applicability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#structure" class="nav-link">Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#consequences" class="nav-link">Consequences</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#known-uses" class="nav-link">Known Uses</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#abstract-factory-pattern" class="nav-link">Abstract Factory Pattern</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#intent_1" class="nav-link">Intent</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#applicability_1" class="nav-link">Applicability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#structure_1" class="nav-link">Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#consequences_1" class="nav-link">Consequences</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#implementation_1" class="nav-link">Implementation</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -360,9 +425,62 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="point-estimation">Point Estimation</h1>
-<h2 id="objective">Objective</h2>
-<p>Use a sample to compure an estimate for the true value of a parameter of interest such as the population</p></div>
+<h1 id="factory-pattern">Factory Pattern</h1>
+<h2 id="intent">Intent</h2>
+<p>Provide an interface for creating an object, but leave the choice of the object's concrete type to a subclass</p>
+<h2 id="applicability">Applicability</h2>
+<ul>
+<li>When a class cannot anticipate the objects it must create </li>
+<li>When a class wants its subclasses to specify the objects it creates</li>
+<li>When a standard interface for creating objects is useful in enforcing rules on how objects are created</li>
+</ul>
+<h2 id="structure">Structure</h2>
+<p><img alt="" src="../../static/factory.png" /></p>
+<h2 id="consequences">Consequences</h2>
+<ul>
+<li>(+) Client code becomes more flexible since we avoid specifying the class name of the concerete class <ul>
+<li>Resilient to adding more objects or changing how objects are made</li>
+</ul>
+</li>
+<li>(+) Client is only dependent on the interface<ul>
+<li>Remove burden of knowing how to create things from the user and give user a simple interface for making new objects</li>
+</ul>
+</li>
+<li>(-) Construction of objects requires one additional class in some cases</li>
+</ul>
+<h2 id="implementation">Implementation</h2>
+<ul>
+<li>2 choices:<ul>
+<li>1) Creator class is abstract and doesn't implement creation methods meaning it must be subclassed</li>
+<li>2) Creator class is concrete and provides a default implementation meaning it can optionally be subclassed</li>
+</ul>
+</li>
+<li>Should be parameterized if a factory method needs to be able to create different variants</li>
+</ul>
+<h2 id="known-uses">Known Uses</h2>
+<ul>
+<li>All STL containers are factories</li>
+<li>Database connectors (a standard way of creating a database connection that only has to be changed in one place instead of across the application)</li>
+</ul>
+<h1 id="abstract-factory-pattern">Abstract Factory Pattern</h1>
+<h2 id="intent_1">Intent</h2>
+<p>Create families of related objects without specifying subclass names</p>
+<h2 id="applicability_1">Applicability</h2>
+<p>When clients cannot anticipate groups of classes to instantiate</p>
+<h2 id="structure_1">Structure</h2>
+<p><img alt="" src="../../static/abstract-factory.png" /></p>
+<h2 id="consequences_1">Consequences</h2>
+<ul>
+<li>(+) Flexibility: remove type/subclass dependencies from clients</li>
+<li>(+) Abstraction and semantic checking: hides product's composition</li>
+<li>(-) Hard to extend interfacce to create new products</li>
+</ul>
+<h2 id="implementation_1">Implementation</h2>
+<ul>
+<li>Parameterization as a way of controlling the interface's size</li>
+<li>Configuration with Prototypes (i.e. determines who creates the factories)</li>
+<li>Essentially groups of factory methods</li>
+</ul></div>
             </div>
         </div>
 

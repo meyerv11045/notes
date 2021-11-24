@@ -72,6 +72,10 @@
 <li>
     <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
+                                    
+<li>
+    <a href="../../ai/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -192,6 +196,26 @@
 <li>
     <a href="../../software_design/patterns/builder/" class="dropdown-item">Builder</a>
 </li>
+            
+<li>
+    <a href="../../software_design/patterns/visitor/" class="dropdown-item">Visitor</a>
+</li>
+            
+<li>
+    <a href="../../software_desgign/patterns/iterator.md" class="dropdown-item">Iterator</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/bridge/" class="dropdown-item">Bridge</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/command/" class="dropdown-item">Command</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/factory/" class="dropdown-item">Factory</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -303,10 +327,6 @@
 <li>
     <a href="../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
 </li>
-            
-<li>
-    <a href="../../math_science/prob_stats/point-estimation/" class="dropdown-item">Point Estimation</a>
-</li>
     </ul>
   </li>
                                 </ul>
@@ -347,25 +367,41 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#git-cheat-sheet" class="nav-link">Git Cheat Sheet</a>
+            <li class="nav-item" data-level="1"><a href="#git-reference" class="nav-link">git reference</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#setup-repo" class="nav-link">Setup Repo</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#add-branch" class="nav-link">Add Branch</a>
+            <li class="nav-item" data-level="2"><a href="#undoing-things" class="nav-link">undoing things</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#delete-branch" class="nav-link">Delete Branch</a>
+            <li class="nav-item" data-level="2"><a href="#diff" class="nav-link">diff</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#stash-changes" class="nav-link">Stash Changes</a>
+            <li class="nav-item" data-level="2"><a href="#pull-vs-fetch" class="nav-link">pull vs fetch</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#commit-hashes" class="nav-link">Commit Hashes</a>
+            <li class="nav-item" data-level="2"><a href="#switch" class="nav-link">switch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#branching" class="nav-link">branching</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#stash-changes" class="nav-link">stash changes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#config-preferences" class="nav-link">config preferences:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-git-works" class="nav-link">how git works</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commit-hashes" class="nav-link">commit hashes</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -376,33 +412,96 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="git-cheat-sheet">Git Cheat Sheet</h1>
-<h2 id="setup-repo">Setup Repo</h2>
+<h1 id="git-reference">git reference</h1>
+<h2 id="undoing-things">undoing things</h2>
 <ul>
-<li><code>git init</code> initializes an existing directory as a git repo</li>
-<li><code>git clone &lt;url&gt;</code> retrieves an entire remote repository </li>
-</ul>
-<h2 id="add-branch">Add Branch</h2>
-<ul>
-<li>Local: <code>git branch &lt;new-branch&gt;</code> will create a new local branch from the branch you are currently located on but will not automatically check it out <ul>
-<li><code>git checkout -b &lt;new-branch&gt;</code> will create and automatically checkout a new local-branch</li>
+<li><code>git commit --ammend</code> will add any staged changes to previous commit (technically 2nd commit replaces the previous one)<ul>
+<li>only ammend local commits</li>
 </ul>
 </li>
-<li>Remote: <code>git push --set-upstream origin &lt;local-branch&gt;</code> will add your new local branch to the remote repo<ul>
-<li><code>git push -u origin &lt;local-branch&gt;</code> uses the <code>-u</code> flag as shorthand </li>
+<li><code>git restore</code> replaces <code>git reset</code>. </li>
+<li>Unstaging changes:<ul>
+<li><code>git reset HEAD &lt;file-name&gt;</code></li>
+<li><code>git restore --staged &lt;file-name&gt;</code></li>
+</ul>
+</li>
+<li>Unmodifying an unstaged modified file: <code>git restore &lt;file&gt;</code> </li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things">source</a></li>
+</ul>
+<h2 id="diff">diff</h2>
+<ul>
+<li>unadded changes: <code>git diff &lt;file/folder-name&gt;</code></li>
+<li>added changes: <code>git diff --cached &lt;file/folder-name&gt;</code> <ul>
+<li>also works with <code>--staged</code></li>
+</ul>
+</li>
+<li>changes from commit 1 to commit 2: <code>git diff &lt;commit-1-hash&gt; &lt;commit-2-hash&gt;</code><ul>
+<li><code>--stats</code> list changed files + insertions/deletions</li>
+<li><code>--name-only</code> lists name of changed files</li>
+<li><code>--name-status</code> list status of added/deleted/modified/renamed files</li>
+</ul>
+</li>
+<li>changes from previous commit to current commit: <code>git diff HEAD^</code> (<code>HEAD^</code> is previous commit)</li>
+<li>generate output to <code>.diff</code> file:<ul>
+<li><code>git diff -output=patch.diff</code></li>
+<li><code>git diff &gt; patch.diff</code></li>
+<li><code>git diff &gt; changes.patch</code></li>
+</ul>
+</li>
+<li>apply a diff/patch:<ul>
+<li><code>git apply changes.patch</code> (only performs the changes-- they still need to be added/commited)</li>
+</ul>
+</li>
+<li>changes from one branch to another:<ul>
+<li><code>git diff main &lt;file-name&gt;</code> (comparing cur branch to main)</li>
+<li>adding <code>~</code> after branch name will use the previous commit (multiple <code>~</code> goes multiple commits back)</li>
 </ul>
 </li>
 </ul>
-<h2 id="delete-branch">Delete Branch</h2>
+<h2 id="pull-vs-fetch">pull vs fetch</h2>
+<ul>
+<li><code>git fetch</code> will bring down any changes from remote repo but won't change any of your local branchs <ul>
+<li>Only updates <code>.git/</code> directory with an updated version of the remote repo</li>
+<li>To integrate the fetched commits, need to run <code>git merge</code></li>
+</ul>
+</li>
+<li><code>git pull</code> essentially does a fetch followed by a merge into the current branch</li>
+<li>git fetch is the command that says "bring my local copy of the remote repository up to date."</li>
+<li>git pull says "bring the changes in the remote repository to where I keep my own code."</li>
+</ul>
+<p><img alt="" src="../static/gitflow.png" /></p>
+<h2 id="switch">switch</h2>
+<ul>
+<li>new version of checkout</li>
+<li><code>git switch &lt;branch-name&gt;</code><ul>
+<li>use <code>-</code> as branch name to go back to original branch before from before switching</li>
+</ul>
+</li>
+<li>create and switch to new branch: <code>git switch -c &lt;new-branch&gt;</code></li>
+<li>switch to a remote branch (after fetching): <code>git switch -c &lt;branch&gt; --track &lt;remote&gt;/&lt;branch&gt;</code></li>
+</ul>
+<h2 id="branching">branching</h2>
+<h3 id="add-branch">add branch</h3>
+<ul>
+<li>create local branch (doesn't checkout): <code>git branch &lt;new-branch&gt;</code><ul>
+<li>create and automatically checkout a new local-branch: <code>git checkout -b &lt;new-branch&gt;</code> </li>
+</ul>
+</li>
+<li>add local branch to remote repo: <code>git push --set-upstream origin &lt;local-branch&gt;</code><ul>
+<li><code>-u</code> is shorthand for upstream</li>
+</ul>
+</li>
+</ul>
+<h3 id="delete-branch">delete branch</h3>
 <ul>
 <li>Local: <code>git branch -d &lt;local-branch&gt;</code><ul>
-<li><code>-d</code> flag will refuse to delete the branch when it contains commits not merged into other local branches or pushed to a remote repo</li>
-<li><code>-D</code> flag will delete such a branch regardless (force deletion)</li>
+<li><code>-d</code> refuse to delete unmerged/unpushed changes</li>
+<li><code>-D</code> force delete</li>
 </ul>
 </li>
 <li>Remote: <code>git push origin --delete &lt;remote-branch-name&gt;</code></li>
 </ul>
-<h2 id="stash-changes">Stash Changes</h2>
+<h2 id="stash-changes">stash changes</h2>
 <ul>
 <li>Stashing can be used to temporaliy store modified, tracked files in order to change branches</li>
 <li><code>git stash</code> saves the modified and staged changes</li>
@@ -410,7 +509,35 @@
 <li><code>git stash pop</code> writes working from the top of the stash stack</li>
 <li><code>git stash drop</code> discards the changes from the top of the stash stack</li>
 </ul>
-<h2 id="commit-hashes">Commit Hashes</h2>
+<h2 id="config-preferences">config preferences:</h2>
+<ul>
+<li>Stored globally in <code>~/.gitconfig</code></li>
+<li><code>git config</code> to update config settings<ul>
+<li><code>--global</code> for global config updates</li>
+<li><code>--local</code> for project specific updates </li>
+</ul>
+</li>
+<li><code>diff.noprefix true</code> removes a/ and b/ prefixes in diff results</li>
+<li><code>credential.helper store</code> and then type in your username and PAT the next time you login <ul>
+<li>Will save and use your login credentials for any future remote requests</li>
+</ul>
+</li>
+<li>can create git aliases <code>git alias</code>:</li>
+</ul>
+<pre><code>[alias]
+    unstaged = diff
+    staged = diff --cached
+    both = diff HEAD 
+</code></pre>
+<ul>
+<li><code>help.autocorrect &lt;tenths-of-seconds&gt;</code> will auto run a mistyped command after specified tenths of a second</li>
+<li><a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">More Config Settings</a></li>
+</ul>
+<h2 id="how-git-works">how git works</h2>
+<p><a href="http://ftp.newartisans.com/pub/git.from.bottom.up.pdf">how git works from the bottom up</a>
+- index = staging area = cache (all refer to same thing)
+- <a href="https://stackoverflow.com/questions/58003030/what-is-the-git-restore-command-and-what-is-the-difference-between-git-restor">difference between git restore and git reset</a></p>
+<h2 id="commit-hashes">commit hashes</h2>
 <ul>
 <li>Git generates a unique SHA-1 hash (40 char string of hex digits) for every commit and refers to commits by this ID (usually only displays first 7 digits)</li>
 <li>SHA-1 has been compromised (can spoof hashes) so they are moving to SHA-256</li>

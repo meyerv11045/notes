@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/general/terminal-cmds/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Terminal cmds - The Notebook</title>
+        <title>Terminal Commands (Mac) - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -71,6 +71,10 @@
                                     
 <li>
     <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/behavior-trees/" class="dropdown-item">Behavior Trees</a>
 </li>
                                 </ul>
                             </li>
@@ -192,6 +196,26 @@
 <li>
     <a href="../../software_design/patterns/builder/" class="dropdown-item">Builder</a>
 </li>
+            
+<li>
+    <a href="../../software_design/patterns/visitor/" class="dropdown-item">Visitor</a>
+</li>
+            
+<li>
+    <a href="../../software_desgign/patterns/iterator.md" class="dropdown-item">Iterator</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/bridge/" class="dropdown-item">Bridge</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/command/" class="dropdown-item">Command</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/factory/" class="dropdown-item">Factory</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -303,10 +327,6 @@
 <li>
     <a href="../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
 </li>
-            
-<li>
-    <a href="../../math_science/prob_stats/point-estimation/" class="dropdown-item">Point Estimation</a>
-</li>
     </ul>
   </li>
                                 </ul>
@@ -337,13 +357,28 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#terminal-commands-mac" class="nav-link">Terminal Commands (Mac)</a>
+            <li class="nav-item" data-level="1"><a href="#terminal-commands-mac" class="nav-link">Terminal Commands (Mac)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#navigation" class="nav-link">Navigation:</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            
+            <li class="nav-item" data-level="2"><a href="#creating-deleting" class="nav-link">Creating &amp; Deleting:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#opening-filesfolders" class="nav-link">Opening Files/Folders:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#terminal-commands-different-in-windows" class="nav-link">Terminal Commands Different in Windows:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#vim-commands" class="nav-link">Vim Commands</a>
               <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -351,8 +386,8 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="terminal-commands-mac">Terminal Commands (Mac)</h2>
-<h4 id="navigation">Navigation:</h4>
+<h1 id="terminal-commands-mac">Terminal Commands (Mac)</h1>
+<h2 id="navigation">Navigation:</h2>
 <ul>
 <li><code>cd {/path/to/folder}</code>: changes directory to specified path</li>
 <li><code>cd /</code>: goes to root directory</li>
@@ -360,7 +395,7 @@
 <li><code>ls</code>: lists all files/folders in the current working directory</li>
 <li><code>pwd</code>: prints the path to the current working directory|</li>
 </ul>
-<h4 id="creating-deleting">Creating &amp; Deleting:</h4>
+<h2 id="creating-deleting">Creating &amp; Deleting:</h2>
 <ul>
 <li><code>mkdir {foldername}</code>: makes a folder with the specified nam</li>
 <li><code>rm {filename}</code>: removes the specified file</li>
@@ -368,14 +403,14 @@
 <li><code>touch {filename}</code>: creates the specified file|</li>
 <li><code>mv {filename} {new filename}</code>: renames the file/folder to the 2nd name</li>
 </ul>
-<h4 id="opening-filesfolders">Opening Files/Folders:</h4>
+<h2 id="opening-filesfolders">Opening Files/Folders:</h2>
 <ul>
 <li><code>open {filename}</code>: opens the file with the default program</li>
 <li><code>open {filename} -a "{program name}"</code>: opens the file in the specified application</li>
 <li><code>open .</code>:  opens the current folder in finder</li>
 <li><code>open . -a "{program name}"</code> opens the folder in the specified application</li>
 </ul>
-<h3 id="terminal-commands-different-in-windows">Terminal Commands Different in Windows:</h3>
+<h2 id="terminal-commands-different-in-windows">Terminal Commands Different in Windows:</h2>
 <ul>
 <li>dir - list files</li>
 <li>echo &gt; {filename} - create an empty file</li>
