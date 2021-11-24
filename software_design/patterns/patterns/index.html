@@ -373,6 +373,18 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#types" class="nav-link">Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#organization" class="nav-link">Organization</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#omt-object-model-notation" class="nav-link">OMT Object Model Notation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -381,6 +393,9 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="design-patterns">Design Patterns</h1>
+<p>Design patterns are simply object oriented software designs that often recurr as the solution to certain problems when designing large and complex software. The commonality in these recurring designs is distilled into patterns that codify these good practices for solving common problems. </p>
+<p>Each design pattern systematically names, explains, and evaluates an important and recurring design in object-oriented systems.</p>
+<p>Design patterns help us decide what should be an object and what its responsibilities should be.</p>
 <h2 id="goals">Goals</h2>
 <ul>
 <li>Codify good object oriented design and implementation practices<ul>
@@ -394,6 +409,42 @@
 </ul>
 </li>
 <li>Facilitate restructuring/refactoring</li>
+</ul>
+<h2 id="types">Types</h2>
+<p><img alt="" src="../../static/design-patterns.png" /></p>
+<ul>
+<li><strong>Purpose</strong>- what a pattern does<ul>
+<li><strong>Creational</strong>- concern the process of object creation</li>
+<li><strong>Structural</strong>- deal with the composition of classes/objects</li>
+<li><strong>Behavioral</strong>- characterize the ways in which classes/objects interact and distribute responsibility</li>
+</ul>
+</li>
+<li><strong>Scope</strong>- specifies whether the pattern applies primarily to classes or objects<ul>
+<li><strong>Class patterns</strong>- focus on relationships between classes and their subclasses which are defined through inheritance so they are fixed at compile time</li>
+<li><strong>Object patterns</strong>- deal with object relationships which can be changed at runtime and are more dynamic</li>
+</ul>
+</li>
+</ul>
+<p>Creational class patterns defer some part of object creation to subclasses, while Creational object patterns defer it to another object. The Structural class patterns use inheritance to compose classes, while the Structural object patterns describe ways to assemble objects. The Behavioral class patterns use inheritance to describe algorithms and flow of control, whereas the Behavioral object patterns describe how a group of objects cooperate to perform a task that no single object can carry out alone.</p>
+<h2 id="organization">Organization</h2>
+<p>Patterns often reference each other so a graph can be another useful way of organizing the different patterns:</p>
+<p><img alt="" src="../../static/related-patterns.png" /></p>
+<p>Design aspects that design patterns let you vary:
+<img alt="" src="../../static/design-aspects.png" /></p>
+<h2 id="omt-object-model-notation">OMT Object Model Notation</h2>
+<ul>
+<li>Used in the diagrams</li>
+<li>Precursor to UML</li>
+<li>dashed arrowhead line: class instantiates an object of the class being pointed to</li>
+<li>triangle: inheritance<ul>
+<li>abstract class- italicized names</li>
+<li>filled triangle indicates a virtual base class</li>
+</ul>
+</li>
+<li>plain arrowhead line: class keeps a reference to the class being pointed at</li>
+<li>diamond on one end, arrow on the other: aggregation of the class being pointed at</li>
+<li>filled black circle- multiplicity</li>
+<li>empty circle- optional multiplicity</li>
 </ul></div>
             </div>
         </div>
