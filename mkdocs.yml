@@ -51,7 +51,7 @@ nav:
       - 'Interpreter': 'software_design/patterns/interpreter.md'
       - 'Builder': 'software_design/patterns/builder.md'
       - 'Visitor': 'software_design/patterns/visitor.md'
-      - 'Iterator': 'software_desgign/patterns/iterator.md'
+      - 'Iterator': 'software_design/patterns/iterator.md'
       - 'Bridge': 'software_design/patterns/bridge.md'
       - 'Command': 'software_design/patterns/command.md'
       - 'Factory': 'software_design/patterns/factory.md'
