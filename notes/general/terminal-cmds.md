@@ -1,6 +1,6 @@
-## Terminal Commands (Mac)
+# Terminal Commands (Mac)
 
-#### Navigation: 
+## Navigation: 
 - `cd {/path/to/folder}`: changes directory to specified path
 - `cd /`: goes to root directory
 - `cd ~`: goes to user directory
@@ -8,20 +8,20 @@
 - `pwd`: prints the path to the current working directory|
 
 
-#### Creating & Deleting:
+## Creating & Deleting:
 - `mkdir {foldername}`: makes a folder with the specified nam
 - `rm {filename}`: removes the specified file
 - `rm -r {foldername}`: removes the specified folder recursively
 - `touch {filename}`: creates the specified file|
 - `mv {filename} {new filename}`: renames the file/folder to the 2nd name
 
-#### Opening Files/Folders:
+## Opening Files/Folders:
 - `open {filename}`: opens the file with the default program
 - `open {filename} -a "{program name}"`: opens the file in the specified application
 - `open .`:  opens the current folder in finder
 - `open . -a "{program name}"` opens the folder in the specified application
 
-### Terminal Commands Different in Windows:
+## Terminal Commands Different in Windows:
 - dir - list files
 - echo > {filename} - create an empty file
 - del {filename} - remove a file

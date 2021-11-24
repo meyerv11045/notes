@@ -24,28 +24,4 @@
 
 ### Pi Camera
 - Watch out, static can kill it
-- FIX PI CAMERA DETECTION ERROR by enabling the I2C Interface in preferences --> raspberry pi configuration 
-
-# Quartus
-Software used for designing circuits and implementing them on a board such as the FPGA used in lab.
-
-## Project Structure
-- Digital systems lab folder/project
-- Within the folder each design follows the format `lab#design#.bdf`
-    -  `.bdf` stands for block design format
-
-## Simulating a Circuit
-- Create a new `University Program VWF` (vector waveform file)
-- Place in the project's directory
-- Setup scaling:
-    - Set end time to be 16 micro/nano seconds
-    - Set grid time to be 1 micro/nano seconds
-    - View -> Fit in Window
-- Insert all the input and output nodes
-    - Only ones that were compiled will show up
-- Edit -> Value -> Overwrite Clock (Ctrl + Alt + K) to set the period to 2 microseconds, 4 microseconds, etc. 
-    - This simulates counting and is setup manually
-    - can setup automatic counting by grouping inputs together
-- Simulation -> Run Functional Simulation
-    - Will create several new files and display the output waveform as readonly
-    - This is how you can verify your circuit worked correctly
+- FIX PI CAMERA DETECTION ERROR by enabling the I2C Interface in preferences --> raspberry pi configuration
