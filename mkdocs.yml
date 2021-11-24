@@ -20,6 +20,7 @@ nav:
     - 'Hardware': 'general/hardware.md'
     - 'Microservices': 'system_design/microservices.md'
     - 'Docker': 'system_design/docker.md'
+    - 'Behavior Trees': 'ai/behavior-trees.md'
   - Data Structures:
     - 'Overview': 'data_structures/overview.md'
     - 'Linked List': 'data_structures/linked-list.md'
@@ -49,6 +50,11 @@ nav:
       - 'Composite': 'software_design/patterns/composite.md'
       - 'Interpreter': 'software_design/patterns/interpreter.md'
       - 'Builder': 'software_design/patterns/builder.md'
+      - 'Visitor': 'software_design/patterns/visitor.md'
+      - 'Iterator': 'software_desgign/patterns/iterator.md'
+      - 'Bridge': 'software_design/patterns/bridge.md'
+      - 'Command': 'software_design/patterns/command.md'
+      - 'Factory': 'software_design/patterns/factory.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'
@@ -74,4 +80,3 @@ nav:
       - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
       - 'Joint Probability Distributions': 'math_science/prob_stats/joint-distributions.md'
       - 'Statistics': 'math_science/prob_stats/stats.md'
-      - 'Point Estimation': 'math_science/prob_stats/point-estimation.md'
