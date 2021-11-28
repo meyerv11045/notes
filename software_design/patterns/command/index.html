@@ -373,11 +373,23 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#motivation" class="nav-link">Motivation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#applicability" class="nav-link">Applicability</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#structure" class="nav-link">Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#participants" class="nav-link">Participants</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#collaborations" class="nav-link">Collaborations</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -389,6 +401,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#sample-code" class="nav-link">Sample Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -397,33 +417,112 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="command-pattern">Command Pattern</h1>
+<p>Also known as Action or Transaction </p>
 <h2 id="intent">Intent</h2>
-<p>Encapsulate the request for a service</p>
+<p>Encapsulate a request for a service as an object</p>
+<h2 id="motivation">Motivation</h2>
+<p>Part of an application that may issue a command (e.g. a button click) might not be able to execute the command itself (e.g. performing the action of the button click would be done by a different part of the application). The comand pattern allows commands to be created and passed around as objects so that a receiver/target with the proper scope can execute commands issued by any part of the application.</p>
 <h2 id="applicability">Applicability</h2>
 <ul>
 <li>To parameterize objects with an action to perform</li>
-<li>To specify, queue, and execute requests at different times</li>
-<li>For multilevel undo/redo</li>
+<li>To specify, queue, and execute requests at different times<ul>
+<li>Command object can have a lifetime independent of the original request so if the receiver/target can be stored indepedently of the caller, then command object can be transfered to a different process and executed there are the proper time</li>
+</ul>
+</li>
+<li>For multilevel undo/redo<ul>
+<li>The execute operation can store state for reversing its effects</li>
+</ul>
+</li>
+<li>Can log changes to be reapplied in case of a system crash</li>
 </ul>
 <h2 id="structure">Structure</h2>
 <p><img alt="" src="../../static/command.png" /></p>
+<h2 id="participants">Participants</h2>
+<ul>
+<li>Command<ul>
+<li>declares an interface for executing an operation</li>
+</ul>
+</li>
+<li>ConcreteCommand (ex: PasteCommand, OpenCommand)<ul>
+<li>defines a binding between a receiver object and an action</li>
+<li>implements Execute by invoking the corresponding operations on Target </li>
+</ul>
+</li>
+<li>Client (ex: Application)<ul>
+<li>Creates a ConcreteCommand object and sets its target</li>
+</ul>
+</li>
+<li>Invoker (ex: MenuItem)</li>
+<li>asks the command to carry out the request</li>
+<li>Receiver/Target (ex: Document, Application)</li>
+<li>knows how to perform the operations associated with carrying out a request (e.g. Document knows how to handle the paste command by adding the contents of the clipboard to the document)</li>
+<li>Any class may serve as a target/receiver</li>
+</ul>
+<p>The diagram below shows the interactions between the objects and how Command decouples the invoker from the receiver and the request it carries out
+<img alt="" src="../../static/command-interactions.png" /></p>
+<h2 id="collaborations">Collaborations</h2>
+<ul>
+<li>The client creates a ConcreteCommand object and specifies its receiver</li>
+<li>An Invoker object stores the ConcreteCommand object</li>
+<li>The invoker issues a request by calling <code>execute</code> on the command</li>
+<li>The ConcreteCommand object invokes operations on its receiver to carry out the request</li>
+</ul>
 <h2 id="consequences">Consequences</h2>
 <ul>
-<li>(+) Abstracts executor of a service</li>
+<li>(+) Decouple the object that invokes the operation from the one that knows how to perform it</li>
+<li>(+) Commands are first-class objects that can be manipulated and extended like any other object</li>
+<li>(+) Can assemble commands into a composite command (e.g macros)</li>
+<li>(+) Can easily add new commands</li>
 <li>(+) Supports arbitrary-level undo/redo</li>
-<li>(+) Composition yields macro-commands</li>
 <li>(-) May result in lots of trivial command subclasses --&gt; doesn't scale well to hundreds or thousands of commands</li>
 <li>(-) Excessive memory may be needed to support long time horizons of undo/redo operations</li>
 </ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
-<li>Handling hysteresis</li>
-<li>Supporting transactions</li>
+<li>Supporting undo and redo requires a ConcreteCommand to store additional state<ul>
+<li>Possible state: The receiver, thearguments to the operation, and/or original values in the receiver that changed due to the command</li>
 <li>Place each executed command onto a stack <ul>
 <li>Each command has the required state to restore a previous version of the application (the state can be light or heavy depending on the application)</li>
 <li>Popping from the stack restores other versions of the application</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>Handling hysteresis<ul>
+<li>Want to watch out for the accumulation of error in the undo/redo process that causes the application's state to diverge from its original value</li>
+</ul>
+</li>
+<li>The pattern can be used to support transactions</li>
+</ul>
+<h2 id="sample-code">Sample Code</h2>
+<pre><code class="language-c++">class Command {
+public:
+    virtual ~Command();
+    virtual void execute() = 0;
+protected:
+    Command();
+}
+</code></pre>
+<pre><code class="language-c++">class ConcreteCommand : public Command {
+public:
+    ConcreteCommand(Client*);
+    virtual void execute();
+
+private:
+    Target* _target;
+}
+
+ConcreteCommand::ConcreteCommand(Target* target) : _target(target)  {}
+
+ConcreteCommand::execute() {
+    _target-&gt;doSomething();
+}
+</code></pre>
+<h2 id="related-patterns">Related Patterns</h2>
+<ul>
+<li>Composite pattern can be used to implement MacroCommands</li>
+<li>A Memento can keep state the command requires to undo its effect</li>
+<li>A command that must be copied before being placed on the history list acts as a prototype</li>
 </ul></div>
             </div>
         </div>

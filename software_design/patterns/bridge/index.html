@@ -373,11 +373,23 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#motivation" class="nav-link">Motivation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#applicability" class="nav-link">Applicability</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#structure" class="nav-link">Structure</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#participants" class="nav-link">Participants</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#collaborations" class="nav-link">Collaborations</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -389,6 +401,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#sample-code" class="nav-link">Sample Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -397,26 +417,98 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="bridge-pattern">Bridge Pattern</h1>
+<p>Also known as Handle/Body</p>
 <h2 id="intent">Intent</h2>
-<p>Separate a logical abstraction interface from its physical implementation(s)</p>
+<p>Decouple an abstraction interface from its physical implementation(s) so that the two can vary independently</p>
+<h2 id="motivation">Motivation</h2>
+<p>When an abstraction can have multiple implementations, a common approach is to use inheritance. An abstract class defines the interface to the abstraction and the concrete subclasses implement it in different ways. However, using inheritance is not always the best solution since it can be cumbersome to modify, extend, and reuse abstractions and implementations independently.</p>
+<p>Bridge pattern addresses the problems of strict inheritance by putting the abstract interface and the implmentation in their own class hierarchies. The relationship between the abstraction and the implementation is known as the bridge.</p>
 <h2 id="applicability">Applicability</h2>
-<ul>
-<li>When interface and implementation should vary independently</li>
-<li>Require a uniform interface to interchangeable class hierarchies</li>
-</ul>
+<p>Use the bridge pattern when:
+- You want to avoid permanent binding between an abstraction and its implementation
+    - e.g. when the implementation must be selected/switched at runtime
+- Both the abstractions and their implementations should be extensible by subclassing
+- Changes in the implementation should have no impact on the abstraction interface and client code that uses the interface
+- You need a uniform interface to interchangeable class hierarchies</p>
 <h2 id="structure">Structure</h2>
-<p><img alt="" src="../../static/visitor.png" /></p>
+<p><img alt="" src="../../static/bridge.png" /></p>
+<h2 id="participants">Participants</h2>
+<ul>
+<li>Abstraction<ul>
+<li>defines the abstraction's interface</li>
+<li>maintains a reference to an object of type Implementor</li>
+</ul>
+</li>
+<li>RefinedAbstraction<ul>
+<li>Extends the interface defined by Abstraction</li>
+</ul>
+</li>
+<li>Implementor<ul>
+<li>defines the interface for implementation classes</li>
+<li>does not have to correspond exactly to Abstraction's interface (can be quite different)</li>
+<li>Implementor interface provides only primitive operations and Abstraction defines higher-level operations based on these primitives</li>
+</ul>
+</li>
+<li>ConcreteImplementor<ul>
+<li>implements the Implementor interface and defines its concrete implementation</li>
+</ul>
+</li>
+</ul>
+<h2 id="collaborations">Collaborations</h2>
+<p>Abstraction forwards client requests to its Implementor object</p>
 <h2 id="consequences">Consequences</h2>
 <ul>
-<li>(+) Abstract interface and implementation are independent</li>
+<li>(+) Decoupled abstract interface and implementation<ul>
 <li>(+) Implementations can vary dynamically (i.e. at runtime)</li>
+<li>(+) Eliminates compile-time dependencies on the implementation (e.g. changing implementation class doesn't require recompiling abstraction class and its clients)</li>
+</ul>
+</li>
+<li>(+) Improved extensibility- can extend the Abstraction and Implementor hierarchies independently</li>
+<li>(+) Hiding implementation details from clients- you can shield clients from implmentation details</li>
 <li>(+) Can be used transparently with STL algorithms and containers</li>
-<li>(-) One-size-fits all abstraction and implementor interfaces</li>
 </ul>
 <h2 id="implementation">Implementation</h2>
+<p>The following implementation issues should be considered when applying the bridge pattern:</p>
 <ul>
-<li>Sharing implementors and reference counting</li>
-<li>Creating the right implementor for the use case (often factories are used)</li>
+<li>Creating an abstract implementor class is unnecessary when there is only one implementation</li>
+<li>If sharing implementors a form of reference counting needs to be implemented</li>
+<li>Determining the right implementor to create for the use case <ul>
+<li>Decision can be made in constructor based on passed in params</li>
+<li>Decision can also be made by outside object such as a factory</li>
+</ul>
+</li>
+</ul>
+<h2 id="sample-code">Sample Code</h2>
+<pre><code class="language-c++">class Abstraction {
+public:
+    Abstraction();
+
+    virtual void doSomething();
+    ... 
+
+protected:
+    Implementor* getImp();
+
+private:
+    Implementor* _imp;
+}
+</code></pre>
+<pre><code class="language-c++">class Implementor {
+public:
+    virtual void someFunc();
+    ...
+protected:
+    Implementor();
+}
+
+</code></pre>
+<h2 id="related-patterns">Related Patterns</h2>
+<ul>
+<li>an abstract factory can create and configure a bridge</li>
+<li>the adapter pattern is geared toward making unrelated classes work together (usually applied to systems after they are designed)<ul>
+<li>bridge is used up-front in a design</li>
+</ul>
+</li>
 </ul></div>
             </div>
         </div>
