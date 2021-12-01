@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/patterns/factory/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/patterns/state/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Factory - The Notebook</title>
+        <title>State Pattern - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -103,7 +103,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -214,7 +214,7 @@
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Factory</a>
+    <a href="../factory/" class="dropdown-item">Factory</a>
 </li>
     </ul>
   </li>
@@ -339,16 +339,6 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../command/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../../../databases/dbms/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
                     </ul>
                 </div>
             </div>
@@ -367,7 +357,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#factory-method-pattern" class="nav-link">Factory Method Pattern</a>
+            <li class="nav-item" data-level="1"><a href="#state-pattern" class="nav-link">State Pattern</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#intent" class="nav-link">Intent</a>
               <ul class="nav flex-column">
@@ -397,44 +387,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#known-uses" class="nav-link">Known Uses</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="1"><a href="#abstract-factory-pattern" class="nav-link">Abstract Factory Pattern</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#intent_1" class="nav-link">Intent</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#applicability_1" class="nav-link">Applicability</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#structure_1" class="nav-link">Structure</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#participants_1" class="nav-link">Participants</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#collaborations_1" class="nav-link">Collaborations</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#consequences_1" class="nav-link">Consequences</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#implementation_1" class="nav-link">Implementation</a>
+            <li class="nav-item" data-level="2"><a href="#finite-state-machine" class="nav-link">Finite State Machine</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -445,125 +402,75 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="factory-method-pattern">Factory Method Pattern</h1>
+<h1 id="state-pattern">State Pattern</h1>
 <h2 id="intent">Intent</h2>
-<p>Provide an interface for creating an object, but let subclasses decide which class to instantiate.</p>
+<p>Allow an object to alter its behavior when its internal state changes. The object will appear to change its class.</p>
 <h2 id="applicability">Applicability</h2>
 <ul>
-<li>When a class cannot anticipate the objects it must create </li>
-<li>When a class wants its subclasses to specify the objects it creates</li>
-<li>When a standard interface for creating objects is useful in enforcing rules on how objects are created</li>
+<li>When an object's behavior depends on its state, and it must change its behavior at runtime depending on that state</li>
+<li>When several operatio onal 
+structure that depends on the object's state</li>
+<li>When its beneficial to treat the object's state as an object that can vary independently of everything else </li>
 </ul>
 <h2 id="structure">Structure</h2>
-<p><img alt="" src="../../static/factory.png" /></p>
+<p><img alt="" src="../../static/state.png" /></p>
 <h2 id="participants">Participants</h2>
 <ul>
-<li>Product (ex: Document)<ul>
-<li>defines the interface of objects the factory method cretes</li>
+<li>Context (ex: TCPConnection)<ul>
+<li>defines the interface of interest to clients</li>
+<li>maintains an instance of a ConcreteState subclass that defines the current state</li>
 </ul>
 </li>
-<li>ConcreteProduct (ex: MyDocument)<ul>
-<li>implements the product interface</li>
+<li>State (ex: TCPState)<ul>
+<li>defines an interface the behavior associated with a particular state of the Context</li>
 </ul>
 </li>
-<li>Creator (Ex: Application)<ul>
-<li>declares the factory method which returns an object of type Product (may also provide default implementation that returns a default ConcreteProduct)</li>
-<li>may call the factory method to create a Product object</li>
-</ul>
-</li>
-<li>ConcreteCreator (ex: MyApplication)<ul>
-<li>overrides the factory method to return an instance of a ConcreteProduct</li>
+<li>ConcreteState subclasses (ex: TCPEstablished, TCPListen, TCPClosed)<ul>
+<li>each subclass implments a behavior associated with a state of the context</li>
 </ul>
 </li>
 </ul>
 <h2 id="collaborations">Collaborations</h2>
 <ul>
-<li>Creator relies on its subclasses to define the factory method so that it returns the appropriate ConcreteProduct instance</li>
+<li>Context delegates state-specific request to the curent ConcreteState object</li>
+<li>A context may pass itsself as an argument to the State object handling the request so that the State object can access the context if necessary</li>
+<li>Context is the primary interface for clients so they don't have to deal with State objects directly</li>
+<li>Either Context or the ConcreteState subclasses can decide which state succeeds another and under what circumstances</li>
 </ul>
 <h2 id="consequences">Consequences</h2>
 <ul>
-<li>(+) Client code becomes more flexible since we avoid specifying the class name of the concerete class <ul>
-<li>Resilient to adding more objects or changing how objects are made</li>
-</ul>
-</li>
-<li>(+) Client is only dependent on the interface<ul>
-<li>Remove burden of knowing how to create things from the user and give user a simple interface for making new objects</li>
-</ul>
-</li>
-<li>(-) Construction of objects requires one additional class in some cases</li>
+<li>(+) Localizes state-specific behavior and partitions behavior for different states</li>
+<li>(+) Makes state transitions explicit (also protects context from incosistent states)</li>
+<li>(+) State objects can be shared if they have no instance variables</li>
+<li>(-) Can result in many subclasses that are hard to understand </li>
 </ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
-<li>2 choices:<ul>
-<li>1) Creator class is abstract and doesn't implement creation methods meaning it must be subclassed</li>
-<li>2) Creator class is concrete and provides a default implementation meaning it can optionally be subclassed</li>
+<li>Who defines the state transitions? Context or the ConcreteState subclasses</li>
+<li>Consider using table-based alternatives</li>
+<li>Creating and destroying state objects: do you create and destroy them as needed or create them ahead of time and never destroy<ul>
+<li>1st option preferable when contexts change state frequently and it is unknown what states will be entered</li>
+<li>2nd option preferable when state changes occur rapidly and want to avoid overhead of repeated creation/deletion</li>
 </ul>
 </li>
-<li>Can create multiple types of products by parameterizing the factory method</li>
-<li></li>
-<li>Should be parameterized if a factory method needs to be able to create different variants</li>
-</ul>
-<h2 id="known-uses">Known Uses</h2>
-<ul>
-<li>All STL containers are factories</li>
-<li>Database connectors (a standard way of creating a database connection that only has to be changed in one place instead of across the application)</li>
 </ul>
 <h2 id="related-patterns">Related Patterns</h2>
 <ul>
-<li>Abstract Factory is often implemented with factory methods</li>
+<li>The flyweight patterns explains when and how State objects can be shared</li>
+<li>State objects are often singletons</li>
 </ul>
-<h1 id="abstract-factory-pattern">Abstract Factory Pattern</h1>
-<h2 id="intent_1">Intent</h2>
-<p>Provide an interface for creating families of related or dependent objects without specifying their concrete classes</p>
-<h2 id="applicability_1">Applicability</h2>
+<h2 id="finite-state-machine">Finite State Machine</h2>
 <ul>
-<li>When a system should be independent of how its products are created, composed, and represented</li>
-<li>When a system should be configured with one of multiple families of products</li>
-<li>When a family of related product objects is designed to be used together and you need to enforce this constraint</li>
-<li>When you want to provide a class library of products without revealing their implementations</li>
-</ul>
-<h2 id="structure_1">Structure</h2>
-<p><img alt="" src="../../static/abstract-factory.png" /></p>
-<h2 id="participants_1">Participants</h2>
-<ul>
-<li>AbstractFactory<ul>
-<li>declares an interface for operations that create abstract product objects</li>
+<li>A state is a distinguishable, disjoint (one state at a time), condition that persists for a significant period of time (FSMs spend all their time in states)</li>
+<li>A transition is the changing from one state to another<ul>
+<li>represent responses to events (from external or internal sources)</li>
 </ul>
 </li>
-<li>ConcreteFactory<ul>
-<li>implements the operations to create concrete product objects</li>
+<li>A finite state machine is a model of computation with state behavior defined by a set of states and set of transitions</li>
+<li>Useful for mathematically proving safety in critical systems<ul>
+<li>Ex: add states that are unsafe and prove they can't be reached</li>
 </ul>
 </li>
-<li>Abstract Product<ul>
-<li>declares an interface for a type of product object</li>
-</ul>
-</li>
-<li>Concrete Product<ul>
-<li>implements the AbstractProduct interface and defines a product object to be created by the corresponding ConcreteFactory</li>
-</ul>
-</li>
-<li>Client<ul>
-<li>uses only the interfaces defined by AbstractFactory and AbstractProduct classes</li>
-</ul>
-</li>
-</ul>
-<h2 id="collaborations_1">Collaborations</h2>
-<ul>
-<li>Normally a single instance of a ConcreteFactory is created at runtime</li>
-<li>AbstractFactory defers creation of product objects to its ConcreteFactory subclasses </li>
-</ul>
-<h2 id="consequences_1">Consequences</h2>
-<ul>
-<li>(+) Flexibility: remove type/subclass dependencies from clients</li>
-<li>(+) Abstraction and semantic checking: hides product's composition</li>
-<li>(-) Hard to extend interface to create new products</li>
-</ul>
-<h2 id="implementation_1">Implementation</h2>
-<ul>
-<li>Factories are usually best implemented as a singleton</li>
-<li>Parameterization as a way of controlling the interface's size</li>
-<li>Configuration with Prototypes (i.e. determines who creates the factories)</li>
-<li>Essentially groups of factory methods</li>
 </ul></div>
             </div>
         </div>
