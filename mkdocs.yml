@@ -56,6 +56,7 @@ nav:
       - 'Command': 'software_design/patterns/command.md'
       - 'Factory': 'software_design/patterns/factory.md'
       - 'State': 'software_design/patterns/state.md'
+      - 'Reactor': 'software_design/patterns/reactor.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'
@@ -72,7 +73,7 @@ nav:
       - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
     - HTML & CSS:
       - 'Sass': 'web_dev/html-css/sass.md'
-  - Math & Science:
+  - Classes:
     - 'The Brain': 'math_science/brain.md'
     - Physics: 
       - 'Current & Resistance': 'math_science/physics/ch25.md'
@@ -81,3 +82,8 @@ nav:
       - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
       - 'Joint Probability Distributions': 'math_science/prob_stats/joint-distributions.md'
       - 'Statistics': 'math_science/prob_stats/stats.md'
+    - Digital Systems:
+      - 'Assembly': 'dig_sys/ch6-assembly.md'
+      - 'Microarchitecture': 'dig_sys/ch7-processor.md'
+      - 'Memory Systems': 'dig_sys/ch8-mem-sys.md'
+      - 'IO Systems': 'dig_sys/ch9-io-sys.md'
