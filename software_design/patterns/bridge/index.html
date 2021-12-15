@@ -220,6 +220,10 @@
 <li>
     <a href="../state/" class="dropdown-item">State</a>
 </li>
+            
+<li>
+    <a href="../reactor/" class="dropdown-item">Reactor</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -295,7 +299,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Math & Science <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Classes <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -330,6 +334,28 @@
             
 <li>
     <a href="../../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Digital Systems</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../dig_sys/ch6-assembly/" class="dropdown-item">Assembly</a>
+</li>
+            
+<li>
+    <a href="../../../dig_sys/ch7-processor/" class="dropdown-item">Microarchitecture</a>
+</li>
+            
+<li>
+    <a href="../../../dig_sys/ch8-mem-sys/" class="dropdown-item">Memory Systems</a>
+</li>
+            
+<li>
+    <a href="../../../dig_sys/ch9-io-sys/" class="dropdown-item">IO Systems</a>
 </li>
     </ul>
   </li>
@@ -428,12 +454,16 @@
 <p>When an abstraction can have multiple implementations, a common approach is to use inheritance. An abstract class defines the interface to the abstraction and the concrete subclasses implement it in different ways. However, using inheritance is not always the best solution since it can be cumbersome to modify, extend, and reuse abstractions and implementations independently.</p>
 <p>Bridge pattern addresses the problems of strict inheritance by putting the abstract interface and the implmentation in their own class hierarchies. The relationship between the abstraction and the implementation is known as the bridge.</p>
 <h2 id="applicability">Applicability</h2>
-<p>Use the bridge pattern when:
-- You want to avoid permanent binding between an abstraction and its implementation
-    - e.g. when the implementation must be selected/switched at runtime
-- Both the abstractions and their implementations should be extensible by subclassing
-- Changes in the implementation should have no impact on the abstraction interface and client code that uses the interface
-- You need a uniform interface to interchangeable class hierarchies</p>
+<p>Use the bridge pattern when:</p>
+<ul>
+<li>You want to avoid permanent binding between an abstraction and its implementation<ul>
+<li>e.g. when the implementation must be selected/switched at runtime</li>
+</ul>
+</li>
+<li>Both the abstractions and their implementations should be extensible by subclassing</li>
+<li>Changes in the implementation should have no impact on the abstraction interface and client code that uses the interface</li>
+<li>You need a uniform interface to interchangeable class hierarchies</li>
+</ul>
 <h2 id="structure">Structure</h2>
 <p><img alt="" src="../../static/bridge.png" /></p>
 <h2 id="participants">Participants</h2>

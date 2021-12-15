@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/patterns/template/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Pattern - The Notebook</title>
+        <title>Template Pattern - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -220,6 +220,10 @@
 <li>
     <a href="../state/" class="dropdown-item">State</a>
 </li>
+            
+<li>
+    <a href="../reactor/" class="dropdown-item">Reactor</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -295,7 +299,7 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Math & Science <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Classes <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -333,6 +337,28 @@
 </li>
     </ul>
   </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Digital Systems</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../../dig_sys/ch6-assembly/" class="dropdown-item">Assembly</a>
+</li>
+            
+<li>
+    <a href="../../../dig_sys/ch7-processor/" class="dropdown-item">Microarchitecture</a>
+</li>
+            
+<li>
+    <a href="../../../dig_sys/ch8-mem-sys/" class="dropdown-item">Memory Systems</a>
+</li>
+            
+<li>
+    <a href="../../../dig_sys/ch9-io-sys/" class="dropdown-item">IO Systems</a>
+</li>
+    </ul>
+  </li>
                                 </ul>
                             </li>
                         </ul>
@@ -361,7 +387,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#pattern" class="nav-link">Pattern</a>
+            <li class="nav-item" data-level="1"><a href="#template-pattern" class="nav-link">Template Pattern</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#intent" class="nav-link">Intent</a>
               <ul class="nav flex-column">
@@ -410,7 +436,7 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="pattern">Pattern</h1>
+<h1 id="template-pattern">Template Pattern</h1>
 <p>any aliases this pattern is known by</p>
 <h2 id="intent">Intent</h2>
 <p>short description of the pattern and its purpose</p>
@@ -428,7 +454,9 @@
 <p>pitfalls, hints, techiques, plus language dependent issues</p>
 <h2 id="sample-code">Sample Code</h2>
 <h2 id="known-uses">Known Uses</h2>
-<h2 id="related-patterns">Related Patterns</h2></div>
+<h2 id="related-patterns">Related Patterns</h2>
+<p>Main class runs the alogrithm
+Subclasses override specific methods for variability. Polymorphism allows the main class to call the virtual functions and the appropriate call to a subclass is made</p></div>
             </div>
         </div>
 

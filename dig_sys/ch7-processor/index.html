@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/dig_sys/ch7-processor/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Microarchitecture - The Notebook</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">The Notebook</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+</li>
+                                    
+<li>
+    <a href="../../general/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../general/python/" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="../../general/macos/" class="dropdown-item">MacOS</a>
+</li>
+                                    
+<li>
+    <a href="../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
+</li>
+                                    
+<li>
+    <a href="../../general/regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
+</li>
+                                    
+<li>
+    <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                    
+<li>
+    <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/big3/" class="dropdown-item">The Big 3</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/exceptions/" class="dropdown-item">Exception Handling</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/templates/" class="dropdown-item">Templates</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/inheritance/" class="dropdown-item">Inheritance</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/iterators/" class="dropdown-item">Iterators</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/stl/" class="dropdown-item">STL</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/functors/" class="dropdown-item">Functors</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/lambda/" class="dropdown-item">Lambda Functions</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/misc/" class="dropdown-item">Misc</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/patterns/patterns/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/adapter/" class="dropdown-item">Adapter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/observer/" class="dropdown-item">Observer</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/singleton/" class="dropdown-item">Singleton</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/composite/" class="dropdown-item">Composite</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/interpreter/" class="dropdown-item">Interpreter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/visitor/" class="dropdown-item">Visitor</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/iterator/" class="dropdown-item">Iterator</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/bridge/" class="dropdown-item">Bridge</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/command/" class="dropdown-item">Command</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/factory/" class="dropdown-item">Factory</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/state/" class="dropdown-item">State</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/reactor/" class="dropdown-item">Reactor</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+                                    
+<li>
+    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+</li>
+                                    
+<li>
+    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Dev <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/js/basics/" class="dropdown-item">Basics</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/objects/" class="dropdown-item">Objects</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/modules/" class="dropdown-item">Modules</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Classes <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../math_science/brain/" class="dropdown-item">The Brain</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Physics</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Prob & Stats</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
+</li>
+            
+<li>
+    <a href="../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
+</li>
+            
+<li>
+    <a href="../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+</li>
+            
+<li>
+    <a href="../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Digital Systems</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../ch6-assembly/" class="dropdown-item">Assembly</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Microarchitecture</a>
+</li>
+            
+<li>
+    <a href="../ch8-mem-sys/" class="dropdown-item">Memory Systems</a>
+</li>
+            
+<li>
+    <a href="../ch9-io-sys/" class="dropdown-item">IO Systems</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ch6-assembly/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../ch8-mem-sys/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#microarchitecture" class="nav-link">Microarchitecture</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#architectural-state-and-instruction-set" class="nav-link">Architectural State and Instruction Set</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#design-process" class="nav-link">Design Process</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#state-elements" class="nav-link">State Elements</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#microarchitectures" class="nav-link">Microarchitectures</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#performance-analysis" class="nav-link">Performance Analysis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#single-cycle-processor" class="nav-link">Single-Cycle Processor</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="microarchitecture">Microarchitecture</h1>
+<ul>
+<li><strong>Microarchitecture</strong>- the connection between logic and architecture<ul>
+<li>specific arrangement of registers, ALUs, FSMs, memories, etc. </li>
+</ul>
+</li>
+<li>A particular architecture like ARM can have many different microarchitectures, each with their own trade-offs on performance, cost, and complexity </li>
+</ul>
+<h2 id="architectural-state-and-instruction-set">Architectural State and Instruction Set</h2>
+<ul>
+<li>A computer architecture is defined by its instruction set and architectural state (e.g. 16, 32-bit registers and status register for ARM processor)</li>
+<li>Based on current architectural state ,the processor executes an instruction with a set of data to produce a new state</li>
+</ul>
+<p>We will consider only the following instructions for simplicity:</p>
+<ul>
+<li>Data Processing: <code>ADD</code>, <code>SUB</code>, <code>AND</code>, <code>ORR</code> (no shifts)</li>
+<li>Memory: <code>LDR</code> and <code>STR</code> </li>
+<li>Branching: <code>B</code></li>
+</ul>
+<h2 id="design-process">Design Process</h2>
+<ul>
+<li>Split microarchitectuers into two interacting parts:<ul>
+<li>1) Datapath- operates on words of data and contains structures like memories, registers, ALUs, and muxes<ul>
+<li>32-bit arch --&gt; 32-bit datapath</li>
+</ul>
+</li>
+<li>2) Control Unit- receives current instruction from the datapath and tells the datapath how to execute the instruction</li>
+</ul>
+</li>
+<li>
+<p>Signals Produced by control unit:</p>
+<ul>
+<li>mux select</li>
+<li>register enable</li>
+<li>memory write</li>
+</ul>
+</li>
+<li>
+<p>start with hardware containing state elements and add in combinational logic btw the state elements to compute new state based on current state </p>
+</li>
+<li>memory is usually split into 2 for instructionsa and data</li>
+</ul>
+<h2 id="state-elements">State Elements</h2>
+<p><img alt="" src="../static/state-elems.png" /></p>
+<ul>
+<li>Status Register: contains the 4 flags from the ALU</li>
+<li>Program Counter:<ul>
+<li><code>PC'</code> input is the address of the next instruction</li>
+<li><code>PC</code> output is address of the current instructon</li>
+</ul>
+</li>
+<li>Instruction Memory:<ul>
+<li><code>A</code> input is the address of the 32-bit instruction</li>
+<li><code>RD</code> output is the 32-bit data (instruction) at the input address</li>
+</ul>
+</li>
+<li>Register File: holds registers R0-R14 <ul>
+<li>Read Ports:<ul>
+<li><code>A1</code> and <code>A2</code> inputs are the 4-bit addresses of one of the 16 registers (each specifies a source operand)</li>
+<li><code>RD1</code> and <code>RD2</code> outputs are the 32-bit register values for the input registers</li>
+</ul>
+</li>
+<li>Write Port:<ul>
+<li><code>A3</code> input is a 4-bit register address</li>
+<li><code>WD3</code> input is 32-bit data to be written</li>
+<li><code>WE3</code> input specifies whether to write (write enable)</li>
+<li>If write is asserted, the data is written to the register specified by <code>A3</code> on the rising edge of the clock</li>
+</ul>
+</li>
+<li><code>R15</code> is for managing the relationship with the PC<ul>
+<li>read from here should always be PC + 8</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Data Memory:</p>
+<ul>
+<li><code>WD</code> input is the 32-bit data to write to memory</li>
+<li><code>WE</code> input is whether write is enabled (writes on rising edge of the clock)</li>
+<li><code>A</code> input is the 32-bit address to read from (if <code>WE = 0</code> ) or write to (if <code>WE = 1</code>)</li>
+<li><code>RD</code> output is the 32-bit data read from the specified memory address<ul>
+<li>only has a value if <code>WE = 0</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Instruction memory, register file, and data memory are <em>read</em> combinationally (i.e. no clock is involved)</p>
+</li>
+<li>The clock is used in the register file and data memory for controlling writes to only occur on the rising edge (i.e. state only changes on rising edge of clock)</li>
+<li>This makes the microprocessor a synchronous sequential circuit (i.e. microprocessor is a giant FSM or collection of many smaller FSMs)</li>
+</ul>
+<h2 id="microarchitectures">Microarchitectures</h2>
+<ul>
+<li>Single-cycled, multicycleed, and pipelined differ in how the state elements are connected together and in the amount of nonarchitectural state</li>
+<li><strong>Single-Cycled</strong>- executes an entire instruction in one cycle<ul>
+<li>cycle time limited by slowest instruction</li>
+<li>no nonarchitectural state required</li>
+</ul>
+</li>
+<li><strong>Multicycle</strong>- executes instructions in a series of shorter cycles<ul>
+<li>Simpler instructions execute in fewer cycles than more complex one</li>
+<li>Several nonarchitectural state registers to hold intermediate results</li>
+<li>Cheaper b/c it reuses expensive harware like adders and memories</li>
+<li>Executes on instruction at a time, but it takes multiple clock cycles</li>
+</ul>
+</li>
+<li><strong>Pipelined</strong>- executes several instructions simulataneously<ul>
+<li>Requires extra logic for handling dependencies between simultaneously executing instructions</li>
+<li>Requires nonarchitecutral state registers</li>
+<li>Use seperate instruction and data caches since they must access instructions and data in the same cycle</li>
+<li>Used by all commercial high-performance processors</li>
+</ul>
+</li>
+</ul>
+<h2 id="performance-analysis">Performance Analysis</h2>
+<ul>
+<li>Clock frequency and number of cores are unreliable methods of analyzing a processor since certain processors can do more work in a cycle than others</li>
+<li>Execution time on benchmark programs is a more reliable way of measuring performance</li>
+</ul>
+<p><img alt="" src="../static/exe-time.png" /></p>
+<ul>
+<li>The number of instructions in a program can vary depending on the microarchitecture and the cleverness of the programmer</li>
+<li>Cycles per instruction (CPI)- # clock cycles required to execute an average instruction<ul>
+<li>Affected by memory system when its not ideal and there are misses</li>
+</ul>
+</li>
+</ul>
+<h2 id="single-cycle-processor">Single-Cycle Processor</h2>
+<p><img alt="" src="../static/single-cycle-proc.png" /></p>
+<ul>
+<li>Next instruction is 32 bits or 4 bytes so we need to add 4 to the current instruction PC to get the next instruction <code>PC'</code> </li>
+<li>The extend block extends the 12 bits from the src2 component to get a properly extended 32 bit result which is send to the ALU with the output from the register file's read output port <ul>
+<li>Result of ALU is the memory address we want to read from (the data at outputby the data memory is then passed to the write port in the register file )</li>
+</ul>
+</li>
+</ul>
+<p>Example:</p>
+<ul>
+<li><code>LDR R1, [R2, #5]</code> requires:<ul>
+<li>read value from R2 (should be an address)</li>
+<li>add offset to it</li>
+<li>read whats at the resulting address</li>
+<li>write the data into R1 </li>
+</ul>
+</li>
+</ul>
+<h3 id="controller">Controller</h3>
+<ul>
+<li>Combinational logic responsible for calculating the control signals based on the current instruction and current state of the system</li>
+<li>Inputs:</li>
+<li>Different parts of the instruction</li>
+<li>The ALU status flags</li>
+<li>Outputs:</li>
+<li>8 control signals that control the flow of data in the datapath</li>
+</ul>
+<h4 id="control-signals">Control Signals</h4>
+<ul>
+<li><code>PCSrc</code> decides where to get next instruction from<ul>
+<li><code>1</code>: ReadData (result of a write to R15 or a branch instruction)</li>
+<li><code>0</code>: PC + 4 (next instruction)</li>
+</ul>
+</li>
+<li><code>RegSrc</code>: two bits which controls two muxes that select where the register addresss of the register file should come from<ul>
+<li>MSB decides whether the 1st register address should come from instruction bits or from the value 15 to support operations with R15</li>
+<li>LSB decides which part of the instruction bits the 2nd register address should come from</li>
+</ul>
+</li>
+<li><code>RegWrite</code> specifies whether we are writing into a register</li>
+<li><code>ImmSrc</code> is two bits that control what kind of immediate extension needed</li>
+<li>unsigned 8 bit, unsigned 12 bit or signed 24 bit immediate to 32-bit immediate</li>
+<li><code>ALUSrc</code> selects where the 2nd ALU argumnet should come from<ul>
+<li>either a register or the result of an immediate extension</li>
+</ul>
+</li>
+<li><code>ALUControl</code> selects which operation the ALU should perform</li>
+<li><code>MemWrite</code> specifies whether or not we are writing our data into memory</li>
+<li><code>MemToReg</code> selects what results should be passed along<ul>
+<li>either something read from memory or the ALU's result</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
