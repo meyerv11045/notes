@@ -4,32 +4,37 @@
 Separate the construction of a complex object from its representation so that the same construction process can create different representations
 
 ## Applicability
-- Need to isolate knowledge of the creation of a complex object from its part
-- Need to allow differrent implementations/interfaces of an object's parts
+- When the algorthim for creating a complex object should be independent of the parts that make up the object 
+- When the construction process must allow different representations for the object that's constructed
     - Ex: multiplication in an expression tree can also be represented as repeated addtion 
 
 ## Structure
-graphical representation of pattern using modified UML notation
-
-Director will command each builder to construct its alternate representation 
-
-Builders have a method the director can call that will return an equivalent product
+![](../static/builder.png)
 
 ## Participants
-participatnig classes/objects and their responsibilities
+- *Builder*-specifies an abstract interface for creating parts of a product object
+- *ConcreteBuilder*- constructs and assembles parts of the product by implementing the Builder interface
+- *Director*- constructs an object using the Builder interface
+- *Product*- represents the complex object under construction 
 
 ## Collaborations
-How participants cooperate to carry out their responsibilities
+- Client creates the Director object and configures it with the desired builder object
+- Director notifies the builder whenever a part of the product should be built
+- Builder handles requests from the director and adds parts to the product
+  - Client retrieves the product from the builder
+
+![](../static/builder-interaction.png)
 
 ## Consequences
-- (+) Can vary a product's internal representation
-- (+) Isolates code for construction and representation\
+- (+) Can vary a product's internal representation (all you need to do is define a new builder)
+- (+) Isolates code for construction and representation
 - (+) Finer control over the construction process
 - (-) May involve lots of classes
 
 ## Implementation
-pitfalls, hints, techiques, plus language dependent issues
+- Usually no abstract class for products since they each may differ so much in their representation 
 
-## Sample Code
+## Related Patterns
 
-## Known Uses
+- Abstract Factory also creates complex objects but the difference is that builder pattern focuses on creting the complex object step by step while the abstract factory's focus is on families of product objects 
+- Builder often builds a Composite

@@ -11,7 +11,17 @@ Ensure a class only ever has one instance and provide a global point of access
 
 ![singleton](../static/singleton.png)
 
+## Participants
+
+- *Singleton*- defines an Instance operation (static member function) that lets clients access its unique instance
+
+
+## Collaborations
+
+- Clients access a singleton instance soley though the singleton's Instance operation
+
 ## Consequences
+
 - (+) Reduces namespace pollution
 - (+) easy to change and allow multiple instances
 - (+) allow extension by subclassing
@@ -65,3 +75,7 @@ int main() {
 ## Known Uses
 - Hardware interface access
 - Logger: so everything is logged to same place in correct order using access protections
+
+## Related Patterns
+
+- Many patterns such as the Abstract Factory, Builder, and Prototype pattern can be implemented using the Singleton

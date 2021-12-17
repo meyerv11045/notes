@@ -1,4 +1,5 @@
 # Adapter Pattern
+Also known as wrapper.
 
 ## Intent
 - Convert a class interface into an interface expected by the cleints
@@ -13,8 +14,14 @@
 ![Adapter UML](../static/adapter.png)
 
 ## Participants
-- *Adaptees* are the class interfaces being given a new interface 
-- *Target Interface* is the new interface for the client to use
+
+- *Target*- the domain specific interface a client uses
+- *Adaptee*- the existing interface that needs adapting
+- *Adapter*- class that adapts the existing interface to the target interface
+
+## Collaborations
+
+- Clients will call operations on an Adapter instance which in turn calls adaptee operations to carry out the request
 
 ## Consequences
 - (+) A single adapter can work with multiple adaptees
@@ -24,7 +31,7 @@
 - Considerations:
     - How much adapting to do?
     - Focus on a good client experience
-    - Pluggable adapters- dynamicly create and change different types of adapters at runtime
+    - Pluggable adapters- dynamically create and change different types of adapters at runtime
 
 ## Sample Code
 
@@ -120,9 +127,8 @@ Gamma::dtor
 - (+) Easier client experience since they don't need to know the mapping (the adapter takes care of it)
 - (-) Have to modify the adapter to include any new adaptees 
     - Usually a good tradeoff since main focus is better client experience
-  
-``` c++
 
+``` c++
 template <typename T> class BetterAdapter : public TargetInterface {
 public:
   explicit BetterAdapter(T *obj) : object(obj) {};
@@ -240,3 +246,8 @@ Gamma::dtor
 ## Known Uses
 - New interfaces to legacy code
 - Stack and Queue in the STL are adapters of vector and list class
+
+## Related Patterns
+
+- Bridge has a similar structure but has a different intent of separating an interface from its implementation so they can vary independently
+  - Adapter is meant to change the interface of an existing object

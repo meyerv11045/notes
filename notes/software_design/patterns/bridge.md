@@ -11,6 +11,7 @@ Bridge pattern addresses the problems of strict inheritance by putting the abstr
 
 ## Applicability
 Use the bridge pattern when:
+
 - You want to avoid permanent binding between an abstraction and its implementation
     - e.g. when the implementation must be selected/switched at runtime
 - Both the abstractions and their implementations should be extensible by subclassing

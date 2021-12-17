@@ -36,7 +36,6 @@ Provide an interface for creating an object, but let subclasses decide which cla
     - 1) Creator class is abstract and doesn't implement creation methods meaning it must be subclassed
     - 2) Creator class is concrete and provides a default implementation meaning it can optionally be subclassed
 - Can create multiple types of products by parameterizing the factory method
-- 
 - Should be parameterized if a factory method needs to be able to create different variants
 
 ## Known Uses

@@ -1,7 +1,7 @@
 # Composite Pattern 
 
 ## Intent
-Treat individual objects and multiple, recursively-composed objects uniformly
+Compose objects into tree structures to represent part-whole hierarchies. Allows clients to treat individual objects and multiple, recursively-composed objects uniformly.
 
 ## Applicability
 - Tree structure
@@ -14,12 +14,23 @@ Treat individual objects and multiple, recursively-composed objects uniformly
 ![Composite Pattern](..static/../../static/composite.png)
 
 ## Participants
-participatnig classes/objects and their responsibilities
+- *Component*- declares the interface for objects in the composition
+  - implements any default behavior common for all classes
+  - declares an interface for accessing and managing its child components
+- *Leaf*- represents leaf objects in the composition (no children)
+- *Composite*- defines behavior for components having children
+  - stores child components
+  - implements child-related operations
+
+- *Client*- manipulates objects in the composition through the component interface
 
 ## Collaborations
-How participants cooperate to carry out their responsibilities
+
+- Requests are usually forwarded through composite components to the leaves where the requests are handled.
 
 ## Consequences
+- (+) Easy to use for the client 
+- (+) Easy to add new components
 - (-) Overhead: might be prohibitive as the number of objects increases (e.g. impractical for linux kernel with 30+ million lines of code)
 - (-) Awkward designs: may need to treat leaves as lobotomized composites
 
@@ -30,3 +41,9 @@ How participants cooperate to carry out their responsibilities
 - Need to decide who has the responsibility for deleting children
 - Do we allocate storage for children in component base class
     - In the expression tree, someone outside the tree will do this actual creation of children nodes (i.e. the interpreter)
+
+
+## Related Patterns
+
+- Iterator pattern can be used to traverse composites
+- Visitor pattern can be used to localize operations/behavior that would otherwise be distributed across composite and leaf classes

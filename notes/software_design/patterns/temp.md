@@ -1,4 +1,4 @@
-# Template Pattern 
+# Pattern 
 any aliases this pattern is known by
 
 ## Intent
@@ -27,7 +27,3 @@ pitfalls, hints, techiques, plus language dependent issues
 ## Known Uses
 
 ## Related Patterns
-
-
-Main class runs the alogrithm
-Subclasses override specific methods for variability. Polymorphism allows the main class to call the virtual functions and the appropriate call to a subclass is made

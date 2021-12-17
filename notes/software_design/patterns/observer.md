@@ -1,13 +1,13 @@
 # Observer Pattern
-Also known as the pub/sub or publish and subscribe pattern.
+Also known as the pub/sub
 
 ## Intent
 Define a one-to-many dependency between objects so that when one object changes state, all dependents are notified and updated 
 
 ## Applicability
-- An abstraction has two aspects, one dependent on the other
-- A change to one object requires changing untold others
-- An object should notify unknonwn other objects
+- When an abstraction has two aspects, one dependent on the other
+- When a change to one object requires changing untold others
+- When an object should notify unknown other objects
 
 ## Structure
 
@@ -19,15 +19,21 @@ Define a one-to-many dependency between objects so that when one object changes 
 - Can have multiple different concrete observers that use the subject's data in different ways
 
 ## Participants
-Subject is the object being observed for changes.
 
-The observer are objects receiving updates when the subject is changed.
+- *Subject*- object being watched for state changes. Knows its observers and provides an interface for attaching and detaching observer objects
+- *Observer*- defines an updating interface for objects that should be notified of changes in a subject
+- *Concrete Subject*- stores the state of interest to ConcreteObserver objects
+  - Sends a notification to its observers when its state changes
+- *Concrete Observer*-  maintains a reference to a concrete subject
+  - Implements the Observer's updating interface to keep its state consistent with the subject's 
 
 ## Collaborations
 The observers do not communicate with each other. A higher level of abstraction is thus required to keep track of things such as repeat observers.
 
 ## Consequences
 - (+) Modularity- subject and observers can vary independently 
+    - Subject only knows it has a list of Observers, doesn't know their concrete types (loosely coupled)
+
 - (+) Extensibility- can define and add any number of different observers
 - (+) Customizability- different observers offer different views of the subject 
 - (-) Unexpected updates- Observers don't know about each other
