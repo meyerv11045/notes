@@ -451,15 +451,36 @@
 <p>Given a language, define a representation for its grammar along with an interpreter that uses the representation to interpret sentences in the languages </p>
 <h2 id="applicability">Applicability</h2>
 <ul>
-<li>When the grammar is simple and relatively stable (e.g. don't use for a programming language like C++)</li>
-<li>Efficiency is not a critical concern </li>
+<li>
+<p>When there is a language to interpret and statements in the language can be represented as abstract syntax trees</p>
+</li>
+<li>
+<p>Works best when:</p>
+</li>
+<li>
+<p>The grammar is simple and relatively stable (e.g. don't use for a programming language like C++)</p>
+</li>
+<li>Expression can be interpreted without building abstract syntax trees (saves space and time)</li>
+<li>Efficiency is not a critical concern (other techniques for efficient interpreters)</li>
 </ul>
 <h2 id="structure">Structure</h2>
-<p>graphical representation of pattern using modified UML notation</p>
+<p><img alt="" src="../../static/interpreter.png" /></p>
 <h2 id="participants">Participants</h2>
-<p>participatnig classes/objects and their responsibilities</p>
+<ul>
+<li><em>AbstractExpression</em>- declares an abstract Interpret operation that is common to all nodes in the abstract syntax tree</li>
+<li><em>TerminalExpression</em>- implements an Interpret operation associated with terminal symbols in the grammar</li>
+<li><em>NonTerminalExpression</em>- one such class is required for every rule in the grammar </li>
+<li>Maintains references to other AbstractExpressions to represent the remaining subexpressions to be interpreted</li>
+<li>Interpret operation typically calls itself recursively on the variables representing each of the rules </li>
+<li><em>Context</em>- contains information that is global to the interpreter</li>
+<li><em>Client</em>- calls the Interpret operation in order to build an abstract syntax tree representing a particular sentence in the language defined by the grammar</li>
+</ul>
 <h2 id="collaborations">Collaborations</h2>
-<p>How participants cooperate to carry out their responsibilities</p>
+<ul>
+<li>The client builds the sentence as an abstract syntax tree of Terminal and Nonterminal expression instances. The client then initializes the content and invokes the Interpret operation</li>
+<li>NonTerminal expressions define Interpret in term of Interpret on each subexpression</li>
+<li>Interpret operations use the context to store and access the state of the interpreter</li>
+</ul>
 <h2 id="consequences">Consequences</h2>
 <ul>
 <li>(+) Simple grammars are easy to change and extend<ul>
@@ -467,13 +488,15 @@
 </ul>
 </li>
 <li>(+) Adding another rule adds another class</li>
-<li>(-) Complex grammars are hard to yield and maintain <ul>
+<li>(-) Complex grammars are hard to maintain <ul>
 <li>More interdependent rules yield more interdependent classes</li>
+<li>Parser or compiler generators are more appropriate for complex grammars</li>
 </ul>
 </li>
 </ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
+<li>Doesn't explain how to create an abstract syntax tree (doesn't address parsing)</li>
 <li>Express the language rules, one per class</li>
 <li>Alternations, repetitions, or sequences expressed as nonterminal expressions</li>
 <li>Literal translations expressed as terminal expressions</li>
@@ -481,7 +504,15 @@
 </ul>
 <h2 id="sample-code">Sample Code</h2>
 <h2 id="known-uses">Known Uses</h2>
-<h2 id="related-patterns">Related Patterns</h2></div>
+<ul>
+<li>Regular expression (regex) is a language for searching for patterns in strings so that custom algorithms are not needed for each proble (the problem is so often occuring that it made sense to develop a simple grammar and interpeter that can parse sentences of the language)</li>
+</ul>
+<h2 id="related-patterns">Related Patterns</h2>
+<ul>
+<li>The abstract syntax tree is an instance of the composite pattern</li>
+<li>An iterator can be used to traverse the structure</li>
+<li>The visitor pattern can be used to maintain the behavior in each node in the syntax tree in one class</li>
+</ul></div>
             </div>
         </div>
 

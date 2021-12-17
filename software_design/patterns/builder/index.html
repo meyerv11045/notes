@@ -427,11 +427,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#sample-code" class="nav-link">Sample Code</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#known-uses" class="nav-link">Known Uses</a>
+            <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -447,31 +443,45 @@
 <p>Separate the construction of a complex object from its representation so that the same construction process can create different representations</p>
 <h2 id="applicability">Applicability</h2>
 <ul>
-<li>Need to isolate knowledge of the creation of a complex object from its part</li>
-<li>Need to allow differrent implementations/interfaces of an object's parts<ul>
+<li>When the algorthim for creating a complex object should be independent of the parts that make up the object </li>
+<li>When the construction process must allow different representations for the object that's constructed<ul>
 <li>Ex: multiplication in an expression tree can also be represented as repeated addtion </li>
 </ul>
 </li>
 </ul>
 <h2 id="structure">Structure</h2>
-<p>graphical representation of pattern using modified UML notation</p>
-<p>Director will command each builder to construct its alternate representation </p>
-<p>Builders have a method the director can call that will return an equivalent product</p>
+<p><img alt="" src="../../static/builder.png" /></p>
 <h2 id="participants">Participants</h2>
-<p>participatnig classes/objects and their responsibilities</p>
+<ul>
+<li><em>Builder</em>-specifies an abstract interface for creating parts of a product object</li>
+<li><em>ConcreteBuilder</em>- constructs and assembles parts of the product by implementing the Builder interface</li>
+<li><em>Director</em>- constructs an object using the Builder interface</li>
+<li><em>Product</em>- represents the complex object under construction </li>
+</ul>
 <h2 id="collaborations">Collaborations</h2>
-<p>How participants cooperate to carry out their responsibilities</p>
+<ul>
+<li>Client creates the Director object and configures it with the desired builder object</li>
+<li>Director notifies the builder whenever a part of the product should be built</li>
+<li>Builder handles requests from the director and adds parts to the product</li>
+<li>Client retrieves the product from the builder</li>
+</ul>
+<p><img alt="" src="../../static/builder-interaction.png" /></p>
 <h2 id="consequences">Consequences</h2>
 <ul>
-<li>(+) Can vary a product's internal representation</li>
-<li>(+) Isolates code for construction and representation\</li>
+<li>(+) Can vary a product's internal representation (all you need to do is define a new builder)</li>
+<li>(+) Isolates code for construction and representation</li>
 <li>(+) Finer control over the construction process</li>
 <li>(-) May involve lots of classes</li>
 </ul>
 <h2 id="implementation">Implementation</h2>
-<p>pitfalls, hints, techiques, plus language dependent issues</p>
-<h2 id="sample-code">Sample Code</h2>
-<h2 id="known-uses">Known Uses</h2></div>
+<ul>
+<li>Usually no abstract class for products since they each may differ so much in their representation </li>
+</ul>
+<h2 id="related-patterns">Related Patterns</h2>
+<ul>
+<li>Abstract Factory also creates complex objects but the difference is that builder pattern focuses on creting the complex object step by step while the abstract factory's focus is on families of product objects </li>
+<li>Builder often builds a Composite</li>
+</ul></div>
             </div>
         </div>
 

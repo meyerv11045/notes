@@ -415,6 +415,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#collaborations" class="nav-link">Collaborations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#consequences" class="nav-link">Consequences</a>
               <ul class="nav flex-column">
               </ul>
@@ -431,6 +435,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -439,6 +447,7 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="adapter-pattern">Adapter Pattern</h1>
+<p>Also known as wrapper.</p>
 <h2 id="intent">Intent</h2>
 <ul>
 <li>Convert a class interface into an interface expected by the cleints</li>
@@ -454,8 +463,13 @@
 <p><img alt="Adapter UML" src="../../static/adapter.png" /></p>
 <h2 id="participants">Participants</h2>
 <ul>
-<li><em>Adaptees</em> are the class interfaces being given a new interface </li>
-<li><em>Target Interface</em> is the new interface for the client to use</li>
+<li><em>Target</em>- the domain specific interface a client uses</li>
+<li><em>Adaptee</em>- the existing interface that needs adapting</li>
+<li><em>Adapter</em>- class that adapts the existing interface to the target interface</li>
+</ul>
+<h2 id="collaborations">Collaborations</h2>
+<ul>
+<li>Clients will call operations on an Adapter instance which in turn calls adaptee operations to carry out the request</li>
 </ul>
 <h2 id="consequences">Consequences</h2>
 <ul>
@@ -467,7 +481,7 @@
 <li>Considerations:<ul>
 <li>How much adapting to do?</li>
 <li>Focus on a good client experience</li>
-<li>Pluggable adapters- dynamicly create and change different types of adapters at runtime</li>
+<li>Pluggable adapters- dynamically create and change different types of adapters at runtime</li>
 </ul>
 </li>
 </ul>
@@ -558,8 +572,7 @@ Gamma::dtor
 - (+) Easier client experience since they don't need to know the mapping (the adapter takes care of it)
 - (-) Have to modify the adapter to include any new adaptees 
     - Usually a good tradeoff since main focus is better client experience</p>
-<pre><code class="language-c++">
-template &lt;typename T&gt; class BetterAdapter : public TargetInterface {
+<pre><code class="language-c++">template &lt;typename T&gt; class BetterAdapter : public TargetInterface {
 public:
   explicit BetterAdapter(T *obj) : object(obj) {};
   ~BetterAdapter() override { delete object; };
@@ -675,6 +688,11 @@ Gamma::dtor
 <ul>
 <li>New interfaces to legacy code</li>
 <li>Stack and Queue in the STL are adapters of vector and list class</li>
+</ul>
+<h2 id="related-patterns">Related Patterns</h2>
+<ul>
+<li>Bridge has a similar structure but has a different intent of separating an interface from its implementation so they can vary independently</li>
+<li>Adapter is meant to change the interface of an existing object</li>
 </ul></div>
             </div>
         </div>

@@ -427,6 +427,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -436,7 +440,7 @@
 
 <h1 id="composite-pattern">Composite Pattern</h1>
 <h2 id="intent">Intent</h2>
-<p>Treat individual objects and multiple, recursively-composed objects uniformly</p>
+<p>Compose objects into tree structures to represent part-whole hierarchies. Allows clients to treat individual objects and multiple, recursively-composed objects uniformly.</p>
 <h2 id="applicability">Applicability</h2>
 <ul>
 <li>Tree structure</li>
@@ -447,11 +451,28 @@
 <h2 id="structure">Structure</h2>
 <p><img alt="Composite Pattern" src="../../static/composite.png" /></p>
 <h2 id="participants">Participants</h2>
-<p>participatnig classes/objects and their responsibilities</p>
+<ul>
+<li><em>Component</em>- declares the interface for objects in the composition</li>
+<li>implements any default behavior common for all classes</li>
+<li>declares an interface for accessing and managing its child components</li>
+<li><em>Leaf</em>- represents leaf objects in the composition (no children)</li>
+<li><em>Composite</em>- defines behavior for components having children</li>
+<li>stores child components</li>
+<li>
+<p>implements child-related operations</p>
+</li>
+<li>
+<p><em>Client</em>- manipulates objects in the composition through the component interface</p>
+</li>
+</ul>
 <h2 id="collaborations">Collaborations</h2>
-<p>How participants cooperate to carry out their responsibilities</p>
+<ul>
+<li>Requests are usually forwarded through composite components to the leaves where the requests are handled.</li>
+</ul>
 <h2 id="consequences">Consequences</h2>
 <ul>
+<li>(+) Easy to use for the client </li>
+<li>(+) Easy to add new components</li>
 <li>(-) Overhead: might be prohibitive as the number of objects increases (e.g. impractical for linux kernel with 30+ million lines of code)</li>
 <li>(-) Awkward designs: may need to treat leaves as lobotomized composites</li>
 </ul>
@@ -467,6 +488,11 @@
 <li>In the expression tree, someone outside the tree will do this actual creation of children nodes (i.e. the interpreter)</li>
 </ul>
 </li>
+</ul>
+<h2 id="related-patterns">Related Patterns</h2>
+<ul>
+<li>Iterator pattern can be used to traverse composites</li>
+<li>Visitor pattern can be used to localize operations/behavior that would otherwise be distributed across composite and leaf classes</li>
 </ul></div>
             </div>
         </div>

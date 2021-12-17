@@ -443,14 +443,14 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="observer-pattern">Observer Pattern</h1>
-<p>Also known as the pub/sub or publish and subscribe pattern.</p>
+<p>Also known as the pub/sub</p>
 <h2 id="intent">Intent</h2>
 <p>Define a one-to-many dependency between objects so that when one object changes state, all dependents are notified and updated </p>
 <h2 id="applicability">Applicability</h2>
 <ul>
-<li>An abstraction has two aspects, one dependent on the other</li>
-<li>A change to one object requires changing untold others</li>
-<li>An object should notify unknonwn other objects</li>
+<li>When an abstraction has two aspects, one dependent on the other</li>
+<li>When a change to one object requires changing untold others</li>
+<li>When an object should notify unknown other objects</li>
 </ul>
 <h2 id="structure">Structure</h2>
 <p><img alt="Observer Pattern" src="../../static/observer.png" /></p>
@@ -463,14 +463,27 @@
 <li>Can have multiple different concrete observers that use the subject's data in different ways</li>
 </ul>
 <h2 id="participants">Participants</h2>
-<p>Subject is the object being observed for changes.</p>
-<p>The observer are objects receiving updates when the subject is changed.</p>
+<ul>
+<li><em>Subject</em>- object being watched for state changes. Knows its observers and provides an interface for attaching and detaching observer objects</li>
+<li><em>Observer</em>- defines an updating interface for objects that should be notified of changes in a subject</li>
+<li><em>Concrete Subject</em>- stores the state of interest to ConcreteObserver objects</li>
+<li>Sends a notification to its observers when its state changes</li>
+<li><em>Concrete Observer</em>-  maintains a reference to a concrete subject</li>
+<li>Implements the Observer's updating interface to keep its state consistent with the subject's </li>
+</ul>
 <h2 id="collaborations">Collaborations</h2>
 <p>The observers do not communicate with each other. A higher level of abstraction is thus required to keep track of things such as repeat observers.</p>
 <h2 id="consequences">Consequences</h2>
 <ul>
-<li>(+) Modularity- subject and observers can vary independently </li>
-<li>(+) Extensibility- can define and add any number of different observers</li>
+<li>
+<p>(+) Modularity- subject and observers can vary independently </p>
+<ul>
+<li>Subject only knows it has a list of Observers, doesn't know their concrete types (loosely coupled)</li>
+</ul>
+</li>
+<li>
+<p>(+) Extensibility- can define and add any number of different observers</p>
+</li>
 <li>(+) Customizability- different observers offer different views of the subject </li>
 <li>(-) Unexpected updates- Observers don't know about each other</li>
 <li>(-) High update overhead (especially in large networks of observers)<ul>

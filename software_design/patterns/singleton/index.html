@@ -411,6 +411,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#participants" class="nav-link">Participants</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#collaborations" class="nav-link">Collaborations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#consequences" class="nav-link">Consequences</a>
               <ul class="nav flex-column">
               </ul>
@@ -424,6 +432,10 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#known-uses" class="nav-link">Known Uses</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -444,6 +456,14 @@
 </ul>
 <h2 id="structure">Structure</h2>
 <p><img alt="singleton" src="../../static/singleton.png" /></p>
+<h2 id="participants">Participants</h2>
+<ul>
+<li><em>Singleton</em>- defines an Instance operation (static member function) that lets clients access its unique instance</li>
+</ul>
+<h2 id="collaborations">Collaborations</h2>
+<ul>
+<li>Clients access a singleton instance soley though the singleton's Instance operation</li>
+</ul>
 <h2 id="consequences">Consequences</h2>
 <ul>
 <li>(+) Reduces namespace pollution</li>
@@ -498,6 +518,10 @@ Singleton* Singleton::inst = nullptr;
 <ul>
 <li>Hardware interface access</li>
 <li>Logger: so everything is logged to same place in correct order using access protections</li>
+</ul>
+<h2 id="related-patterns">Related Patterns</h2>
+<ul>
+<li>Many patterns such as the Abstract Factory, Builder, and Prototype pattern can be implemented using the Singleton</li>
 </ul></div>
             </div>
         </div>
