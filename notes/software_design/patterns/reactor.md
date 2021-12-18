@@ -1,29 +1,21 @@
-# Pattern 
+# Reactor Pattern 
 any aliases this pattern is known by
 
 ## Intent
-short description of the pattern and its purpose
+Allows event-driving applications to demultiplex and dispatch service requests that are delivered to an application from one or more clients.
 
 ## Applicability
-circumstances in which pattern applies
+- When you need to decouple event handling from event detecting/demuxing/dispatching
+- When multiple sources of events must be handled in a single thread
 
 ## Structure
-graphical representation of pattern using modified UML notation
-
-## Participants
-participatnig classes/objects and their responsibilities
-
-## Collaborations
-How participants cooperate to carry out their responsibilities
+![](../static/reactor.png)
 
 ## Consequences
-results of application, benefits, and liabilities
+- (+) Separation of concerns and portability 
+- (+) Simplify concurrency control
+- (-) Non-preemptive
 
 ## Implementation
-pitfalls, hints, techiques, plus language dependent issues
-
-## Sample Code
-
-## Known Uses
-
-## Related Patterns
+- Decouple event demultiplexing mechanisms from event dispatching?
+- Handle many idfferent types of events (e.g. input/output events, signals, timers, etc.)

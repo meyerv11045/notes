@@ -57,6 +57,9 @@ nav:
       - 'Factory': 'software_design/patterns/factory.md'
       - 'State': 'software_design/patterns/state.md'
       - 'Reactor': 'software_design/patterns/reactor.md'
+      - 'Strategy': 'software_design/patterns/strategy.md'
+      - 'Template': 'software_design/patterns/template.md'
+  
   - Databases:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'

@@ -1,33 +1,29 @@
 # Template Pattern 
-any aliases this pattern is known by
-
 ## Intent
-short description of the pattern and its purpose
+Define a skeleton of an algorithm in an operation, deferring some steps to subclasses. Subclasses redefine certain steps of an algorithm without changing the algorithm's structure.
 
 ## Applicability
-circumstances in which pattern applies
+- Used to implement the invariant parts of an algorithm once and then leave it to the subclasses to implement the behavior that can vary
+- When common behavior among subclasses should be factored and localizied in a common class to avoid code duplication 
 
 ## Structure
-graphical representation of pattern using modified UML notation
+![](../static/template.png)
 
 ## Participants
-participatnig classes/objects and their responsibilities
+- *AbstractClass*- defines abstract primitive operations that concrete subclasses define to implement steps of an algorithm
+  - Implements a template method defining the skelton of an algorithm by calling primitive operations as well as other necessary methods
+- *ConcreteClass*- implements the primitive operations to carry out subclass-specific steps of the algorithm
 
 ## Collaborations
-How participants cooperate to carry out their responsibilities
+- ConcreteClass relies on AbstractClass to implement the invariant steps of the algorithm 
 
 ## Consequences
-results of application, benefits, and liabilities
+- (+) Inverted control principle- parent calls the operations of a subclass (not the other way)
 
 ## Implementation
-pitfalls, hints, techiques, plus language dependent issues
-
-## Sample Code
-
-## Known Uses
+- Goal is to minimize the number of primitive operations a subclass must override to flesh out the algorithm
 
 ## Related Patterns
 
-
-Main class runs the alogrithm
-Subclasses override specific methods for variability. Polymorphism allows the main class to call the virtual functions and the appropriate call to a subclass is made
+- Factory Methods are often called by template methods
+- Template methods use inheritance to vary part of an algorithm while strategies use delegation to vary the entire algorithm 
