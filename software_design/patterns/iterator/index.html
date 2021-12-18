@@ -224,6 +224,14 @@
 <li>
     <a href="../reactor/" class="dropdown-item">Reactor</a>
 </li>
+            
+<li>
+    <a href="../strategy/" class="dropdown-item">Strategy</a>
+</li>
+            
+<li>
+    <a href="../template/" class="dropdown-item">Template</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -411,11 +419,23 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#participants" class="nav-link">Participants</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#collaborations" class="nav-link">Collaborations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#consequences" class="nav-link">Consequences</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -427,6 +447,7 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="iterator-pattern">Iterator Pattern</h1>
+<p>Also known as cursor </p>
 <h2 id="intent">Intent</h2>
 <p>Access elements of a container without exposing its representation</p>
 <h2 id="applicability">Applicability</h2>
@@ -437,6 +458,17 @@
 </ul>
 <h2 id="structure">Structure</h2>
 <p><img alt="" src="../../static/iterator-pattern.png" /></p>
+<h2 id="participants">Participants</h2>
+<ul>
+<li><em>Iterator</em>- defines an interface for accessing and traversing elements</li>
+<li><em>ConcreteIterator</em>- implements the Iterator interface and a specific type of traversal</li>
+<li><em>Aggregate</em>- container interface that defines method for creating an Iterator object</li>
+<li><em>ConcreteAggregate</em>- specific container implementation that implements the create iterator method to return an instance of the correct ConcreteIterator</li>
+</ul>
+<h2 id="collaborations">Collaborations</h2>
+<ul>
+<li>ConcreteIterator keeps track of the current object in the Aggregate and can compute the succeeding object in the traversal</li>
+</ul>
 <h2 id="consequences">Consequences</h2>
 <ul>
 <li>(+) Flexibility: container and traversal are independent</li>
@@ -449,10 +481,16 @@
 <h2 id="implementation">Implementation</h2>
 <ul>
 <li>Internval versus external iterators</li>
-<li>Violating the object strucutre's encapsulation</li>
-<li>Robust iterators</li>
+<li>Internal- when the iterator controls the iteration</li>
+<li>External- when the client controls the iteration (more flexible)</li>
+<li>Violating the object structure's encapsulation</li>
+<li>Robust iterators- ensure insertions/removals won't interfere with traversal </li>
 <li>Synchronization overhead in multi-threaded programs</li>
 <li>Batching in distributed and concurrent programs</li>
+</ul>
+<h2 id="related-patterns">Related Patterns</h2>
+<ul>
+<li>Iterators are often applied to Composite structures</li>
 </ul></div>
             </div>
         </div>

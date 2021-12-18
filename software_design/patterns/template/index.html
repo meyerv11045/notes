@@ -8,7 +8,7 @@
         
         <link rel="canonical" href="https://meyerv11045.github.com/notes/software_design/patterns/template/">
         <link rel="shortcut icon" href="../../../img/favicon.ico">
-        <title>Template Pattern - The Notebook</title>
+        <title>Template - The Notebook</title>
         <link href="../../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../../css/base.css" rel="stylesheet">
@@ -103,7 +103,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -223,6 +223,14 @@
             
 <li>
     <a href="../reactor/" class="dropdown-item">Reactor</a>
+</li>
+            
+<li>
+    <a href="../strategy/" class="dropdown-item">Strategy</a>
+</li>
+            
+<li>
+    <a href="./" class="dropdown-item active">Template</a>
 </li>
     </ul>
   </li>
@@ -369,6 +377,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../strategy/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../../databases/dbms/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -417,14 +435,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#sample-code" class="nav-link">Sample Code</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#known-uses" class="nav-link">Known Uses</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
               <ul class="nav flex-column">
               </ul>
@@ -437,26 +447,38 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="template-pattern">Template Pattern</h1>
-<p>any aliases this pattern is known by</p>
 <h2 id="intent">Intent</h2>
-<p>short description of the pattern and its purpose</p>
+<p>Define a skeleton of an algorithm in an operation, deferring some steps to subclasses. Subclasses redefine certain steps of an algorithm without changing the algorithm's structure.</p>
 <h2 id="applicability">Applicability</h2>
-<p>circumstances in which pattern applies</p>
+<ul>
+<li>Used to implement the invariant parts of an algorithm once and then leave it to the subclasses to implement the behavior that can vary</li>
+<li>When common behavior among subclasses should be factored and localizied in a common class to avoid code duplication </li>
+</ul>
 <h2 id="structure">Structure</h2>
-<p>graphical representation of pattern using modified UML notation</p>
+<p><img alt="" src="../../static/template.png" /></p>
 <h2 id="participants">Participants</h2>
-<p>participatnig classes/objects and their responsibilities</p>
+<ul>
+<li><em>AbstractClass</em>- defines abstract primitive operations that concrete subclasses define to implement steps of an algorithm</li>
+<li>Implements a template method defining the skelton of an algorithm by calling primitive operations as well as other necessary methods</li>
+<li><em>ConcreteClass</em>- implements the primitive operations to carry out subclass-specific steps of the algorithm</li>
+</ul>
 <h2 id="collaborations">Collaborations</h2>
-<p>How participants cooperate to carry out their responsibilities</p>
+<ul>
+<li>ConcreteClass relies on AbstractClass to implement the invariant steps of the algorithm </li>
+</ul>
 <h2 id="consequences">Consequences</h2>
-<p>results of application, benefits, and liabilities</p>
+<ul>
+<li>(+) Inverted control principle- parent calls the operations of a subclass (not the other way)</li>
+</ul>
 <h2 id="implementation">Implementation</h2>
-<p>pitfalls, hints, techiques, plus language dependent issues</p>
-<h2 id="sample-code">Sample Code</h2>
-<h2 id="known-uses">Known Uses</h2>
+<ul>
+<li>Goal is to minimize the number of primitive operations a subclass must override to flesh out the algorithm</li>
+</ul>
 <h2 id="related-patterns">Related Patterns</h2>
-<p>Main class runs the alogrithm
-Subclasses override specific methods for variability. Polymorphism allows the main class to call the virtual functions and the appropriate call to a subclass is made</p></div>
+<ul>
+<li>Factory Methods are often called by template methods</li>
+<li>Template methods use inheritance to vary part of an algorithm while strategies use delegation to vary the entire algorithm </li>
+</ul></div>
             </div>
         </div>
 

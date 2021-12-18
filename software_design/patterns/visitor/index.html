@@ -224,6 +224,14 @@
 <li>
     <a href="../reactor/" class="dropdown-item">Reactor</a>
 </li>
+            
+<li>
+    <a href="../strategy/" class="dropdown-item">Strategy</a>
+</li>
+            
+<li>
+    <a href="../template/" class="dropdown-item">Template</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -411,11 +419,23 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#participants" class="nav-link">Participants</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#collaborations" class="nav-link">Collaborations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#consequences" class="nav-link">Consequences</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -427,9 +447,8 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="visitor-pattern">Visitor Pattern</h1>
-<p>any aliases this pattern is known by</p>
 <h2 id="intent">Intent</h2>
-<p>Centralize operations on an object structure so that they can vary independently but still behave polymorphically</p>
+<p>Centralize operations on an object structure so that they can vary independently but still behave polymorphically. Lets you define a new operation without changing the classes of the elements on which it operates.</p>
 <h2 id="applicability">Applicability</h2>
 <ul>
 <li>when classes define many unrelated operations</li>
@@ -438,17 +457,42 @@
 </ul>
 <h2 id="structure">Structure</h2>
 <p><img alt="" src="../../static/visitor.png" /></p>
+<h2 id="participants">Participants</h2>
+<ul>
+<li><em>Visitor</em>- declares a Visit operation for each class of the ConcreteElement in the object structure</li>
+<li><em>ConcreteVisitor</em>- implements each operation declared by Visitor and stores local state of the algorithm that is acculumated during the traversal of the object </li>
+<li><em>Element</em>- defines an accept operation that takes a visitor as an argument (e.g. Node)</li>
+<li><em>ConcreteElement</em>- implements an accept operation that takes a visitor as an argument (e.g. AddNode, SubtractNode, .. )</li>
+<li>ObjectStructure- can enumerate its elements </li>
+</ul>
+<h2 id="collaborations">Collaborations</h2>
+<ul>
+<li>Client that uses a visitor pattern must create a ConcreteVisitor object and then traverse the object structure, visiting each element with the visitor</li>
+<li>When an element is visited, it calls the visitor operation that corresponds to its class by supplying itself as an argument. to the operation</li>
+</ul>
 <h2 id="consequences">Consequences</h2>
 <ul>
 <li>(+) Flexibility: visitor algorithm(s) and object structure are independent</li>
-<li>(+) Localized functionality in the visitor subclass instance</li>
+<li>
+<p>Easy to add new operations</p>
+</li>
+<li>
+<p>(+) Localized functionality in the visitor subclass instance (related behaviors are grouped together in a visitor and unrelated behaviors have a seperate visitor)</p>
+</li>
 <li>(-) Circular dependency between Visitor and Element interfaces</li>
 <li>(-) Visitor brittle to new ConcreteElement classes</li>
 </ul>
 <h2 id="implementation">Implementation</h2>
 <ul>
-<li>Double dispatch</li>
+<li>Double dispatch- operations that is executed depends on the kind of request and the types of <em>two</em> receivers (the Visitor's and the Element's)</li>
+<li>visitor pattern lets you add operations to classes without changing them by using this</li>
 <li>General interface to elements of object structure</li>
+<li>Who is responsbile for traversing the object structure? </li>
+</ul>
+<h2 id="related-patterns">Related Patterns</h2>
+<ul>
+<li>Visitors can be used to apply an operation over an object structure defined by a composite</li>
+<li>Visitor can be applied to do the interpretation in the Interpreter pattern</li>
 </ul></div>
             </div>
         </div>

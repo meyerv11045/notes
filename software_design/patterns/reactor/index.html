@@ -224,6 +224,14 @@
 <li>
     <a href="./" class="dropdown-item active">Reactor</a>
 </li>
+            
+<li>
+    <a href="../strategy/" class="dropdown-item">Strategy</a>
+</li>
+            
+<li>
+    <a href="../template/" class="dropdown-item">Template</a>
+</li>
     </ul>
   </li>
                                 </ul>
@@ -375,7 +383,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../../databases/dbms/" class="nav-link">
+                                <a rel="next" href="../strategy/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -397,7 +405,7 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#pattern" class="nav-link">Pattern</a>
+            <li class="nav-item" data-level="1"><a href="#reactor-pattern" class="nav-link">Reactor Pattern</a>
               <ul class="nav flex-column">
             <li class="nav-item" data-level="2"><a href="#intent" class="nav-link">Intent</a>
               <ul class="nav flex-column">
@@ -411,31 +419,11 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#participants" class="nav-link">Participants</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#collaborations" class="nav-link">Collaborations</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#consequences" class="nav-link">Consequences</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#implementation" class="nav-link">Implementation</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#sample-code" class="nav-link">Sample Code</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#known-uses" class="nav-link">Known Uses</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#related-patterns" class="nav-link">Related Patterns</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -446,25 +434,28 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="pattern">Pattern</h1>
+<h1 id="reactor-pattern">Reactor Pattern</h1>
 <p>any aliases this pattern is known by</p>
 <h2 id="intent">Intent</h2>
-<p>short description of the pattern and its purpose</p>
+<p>Allows event-driving applications to demultiplex and dispatch service requests that are delivered to an application from one or more clients.</p>
 <h2 id="applicability">Applicability</h2>
-<p>circumstances in which pattern applies</p>
+<ul>
+<li>When you need to decouple event handling from event detecting/demuxing/dispatching</li>
+<li>When multiple sources of events must be handled in a single thread</li>
+</ul>
 <h2 id="structure">Structure</h2>
-<p>graphical representation of pattern using modified UML notation</p>
-<h2 id="participants">Participants</h2>
-<p>participatnig classes/objects and their responsibilities</p>
-<h2 id="collaborations">Collaborations</h2>
-<p>How participants cooperate to carry out their responsibilities</p>
+<p><img alt="" src="../../static/reactor.png" /></p>
 <h2 id="consequences">Consequences</h2>
-<p>results of application, benefits, and liabilities</p>
+<ul>
+<li>(+) Separation of concerns and portability </li>
+<li>(+) Simplify concurrency control</li>
+<li>(-) Non-preemptive</li>
+</ul>
 <h2 id="implementation">Implementation</h2>
-<p>pitfalls, hints, techiques, plus language dependent issues</p>
-<h2 id="sample-code">Sample Code</h2>
-<h2 id="known-uses">Known Uses</h2>
-<h2 id="related-patterns">Related Patterns</h2></div>
+<ul>
+<li>Decouple event demultiplexing mechanisms from event dispatching?</li>
+<li>Handle many idfferent types of events (e.g. input/output events, signals, timers, etc.)</li>
+</ul></div>
             </div>
         </div>
 
