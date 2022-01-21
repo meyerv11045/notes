@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/system_design/microservices/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/math_science/molecular_genetics/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Microservices - The Notebook</title>
+        <title>Molecular Genetics - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,7 +33,7 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -66,11 +66,11 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Microservices</a>
+    <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
 </li>
                                     
 <li>
-    <a href="../docker/" class="dropdown-item">Docker</a>
+    <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
 </li>
                                     
 <li>
@@ -358,40 +358,40 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
+    <a href="../prob_stats/rv/" class="dropdown-item">Random Variables</a>
 </li>
                                     
 <li>
-    <a href="../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
+    <a href="../prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
 </li>
                                     
 <li>
-    <a href="../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+    <a href="../prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
 </li>
                                     
 <li>
-    <a href="../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
+    <a href="../prob_stats/stats/" class="dropdown-item">Statistics</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Science <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../math_science/brain/" class="dropdown-item">The Brain</a>
+    <a href="../brain/" class="dropdown-item">The Brain</a>
 </li>
                                     
 <li>
-    <a href="../../math_science/molecular_genetics/" class="dropdown-item">Molecular Genetics</a>
+    <a href="./" class="dropdown-item active">Molecular Genetics</a>
 </li>
                                     
 <li>
-    <a href="../../math_science/dev_psy/" class="dropdown-item">Dev Psychology</a>
+    <a href="../dev_psy/" class="dropdown-item">Dev Psychology</a>
 </li>
                                     
 <li>
-    <a href="../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
+    <a href="../physics/ch25/" class="dropdown-item">Current & Resistance</a>
 </li>
                                 </ul>
                             </li>
@@ -404,12 +404,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../general/hardware/" class="nav-link">
+                                <a rel="prev" href="../brain/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../docker/" class="nav-link">
+                                <a rel="next" href="../dev_psy/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -431,33 +431,99 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            
-            
+            <li class="nav-item" data-level="1"><a href="#molecular-genetics" class="nav-link">Molecular Genetics</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#micromutations" class="nav-link">Micromutations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#foxp2-gene" class="nav-link">FoxP2 Gene</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#the-code-breaker" class="nav-link">The Code Breaker</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#epigenetics" class="nav-link">Epigenetics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resources" class="nav-link">Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h3 id="microservice-architectual-style">Microservice Architectual Style:</h3>
+<h1 id="molecular-genetics">Molecular Genetics</h1>
 <ul>
-<li>Developing a single application as a suite of small services, each running in its own process and communicating with lightweight mechanics, often an HTTP resource API</li>
-<li>Encourages modularity and seperation of concerns</li>
-<li>ability to horizontally scale and partition the workload</li>
-<li>Microservices contain many aspects in reality:</li>
-<li>Clients, Caches, and Databases are all included in a microservice in conjuction with the service itself</li>
+<li>Molecular Basis of Life: DNA --&gt; RNA --&gt; Proteins --&gt; All biological functions</li>
+<li>Originally thought that DNA was the basis for all life until viruses that are made up of purely RNA were discovered</li>
+<li>Knowing the function of a protein is largely dependent on knowing the shape of the protein which is determined by a complex series of interactions.<ul>
+<li>By being able to accurately predict the shape of a string of amino acids, such as with AlphaFold, the function of any DNA sequence can be inferred through a much easier process than doing imaging and experiments to painstakingly indetify the shape of a protein.</li>
+<li>20 amino acids have different degrees of attraction to and repulsion to water. this determines the shape of a string of amino acids</li>
 </ul>
-<h3 id="stateless-service">Stateless Service:</h3>
-<ul>
-<li>Not a cache or database</li>
-<li>Frequently accessed metadata</li>
-<li>no instance affinity</li>
-<li>Losing a node is not a big deal and can be easily fixed</li>
+</li>
+<li>An important type of protein is an enzyme which catalyzes a reaction that otherwise would not occur or would take a very long time to occur. This results in enzymes having a very important function of being able to put two things together and breaking one thing apart</li>
+<li>Codon- sequence of 3 base pairs <ul>
+<li>1 codon codes for 1 amino acid</li>
+<li>the 3 base pairs have <script type="math/tex">4^3 = 64</script> possibilities. since there are only 20 amino acids, there are some combinations that can encode for other signals such as start/stop</li>
+<li>each amino acid is coded for a by number of similar triplets (roughly 3)<ul>
+<li>the reason that a micromutation will sometimes have no effect</li>
 </ul>
-<h3 id="stateful-service">Stateful Service:</h3>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="micromutations">Micromutations</h2>
 <ul>
-<li>Databases &amp; caches</li>
-<li>Custom apps which holds lots of data</li>
-<li>Losing a node is a notable event and it might take hours to get it fixed</li>
+<li>changes the efficacy of a protein<ul>
+<li>a mutated protein with a drastically different shape won't be able to fit into another protein to do its job properly</li>
+</ul>
+</li>
+<li>can have 1) no effect 2) a minor effect (by changing to diff amino acid w/ similar properties) 3) a major effect (by changing to a diff amino w/ diff properties like attraction to water)</li>
+<li>point mutation- one letter in DNA sequence is changed</li>
+<li>deletion/insertion mutation- big deal because it entirelly changes the coding downstream from it since all the codons are shifted by one</li>
+</ul>
+<h3 id="pku-disease">PKU Disease</h3>
+<ul>
+<li>Phenylanine is produced in the brain but cannot be there in too high of concentrations, luckily an enzyme breaks it down into something safer</li>
+<li>in this disease a small micromutation changes the enzyme, making it not function properly letting the phenylanine build up in the brain and destroys the nervous system quickly if left untreated</li>
+<li>genetic diseases like these hold great prompise for genetic engineering with biotech like CRISPR</li>
+</ul>
+<h2 id="foxp2-gene">FoxP2 Gene</h2>
+<p>FoxP2 gene is related to communication and is found in humans and animals. One base pair difference between lots of animal species and then when compared to humans, there are lots of base pair differences in just a short amount of time which can be correlated to humans superior communication ability that has allowed them to take over the earth. When they replaced the mouse version of FoxP2 gene with the human FoxP2 gene, the mice had more complex ultrasonic communication</p>
+<h2 id="the-code-breaker">The Code Breaker</h2>
+<ul>
+<li>Discovery of genes (mendleys pea experiment) -&gt; discovery of DNA (watson,  crick, wilkins, &amp; franklin) -&gt; human genome project (ability to read human genes) -&gt; CRISPR (ability to write/edit human genes)</li>
+<li>This entire progression happened in the span of less than a century!</li>
+<li>Human body cell has 46 chromosomes that contain the entire human genome btw them all (sex cells have 23 chromosomes)</li>
+<li>On genetic engineering: just because a slope is slippery doesn’t mean it shouldn’t be crossed. it just means proceed a little slower and a little more carefully in order to reach the tremendous benefits on the other side</li>
+</ul>
+<h2 id="epigenetics">Epigenetics</h2>
+<ul>
+<li>environment affects regulation of genes</li>
+<li>all about chromatin regulating transciption access to the DNA</li>
+<li>chromatin changes in regulation can permanently disallow access to a transcription factor in a DNA, thus silencing that gene <ul>
+<li>often happens early in life (e.g. rat mother parental style affects chromatin's regulation of the stress hormone in the baby rat)</li>
+</ul>
+</li>
+<li>Can override anything happening on the transcription factor end</li>
+<li>95% of DNA is non-coding meaning it does not code for a gene<ul>
+<li>This means the remaining 95% deal with regulation of when a gene downstream is supposed to be turned off or on. By having certain transcription receptors upstream of a gene's encoding, certain enzymes that are present in different areas of the body can bind to it and then release the proper enzymes to go read the correlated section of DNA and start the rna to protein process.</li>
+</ul>
+</li>
+<li>The interesting part of behavior and evolution comes not as much from mutations in the specific genes but the numerous levels of regulation that determine when specific genes are activated.</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=_dRXA1_e30o&amp;list=WL&amp;index=10&amp;t=103s">Molecular Genetics I Lecture</a></li>
+<li>The Code Breaker by Walter Isaacson</li>
 </ul></div>
             </div>
         </div>
