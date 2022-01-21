@@ -151,6 +151,38 @@ with open(file1, 'r'), open(file2, 'w') as f1, f2:
       csv_writer.writerow([line[0],"extra col"])
 ```
 
+## Matplotlib
+- `figure` acts as a contianer for all plot elements
+- `axes` contains most of the figures elements and sets the coordinate system
+    - will usually contain 2 `axis` elements that control the ticks
+  
+``` python
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+
+ax.axis('equal')    # makes it so patches are not stretched
+ax.set_xlim(0,100)  # sets the x limits on the graph
+
+# Add a line
+from matplotlib.lines import Line2D
+line = Line2D([x0,x1], [y0,y1])
+ax.add_line(line)
+
+# Add Shapes/Patches
+from matplotlib.patches import Rectangle, Circle
+r = Rectangle(top_left, width, height, fill=False)
+ax.add_patch(r)
+
+c = Circle((x_center,y_center), radius, fill=False)
+ax.add_patch(c)
+
+ax.scatter(x,y,facecolors='none',edgecolors='purple') # empty circles with an edge color
+
+plt.show()
+```
+
+
 ## Python Executable
 - MacOS installs python 2.7 by default and should not be deleted 
     - `/usr/bin/python` and `/usr/bin/python2` are symlinks to default install: `System/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7`

@@ -21,12 +21,16 @@ nav:
     - 'Microservices': 'system_design/microservices.md'
     - 'Docker': 'system_design/docker.md'
     - 'Behavior Trees': 'ai/behavior-trees.md'
+  - Algorithms:
+    - 'Analysis': 'algorithms/analysis.md'
+    - 'Graphs': 'algorithms/graphs.md'
   - Data Structures:
     - 'Overview': 'data_structures/overview.md'
     - 'Linked List': 'data_structures/linked-list.md'
     - 'Stack': 'data_structures/stack.md'
     - 'Queue': 'data_structures/queue.md'
     - 'Heap': 'data_structures/heap.md'
+    - 'Graph': 'data_structures/graph.md'
   - Software Design:
     - C++:
       - 'Pointers': 'software_design/cpp/pointers.md'
@@ -59,7 +63,13 @@ nav:
       - 'Reactor': 'software_design/patterns/reactor.md'
       - 'Strategy': 'software_design/patterns/strategy.md'
       - 'Template': 'software_design/patterns/template.md'
-  
+  - Programming Languages:
+    - 'Ch. 1 Introduction': 'prog_langs/ch1.md'
+  - Digital Systems:
+    - 'Assembly': 'dig_sys/ch6-assembly.md'
+    - 'Microarchitecture': 'dig_sys/ch7-processor.md'
+    - 'Memory Systems': 'dig_sys/ch8-mem-sys.md'
+    - 'IO Systems': 'dig_sys/ch9-io-sys.md'
   - Databases:
     - "DBMS": 'databases/dbms.md'
     - 'SQL': 'databases/sql.md'
@@ -76,17 +86,13 @@ nav:
       - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
     - HTML & CSS:
       - 'Sass': 'web_dev/html-css/sass.md'
-  - Classes:
+  - Prob & Stats:
+    - 'Random Variables': 'math_science/prob_stats/rv.md'
+    - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
+    - 'Joint Probability Distributions': 'math_science/prob_stats/joint-distributions.md'
+    - 'Statistics': 'math_science/prob_stats/stats.md'
+  - Science:
     - 'The Brain': 'math_science/brain.md'
-    - Physics: 
-      - 'Current & Resistance': 'math_science/physics/ch25.md'
-    - Prob & Stats:
-      - 'Random Variables': 'math_science/prob_stats/rv.md'
-      - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
-      - 'Joint Probability Distributions': 'math_science/prob_stats/joint-distributions.md'
-      - 'Statistics': 'math_science/prob_stats/stats.md'
-    - Digital Systems:
-      - 'Assembly': 'dig_sys/ch6-assembly.md'
-      - 'Microarchitecture': 'dig_sys/ch7-processor.md'
-      - 'Memory Systems': 'dig_sys/ch8-mem-sys.md'
-      - 'IO Systems': 'dig_sys/ch9-io-sys.md'
+    - 'Molecular Genetics': 'math_science/molecular_genetics.md'
+    - 'Dev Psychology': 'math_science/dev_psy.md'
+    - 'Current & Resistance': 'math_science/physics/ch25.md'
