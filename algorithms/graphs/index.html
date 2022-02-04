@@ -453,6 +453,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#depth-first-search" class="nav-link">Depth First Search</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#edge-classification" class="nav-link">Edge Classification</a>
               <ul class="nav flex-column">
               </ul>
@@ -516,11 +520,44 @@
 <li>Total runtime is <script type="math/tex">O(V + E)</script> linear to the size of the adjacency list of <script type="math/tex">G</script>
 </li>
 </ul>
+<h2 id="depth-first-search">Depth First Search</h2>
+<ul>
+<li>Searches deeper in the graph when possible and when it gsets stuck, the search backtracks</li>
+<li>Creates a depth-first forest comprising several depth-first trees </li>
+<li>time stamps when each vertex is disocvered and when the search finishes examining the vertex's neighbors (adjacency list)</li>
+<li>
+<script type="math/tex">\Theta(V + E)</script> since all edges are traversed and all edges are visited</li>
+</ul>
 <h2 id="edge-classification">Edge Classification</h2>
 <ul>
 <li>tree edge</li>
-<li>backward edge</li>
-<li>forward edge</li>
+<li>
+<p>backward edge</p>
+<ul>
+<li>goes from <script type="math/tex">v</script> to an ancestor of <script type="math/tex">u</script> in the DFT</li>
+<li>happens when <script type="math/tex">v</script> disocvers <script type="math/tex">u</script> while <script type="math/tex">u</script> has been discovered but not finished yet and <script type="math/tex">u</script> is an ancestor of <script type="math/tex">v</script>
+</li>
+</ul>
+</li>
+<li>
+<p>forward edge </p>
+<ul>
+<li>goes from <script type="math/tex">u</script> to a descendant of <script type="math/tex">u</script> in the DFT </li>
+<li>happens when <script type="math/tex">v</script> discovers <script type="math/tex">u</script> while <script type="math/tex">u</script> is finished and <script type="math/tex">u</script> was discovered after <script type="math/tex">v</script>
+</li>
+</ul>
+</li>
+<li>
+<p>cross edge </p>
+<ul>
+<li>between <script type="math/tex">u</script> and <script type="math/tex">v</script>, neither is ancestor of the other in DFT</li>
+<li>happens when <script type="math/tex">v</script> discovers <script type="math/tex">u</script> while <script type="math/tex">u</script> is finished and <script type="math/tex">u</script> was discovered before <script type="math/tex">v</script>
+</li>
+</ul>
+</li>
+<li>
+<p>edge classification will change depending on where you start building the DFT from </p>
+</li>
 </ul>
 <h2 id="connectivity">Connectivity</h2>
 <p>There is a path from each vertex to every other vertex</p>
@@ -530,28 +567,68 @@
 <li>Strongly connected components or strong components</li>
 <li>An SCC is a set of vertices such that there is a path from every vertex to every other vertex in the set</li>
 </ul>
-<h3 id="undirected-graph">Undirected Graph</h3>
-<ul>
-<li>Connected- run DFS or BFS and see you visit all the nodes (keep a count and compare to size of graph)</li>
-<li>Connected Components</li>
-<li>Articulation Points- every path btw v and w contains a, then a is an articulation point OR removing a  splits G into two or more parts </li>
-<li>Biconnected Components- no articulation points in the graph  </li>
-</ul>
-<h3 id="finding-strongly-connected-components-on-directed-graphs">Finding Strongly Connected Components on Directed Graphs</h3>
+<h4 id="finding-strongly-connected-components-on-directed-graphs">Finding Strongly Connected Components on Directed Graphs</h4>
 <ol>
 <li>Perform DFS (from random start vertex), when a vertex is finished (colored black) push onto a stack</li>
 <li>Compute the transpose of the graph (flip direction of edges)</li>
-<li>Run DFS on <script type="math/tex">G^T</script>, with the starting vertex being the top of the stack</li>
+<li>Run DFS on <script type="math/tex">G^T</script>, with the starting vertex being the top of the stack<ul>
 <li>When you get stuck, pop from the stack to restart DFS with a new start ppint </li>
+</ul>
+</li>
 <li>
 <p>Each tree in the DFS forest of <script type="math/tex">G^T</script> is a strongly connected component </p>
 </li>
 <li>
-<p>Why does this work?</p>
+<p>Analysis:</p>
+<ul>
+<li>2 DFS: <script type="math/tex">\Theta(V + E)</script>
+</li>
+<li>Transpose of <script type="math/tex">G</script> is <script type="math/tex">\Theta(V + E)</script>
+</li>
+<li><em>Overall Runtime:</em> <script type="math/tex">\Theta (V+ E)</script>
+</li>
+</ul>
 </li>
 <li>This algorithm doesn't apply to undirected graphs</li>
 </ol>
-<h3 id="finding-articulation-points-on-undirected-graphs">Finding Articulation Points on Undirected Graphs</h3></div>
+<h3 id="undirected-graph">Undirected Graph</h3>
+<ul>
+<li>Connected- run DFS or BFS and see you visit all the nodes (keep a count and compare to size of graph)</li>
+<li>Connected Components</li>
+<li>
+<p><strong>Articulation Point</strong>- a node that if removeed, will split <script type="math/tex">G</script> into 2+ parts</p>
+<ul>
+<li>
+<script type="math/tex">a</script> is an articulation point if every path btw <script type="math/tex">v</script> and <script type="math/tex">w</script> contains <script type="math/tex">a</script>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Biconnected Components</strong>- components with no articulation points</p>
+</li>
+</ul>
+<h4 id="finding-articulation-points-on-undirected-graphs">Finding Articulation Points on Undirected Graphs</h4>
+<ul>
+<li>Execute DFS while keeping track of additional info <ul>
+<li>Overall runtime of <script type="math/tex">\Theta (V + E)</script>
+</li>
+</ul>
+</li>
+<li>A node <script type="math/tex">u</script> is an articulation point if:<ul>
+<li>
+<script type="math/tex">u</script> is the root of the DFS tree and has at least 2 children<ul>
+<li>This means the children cannot reach each other in any other way except through <script type="math/tex">u</script>
+</li>
+</ul>
+</li>
+<li>
+<script type="math/tex">u</script> is not a root of the DFS tree and <script type="math/tex">u</script> has a child with a subtree that has no backedge to one of <script type="math/tex">u</script>'s  ancestors<ul>
+<li>This means all the descendants of <script type="math/tex">u</script> must travel through <script type="math/tex">u</script> to reach any ancestors of <script type="math/tex">u</script> in the DFS tree</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></div>
             </div>
         </div>
 
