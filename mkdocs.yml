@@ -24,6 +24,7 @@ nav:
   - Algorithms:
     - 'Analysis': 'algorithms/analysis.md'
     - 'Graphs': 'algorithms/graphs.md'
+    - 'Tips': 'algorithms/tips.md'
   - Data Structures:
     - 'Overview': 'data_structures/overview.md'
     - 'Linked List': 'data_structures/linked-list.md'
@@ -65,6 +66,8 @@ nav:
       - 'Template': 'software_design/patterns/template.md'
   - Programming Languages:
     - 'Ch. 1 Introduction': 'prog_langs/ch1.md'
+    - 'Ch. 2 History': 'prog_langs/ch2.md'
+    - 'Ch. 3 Syntax & Semantics': 'prog_langs/ch3.md'
   - Digital Systems:
     - 'Assembly': 'dig_sys/ch6-assembly.md'
     - 'Microarchitecture': 'dig_sys/ch7-processor.md'

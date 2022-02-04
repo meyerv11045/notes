@@ -6,7 +6,8 @@ Asymptotic notation captures the growth of a function as its arugments approach 
 
 - Gives an upper bound on an algorithm's runtimes
 - $f$ is of order at most $g $ 
-- $f(x)$ is $O(g(x))$ iff there exists a $B > 0$ and $b \geq 0$ such that $|f(x)| \leq B|g(x)|$ for all real numbers $x > b$
+  - $f(x)$ is $O(g(x))$ iff there exists a $B > 0$ and $b \geq 0$ such that $|f(x)| \leq B|g(x)|$ for all real numbers $x > b$	
+
 
 ## Big Omega- Best Case
 
@@ -30,4 +31,14 @@ Asymptotic notation captures the growth of a function as its arugments approach 
   - $ f(x) \in \Omega(x^r)$ where $r \leq n$ 
 - $\forall b > 1$ and $\forall x > 0$, we have $log_bn \in O(n^x)$
 - $\forall r > 1$ and $\forall d > 0$, we have $n^d \in O(r^n)$
+
+## Misc
+
+- Can talk about the best and worst case of an algorithm from an example but can't say anything like "the algorithm runs in ..." since this means with respect to all inputs
+  - Best case can't be worse than ____ 
+  - Worst case can't be better than ___ 
+- $\sum_{k=1}^{n} = \frac{n(n+1)}{2}$  so $\sum_{k=1}^{n-1} = \frac{n(n-1)}{2}$
+- When analyzing graph algorithms, ask:
+  - How many times do I traverse an edge?
+  - How many times do I visit a vertex?
 
