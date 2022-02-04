@@ -68,7 +68,6 @@
     - Finite set of *production rules*
     - Finite set of *terminal symbols*
     - Finite set of *nonterminal symbols*
-
 - Uses abstractions for syntactic structures
     - `<assign> -> <var> = <expression>` is a definition of the assign abstraction where the LHS of the arrow is the abstraction being defined and the RHS of the arrow consists of a mixture of tokens, lexemes, and references to other abstractions 
     - the definition is called a *production rule*
@@ -88,3 +87,26 @@
 - Leftmost derivation- leftmost nonterminal in each sentential form is the one that is expanded next
     - derivation could be rightmost or in neither leftmost or rightmost since derivation order has no effect on the generated language
 - Most languages are infinite so all sentences in the language cannot be generated in finite time
+
+### Parse Tree
+
+- A hierarchial representation of a derivation
+- every internal node is nonterminal symbol
+- every leaf node is a terminal symbol
+
+### Ambiguity 
+
+- A grammar is *ambiguous* iff it generates a sentital form that has 2+ distinct parse trees 
+    - bad for compilers that need 1 unique parse tree
+- If we use parse tree to indicate precedence levels of the operators, we cannot have ambiguity
+- operator associativity can also be indicated by a grammar
+    - Ex: `<expr> -> <expr> + const | const` indicates left associativity of the `+` operator (left recursion -> left associativity)
+
+#### Dangling Else Ambiguity
+
+- `if (<logic_expr>) if (<logic_expr>) <stmt> else <stmt>` is ambiguous as to which if statement the else belongs to
+- Rewrite grammar to restirct what can appear inside a nested if-statement 
+- Use `<matched> and` `<unmatched>` abstractions to handle the different types of if-else statements
+    - `<stmt> → <matched> | <unmatched>`
+    - `<matched> → if (<logic_expr>) <matched> else <matched> |any non-if statement`
+    - `<unmatched> → if (<logic_expr>) <stmt> | if (<logic_expr>) <matched> else <unmatched>`
