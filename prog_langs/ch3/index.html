@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/data_structures/hash-table/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/prog_langs/ch3/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Hash table - The Notebook</title>
+        <title>Ch. 3 Syntax & Semantics - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -100,27 +100,27 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../overview/" class="dropdown-item">Overview</a>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
 </li>
                                     
 <li>
-    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
-    <a href="../stack/" class="dropdown-item">Stack</a>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
 </li>
                                     
 <li>
-    <a href="../queue/" class="dropdown-item">Queue</a>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
 </li>
                                     
 <li>
-    <a href="../heap/" class="dropdown-item">Heap</a>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
 </li>
                                     
 <li>
-    <a href="../graph/" class="dropdown-item">Graph</a>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
 </li>
                                 </ul>
                             </li>
@@ -257,20 +257,20 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming Languages <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../prog_langs/ch1/" class="dropdown-item">Ch. 1 Introduction</a>
+    <a href="../ch1/" class="dropdown-item">Ch. 1 Introduction</a>
 </li>
                                     
 <li>
-    <a href="../../prog_langs/ch2/" class="dropdown-item">Ch. 2 History</a>
+    <a href="../ch2/" class="dropdown-item">Ch. 2 History</a>
 </li>
                                     
 <li>
-    <a href="../../prog_langs/ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
+    <a href="./" class="dropdown-item active">Ch. 3 Syntax & Semantics</a>
 </li>
                                 </ul>
                             </li>
@@ -415,6 +415,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ch2/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../dig_sys/ch6-assembly/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -433,42 +443,149 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#ch-3-describing-syntax-and-semantics" class="nav-link">Ch. 3 Describing Syntax and Semantics</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#31-introduction" class="nav-link">3.1 Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#32-describing-syntax" class="nav-link">3.2 Describing Syntax</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#33-formal-methods-of-describing-syntax" class="nav-link">3.3 Formal Methods of Describing Syntax</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h5 id="hashmaps">Hashmaps:</h5>
+<h2 id="ch-3-describing-syntax-and-semantics">Ch. 3 Describing Syntax and Semantics</h2>
+<h2 id="31-introduction">3.1 Introduction</h2>
 <ul>
-<li>Built on top of an array using a special indexing system.</li>
-<li>A key-value storage with fast assignments and lookup.</li>
-<li>A table that represents a map from a set of keys to a set of values.</li>
-<li>Uses a hash function which turns a key into an index into the underlying array.</li>
-<li>A hash collision is when a hash function returns the same index for two different keys.</li>
-<li>Hash collision strategies:  </li>
-<li><em>Separate Chaining</em>- each array index points to a different data structure (e.g. array of linked lists)</li>
-<li>
-<p><em>Open addressing</em>-a collision triggers a probing sequence to find where to store the value for a given key.</p>
-</li>
-<li>
-<p>Hash table: A key-value store that uses an array and a hashing function to save and retrieve values.</p>
-</li>
-<li>Key: The identifier given to a value for later retrieval.</li>
-<li>Hash function: A function that takes some input and returns a number</li>
-<li>Compression function: A function that transforms its inputs into some smaller range of possible outputs (e.g. Hash Function)</li>
-<li>Key property is that it is not reversible </li>
+<li><strong>Syntax</strong>- the <em>form/structure</em> of the expressions, statements, and program units</li>
+<li><strong>Semantics</strong>- the <em>meaning</em> of the expressions, statements, and program units </li>
+<li>Syntax and semantics provide a language's definition</li>
+<li>Semantics should follow from syntax in a well designed programming language</li>
+<li>Language Definition Users:<ul>
+<li>Initial evaluaors (language designers)</li>
+<li>Implementers (compiler writers)</li>
+<li>Programmers (language users)</li>
 </ul>
-<p>Recipe for saving to a hash table:
-- Take the key and plug it into the hash function, getting the hash code.
-- Modulo that hash code by the length of the underlying array, getting an array index.
-- Check if the array at that index is empty, if so, save the value (and the key) there.
-- If the array is full at that index continue to the next possible position depending on your collision strategy.</p>
-<p>Recipe for retrieving from a hash table:
-- Take the key and plug it into the hash function, getting the hash code.
-- Modulo that hash code by the length of the underlying array, getting an array index.
-- Check if the array at that index has contents, if so, check the key saved there.
-- If the key matches the one you're looking for, return the value.
-- If the keys don't match, continue to the next position depending on your collision strategy.</p></div>
+</li>
+</ul>
+<h2 id="32-describing-syntax">3.2 Describing Syntax</h2>
+<ul>
+<li>A language is a set of strings of characters from some alphabet <ul>
+<li>Sentences/Statements are the strigns of a language</li>
+</ul>
+</li>
+<li>Describing a language with english can lead to many issues (e.g. Fortran)</li>
+<li><strong>Meta-Language</strong>- a language used to define other languages</li>
+<li><strong>Grammar</strong>- a meta-lanugage used to define the syntax of a language</li>
+<li>A sentence can be syntactically correct but not semantically correct</li>
+</ul>
+<h3 id="lexical-analysis">Lexical Analysis</h3>
+<ul>
+<li>Lexical specification is usually seperate from syntactic description<ul>
+<li>lexemes include literals, operators, keywords, etc.</li>
+<li>programs are strings of lexemes</li>
+</ul>
+</li>
+<li>Converting characters in the source program into lexical units    </li>
+<li>Lexical analyzer splits source code into tokens</li>
+<li>Token- syntactic category that forms a class of lexemes<ul>
+<li>identifiers (names of vars, methods, classes) , literals, keywords, operators, punctuation</li>
+</ul>
+</li>
+<li>Lexeme- a sequence of characters that matches the pattern for a token </li>
+</ul>
+<h3 id="formal-definition-of-languages">Formal Definition of Languages</h3>
+<ul>
+<li>
+<p>Two ways:</p>
+<ul>
+<li>Recognizer- reads input strings over the alphabet of the language and decides whether the input strings belong to the language </li>
+<li>produces a yes/no answer as to whether the input string is a valid sentence in the language</li>
+<li>Syntax analysis is a recognizer</li>
+<li>Generator- generates random valid sentences in a specific language</li>
+</ul>
+</li>
+<li>
+<p>Neither on their own are useful in learning a language</p>
+</li>
+<li>
+<p>Used together they form the basis of computational theory</p>
+</li>
+</ul>
+<h2 id="33-formal-methods-of-describing-syntax">3.3 Formal Methods of Describing Syntax</h2>
+<ul>
+<li>Grammars- used to descirbe the syntax of programming languages</li>
+</ul>
+<h3 id="context-free-grammars">Context Free Grammars</h3>
+<ul>
+<li>Developed by Noam Chomsky (a linguist)</li>
+<li>4 classes of generative devices or grammars that define 4 classes of languages<ul>
+<li>2 of them, context-free and regular grammars, were later useful for describing the syntax of programming languages</li>
+<li>forms of tokens in PLs can be described by regular grammars</li>
+<li>syntax of whole languages can be described by context-free grammars</li>
+</ul>
+</li>
+</ul>
+<h3 id="backus-naur-form-bnf">Backus-Naur Form (BNF)</h3>
+<ul>
+<li>Invented by John Backus to describe Algol 58</li>
+<li>A natural notation for describing syntax</li>
+<li>Equivalent to context-free grammars</li>
+<li>Metalanguage for PLs</li>
+<li>
+<p>Grammar consists of:</p>
+<ul>
+<li><em>Start symbol</em></li>
+<li>Finite set of <em>production rules</em></li>
+<li>Finite set of <em>terminal symbols</em></li>
+<li>Finite set of <em>nonterminal symbols</em></li>
+</ul>
+</li>
+<li>
+<p>Uses abstractions for syntactic structures</p>
+<ul>
+<li><code>&lt;assign&gt; -&gt; &lt;var&gt; = &lt;expression&gt;</code> is a definition of the assign abstraction where the LHS of the arrow is the abstraction being defined and the RHS of the arrow consists of a mixture of tokens, lexemes, and references to other abstractions </li>
+<li>the definition is called a <em>production rule</em></li>
+</ul>
+</li>
+<li>nonterminal symbols- the abstractions in a BNF description<ul>
+<li>can have 2+ distinct definitions (represent 2+ possible syntactic forms in the language)</li>
+<li>multiple definitions can be written as a single rule seperated by a <code>|</code> meaning logical OR</li>
+</ul>
+</li>
+<li>terminal symbols- lexemes and tokens of the rules </li>
+<li>BNF Description/Grammar- a collection of rules </li>
+<li>Simple but sufficiently powerful to describe syntax of PLs<ul>
+<li>Lists (utilizes recursion): <code>&lt;identifier_list&gt; -&gt; identifier | identifier, &lt;identifier_list&gt;</code> </li>
+<li>ordering, nested structures of any depth, operator precedence and associativity </li>
+</ul>
+</li>
+<li>Grammar- generative device for defining languages<ul>
+<li>Start with a special nonterminal <em>start symbol</em> and then apply a sequence of rules in a <em>derivation</em></li>
+<li>start symbol is usually <code>&lt;program&gt;</code></li>
+</ul>
+</li>
+<li>Sentential Form- every string of nonterminal or terminal symbols in a derivation</li>
+<li>Sentence- a sentential form that has only terminal symbols</li>
+<li>Leftmost derivation- leftmost nonterminal in each sentential form is the one that is expanded next<ul>
+<li>derivation could be rightmost or in neither leftmost or rightmost since derivation order has no effect on the generated language</li>
+</ul>
+</li>
+<li>Most languages are infinite so all sentences in the language cannot be generated in finite time</li>
+</ul></div>
             </div>
         </div>
 

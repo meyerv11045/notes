@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/data_structures/hash-table/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/prog_langs/ch2/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Hash table - The Notebook</title>
+        <title>Ch. 2 History - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -100,27 +100,27 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../overview/" class="dropdown-item">Overview</a>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
 </li>
                                     
 <li>
-    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
-    <a href="../stack/" class="dropdown-item">Stack</a>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
 </li>
                                     
 <li>
-    <a href="../queue/" class="dropdown-item">Queue</a>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
 </li>
                                     
 <li>
-    <a href="../heap/" class="dropdown-item">Heap</a>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
 </li>
                                     
 <li>
-    <a href="../graph/" class="dropdown-item">Graph</a>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
 </li>
                                 </ul>
                             </li>
@@ -257,20 +257,20 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming Languages <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../prog_langs/ch1/" class="dropdown-item">Ch. 1 Introduction</a>
+    <a href="../ch1/" class="dropdown-item">Ch. 1 Introduction</a>
 </li>
                                     
 <li>
-    <a href="../../prog_langs/ch2/" class="dropdown-item">Ch. 2 History</a>
+    <a href="./" class="dropdown-item active">Ch. 2 History</a>
 </li>
                                     
 <li>
-    <a href="../../prog_langs/ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
+    <a href="../ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
 </li>
                                 </ul>
                             </li>
@@ -415,6 +415,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ch1/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../ch3/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -433,42 +443,243 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="1"><a href="#ch-2-history-of-programming-languages" class="nav-link">Ch. 2 History of Programming Languages</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#23-fortran" class="nav-link">2.3 Fortran</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#25-algol" class="nav-link">2.5 ALGOL</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#28-pl1" class="nav-link">2.8 PL/1</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#211-algol-68" class="nav-link">2.11 Algol 68</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#212-pascal" class="nav-link">2.12 Pascal</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#212-c" class="nav-link">2.12 C</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#215-smalltalk" class="nav-link">2.15 Smalltalk</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#216-c" class="nav-link">2.16 C++</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#217-java" class="nav-link">2.17 Java</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h5 id="hashmaps">Hashmaps:</h5>
+<h1 id="ch-2-history-of-programming-languages">Ch. 2 History of Programming Languages</h1>
+<h2 id="23-fortran">2.3 Fortran</h2>
 <ul>
-<li>Built on top of an array using a special indexing system.</li>
-<li>A key-value storage with fast assignments and lookup.</li>
-<li>A table that represents a map from a set of keys to a set of values.</li>
-<li>Uses a hash function which turns a key into an index into the underlying array.</li>
-<li>A hash collision is when a hash function returns the same index for two different keys.</li>
-<li>Hash collision strategies:  </li>
-<li><em>Separate Chaining</em>- each array index points to a different data structure (e.g. array of linked lists)</li>
-<li>
-<p><em>Open addressing</em>-a collision triggers a probing sequence to find where to store the value for a given key.</p>
-</li>
-<li>
-<p>Hash table: A key-value store that uses an array and a hashing function to save and retrieve values.</p>
-</li>
-<li>Key: The identifier given to a value for later retrieval.</li>
-<li>Hash function: A function that takes some input and returns a number</li>
-<li>Compression function: A function that transforms its inputs into some smaller range of possible outputs (e.g. Hash Function)</li>
-<li>Key property is that it is not reversible </li>
+<li>Environment of development (1954):<ul>
+<li>unreliable computers with small memories</li>
+<li>focus on scientific applications</li>
+<li>no programming methodology or tools (writing code in assembly)</li>
+<li>machine efficiency was most important concern</li>
 </ul>
-<p>Recipe for saving to a hash table:
-- Take the key and plug it into the hash function, getting the hash code.
-- Modulo that hash code by the length of the underlying array, getting an array index.
-- Check if the array at that index is empty, if so, save the value (and the key) there.
-- If the array is full at that index continue to the next possible position depending on your collision strategy.</p>
-<p>Recipe for retrieving from a hash table:
-- Take the key and plug it into the hash function, getting the hash code.
-- Modulo that hash code by the length of the underlying array, getting an array index.
-- Check if the array at that index has contents, if so, check the key saved there.
-- If the key matches the one you're looking for, return the value.
-- If the keys don't match, continue to the next position depending on your collision strategy.</p></div>
+</li>
+<li>Fortran I was released in april of 1957 after 18 years of work<ul>
+<li>code was very fast</li>
+<li>quickly became widely used</li>
+<li>programs &gt;400 lines didnt compile correctly due to unreliable machines</li>
+</ul>
+</li>
+<li>Features:<ul>
+<li>Do loop</li>
+<li>three-way selection statement: if (expression) negative, zero, positive </li>
+<li>user-defined subprograms (no seperate compilation though)</li>
+<li>only six chars for names</li>
+<li>no data typing statements (types depended on first letter of name)</li>
+</ul>
+</li>
+<li>John Backus won 1977 Turing Award for his work on Fortran</li>
+<li>Fortran II came out in 1958 with independent compilation</li>
+<li>Fortran IV came out during 60-62 with explicit type declarations, logical if statements, and subprograms allow passing names as paraemters<ul>
+<li>ANSI standard in 1966 (Fortran 66)</li>
+</ul>
+</li>
+<li>Fortran 77- character string handling, lgoical loop control statement, if-then-else statement</li>
+<li>Fortran 90 introduced:<ul>
+<li>modules, dynamic arrays, case-statement, pointers, recursion, parameter type checking </li>
+</ul>
+</li>
+<li>All Fortran Features:<ul>
+<li>do loop</li>
+<li>3 way selection statemenent</li>
+<li>subprograms</li>
+<li>logical if statements</li>
+<li>explicit type declarations</li>
+<li>character string handling</li>
+<li>logical loop control statement</li>
+<li>if else statement</li>
+<li>modules </li>
+<li>dynamic arrays</li>
+<li>case statements</li>
+<li>pointers</li>
+<li>recursion</li>
+<li>param type checking</li>
+</ul>
+</li>
+</ul>
+<h2 id="25-algol">2.5 ALGOL</h2>
+<ul>
+<li>Environment of development<ul>
+<li>fortran had barely arrived for IBM 70x</li>
+<li>many other languages were being developed for specific machines</li>
+<li>no portable, machie independent languages so Algol was the result of rtrying to design a universal language</li>
+</ul>
+</li>
+<li>Early Design Process<ul>
+<li>Goals:</li>
+<li>close to math notation</li>
+<li>good for describing algorithms</li>
+<li>must be mechanically translatable to machine code</li>
+</ul>
+</li>
+<li>Not very succesfful<ul>
+<li>variations such as MAD and JOVIAL (used by air force for 25 years)</li>
+<li>IBM dropped support</li>
+</ul>
+</li>
+<li>Algol 58 Features:<ul>
+<li>formalized concept of data types</li>
+<li>compound staatements</li>
+<li>else-if clause </li>
+<li>parameters seperated by mode (passed in vs. passed out)</li>
+</ul>
+</li>
+<li>Algol 60 features:<ul>
+<li>subprogram recursion (new for imperative languages)</li>
+<li>two parameter passing methods (pass by value, by name)</li>
+<li>nested functions</li>
+<li>stack storage allocation</li>
+</ul>
+</li>
+<li>Successes:<ul>
+<li>form base of all following imperative languages</li>
+<li>first machine-independent language</li>
+<li>first language with standard syntax (BNF)</li>
+</ul>
+</li>
+<li>Failures:<ul>
+<li>never widely used</li>
+<li>lack of IO definition made programs not portable since different machines had different ways of doing IO</li>
+<li>too flexible making it hard to implement so few compilers implemented the whole language</li>
+<li>formal syntax definition (BNF) seemed too complex</li>
+</ul>
+</li>
+</ul>
+<h2 id="28-pl1">2.8 PL/1</h2>
+<ul>
+<li>Development Environment:<ul>
+<li>cocbol and fortran existing</li>
+<li>by 1963 scientific users wanted more elaborate I/O and business users wanted floats and arrays</li>
+</ul>
+</li>
+<li>Features<ul>
+<li>unit-level concurrency</li>
+<li>exception handling</li>
+<li>recursion toggled on/off for faster execution</li>
+<li>pointers as a data type</li>
+<li>cross sections fo arrays</li>
+</ul>
+</li>
+<li>Successes<ul>
+<li>used in both business and scientifc applications in the 70s</li>
+<li>subset of language taught in colleges</li>
+</ul>
+</li>
+<li>Failurse<ul>
+<li>many new features were poorly designed</li>
+<li>too large and complex</li>
+</ul>
+</li>
+</ul>
+<h2 id="211-algol-68">2.11 Algol 68</h2>
+<ul>
+<li>Design baedon concept of orthogonality<ul>
+<li>a few basic concepts + a few combining mechanisms</li>
+</ul>
+</li>
+<li>Source of several new ideas</li>
+<li>Features<ul>
+<li>user defined data types</li>
+<li>dynamic arrays </li>
+</ul>
+</li>
+</ul>
+<h2 id="212-pascal">2.12 Pascal</h2>
+<ul>
+<li>Developed by a member of Algol 68 committee</li>
+<li>Simple, Small, and used for teaching from mid 70s to mid 90s</li>
+<li>Easy to use toolkit on any platform<ul>
+<li>provides a compiler that produces p-code so all the user needs to do is write a p-code interpreter in assembly to be able to use Pascal (relatively simpler compared to setting up other languages at the time)</li>
+</ul>
+</li>
+<li>Features:<ul>
+<li>enumeration types</li>
+<li>subrange types</li>
+</ul>
+</li>
+</ul>
+<h2 id="212-c">2.12 C</h2>
+<ul>
+<li>Designed for systems programming at bell labs by dennies ritchie and ken thompson</li>
+<li>evolved from BCPL, B, and also ALGOL 68</li>
+<li>Poor type checking but rich set of operators<ul>
+<li>Good for writing systems-level software (OS, etc.)</li>
+</ul>
+</li>
+<li>Initially spread though UNIX, which included a C compiler</li>
+<li>Bootstrapping:<ul>
+<li>C compilers can be written in c so that only a smaller compiler written in assembly needs to be written to compile the compiler</li>
+</ul>
+</li>
+</ul>
+<h2 id="215-smalltalk">2.15 Smalltalk</h2>
+<ul>
+<li>Developed at Xerox PARC in the 70s by Alan Kay</li>
+<li>First full implementation of an OOP language (data abstraction, inheritance, dynamic binding)</li>
+<li>Also pinoreed GUI design</li>
+</ul>
+<h2 id="216-c">2.16 C++</h2>
+<ul>
+<li>Developed at Bell labs by Bjarne Srtoustrup in 1980</li>
+<li>Evolved from C and SIMULA67 (where OOP ideas came from)</li>
+<li>Large and complex language because it supports both procedural (backwards support for C code) and OOP </li>
+</ul>
+<h2 id="217-java">2.17 Java</h2>
+<ul>
+<li>Developed at Sun in early 1990s b/c C &amp; C++ were not good for embedded devices</li>
+<li>Based on C++ <ul>
+<li>simpler</li>
+<li>removed unsafe things like pointer arithmetic and left safe thing like references</li>
+<li>garbage collected memory management</li>
+</ul>
+</li>
+<li>JVM concept and JIT compilers</li>
+<li>Use increased faster than any previous language due to companies and academics banding together for an alternative from microsoft </li>
+</ul></div>
             </div>
         </div>
 

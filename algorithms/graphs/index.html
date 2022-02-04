@@ -89,6 +89,10 @@
 <li>
     <a href="./" class="dropdown-item active">Graphs</a>
 </li>
+                                    
+<li>
+    <a href="../tips/" class="dropdown-item">Tips</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -260,6 +264,14 @@
 <li>
     <a href="../../prog_langs/ch1/" class="dropdown-item">Ch. 1 Introduction</a>
 </li>
+                                    
+<li>
+    <a href="../../prog_langs/ch2/" class="dropdown-item">Ch. 2 History</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -409,7 +421,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../data_structures/overview/" class="nav-link">
+                                <a rel="next" href="../tips/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -438,6 +450,14 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#breadth-first-search" class="nav-link">Breadth First Search</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#edge-classification" class="nav-link">Edge Classification</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#connectivity" class="nav-link">Connectivity</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -484,12 +504,54 @@
 <h3 id="analysis">Analysis</h3>
 <ul>
 <li>Enqueing and dequeing take <script type="math/tex">O(1)</script> time</li>
-<li>All nodes are added to the queue when exploring the entire graph so this takes <script type="math/tex">O(V)</script> time</li>
+<li>All nodes are added to the queue when exploring the entire graph so this takes <script type="math/tex">O(V)</script> time (overhead for initialization)</li>
 <li>Once a vertex is dequeued, its entire adjacency linked list is scanned (adding vertices to the queue that have not been visited) </li>
-<li>Since all the adjacency lists must be scanned in their entirety, it takes <script type="math/tex">O(E)</script> time</li>
+<li>Since all the adjacency lists must be scanned in their entirety, it takes <script type="math/tex">\Theta(E)</script> time</li>
+<li>We explore all edges <script type="math/tex">\Theta(E))</script>
+<ul>
+<li>each edge explored once in undirected graph</li>
+<li>each edge explored twice in directed graph</li>
+</ul>
+</li>
 <li>Total runtime is <script type="math/tex">O(V + E)</script> linear to the size of the adjacency list of <script type="math/tex">G</script>
 </li>
-</ul></div>
+</ul>
+<h2 id="edge-classification">Edge Classification</h2>
+<ul>
+<li>tree edge</li>
+<li>backward edge</li>
+<li>forward edge</li>
+</ul>
+<h2 id="connectivity">Connectivity</h2>
+<p>There is a path from each vertex to every other vertex</p>
+<h3 id="directed-graph">Directed Graph</h3>
+<ul>
+<li>Strongly Connected</li>
+<li>Strongly connected components or strong components</li>
+<li>An SCC is a set of vertices such that there is a path from every vertex to every other vertex in the set</li>
+</ul>
+<h3 id="undirected-graph">Undirected Graph</h3>
+<ul>
+<li>Connected- run DFS or BFS and see you visit all the nodes (keep a count and compare to size of graph)</li>
+<li>Connected Components</li>
+<li>Articulation Points- every path btw v and w contains a, then a is an articulation point OR removing a  splits G into two or more parts </li>
+<li>Biconnected Components- no articulation points in the graph  </li>
+</ul>
+<h3 id="finding-strongly-connected-components-on-directed-graphs">Finding Strongly Connected Components on Directed Graphs</h3>
+<ol>
+<li>Perform DFS (from random start vertex), when a vertex is finished (colored black) push onto a stack</li>
+<li>Compute the transpose of the graph (flip direction of edges)</li>
+<li>Run DFS on <script type="math/tex">G^T</script>, with the starting vertex being the top of the stack</li>
+<li>When you get stuck, pop from the stack to restart DFS with a new start ppint </li>
+<li>
+<p>Each tree in the DFS forest of <script type="math/tex">G^T</script> is a strongly connected component </p>
+</li>
+<li>
+<p>Why does this work?</p>
+</li>
+<li>This algorithm doesn't apply to undirected graphs</li>
+</ol>
+<h3 id="finding-articulation-points-on-undirected-graphs">Finding Articulation Points on Undirected Graphs</h3></div>
             </div>
         </div>
 

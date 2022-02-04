@@ -89,6 +89,10 @@
 <li>
     <a href="../../algorithms/graphs/" class="dropdown-item">Graphs</a>
 </li>
+                                    
+<li>
+    <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -260,6 +264,14 @@
 <li>
     <a href="./" class="dropdown-item active">Ch. 1 Introduction</a>
 </li>
+                                    
+<li>
+    <a href="../ch2/" class="dropdown-item">Ch. 2 History</a>
+</li>
+                                    
+<li>
+    <a href="../ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -409,7 +421,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../dig_sys/ch6-assembly/" class="nav-link">
+                                <a rel="next" href="../ch2/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -457,6 +469,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#17-implementation-methods" class="nav-link">1.7 Implementation Methods</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -466,17 +482,21 @@
 
 <h1 id="introduction">Introduction</h1>
 <ul>
-<li>Why so many languages? </li>
+<li>Why so many languages? <ul>
 <li>Evolution- we have learned better ways of doing things over time</li>
 <li>Special Purposes- many are designed for specific problem domains</li>
 <li>Diverse Personal Preferences</li>
-<li>What makes a language successful?</li>
+</ul>
+</li>
+<li>What makes a language successful?<ul>
 <li>Ease of use for novice</li>
 <li>Expressive Power</li>
 <li>Ease of implementation</li>
 <li>Wide dissemination at minimal cost </li>
 <li>Excellent compilers (possible to quickly compile code to be very small)</li>
 <li>Backing of a powerful sponsor</li>
+</ul>
+</li>
 </ul>
 <h2 id="11-why-study-concepts-of-progamming-languages">1.1 Why Study Concepts of Progamming languages?</h2>
 <ul>
@@ -523,60 +543,78 @@
 </li>
 </ul>
 </li>
-<li>
-<p>Readability</p>
-<ul>
-<li>
-<p>Simplicity and orthogonality</p>
-<ul>
+<li>Readability<ul>
+<li>Simplicity and orthogonality<ul>
 <li>Minimal feature multiplicity (i.e. having more than one way to accomplish a particular operation)</li>
 <li>Minimal operating overloading</li>
 <li>Relative small set of primitive constructs</li>
 <li>Consistent set of rules for combining the primitive constructs</li>
 <li>Every possible combination is allowed and meaningful</li>
-<li>Orthogonality means constructs are independent of each other so there are not excpetions to languages rules like arrays of strings are not allowed but all other data types are</li>
+<li>Orthogonality means constructs are independent of each other so there are not excpetions to languages rules like arrays of strings are not allowed but all other data types are        </li>
 </ul>
 </li>
-<li>
-<p>Data Types- adequate predefined data types and structures (e.g. boolean instead of using 0 or 1)</p>
+<li>Data Types- adequate predefined data types and structures (e.g. boolean instead of using 0 or 1)</li>
+<li>Syntax Considerations</li>
+</ul>
 </li>
-<li>Syntax Considerations- </li>
-<li>Reliability</li>
+<li>Reliability<ul>
 <li>Type Checking at compile or runtime<ul>
 <li>Preventing a bit-pattern representing one type of data from being interpreted as a different type of data</li>
 </ul>
 </li>
 <li>Exception Handling to allow taking corrective measures for runtime error</li>
 <li>Aliasing is the presence of 2+ distinct referencing methods for the same memory location. This is a dangerous, but common, feature</li>
-<li>Cost </li>
+</ul>
+</li>
+<li>Cost <ul>
 <li>Maintaining programs incurrs costs</li>
 <li>Poor reliability leads to high costs</li>
-<li>Portability </li>
+</ul>
+</li>
+<li>Portability <ul>
 <li>Java code only needs to compile once and the resulting bytecode (instead of machine code) can be run on any OS with a java runtime system installed</li>
 <li>C++ is not very portable since the code needs to be recompiled for each architecture</li>
+</ul>
+</li>
 <li>Generality: applicability to wide range of applications</li>
 <li>Well-definedness: the completeness and precision of the language's official definition</li>
 </ul>
-</li>
-</ul>
 <h2 id="14-influences-on-language-design">1.4 Influences on Language Design</h2>
 <ul>
-<li>Computer Architecture</li>
-<li>Imperative Languages- <ul>
-<li>designed around von Neumann architecture</li>
+<li>Computer Architecture<ul>
+<li>Imperative Languages</li>
+<li>designed around von Neumann architecture<ul>
 <li>data + programs stored in same memory so instructions and data must be piped to CPU and result piped back to memory (fetch-execute cycle)</li>
-<li>Central feature is variables that model memory cells, assignment operations which are based on piping operations</li>
-<li>Very efficient with iteration since instructions are stored adjacently in memory (thus discourages use of recursion for repetition)</li>
+<li>new paradigm of storing the program in the computer (stored-program computer)</li>
 </ul>
 </li>
-<li>Functional Languages- <ul>
+<li>Central feature is variables that model memory cells, assignment operations which are based on piping operations</li>
+<li>Very efficient with iteration since instructions are stored adjacently in memory (thus discourages use of recursion for repetition)</li>
+<li>Functional Languages</li>
 <li>Primary means of computation is applying functions to given parameters</li>
 <li>Programming can be done without the variables, assignment statements, and iteration used in imperative languages</li>
 <li>Many benefits though they won't displace imperative languages until a non-von neumann computer is design that allows more efficient execution of programs in functional languages</li>
 </ul>
 </li>
-<li>Programming Design Methodologies</li>
-<li>Procedure Oriented (lack of control statements, extensive use of goto statements, incomplete type checking) --&gt; Data Oriented (emphasis on abstract data types to solve problems)  -- &gt; Object Oriented</li>
+<li>
+<p>Programming Design Methodologies</p>
+<ul>
+<li>
+<p>Influences:</p>
+<ul>
+<li>50s and early 60s: simple applications</li>
+<li>worry about machine efficiency</li>
+<li>late 60s: people efficiency is became more important</li>
+<li>strucuted programming; top-down design and step-wise refinement (refining code in steps)</li>
+<li>late 70s: process-orientied to data-oriented</li>
+<li>data abstraction</li>
+<li>middle 80s: object-oriented programming</li>
+<li>data abstraction + inheritance + polymorphism</li>
+</ul>
+</li>
+<li>
+<p>Procedure Oriented (lack of control statements, extensive use of goto statements, incomplete type checking) --&gt; Data Oriented (emphasis on abstract data types to solve problems)  -- &gt; Object Oriented</p>
+</li>
 <li>New programming languages in the 70s to support data abstraction</li>
 <li>OOP developed with the new language Smalltalk that supported it<ul>
 <li>Now OOP is feature of most imperative languages and even some functional languages</li>
@@ -584,17 +622,87 @@
 </li>
 <li>Main Idea: As new programming design methodoligies evolved, languages evolved with them</li>
 </ul>
+</li>
+</ul>
 <h2 id="15-language-categories">1.5 Language Categories</h2>
 <ol>
-<li>Imperative </li>
-<li>Functional</li>
-<li>Logic- rule based language where rules are specified in no particular order and the language implementation system chooses the order to apply the rules to produce a result (e.g. Prolog)</li>
+<li>Imperative- variables, assignment statements, iteration (includes OOP languages and scripting languages) </li>
+<li>Functional- applying functions to given parameters (purest form is mathematical and has no memory, time, or state)</li>
+<li>Logic- rule based language where rules are specified in no particular order and the language implementation system chooses the order to apply the rules to produce a result (e.g. Prolog)<ul>
+<li>program statements describe facts and rules</li>
+<li>computer's job is to construct a proof based on the given facts + rules</li>
+</ul>
+</li>
 </ol>
 <h2 id="16-language-design-tradeoffs">1.6 Language Design Tradeoffs</h2>
 <ul>
 <li>Designing a language requires making criteria tradeoffs (e.g. efficiency for reliability with C not checking for in range indices)</li>
 <li>Conflict between writability and readability is common</li>
-</ul></div>
+<li>Reliability vs Cost of Execution</li>
+</ul>
+<h2 id="17-implementation-methods">1.7 Implementation Methods</h2>
+<ol>
+<li>
+<p>Compilation- programs are translated into machine language  </p>
+<ul>
+<li>Slow translation, fast execution when compared to interpretation </li>
+<li>Translation only occurs once, but program is executed many times</li>
+<li>Several Steps <ul>
+<li>Lexical Anlaysis- converts characters in source program into lexical units</li>
+<li>Syntax Analysis- transforms lexical units into parse tree and check syntactic correctness</li>
+<li>Semantics Analysis- type checking and intermediate code generation (often in an assembly like language)</li>
+<li>Code Generation- machine code generated </li>
+</ul>
+</li>
+<li>
+<p>Pure Interpretation- programs are interpreted</p>
+</li>
+<li>
+<p>No translation into machine language, code is executed on the fly</p>
+</li>
+<li>Rare for traditional high-level languages</li>
+<li>Pros:<ul>
+<li>Execution is immediate </li>
+<li>Easier implementation of debugging programs (altough errors are not found until actually executed)</li>
+</ul>
+</li>
+<li>Cons: <ul>
+<li>10 to 100 times slower execution than compiled programs</li>
+<li>Often requires more space</li>
+</ul>
+</li>
+<li>
+<p>Hybrid-high-level language translated to an intermediate language</p>
+</li>
+<li>
+<p>Translation can catch many errors early</p>
+</li>
+<li>Interpeting much simpler byte code --&gt; faster runtime</li>
+<li>Faster than pure interpretation </li>
+<li>Ex: Java compiles to intermediate byte code that is machine independent so it can be run on any machine with a run-time system (JVM)</li>
+<li>
+<p>Just-in-Time Compilation (aka Dynamic Compilation): </p>
+</li>
+<li>
+<p>Method for improving the performance of interpreted programs</p>
+</li>
+<li>During execution of the program, parts of the program that are used frequently may be compiled into native code to improve performance<ul>
+<li>Ex: with java, the JVM runs the bytecode, but for certain functions that might be heavily used, they are compiled into machine code for the specific machine to increase performance </li>
+</ul>
+</li>
+<li>Intermediate language (bytecode) methods are translated into machine code when they become hot (i.e. executed more often than a threshold)<ul>
+<li>The machine code is then kept for subsequent calls</li>
+</ul>
+</li>
+<li>Compile commonly used parts of program to machine code (e.g. Java, Matlab, .Net languages)<ul>
+<li>Attempts to get the benefits of both an interpret and compiled program</li>
+</ul>
+</li>
+<li>Java and C# have runtime environments (JVM, CLR) that can profile a program while it is being run to allow for more optimized code to be generated</li>
+<li>Many JIT compilers only compile the code paths frequently used to limit overhead of compilation during runtime</li>
+</ul>
+</li>
+</ol></div>
             </div>
         </div>
 
