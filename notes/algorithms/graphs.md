@@ -40,11 +40,29 @@ A graph is a set of vertices and edges $G = (V, E)$
     - each edge explored twice in directed graph
 - Total runtime is $O(V + E)$ linear to the size of the adjacency list of $G$
 
+## Depth First Search
+
+- Searches deeper in the graph when possible and when it gsets stuck, the search backtracks
+- Creates a depth-first forest comprising several depth-first trees 
+- time stamps when each vertex is disocvered and when the search finishes examining the vertex's neighbors (adjacency list)
+- $\Theta(V + E)$ since all edges are traversed and all edges are visited
+
 ## Edge Classification
 
 - tree edge
 - backward edge
-- forward edge
+    - goes from $v$ to an ancestor of $u$ in the DFT
+    - happens when $v$ disocvers $u$ while $u$ has been discovered but not finished yet and $u$ is an ancestor of $v$
+
+- forward edge 
+    - goes from $u$ to a descendant of $u$ in the DFT 
+    - happens when $v$ discovers $u$ while $u$ is finished and $u$ was discovered after $v$
+
+- cross edge 
+    - between $u$ and $v$, neither is ancestor of the other in DFT
+    - happens when $v$ discovers $u$ while $u$ is finished and $u$ was discovered before $v$
+
+- edge classification will change depending on where you start building the DFT from 
 
 ## Connectivity 
 
@@ -56,29 +74,38 @@ There is a path from each vertex to every other vertex
 - Strongly connected components or strong components
 - An SCC is a set of vertices such that there is a path from every vertex to every other vertex in the set
 
-### Undirected Graph
-
-- Connected- run DFS or BFS and see you visit all the nodes (keep a count and compare to size of graph)
-- Connected Components
-- Articulation Points- every path btw v and w contains a, then a is an articulation point OR removing a  splits G into two or more parts 
-- Biconnected Components- no articulation points in the graph  
-
-### Finding Strongly Connected Components on Directed Graphs
+#### Finding Strongly Connected Components on Directed Graphs
 
 1. Perform DFS (from random start vertex), when a vertex is finished (colored black) push onto a stack
 2. Compute the transpose of the graph (flip direction of edges)
 3. Run DFS on $G^T$, with the starting vertex being the top of the stack
-   - When you get stuck, pop from the stack to restart DFS with a new start ppint 
+    - When you get stuck, pop from the stack to restart DFS with a new start ppint 
 4. Each tree in the DFS forest of $G^T$ is a strongly connected component 
 
-- Why does this work?
+- Analysis:
+    - 2 DFS: $\Theta(V + E)$
+    - Transpose of $G$ is $\Theta(V + E)$
+    - *Overall Runtime:* $\Theta (V+ E)$
 - This algorithm doesn't apply to undirected graphs
 
-### Finding Articulation Points on Undirected Graphs
+### Undirected Graph
 
+- Connected- run DFS or BFS and see you visit all the nodes (keep a count and compare to size of graph)
+- Connected Components
+- **Articulation Point**- a node that if removeed, will split $G$ into 2+ parts
+    - $a$ is an articulation point if every path btw $v$ and $w$ contains $a$ 
 
+- **Biconnected Components**- components with no articulation points
 
+#### Finding Articulation Points on Undirected Graphs
 
+- Execute DFS while keeping track of additional info 
+    - Overall runtime of $\Theta (V + E)$
+- A node $u$ is an articulation point if:
+    -  $u$ is the root of the DFS tree and has at least 2 children
+        - This means the children cannot reach each other in any other way except through $u$
+    - $u$ is not a root of the DFS tree and $u$ has a child with a subtree that has no backedge to one of $u$'s  ancestors
+        - This means all the descendants of $u$ must travel through $u$ to reach any ancestors of $u$ in the DFS tree
 
 
 
