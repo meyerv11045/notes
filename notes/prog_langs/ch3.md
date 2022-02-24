@@ -110,3 +110,21 @@
     - `<stmt> → <matched> | <unmatched>`
     - `<matched> → if (<logic_expr>) <matched> else <matched> |any non-if statement`
     - `<unmatched> → if (<logic_expr>) <stmt> | if (<logic_expr>) <matched> else <unmatched>`
+- Can also use an explicit delimiter to end every conditional 
+
+## Extended BNF
+
+- More concise
+- Equally powerful/expressive 
+- Defect standard for defining PLs
+- optional parts placed in brackets []
+    - `<proc_call> -> <ident> ([<expr_list>])`
+    - alternative in BNF: `<pc> -> <id> () | <id> (<el>)`
+- alternative parts of rhs are placed inside parenthesies and seperated by vertical vertical bars
+    - `<term> -> <term> (+ | -) const`
+- Repetitions (0 or more) are placed inside baces `{}`
+    - `<identifier_list> -> <identifier> {, <identifier>}`
+
+## Semantics
+
+- No single widely accepeted way of describing semantics

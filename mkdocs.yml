@@ -22,8 +22,13 @@ nav:
     - 'Docker': 'system_design/docker.md'
     - 'Behavior Trees': 'ai/behavior-trees.md'
   - Algorithms:
+    - Graphs:
+      - 'Representations': 'algorithms/graphs/graphs.md'
+      - 'BFS & DFS': 'algorithms/graphs/bfs_dfs.md'
+      - 'Undirected': 'algorithms/graphs/undirected.md'
+      - 'Directed': 'algorithms/graphs/directed.md'
     - 'Analysis': 'algorithms/analysis.md'
-    - 'Graphs': 'algorithms/graphs.md'
+    - 'Greedy': 'algorithms/greedy.md'
     - 'Tips': 'algorithms/tips.md'
   - Data Structures:
     - 'Overview': 'data_structures/overview.md'
