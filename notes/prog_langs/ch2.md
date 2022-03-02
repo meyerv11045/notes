@@ -39,7 +39,7 @@
     - pointers
     - recursion
     - param type checking
-  
+
 
 
 
@@ -82,7 +82,7 @@
 ## 2.8 PL/1
 
 - Development Environment:
-    - cocbol and fortran existing
+    - Cobol and Fortran existing
     - by 1963 scientific users wanted more elaborate I/O and business users wanted floats and arrays
 - Features
     - unit-level concurrency

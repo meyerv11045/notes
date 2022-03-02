@@ -20,3 +20,62 @@
 - Minimum Spanning trees in an undirected graph
 - Minimum cost aboresence problem in directed graph
 - Huffman code construction in data compression
+
+## Dijkstra's 
+
+- cannot handle negative edge weights 
+
+``` 
+visited =. {s}
+undiscovered. = {V - s}
+for i = 1 to |V| 
+	dist[i] = infinity // O(V)
+```
+
+- BFS is faster for shortet path of unweigghted graph (could give all edges equal weight and run dijkstra's')
+
+
+
+## Longest Path
+
+- is not a greedy problem since it doesnt have optimal substructure for undirected graphs
+- DAGs do have optimal substructure and allow a longest path to be built up greedily
+
+
+
+## Fractional Knapsack
+
+- Thief robbing a store finds $n$ types of metallic dust 
+- THe $i$th dust is worth $v$ per ounce with $w_i$ total ounces available
+- Knapsack can hold total of $W$ Ounces.
+- What is the max value of dust that can fit in the knapsack?
+- Solution: Calc value/oz and then add as much of the most valuable as possible then move to the next valuable, and repeat until the sack is full
+    - this approach is greedy and takes advatnage of the optimal substructure of the problem
+
+
+
+## Optimal Substructure
+
+- Optimal solution to a problem relies on the optimal solution to smaller subproblems
+- Has optimal substructure: shortest path, fractional knapsack
+- Does not have optimal substructure: 0/1 knapsack, longest path on non-DAG
+
+
+
+## When to use Greedy Approach
+
+- Does the *problem* display optimal substructure? 
+- Does your *algorithm* have the greedy choice problem?
+    - can the first choice be part of some optimal solution?
+- If both questions above can be answered yes, then the greedy approach is good, but might also be able to use dynamic programming
+
+
+
+## Proving Correctness of Greedy Algorithms
+
+- By induction
+- By contradiction
+    - suppose your algorithm makes a mistakee
+- useful techniques:
+    - stay ahead argument
+    - exchange argument 
