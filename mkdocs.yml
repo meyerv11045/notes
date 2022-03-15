@@ -3,8 +3,7 @@ site_url: https://meyerv11045.github.com/notes
 docs_dir: notes
 
 extra_javascript: 
-    - http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-    # - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 markdown_extensions:
     - mdx_math:
@@ -75,6 +74,7 @@ nav:
     - 'Ch. 2 History': 'prog_langs/ch2.md'
     - 'Ch. 3 Syntax & Semantics': 'prog_langs/ch3.md'
     - 'Ch. 5 Names, Bindings, & Scope': 'prog_langs/ch5.md'
+    - 'Ch. 6 Data Types': 'prog_langs/ch6.md'
     - 'Ch. 15 Functional Languages: Racket': 'prog_langs/ch15.md'
   - Digital Systems:
     - 'Assembly': 'dig_sys/ch6-assembly.md'

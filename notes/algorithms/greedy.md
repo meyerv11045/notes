@@ -79,3 +79,31 @@ for i = 1 to |V|
 - useful techniques:
     - stay ahead argument
     - exchange argument 
+        - given greedy answer and optimal answer, bring the greedy over into the optimal at the place where they first differ, where the results should be a contradiction
+
+## Data Compression
+
+- A prefix code means no code for a single letter is the prefex of another letter
+    - this makes decoding significantly easier
+- encodings can be visualized as binary trees
+    - prefix codes have all letters as leaves of the tree
+    - to get an optimal encoding for a document, we want the most frequently occuring characters to be closest to the top of the tree (less bits to represent them)
+    - shortest tree representation is the most optimal 
+- Full binary tree- tree where each non-leaf node has two children
+
+### Shannon-Faro Algorithm
+
+- Build tree with top down approach
+- Need one leaf for every symbol in the alphabet
+- Divide symbols into 2 sets where total frequency of each set is near equal
+- A set of size 2 is finished, Represent each symbol w/ 1 bit
+- Recursively divide sets of size > 2 into two balanced sets 
+- Turns out the resulting encoding is not optimal (counterexamples exist)
+    - Pretty good results still so it was used in practice for a while since no better alternatives existed 
+
+### Huffman Coding Algorithm
+
+- Build tree with bottom up approach
+- Coding scheme is optimal (minimum ABL for a given text)
+- Finding the lowest frequencies is currently the bottle neck with O(n)
+    - Need a better data structure (e.g. priority queue) for finding the minimums
