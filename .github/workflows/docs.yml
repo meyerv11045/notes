@@ -27,11 +27,10 @@ jobs:
       
       - name: Build
         run: |
-          cd docs
           mkdocs build
       
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
           branch: gh-pages
-          folder: docs/site
+          folder: site
