@@ -82,12 +82,34 @@
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Algorithms <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Graphs</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../algorithms/graphs/graphs/" class="dropdown-item">Representations</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/undirected/" class="dropdown-item">Undirected</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
+</li>
+    </ul>
+  </li>
+                                    
 <li>
     <a href="../../algorithms/analysis/" class="dropdown-item">Analysis</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/graphs/" class="dropdown-item">Graphs</a>
+    <a href="../../algorithms/greedy/" class="dropdown-item">Greedy</a>
 </li>
                                     
 <li>
@@ -272,6 +294,14 @@
 <li>
     <a href="./" class="dropdown-item active">Ch. 3 Syntax & Semantics</a>
 </li>
+                                    
+<li>
+    <a href="../ch5/" class="dropdown-item">Ch. 5 Names, Bindings, & Scope</a>
+</li>
+                                    
+<li>
+    <a href="../ch15/" class="dropdown-item">Ch. 15 Functional Languages: Racket</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -421,7 +451,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../dig_sys/ch6-assembly/" class="nav-link">
+                                <a rel="next" href="../ch5/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -459,6 +489,16 @@
             </li>
             
             <li class="nav-item" data-level="2"><a href="#33-formal-methods-of-describing-syntax" class="nav-link">3.3 Formal Methods of Describing Syntax</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#extended-bnf" class="nav-link">Extended BNF</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#semantics" class="nav-link">Semantics</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -610,6 +650,30 @@
 <li><code>&lt;unmatched&gt; → if (&lt;logic_expr&gt;) &lt;stmt&gt; | if (&lt;logic_expr&gt;) &lt;matched&gt; else &lt;unmatched&gt;</code></li>
 </ul>
 </li>
+<li>Can also use an explicit delimiter to end every conditional </li>
+</ul>
+<h2 id="extended-bnf">Extended BNF</h2>
+<ul>
+<li>More concise</li>
+<li>Equally powerful/expressive </li>
+<li>Defect standard for defining PLs</li>
+<li>optional parts placed in brackets []<ul>
+<li><code>&lt;proc_call&gt; -&gt; &lt;ident&gt; ([&lt;expr_list&gt;])</code></li>
+<li>alternative in BNF: <code>&lt;pc&gt; -&gt; &lt;id&gt; () | &lt;id&gt; (&lt;el&gt;)</code></li>
+</ul>
+</li>
+<li>alternative parts of rhs are placed inside parenthesies and seperated by vertical vertical bars<ul>
+<li><code>&lt;term&gt; -&gt; &lt;term&gt; (+ | -) const</code></li>
+</ul>
+</li>
+<li>Repetitions (0 or more) are placed inside baces <code>{}</code><ul>
+<li><code>&lt;identifier_list&gt; -&gt; &lt;identifier&gt; {, &lt;identifier&gt;}</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="semantics">Semantics</h2>
+<ul>
+<li>No single widely accepeted way of describing semantics</li>
 </ul></div>
             </div>
         </div>
@@ -623,7 +687,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
         <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/prog_langs/ch15/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Ch. 15 Functional Languages: Racket - The Notebook</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">The Notebook</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+</li>
+                                    
+<li>
+    <a href="../../general/git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../../general/python/" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="../../general/macos/" class="dropdown-item">MacOS</a>
+</li>
+                                    
+<li>
+    <a href="../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
+</li>
+                                    
+<li>
+    <a href="../../general/regex/" class="dropdown-item">Regex</a>
+</li>
+                                    
+<li>
+    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
+</li>
+                                    
+<li>
+    <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                    
+<li>
+    <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../../ai/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Algorithms <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Graphs</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../algorithms/graphs/graphs/" class="dropdown-item">Representations</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/undirected/" class="dropdown-item">Undirected</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../algorithms/analysis/" class="dropdown-item">Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/greedy/" class="dropdown-item">Greedy</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/big3/" class="dropdown-item">The Big 3</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/exceptions/" class="dropdown-item">Exception Handling</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/templates/" class="dropdown-item">Templates</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/inheritance/" class="dropdown-item">Inheritance</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/iterators/" class="dropdown-item">Iterators</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/stl/" class="dropdown-item">STL</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/functors/" class="dropdown-item">Functors</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/lambda/" class="dropdown-item">Lambda Functions</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/misc/" class="dropdown-item">Misc</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/patterns/patterns/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/adapter/" class="dropdown-item">Adapter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/observer/" class="dropdown-item">Observer</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/singleton/" class="dropdown-item">Singleton</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/composite/" class="dropdown-item">Composite</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/interpreter/" class="dropdown-item">Interpreter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/visitor/" class="dropdown-item">Visitor</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/iterator/" class="dropdown-item">Iterator</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/bridge/" class="dropdown-item">Bridge</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/command/" class="dropdown-item">Command</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/factory/" class="dropdown-item">Factory</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/state/" class="dropdown-item">State</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/reactor/" class="dropdown-item">Reactor</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/strategy/" class="dropdown-item">Strategy</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/template/" class="dropdown-item">Template</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming Languages <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../ch1/" class="dropdown-item">Ch. 1 Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../ch2/" class="dropdown-item">Ch. 2 History</a>
+</li>
+                                    
+<li>
+    <a href="../ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
+</li>
+                                    
+<li>
+    <a href="../ch5/" class="dropdown-item">Ch. 5 Names, Bindings, & Scope</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Ch. 15 Functional Languages: Racket</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Digital Systems <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../dig_sys/ch6-assembly/" class="dropdown-item">Assembly</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch7-processor/" class="dropdown-item">Microarchitecture</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch8-mem-sys/" class="dropdown-item">Memory Systems</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch9-io-sys/" class="dropdown-item">IO Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Databases <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+                                    
+<li>
+    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+</li>
+                                    
+<li>
+    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Dev <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/js/basics/" class="dropdown-item">Basics</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/objects/" class="dropdown-item">Objects</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/modules/" class="dropdown-item">Modules</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Prob & Stats <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Science <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../math_science/brain/" class="dropdown-item">The Brain</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/molecular_genetics/" class="dropdown-item">Molecular Genetics</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/dev_psy/" class="dropdown-item">Dev Psychology</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../ch5/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../dig_sys/ch6-assembly/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#functional-languages" class="nav-link">Functional Languages</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#lisp" class="nav-link">LISP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#interpreter" class="nav-link">Interpreter</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#history_1" class="nav-link">History</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#local-bindings" class="nav-link">Local Bindings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#tail-recursion" class="nav-link">Tail Recursion</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#higher-order-functions" class="nav-link">Higher Order Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="functional-languages">Functional Languages</h1>
+<ul>
+<li>Lambda expressions describe nameless functions<ul>
+<li>Applied to parameters by placing the parameters after the expression</li>
+<li>Ex: <script type="math/tex">(\lambda(x) x * x * x)(2)</script> evaluates to 8</li>
+</ul>
+</li>
+<li>Functional Form<ul>
+<li>Higher order functions<ul>
+<li>lambda expressions are also useful for creating functions to pass as parameters to other functions that expect to receive functions</li>
+<li>can return other functions</li>
+</ul>
+</li>
+<li>Composition of Functions<ul>
+<li>Takes two functions as input and returns a new function that is the result of the 1st function appleid to the second</li>
+<li>Ex: <script type="math/tex">h := f \odot g</script> which means <script type="math/tex">h(x) = f(g(x))</script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Inefficient execution on von neumann machines</li>
+<li>Simple syntax and semantics</li>
+<li>Programs written in funtional languages can automatically be made concurrent<ul>
+<li>harder to write concurrent imperative languages</li>
+</ul>
+</li>
+</ul>
+<h2 id="lisp">LISP</h2>
+<h3 id="history">History</h3>
+<ul>
+<li>Developed in 1958-59 for use in AI <ul>
+<li>designed @ MIT by John McCarthy</li>
+<li>Fortran didnt have recursion, the ability to manipulate symbols, and ability to process data in linked lists rather than arrays </li>
+</ul>
+</li>
+<li>Based on lambda calculus and mathematical functions</li>
+<li>Interpreted language with garbage collection</li>
+</ul>
+<h3 id="data-types">Data Types</h3>
+<ul>
+<li>Originally only atoms and lists</li>
+<li>Type is bound at runtime</li>
+<li>Names not variables (can't change value of a name after it has been defined)</li>
+<li>list form- parenthesized collection of atoms and/or sublists</li>
+</ul>
+<h3 id="interpretation">Interpretation</h3>
+<ul>
+<li>function defintions, function applications, and data all have the same form </li>
+<li><code>(A, B, C)</code> can be interpretted differently depending on the context<ul>
+<li><code>A</code> can be a function being called with params <code>B</code> and <code>C</code></li>
+<li><code>A</code> can be a function called on <code>B</code> evaluated at <code>C</code></li>
+<li>It can be a list of three atoms <code>A</code>, <code>B</code>, <code>C</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="syntax">Syntax</h3>
+<p><img alt="" src="../static/s-expression.png" /></p>
+<ul>
+<li>a series of <em>symbolic expressions</em> (or S-expressions)<ul>
+<li>can be an atom or a list </li>
+</ul>
+</li>
+<li>an atom can be a number or a symbol<ul>
+<li>a symbol can be a sequence of characters</li>
+<li>a number can be integers, floats, or ratio of integers (allows us to maintain accuracy with division)</li>
+</ul>
+</li>
+<li>a list is recursively defined in termso of s-expressions</li>
+</ul>
+<h3 id="grammar">Grammar</h3>
+<ul>
+<li>very simple grammar described by a short EBNF</li>
+</ul>
+<pre><code>&lt;s_expression&gt; -&gt; &lt;atomic_symbol&gt;
+                                | &quot;(&quot; &lt;s_expression&gt; &quot;.&quot; &lt;s_expression&gt; &quot;)&quot;
+                                | &lt;list&gt;
+                &lt;list&gt; -&gt; &quot;(&quot; &lt;s_expression&gt;* &quot;)&quot;
+&lt;atomic_symbol&gt; -&gt; &lt;letter&gt; &lt;atom_part&gt;
+        &lt;atom_part&gt; -&gt; empty | &lt;letter&gt; &lt;atom_part&gt; | &lt;number&gt; &lt;atom_part&gt;
+            &lt;letter&gt; -&gt; &quot;a&quot; | &quot;b&quot; | ... | &quot;z&quot;
+            &lt;number&gt; -&gt; &quot;1&quot; | &quot;2&quot; | ... | &quot;9&quot;
+</code></pre>
+<h3 id="semantics">Semantics</h3>
+<ul>
+<li>1st s-expression in a list is the name of a function<ul>
+<li>Ex: <code>(foo)</code> or <code>(foo a b c)</code></li>
+</ul>
+</li>
+<li>in a function call, all arguments are evaluated first, then the function is applied to the result</li>
+<li>Prefix notation</li>
+</ul>
+<h3 id="primitivenumeric-functions">Primitive/Numeric Functions</h3>
+<ul>
+<li>true: <code>#T</code> or <code>#t</code></li>
+<li>false <code>#F</code> or <code>#f</code></li>
+<li><code>=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code></li>
+<li><code>and</code>, <code>or</code>,<code>not</code></li>
+<li><code>equal?</code>, <code>even?</code>, <code>odd?</code>, <code>zero?</code>, <code>negative?</code>, <code>number?</code></li>
+<li><code>abs</code>, <code>sqrt</code>, <code>modulo</code>, <code>remainder</code>, <code>min</code>, <code>max</code>, <code>expt</code></li>
+</ul>
+<h3 id="special-forms">Special Forms</h3>
+<ul>
+<li>Functions that don't evaluate their arguments</li>
+</ul>
+<h4 id="lambda-expressions">lambda Expressions</h4>
+<ul>
+<li>describe nameless/anonymous functions</li>
+<li>functions are first-class entities meaning they can be values of expressions, elements of lists, passed as parameters, and returned from functions </li>
+<li>functions can b</li>
+<li><code>(lambda(x) (* x x))</code> creates a special lambda function</li>
+<li>can be called by: <code>((lambda(x) (* x x)) 8)</code></li>
+</ul>
+<h4 id="define">define</h4>
+<ul>
+<li>2 uses:<ol>
+<li>bind a symbol to an expression: <code>(define pi 3.14)</code></li>
+<li>bind names to lambda expressions (lambda is implicit): <code>(define (square x) (* x x))</code></li>
+</ol>
+</li>
+</ul>
+<h4 id="if">if</h4>
+<ul>
+<li>two way selector function</li>
+<li><code>(if predicate then_exp else_exp)</code></li>
+</ul>
+<h4 id="cond">cond</h4>
+<pre><code class="language-scheme">(cond 
+ [predicate1 expression1]
+ [predicate2 expression2]
+ ...
+ [else expression])
+</code></pre>
+<ul>
+<li>else clause is optional <ul>
+<li>synonymous with <code>(#t expression)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="lists">Lists</h3>
+<ul>
+<li>Stored internally as singly-linked lists</li>
+<li><code>quote</code> function (abbreviated w/ apostrophe prefix operator) takes one param and returns the param without evaluation <ul>
+<li><code>'(A B) &lt;=&gt; (quote (A B))</code></li>
+</ul>
+</li>
+<li><code>car</code>- returns first element of its list parameter</li>
+<li><code>cdr</code>- returns the remainder of the list parameter after removing the 1st element</li>
+<li><code>cons</code>- add a new head to the front of a list<ul>
+<li>returns a new list with first argument inserted onto the front of the 2nd argument </li>
+<li>does not make copy of the second argument </li>
+</ul>
+</li>
+<li><code>list</code>- returns a new list of its parameters <ul>
+<li><code>(list 'a 'b 'c 'd)</code> -&gt; <code>'(a b c d)'</code></li>
+</ul>
+</li>
+<li><code>(list '(A B) '(C D))</code> equivalent to <code>(cons '(A B) (cons '(C D) '()))</code></li>
+<li><code>null?</code>- tests for empty list <ul>
+<li><code>(null? '())</code> -&gt;<code>#t</code></li>
+<li><code>(null? null)</code> -&gt; <code>#t</code></li>
+</ul>
+</li>
+<li><code>list?</code>- tests if the function is a list <ul>
+<li><code>(list? 'A)</code> -&gt; <code>#f</code></li>
+<li><code>(list? '(A))</code> -&gt; <code>#t</code></li>
+</ul>
+</li>
+<li><code>append</code>- returns new list that contains all elements of the two list arguments<ul>
+<li><em>the arguments must be lists unlike <code>list</code> and <code>cons</code></em></li>
+<li>different result from <code>list</code> function<ul>
+<li><code>(append '(a b) '(c d))</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>contractions are useful for doing a lot of work concisely <ul>
+<li><code>(cadr lst)</code> equivalent to <code>(car (cdr lst)</code> (i.e. getting 2nd element)</li>
+<li><code>(cdddr lst)</code> equivalent to <code>(cdr (cdr (cdr lst)))</code> (i.e. removing first 3 elements)</li>
+</ul>
+</li>
+<li><code>length</code>- returns the length of a list </li>
+<li>Lists are processed in a recursive fashion <ul>
+<li>process head of list, recurse down rest of list, base case is empty list </li>
+</ul>
+</li>
+<li>Deep Recursion- recurse the list and also recurse down any sublists<ul>
+<li>the <code>equal</code> function below is an example </li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-scheme">(define (equal list1 list2)
+  (cond
+    [(not (list? list1)) (eq? list1 list2)]
+    [(not (list? list2)) #f]
+    [(null? list1) (null? list2)]
+    [(null? list2) #f]
+    [(equal (car list1) (car list2)) (equal (cdr list1) (cdr list2))]
+    [else #f]))
+</code></pre>
+<h2 id="interpreter">Interpreter</h2>
+<ul>
+<li>Infinite read-evalutate--print loop (REPL)<ul>
+<li>similar to python and ruby</li>
+</ul>
+</li>
+<li>parameters are evaluated in no particular order <ul>
+<li>order of parameter evaluation doesn't matter since each function has no side-effects</li>
+</ul>
+</li>
+<li>extensive use of parenthesis makes turning a program text into a parse tree very easy <ul>
+<li>also no need for operator precedence</li>
+</ul>
+</li>
+</ul>
+<h2 id="history_1">History</h2>
+<ul>
+<li>LISP -&gt; Scheme (70s) -&gt; racket <ul>
+<li>lisp also broke off into a more complex language CommonLisp </li>
+</ul>
+</li>
+<li>Scheme<ul>
+<li>cleaner, more modern, and simpler than contemporary dialects of scheme</li>
+<li>only static scoping </li>
+</ul>
+</li>
+</ul>
+<h2 id="local-bindings">Local Bindings</h2>
+<ul>
+<li>4 ways to define local bindings (each w/ diff semantics):<ol>
+<li><code>let</code>- expressions are all evaluated in the environment from before the let expression</li>
+<li><code>let*</code>- expressions are evaluated in the environment produced from the <em>previous bindings</em> (can use bindings from previous expressions)</li>
+<li><code>letrec</code>- used for recursion </li>
+<li><code>define</code>- nested local defines are preferred racket style but don't have the emphasis in the distinction </li>
+</ol>
+</li>
+<li>use the one most convenient, but default to <code>let</code></li>
+<li>Let-expressions can appear anywhere</li>
+<li>Help avoid doing repeated work in functions</li>
+<li>let is shorthand for a lambda expression applied to a parameter<ul>
+<li><code>let ([alpha 7]) (5 alpha)</code> equivalent to <code>((lambda (alpha) (* 5 alpha)) 7)</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="tail-recursion">Tail Recursion</h2>
+<ul>
+<li>Recursion is the natural method of computation in functional languages</li>
+<li>Usually the overhead of function calls makes recursion slower than iteration</li>
+<li>Most functional languages can optimize <em>tail recursive</em> calls to make them as efficient as iteration</li>
+<li>C and Racket have tail recursion while python does not </li>
+<li>Tail Recursive Function- when there is nothing to do after the function returns except return its value<ul>
+<li>Can be automatically converted by a compiler to use iteration (makes it faster)</li>
+</ul>
+</li>
+</ul>
+<p><strong>Normal Factorial Recursive:</strong></p>
+<ul>
+<li>Each call must wait for the result of calling itself in order to do the work of multiplying with n</li>
+</ul>
+<pre><code class="language-scheme">(define (fact n)
+  (if (&lt;= n 0) 1 (* n (fact (- n 1)))))
+</code></pre>
+<p><strong>Factorial Tail Recursion:</strong></p>
+<ul>
+<li>Each call's work is done once it calls itself again recursively</li>
+</ul>
+<pre><code class="language-scheme">(define (fact n)
+  (define (helper n acc)
+    (if (&lt;= n 0)
+        acc
+        (helper (- n 1)(* n acc))      
+  ))
+  (helper n 1)
+)
+</code></pre>
+<h2 id="higher-order-functions">Higher Order Functions</h2>
+<ul>
+<li>A function that can take functions as parameters and/or return functions as results</li>
+<li>Map and reduce higher order functions form basis of MapReduce (Hadoop) for large scale computing tasks </li>
+</ul>
+<h3 id="compose">Compose</h3>
+<ul>
+<li>combines two functions into a new function </li>
+</ul>
+<pre><code class="language-scheme">(define (g x) (* 3 x))
+(define (f x) (+ 2 x))
+(define h (compose f g))
+(h 5) ; returns 17
+</code></pre>
+<ul>
+<li>can be written as <code>(define (compose func1 func2) (lambda (x) (func1 (func2 (x))))</code></li>
+</ul>
+<h3 id="filter">Filter</h3>
+<ul>
+<li>takes a predicate function as its first param (often as lambda exp)</li>
+<li>returns a ist with those items from the param list that satisfy the predicate</li>
+</ul>
+<pre><code class="language-scheme">(define (smaller100 x) (&lt; x 100))
+(filter smaller100 '(25 1 711 50 100))
+; returns (25 1 50)
+</code></pre>
+<h3 id="map">Map</h3>
+<ul>
+<li>Takes two params- a function and a list(s)</li>
+<li>Applies the function to each element on the list and returns a list of the results</li>
+</ul>
+<pre><code class="language-scheme">(define (map func lst) 
+  (if (null? lst) 
+      '() 
+      (cons (fun (car lst)) (map fun (cdr lst)))))
+</code></pre>
+<ul>
+<li>the <code>map</code> function provided by racket is more general and powerful<ul>
+<li><code>(map fun lst1 lst2 .. lstn)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="foldr">Foldr</h3>
+<ul>
+<li>Combines all elements in a list by applying a binary operation </li>
+<li>Known as reduction or fold</li>
+</ul>
+<pre><code class="language-scheme">(foldr f b '(x1 x2 ... xn))
+; returns (f x1 (f x2 ... (f xn b) ...))
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
