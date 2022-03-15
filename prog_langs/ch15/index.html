@@ -300,6 +300,10 @@
 </li>
                                     
 <li>
+    <a href="../ch6/" class="dropdown-item">Ch. 6 Data Types</a>
+</li>
+                                    
+<li>
     <a href="./" class="dropdown-item active">Ch. 15 Functional Languages: Racket</a>
 </li>
                                 </ul>
@@ -446,7 +450,7 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../ch5/" class="nav-link">
+                                <a rel="prev" href="../ch6/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -496,6 +500,14 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#higher-order-functions" class="nav-link">Higher Order Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#thunks" class="nav-link">Thunks</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#eval-function" class="nav-link">eval function</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -830,6 +842,89 @@
 </ul>
 <pre><code class="language-scheme">(foldr f b '(x1 x2 ... xn))
 ; returns (f x1 (f x2 ... (f xn b) ...))
+</code></pre>
+<h2 id="thunks">Thunks</h2>
+<ul>
+<li>Delay the evaluation of an expression by wrapping it in a parameter-less function called a <em>thunk</em></li>
+<li>
+<p>thunk- a zero aragument function used to delay evaluation</p>
+<ul>
+<li>captures th expression and environment in which it was defined</li>
+<li>calling the function later will evaluate the expression in its original environment</li>
+</ul>
+</li>
+<li>
+<p><strong>Eager Evaluation</strong>- In Racket, Java, &amp; C function arguments are evaluated once before calling the function</p>
+<ul>
+<li>Haskell does not eagerly evaluate its arguments</li>
+</ul>
+</li>
+<li>
+<p><strong>Lazy Evaluation</strong>- for conditionals, the condition is eagerly evaluated but the branches are not </p>
+</li>
+<li>
+<p>Example thunk: <code>(lambda () + 3 4)</code> </p>
+<ul>
+<li>calling the thunk: <code>((lambda () + 3 4))</code></li>
+</ul>
+</li>
+<li>
+<p>Helpful for delaying evaluation and/or avoiding repeated computations</p>
+</li>
+<li>Delayed execution is used to improve performance in functional programming</li>
+</ul>
+<h3 id="streams">Streams:</h3>
+<ul>
+<li>infinite sequences of values where thunks  are useful </li>
+<li>
+<p>can't generate all values ahead of time</p>
+</li>
+<li>
+<p>we can generate the values as they are needed</p>
+</li>
+<li>Key idea: use a thunk to delay creating most of the seuqunce</li>
+<li>Stream Producer knows how to create any number of values</li>
+<li>Stream consumer decides how many values to ask for</li>
+<li>Let a stream be a thunk that when called returns a pair: <code>'(next-answer . next-thunk)</code><ul>
+<li>Thunk always needs to be called using <code>()</code></li>
+<li>get first element of stream <code>s</code>: <code>(car (s))</code></li>
+<li>next element: <code>(car ((cdr (s))))</code></li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-scheme">; Creates a stream of powers of two
+(define power-of-two 
+  (letrec ([f (lambda (x)
+                (cons 
+                 x
+                 (lambda () (f (* x 2)))))])
+    (lambda () (f 2))))
+
+(car (powers-of-two)) ; -&gt; 2
+(car ((cdr (powers-of-two)))) ; -&gt; 4
+
+; Function that takes a stream and int n and returns nth val of stream
+(define (stream-nth s n)
+  (let ([pr (s)])
+    (if (zero? n)
+        (car pr)
+        (stream-nth (cdr pr) (- n 1)))))
+
+(stream-nth powers-of-two 2)
+</code></pre>
+<h2 id="eval-function">eval function</h2>
+<ul>
+<li>used in the REPL tp evalauate an expression</li>
+<li>the interpreter is a user available function <code>eval</code></li>
+<li>allows you to write functions that build code</li>
+</ul>
+<pre><code class="language-scheme">; lst is a list of numbers to be added 
+(define (adder lst)
+  (cond
+   [(null? lst) 0]
+   [else (eval (cons '+ lst))])) 
+; (cons '+ lst) creates list '(+ 1 2 3) 
+; which is then passed to eval where the list is treated as a function call (eval (+ 1 2 3))
 </code></pre></div>
             </div>
         </div>
@@ -843,7 +938,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
         <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

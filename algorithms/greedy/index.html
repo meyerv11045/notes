@@ -300,6 +300,10 @@
 </li>
                                     
 <li>
+    <a href="../../prog_langs/ch6/" class="dropdown-item">Ch. 6 Data Types</a>
+</li>
+                                    
+<li>
     <a href="../../prog_langs/ch15/" class="dropdown-item">Ch. 15 Functional Languages: Racket</a>
 </li>
                                 </ul>
@@ -503,6 +507,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#data-compression" class="nav-link">Data Compression</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -598,7 +606,45 @@ for i = 1 to |V|
 </li>
 <li>useful techniques:<ul>
 <li>stay ahead argument</li>
-<li>exchange argument </li>
+<li>exchange argument <ul>
+<li>given greedy answer and optimal answer, bring the greedy over into the optimal at the place where they first differ, where the results should be a contradiction</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="data-compression">Data Compression</h2>
+<ul>
+<li>A prefix code means no code for a single letter is the prefex of another letter<ul>
+<li>this makes decoding significantly easier</li>
+</ul>
+</li>
+<li>encodings can be visualized as binary trees<ul>
+<li>prefix codes have all letters as leaves of the tree</li>
+<li>to get an optimal encoding for a document, we want the most frequently occuring characters to be closest to the top of the tree (less bits to represent them)</li>
+<li>shortest tree representation is the most optimal </li>
+</ul>
+</li>
+<li>Full binary tree- tree where each non-leaf node has two children</li>
+</ul>
+<h3 id="shannon-faro-algorithm">Shannon-Faro Algorithm</h3>
+<ul>
+<li>Build tree with top down approach</li>
+<li>Need one leaf for every symbol in the alphabet</li>
+<li>Divide symbols into 2 sets where total frequency of each set is near equal</li>
+<li>A set of size 2 is finished, Represent each symbol w/ 1 bit</li>
+<li>Recursively divide sets of size &gt; 2 into two balanced sets </li>
+<li>Turns out the resulting encoding is not optimal (counterexamples exist)<ul>
+<li>Pretty good results still so it was used in practice for a while since no better alternatives existed </li>
+</ul>
+</li>
+</ul>
+<h3 id="huffman-coding-algorithm">Huffman Coding Algorithm</h3>
+<ul>
+<li>Build tree with bottom up approach</li>
+<li>Coding scheme is optimal (minimum ABL for a given text)</li>
+<li>Finding the lowest frequencies is currently the bottle neck with O(n)<ul>
+<li>Need a better data structure (e.g. priority queue) for finding the minimums</li>
 </ul>
 </li>
 </ul></div>
@@ -614,7 +660,7 @@ for i = 1 to |V|
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../../js/base.js" defer></script>
-        <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
         <script src="../../search/main.js" defer></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

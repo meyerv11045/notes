@@ -246,6 +246,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://meyerv11045.github.com/notes/prog_langs/ch6/</loc>
+         <lastmod>2022-03-15</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/big3/</loc>
          <lastmod>2022-03-15</lastmod>
          <changefreq>daily</changefreq>
