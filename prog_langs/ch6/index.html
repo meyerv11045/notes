@@ -76,6 +76,10 @@
 <li>
     <a href="../../ai/behavior-trees/" class="dropdown-item">Behavior Trees</a>
 </li>
+                                    
+<li>
+    <a href="../../general/how-to-speak/" class="dropdown-item">How to Speak</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -483,6 +487,22 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#strings" class="nav-link">Strings</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ordinal-types" class="nav-link">Ordinal Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#enumeration-types" class="nav-link">Enumeration Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#array-types" class="nav-link">Array Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -530,6 +550,111 @@
 <li>UTF-8 <ul>
 <li>variable length for bit representation </li>
 <li>most widely used</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="strings">Strings</h2>
+<ol>
+<li>Static Length<ul>
+<li>compile time descriptor includes the length</li>
+<li>Descriptor- collection of attributes of a variable<ul>
+<li>can be static- maintained by compiler (e.g. C++)</li>
+<li>or can be dynamic- managed at runtime (e.g. Python)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Limited Dynamic Length <ul>
+<li>run time descriptor includes the maximum length and the current length </li>
+</ul>
+</li>
+<li>Dynamic Length</li>
+</ol>
+<h2 id="ordinal-types">Ordinal Types</h2>
+<ul>
+<li>Type in which the range of possible values can be easily mapped to the set of positive integers</li>
+<li>primitive ordinals in java: integer, char, boolean</li>
+</ul>
+<h2 id="enumeration-types">Enumeration Types</h2>
+<ul>
+<li>user-defined ordinal type</li>
+<li>all possible values, which are amed constants, are provided in the definition</li>
+<li>Pros:<ul>
+<li>readability </li>
+<li>reliability- compiler can perform checks</li>
+</ul>
+</li>
+</ul>
+<h2 id="array-types">Array Types</h2>
+<ul>
+<li>Array- an aggregate of <em>homogeneous data</em> elements where individual elements are identified by position relative to the first </li>
+<li>indexing/subscripting an array is a mapping from indices to elements <ul>
+<li>some languages like Ada, Fortran, and Matlab use () instead of []</li>
+</ul>
+</li>
+<li>index range checking is done:<ul>
+<li>by default: C#, Java, Go</li>
+<li>Not at all: C, C++, Fortran</li>
+</ul>
+</li>
+<li><em>heterogeneous array</em>- one in which elements need not be the same type <ul>
+<li>JS, Perl, Python, Ruby</li>
+<li>heap-dynamic arrays</li>
+<li>oftentimes array elements only contain references to the data stored</li>
+</ul>
+</li>
+</ul>
+<h3 id="subscript-binding-array-categories">Subscript Binding &amp; Array Categories</h3>
+<h4 id="static">Static</h4>
+<ul>
+<li>Statically bound subscript ranges </li>
+<li>Static storage allocation </li>
+<li>Increased efficiency b/c no dynamic (de)allocation</li>
+<li>C, C++ arrays that include <code>static</code> </li>
+</ul>
+<h4 id="fixed-stack-dynamic">Fixed Stack-Dynamic</h4>
+<ul>
+<li>Statically bound subscript ranges</li>
+<li>Storage allocation done at declaration elaboration time</li>
+<li>Increased space efficiency b/c space can be reused during runtime</li>
+<li>C, C++ arrays without<code>static</code></li>
+</ul>
+<h4 id="fixed-heap-dynamic">Fixed Heap-Dynamic</h4>
+<ul>
+<li>Static binding of subscript ranges</li>
+<li>Dynamic storage binding when requested at runtime</li>
+</ul>
+<h4 id="heap-dynamic">Heap-Dynamic</h4>
+<ul>
+<li>Dynamic binding of subscript ranges</li>
+<li>Dynamic storage allocation </li>
+<li>Can change any number of times (more flexible)</li>
+</ul>
+<h3 id="array-implementation">Array Implementation</h3>
+<ul>
+<li>access function for single-dim array:</li>
+</ul>
+<pre><code>address(a[k]) = 
+    address(arr[lower_bound]) + ((k - lower_bound) * element_size)
+</code></pre>
+<ul>
+<li>access function for multi-dim array:</li>
+</ul>
+<pre><code>address(a[i,j]) = 
+    address(a[row_lb, col_lb]) 
+    + (((i - row_lb) * n) + (j - col_lb)) * element_size 
+</code></pre>
+<p><img alt="access for multi-dim array" src="../static/access_multi_array.png" /></p>
+<ul>
+<li>the lower bounds are zero in 0-indexed languages and 1 in 1-indexed languages</li>
+<li>Storing Arrays in Memory:<ul>
+<li>Row-Major order (used by most languages)</li>
+<li>Column-Major order (Fortran &amp; Matlab)</li>
+<li>knowing which affects speed of code<ul>
+<li>row major order means you should process by row to reduce cache misses since cache might store only 1 row at a time</li>
+<li>cache misses and even page swaps are expensive with large matrices</li>
 </ul>
 </li>
 </ul>

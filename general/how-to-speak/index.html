@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/data_structures/overview/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/general/how-to-speak/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Overview - The Notebook</title>
+        <title>How to Speak - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,36 +33,36 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../general/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../../general/git/" class="dropdown-item">Git</a>
+    <a href="../git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
-    <a href="../../general/python/" class="dropdown-item">Python</a>
+    <a href="../python/" class="dropdown-item">Python</a>
 </li>
                                     
 <li>
-    <a href="../../general/macos/" class="dropdown-item">MacOS</a>
+    <a href="../macos/" class="dropdown-item">MacOS</a>
 </li>
                                     
 <li>
-    <a href="../../general/paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
                                     
 <li>
-    <a href="../../general/regex/" class="dropdown-item">Regex</a>
+    <a href="../regex/" class="dropdown-item">Regex</a>
 </li>
                                     
 <li>
-    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
+    <a href="../hardware/" class="dropdown-item">Hardware</a>
 </li>
                                     
 <li>
@@ -78,7 +78,7 @@
 </li>
                                     
 <li>
-    <a href="../../general/how-to-speak/" class="dropdown-item">How to Speak</a>
+    <a href="./" class="dropdown-item active">How to Speak</a>
 </li>
                                 </ul>
                             </li>
@@ -121,32 +121,32 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="./" class="dropdown-item active">Overview</a>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
 </li>
                                     
 <li>
-    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
-    <a href="../stack/" class="dropdown-item">Stack</a>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
 </li>
                                     
 <li>
-    <a href="../queue/" class="dropdown-item">Queue</a>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
 </li>
                                     
 <li>
-    <a href="../heap/" class="dropdown-item">Heap</a>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
 </li>
                                     
 <li>
-    <a href="../graph/" class="dropdown-item">Graph</a>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
 </li>
                                 </ul>
                             </li>
@@ -454,12 +454,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../algorithms/tips/" class="nav-link">
+                                <a rel="prev" href="../../ai/behavior-trees/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../linked-list/" class="nav-link">
+                                <a rel="next" href="../../algorithms/graphs/graphs/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -481,17 +481,13 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#overview-of-data-structures" class="nav-link">Overview of Data Structures</a>
+            <li class="nav-item" data-level="1"><a href="#how-to-speak" class="nav-link">How to Speak</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#linearsequential" class="nav-link">Linear/Sequential</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#tree" class="nav-link">Tree</a>
+            <li class="nav-item" data-level="2"><a href="#giving-a-talk" class="nav-link">Giving a Talk</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#associative" class="nav-link">Associative</a>
+            <li class="nav-item" data-level="2"><a href="#tools" class="nav-link">Tools</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -502,41 +498,130 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="overview-of-data-structures">Overview of Data Structures</h1>
-<p>Its important to note that many of these data structures are implemented using other data structures. For instance, a stack may be implemented with a linked list. </p>
-<p>Oftentimes more complex data structures are built off of arrays, using more specialized behaviors and rules to increase performance in some aspect (e.g. binary trees can be implented with arrays and using math to calculate node indices).</p>
-<h2 id="linearsequential">Linear/Sequential</h2>
+<h1 id="how-to-speak">How to Speak</h1>
+<p>Notes from the<a href="https://www.youtube.com/watch?v=Unzc731iCUY">legendary lecture</a> by MIT professor Patrick Winston</p>
 <ul>
-<li>Array</li>
-<li>Linked List<ul>
-<li>Singly/Doubly Linked</li>
-<li>Circular</li>
-</ul>
+<li>
+<p>Success in life mostly depends on :</p>
+<ol>
+<li>your ability to speak</li>
+<li>your ability to write</li>
+<li>the quality of your ideas </li>
+</ol>
 </li>
-<li>Stack (LIFO)</li>
-<li>Queue (FIFO)</li>
-</ul>
-<h2 id="tree">Tree</h2>
+<li>
+<p>Quality of your communication depends mostly on how much you know (your knowledge), some on how much you practice, and a only a tiny bit on talent</p>
 <ul>
-<li>Binary Tree<ul>
-<li>Binary Heap</li>
-<li>Binary Search Tree<ul>
-<li>Self Balancing: AVL, Red-Black</li>
+<li>Can be better than people with inherent talent by having the right amount of knowledge</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>B Trees<ul>
-<li>2-3 Trees</li>
-</ul>
-</li>
-<li>Trie</li>
-</ul>
-<p><img alt="depth vs. height of trees" src="../static/depth-vs-height.png" /></p>
-<h2 id="associative">Associative</h2>
+<h2 id="giving-a-talk">Giving a Talk</h2>
 <ul>
-<li>Hash-table/Map </li>
-<li>Set </li>
+<li>dont start with a joke for a talk <ul>
+<li>people are still getting settled in and don't really understand your way of speaking yet</li>
+</ul>
+</li>
+<li>start with a promise of what people will know at the end of the talk (empowerment promise)</li>
+<li>cycle around a subject (repeat your point)</li>
+<li>build a fence around your idea so it can be distinguished from other people's ideas<ul>
+<li>helps to prevent confusion on how your idea is different</li>
+</ul>
+</li>
+<li>need verbal punctuation<ul>
+<li>give people a place to get back on the talk if they zoned out or something </li>
+</ul>
+</li>
+<li>when asking a question<ul>
+<li>need to wait 7 seconds for responses</li>
+<li>too easy and people will be embarrased to respond</li>
+<li>too hard and people can't respond</li>
+</ul>
+</li>
+<li>time and place for a talk:<ul>
+<li>best time for a talk: 11am (people are awake and not too hungry or too full)</li>
+<li>need a talk to be well lit </li>
+<li>case the place you will be speaking so you can anticipate any challenges </li>
+<li>get a place where the size of the anticipated audience will not seem too small for the place</li>
+</ul>
+</li>
+<li>Inspire people<ul>
+<li>most inspiring thing for people is to see someone talk about something they are passionate about</li>
+</ul>
+</li>
+<li>when talking about your research, you need to give context as to why you are doing it</li>
+<li>don't practice on people that know the material b/c they might fill in the gaps  in your presentation on their own </li>
+<li>in a job talk you need to do both within 5 min:<ul>
+<li>express your vision (the problem and your approach)</li>
+<li>show you've done something (enumerate the steps to reach the vision and talk about your contribution to these steps)</li>
+</ul>
+</li>
+<li>your ideas are like your children so you want to ready them for the world<ul>
+<li>thats why packaging them properly is important for their success</li>
+</ul>
+</li>
+<li>in order for your work to get recognized it needs a:<ul>
+<li>symbol</li>
+<li>slogan</li>
+<li>surprise (e.g. suprising result)</li>
+<li>salient (an idea that sticks out)</li>
+<li>story (need to tell story of how you did it, how it works, why its important)</li>
+</ul>
+</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<ul>
+<li>
+<p>board:</p>
+<ul>
+<li>graphics fast and easy to make</li>
+<li>speed you can go is the speed people can absorb (slides can be too fast)</li>
+<li>you have something to do with your hands</li>
+<li>good for informing</li>
+</ul>
+</li>
+<li>
+<p>props are great at demonstrating things </p>
+</li>
+<li>slides<ul>
+<li>always too many words on the slide<ul>
+<li>too many words on slide forces audience to disengage from listening in order to read</li>
+<li>using big font sizes helps force less words and improves readability for the audience</li>
+</ul>
+</li>
+<li>dont read the slide </li>
+<li>slides with words and a far away speaker can pull the audience's attention in different directions<ul>
+<li>be near the slides</li>
+</ul>
+</li>
+<li>reduce the background junk and keep images simple<ul>
+<li>e.g. get rid of logos and even titles</li>
+</ul>
+</li>
+<li>good for exposing ideas</li>
+<li>using a laser pointer forces you to lose contact with audience<ul>
+<li>better to use labels like arrows in the slideshow/ppt for emphasis</li>
+</ul>
+</li>
+<li>final slide:<ul>
+<li>recognize collaborators on 1st slide, not last slide</li>
+<li>don't do: <ul>
+<li>questions? </li>
+<li>go to this website for more details slide</li>
+<li>the end or thank you </li>
+</ul>
+</li>
+<li>should be your contributions </li>
+<li>a joke at the end could work and be better well received than at the beginning </li>
+<li>saying thank you for listening is a weak last move (implies you were not interesting) <ul>
+<li>can say/mouth thanks during the applause</li>
+</ul>
+</li>
+<li>can end by saluting the audience verbally</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul></div>
             </div>
         </div>
