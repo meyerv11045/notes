@@ -21,6 +21,7 @@ nav:
     - 'Microservices': 'system_design/microservices.md'
     - 'Docker': 'system_design/docker.md'
     - 'Behavior Trees': 'ai/behavior-trees.md'
+    - 'How to Speak': 'general/how-to-speak.md'
   - Algorithms:
     - Graphs:
       - 'Representations': 'algorithms/graphs/graphs.md'

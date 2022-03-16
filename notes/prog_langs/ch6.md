@@ -28,3 +28,94 @@
     - UTF-8 
         - variable length for bit representation 
         - most widely used
+
+## Strings
+
+1. Static Length
+    - compile time descriptor includes the length
+    - Descriptor- collection of attributes of a variable
+        - can be static- maintained by compiler (e.g. C++)
+        - or can be dynamic- managed at runtime (e.g. Python)
+2. Limited Dynamic Length 
+    - run time descriptor includes the maximum length and the current length 
+3. Dynamic Length
+
+## Ordinal Types
+
+- Type in which the range of possible values can be easily mapped to the set of positive integers
+- primitive ordinals in java: integer, char, boolean
+
+## Enumeration Types
+
+- user-defined ordinal type
+- all possible values, which are amed constants, are provided in the definition
+- Pros:
+    - readability 
+    - reliability- compiler can perform checks
+
+## Array Types
+
+- Array- an aggregate of *homogeneous data* elements where individual elements are identified by position relative to the first 
+- indexing/subscripting an array is a mapping from indices to elements 
+    - some languages like Ada, Fortran, and Matlab use () instead of []
+- index range checking is done:
+    - by default: C#, Java, Go
+    - Not at all: C, C++, Fortran
+- *heterogeneous array*- one in which elements need not be the same type 
+    - JS, Perl, Python, Ruby
+    - heap-dynamic arrays
+    - oftentimes array elements only contain references to the data stored
+
+### Subscript Binding & Array Categories 
+
+#### Static
+
+- Statically bound subscript ranges 
+- Static storage allocation 
+- Increased efficiency b/c no dynamic (de)allocation
+- C, C++ arrays that include `static` 
+
+#### Fixed Stack-Dynamic
+
+- Statically bound subscript ranges
+- Storage allocation done at declaration elaboration time
+- Increased space efficiency b/c space can be reused during runtime
+- C, C++ arrays without`static`
+
+#### Fixed Heap-Dynamic
+
+- Static binding of subscript ranges
+- Dynamic storage binding when requested at runtime
+
+#### Heap-Dynamic 
+
+- Dynamic binding of subscript ranges
+- Dynamic storage allocation 
+- Can change any number of times (more flexible)
+
+### Array Implementation
+
+- access function for single-dim array:
+
+```
+address(a[k]) = 
+	address(arr[lower_bound]) + ((k - lower_bound) * element_size)
+```
+
+- access function for multi-dim array:
+
+``` 
+address(a[i,j]) = 
+	address(a[row_lb, col_lb]) 
+	+ (((i - row_lb) * n) + (j - col_lb)) * element_size 
+```
+
+![access for multi-dim array](./static/access_multi_array.png)
+
+- the lower bounds are zero in 0-indexed languages and 1 in 1-indexed languages
+- Storing Arrays in Memory:
+    - Row-Major order (used by most languages)
+    - Column-Major order (Fortran & Matlab)
+    - knowing which affects speed of code
+        - row major order means you should process by row to reduce cache misses since cache might store only 1 row at a time
+        - cache misses and even page swaps are expensive with large matrices
