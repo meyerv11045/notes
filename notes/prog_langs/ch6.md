@@ -119,3 +119,10 @@ address(a[i,j]) =
     - knowing which affects speed of code
         - row major order means you should process by row to reduce cache misses since cache might store only 1 row at a time
         - cache misses and even page swaps are expensive with large matrices
+
+### Associative Arrays
+
+- Unordered collection of data elements indexed by keys 
+- maps arbitrary indices to values
+- elements are (key, value) pairs
+- often implemented as hash tables

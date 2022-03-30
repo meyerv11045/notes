@@ -77,6 +77,7 @@ nav:
     - 'Ch. 5 Names, Bindings, & Scope': 'prog_langs/ch5.md'
     - 'Ch. 6 Data Types': 'prog_langs/ch6.md'
     - 'Ch. 15 Functional Languages: Racket': 'prog_langs/ch15.md'
+    - 'Ch. 16 Logical Languages: Prolog': 'prog_langs/ch16.md'
   - Digital Systems:
     - 'Assembly': 'dig_sys/ch6-assembly.md'
     - 'Microarchitecture': 'dig_sys/ch7-processor.md'
