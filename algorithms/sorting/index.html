@@ -523,14 +523,6 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#bucket-sort" class="nav-link">Bucket Sort</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#radix-sort_1" class="nav-link">Radix Sort</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -690,20 +682,33 @@ def partition(A, left, right, pivot):
 </li>
 <li>Counts number of occurences of each element in the range (0 to k)</li>
 <li>Then in the output array, it will merely make sure there are the correct number of occurences for each element in the range and the frequency array is traversed in order to produce the sort </li>
+<li>Can generalize this procedure using the idea of buckets<ul>
+<li>Create buckets (e.g. array/linked list) for each element in the range of your data</li>
+<li>Buckets must be accesible in <script type="math/tex">O(1)</script> time</li>
+</ul>
+</li>
+<li>Create a function that is a bijection betwen different element types and the bucket indices<ul>
+<li>function that maps everything to its own bucket with no crashes (e.g. temperature data mapped to a bucket) </li>
+</ul>
+</li>
 <li>A more generalized version is seen below where the items can be any data structure, as long as they have an integer key <ul>
-<li>this version will make sure all of the item's data is moved during the sort</li>
+<li>This version will make sure all of the item's data is moved during the sort</li>
 </ul>
 </li>
 </ul>
-<pre><code class="language-python">L = array of k empty lists
-# O(n)
-for j in range(n):
-  L[key(A[j])].append(A[j]) # O(1)
+<pre><code class="language-python">def bucket_sort(A, k)
+  L = [[] for _ in range(k)] # array of k empty lists
 
-output = []
-# O(n + k)
-for i in range(k):
-  output.extend(L[i]) #O (|L| + 1)
+  # O(n)
+  for j in range(n):
+    L[key(A[j])].append(A[j]) # O(1)
+
+  output = []
+  # O(n + k)
+  for i in range(k):
+    output.extend(L[i]) #O (|L| + 1)
+
+  return output
 </code></pre>
 <ul>
 <li>Overall runtime: <script type="math/tex">O(n + k)</script>
@@ -711,9 +716,18 @@ for i in range(k):
 <li>If <script type="math/tex">k</script> is order <script type="math/tex">n</script>, then the runtime is linear</li>
 </ul>
 </li>
+<li>When not to use:<ul>
+<li>Ex: sorting integers in range 1 to 10,000,000 but only sorting 100 numbers<ul>
+<li>Bucket sort takes <script type="math/tex">10^7</script> to collect all the buckets</li>
+<li>Mergesort would take ~665 comparisons</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h3 id="radix-sort">Radix Sort</h3>
 <ul>
+<li>Radix means base</li>
 <li>Uses counting sort as a subroutine</li>
 <li>Performs in linear time even for <script type="math/tex">k</script> polynomial in <script type="math/tex">n</script> (e.g. <script type="math/tex">k \in O(n^{100})</script>)</li>
 <li>Imagine each integer as base <script type="math/tex">b</script> (e.g. in the form of its digits)<ul>
@@ -749,68 +763,6 @@ for i in range(k):
 <li>If <script type="math/tex">k \leq n^c</script> then <script type="math/tex">O(nc)</script>
 <ul>
 <li>If integers are reasonably small in value (polynomial in <script type="math/tex">n</script>), then we get a linear time sorting algorithm</li>
-</ul>
-</li>
-</ul>
-<h2 id="bucket-sort">Bucket Sort</h2>
-<ul>
-<li>Create buckets (e.g. array/linked list) for each element in the range of your data<ul>
-<li>IMPORTANT: need to know the range of your data before applying this sorting technique</li>
-<li>Buckets must be accesible in <script type="math/tex">O(1)</script> time</li>
-</ul>
-</li>
-<li>Create a function that is a bijection betwen different element types and the bucket indices<ul>
-<li>function that maps everything to its own bucket with no crashes (e.g. temperature data mapped to a bucket)</li>
-</ul>
-</li>
-<li>Place each element in its bucket</li>
-<li>"Collect" all of the buckets</li>
-<li>Runtime:<ul>
-<li>often considered <script type="math/tex">O(n)</script>
-</li>
-<li>more specific: <script type="math/tex">O(n + k)</script>
-</li>
-<li>
-<script type="math/tex">n</script>- number of elements </li>
-<li>
-<script type="math/tex">k</script>- number of buckets/range of the input <ul>
-<li>If <script type="math/tex">k</script> is linear in <script type="math/tex">n</script> then <script type="math/tex">O(n)</script> runtime</li>
-<li>Otherwise the running time will be <script type="math/tex">O(k)</script>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>When not to use:<ul>
-<li>Ex: sorting integers in range 1 to 10,000,000 but only sorting 100 numbers<ul>
-<li>Bucket sort takes <script type="math/tex">10^7</script> to collect all the buckets</li>
-<li>Mergesort would take ~665 comparisons</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="radix-sort_1">Radix Sort</h2>
-<ul>
-<li>Radix means base </li>
-<li>many descriptions:<ul>
-<li>read digits left to right, right to left</li>
-<li>divide and conquer with recursive calls</li>
-</ul>
-</li>
-<li>Runtime<ul>
-<li>
-<script type="math/tex">n</script>- number of elements</li>
-<li>
-<script type="math/tex">\ell</script> - length of elements</li>
-<li>
-<script type="math/tex">k</script>- upper bound on range of digits</li>
-<li>Each sort is a bucket sort of <script type="math/tex">n</script> items into <script type="math/tex">k</script> buckets <script type="math/tex">O(n + k)</script>
-</li>
-<li>There are <script type="math/tex">\ell</script> sorts to be done</li>
-<li>
-<script type="math/tex">O(\ell (n + k))</script>
-</li>
 </ul>
 </li>
 </ul></div>
