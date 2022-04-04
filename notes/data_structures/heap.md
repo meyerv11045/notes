@@ -21,5 +21,5 @@
 Useful for:
 
 - Heap Sort- sort an array in $O(nlogn)$ time
-- Priority Queues- `insert()`, `delete()`, `extractMpax()` and `decreaseKey()` operations in $O(logn)$ time
+- Priority Queues- `insert()`, `delete()`, `extractMax()` and `decreaseKey()` operations in $O(logn)$ time
 - Finding the `k`th largest element in an array

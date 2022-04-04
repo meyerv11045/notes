@@ -25,13 +25,19 @@
 - Can be optimally found using greedy algorithms due to the structure of the problem
 - Both algorithms only include an edge in the MST when it is justified by the Cut Property
 - Both can run in $O(E \log V)$ time given the correct data structure
+- Cut property is a common technique used in proving correctness of gredey MST algorithms
+    - A cut is a partition of the vertices of a graph $G$ into two disjoint sets 
+    - The cut property states that for any cut $C$ of the graph, if the weight of an edge $e \in C$ is strictly smaller than the weights of all other edges of $C$, then this edge belongs to all MSTs of the graph
+        - lightest edge in a cut-set must be in the MST
 
 ## Prims
 
-- start with a root node and greedily grow the tree otuward, always adding the node that can be reached cheapest from the current node
+- Start with a root node and greedily grow the tree otuward, always adding the node that can be reached cheapest from the current node
 - Greedy algorithm
 - Can stop at any point and have a valid mst that doesn't reach all the nodes
-- Implemented using a priority queue
+    - optimal substructure 
+
+- Implemented using a priority queue ADT
 
 ## Kruskals
 
