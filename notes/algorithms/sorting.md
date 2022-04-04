@@ -112,26 +112,40 @@ def bubblesort(A):
 - Uses knowledge of the range with upper bound of $k$
 - Counts number of occurences of each element in the range (0 to k)
 - Then in the output array, it will merely make sure there are the correct number of occurences for each element in the range and the frequency array is traversed in order to produce the sort 
+- Can generalize this procedure using the idea of buckets
+    - Create buckets (e.g. array/linked list) for each element in the range of your data
+    - Buckets must be accesible in $O(1)$ time
+- Create a function that is a bijection betwen different element types and the bucket indices
+    - function that maps everything to its own bucket with no crashes (e.g. temperature data mapped to a bucket) 
 - A more generalized version is seen below where the items can be any data structure, as long as they have an integer key 
-    - this version will make sure all of the item's data is moved during the sort
+    - This version will make sure all of the item's data is moved during the sort
 
 ``` python
-L = array of k empty lists
-# O(n)
-for j in range(n):
-  L[key(A[j])].append(A[j]) # O(1)
- 
-output = []
-# O(n + k)
-for i in range(k):
-  output.extend(L[i]) #O (|L| + 1)
+def bucket_sort(A, k)
+  L = [[] for _ in range(k)] # array of k empty lists
+  
+  # O(n)
+  for j in range(n):
+    L[key(A[j])].append(A[j]) # O(1)
+
+  output = []
+  # O(n + k)
+  for i in range(k):
+    output.extend(L[i]) #O (|L| + 1)
+  
+  return output
 ```
 
 - Overall runtime: $O(n + k)$
     - If $k$ is order $n$, then the runtime is linear
+- When not to use:
+    - Ex: sorting integers in range 1 to 10,000,000 but only sorting 100 numbers
+        - Bucket sort takes $10^7$ to collect all the buckets
+        - Mergesort would take ~665 comparisons
 
 ### Radix Sort
 
+- Radix means base
 - Uses counting sort as a subroutine
 - Performs in linear time even for $k$ polynomial in $n$ (e.g. $k \in O(n^{100})$)
 - Imagine each integer as base $b$ (e.g. in the form of its digits)
@@ -148,40 +162,3 @@ for i in range(k):
         - $O(n \log_n k )$
 - If $k \leq n^c$ then $O(nc)$
     - If integers are reasonably small in value (polynomial in $n$), then we get a linear time sorting algorithm
-
-
-
-## Bucket Sort
-
-- Create buckets (e.g. array/linked list) for each element in the range of your data
-    - IMPORTANT: need to know the range of your data before applying this sorting technique
-    - Buckets must be accesible in $O(1)$ time
-- Create a function that is a bijection betwen different element types and the bucket indices
-    - function that maps everything to its own bucket with no crashes (e.g. temperature data mapped to a bucket)
-- Place each element in its bucket
-- "Collect" all of the buckets
-- Runtime:
-    - often considered $O(n)$
-    - more specific: $O(n + k)$ 
-    - $n$- number of elements 
-    - $k$- number of buckets/range of the input 
-        - If $k$ is linear in $n$ then $O(n)$ runtime
-        - Otherwise the running time will be $O(k)$ 
-- When not to use:
-    - Ex: sorting integers in range 1 to 10,000,000 but only sorting 100 numbers
-        - Bucket sort takes $10^7$ to collect all the buckets
-        - Mergesort would take ~665 comparisons
-
-## Radix Sort
-
-- Radix means base 
-- many descriptions:
-    - read digits left to right, right to left
-    - divide and conquer with recursive calls
-- Runtime
-    - $n$- number of elements
-    - $\ell$ - length of elements
-    - $k$- upper bound on range of digits
-    - Each sort is a bucket sort of $n$ items into $k$ buckets $O(n + k)$
-    - There are $\ell$ sorts to be done
-    - $O(\ell (n + k))$
