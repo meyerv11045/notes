@@ -50,5 +50,37 @@
     - Nodes that get finished first have no further descendants/dependencies so they can be added to the topological sort in order of completion since that means they either have no more dependencies or their dependencies are already in the sort
     - $\Theta(V + E)$
 
+## Shortest-Path Bellman Ford Algorithm
 
+- Can handle negative edge weights and negative cycles in the graph
+    - detects negative cycles since they can lead to indeterminate path of length $- \infty$
+- Based on idea that repeatedly relaxing the edge weights will eventually converge to the shortest path
 
+```
+Bellman-Ford(G, w, s){
+	Initialize()
+	for i = 1 to |V| - 1 {
+		for each edge (u,v) in E {
+			Relax(u, v, w)
+		}
+	}
+	
+	# check for negative edge cycles
+	for each edge (u,v ) in E {
+		if d[v] > d[u] + w(u, v) {
+			report negative edge cycle exists
+		}
+	}
+}
+
+Relax(u, v, w) {
+	if (d[v] > d[u] + w(u, v)) {
+		d[v] = d[u] + w(u, v)
+		predecessor[v] = u
+	}
+}
+```
+
+- Runtime is $O(VE)$
+    - Much slower than dijkstra's
+    - Should only be used when potential for negative edge cycles

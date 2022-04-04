@@ -63,23 +63,34 @@
 ### Dijkstra's Algorithm
 
 ```
-let S be set of explored nodes
-	for each u in S we store a distance d(u)
-
-Initially S = {s} and d(s) = 0
-
-while S != V
-	select an unexplored node with at least one edge from S
+let S be set of explored nodes initialized to S = {}
 	
-	
-visited = {s}
-undiscovered = {V - s}
-for i = 1 to |V| 
-	dist[i] = infinity // O(V)
+let Q be a priority queue initialized with nodes in V with a key of the distance d[u] from start vertex for each u in Q
+
+while Q not empty:
+	u = extract_min(Q) //removes u from Q
+	S = S + {u}
+	for each vertex v that is a neighbor of u:
+  	Relax(u,v,w)
 ```
 
-- Cannot handle negative edge weights 
-- BFS is faster for shortet path of unweigghted graph (could give all edges equal weight and run dijkstra's')
+- Cannot handle negative edge weightS
+- BFS is faster for shortet path of unweighted graph (could give all edges equal weight and run dijkstra's')
+- $\Theta(V)$ inserts into priority queue
+- $\Theta(V)$ extract min operations
+- $\Theta(E)$ decrease key operations
+- If priority queue is implemented as array:
+    - $\Theta(V)$ extract min
+    - $\Theta(1)$ decrease key
+    - $\Theta(V * V + E * 1) = \Theta(V^2)$ runtime
+- If prioty queue is implemented as a binary min-heap
+    - $\Theta(\log V)$ for extract min
+    - $\Theta(\log V)$ for decrease key
+    - $\Theta(V \log V + E \log V)$ runtime
+- IF priority queue is implemented as a fibonnaci heap
+    - $\Theta(\log V)$ for extract min
+    - $\Theta(1)$ amortized for decrease key
+    - $\Theta(V \log V + E)$ runtime
 
 ## Interval Scheduling
 
