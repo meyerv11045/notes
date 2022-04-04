@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/data_structures/queue/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/algorithms/sorting/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Queue - The Notebook</title>
+        <title>Sorting - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Algorithms <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -91,78 +91,78 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../algorithms/graphs/graphs/" class="dropdown-item">Representations</a>
+    <a href="../graphs/graphs/" class="dropdown-item">Representations</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
+    <a href="../graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/undirected/" class="dropdown-item">Undirected</a>
+    <a href="../graphs/undirected/" class="dropdown-item">Undirected</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
+    <a href="../graphs/directed/" class="dropdown-item">Directed</a>
 </li>
     </ul>
   </li>
                                     
 <li>
-    <a href="../../algorithms/analysis/" class="dropdown-item">Analysis</a>
+    <a href="../analysis/" class="dropdown-item">Analysis</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/sorting/" class="dropdown-item">Sorting</a>
+    <a href="./" class="dropdown-item active">Sorting</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/heaps/" class="dropdown-item">Heaps</a>
+    <a href="../heaps/" class="dropdown-item">Heaps</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/greedy/" class="dropdown-item">Greedy</a>
+    <a href="../greedy/" class="dropdown-item">Greedy</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/dp/" class="dropdown-item">Dynamic Programming</a>
+    <a href="../dp/" class="dropdown-item">Dynamic Programming</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/divideconquer/" class="dropdown-item">Divide and Conquer</a>
+    <a href="../divideconquer/" class="dropdown-item">Divide and Conquer</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+    <a href="../tips/" class="dropdown-item">Tips</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../overview/" class="dropdown-item">Overview</a>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
 </li>
                                     
 <li>
-    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
-    <a href="../stack/" class="dropdown-item">Stack</a>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Queue</a>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
 </li>
                                     
 <li>
-    <a href="../heap/" class="dropdown-item">Heap</a>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
 </li>
                                     
 <li>
-    <a href="../graph/" class="dropdown-item">Graph</a>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
 </li>
                                 </ul>
                             </li>
@@ -474,12 +474,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../stack/" class="nav-link">
+                                <a rel="prev" href="../analysis/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../heap/" class="nav-link">
+                                <a rel="next" href="../heaps/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -501,17 +501,33 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#queue" class="nav-link">Queue</a>
+            <li class="nav-item" data-level="1"><a href="#sorting-algorithms" class="nav-link">Sorting Algorithms</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#purpose" class="nav-link">Purpose</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#big-o-analysis" class="nav-link">Big O Analysis</a>
+            <li class="nav-item" data-level="2"><a href="#heap-sort" class="nav-link">Heap Sort</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">Code</a>
+            <li class="nav-item" data-level="2"><a href="#quick-sort" class="nav-link">Quick Sort</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#merge-sort" class="nav-link">Merge Sort</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bubble-sort" class="nav-link">Bubble Sort</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#linear-time-sorting" class="nav-link">Linear-Time Sorting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#bucket-sort" class="nav-link">Bucket Sort</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#radix-sort_1" class="nav-link">Radix Sort</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -522,58 +538,282 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="queue">Queue</h1>
-<p>Stores data in a first in, first out (FIFO) manner. Basically can be thought of like a line at a store or anywhere.</p>
-<h2 id="purpose">Purpose</h2>
-<p>Queues are great for use where the order of events occur is important</p>
-<p>Useful for
-- Breadth first search
-- Message or print queues
-- Simulations with ordered events</p>
-<h2 id="big-o-analysis">Big O Analysis</h2>
-<p>The follow operations are due to the linked list implementation</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>Big O</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>push (front/back)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>pop (front/back)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>peek (front/back)</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="code">Code</h2>
-<pre><code class="language-python">from linked-list import DblyLinkedList
+<h1 id="sorting-algorithms">Sorting Algorithms</h1>
+<ul>
+<li>General Sorting algorithms on abstract data types where the only operation you can perform is a comparison provably have a lower bound of <script type="math/tex">O(n \log n)</script>
+<ul>
+<li>this means there are no faster sorting algorithms than <script type="math/tex">O(n \log n)</script> except for in the unique case of sorting integers in which case we can do more than comparisons in order to get the sort down to linear time</li>
+<li>the proof follows from the gauranteed height of a decision tree for sorting the elements (see the MIT 6.006 lecture 7 video for an intuition)</li>
+</ul>
+</li>
+</ul>
+<h2 id="heap-sort">Heap Sort</h2>
+<ul>
+<li>Time: <script type="math/tex">O(n \log n)</script>
+</li>
+<li>Space: <script type="math/tex">O(1)</script>
+</li>
+</ul>
+<h3 id="algorithm-w-max-heap">Algorithm w/ Max-Heap</h3>
+<ol>
+<li>Build max heap from unordered array</li>
+<li>Find maximum element <script type="math/tex">A[1]</script>
+</li>
+<li>Swap elements <script type="math/tex">A[n]</script> and <script type="math/tex">A[1]</script>
+<ul>
+<li>now max element is at the end of the array </li>
+</ul>
+</li>
+<li>Discard node <script type="math/tex">n</script> from the heap by decrementing the heap-size variable</li>
+<li>New root may violate max heap property, but its children are max heaps. Run max heapify to fix this </li>
+<li>Goto step 2 unless the heap is empty </li>
+</ol>
+<h3 id="algorithm-w-min-heap">Algorithm w/ Min-Heap</h3>
+<ol>
+<li>Build min-heap from unordered array <script type="math/tex">O(n)</script>
+</li>
+<li>Select and remove root <script type="math/tex">O(1)</script>
+</li>
+<li>Fix heap <script type="math/tex">O(\log n)</script>
+<ul>
+<li>Can't make assumptions about rest of tree like in build heap</li>
+</ul>
+</li>
+<li>Repeat 2,3 <script type="math/tex">n</script> times to give runtime <script type="math/tex">O(n \log n)</script>
+</li>
+</ol>
+<h2 id="quick-sort">Quick Sort</h2>
+<ul>
+<li>Avg Time: <script type="math/tex">O(n \log n)</script>
+<ul>
+<li>Worst Case is <script type="math/tex">O(n^2)</script>
+</li>
+</ul>
+</li>
+<li>Space: <script type="math/tex">O(1)</script>
+</li>
+<li>Divide and Conquer (in place)</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=SLauY6PpjW4">HackerRank Video</a></p>
+</li>
+<li>
+<p>Select a pivot value from the array </p>
+</li>
+<li>Using left and right indices starting from the edges, swap elements out of order (every element &lt; pivot should be before every element &gt; pivot)</li>
+<li>return the partition point (the point where the elements &lt; pivot and &gt; pivot meet)</li>
+<li>
+<p>call quicksort recursively on the two halves of defined by the partition point</p>
+</li>
+<li>
+<p>Can choose <em>pivot</em> in many ways (e.g. median/middle of array)</p>
+<ul>
+<li>how you choose your pivot is main thing that affects runtime</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">def quicksort(A, left, right):
+    if (left &lt; right):
+    pivot = A[left + (right-left) / 2]
+    index = partition(A, left, right, pivot)
 
-class Queue:
-    def __init__(self):
-        self.list = DblyLinkedList()
+    quicksort(A, left, index - 1)
+    quicksort(A, index, right)
 
-    def push_front(self,data):
-        self.list.prepend(data)
-    def push_back(self,data):
-        self.list.append(data)
-    def pop_front(self):
-        self.list.delete_front()
-    def pop_back(self):
-        self.list.delete_back()
-    def peek_front(self):
-        return self.list.head
-    def peek_back(self):
-        return self.list.tail
-</code></pre></div>
+def partition(A, left, right, pivot):
+  while (left &lt;= right):
+
+    while (A[left] &lt; pivot):
+      left += 1
+    while (A[right] &gt; pivot):
+      right -= 1
+
+    if (left &lt;= right):
+      swap(A, left, right)
+      left += 1
+      right -= 1
+    return left 
+</code></pre>
+<h2 id="merge-sort">Merge Sort</h2>
+<ul>
+<li>Time: <script type="math/tex">O(n \log n)</script>
+</li>
+<li>Space: <script type="math/tex">O(n)</script>
+</li>
+<li>Divide &amp; Conquer</li>
+<li><a href="https://www.youtube.com/watch?v=KF2j-9iSf4Q">HackerRank Video</a></li>
+<li>Split the array into halves until you reach a base case of 2, sort the base case, then combine the sorted subproblems in sorted order to create the final sorted array</li>
+</ul>
+<h2 id="bubble-sort">Bubble Sort</h2>
+<ul>
+<li>Time: <script type="math/tex">O(n^2)</script>
+</li>
+<li>Space: <script type="math/tex">O(1)</script>
+</li>
+<li><a href="https://www.youtube.com/watch?v=6Gv8vg0kcHc">HackerRank Video</a></li>
+<li>
+<p>"bubbles" the largest elements to the end of the array</p>
+<ul>
+<li>inefficient since each iteration of <script type="math/tex">n</script> comparisons only finishes sorting 1 element</li>
+</ul>
+</li>
+<li>
+<p>only time this might be useful is if the array is mostly sorted</p>
+</li>
+</ul>
+<pre><code class="language-python">def bubblesort(A):
+  is_sorted = False
+  last_unsorted = len(A) - 1
+  while not is_sorted:
+    is_sorted = True
+    for i in range(last_unsorted):
+      if (A[i] &gt; A[i+1]):
+        swap(A, i, i+1)
+        is_sorted = False
+    last_unsorted -= 1
+</code></pre>
+<h2 id="linear-time-sorting">Linear-Time Sorting</h2>
+<ul>
+<li>More accurately Integer Sorting<ul>
+<li>major area of reserach </li>
+</ul>
+</li>
+<li>Assume <script type="math/tex">n</script> keys being sorted are integers in a range (0, ..., k-1) and each fits in a word of memory <ul>
+<li>Since we are working with only integers, we can do more than just comparisons in order to speed up the sort</li>
+</ul>
+</li>
+<li><a href="https://www.youtube.com/watch?v=Nz1KZXbghj8&amp;list=PLUl4u3cNGP61Oq3tWYp6V_F-5jb5L2iHb&amp;index=7">MIT 6.006 Lecture Video</a></li>
+</ul>
+<h3 id="countingbucket-sort">Counting/Bucket Sort</h3>
+<ul>
+<li>Performs no comparisons </li>
+<li>Uses knowledge of the range with upper bound of <script type="math/tex">k</script>
+</li>
+<li>Counts number of occurences of each element in the range (0 to k)</li>
+<li>Then in the output array, it will merely make sure there are the correct number of occurences for each element in the range and the frequency array is traversed in order to produce the sort </li>
+<li>A more generalized version is seen below where the items can be any data structure, as long as they have an integer key <ul>
+<li>this version will make sure all of the item's data is moved during the sort</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">L = array of k empty lists
+# O(n)
+for j in range(n):
+  L[key(A[j])].append(A[j]) # O(1)
+
+output = []
+# O(n + k)
+for i in range(k):
+  output.extend(L[i]) #O (|L| + 1)
+</code></pre>
+<ul>
+<li>Overall runtime: <script type="math/tex">O(n + k)</script>
+<ul>
+<li>If <script type="math/tex">k</script> is order <script type="math/tex">n</script>, then the runtime is linear</li>
+</ul>
+</li>
+</ul>
+<h3 id="radix-sort">Radix Sort</h3>
+<ul>
+<li>Uses counting sort as a subroutine</li>
+<li>Performs in linear time even for <script type="math/tex">k</script> polynomial in <script type="math/tex">n</script> (e.g. <script type="math/tex">k \in O(n^{100})</script>)</li>
+<li>Imagine each integer as base <script type="math/tex">b</script> (e.g. in the form of its digits)<ul>
+<li># digits: <script type="math/tex">d = \log_b k</script>
+</li>
+</ul>
+</li>
+<li>Sort the integers by least significant digit<ul>
+<li>repeat <script type="math/tex">d</script> times (up to sorting by the most significant digit)</li>
+<li>Sort by digit using counting/bucket sort <script type="math/tex">O(n + b)</script>
+<ul>
+<li>all digits are between 0 and <script type="math/tex">b - 1</script>
+</li>
+<li>we can compute the digits in constant time (no need to actually convert them to base <script type="math/tex">b</script>) using modulo and other operators</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>So the total time is <script type="math/tex">O(d(n+b))</script>
+<ul>
+<li>We substitute value of <script type="math/tex">d</script> from above to get <script type="math/tex">O(\log_b k (n + b))</script>
+</li>
+<li>We want to choose a <script type="math/tex">b</script> to minimize the runtime <ul>
+<li>minimized when <script type="math/tex">b = \Theta(n)</script>
+</li>
+<li>
+<script type="math/tex">O(n \log_n k )</script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>If <script type="math/tex">k \leq n^c</script> then <script type="math/tex">O(nc)</script>
+<ul>
+<li>If integers are reasonably small in value (polynomial in <script type="math/tex">n</script>), then we get a linear time sorting algorithm</li>
+</ul>
+</li>
+</ul>
+<h2 id="bucket-sort">Bucket Sort</h2>
+<ul>
+<li>Create buckets (e.g. array/linked list) for each element in the range of your data<ul>
+<li>IMPORTANT: need to know the range of your data before applying this sorting technique</li>
+<li>Buckets must be accesible in <script type="math/tex">O(1)</script> time</li>
+</ul>
+</li>
+<li>Create a function that is a bijection betwen different element types and the bucket indices<ul>
+<li>function that maps everything to its own bucket with no crashes (e.g. temperature data mapped to a bucket)</li>
+</ul>
+</li>
+<li>Place each element in its bucket</li>
+<li>"Collect" all of the buckets</li>
+<li>Runtime:<ul>
+<li>often considered <script type="math/tex">O(n)</script>
+</li>
+<li>more specific: <script type="math/tex">O(n + k)</script>
+</li>
+<li>
+<script type="math/tex">n</script>- number of elements </li>
+<li>
+<script type="math/tex">k</script>- number of buckets/range of the input <ul>
+<li>If <script type="math/tex">k</script> is linear in <script type="math/tex">n</script> then <script type="math/tex">O(n)</script> runtime</li>
+<li>Otherwise the running time will be <script type="math/tex">O(k)</script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>When not to use:<ul>
+<li>Ex: sorting integers in range 1 to 10,000,000 but only sorting 100 numbers<ul>
+<li>Bucket sort takes <script type="math/tex">10^7</script> to collect all the buckets</li>
+<li>Mergesort would take ~665 comparisons</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="radix-sort_1">Radix Sort</h2>
+<ul>
+<li>Radix means base </li>
+<li>many descriptions:<ul>
+<li>read digits left to right, right to left</li>
+<li>divide and conquer with recursive calls</li>
+</ul>
+</li>
+<li>Runtime<ul>
+<li>
+<script type="math/tex">n</script>- number of elements</li>
+<li>
+<script type="math/tex">\ell</script> - length of elements</li>
+<li>
+<script type="math/tex">k</script>- upper bound on range of digits</li>
+<li>Each sort is a bucket sort of <script type="math/tex">n</script> items into <script type="math/tex">k</script> buckets <script type="math/tex">O(n + k)</script>
+</li>
+<li>There are <script type="math/tex">\ell</script> sorts to be done</li>
+<li>
+<script type="math/tex">O(\ell (n + k))</script>
+</li>
+</ul>
+</li>
+</ul></div>
             </div>
         </div>
 

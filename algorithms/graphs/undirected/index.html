@@ -113,7 +113,23 @@
 </li>
                                     
 <li>
+    <a href="../../sorting/" class="dropdown-item">Sorting</a>
+</li>
+                                    
+<li>
+    <a href="../../heaps/" class="dropdown-item">Heaps</a>
+</li>
+                                    
+<li>
     <a href="../../greedy/" class="dropdown-item">Greedy</a>
+</li>
+                                    
+<li>
+    <a href="../../dp/" class="dropdown-item">Dynamic Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../divideconquer/" class="dropdown-item">Divide and Conquer</a>
 </li>
                                     
 <li>
@@ -560,13 +576,28 @@
 <li>Can be optimally found using greedy algorithms due to the structure of the problem</li>
 <li>Both algorithms only include an edge in the MST when it is justified by the Cut Property</li>
 <li>Both can run in <script type="math/tex">O(E \log V)</script> time given the correct data structure</li>
+<li>Cut property is a common technique used in proving correctness of gredey MST algorithms<ul>
+<li>A cut is a partition of the vertices of a graph <script type="math/tex">G</script> into two disjoint sets </li>
+<li>The cut property states that for any cut <script type="math/tex">C</script> of the graph, if the weight of an edge <script type="math/tex">e \in C</script> is strictly smaller than the weights of all other edges of <script type="math/tex">C</script>, then this edge belongs to all MSTs of the graph<ul>
+<li>lightest edge in a cut-set must be in the MST</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <h2 id="prims">Prims</h2>
 <ul>
-<li>start with a root node and greedily grow the tree otuward, always adding the node that can be reached cheapest from the current node</li>
+<li>Start with a root node and greedily grow the tree otuward, always adding the node that can be reached cheapest from the current node</li>
 <li>Greedy algorithm</li>
-<li>Can stop at any point and have a valid mst that doesn't reach all the nodes</li>
-<li>Implemented using a priority queue</li>
+<li>
+<p>Can stop at any point and have a valid mst that doesn't reach all the nodes</p>
+<ul>
+<li>optimal substructure </li>
+</ul>
+</li>
+<li>
+<p>Implemented using a priority queue ADT</p>
+</li>
 </ul>
 <h2 id="kruskals">Kruskals</h2>
 <ol>

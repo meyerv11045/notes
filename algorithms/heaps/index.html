@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/data_structures/queue/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/algorithms/heaps/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Queue - The Notebook</title>
+        <title>Heaps - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Algorithms <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -91,78 +91,78 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../algorithms/graphs/graphs/" class="dropdown-item">Representations</a>
+    <a href="../graphs/graphs/" class="dropdown-item">Representations</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
+    <a href="../graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/undirected/" class="dropdown-item">Undirected</a>
+    <a href="../graphs/undirected/" class="dropdown-item">Undirected</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
+    <a href="../graphs/directed/" class="dropdown-item">Directed</a>
 </li>
     </ul>
   </li>
                                     
 <li>
-    <a href="../../algorithms/analysis/" class="dropdown-item">Analysis</a>
+    <a href="../analysis/" class="dropdown-item">Analysis</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/sorting/" class="dropdown-item">Sorting</a>
+    <a href="../sorting/" class="dropdown-item">Sorting</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/heaps/" class="dropdown-item">Heaps</a>
+    <a href="./" class="dropdown-item active">Heaps</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/greedy/" class="dropdown-item">Greedy</a>
+    <a href="../greedy/" class="dropdown-item">Greedy</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/dp/" class="dropdown-item">Dynamic Programming</a>
+    <a href="../dp/" class="dropdown-item">Dynamic Programming</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/divideconquer/" class="dropdown-item">Divide and Conquer</a>
+    <a href="../divideconquer/" class="dropdown-item">Divide and Conquer</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+    <a href="../tips/" class="dropdown-item">Tips</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../overview/" class="dropdown-item">Overview</a>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
 </li>
                                     
 <li>
-    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
-    <a href="../stack/" class="dropdown-item">Stack</a>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Queue</a>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
 </li>
                                     
 <li>
-    <a href="../heap/" class="dropdown-item">Heap</a>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
 </li>
                                     
 <li>
-    <a href="../graph/" class="dropdown-item">Graph</a>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
 </li>
                                 </ul>
                             </li>
@@ -474,12 +474,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../stack/" class="nav-link">
+                                <a rel="prev" href="../sorting/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../heap/" class="nav-link">
+                                <a rel="next" href="../greedy/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -501,17 +501,22 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#queue" class="nav-link">Queue</a>
+            <li class="nav-item" data-level="1"><a href="#priority-queue" class="nav-link">Priority Queue</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#purpose" class="nav-link">Purpose</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#big-o-analysis" class="nav-link">Big O Analysis</a>
+            <li class="nav-item" data-level="2"><a href="#operations" class="nav-link">Operations</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">Code</a>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#heap" class="nav-link">Heap</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#operations_1" class="nav-link">Operations</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resources" class="nav-link">Resources</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -522,58 +527,133 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="queue">Queue</h1>
-<p>Stores data in a first in, first out (FIFO) manner. Basically can be thought of like a line at a store or anywhere.</p>
-<h2 id="purpose">Purpose</h2>
-<p>Queues are great for use where the order of events occur is important</p>
-<p>Useful for
-- Breadth first search
-- Message or print queues
-- Simulations with ordered events</p>
-<h2 id="big-o-analysis">Big O Analysis</h2>
-<p>The follow operations are due to the linked list implementation</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>Big O</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>push (front/back)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>pop (front/back)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>peek (front/back)</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="code">Code</h2>
-<pre><code class="language-python">from linked-list import DblyLinkedList
-
-class Queue:
-    def __init__(self):
-        self.list = DblyLinkedList()
-
-    def push_front(self,data):
-        self.list.prepend(data)
-    def push_back(self,data):
-        self.list.append(data)
-    def pop_front(self):
-        self.list.delete_front()
-    def pop_back(self):
-        self.list.delete_back()
-    def peek_front(self):
-        return self.list.head
-    def peek_back(self):
-        return self.list.tail
-</code></pre></div>
+<h1 id="priority-queue">Priority Queue</h1>
+<ul>
+<li>ADT that implements a set <script type="math/tex">S</script> of elements, each element associated with a key </li>
+</ul>
+<h2 id="operations">Operations</h2>
+<ul>
+<li><code>insert(S,x)</code>: insert element x into set S</li>
+<li><code>max(S)</code>: return element of <script type="math/tex">S</script> with largest key</li>
+<li><code>extract_max(S)</code>: return element of <script type="math/tex">S</script> with largest key and remove it from <script type="math/tex">S</script>
+</li>
+<li><code>increase_key(S,x,k)</code>: increase value of <script type="math/tex">x</script>'s key by <script type="math/tex">k</script>
+</li>
+</ul>
+<h1 id="heap">Heap</h1>
+<ul>
+<li>Implementation of a priority queue</li>
+<li>An array visualized as a nearly complete binary tree<ul>
+<li>all leaves are at max depth or max depth -1</li>
+<li>every leaf has 0 or 1 sibling</li>
+<li>Array has benefit of <script type="math/tex">O(1)</script> random access for getting children</li>
+</ul>
+</li>
+<li>Calculating node indices (1-indexed):<ul>
+<li>root <script type="math/tex">i =1</script>
+</li>
+<li>parent(<script type="math/tex">i</script>) = <script type="math/tex">i / 2</script>
+</li>
+<li>left(<script type="math/tex">i</script>) = <script type="math/tex">2i</script>
+</li>
+<li>right(<script type="math/tex">i</script>) = <script type="math/tex">2i + 1</script>
+</li>
+</ul>
+</li>
+<li>Max-Heap Property- The key of a node is <script type="math/tex">\geq</script> the keys of its children<ul>
+<li><code>max(S)</code> is trivial</li>
+<li><code>extract_max(S)</code> is not trivial </li>
+</ul>
+</li>
+</ul>
+<h2 id="operations_1">Operations</h2>
+<ul>
+<li>
+<p><code>build_max_heap(A)</code>: produces a max heap from an unordered array </p>
+<p><code>build_max_heap(A):
+    for i = n/2 downto 1
+        do max_heapify(A, i)</code></p>
+<ul>
+<li>Why start at n/2?<ul>
+<li>Elements <script type="math/tex">n/2 + 1</script> to the end of the array are leaves</li>
+<li>So we build up max-heap from leaves </li>
+</ul>
+</li>
+<li>Runtime of <script type="math/tex">O(n)</script>
+<ul>
+<li>only 1 node with <script type="math/tex">O(\log n)</script> runtime (the root),</li>
+<li>the lowest level with the most nodes, has the smallest number of operations </li>
+<li>detailed analysis:<ul>
+<li><code>max_heapify</code> takes <script type="math/tex">O(1)</script>for nodes that are one level above the leaves</li>
+<li><code>max_heapify</code> takes <script type="math/tex">O(\ell)</script> time for nodes that are <script type="math/tex">\ell</script> levels above the leaves</li>
+<li>
+<script type="math/tex">n/4</script> nodes w/ level 1, <script type="math/tex">n / 8</script> nodes with level 2, .... , 1 node <script type="math/tex">\log n</script> level</li>
+<li>Total amount of work in the for loop:<ul>
+<li>
+<script type="math/tex">n/4 (1c) + n/8 (2 c) + n / 16 (3 c) + \cdots + 1 (\log n c)</script>
+</li>
+<li>let <script type="math/tex">n/4 = 2^k</script>
+</li>
+<li>
+<script type="math/tex">c 2^k( 1/2^0 + 2/2^1 + 3/2^2 + \cdots (k+1)/2^k)</script>
+<ul>
+<li>the series <script type="math/tex">\sum_{i=0}^k \frac{i + 1}{2^i}</script> is bounded by a constant </li>
+</ul>
+</li>
+<li>Therefore, we have <script type="math/tex">\Theta (n)</script> time complexity </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>max_heapify(A,i)</code>: correct a single violation of the heap property in a subtree's root </p>
+<ul>
+<li>
+<p>assume that the trees rooted at left(<script type="math/tex">i</script>) and right(<script type="math/tex">i</script>) are max heaps </p>
+</li>
+<li>
+<p>If element <script type="math/tex">A[i]</script> violates the max-heap property, correct the violation by trickling it down the tree, in order to make the subtree rooted at <script type="math/tex">i</script> a max-heap</p>
+<ul>
+<li>Exchange bigger child with <script type="math/tex">A[i]</script>
+</li>
+<li>Recursively call max heapify on the subtree where the original parent is now the root </li>
+</ul>
+</li>
+<li>
+<p>This operation runs in <script type="math/tex">O(\log n)</script>
+</p>
+<ul>
+<li>algorithm runs level by level on a height constrained tree -&gt; produces logarithmic time complexity </li>
+</ul>
+</li>
+<li>
+<p>```
+    max_heapify(A,i):
+        l = left(i)
+        r = right(i)
+        if (l &lt;= heap-size(A) and A[l] &gt; A[i])
+            largest = l
+        else 
+            largest = i</p>
+<pre><code>if (r &lt;= heap-size(A) and A[r] &gt; A[largest])
+    largest = r 
+if largest != i
+    exchange A[i] and A[largest]
+    max_heapify(A, largest)
+</code></pre>
+<p>```</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=B7hVxCmfPtM">MIT 6.006 Lecture</a>, <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-006-introduction-to-algorithms-fall-2011/lecture-videos/MIT6_006F11_lec04.pdf">MIT 6.006 Notes</a></li>
+</ul></div>
             </div>
         </div>
 

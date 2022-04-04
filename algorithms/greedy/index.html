@@ -113,7 +113,23 @@
 </li>
                                     
 <li>
+    <a href="../sorting/" class="dropdown-item">Sorting</a>
+</li>
+                                    
+<li>
+    <a href="../heaps/" class="dropdown-item">Heaps</a>
+</li>
+                                    
+<li>
     <a href="./" class="dropdown-item active">Greedy</a>
+</li>
+                                    
+<li>
+    <a href="../dp/" class="dropdown-item">Dynamic Programming</a>
+</li>
+                                    
+<li>
+    <a href="../divideconquer/" class="dropdown-item">Divide and Conquer</a>
 </li>
                                     
 <li>
@@ -458,12 +474,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../analysis/" class="nav-link">
+                                <a rel="prev" href="../heaps/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../tips/" class="nav-link">
+                                <a rel="next" href="../dp/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -487,27 +503,19 @@
             
             <li class="nav-item" data-level="1"><a href="#greedy-algorithms" class="nav-link">Greedy Algorithms</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#applications" class="nav-link">Applications</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#dijkstras" class="nav-link">Dijkstra's</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#longest-path" class="nav-link">Longest Path</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#fractional-knapsack" class="nav-link">Fractional Knapsack</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
             <li class="nav-item" data-level="2"><a href="#optimal-substructure" class="nav-link">Optimal Substructure</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#when-to-use-greedy-approach" class="nav-link">When to use Greedy Approach</a>
+            <li class="nav-item" data-level="2"><a href="#shortest-paths-in-a-graph" class="nav-link">Shortest Paths in a Graph</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#interval-scheduling" class="nav-link">Interval Scheduling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fractional-knapsack" class="nav-link">Fractional Knapsack</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -533,56 +541,151 @@
 </ul>
 </li>
 <li>Finding cases where greedy algorithms work well and proving their performance is challenging</li>
-<li>Any algorithm that follows the problem-solving heurisitc of making the locally optimal choice at each stage with the intent of finding a global optimum </li>
+<li>Any algorithm that follows the problem-solving heurisitc of making the locally optimal choice at each stage with the intent of finding a global optimum</li>
+<li>Follow a form of:<ul>
+<li>select a candidate greedily according to some heuristic</li>
+<li>if adding the candidate does not corrupt feasability of the solution, add it to your current solution</li>
+<li>repeat until finished </li>
+</ul>
+</li>
+<li>Two methods for proving a greedy algo produces optimal solution to a problem<ul>
+<li>Greedy Algorithm Stays Ahead</li>
+<li>Exchange Argument</li>
+</ul>
+</li>
 <li>
-<p>Cut property is a common technique used for proving greedy algorithms</p>
+<p>Applications:</p>
 <ul>
-<li>A cut is a partition of the vertices of a graph <script type="math/tex">G</script> into two disjoint sets </li>
-<li>The cut property states that for any cut <script type="math/tex">C</script> of the graph, if the weight of an edge <script type="math/tex">e \in C</script> is strictly smaller than the weights of all other edges of <script type="math/tex">C</script>, then this edge belongs to all MSTs of the graph<ul>
-<li>lightest edge in a cut-set must be in the MST</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>Two methods for proving a greedy algo produces optimal solution to a problem</p>
-<ul>
-<li>Greedy Algorithm Stays Ahead- </li>
-<li>Exchange Argument- </li>
-</ul>
-</li>
-</ul>
-<h2 id="applications">Applications</h2>
-<ul>
-<li>Shortest paths in a graph<ul>
-<li>exploits the structure of shortest path</li>
-</ul>
-</li>
+<li>Shortest paths in a graph</li>
+<li>Interval Scheduling</li>
 <li>Minimum Spanning trees in an undirected graph</li>
 <li>Minimum cost aboresence problem in directed graph</li>
 <li>Huffman code construction in data compression</li>
 </ul>
-<h2 id="dijkstras">Dijkstra's</h2>
+</li>
+<li>
+<p>When to use the greedy approach?</p>
 <ul>
-<li>cannot handle negative edge weights </li>
+<li>Does the <em>problem</em> display <em>optimal substructure</em>? </li>
+<li>Does your <em>algorithm</em> have the <em>greedy choice property</em>?</li>
+<li>If both questions above can be answered yes, then the greedy approach is good, but might also be able to use dynamic programming<ul>
+<li>DP useful in the case of overlapping subproblems </li>
 </ul>
-<pre><code>visited =. {s}
-undiscovered. = {V - s}
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="optimal-substructure">Optimal Substructure</h2>
+<ul>
+<li>Property of problems that can be solved with a greedy algorithm or dynamic programming</li>
+<li>Describes a problem if an optimal solution can be constructed from optimal solutions of its subproblems</li>
+<li>Has optimal substructure: shortest path, fractional knapsack</li>
+<li>Does not have optimal substructure: 0/1 knapsack, longest path on non-DAG</li>
+</ul>
+<h3 id="structure-of-a-proof">Structure of a Proof</h3>
+<ul>
+<li>Assume <script type="math/tex">O</script> is an optimal answer</li>
+<li>Remove an element <script type="math/tex">x</script> from <script type="math/tex">O</script> (often last element) to create <script type="math/tex">O'</script>
+</li>
+<li>Redefine the constraints of the problem for which <script type="math/tex">O'</script> is a solution </li>
+<li>Prove that <script type="math/tex">O'</script> is an optimal answer for this redefined problem<ul>
+<li>Often a proof by contradiction: assume <script type="math/tex">O</script> is optimal but <script type="math/tex">O'</script> is not</li>
+<li>Find <script type="math/tex">O^*</script>,the optimal answer to the redefined problem</li>
+<li>Add <script type="math/tex">x</script> to <script type="math/tex">O^*</script> to make a <em>new</em> answer to the original problem</li>
+<li>Contradiction reached in that <script type="math/tex">x + O^*</script> is better than <script type="math/tex">O</script> which was optimal</li>
+<li>Therefore, <script type="math/tex">O'</script> must be optimal and so the problem has optimal substructure</li>
+</ul>
+</li>
+</ul>
+<h3 id="ex-shortest-path">Ex: Shortest Path</h3>
+<ul>
+<li>Assume the shortest path from <script type="math/tex">u</script> to <script type="math/tex">v</script> is <script type="math/tex">P</script> and <script type="math/tex">w \in P</script>.</li>
+<li>Remove the end of the path from <script type="math/tex">w</script> to <script type="math/tex">v</script> to create <script type="math/tex">P'</script> which is a path from <script type="math/tex">u</script> to <script type="math/tex">w</script>. </li>
+<li>Is <script type="math/tex">P'</script> the shortest path from <script type="math/tex">u</script> to <script type="math/tex">w</script>? </li>
+<li>By way of contradiction assume <script type="math/tex">P</script> is optimal but <script type="math/tex">P'</script> is not. Let <script type="math/tex">P^*</script> be the optimal path from <script type="math/tex">u</script> to <script type="math/tex">w</script>. If we add the previously removed edge from <script type="math/tex">w</script> to <script type="math/tex">v</script> to <script type="math/tex">P^*</script> then we have created a new path from <script type="math/tex">u</script> to <script type="math/tex">v</script> which is more optimal than <script type="math/tex">P</script>. This is a contradiction, so therefore <script type="math/tex">P'</script> must be optimal and so the shortest path problem has optimal substructure. </li>
+</ul>
+<h2 id="shortest-paths-in-a-graph">Shortest Paths in a Graph</h2>
+<ul>
+<li>Given a strongly connected directed graph <script type="math/tex">G = (V, E)</script> and a start node <script type="math/tex">s</script>
+<ul>
+<li>Each edge <script type="math/tex">e</script> has a length <script type="math/tex">\ell_e \geq 0</script>
+</li>
+</ul>
+</li>
+<li>Goal: determine shortest path from <script type="math/tex">s</script> to every other node in the graph</li>
+<li>Greedy algorithms take advantage of the optimal substructure of the shortest  path<ul>
+<li>longest path does not have same optimal substructure (unless working with a DAG) so cannot use a greedy algorithm</li>
+</ul>
+</li>
+</ul>
+<h3 id="dijkstras-algorithm">Dijkstra's Algorithm</h3>
+<pre><code>let S be set of explored nodes
+    for each u in S we store a distance d(u)
+
+Initially S = {s} and d(s) = 0
+
+while S != V
+    select an unexplored node with at least one edge from S
+
+
+visited = {s}
+undiscovered = {V - s}
 for i = 1 to |V| 
     dist[i] = infinity // O(V)
 </code></pre>
 <ul>
+<li>Cannot handle negative edge weights </li>
 <li>BFS is faster for shortet path of unweigghted graph (could give all edges equal weight and run dijkstra's')</li>
 </ul>
-<h2 id="longest-path">Longest Path</h2>
+<h2 id="interval-scheduling">Interval Scheduling</h2>
 <ul>
-<li>is not a greedy problem since it doesnt have optimal substructure for undirected graphs</li>
-<li>DAGs do have optimal substructure and allow a longest path to be built up greedily</li>
+<li>We have <script type="math/tex">n</script> requests each <script type="math/tex">i</script>th request corresponding to an interval of time starting at <script type="math/tex">s(i)</script> and finishing at <script type="math/tex">f(i)</script>
+</li>
+<li>A subset of the requests is <em>compatible</em> if no two of them overlap in time</li>
+<li>Goal: Determine largest compatible subset as possible </li>
+<li>Greedy rule/heuristic for choosing request:<ul>
+<li>choose request a finishes first</li>
 </ul>
+</li>
+</ul>
+<pre><code>let R be set of all intervals
+Sort R by finish time
+let G be empty solution set
+
+for interval in R:
+    if G is empty: 
+        add first interval to G
+    else:
+        if interval does not overlap with last interval in G:
+            add interval to G
+</code></pre>
+<ul>
+<li>This algorithm runs in <script type="math/tex">O(n \log n)</script>
+<ul>
+<li>Sort is <script type="math/tex">O(n \log n)</script>
+</li>
+<li>Iterate through intervals is <script type="math/tex">O(n)</script>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="proof-of-correctness">Proof of Correctness</h3>
+<ul>
+<li>We will use the stay ahead argument </li>
+<li>We will prove for each <script type="math/tex">r \geq 1</script>, the <script type="math/tex">r</script>th interval in the algorithm's solution <script type="math/tex">G</script> finishes no later than the <script type="math/tex">r</script>th interval in the optimal schedule</li>
+<li>Note that <script type="math/tex">|G| = k</script> and <script type="math/tex">|O| = m</script> and we want to show <script type="math/tex">|G| = |O|</script> in order to prove the greedy algorithm creates an optimal solution</li>
+</ul>
+<h4 id="proof">Proof:</h4>
+<p>We will prove via induction: for all <script type="math/tex">r \leq k</script> we have <script type="math/tex">f(i_r) \leq f(j_r)</script>.</p>
+<p>Base Case (r = 1): The algorithm selects the request <script type="math/tex">i_1</script> with the minimum finish time so it is clearly an optimal first choice <script type="math/tex">f(i_1) \leq f(j_1)</script>.</p>
+<p>For <script type="math/tex">r>1</script> we will assume the inductive hypothesis is true (<script type="math/tex">f(i_{r-1}) \leq f(j_{r-1})</script>) for <script type="math/tex">r - 1</script> and will try to prove it for <script type="math/tex">r</script>. Since <script type="math/tex">O</script> consists of nonoverlapping intervals, <script type="math/tex">f(j_{r-1}) \leq s(j_r)</script>. Therefore, combining this with the inductive hypothesis implies <script type="math/tex">f(i_{r-1}) \leq s(j_r)</script>. This means interval <script type="math/tex">j_r</script> is in the set of available intervals at the time when the greedy algorithm selects <script type="math/tex">i_r</script>. The greedy algorithm selects the available interval with the smallest finish time, therefore <script type="math/tex">f(i_r) \leq f(j_r)</script>. This completes the induction steps so we have proven the optimality of the greedy algorthim's set <script type="math/tex">A</script>.</p>
+<p>So far we have only proven that the greedy algorithm's solution is as good as the optimal solution. To finish we need to prove <script type="math/tex">|G| = |O|</script>.</p>
+<h4 id="proof_1">Proof:</h4>
+<p>By way of contradiction, assume <script type="math/tex">G</script> is not optimal so <script type="math/tex">|O| > |G|</script>. This means there is a requests in <script type="math/tex">O</script> that starts after <script type="math/tex">f(j_k)</script> and therefore after <script type="math/tex">f(i_k)</script>. This means there was a compatible interval left to choose from that the greedy algorithm did not choose and opted to stop instead. This is a contradiction from how the greedy algorithm was designed so therefoer <script type="math/tex">|G| = |O|</script>.</p>
 <h2 id="fractional-knapsack">Fractional Knapsack</h2>
 <ul>
 <li>Thief robbing a store finds <script type="math/tex">n</script> types of metallic dust </li>
-<li>THe <script type="math/tex">i</script>th dust is worth <script type="math/tex">v</script> per ounce with <script type="math/tex">w_i</script> total ounces available</li>
+<li>The <script type="math/tex">i</script>th dust is worth <script type="math/tex">v</script> per ounce with <script type="math/tex">w_i</script> total ounces available</li>
 <li>Knapsack can hold total of <script type="math/tex">W</script> Ounces.</li>
 <li>What is the max value of dust that can fit in the knapsack?</li>
 <li>Solution: Calc value/oz and then add as much of the most valuable as possible then move to the next valuable, and repeat until the sack is full<ul>
@@ -590,29 +693,24 @@ for i = 1 to |V|
 </ul>
 </li>
 </ul>
-<h2 id="optimal-substructure">Optimal Substructure</h2>
-<ul>
-<li>Optimal solution to a problem relies on the optimal solution to smaller subproblems</li>
-<li>Has optimal substructure: shortest path, fractional knapsack</li>
-<li>Does not have optimal substructure: 0/1 knapsack, longest path on non-DAG</li>
-</ul>
-<h2 id="when-to-use-greedy-approach">When to use Greedy Approach</h2>
-<ul>
-<li>Does the <em>problem</em> display optimal substructure? </li>
-<li>Does your <em>algorithm</em> have the greedy choice problem?<ul>
-<li>can the first choice be part of some optimal solution?</li>
-</ul>
-</li>
-<li>If both questions above can be answered yes, then the greedy approach is good, but might also be able to use dynamic programming</li>
-</ul>
+<h3 id="prove-optimal-substructure">Prove Optimal Substructure</h3>
+<p>Suppose <script type="math/tex">O</script> is the optimal packing of the knapsack of size <script type="math/tex">W</script> and value <script type="math/tex">val(O)</script> give a list <script type="math/tex">L</script> of possible values. Remove one item <script type="math/tex">i</script> from the knapsack with weight <script type="math/tex">w_i</script> and value <script type="math/tex">v_i</script> to get a new packing <script type="math/tex">O'</script> of a knapsack of size <script type="math/tex">W - w_i</script> and choosing from the set of items <script type="math/tex">L - i</script>. By way of contradiction, assume <script type="math/tex">O'</script> is not optimal. This means we have a higher value packing. If we add the discarded stuff <script type="math/tex">w_i</script> to this higher value packing, then we have a solution to the overall packing that is worth more than <script type="math/tex">O</script>. A contradiction has been reached, therefore the problem has optimal substructure.</p>
+<p><a href="https://www.cs.ucr.edu/~yihans/teaching/141/f20/141F20/discussion/worksheet4.pdf">Optimal Substructure</a></p>
+<h3 id="prove-greedy-choice-property">Prove Greedy Choice Property</h3>
+<p>Suppose <script type="math/tex">O</script> is an optimal solution and does not include the first choice <script type="math/tex">C_1</script> made by the greedy algorithm. Let <script type="math/tex">w</script> be the weight of the most valuable item. Remove <script type="math/tex">w</script> oz of any other item and replace that with <script type="math/tex">w</script> oz of the most valuable algorithm. We have now increased the value of <script type="math/tex">O</script> which is a contradiction. Therefore, this <script type="math/tex">w</script> oz of the most valuable item was already in the packing of the optimal solution <script type="math/tex">O</script>. Our first greedy choice could be a part of any optimal solution.</p>
 <h2 id="proving-correctness-of-greedy-algorithms">Proving Correctness of Greedy Algorithms</h2>
 <ul>
-<li>By induction</li>
-<li>By contradiction<ul>
-<li>suppose your algorithm makes a mistakee</li>
+<li>Showing the problem has optimal substructure and the algorithm has the greedy choice property <strong>does not</strong> prove the algorithms correctness</li>
+<li>
+<p>Can prove correctness of the algorithm by:</p>
+<ul>
+<li>Induction </li>
+<li>Contradiction (suppose your algorithm makes a mistake)</li>
 </ul>
 </li>
-<li>useful techniques:<ul>
+<li>
+<p>useful techniques:</p>
+<ul>
 <li>stay ahead argument</li>
 <li>exchange argument <ul>
 <li>given greedy answer and optimal answer, bring the greedy over into the optimal at the place where they first differ, where the results should be a contradiction</li>
@@ -620,6 +718,72 @@ for i = 1 to |V|
 </li>
 </ul>
 </li>
+<li>Example: Greedy Camping problem can be proven correct using <em>stay ahead argument</em> and <em>induction</em></li>
+</ul>
+<h3 id="exchange-argument">Exchange Argument</h3>
+<ul>
+<li>Incrementally modify the greedy algorithm's solution into the optimal solution</li>
+<li>
+<p>Steps:</p>
+<ol>
+<li>Label your algorithm's solution <script type="math/tex">G</script> and a general optimal solution <script type="math/tex">O</script>
+</li>
+<li>Compare <script type="math/tex">G</script> with <script type="math/tex">O</script>
+<ul>
+<li>by contradiction assume <script type="math/tex">G \neq O</script>
+</li>
+<li>typically you isolate a simple example of a difference<ul>
+<li>element of <script type="math/tex">O</script> not in <script type="math/tex">G</script> and element of <script type="math/tex">G</script> not in <script type="math/tex">O</script> or</li>
+<li>2 consecutive elements in <script type="math/tex">O</script> in a different order than they are in <script type="math/tex">G</script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Exchange<ul>
+<li>Swap the elements in question in <script type="math/tex">O</script> (either swap element out and another in for first case or swap order of elements in second case)</li>
+<li>Argue <script type="math/tex">O</script> is no worse than before</li>
+<li>Argue if you continue swapping, you can eliminate all the differences between <script type="math/tex">G</script> and <script type="math/tex">O</script> in a polynomial number of steps without worsening the quality of the solution</li>
+<li>Thus <script type="math/tex">G</script> is optimal </li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>The goal in exchange argument is to show how to modify <script type="math/tex">O</script> to create a new solution <script type="math/tex">O'</script> with the following properties:</p>
+<ol>
+<li>
+<p>
+<script type="math/tex">O'</script> is at least as good of solution as <script type="math/tex">O</script> (or equivalently <script type="math/tex">O'</script> is also optimal), and</p>
+</li>
+<li>
+<p>
+<script type="math/tex">O'</script> is “more like” <script type="math/tex">G</script> than <script type="math/tex">O</script>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>The creative part that differs for each algo/problem is determining how to modify <script type="math/tex">O</script> to create <script type="math/tex">O'</script>
+</p>
+<ul>
+<li>Good place to start is think about how <script type="math/tex">G</script> is constructed and look to make the modification at the first point where the algorithm makes a choice for <script type="math/tex">G</script> that is different than what is in <script type="math/tex">O</script>
+</li>
+</ul>
+</li>
+<li>
+<p>Notes:</p>
+<ul>
+<li>remember to argue why the elements you are swapping even exist out of order or not in one solution but in the other</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.cs.cornell.edu/courses/cs482/2007su/exchange.pdf">Cornell Notes</a></p>
+</li>
+</ul>
+<h3 id="stay-ahead-argument">Stay Ahead Argument</h3>
+<ul>
+<li>Inductively prove that under some measure, the partial solutions produced by the greedy algorithm "stay ahead" of the partial solutions produced by an optimal algorithm</li>
+<li><a href="https://www.cs.cornell.edu/courses/cs482/2003su/handouts/greedy_ahead.pdf">Cornell Notes</a></li>
 </ul>
 <h2 id="data-compression">Data Compression</h2>
 <ul>
@@ -649,12 +813,49 @@ for i = 1 to |V|
 </ul>
 <h3 id="huffman-coding-algorithm">Huffman Coding Algorithm</h3>
 <ul>
-<li>Build tree with bottom up approach</li>
-<li>Coding scheme is optimal (minimum ABL for a given text)</li>
-<li>Finding the lowest frequencies is currently the bottle neck with O(n)<ul>
-<li>Need a better data structure (e.g. priority queue) for finding the minimums</li>
+<li>Lossless compression algorithm that is better than shannon-faro</li>
+<li>Goal: Reduce total number of bits used to encode a piece of text without losing any information (optimal coding scheme)</li>
+<li>Code Trees- describe how to encode a letter<ul>
+<li>traversing a left edge has a value of 0</li>
+<li>traversing a right edge has value of 1 </li>
+<li>therefore, we want the most frequently occuring characters to be closest to the root of the code tree since this means it will have the smallest code</li>
+<li>optimal code tree will be a full binary tree </li>
 </ul>
 </li>
+<li>Recursively builds up the tree from the lowest frequency characters at the deepest part of the tree to the most frequently occuring characters closest to the root of the tree </li>
+<li>Greedy algorithm since it can be stopped at any point and the codes built for the included symbols at that point are optimal</li>
+</ul>
+<pre><code>huffman(S):
+    if |S| = 2:
+        return a tree with root and 2 leaves from S
+
+    else:
+        S = S \ {u, v} where u, v are two chars w/ lowest frequency
+        S = S + new char w w/ frequency f_w = f_u + f_v 
+        T' = Huffman(S)
+        T = T' w/ leaf w removed and replaced with interior node + 2 children u, v
+        return T 
+
+</code></pre>
+<ul>
+<li>Runtime is <script type="math/tex">\Theta(n \log n)</script> when using a priority queue that can find the least frequently occuring character in <script type="math/tex">O(\log n)</script>
+<ul>
+<li>
+<script type="math/tex">T(n)  = T(n-1) + 2* \text{find min}</script>
+<ul>
+<li>The best method for finding a min is a priority queue which is <script type="math/tex">O(\log n)</script>
+</li>
+<li>
+<script type="math/tex">T(n) = T(n - 1) + 2(\log n)</script>
+</li>
+<li>Recurrence relation can be solved via unrolling to find <script type="math/tex">T(n) \in \Theta(n \log n)</script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Proof of optimal substructure: in an optimal encoding tree the sibling pair at the lowest level of the tree will have the smallest frequency</li>
+<li><a href="https://www.youtube.com/watch?v=dM6us854Jk0">Video Explanation</a></li>
 </ul></div>
             </div>
         </div>

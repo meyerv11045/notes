@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/data_structures/queue/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/algorithms/dp/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Queue - The Notebook</title>
+        <title>Dynamic Programming - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -82,7 +82,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Algorithms <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -91,78 +91,78 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../algorithms/graphs/graphs/" class="dropdown-item">Representations</a>
+    <a href="../graphs/graphs/" class="dropdown-item">Representations</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
+    <a href="../graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/undirected/" class="dropdown-item">Undirected</a>
+    <a href="../graphs/undirected/" class="dropdown-item">Undirected</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
+    <a href="../graphs/directed/" class="dropdown-item">Directed</a>
 </li>
     </ul>
   </li>
                                     
 <li>
-    <a href="../../algorithms/analysis/" class="dropdown-item">Analysis</a>
+    <a href="../analysis/" class="dropdown-item">Analysis</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/sorting/" class="dropdown-item">Sorting</a>
+    <a href="../sorting/" class="dropdown-item">Sorting</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/heaps/" class="dropdown-item">Heaps</a>
+    <a href="../heaps/" class="dropdown-item">Heaps</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/greedy/" class="dropdown-item">Greedy</a>
+    <a href="../greedy/" class="dropdown-item">Greedy</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/dp/" class="dropdown-item">Dynamic Programming</a>
+    <a href="./" class="dropdown-item active">Dynamic Programming</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/divideconquer/" class="dropdown-item">Divide and Conquer</a>
+    <a href="../divideconquer/" class="dropdown-item">Divide and Conquer</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+    <a href="../tips/" class="dropdown-item">Tips</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../overview/" class="dropdown-item">Overview</a>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
 </li>
                                     
 <li>
-    <a href="../linked-list/" class="dropdown-item">Linked List</a>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
 </li>
                                     
 <li>
-    <a href="../stack/" class="dropdown-item">Stack</a>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Queue</a>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
 </li>
                                     
 <li>
-    <a href="../heap/" class="dropdown-item">Heap</a>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
 </li>
                                     
 <li>
-    <a href="../graph/" class="dropdown-item">Graph</a>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
 </li>
                                 </ul>
                             </li>
@@ -474,12 +474,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../stack/" class="nav-link">
+                                <a rel="prev" href="../greedy/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../heap/" class="nav-link">
+                                <a rel="next" href="../divideconquer/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -501,17 +501,37 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#queue" class="nav-link">Queue</a>
+            <li class="nav-item" data-level="1"><a href="#dynamic-programming" class="nav-link">Dynamic Programming</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#purpose" class="nav-link">Purpose</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#big-o-analysis" class="nav-link">Big O Analysis</a>
+            <li class="nav-item" data-level="2"><a href="#top-down" class="nav-link">Top-Down</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">Code</a>
+            <li class="nav-item" data-level="2"><a href="#bottom-up" class="nav-link">Bottom-Up</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#fibonnaci-numbers" class="nav-link">Fibonnaci Numbers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#shortest-path" class="nav-link">Shortest Path</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#01-knapsack" class="nav-link">0/1 Knapsack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#maximum-sum-of-list-subset" class="nav-link">Maximum Sum of List Subset</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#np-complete" class="nav-link">NP-Complete</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resources" class="nav-link">Resources</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -522,58 +542,202 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="queue">Queue</h1>
-<p>Stores data in a first in, first out (FIFO) manner. Basically can be thought of like a line at a store or anywhere.</p>
-<h2 id="purpose">Purpose</h2>
-<p>Queues are great for use where the order of events occur is important</p>
-<p>Useful for
-- Breadth first search
-- Message or print queues
-- Simulations with ordered events</p>
-<h2 id="big-o-analysis">Big O Analysis</h2>
-<p>The follow operations are due to the linked list implementation</p>
-<table>
-<thead>
-<tr>
-<th>Operation</th>
-<th>Big O</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>push (front/back)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>pop (front/back)</td>
-<td>O(1)</td>
-</tr>
-<tr>
-<td>peek (front/back)</td>
-<td>O(1)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="code">Code</h2>
-<pre><code class="language-python">from linked-list import DblyLinkedList
+<h1 id="dynamic-programming">Dynamic Programming</h1>
+<ul>
+<li>A methodical way to try all possible answers (An exhaustive search)<ul>
+<li>Focus is on ordering computations in a way that avoids duplicate work  to get a polynomial time answer</li>
+</ul>
+</li>
+<li>
+<p>Can be used to solve problems that have optimal substrucutre and overlapping subproblems but lack the greedy choice property so greedy algorithm will not work</p>
+<ul>
+<li>overlapping subproblems- many problems are calculated repeatedly</li>
+</ul>
+</li>
+<li>
+<p>Good for optimization problems (shortest, maximal, minimum, etc.)</p>
+</li>
+</ul>
+<h2 id="top-down">Top-Down</h2>
+<ul>
+<li>Implemented using recursion</li>
+<li>Starts from the end and works backwards</li>
+<li>Memoization- store results of subproblems to be reused since DP problems often have overlapping subproblems<ul>
+<li>Runtime = subproblems * time per subproblem</li>
+</ul>
+</li>
+</ul>
+<h2 id="bottom-up">Bottom-Up</h2>
+<ul>
+<li>Avoids recursion to save the memory cost of the call stack<ul>
+<li>Call stack is vulnerable to a stack overflow error</li>
+<li>Exactly same computation as recursive/memoized version</li>
+</ul>
+</li>
+<li>Starts from the beginning </li>
+<li>Can often be cleaner and more efficient than top-down</li>
+<li>Downside is you have to determinethe ordering of your calculation of subproblems such that previous subproblem results can be used to compute future subproblem results <ul>
+<li>Essentially a topological sort of subproblem dependency DAG to reveal the order to compute the subproblems</li>
+</ul>
+</li>
+<li>Saves storage space </li>
+<li>Clearer runtime than the recursive version</li>
+</ul>
+<h2 id="fibonnaci-numbers">Fibonnaci Numbers</h2>
+<ul>
+<li>
+<script type="math/tex">F_1 = F_2 = 1</script>
+</li>
+<li>
+<script type="math/tex">F_n = F_{n-1} + F_{n-2}</script>
+</li>
+</ul>
+<h3 id="naive-algorithm">Naive Algorithm</h3>
+<pre><code>fib(n):
+    if n &lt;= 2: return 1
+    else: return fib(n-1) + fib(n-2)
+</code></pre>
+<ul>
+<li>Exponential runtime: <script type="math/tex">\Theta(2^n)</script>
+</li>
+</ul>
+<h3 id="memoized-dp-algorithm">Memoized DP Algorithm</h3>
+<ul>
+<li>Memoized for efficiency</li>
+</ul>
+<pre><code>memo = {}
+fib(n):
+    if n in memo: return memo[n]
+    if n &lt;= 2: return 1
+    else: 
+        f = fib(n-1) + fib(n-2)
+        memo[n] = f
+        return f 
+</code></pre>
+<ul>
+<li>Overall runtime is <script type="math/tex">\Theta(n)</script>
+<ul>
+<li>Memoizied calls of the subproblems cost <script type="math/tex">\Theta(1)</script>
+</li>
+<li>
+<script type="math/tex">n</script> non-memoized calls (<code>fib(1)</code>, <code>fib(2)</code>, ... <code>fib(n)</code>)</li>
+<li>nonrecursive work per call is <script type="math/tex">\Theta(1)</script>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="bottom-up-dp-algorithm">Bottom-Up DP Algorithm</h3>
+<pre><code>fib = {}
+for k in range(1, n+1):
+    if k &lt;= 2: 
+    f = 1
+    else: 
+        f = fib[k-1] + fib[k-2]
+  fib[k] = f
+return fib[n]
+</code></pre>
+<ul>
+<li>Iteratively builds up to the solution instead of recursively working backwards<ul>
+<li>Oftentimes more efficient due to less function calls</li>
+</ul>
+</li>
+<li>Choosing the order to compute the subproblems was easy in this case (just increasing integers up to <script type="math/tex">n</script>)<ul>
+<li>However, this can be the tricky part for other problems since you want subsequent calls to utilize already computed subproblems to avoid repeat work</li>
+</ul>
+</li>
+</ul>
+<h2 id="shortest-path">Shortest Path</h2>
+<ul>
+<li>
+<script type="math/tex">\delta(s,v) = \min\{w(u,v) + \delta(s,u) | (u,v) \in E\}</script> with base case <script type="math/tex">\delta(s,s) = 0</script>
+</li>
+<li>Exponential runtime for naive implementation</li>
+<li>Can memoize to get better runtime</li>
+<li>Takes infinite time if there are cycles <ul>
+<li>subproblem dependencies should be acyclic</li>
+</ul>
+</li>
+<li>For DAG, runtime is <script type="math/tex">O(V +E)</script>
+<ul>
+<li>time for subproblem <script type="math/tex">\delta(s,v) = indegree(v)</script>
+</li>
+<li>total time = <script type="math/tex">\sum_{v \in V} indeg(v) = O(E + V)</script>
+</li>
+</ul>
+</li>
+<li>Bellman Ford algorithm comes from extending this idea to limit <script type="math/tex">k</script> edges in the path form <script type="math/tex">s</script> to <script type="math/tex">v</script>: <script type="math/tex">\delta(s,v)_k</script>
+<ul>
+<li>results in increased subproblems but can deal with cycles</li>
+<li>Runtime <script type="math/tex">O(VE)</script>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="01-knapsack">0/1 Knapsack</h2>
+<ul>
+<li>Does not have the greedy choice property so cannot use greedy solution</li>
+<li>Has overlapping subproblems so dp approach should work</li>
+</ul>
+<h3 id="dp-algorithm">DP Algorithm</h3>
+<p>Let <script type="math/tex">N</script> be the set of objects where <script type="math/tex">n</script> indicates an object. Let <script type="math/tex">C</script> be the capacity of the knapsack and let <script type="math/tex">s_n</script> indicate the size of object <script type="math/tex">n</script>. Let <script type="math/tex">v_n</script> indicate the value of object <script type="math/tex">n</script>.</p>
+<ul>
+<li>
+<p>If item <script type="math/tex">n</script> does fit in the knapsack (i.e. <script type="math/tex">s_n \leq C</script> ) choose the maximum result of the two subproblems:</p>
+<ol>
+<li>Do not include object <script type="math/tex">n</script>: <script type="math/tex">value(N \setminus \{n \}, C)</script>
+</li>
+<li>Include object <script type="math/tex">n</script>: <script type="math/tex">v_n + value(N \setminus \{n\}, C - s_n)</script>
+</li>
+</ol>
+</li>
+<li>
+<p>If item <script type="math/tex">n</script> doesn't fit in the knapsack (i.e. <script type="math/tex">s_n > C</script>) just find  <script type="math/tex">value(N \setminus \{n\}, C)</script>
+</p>
+</li>
+</ul>
+<h3 id="runtime">Runtime</h3>
+<ul>
+<li>Pseudo-polynomial since they are computable but depend on the capacity and size picked  </li>
+<li>
+<script type="math/tex">O(2^n)</script>
+</li>
+</ul>
+<h2 id="maximum-sum-of-list-subset">Maximum Sum of List Subset</h2>
+<ul>
+<li>Given a list <script type="math/tex">L</script> of <script type="math/tex">n</script> numbers, select a subset <script type="math/tex">S</script> of <script type="math/tex">L</script> such that their sum is maximized and no two numbers in <script type="math/tex">S</script> are adjacent in <script type="math/tex">L</script>
+</li>
+</ul>
+<pre><code>maxsum(&lt;x1, ... ,xn&gt;) = max{x_1 + maxsum(&lt;x3, ... xn&gt;), maxsum(&lt;x2, ..., xn&gt;)}
+</code></pre>
+<p>Memoized version:</p>
+<pre><code>cache = {}
+function max_sum(&lt;x1, x2, ..., xn&gt;) {
+    if length(&lt;list&gt;) = 1: return x1
 
-class Queue:
-    def __init__(self):
-        self.list = DblyLinkedList()
 
-    def push_front(self,data):
-        self.list.prepend(data)
-    def push_back(self,data):
-        self.list.append(data)
-    def pop_front(self):
-        self.list.delete_front()
-    def pop_back(self):
-        self.list.delete_back()
-    def peek_front(self):
-        return self.list.head
-    def peek_back(self):
-        return self.list.tail
-</code></pre></div>
+    if hash(&lt;x3, x4, ..., xn&gt;) in cache:
+        with_x1 = cache[hash(&lt;x3, x4, ..., xn&gt;)]
+    else: 
+        with_x1 = max_sum(&lt;x3, ..., xn&gt;)
+        cache[hash(&lt;x3, x4, ..., xn&gt;)] = with_x1
+
+    if hash(&lt;x2, x3, ..., xn&gt;) in cache:
+        without_x1 = cache[hash(&lt;x2, x3, ..., xn&gt;)]
+    else: 
+        without_x1 = max_sum(&lt;x2, x3, ..., xn&gt;)
+        cache[hash(&lt;x2, x3, ..., xn&gt;)] = without_x1
+
+    return max(x1 + with_x1,without_x1) 
+}
+</code></pre>
+<h2 id="np-complete">NP-Complete</h2>
+<ul>
+<li>While certain problems are NP-complete, for certain input sizes, the solution can be calculated using dynamic programming in a reasonable time</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=OQ5jsbhAv_M">MIT 6.006 DP I</a></li>
+</ul></div>
             </div>
         </div>
 
