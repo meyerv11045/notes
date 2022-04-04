@@ -519,6 +519,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#logical-problems" class="nav-link">Logical Problems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -790,7 +794,39 @@ T = [2, 3, 4, 5].
 </li>
 </ul>
 </li>
-</ul></div>
+</ul>
+<h2 id="logical-problems">Logical Problems</h2>
+<ul>
+<li>Prolog is great for solving logic problems</li>
+<li>also known as constraint programming</li>
+</ul>
+<h3 id="8-queens-problem">8 Queens Problem</h3>
+<ul>
+<li>Represent a queen's position with <code>queen</code> predicate (e.g. <code>queen(2, 5)</code> means there is a queen at position (2,5) on the board)</li>
+<li>We want a list containing 8 elements with the position of each queen</li>
+</ul>
+<pre><code>nocheck(_, []). # base case of empty list
+nocheck(X/Y, [X1/Y1 | Rest]) :- 
+    X =\= X1, #not in same row
+    Y =\= Y1, #not in same column
+    abs(X - X1) =\= abs(Y - Y1), # not in same diagonal
+    nocheck(X/Y, Rest).
+
+
+legal([]). # base case of empty list
+legal([X/Y | Rest]) :- 
+    legal(Rest),
+    # try all possible positions of (x,y)
+    member(X, [1, 2, 3, 4, 5, 6, 7, 8]),
+    member(Y, [1, 2, 3, 4, 5, 6, 7, 8]),
+    nocheck(X/Y, Rest).
+</code></pre>
+<pre><code># we want only the lists of size 8 (dont return all the others)
+X = [_, _, _, _, _, _, _, _], legal(X). 
+
+# further restrict outputs to be in the desired order
+X = [1/_, 2/_, 3/_, 4/_, 5/_, 6/_, 7/_, 8/_], legal(X). 
+</code></pre></div>
             </div>
         </div>
 

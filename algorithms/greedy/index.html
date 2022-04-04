@@ -619,23 +619,52 @@
 </li>
 </ul>
 <h3 id="dijkstras-algorithm">Dijkstra's Algorithm</h3>
-<pre><code>let S be set of explored nodes
-    for each u in S we store a distance d(u)
+<pre><code>let S be set of explored nodes initialized to S = {}
 
-Initially S = {s} and d(s) = 0
+let Q be a priority queue initialized with nodes in V with a key of the distance d[u] from start vertex for each u in Q
 
-while S != V
-    select an unexplored node with at least one edge from S
-
-
-visited = {s}
-undiscovered = {V - s}
-for i = 1 to |V| 
-    dist[i] = infinity // O(V)
+while Q not empty:
+    u = extract_min(Q) //removes u from Q
+    S = S + {u}
+    for each vertex v that is a neighbor of u:
+    Relax(u,v,w)
 </code></pre>
 <ul>
-<li>Cannot handle negative edge weights </li>
-<li>BFS is faster for shortet path of unweigghted graph (could give all edges equal weight and run dijkstra's')</li>
+<li>Cannot handle negative edge weightS</li>
+<li>BFS is faster for shortet path of unweighted graph (could give all edges equal weight and run dijkstra's')</li>
+<li>
+<script type="math/tex">\Theta(V)</script> inserts into priority queue</li>
+<li>
+<script type="math/tex">\Theta(V)</script> extract min operations</li>
+<li>
+<script type="math/tex">\Theta(E)</script> decrease key operations</li>
+<li>If priority queue is implemented as array:<ul>
+<li>
+<script type="math/tex">\Theta(V)</script> extract min</li>
+<li>
+<script type="math/tex">\Theta(1)</script> decrease key</li>
+<li>
+<script type="math/tex">\Theta(V * V + E * 1) = \Theta(V^2)</script> runtime</li>
+</ul>
+</li>
+<li>If prioty queue is implemented as a binary min-heap<ul>
+<li>
+<script type="math/tex">\Theta(\log V)</script> for extract min</li>
+<li>
+<script type="math/tex">\Theta(\log V)</script> for decrease key</li>
+<li>
+<script type="math/tex">\Theta(V \log V + E \log V)</script> runtime</li>
+</ul>
+</li>
+<li>IF priority queue is implemented as a fibonnaci heap<ul>
+<li>
+<script type="math/tex">\Theta(\log V)</script> for extract min</li>
+<li>
+<script type="math/tex">\Theta(1)</script> amortized for decrease key</li>
+<li>
+<script type="math/tex">\Theta(V \log V + E)</script> runtime</li>
+</ul>
+</li>
 </ul>
 <h2 id="interval-scheduling">Interval Scheduling</h2>
 <ul>

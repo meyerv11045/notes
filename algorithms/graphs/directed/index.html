@@ -511,6 +511,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#shortest-path-bellman-ford-algorithm" class="nav-link">Shortest-Path Bellman Ford Algorithm</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -601,6 +605,46 @@
 <li>
 <script type="math/tex">\Theta(V + E)</script>
 </li>
+</ul>
+</li>
+</ul>
+<h2 id="shortest-path-bellman-ford-algorithm">Shortest-Path Bellman Ford Algorithm</h2>
+<ul>
+<li>Can handle negative edge weights and negative cycles in the graph<ul>
+<li>detects negative cycles since they can lead to indeterminate path of length <script type="math/tex">- \infty</script>
+</li>
+</ul>
+</li>
+<li>Based on idea that repeatedly relaxing the edge weights will eventually converge to the shortest path</li>
+</ul>
+<pre><code>Bellman-Ford(G, w, s){
+    Initialize()
+    for i = 1 to |V| - 1 {
+        for each edge (u,v) in E {
+            Relax(u, v, w)
+        }
+    }
+
+    # check for negative edge cycles
+    for each edge (u,v ) in E {
+        if d[v] &gt; d[u] + w(u, v) {
+            report negative edge cycle exists
+        }
+    }
+}
+
+Relax(u, v, w) {
+    if (d[v] &gt; d[u] + w(u, v)) {
+        d[v] = d[u] + w(u, v)
+        predecessor[v] = u
+    }
+}
+</code></pre>
+<ul>
+<li>Runtime is <script type="math/tex">O(VE)</script>
+<ul>
+<li>Much slower than dijkstra's</li>
+<li>Should only be used when potential for negative edge cycles</li>
 </ul>
 </li>
 </ul></div>
