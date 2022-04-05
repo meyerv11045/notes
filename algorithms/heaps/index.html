@@ -574,9 +574,10 @@
 <ul>
 <li>
 <p><code>build_max_heap(A)</code>: produces a max heap from an unordered array </p>
-<p><code>build_max_heap(A):
-    for i = n/2 downto 1
-        do max_heapify(A, i)</code></p>
+<p><code>python
+def build_max_heap(A):
+    for i in range(n/2, 0, -1): #n/2 to 1
+        max_heapify(A, i)</code></p>
 <ul>
 <li>Why start at n/2?<ul>
 <li>Elements <script type="math/tex">n/2 + 1</script> to the end of the array are leaves</li>
@@ -616,44 +617,42 @@
 <li>
 <p><code>max_heapify(A,i)</code>: correct a single violation of the heap property in a subtree's root </p>
 <ul>
-<li>
-<p>assume that the trees rooted at left(<script type="math/tex">i</script>) and right(<script type="math/tex">i</script>) are max heaps </p>
-</li>
+<li>assume that the trees rooted at left(<script type="math/tex">i</script>) and right(<script type="math/tex">i</script>) are max heaps </li>
 <li>
 <p>If element <script type="math/tex">A[i]</script> violates the max-heap property, correct the violation by trickling it down the tree, in order to make the subtree rooted at <script type="math/tex">i</script> a max-heap</p>
 <ul>
 <li>Exchange bigger child with <script type="math/tex">A[i]</script>
 </li>
-<li>Recursively call max heapify on the subtree where the original parent is now the root </li>
-</ul>
-</li>
 <li>
-<p>This operation runs in <script type="math/tex">O(\log n)</script>
-</p>
+<p>Recursively call max heapify on the subtree where the original parent is now the root </p>
 <ul>
-<li>algorithm runs level by level on a height constrained tree -&gt; produces logarithmic time complexity </li>
+<li>This operation runs in <script type="math/tex">O(\log n)</script>
+</li>
 </ul>
 </li>
 <li>
-<p>```
-    max_heapify(A,i):
-        l = left(i)
-        r = right(i)
-        if (l &lt;= heap-size(A) and A[l] &gt; A[i])
-            largest = l
-        else 
-            largest = i</p>
-<pre><code>if (r &lt;= heap-size(A) and A[r] &gt; A[largest])
+<p>algorithm runs level by level on a height constrained tree -&gt; produces logarithmic time complexity </p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="language-python">def max_heapify(A,i):
+    l = left(i)
+    r = right(i)
+
+    if (l &lt;= heap-size(A) and A[l] &gt; A[i]):
+        largest = l
+    else: 
+        largest = i
+
+  if (r &lt;= heap-size(A) and A[r] &gt; A[largest]):
     largest = r 
-if largest != i
-    exchange A[i] and A[largest]
+  if (largest != i):
+    swap(A[i],A[largest])
     max_heapify(A, largest)
 </code></pre>
-<p>```</p>
-</li>
-</ul>
-</li>
-</ul>
 <h2 id="types-of-heaps">Types of Heaps</h2>
 <ul>
 <li>Binary Heap<ul>
