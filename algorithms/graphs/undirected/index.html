@@ -503,19 +503,11 @@
             
             <li class="nav-item" data-level="1"><a href="#undirected-graph" class="nav-link">Undirected Graph</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#finding-articulation-points-on-undirected-graphs" class="nav-link">Finding Articulation Points on Undirected Graphs</a>
+            <li class="nav-item" data-level="2"><a href="#articulation-points" class="nav-link">Articulation Points</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#minimum-spanning-trees" class="nav-link">Minimum Spanning Trees</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#prims" class="nav-link">Prims</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#kruskals" class="nav-link">Kruskals</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -544,7 +536,7 @@
 </li>
 <li><strong>Biconnected Components</strong>- components with no articulation points</li>
 </ul>
-<h2 id="finding-articulation-points-on-undirected-graphs">Finding Articulation Points on Undirected Graphs</h2>
+<h2 id="articulation-points">Articulation Points</h2>
 <ul>
 <li>Execute DFS while keeping track of additional info <ul>
 <li>Overall runtime of <script type="math/tex">\Theta (V + E)</script>
@@ -585,7 +577,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="prims">Prims</h2>
+<h3 id="prims">Prim's</h3>
 <ul>
 <li>Start with a root node and greedily grow the tree otuward, always adding the node that can be reached cheapest from the current node</li>
 <li>Greedy algorithm</li>
@@ -596,10 +588,14 @@
 </ul>
 </li>
 <li>
-<p>Implemented using a priority queue ADT</p>
+<p>
+<script type="math/tex">O(E \log V)</script> when implemented using a priority queue ADT </p>
+<ul>
+<li>priority queue allows us to pick the cheapest vertex in <script type="math/tex">O(\log V)</script> instead of <script type="math/tex">O(V)</script> using just a basic array/list which results in <script type="math/tex">O(V^2)</script> runtime</li>
+</ul>
 </li>
 </ul>
-<h2 id="kruskals">Kruskals</h2>
+<h3 id="kruskals">Kruskal's</h3>
 <ol>
 <li>Sort the edges from least to greatest (<script type="math/tex">O(E \log V)</script>)<ul>
 <li>this is the bottleneck in terms of speed (faster union-find implementations won't help)</li>
@@ -620,7 +616,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="union-find-data-structure">Union-Find Data Structure</h3>
+<h4 id="union-find-data-structure">Union-Find Data Structure</h4>
 <ul>
 <li>Stores graph components (disjoint sets) in a way that supports rapid searching and updating</li>
 <li>can only be used to maintain graph components as we <em>add</em> edges (not remove them)</li>

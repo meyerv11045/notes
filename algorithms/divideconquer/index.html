@@ -507,6 +507,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#maxmin" class="nav-link">MaxMin</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#kth-smallest-element" class="nav-link">kth Smallest Element</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -522,6 +530,12 @@
 </ul>
 </li>
 <li>Used to reduce the running time of a brute force polynomial algorithm to a lower polynomial (instead of exponential to polynomial)</li>
+<li>General model for divide and conquer algorithm<ul>
+<li>Divide input into two pieces using only constant time</li>
+<li>Solve the two subproblems on each piece using recursion</li>
+<li>Combine the results into one solution using only linear time</li>
+</ul>
+</li>
 </ul>
 <h2 id="recurrence-relations">Recurrence Relations</h2>
 <ul>
@@ -532,7 +546,8 @@
 <li>Solving the above recurrence relation involves getting <script type="math/tex">T</script> to the LHS of the inequality</li>
 <li>Can unroll the recursion to identify a pattern amongst the levels that can be summed until the base case (subproblem of constant size)<ul>
 <li>At level <script type="math/tex">j</script> of the recursion, the number of subproblems has doubled <script type="math/tex">j</script> times so there are now a total of <script type="math/tex">2^j</script> subproblems on that level</li>
-<li>However, each subproblem's size has been cut in half <script type="math/tex">j</script> times so each problem has a size $n/2^j</li>
+<li>However, each subproblem's size has been cut in half <script type="math/tex">j</script> times so each problem has a size <script type="math/tex">n/2^j</script>
+</li>
 <li>Since the work to split a problem and combine its results is linear, the work done for each suproblem is at most <script type="math/tex">cn/2^j</script>
 </li>
 <li>Therefore, level <script type="math/tex">j</script> contributes <script type="math/tex">2^j (cn/2^j) = cn</script> work to the total runtime</li>
@@ -544,6 +559,101 @@
 </ul>
 </li>
 <li>This runtime holds for any algorithm satisfying the recurrence relation above by halving the input each time and spending only linear time for the division and recombining of subproblems</li>
+</ul>
+</li>
+<li>General form of recurrence relation for divide and conquer:<ul>
+<li>
+<script type="math/tex">T(n) = aT(n/b) + f(n)</script>
+</li>
+<li>
+<script type="math/tex">a</script>- number of recursive calls at a level</li>
+<li>
+<script type="math/tex">b</script>- how much the input size is shrunk</li>
+<li>
+<script type="math/tex">f</script>- the work done at a level</li>
+</ul>
+</li>
+<li>Master Theorem:<ul>
+<li>
+<script type="math/tex">\log_b n = h</script> is the height of the recursive tree (<script type="math/tex">b^h = n</script>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="maxmin">MaxMin</h2>
+<ul>
+<li>Goal: Find maximum and minimum of a set <script type="math/tex">S</script>
+</li>
+</ul>
+<pre><code>MaxMin(S):
+    if |S| = 2:
+        return (max(s[0], s[1]), min(s[0], s[1])) # O(1)
+    else
+        divide S into S1 and S2 # O(1)
+        max1, min1 = MaxMin(S1) # T(n/2)
+        max2, min2 = MaxMin(S2) # T(n/2)
+
+        return (MAX(max1, max2), MIN(min1, min2)) # 2 comparisons
+</code></pre>
+<ul>
+<li>Recurrence relation:<ul>
+<li>
+<script type="math/tex">T(n) = 2T(n/2) + 2</script> where <script type="math/tex">T(2) = 1</script>
+</li>
+<li>
+<script type="math/tex">O(n)</script> because <ul>
+<li>
+<script type="math/tex">\log_2 n</script> levels of recursion</li>
+<li>Each problem at each level performs <script type="math/tex">2</script> operations of work</li>
+<li>Therefore each level <script type="math/tex">i</script> performs <script type="math/tex">2^i</script>
+</li>
+<li>Summing over all the levels to get the total amount of work yields<ul>
+<li>
+<script type="math/tex">\sum_{i=1}^{\log_2n} = 2^{\log_2n + 1} - 2 = 2 * 2^{\log_2n } - 2 = 2n - 2</script>
+</li>
+<li><a href="https://math.stackexchange.com/questions/1254605/sum-of-powers-of-2-from-1-to-logn">Sum of Power Property</a></li>
+</ul>
+</li>
+<li>Therefore <script type="math/tex">O(n)</script> total work</li>
+<li>Helpful to draw out the recursion tree and the corresponding tree of work done</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="kth-smallest-element">kth Smallest Element</h2>
+<ul>
+<li>
+<p>Goal: Find <script type="math/tex">k</script>th smallest element in an unsorted set of <script type="math/tex">n</script> elements</p>
+<ul>
+<li>elements only need to support comparison operator</li>
+</ul>
+</li>
+<li>
+<p>Randomly divide <script type="math/tex">n</script> into groups of size 5</p>
+</li>
+<li>Find the median in each group using 6 comparisons</li>
+<li>Recursively find <script type="math/tex">m^*</script>, the median among the medians</li>
+<li>Compare each element in the unknown sections to <script type="math/tex">m^*</script> and place them in the appropriate set <script type="math/tex">A > m^*</script> or <script type="math/tex">B < m^*</script>
+</li>
+<li>
+<p>If  </p>
+<ol>
+<li>
+<script type="math/tex">k = |B| + 1</script> then <script type="math/tex">m^*</script> is the <script type="math/tex">k</script>th element</li>
+<li>
+<script type="math/tex">k \leq |B|</script> then the <script type="math/tex">k</script>th element is in <script type="math/tex">B</script> and can be found recursively </li>
+<li>
+<script type="math/tex">k > |B|</script> then <script type="math/tex">k</script>th element is in <script type="math/tex">A</script> and can be found recursively </li>
+</ol>
+</li>
+<li>
+<p>
+<script type="math/tex">T(n) \leq T(\lceil \frac{n}{5} \rceil) + T(\frac{7n}{10}) + O(n)</script> can be solved to yield <script type="math/tex">O(n)</script> runtime</p>
+<ul>
+<li>recursively find median of medians. one median in each group of 5 so therefore <script type="math/tex">\lceil \frac{n}{5} \rceil</script> recursive calls </li>
+<li>recursively solve problem on the remaining elements which in the worst case could be a set of size <script type="math/tex">\frac{7n}{10}</script>
+</li>
+<li>dividing <script type="math/tex">n</script> into groups of <script type="math/tex">5</script>, finding the median in all the groups of <script type="math/tex">5</script> and partitioning the unknown values around <script type="math/tex">m^*</script> takes <script type="math/tex">O(n)</script> time</li>
 </ul>
 </li>
 </ul></div>

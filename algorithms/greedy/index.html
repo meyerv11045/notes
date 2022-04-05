@@ -507,6 +507,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#proving-correctness-of-greedy-algorithms" class="nav-link">Proving Correctness of Greedy Algorithms</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#shortest-paths-in-a-graph" class="nav-link">Shortest Paths in a Graph</a>
               <ul class="nav flex-column">
               </ul>
@@ -516,10 +520,6 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#fractional-knapsack" class="nav-link">Fractional Knapsack</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#proving-correctness-of-greedy-algorithms" class="nav-link">Proving Correctness of Greedy Algorithms</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -604,6 +604,93 @@
 <li>Is <script type="math/tex">P'</script> the shortest path from <script type="math/tex">u</script> to <script type="math/tex">w</script>? </li>
 <li>By way of contradiction assume <script type="math/tex">P</script> is optimal but <script type="math/tex">P'</script> is not. Let <script type="math/tex">P^*</script> be the optimal path from <script type="math/tex">u</script> to <script type="math/tex">w</script>. If we add the previously removed edge from <script type="math/tex">w</script> to <script type="math/tex">v</script> to <script type="math/tex">P^*</script> then we have created a new path from <script type="math/tex">u</script> to <script type="math/tex">v</script> which is more optimal than <script type="math/tex">P</script>. This is a contradiction, so therefore <script type="math/tex">P'</script> must be optimal and so the shortest path problem has optimal substructure. </li>
 </ul>
+<h2 id="proving-correctness-of-greedy-algorithms">Proving Correctness of Greedy Algorithms</h2>
+<ul>
+<li>Showing the problem has optimal substructure and the algorithm has the greedy choice property <strong>does not</strong> prove the algorithms correctness</li>
+<li>
+<p>Can prove correctness of the algorithm by:</p>
+<ul>
+<li>Induction </li>
+<li>Contradiction (suppose your algorithm makes a mistake)</li>
+</ul>
+</li>
+<li>
+<p>useful techniques:</p>
+<ul>
+<li>stay ahead argument</li>
+<li>exchange argument <ul>
+<li>given greedy answer and optimal answer, bring the greedy over into the optimal at the place where they first differ, where the results should be a contradiction</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Example: Greedy Camping problem can be proven correct using <em>stay ahead argument</em> and <em>induction</em></li>
+</ul>
+<h3 id="exchange-argument">Exchange Argument</h3>
+<ul>
+<li>Incrementally modify the greedy algorithm's solution into the optimal solution</li>
+<li>
+<p>Steps:</p>
+<ol>
+<li>Label your algorithm's solution <script type="math/tex">G</script> and a general optimal solution <script type="math/tex">O</script>
+</li>
+<li>Compare <script type="math/tex">G</script> with <script type="math/tex">O</script>
+<ul>
+<li>by contradiction assume <script type="math/tex">G \neq O</script>
+</li>
+<li>typically you isolate a simple example of a difference<ul>
+<li>element of <script type="math/tex">O</script> not in <script type="math/tex">G</script> and element of <script type="math/tex">G</script> not in <script type="math/tex">O</script> or</li>
+<li>2 consecutive elements in <script type="math/tex">O</script> in a different order than they are in <script type="math/tex">G</script>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Exchange<ul>
+<li>Swap the elements in question in <script type="math/tex">O</script> (either swap element out and another in for first case or swap order of elements in second case)</li>
+<li>Argue <script type="math/tex">O</script> is no worse than before</li>
+<li>Argue if you continue swapping, you can eliminate all the differences between <script type="math/tex">G</script> and <script type="math/tex">O</script> in a polynomial number of steps without worsening the quality of the solution</li>
+<li>Thus <script type="math/tex">G</script> is optimal </li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>The goal in exchange argument is to show how to modify <script type="math/tex">O</script> to create a new solution <script type="math/tex">O'</script> with the following properties:</p>
+<ol>
+<li>
+<p>
+<script type="math/tex">O'</script> is at least as good of solution as <script type="math/tex">O</script> (or equivalently <script type="math/tex">O'</script> is also optimal), and</p>
+</li>
+<li>
+<p>
+<script type="math/tex">O'</script> is “more like” <script type="math/tex">G</script> than <script type="math/tex">O</script>.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>The creative part that differs for each algo/problem is determining how to modify <script type="math/tex">O</script> to create <script type="math/tex">O'</script>
+</p>
+<ul>
+<li>Good place to start is think about how <script type="math/tex">G</script> is constructed and look to make the modification at the first point where the algorithm makes a choice for <script type="math/tex">G</script> that is different than what is in <script type="math/tex">O</script>
+</li>
+</ul>
+</li>
+<li>
+<p>Notes:</p>
+<ul>
+<li>remember to argue why the elements you are swapping even exist out of order or not in one solution but in the other</li>
+</ul>
+</li>
+<li>
+<p><a href="https://www.cs.cornell.edu/courses/cs482/2007su/exchange.pdf">Cornell Notes</a></p>
+</li>
+</ul>
+<h3 id="stay-ahead-argument">Stay Ahead Argument</h3>
+<ul>
+<li>Inductively prove that under some measure, the partial solutions produced by the greedy algorithm "stay ahead" of the partial solutions produced by an optimal algorithm</li>
+<li><a href="https://www.cs.cornell.edu/courses/cs482/2003su/handouts/greedy_ahead.pdf">Cornell Notes</a></li>
+</ul>
 <h2 id="shortest-paths-in-a-graph">Shortest Paths in a Graph</h2>
 <ul>
 <li>Given a strongly connected directed graph <script type="math/tex">G = (V, E)</script> and a start node <script type="math/tex">s</script>
@@ -619,15 +706,22 @@
 </li>
 </ul>
 <h3 id="dijkstras-algorithm">Dijkstra's Algorithm</h3>
-<pre><code>let S be set of explored nodes initialized to S = {}
+<pre><code>let S be set of explored nodes initialized to S = {s}
+dist[s] = 0
 
-let Q be a priority queue initialized with nodes in V with a key of the distance d[u] from start vertex for each u in Q
+let Q be a priority queue initialized with nodes in V \ {s} with a key of the dist[u] from start vertex for each u in Q
+
+for i=1 to |V|: 
+    dist[i] = infty 
+
+for each edge(s,v):
+    dist[v] = weight(s,v) 
 
 while Q not empty:
     u = extract_min(Q) //removes u from Q
     S = S + {u}
     for each vertex v that is a neighbor of u:
-    Relax(u,v,w)
+    dist[v] = min(d[v], d[u] + weight(u,v))
 </code></pre>
 <ul>
 <li>Cannot handle negative edge weightS</li>
@@ -727,106 +821,21 @@ for interval in R:
 <p><a href="https://www.cs.ucr.edu/~yihans/teaching/141/f20/141F20/discussion/worksheet4.pdf">Optimal Substructure</a></p>
 <h3 id="prove-greedy-choice-property">Prove Greedy Choice Property</h3>
 <p>Suppose <script type="math/tex">O</script> is an optimal solution and does not include the first choice <script type="math/tex">C_1</script> made by the greedy algorithm. Let <script type="math/tex">w</script> be the weight of the most valuable item. Remove <script type="math/tex">w</script> oz of any other item and replace that with <script type="math/tex">w</script> oz of the most valuable algorithm. We have now increased the value of <script type="math/tex">O</script> which is a contradiction. Therefore, this <script type="math/tex">w</script> oz of the most valuable item was already in the packing of the optimal solution <script type="math/tex">O</script>. Our first greedy choice could be a part of any optimal solution.</p>
-<h2 id="proving-correctness-of-greedy-algorithms">Proving Correctness of Greedy Algorithms</h2>
-<ul>
-<li>Showing the problem has optimal substructure and the algorithm has the greedy choice property <strong>does not</strong> prove the algorithms correctness</li>
-<li>
-<p>Can prove correctness of the algorithm by:</p>
-<ul>
-<li>Induction </li>
-<li>Contradiction (suppose your algorithm makes a mistake)</li>
-</ul>
-</li>
-<li>
-<p>useful techniques:</p>
-<ul>
-<li>stay ahead argument</li>
-<li>exchange argument <ul>
-<li>given greedy answer and optimal answer, bring the greedy over into the optimal at the place where they first differ, where the results should be a contradiction</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Example: Greedy Camping problem can be proven correct using <em>stay ahead argument</em> and <em>induction</em></li>
-</ul>
-<h3 id="exchange-argument">Exchange Argument</h3>
-<ul>
-<li>Incrementally modify the greedy algorithm's solution into the optimal solution</li>
-<li>
-<p>Steps:</p>
-<ol>
-<li>Label your algorithm's solution <script type="math/tex">G</script> and a general optimal solution <script type="math/tex">O</script>
-</li>
-<li>Compare <script type="math/tex">G</script> with <script type="math/tex">O</script>
-<ul>
-<li>by contradiction assume <script type="math/tex">G \neq O</script>
-</li>
-<li>typically you isolate a simple example of a difference<ul>
-<li>element of <script type="math/tex">O</script> not in <script type="math/tex">G</script> and element of <script type="math/tex">G</script> not in <script type="math/tex">O</script> or</li>
-<li>2 consecutive elements in <script type="math/tex">O</script> in a different order than they are in <script type="math/tex">G</script>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Exchange<ul>
-<li>Swap the elements in question in <script type="math/tex">O</script> (either swap element out and another in for first case or swap order of elements in second case)</li>
-<li>Argue <script type="math/tex">O</script> is no worse than before</li>
-<li>Argue if you continue swapping, you can eliminate all the differences between <script type="math/tex">G</script> and <script type="math/tex">O</script> in a polynomial number of steps without worsening the quality of the solution</li>
-<li>Thus <script type="math/tex">G</script> is optimal </li>
-</ul>
-</li>
-</ol>
-</li>
-<li>
-<p>The goal in exchange argument is to show how to modify <script type="math/tex">O</script> to create a new solution <script type="math/tex">O'</script> with the following properties:</p>
-<ol>
-<li>
-<p>
-<script type="math/tex">O'</script> is at least as good of solution as <script type="math/tex">O</script> (or equivalently <script type="math/tex">O'</script> is also optimal), and</p>
-</li>
-<li>
-<p>
-<script type="math/tex">O'</script> is “more like” <script type="math/tex">G</script> than <script type="math/tex">O</script>.</p>
-</li>
-</ol>
-</li>
-<li>
-<p>The creative part that differs for each algo/problem is determining how to modify <script type="math/tex">O</script> to create <script type="math/tex">O'</script>
-</p>
-<ul>
-<li>Good place to start is think about how <script type="math/tex">G</script> is constructed and look to make the modification at the first point where the algorithm makes a choice for <script type="math/tex">G</script> that is different than what is in <script type="math/tex">O</script>
-</li>
-</ul>
-</li>
-<li>
-<p>Notes:</p>
-<ul>
-<li>remember to argue why the elements you are swapping even exist out of order or not in one solution but in the other</li>
-</ul>
-</li>
-<li>
-<p><a href="https://www.cs.cornell.edu/courses/cs482/2007su/exchange.pdf">Cornell Notes</a></p>
-</li>
-</ul>
-<h3 id="stay-ahead-argument">Stay Ahead Argument</h3>
-<ul>
-<li>Inductively prove that under some measure, the partial solutions produced by the greedy algorithm "stay ahead" of the partial solutions produced by an optimal algorithm</li>
-<li><a href="https://www.cs.cornell.edu/courses/cs482/2003su/handouts/greedy_ahead.pdf">Cornell Notes</a></li>
-</ul>
 <h2 id="data-compression">Data Compression</h2>
 <ul>
 <li>A prefix code means no code for a single letter is the prefex of another letter<ul>
 <li>this makes decoding significantly easier</li>
 </ul>
 </li>
-<li>encodings can be visualized as binary trees<ul>
-<li>prefix codes have all letters as leaves of the tree</li>
-<li>to get an optimal encoding for a document, we want the most frequently occuring characters to be closest to the top of the tree (less bits to represent them)</li>
-<li>shortest tree representation is the most optimal </li>
+<li>Full binary tree- tree where each non-leaf node has two children</li>
+<li>Code Trees- binary trees describing how to encode a letter<ul>
+<li>letters/symbols are leaves of the tree</li>
+<li>traversing a left edge has a value of 0</li>
+<li>traversing a right edge has value of 1 </li>
+<li>therefore, we want the most frequently occuring characters to be closest to the root of the code tree since this means it will have the smallest code</li>
+<li>optimal code tree will be a shortest full binary tree</li>
 </ul>
 </li>
-<li>Full binary tree- tree where each non-leaf node has two children</li>
 </ul>
 <h3 id="shannon-faro-algorithm">Shannon-Faro Algorithm</h3>
 <ul>
@@ -842,15 +851,12 @@ for interval in R:
 </ul>
 <h3 id="huffman-coding-algorithm">Huffman Coding Algorithm</h3>
 <ul>
-<li>Lossless compression algorithm that is better than shannon-faro</li>
-<li>Goal: Reduce total number of bits used to encode a piece of text without losing any information (optimal coding scheme)</li>
-<li>Code Trees- describe how to encode a letter<ul>
-<li>traversing a left edge has a value of 0</li>
-<li>traversing a right edge has value of 1 </li>
-<li>therefore, we want the most frequently occuring characters to be closest to the root of the code tree since this means it will have the smallest code</li>
-<li>optimal code tree will be a full binary tree </li>
+<li>Bottom-up approach <ul>
+<li>focuses on leaves representing the two lowest frequency letters and continues by recursion</li>
 </ul>
 </li>
+<li>Lossless compression algorithm that is better than shannon-faro</li>
+<li>Goal: Reduce total number of bits used to encode a piece of text without losing any information (optimal coding scheme)</li>
 <li>Recursively builds up the tree from the lowest frequency characters at the deepest part of the tree to the most frequently occuring characters closest to the root of the tree </li>
 <li>Greedy algorithm since it can be stopped at any point and the codes built for the included symbols at that point are optimal</li>
 </ul>
