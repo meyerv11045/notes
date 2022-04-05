@@ -31,10 +31,10 @@
 
 - `build_max_heap(A)`: produces a max heap from an unordered array 
 
-    ```
-    build_max_heap(A):
-    	for i = n/2 downto 1
-    		do max_heapify(A, i)
+    ```python
+    def build_max_heap(A):
+    	for i in range(n/2, 0, -1): #n/2 to 1
+    		max_heapify(A, i)
     ```
 
     - Why start at n/2?
@@ -57,31 +57,30 @@
 - `max_heapify(A,i)`: correct a single violation of the heap property in a subtree's root 
 
     - assume that the trees rooted at left($i$) and right($i$) are max heaps 
-
     - If element $A[i]$ violates the max-heap property, correct the violation by trickling it down the tree, in order to make the subtree rooted at $i$ a max-heap
-
+    
         - Exchange bigger child with $A[i]$
         - Recursively call max heapify on the subtree where the original parent is now the root 
-
     - This operation runs in $O(\log n)$ 
 
         - algorithm runs level by level on a height constrained tree -> produces logarithmic time complexity 
 
-    - ```
-        max_heapify(A,i):
-        	l = left(i)
-        	r = right(i)
-        	if (l <= heap-size(A) and A[l] > A[i])
-        		largest = l
-        	else 
-        		largest = i
-        	
-        	if (r <= heap-size(A) and A[r] > A[largest])
-        		largest = r 
-        	if largest != i
-        		exchange A[i] and A[largest]
-        		max_heapify(A, largest)
-        ```
+```python
+def max_heapify(A,i):
+	l = left(i)
+	r = right(i)
+	
+	if (l <= heap-size(A) and A[l] > A[i]):
+		largest = l
+	else: 
+		largest = i
+  
+  if (r <= heap-size(A) and A[r] > A[largest]):
+    largest = r 
+  if (largest != i):
+    swap(A[i],A[largest])
+    max_heapify(A, largest)
+```
 
 ## Types of Heaps
 
