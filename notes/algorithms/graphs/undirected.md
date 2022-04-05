@@ -7,7 +7,7 @@
     - $a$ is an articulation point if every path btw $v$ and $w$ contains $a$ 
 - **Biconnected Components**- components with no articulation points
 
-## Finding Articulation Points on Undirected Graphs
+## Articulation Points
 
 - Execute DFS while keeping track of additional info 
     - Overall runtime of $\Theta (V + E)$
@@ -30,16 +30,17 @@
     - The cut property states that for any cut $C$ of the graph, if the weight of an edge $e \in C$ is strictly smaller than the weights of all other edges of $C$, then this edge belongs to all MSTs of the graph
         - lightest edge in a cut-set must be in the MST
 
-## Prims
+### Prim's
 
 - Start with a root node and greedily grow the tree otuward, always adding the node that can be reached cheapest from the current node
 - Greedy algorithm
 - Can stop at any point and have a valid mst that doesn't reach all the nodes
     - optimal substructure 
 
-- Implemented using a priority queue ADT
+- $O(E \log V)$ when implemented using a priority queue ADT 
+    - priority queue allows us to pick the cheapest vertex in $O(\log V)$ instead of $O(V)$ using just a basic array/list which results in $O(V^2)$ runtime
 
-## Kruskals
+### Kruskal's
 
 1. Sort the edges from least to greatest ($O(E \log V)$)
     - this is the bottleneck in terms of speed (faster union-find implementations won't help)
@@ -51,7 +52,7 @@
     - if the components are different, there is no path btw $v$ and $w$ and thus no cycle so the edge can be included
         - if the edge is included, the components of $v$ and $w$ should be merged into a single new component
 
-### Union-Find Data Structure
+#### Union-Find Data Structure
 
 - Stores graph components (disjoint sets) in a way that supports rapid searching and updating
 - can only be used to maintain graph components as we *add* edges (not remove them)
@@ -64,4 +65,3 @@
     - keep the name of the larger set as the name of the union
 - `MakeUnionFind(G)` for a set $G$ will return a UFDS with all elements in separate sets
     -  $O(V)$
-

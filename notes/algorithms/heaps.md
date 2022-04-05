@@ -11,7 +11,7 @@
 - `extract_max(S)`: return element of $S$ with largest key and remove it from $S$
 - `increase_key(S,x,k)`: increase value of $x$'s key by $k$
 
-# Heap
+# Binary Heap
 
 - Implementation of a priority queue
 - An array visualized as a nearly complete binary tree
@@ -82,6 +82,15 @@
         		exchange A[i] and A[largest]
         		max_heapify(A, largest)
         ```
+
+## Types of Heaps
+
+- Binary Heap
+    - Min-Heap
+    - Max-Heap
+- $d$-ary heap- every node has 0 up to $d$ children
+- Fibonnaci Heap- collection of trees
+- Binomial Heap: priority queues that can be easily merged together
 
 ## Resources
 

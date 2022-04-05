@@ -52,6 +52,56 @@
 - Is $P'$ the shortest path from $u$ to $w$? 
 - By way of contradiction assume $P$ is optimal but $P'$ is not. Let $P^*$ be the optimal path from $u$ to $w$. If we add the previously removed edge from $w$ to $v$ to $P^*$ then we have created a new path from $u$ to $v$ which is more optimal than $P$. This is a contradiction, so therefore $P'$ must be optimal and so the shortest path problem has optimal substructure. 
 
+## Proving Correctness of Greedy Algorithms
+
+- Showing the problem has optimal substructure and the algorithm has the greedy choice property **does not** prove the algorithms correctness
+- Can prove correctness of the algorithm by:
+    - Induction 
+    - Contradiction (suppose your algorithm makes a mistake)
+
+- useful techniques:
+    - stay ahead argument
+    - exchange argument 
+        - given greedy answer and optimal answer, bring the greedy over into the optimal at the place where they first differ, where the results should be a contradiction
+- Example: Greedy Camping problem can be proven correct using *stay ahead argument* and *induction*
+
+### Exchange Argument
+
+- Incrementally modify the greedy algorithm's solution into the optimal solution
+- Steps:
+    1. Label your algorithm's solution $G$ and a general optimal solution $O$
+    2. Compare $G$ with $O$ 
+        - by contradiction assume $G \neq O$ 
+        - typically you isolate a simple example of a difference
+            - element of $O$ not in $G$ and element of $G$ not in $O$ or
+            - 2 consecutive elements in $O$ in a different order than they are in $G$
+    3. Exchange
+        - Swap the elements in question in $O$ (either swap element out and another in for first case or swap order of elements in second case)
+        - Argue $O$ is no worse than before
+        - Argue if you continue swapping, you can eliminate all the differences between $G$ and $O$ in a polynomial number of steps without worsening the quality of the solution
+        - Thus $G$ is optimal 
+
+- The goal in exchange argument is to show how to modify $O$ to create a new solution $O'$ with the following properties:
+
+    1. $O'$ is at least as good of solution as $O$ (or equivalently $O'$ is also optimal), and
+
+    2. $O'$ is “more like” $G$ than $O$.
+
+- The creative part that differs for each algo/problem is determining how to modify $O$ to create $O'$
+
+    - Good place to start is think about how $G$ is constructed and look to make the modification at the first point where the algorithm makes a choice for $G$ that is different than what is in $O$
+
+- Notes:
+
+    - remember to argue why the elements you are swapping even exist out of order or not in one solution but in the other
+
+- [Cornell Notes](https://www.cs.cornell.edu/courses/cs482/2007su/exchange.pdf)
+
+### Stay Ahead Argument
+
+- Inductively prove that under some measure, the partial solutions produced by the greedy algorithm "stay ahead" of the partial solutions produced by an optimal algorithm
+- [Cornell Notes](https://www.cs.cornell.edu/courses/cs482/2003su/handouts/greedy_ahead.pdf)
+
 ## Shortest Paths in a Graph
 
 - Given a strongly connected directed graph $G = (V, E)$ and a start node $s$
@@ -63,15 +113,22 @@
 ### Dijkstra's Algorithm
 
 ```
-let S be set of explored nodes initialized to S = {}
-	
-let Q be a priority queue initialized with nodes in V with a key of the distance d[u] from start vertex for each u in Q
+let S be set of explored nodes initialized to S = {s}
+dist[s] = 0
+
+let Q be a priority queue initialized with nodes in V \ {s} with a key of the dist[u] from start vertex for each u in Q
+
+for i=1 to |V|: 
+	dist[i] = infty 
+
+for each edge(s,v):
+	dist[v] = weight(s,v) 
 
 while Q not empty:
 	u = extract_min(Q) //removes u from Q
 	S = S + {u}
 	for each vertex v that is a neighbor of u:
-  	Relax(u,v,w)
+  	dist[v] = min(d[v], d[u] + weight(u,v))
 ```
 
 - Cannot handle negative edge weightS
@@ -156,65 +213,18 @@ Suppose $O$ is the optimal packing of the knapsack of size $W$ and value $val(O)
 
 Suppose $O$ is an optimal solution and does not include the first choice $C_1$ made by the greedy algorithm. Let $w$ be the weight of the most valuable item. Remove $w$ oz of any other item and replace that with $w$ oz of the most valuable algorithm. We have now increased the value of $O$ which is a contradiction. Therefore, this $w$ oz of the most valuable item was already in the packing of the optimal solution $O$. Our first greedy choice could be a part of any optimal solution.
 
-## Proving Correctness of Greedy Algorithms
-
-- Showing the problem has optimal substructure and the algorithm has the greedy choice property **does not** prove the algorithms correctness
-- Can prove correctness of the algorithm by:
-    - Induction 
-    - Contradiction (suppose your algorithm makes a mistake)
-
-- useful techniques:
-    - stay ahead argument
-    - exchange argument 
-        - given greedy answer and optimal answer, bring the greedy over into the optimal at the place where they first differ, where the results should be a contradiction
-- Example: Greedy Camping problem can be proven correct using *stay ahead argument* and *induction*
-
-### Exchange Argument
-
-- Incrementally modify the greedy algorithm's solution into the optimal solution
-- Steps:
-    1. Label your algorithm's solution $G$ and a general optimal solution $O$
-    2. Compare $G$ with $O$ 
-        - by contradiction assume $G \neq O$ 
-        - typically you isolate a simple example of a difference
-            - element of $O$ not in $G$ and element of $G$ not in $O$ or
-            - 2 consecutive elements in $O$ in a different order than they are in $G$
-    3. Exchange
-        - Swap the elements in question in $O$ (either swap element out and another in for first case or swap order of elements in second case)
-        - Argue $O$ is no worse than before
-        - Argue if you continue swapping, you can eliminate all the differences between $G$ and $O$ in a polynomial number of steps without worsening the quality of the solution
-        - Thus $G$ is optimal 
-
-- The goal in exchange argument is to show how to modify $O$ to create a new solution $O'$ with the following properties:
-
-    1. $O'$ is at least as good of solution as $O$ (or equivalently $O'$ is also optimal), and
-
-    2. $O'$ is “more like” $G$ than $O$.
-
-- The creative part that differs for each algo/problem is determining how to modify $O$ to create $O'$
-
-    - Good place to start is think about how $G$ is constructed and look to make the modification at the first point where the algorithm makes a choice for $G$ that is different than what is in $O$
-
-- Notes:
-
-    - remember to argue why the elements you are swapping even exist out of order or not in one solution but in the other
-
-- [Cornell Notes](https://www.cs.cornell.edu/courses/cs482/2007su/exchange.pdf)
-
-### Stay Ahead Argument
-
-- Inductively prove that under some measure, the partial solutions produced by the greedy algorithm "stay ahead" of the partial solutions produced by an optimal algorithm
-- [Cornell Notes](https://www.cs.cornell.edu/courses/cs482/2003su/handouts/greedy_ahead.pdf)
-
 ## Data Compression
 
 - A prefix code means no code for a single letter is the prefex of another letter
     - this makes decoding significantly easier
-- encodings can be visualized as binary trees
-    - prefix codes have all letters as leaves of the tree
-    - to get an optimal encoding for a document, we want the most frequently occuring characters to be closest to the top of the tree (less bits to represent them)
-    - shortest tree representation is the most optimal 
 - Full binary tree- tree where each non-leaf node has two children
+- Code Trees- binary trees describing how to encode a letter
+    - letters/symbols are leaves of the tree
+    - traversing a left edge has a value of 0
+    - traversing a right edge has value of 1 
+    - therefore, we want the most frequently occuring characters to be closest to the root of the code tree since this means it will have the smallest code
+    - optimal code tree will be a shortest full binary tree
+
 
 ### Shannon-Faro Algorithm
 
@@ -228,13 +238,10 @@ Suppose $O$ is an optimal solution and does not include the first choice $C_1$ m
 
 ### Huffman Coding Algorithm
 
+- Bottom-up approach 
+    - focuses on leaves representing the two lowest frequency letters and continues by recursion
 - Lossless compression algorithm that is better than shannon-faro
 - Goal: Reduce total number of bits used to encode a piece of text without losing any information (optimal coding scheme)
-- Code Trees- describe how to encode a letter
-    - traversing a left edge has a value of 0
-    - traversing a right edge has value of 1 
-    - therefore, we want the most frequently occuring characters to be closest to the root of the code tree since this means it will have the smallest code
-    - optimal code tree will be a full binary tree 
 - Recursively builds up the tree from the lowest frequency characters at the deepest part of the tree to the most frequently occuring characters closest to the root of the tree 
 - Greedy algorithm since it can be stopped at any point and the codes built for the included symbols at that point are optimal
 
