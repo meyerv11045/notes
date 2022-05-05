@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/ai/behavior-trees/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/algorithms/complexity/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Behavior Trees - The Notebook</title>
+        <title>Complexity Theory - The Notebook</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -33,7 +33,7 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">General <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -62,10 +62,6 @@
 </li>
                                     
 <li>
-    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
-</li>
-                                    
-<li>
     <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
 </li>
                                     
@@ -74,15 +70,11 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">Behavior Trees</a>
-</li>
-                                    
-<li>
     <a href="../../general/how-to-speak/" class="dropdown-item">How to Speak</a>
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Algorithms <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -91,49 +83,57 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../../algorithms/graphs/graphs/" class="dropdown-item">Representations</a>
+    <a href="../graphs/graphs/" class="dropdown-item">Representations</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
+    <a href="../graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/undirected/" class="dropdown-item">Undirected</a>
+    <a href="../graphs/undirected/" class="dropdown-item">Undirected</a>
 </li>
             
 <li>
-    <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
+    <a href="../graphs/directed/" class="dropdown-item">Directed</a>
+</li>
+            
+<li>
+    <a href="../graphs/max_flow/" class="dropdown-item">Network Flow</a>
 </li>
     </ul>
   </li>
                                     
 <li>
-    <a href="../../algorithms/analysis/" class="dropdown-item">Analysis</a>
+    <a href="../analysis/" class="dropdown-item">Analysis</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/sorting/" class="dropdown-item">Sorting</a>
+    <a href="../sorting/" class="dropdown-item">Sorting</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/heaps/" class="dropdown-item">Heaps</a>
+    <a href="../heaps/" class="dropdown-item">Heaps</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/greedy/" class="dropdown-item">Greedy</a>
+    <a href="../greedy/" class="dropdown-item">Greedy</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/dp/" class="dropdown-item">Dynamic Programming</a>
+    <a href="../dp/" class="dropdown-item">Dynamic Programming</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/divideconquer/" class="dropdown-item">Divide and Conquer</a>
+    <a href="../divideconquer/" class="dropdown-item">Divide and Conquer</a>
 </li>
                                     
 <li>
-    <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+    <a href="../tips/" class="dropdown-item">Tips</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Complexity Theory</a>
 </li>
                                 </ul>
                             </li>
@@ -173,6 +173,10 @@
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">C++</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/cpp/cmake/" class="dropdown-item">Cmake</a>
+</li>
             
 <li>
     <a href="../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
@@ -324,11 +328,32 @@
 </li>
                                     
 <li>
+    <a href="../../prog_langs/ch7/" class="dropdown-item">Ch. 7 Expression</a>
+</li>
+                                    
+<li>
     <a href="../../prog_langs/ch15/" class="dropdown-item">Ch. 15 Functional Languages: Racket</a>
 </li>
                                     
 <li>
     <a href="../../prog_langs/ch16/" class="dropdown-item">Ch. 16 Logical Languages: Prolog</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../robotics/control/" class="dropdown-item">Control</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/hardware/" class="dropdown-item">Hardware</a>
 </li>
                                 </ul>
                             </li>
@@ -474,12 +499,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../../system_design/docker/" class="nav-link">
+                                <a rel="prev" href="../tips/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../general/how-to-speak/" class="nav-link">
+                                <a rel="next" href="../../data_structures/overview/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -501,21 +526,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#behavior-trees" class="nav-link">Behavior Trees</a>
+            <li class="nav-item" data-level="1"><a href="#complexity-theory" class="nav-link">Complexity Theory</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#advantages" class="nav-link">Advantages</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#control-flow-nodes" class="nav-link">Control Flow Nodes</a>
+            <li class="nav-item" data-level="2"><a href="#decision-problems" class="nav-link">Decision Problems</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#execution-nodes" class="nav-link">Execution Nodes</a>
+            <li class="nav-item" data-level="2"><a href="#np-complete" class="nav-link">NP-Complete</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#other-control-flow-architectures" class="nav-link">Other Control Flow Architectures</a>
+            <li class="nav-item" data-level="2"><a href="#reduction" class="nav-link">Reduction</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -526,109 +547,135 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="behavior-trees">Behavior Trees</h1>
+<h1 id="complexity-theory">Complexity Theory</h1>
 <ul>
-<li>Used to program complex behaviors in AI, games, and robotics.</li>
-<li>Nodes are executed (ticked) with a given frequency<ul>
-<li>child will immediatly return </li>
-<li><em>running</em> to parent if the execution is under way</li>
-<li><em>success</em> if it has achieved its goal</li>
-<li><em>failure</em> otherwise</li>
+<li><em>Polynomial Time Algorithms</em>- have a running time of <script type="math/tex">O(n^k)</script> for some constant <script type="math/tex">k</script>
+</li>
+<li>The class <script type="math/tex">P</script> contains problems <em>solvable</em> in polynomial time<ul>
+<li>P stands for polynomial time</li>
 </ul>
 </li>
-<li>Choosing what logic to encapsulate in the BT versus the actions is an important design decision</li>
+<li>The class NP contains decision problems with correct answers ("yes" answers) <em>verifiable</em> in polynomial time (given a certificate)<ul>
+<li>NP stands for non-deterministic polynomial time</li>
+<li>Means the problems can be solved in polynomial time on a non-deterministic machine that can check all possible solutions at once to find the actual solution<ul>
+<li>since they are verifiable in polynomial time </li>
+<li>Our current deterministic computers can only check 1 solution at once (make one decision)</li>
 </ul>
-<h2 id="advantages">Advantages</h2>
+</li>
+</ul>
+</li>
+<li>Co-NP is the class of problems with incorrect answers ("no" answers) <em>verifiable</em> in polynomial time</li>
+<li>
+<script type="math/tex">P \subseteq NP</script>
 <ul>
-<li>More expressive than FSMs</li>
-<li>Efficient creation of complex systems in a <em>modular</em> and <em>reactive</em> fashion</li>
-<li>Used often in robotic manipulation tasks since they allow individual behaviors to be reused in the context of another higher level behavior</li>
+<li>Open question in theoretical CS (proposed in 1971) is whether <script type="math/tex">P \neq NP</script> (i.e. <script type="math/tex">P \subset NP</script> )?<ul>
+<li>Question: Do all problems verifiable in polynomial time, also have an algorithm that solves them in polynomial time? </li>
+<li>Most theorize <script type="math/tex">P \neq NP</script> or else lots of hard, important problems would already be solved</li>
 </ul>
-<h2 id="control-flow-nodes">Control Flow Nodes</h2>
+</li>
+</ul>
+</li>
+<li><em>Tractable/Easy</em>- problems that are solvable by polynomial time algorithms</li>
+<li><em>Intractable/Hard</em>- problems that require superpolynomial time to solve</li>
+<li>The class NPC contains problems the hardest problems in NP</li>
+<li>Exp- classes of problems outside of NP that take exponential time to even verify a solution for (e.g. checking if a move in chess made was even the right move)</li>
+<li>
+<p><a href="https://en.wikipedia.org/wiki/Cook–Levin_theorem">Cook-Levin Theorem (1971)</a></p>
 <ul>
-<li><strong>Sequence</strong>- ticks each child node in order<ul>
-<li>returns running upon ticking a node that returns running</li>
-<li>returns failure upon ticking a node that returns failure</li>
-<li>exits if failure or running are reached and doesnt tick any of the nodes after it</li>
-<li>returns success only if all the children return success</li>
+<li>Every problem in NP can be reduced to the SAT problem in polynomial time</li>
+<li>If SAT can be solved in polynomial time, so can every other problem in NP</li>
+<li>If anyone ever proves a problem in NP to be intractable, then SAT must also be intractable</li>
 </ul>
 </li>
-<li><strong>Fallback</strong>- ticks each child node in order<ul>
-<li>Returns succes or running upon reaching a child that returns one of them </li>
-<li>Returns failure if all the children it ticks return failure </li>
-<li>AKA selector/priority selector nodes</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=YX40hbAHx3s">The Computational Complexity Zoo</a></p>
+</li>
+<li><a href="https://www.youtube.com/watch?v=u2DLlNQiPB4">P vs. NP</a></li>
+<li><img alt="Complexity Hierarchy" src="../static/complexity_zoo.png" /></li>
+<li>Note the above relationships are conjectures and have not been formally proven yet </li>
+<li>PSPACE- set of all problems solvable by an algorithm w/ polynomial space complexity<ul>
+<li>
+<script type="math/tex">P \subseteq \text{PSPACE}</script> (in polynomial time, an algorithm can use only a polynomial amount of space)</li>
+<li>
+<script type="math/tex">\text{NP} \subseteq \text{PSPACE}</script> since the 3-SAT problem is solvable w/ an algorithm using a polynomial amount of space</li>
+<li>Many problems in AI and game theory are in the domain of PSPACE</li>
 </ul>
 </li>
-<li><strong>Parallel</strong>- set a success threshold<ul>
-<li>ticks all the children from left to right</li>
-<li>returns success if the number of children that return success is past the set threshold</li>
-<li>return failure if the number of children that return failure is greater than N - M </li>
-<li>otherwise returns running if any of the children are still running</li>
 </ul>
-</li>
-<li><strong>Decorator</strong>- manipulates the return status of the child according to a user-defined rule </li>
-<li>has a single child</li>
-<li>selectively ticks the child according to a predefined rule </li>
-<li>Examples:<ul>
-<li>Invert- inverts success/failure status</li>
-<li>max-N-tries only lets its child fail N times then will always return Failure without ticking the child</li>
-<li>useful if you dont want to keep calling a command on a system that went down</li>
-<li>Max-T-Sec lets the child run for T seconds then if it is still runnning will return failure without ticking the child</li>
-</ul>
-</li>
-<li>Control flow nodes can have memory meaning they remember what a child returned success or failure in order to avoid re-exceution until a whole sequence or fallback finishes</li>
-</ul>
-<h2 id="execution-nodes">Execution Nodes</h2>
+<h2 id="decision-problems">Decision Problems</h2>
 <ul>
-<li>Leaf nodes are execution nodes (2 types)</li>
-<li>Action- executes a command when it is ticked<ul>
-<li>returns success if the action is correctly completed</li>
-<li>returns failure if the action has failed</li>
-<li>returns running while its running</li>
+<li>Oftentimes its easier to work with a decision problem equivalent of an optimization problem</li>
+<li>Optimization Problem: Find the smallest number of colors needed to color <script type="math/tex">G</script> and produce that coloring</li>
+<li>Decision Problem: Given <script type="math/tex">G</script> and <script type="math/tex">k</script>, is there a coloring of <script type="math/tex">G</script> using at most <script type="math/tex">k</script> colors? </li>
+<li>Original optimization problem can be solved using the decision problem<ul>
+<li>Ex: Loop through <script type="math/tex">k = 1,\dots, V</script>, for the decision problem. If the decision problem is solvable in polynomial time then there exists a polynomial time to solve the optimization problem </li>
 </ul>
 </li>
-<li>Condition- checks a proposition when ticked<ul>
-<li>returns success or failure depending on if the proposition holds</li>
-<li>never returns running </li>
+<li><em>Certificate</em>- a canidate answer for a decision problem </li>
+<li>When the optimization is to find the largest, the corresponding decision problem for existance asks "... <script type="math/tex">k</script> or more"</li>
+<li>When the optimization is to find the smallest, the corresponding decision problem for existance asks "... at most <script type="math/tex">k</script>"</li>
 </ul>
-</li>
-</ul>
-<h2 id="other-control-flow-architectures">Other Control Flow Architectures</h2>
+<h2 id="np-complete">NP-Complete</h2>
 <ul>
-<li><strong>Petri Nets</strong> provide an alternative to FSMs that supports design of concurent systems</li>
-<li><strong>FSMs</strong><ul>
-<li>Pros</li>
-<li>Common</li>
-<li>Intuitive and easy to understand</li>
-<li>Easy to implement</li>
-<li>Cons</li>
-<li>Poor maintainability/scalability since they are essentially goto statements<ul>
-<li>Less modular and harder to maintain since they use one-way control transfer (state transitions) just like go to statements</li>
-<li>This means removing a state from a machine requires changing all transitions to that state</li>
+<li>Describes a class of problems who status is unknown <ul>
+<li>no polynomial-time algorithm has been discovered yet</li>
+<li>no one has been able to prove no polynomial time algorithm can exist for any one of them </li>
 </ul>
 </li>
-<li>Poor reusability since transitions often depend on many internal variables</li>
-<li>Scalable</li>
+<li>Prove your problem is just as hard as a large number of other problems for which no efficienct algorithm has been found </li>
+<li>If a solution could be found for these other problems, then it could be found for yours also</li>
+</ul>
+<h3 id="solving-np-complete-problems">Solving NP-Complete Problems</h3>
+<ul>
+<li>Won't be able to find an algorithm that produces an exact solution</li>
+<li>Can find an algorithm that works for a subset of inputs</li>
+<li>Can find an algorithm with a good average case time complexity</li>
+<li>Can find an algorithm that produces an approximate answer that is close to best</li>
+</ul>
+<h3 id="prove-a-problem-is-np-complete">Prove a problem is NP-Complete</h3>
+<ul>
+<li>Let problem <script type="math/tex">A</script> be the problem we want to show is NP-complete</li>
+<li>Let <script type="math/tex">B</script> be a well-known NP-complete problem</li>
+<li>
+<p>To show <script type="math/tex">A</script> is np-complete:</p>
+<ol>
+<li>Show <script type="math/tex">A  \in \text{NP}</script>
+<ul>
+<li>prove a yes answer from a certificate can be verified in polynomial time</li>
 </ul>
 </li>
-<li><strong>Hierarchial FSMs (HFSMs)</strong><ul>
-<li>aka state charts</li>
-<li>uses super states that contain many substates to simplify transitions </li>
+<li>Show that <script type="math/tex">B</script> can be reduced to <script type="math/tex">A</script> in polynomial time <ul>
+<li>Technically we need to reduce all NP-complete problems to <script type="math/tex">A</script>, however, Cook-Levin's Theorem on SAT already did this so we just need to do it for one known NPC problem</li>
 </ul>
 </li>
-<li><strong>Subsumption Architecture</strong><ul>
-<li>related to behavior-based robot architecture </li>
-<li>have several controllers, each implementing a task, running in parallel</li>
-<li>controllers are ordered in priorty by user and the highest priorty controller out of a list of ones that want to control the robot is given access to the actuators w</li>
+</ol>
+</li>
+<li>
+<p>Remember that <script type="math/tex">A</script> and <script type="math/tex">B</script> are decision problems</p>
+</li>
+<li><a href="https://www.youtube.com/watch?v=a_IRpiyBIm0">Video</a></li>
+</ul>
+<h2 id="reduction">Reduction</h2>
+<ul>
+<li>We want to reduce a problem <script type="math/tex">C</script> into problem <script type="math/tex">D</script> in polynomial time</li>
+<li>Create a function <script type="math/tex">R</script> that transforms inputs for <script type="math/tex">A</script> to inputs for <script type="math/tex">B</script> s.t. <script type="math/tex">A(x)</script> is yes iff <script type="math/tex">B(R(x))</script> is yes</li>
+<li><img alt="Reduction Tree" src="../static/reduction_tree.png" /></li>
+<li>Tree of reducability for combinatorial problems</li>
+</ul>
+<h3 id="vertex-cover">Vertex Cover</h3>
+<ul>
+<li>Given a graph <script type="math/tex">G(V,E)</script>, a vertex cover is a set of vertices <script type="math/tex">V'</script> such that for each edge <script type="math/tex">uv \in E</script>, <script type="math/tex">u</script> or <script type="math/tex">v</script> is in <script type="math/tex">V'</script>
+</li>
+<li>Optimization Problem: What is the size of the smallest vertex cover?</li>
+<li>Decision Problem: Is there a vertex cover of size <script type="math/tex">k</script> or fewer vertices?</li>
+</ul>
+<h3 id="hamiltonian-path">Hamiltonian Path</h3>
+<ul>
+<li>Given a graph <script type="math/tex">G(V,E)</script>, a hamiltonian path is a set of edges (a path) that visits each vertex exactly once<ul>
+<li>A hamilton cicuit is a hamilton path that begins and ends at the same vertex</li>
 </ul>
 </li>
-<li><strong>Teleo-Reactive Approach</strong></li>
-<li><strong>Decision Trees</strong><ul>
-<li>directed tree representing a list of nested if then clauses to derive decisions</li>
-<li>leaf nodes- decisions/conclusions/actions to be done</li>
-<li>Non-leaf nodes- predicates to be evaluated</li>
-</ul>
-</li>
+<li>Decision Problem: Is there a hamiltonian path in <script type="math/tex">G</script>?</li>
 </ul></div>
             </div>
         </div>

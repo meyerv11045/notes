@@ -62,19 +62,11 @@
 </li>
                                     
 <li>
-    <a href="../../general/hardware/" class="dropdown-item">Hardware</a>
-</li>
-                                    
-<li>
     <a href="../../system_design/microservices/" class="dropdown-item">Microservices</a>
 </li>
                                     
 <li>
     <a href="../../system_design/docker/" class="dropdown-item">Docker</a>
-</li>
-                                    
-<li>
-    <a href="../../ai/behavior-trees/" class="dropdown-item">Behavior Trees</a>
 </li>
                                     
 <li>
@@ -105,6 +97,10 @@
 <li>
     <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
 </li>
+            
+<li>
+    <a href="../../algorithms/graphs/max_flow/" class="dropdown-item">Network Flow</a>
+</li>
     </ul>
   </li>
                                     
@@ -134,6 +130,10 @@
                                     
 <li>
     <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/complexity/" class="dropdown-item">Complexity Theory</a>
 </li>
                                 </ul>
                             </li>
@@ -173,6 +173,10 @@
   <li class="dropdown-submenu">
     <a href="#" class="dropdown-item">C++</a>
     <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/cpp/cmake/" class="dropdown-item">Cmake</a>
+</li>
             
 <li>
     <a href="../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
@@ -324,11 +328,32 @@
 </li>
                                     
 <li>
+    <a href="../ch7/" class="dropdown-item">Ch. 7 Expression</a>
+</li>
+                                    
+<li>
     <a href="../ch15/" class="dropdown-item">Ch. 15 Functional Languages: Racket</a>
 </li>
                                     
 <li>
     <a href="./" class="dropdown-item active">Ch. 16 Logical Languages: Prolog</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../robotics/control/" class="dropdown-item">Control</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/hardware/" class="dropdown-item">Hardware</a>
 </li>
                                 </ul>
                             </li>
@@ -479,7 +504,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../dig_sys/ch6-assembly/" class="nav-link">
+                                <a rel="next" href="../../robotics/control/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -516,6 +541,10 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#prolog" class="nav-link">Prolog</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#list-processing" class="nav-link">List Processing</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -757,7 +786,7 @@ happy(Person) :- woman(Perosn), wealthy(Person)
 </ul>
 </li>
 </ul>
-<h3 id="lists">Lists</h3>
+<h2 id="list-processing">List Processing</h2>
 <ul>
 <li>Enclosed in squre brackets w/ elements separated by commas</li>
 <li><code>|</code> operator separates head of list from rest of list</li>
@@ -766,6 +795,12 @@ happy(Person) :- woman(Perosn), wealthy(Person)
 <pre><code>?- [H | T] = [1, 2, 3, 4, 5].
 H = 1.
 T = [2, 3, 4, 5].
+</code></pre>
+<ul>
+<li>Can construct litss using the same syntax as destructing lists:</li>
+</ul>
+<pre><code>?- Lst = [1 | [2, 3, 4, 5]].
+Lst = [1, 2, 3, 4, 5].
 </code></pre>
 <ul>
 <li>
@@ -794,7 +829,40 @@ T = [2, 3, 4, 5].
 </li>
 </ul>
 </li>
+<li>
+<p>Assign <code>H1</code> and <code>H2</code> to the first two elements of a list</p>
+</li>
 </ul>
+<pre><code>?- [H1 | [H2 | T]] = [1, 2, 3, 4]
+H1 = 1,
+H2 = 2,
+T = [3, 4].
+
+% or 
+
+?- [H1,H2|T] = [1, 2, 3, 4].
+H1 = 1,
+H2 = 2,
+T = [3, 4].
+</code></pre>
+<ul>
+<li>Prolog predicates only return <code>true/false</code> depending on whether the predicate can be satisifed or not</li>
+<li>To return a value from a rule/predicate, an additional parameter is needed to carry back the result<ul>
+<li>Ex: <code>append([a,b,c], [d,e,f], Lst)</code> <code>Lst</code> is the output paremeter that contains the two input lists appended together</li>
+</ul>
+</li>
+</ul>
+<pre><code>% my_append -- Appends two lists.
+
+my_append([], Lst2, Lst2).
+my_append([Head|Tail], Lst2, [Head|Result]) :- my_append(Tail, Lst2, Result).
+
+% my_remove -- Remove the first occurrence of an item from a list.
+
+my_remove(_, [], []).
+my_remove(Item, [Item|Tail], Tail).
+my_remove(Item, [Head|Tail], [Head|Result]) :- Item \== Head, my_remove(Item, Tail, Result).
+</code></pre>
 <h2 id="logical-problems">Logical Problems</h2>
 <ul>
 <li>Prolog is great for solving logic problems</li>
