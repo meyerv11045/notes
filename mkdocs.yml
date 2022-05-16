@@ -20,6 +20,9 @@ nav:
     - 'Microservices': 'system_design/microservices.md'
     - 'Docker': 'system_design/docker.md'
     - 'How to Speak': 'general/how-to-speak.md'
+  - Multimedia:
+    - 'Overview': 'multimedia/overview.md'
+    - 'Streaming': 'multimedia/streaming.md'
   - Algorithms:
     - Graphs:
       - 'Representations': 'algorithms/graphs/graphs.md'
