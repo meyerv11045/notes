@@ -2,7 +2,7 @@ site_name: The Notebook
 site_url: https://meyerv11045.github.com/notes
 docs_dir: notes
 
-extra_javascript: 
+extra_javascript:
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
 
 markdown_extensions:
@@ -87,6 +87,8 @@ nav:
     - 'Ch. 7 Expression': 'prog_langs/ch7.md'
     - 'Ch. 15 Functional Languages: Racket': 'prog_langs/ch15.md'
     - 'Ch. 16 Logical Languages: Prolog': 'prog_langs/ch16.md'
+  - AI:
+    - 'Complex Systems': 'ai/complexity.md'
   - Robotics:
     - 'Control': 'robotics/control.md'
     - 'Behavior Trees': 'robotics/behavior-trees.md'
@@ -101,6 +103,7 @@ nav:
     - 'SQL': 'databases/sql.md'
     - 'MySQL': 'databases/mysql.md'
   - Web Dev:
+    - 'Static Sites': 'web_dev/static_sites.md'
     - Javascript:
       - 'Basics': 'web_dev/js/basics.md'
       - 'Classes': 'web_dev/js/classes.md'
