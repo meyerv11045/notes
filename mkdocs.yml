@@ -10,19 +10,28 @@ markdown_extensions:
         enable_dollar_delimiter: True
 
 nav:
-  - General:
-    - 'Software Engineering Notebook': 'general/swe-notes.md'
-    - 'Git': 'general/git.md'
-    - 'Python': 'general/python.md'
-    - 'MacOS': 'general/macos.md'
-    - 'Programming Paradigms': 'general/paradigms.md'
-    - 'Regex': 'general/regex.md'
-    - 'Microservices': 'system_design/microservices.md'
-    - 'Docker': 'system_design/docker.md'
-    - 'How to Speak': 'general/how-to-speak.md'
+  - Python:
+    - 'Overview': 'python/overview.md'
+    - 'Style': 'python/style.md'
+    - 'Types': 'python/types.md'
+    - 'Concurrency': 'python/concurrency.md'
+    - 'Dunder Methods': 'python/dunders.md'
+  - SWE:
+    - 'Software Engineering Notebook': 'swe/swe-notes.md'
+    - 'Git': 'swe/git.md'
+    - 'Terminal Cmds': 'swe/terminal-cmds.md'
+    - 'Microservices': 'swe/microservices.md'
+    - 'Docker': 'swe/docker.md'
+    - 'Regex': 'swe/regex.md'
   - Multimedia:
     - 'Overview': 'multimedia/overview.md'
     - 'Streaming': 'multimedia/streaming.md'
+  - Azure:
+    - Storage:
+      - 'Overview': 'azure/storage/overview.md'
+      - 'Blobs': 'azure/storage/blob_storage.md'
+    - Networking:
+      - 'Virtual Networks': 'cloud/networking/vnets.md'
   - Algorithms:
     - Graphs:
       - 'Representations': 'algorithms/graphs/graphs.md'
@@ -79,6 +88,7 @@ nav:
       - 'Strategy': 'software_design/patterns/strategy.md'
       - 'Template': 'software_design/patterns/template.md'
   - Programming Languages:
+    - 'Programming Paradigms': 'prog_langs/paradigms.md'
     - 'Ch. 1 Introduction': 'prog_langs/ch1.md'
     - 'Ch. 2 History': 'prog_langs/ch2.md'
     - 'Ch. 3 Syntax & Semantics': 'prog_langs/ch3.md'
@@ -98,10 +108,16 @@ nav:
     - 'Microarchitecture': 'dig_sys/ch7-processor.md'
     - 'Memory Systems': 'dig_sys/ch8-mem-sys.md'
     - 'IO Systems': 'dig_sys/ch9-io-sys.md'
-  - Databases:
-    - "DBMS": 'databases/dbms.md'
-    - 'SQL': 'databases/sql.md'
-    - 'MySQL': 'databases/mysql.md'
+  - Prob & Stats:
+    - 'Random Variables': 'math_science/prob_stats/rv.md'
+    - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
+    - 'Joint Probability Distributions': 'math_science/prob_stats/joint-distributions.md'
+    - 'Statistics': 'math_science/prob_stats/stats.md'
+  - Science:
+    - 'The Brain': 'math_science/brain.md'
+    - 'Molecular Genetics': 'math_science/molecular_genetics.md'
+    - 'Dev Psychology': 'math_science/dev_psy.md'
+    - 'Current & Resistance': 'math_science/physics/ch25.md'
   - Web Dev:
     - 'Static Sites': 'web_dev/static_sites.md'
     - Javascript:
@@ -115,13 +131,10 @@ nav:
       - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
     - HTML & CSS:
       - 'Sass': 'web_dev/html-css/sass.md'
-  - Prob & Stats:
-    - 'Random Variables': 'math_science/prob_stats/rv.md'
-    - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
-    - 'Joint Probability Distributions': 'math_science/prob_stats/joint-distributions.md'
-    - 'Statistics': 'math_science/prob_stats/stats.md'
-  - Science:
-    - 'The Brain': 'math_science/brain.md'
-    - 'Molecular Genetics': 'math_science/molecular_genetics.md'
-    - 'Dev Psychology': 'math_science/dev_psy.md'
-    - 'Current & Resistance': 'math_science/physics/ch25.md'
+    - Databases:
+      - "DBMS": 'databases/dbms.md'
+      - 'SQL': 'databases/sql.md'
+      - 'MySQL': 'databases/mysql.md'
+  - Misc:
+    - 'MacOS': 'misc/macos.md'
+    - 'How to Speak': 'misc/how-to-speak.md'
