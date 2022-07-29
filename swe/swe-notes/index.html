@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/swe/swe-notes/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Software Engineering Notebook - The Notebook</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">The Notebook</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../python/style/" class="dropdown-item">Style</a>
+</li>
+                                    
+<li>
+    <a href="../../python/types/" class="dropdown-item">Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/concurrency/" class="dropdown-item">Concurrency</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dunders/" class="dropdown-item">Dunder Methods</a>
+</li>
+                                    
+<li>
+    <a href="../../python/time/" class="dropdown-item">Dates & Time</a>
+</li>
+                                    
+<li>
+    <a href="../../python/logging/" class="dropdown-item">Logging</a>
+</li>
+                                    
+<li>
+    <a href="../../python/classes/" class="dropdown-item">Classes</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SWE <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Software Engineering Notebook</a>
+</li>
+                                    
+<li>
+    <a href="../git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../terminal-cmds/" class="dropdown-item">Terminal Cmds</a>
+</li>
+                                    
+<li>
+    <a href="../microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../regex/" class="dropdown-item">Regex</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Multimedia <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../multimedia/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../multimedia/streaming/" class="dropdown-item">Streaming</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Azure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Storage</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../azure/storage/overview/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../azure/storage/blob_storage/" class="dropdown-item">Blobs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Networking</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../cloud/networking/vnets.md" class="dropdown-item">Virtual Networks</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Algorithms <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Graphs</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../algorithms/graphs/graphs/" class="dropdown-item">Representations</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/undirected/" class="dropdown-item">Undirected</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/max_flow/" class="dropdown-item">Network Flow</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../algorithms/analysis/" class="dropdown-item">Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/sorting/" class="dropdown-item">Sorting</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/heaps/" class="dropdown-item">Heaps</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/greedy/" class="dropdown-item">Greedy</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/dp/" class="dropdown-item">Dynamic Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/divideconquer/" class="dropdown-item">Divide and Conquer</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/complexity/" class="dropdown-item">Complexity Theory</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/cpp/cmake/" class="dropdown-item">Cmake</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/big3/" class="dropdown-item">The Big 3</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/exceptions/" class="dropdown-item">Exception Handling</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/templates/" class="dropdown-item">Templates</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/inheritance/" class="dropdown-item">Inheritance</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/iterators/" class="dropdown-item">Iterators</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/stl/" class="dropdown-item">STL</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/functors/" class="dropdown-item">Functors</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/lambda/" class="dropdown-item">Lambda Functions</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/misc/" class="dropdown-item">Misc</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/patterns/patterns/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/adapter/" class="dropdown-item">Adapter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/observer/" class="dropdown-item">Observer</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/singleton/" class="dropdown-item">Singleton</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/composite/" class="dropdown-item">Composite</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/interpreter/" class="dropdown-item">Interpreter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/visitor/" class="dropdown-item">Visitor</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/iterator/" class="dropdown-item">Iterator</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/bridge/" class="dropdown-item">Bridge</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/command/" class="dropdown-item">Command</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/factory/" class="dropdown-item">Factory</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/state/" class="dropdown-item">State</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/reactor/" class="dropdown-item">Reactor</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/strategy/" class="dropdown-item">Strategy</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/template/" class="dropdown-item">Template</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming Languages <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../prog_langs/paradigms/" class="dropdown-item">Programming Paradigms</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch1/" class="dropdown-item">Ch. 1 Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch2/" class="dropdown-item">Ch. 2 History</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch5/" class="dropdown-item">Ch. 5 Names, Bindings, & Scope</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch6/" class="dropdown-item">Ch. 6 Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch7/" class="dropdown-item">Ch. 7 Expression</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch15/" class="dropdown-item">Ch. 15 Functional Languages: Racket</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch16/" class="dropdown-item">Ch. 16 Logical Languages: Prolog</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">AI <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../ai/complexity/" class="dropdown-item">Complex Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../robotics/control/" class="dropdown-item">Control</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/hardware/" class="dropdown-item">Hardware</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Digital Systems <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../dig_sys/ch6-assembly/" class="dropdown-item">Assembly</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch7-processor/" class="dropdown-item">Microarchitecture</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch8-mem-sys/" class="dropdown-item">Memory Systems</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch9-io-sys/" class="dropdown-item">IO Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Prob & Stats <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Science <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../math_science/brain/" class="dropdown-item">The Brain</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/molecular_genetics/" class="dropdown-item">Molecular Genetics</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/dev_psy/" class="dropdown-item">Dev Psychology</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Dev <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../web_dev/static_sites/" class="dropdown-item">Static Sites</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/js/basics/" class="dropdown-item">Basics</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/objects/" class="dropdown-item">Objects</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/modules/" class="dropdown-item">Modules</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Databases</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+            
+<li>
+    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+</li>
+            
+<li>
+    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Misc <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../misc/macos/" class="dropdown-item">MacOS</a>
+</li>
+                                    
+<li>
+    <a href="../../misc/how-to-speak/" class="dropdown-item">How to Speak</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../python/classes/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../git/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#software-engineering-notebook" class="nav-link">Software Engineering Notebook</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#code-readability" class="nav-link">Code Readability</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commentingdocumentation" class="nav-link">Commenting/Documentation</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#software-design-patterns" class="nav-link">Software Design Patterns</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#building-a-software-stack" class="nav-link">Building a Software Stack</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#debugging" class="nav-link">Debugging</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#problem-solving" class="nav-link">Problem Solving</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#general-tips" class="nav-link">General Tips</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#notes-on-swe" class="nav-link">Notes on SWE</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#resources" class="nav-link">Resources</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="software-engineering-notebook">Software Engineering Notebook</h1>
+<h3 id="uml-class-diagram">UML Class Diagram</h3>
+<ul>
+<li>Visual diagram used to demonstrate classes, their attributes/functions, and the relationships between classes</li>
+<li>Useful to start one before a large project to see how all the components interact</li>
+<li><a href="https://www.youtube.com/watch?v=UI6lqHOVHic">Youtube Tutorial</a></li>
+<li><a href="https://www.lucidchart.com/">Lucid Chart</a> (Online software used by numerous Fortune 500 companies for creating visual workspaces w/ things like UML diagrams)</li>
+</ul>
+<h3 id="class-construction">Class Construction</h3>
+<ul>
+<li>Declare all fields as private/protected whenever possible<ul>
+<li>Use getter and setter functions to access and update class fields</li>
+</ul>
+</li>
+<li>Initialize the fields in the constructor</li>
+</ul>
+<h2 id="code-readability">Code Readability</h2>
+<ul>
+<li>Readability and maintainability separate coders from good coders</li>
+<li>Focus on being able to read and understand parts of parts of code (e.g. modules/functions) without having to read entire rest of codebase</li>
+<li>Code should be Intuitive and self-documenting</li>
+<li>Readability &gt; Cleverness/Shortness<ul>
+<li>If you write the code as clever as possible, you will not be smart enough to debug it </li>
+</ul>
+</li>
+<li>Consistency in style (e.g. spacing, braces)</li>
+</ul>
+<h2 id="commentingdocumentation">Commenting/Documentation</h2>
+<ul>
+<li>Learning to write good comments is a skill</li>
+<li>Any good developer can figure out <em>what</em> your code does so your comments should explain <em>why</em> it does it that way<ul>
+<li>Comment on why you made the decisions you did in your code</li>
+</ul>
+</li>
+</ul>
+<h2 id="software-design-patterns">Software Design Patterns</h2>
+<ul>
+<li>Use encapsulation in order to separate concerns (i.e. possible points of breakdown in locally important assumptions such as object types) </li>
+<li>Try to limit managing global states (e.g. updating/referencing) since that can easily get messy, complicated, and buggy<ul>
+<li>Clarity of a codebase greatly improves when pure functions that access no external state are used </li>
+<li>Functional languages like Haskell do this really well</li>
+</ul>
+</li>
+<li>Don’t switch between programming designs (e.g. pub/sub, actors, MVC) in connected parts of a codebase</li>
+<li>Create Data Abstraction Layers<ul>
+<li>Ex: Don’t have queries for your database in your application code. Instead create a separate library between the database and application that handles all the queries and provides easy to use getter functions like load_users(). </li>
+<li>Creates consistent styles in queries</li>
+<li>Limits the number of places to change queries if the DB schema changes</li>
+</ul>
+</li>
+</ul>
+<h2 id="building-a-software-stack">Building a Software Stack</h2>
+<ul>
+<li>Don’t reinvent the wheel when not necessary</li>
+<li>Reliance on 3rd-party/open source software does leave you vulnerable to their security issues and makes you reliant on other people’s maintenance of the dependencies </li>
+<li>Choose Appropriate Database:<ul>
+<li>SQL: Postgres / MySQL / MariaDB / MemSQL / Amazon RDS</li>
+<li>Key Value Stores: Redis / Memcache / Riak</li>
+<li>NoSQL: MongoDB / Cassandra</li>
+<li>Hosted DBs: AWS RDS / DynamoDB / AppEngine Datastore </li>
+<li>Heavy Lifting: Amazon MR / Hadoop (Hive/Pig) / Cloudera / Google Big Query</li>
+</ul>
+</li>
+</ul>
+<h2 id="debugging">Debugging</h2>
+<ol>
+<li>Come up w/ a hypothesis and test it (repeat until you fix the bug) </li>
+<li>Think like a scientist when debugging </li>
+<li>Record hypothesis and result</li>
+<li>Reproduce the bug locally rather than on a server (if convenient) </li>
+<li>Once you can fix it locally (which is faster &amp; easier) you can change it on the server version</li>
+<li>Read the source code carefully and make minor alterations according to your hypothesis</li>
+<li>Use debuggers instead of messy print statements</li>
+</ol>
+<h2 id="problem-solving">Problem Solving</h2>
+<ol>
+<li>Define the problem</li>
+<li>Brainstorm (no idea is a bad idea)</li>
+<li>Pseudo-Code (don’t worry about syntax- get the ideas down)</li>
+<li>Whiteboarding/writing is useful</li>
+<li>Implement (test as you go and make sure each component works before moving on)</li>
+<li>Avoid building out a whole solution w/o testing any of the parts</li>
+<li>Optimize efficiency (Go back and try to condense code, make more efficient, etc.)</li>
+<li>Time, memory, etc.</li>
+<li>Don't optimize too soon or overoptimize something that is fine</li>
+<li>Transition solution to another language if learning a new language</li>
+</ol>
+<h2 id="general-tips">General Tips</h2>
+<ul>
+<li>You are responsible for code quality</li>
+<li>Use meaningful names</li>
+<li>Write code that expresses intent</li>
+<li>Code should speak for itself (Less comments = Less maintenance)</li>
+<li>Leave the code better than you found it</li>
+<li>Single-responsibility code</li>
+<li>Function does one thing well</li>
+<li>Less arguments = better function</li>
+<li>Tests! (Test Driven Development)</li>
+<li>Work on the big picture skeleton for the program and then fill in the details later</li>
+<li>Interface first, implementation later</li>
+<li>Independent components that can be used in different places</li>
+<li>Master your craft</li>
+<li>Create a minimum viable product (MVP) with the base functionality and then iterate by adding more features</li>
+</ul>
+<h2 id="notes-on-swe">Notes on SWE</h2>
+<ul>
+<li>Not an industry, it’s a skill achieved with lots of practice</li>
+<li>Applicable to all industries available today (i.e. software runs everything)</li>
+<li>Solving problems is an art form-- you get better with lifelong practice</li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ol>
+<li><a href="https://www.toptal.com/software/six-commandments-of-good-code">Readability &amp; Software Design Practices</a></li>
+<li><a href="https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code (Book)</a></li>
+<li><a href="https://levelup.gitconnected.com/youre-commenting-your-code-too-much-and-other-controversial-thoughts-on-documentation-1ee617ed46af">Commenting Less</a></li>
+<li><a href="https://medium.com/better-programming/restful-api-design-step-by-step-guide-2f2c9f9fcdbf">REST API Design</a></li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

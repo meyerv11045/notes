@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/swe/docker/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Docker - The Notebook</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">The Notebook</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../python/style/" class="dropdown-item">Style</a>
+</li>
+                                    
+<li>
+    <a href="../../python/types/" class="dropdown-item">Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/concurrency/" class="dropdown-item">Concurrency</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dunders/" class="dropdown-item">Dunder Methods</a>
+</li>
+                                    
+<li>
+    <a href="../../python/time/" class="dropdown-item">Dates & Time</a>
+</li>
+                                    
+<li>
+    <a href="../../python/logging/" class="dropdown-item">Logging</a>
+</li>
+                                    
+<li>
+    <a href="../../python/classes/" class="dropdown-item">Classes</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SWE <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+</li>
+                                    
+<li>
+    <a href="../git/" class="dropdown-item">Git</a>
+</li>
+                                    
+<li>
+    <a href="../terminal-cmds/" class="dropdown-item">Terminal Cmds</a>
+</li>
+                                    
+<li>
+    <a href="../microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../regex/" class="dropdown-item">Regex</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Multimedia <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../multimedia/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../multimedia/streaming/" class="dropdown-item">Streaming</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Azure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Storage</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../azure/storage/overview/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../azure/storage/blob_storage/" class="dropdown-item">Blobs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Networking</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../cloud/networking/vnets.md" class="dropdown-item">Virtual Networks</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Algorithms <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Graphs</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../algorithms/graphs/graphs/" class="dropdown-item">Representations</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/undirected/" class="dropdown-item">Undirected</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/max_flow/" class="dropdown-item">Network Flow</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../algorithms/analysis/" class="dropdown-item">Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/sorting/" class="dropdown-item">Sorting</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/heaps/" class="dropdown-item">Heaps</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/greedy/" class="dropdown-item">Greedy</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/dp/" class="dropdown-item">Dynamic Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/divideconquer/" class="dropdown-item">Divide and Conquer</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/complexity/" class="dropdown-item">Complexity Theory</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/cpp/cmake/" class="dropdown-item">Cmake</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/big3/" class="dropdown-item">The Big 3</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/exceptions/" class="dropdown-item">Exception Handling</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/templates/" class="dropdown-item">Templates</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/inheritance/" class="dropdown-item">Inheritance</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/iterators/" class="dropdown-item">Iterators</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/stl/" class="dropdown-item">STL</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/functors/" class="dropdown-item">Functors</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/lambda/" class="dropdown-item">Lambda Functions</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/misc/" class="dropdown-item">Misc</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/patterns/patterns/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/adapter/" class="dropdown-item">Adapter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/observer/" class="dropdown-item">Observer</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/singleton/" class="dropdown-item">Singleton</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/composite/" class="dropdown-item">Composite</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/interpreter/" class="dropdown-item">Interpreter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/visitor/" class="dropdown-item">Visitor</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/iterator/" class="dropdown-item">Iterator</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/bridge/" class="dropdown-item">Bridge</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/command/" class="dropdown-item">Command</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/factory/" class="dropdown-item">Factory</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/state/" class="dropdown-item">State</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/reactor/" class="dropdown-item">Reactor</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/strategy/" class="dropdown-item">Strategy</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/template/" class="dropdown-item">Template</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming Languages <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../prog_langs/paradigms/" class="dropdown-item">Programming Paradigms</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch1/" class="dropdown-item">Ch. 1 Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch2/" class="dropdown-item">Ch. 2 History</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch5/" class="dropdown-item">Ch. 5 Names, Bindings, & Scope</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch6/" class="dropdown-item">Ch. 6 Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch7/" class="dropdown-item">Ch. 7 Expression</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch15/" class="dropdown-item">Ch. 15 Functional Languages: Racket</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch16/" class="dropdown-item">Ch. 16 Logical Languages: Prolog</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">AI <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../ai/complexity/" class="dropdown-item">Complex Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../robotics/control/" class="dropdown-item">Control</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/hardware/" class="dropdown-item">Hardware</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Digital Systems <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../dig_sys/ch6-assembly/" class="dropdown-item">Assembly</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch7-processor/" class="dropdown-item">Microarchitecture</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch8-mem-sys/" class="dropdown-item">Memory Systems</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch9-io-sys/" class="dropdown-item">IO Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Prob & Stats <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Science <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../math_science/brain/" class="dropdown-item">The Brain</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/molecular_genetics/" class="dropdown-item">Molecular Genetics</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/dev_psy/" class="dropdown-item">Dev Psychology</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Dev <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../web_dev/static_sites/" class="dropdown-item">Static Sites</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/js/basics/" class="dropdown-item">Basics</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/objects/" class="dropdown-item">Objects</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/modules/" class="dropdown-item">Modules</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Databases</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+            
+<li>
+    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+</li>
+            
+<li>
+    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Misc <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../misc/macos/" class="dropdown-item">MacOS</a>
+</li>
+                                    
+<li>
+    <a href="../../misc/how-to-speak/" class="dropdown-item">How to Speak</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../microservices/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../regex/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#docker" class="nav-link">Docker</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#docker-vs-virutal-machines" class="nav-link">Docker vs. Virutal Machines</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#docker-images" class="nav-link">Docker Images</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#setting-up-a-docker-project" class="nav-link">Setting up a Docker Project</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#volumes" class="nav-link">Volumes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#extra" class="nav-link">Extra:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#docker-compose" class="nav-link">Docker Compose</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#setting-up-a-project-w-docker-compose" class="nav-link">Setting up a Project w/ Docker Compose</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="docker">Docker</h1>
+<ul>
+<li>Tool for running applications in an isolated environment</li>
+<li><strong>Advantages</strong>:<ul>
+<li>Same environment (Works on all computers if it works on docker)</li>
+<li>Sandbox Projects (Keeps them separate: no conflicts &amp; better security)</li>
+<li>Simple to get started on others' projects</li>
+</ul>
+</li>
+<li><strong>Containers</strong>: the building blocks of Docker <ul>
+<li>Stop by themselves when the main process finishes/exits (e.g. php or node.js dies)</li>
+<li>Should be <strong>one process per container</strong> b/c the life of the container is tied to that process</li>
+<li>Lightweight so lots of containers can be run on a computer at a time</li>
+</ul>
+</li>
+</ul>
+<h2 id="docker-vs-virutal-machines">Docker vs. Virutal Machines</h2>
+<p><img alt="Docker v. Vms" src="https://www.weave.works/assets/images/bltb6200bc085503718/containers-vs-virtual-machines.jpg" /></p>
+<ul>
+<li>Docker is less resource heavy than a virtual machine so it is faster than a VM </li>
+</ul>
+<h2 id="docker-images">Docker Images</h2>
+<p><img alt="Docker Image" src="https://miro.medium.com/max/1273/1*p8k1b2DZTQEW_yf0hYniXw.png" /></p>
+<ul>
+<li>A <em>Dockerfile</em> is a file with a list of steps to create the image</li>
+<li>A <em>Docker Image</em> is a template for creating a desired environment and includes an OS, software, and application code</li>
+<li>A <em>Docker Container</em> is a running instance of a docker image</li>
+</ul>
+<h2 id="setting-up-a-docker-project">Setting up a Docker Project</h2>
+<ol>
+<li>Create <code>Dockerfile</code> in the root of the project/services directory (outside src folder)</li>
+<li>Where we will start from an existing image and build on top of it</li>
+<li>Can find thousands of images on Dockerhub </li>
+<li>Write the instructions to build your image in the <code>Dockerfile</code></li>
+<li><code>FROM</code> specifies the starting/base image to be downloaded from Dockerhub (Must be the 1st line)</li>
+<li><code>COPY</code> copies the files from the first directory to the second location inside the image (specified in image's documentation)</li>
+<li><code>EXPOSE</code> tells running containers to listen on the specified port</li>
+</ol>
+<pre><code class="language-dockerfile">    FROM php:7-0-apache
+    COPY src/ /var/www/html
+    EXPOSE 80
+</code></pre>
+<ol>
+<li>Build the docker image from the terminal</li>
+<li><code>-t image-name</code> specifies the image's name</li>
+<li>location is the path to the <code>Dockerfile</code> which is <code>.</code> if in the same directory</li>
+</ol>
+<pre><code class="language-bash">docker build -t image-name location
+</code></pre>
+<ol>
+<li>Run the docker container from the terminal</li>
+<li><code>-p 80:80</code> forwards port 80 in the host to port 80 in the container which was exposed in the docker file, allowing it to accept the request so that the code in the container can handle the request</li>
+</ol>
+<pre><code class="language-bash">docker run -p 80:80 image-name
+</code></pre>
+<h2 id="volumes">Volumes</h2>
+<ul>
+<li>One type allows the sharing of data between containers</li>
+<li>The other type allows the sharing of folders between the host and the container</li>
+<li>Useful for development since any changes to source code doesn't require a new image to be built and new container to be spun up</li>
+<li><strong>Will need to rebuild the image to deploy it</strong> to somewhere else b/c volumes just give the ability for a container to see files on the host's filesystem, <strong>volumes don't change the image</strong><ul>
+<li>Building an image from a Dockerfile copies the src code so that it can be deployed elsewhere</li>
+</ul>
+</li>
+<li>Mounting a volume is done when running the container</li>
+<li><strong>Must use absolute paths of folders to be mounted</strong> </li>
+</ul>
+<pre><code>docker run -p80:80 -v /Users/admin/project/src/:/var/www/html/ image-name
+</code></pre>
+<h2 id="extra">Extra:</h2>
+<pre><code class="language-dockerfile">FROM python:3-onbuild
+COPY . /usr/src/app
+CMD [&quot;python&quot;,&quot;api.py&quot;]
+</code></pre>
+<h1 id="docker-compose">Docker Compose</h1>
+<ul>
+<li>Lets you define all you services/containers in a configuration file </li>
+<li>With one command, all the containers can be spun up</li>
+<li>The configuration files save the hassel of writing the docker run commands for each container with all their specifications for volumes and ports</li>
+<li>Creates a virtual network for all the containers allowing communication for all the containers specified in the docker-compose file</li>
+<li>The host names of the containers match the service names defined in <code>docker-compose.yml</code></li>
+</ul>
+<h2 id="setting-up-a-project-w-docker-compose">Setting up a Project w/ Docker Compose</h2>
+<ol>
+<li>Create <code>docker-compose.yml</code> in root directory of project</li>
+<li>Write the configuration instructions in docker-compose.yml </li>
+<li>Directories are relative to where the docker-compose file is</li>
+<li><code>version</code> specifies the version of docker-compose file format that you will be writing in (the formats are often updated so this helps specify what syntax you will be using)</li>
+<li><code>build</code> takes ther relative path to the <code>Dockerfile</code> for a container </li>
+<li><code>volumes</code> &amp; <code>ports</code> allows you to list the volumes and ports for that docker image</li>
+<li><code>depends_on</code> allows you to specify other services necessary for the service to run</li>
+</ol>
+<pre><code class="language-yml">version: '3'
+services:
+    product-service:
+        build: ./product
+        volumes: 
+            - ./product:/usr/src/app
+        ports:
+            - 5001:80
+    website:
+        image: php:apache
+        volumes:
+            - ./website:/var/www/html
+        ports:
+            - 5000:80
+        depends_on:
+            - product-service
+</code></pre>
+<ol>
+<li>Spin up the containers running <code>docker-compose up</code> from the terminal from the directory where the docker-compose file is located </li>
+<li>Will build all the images and then run all the containers</li>
+<li>Running <code>docker-compose up -d</code> will spin up the containers in detached mode meaning you can continue working on the terminal <ul>
+<li>run <code>docker ps</code> to see the status of the containers in detached mode</li>
+<li>run <code>docker-compose stop</code> to stop the containers in detached mode (ctr + c works in nondetached mode)</li>
+</ul>
+</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

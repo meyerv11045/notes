@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/swe/git/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Git - The Notebook</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css">
+
+        <script src="../../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../../js/bootstrap.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">The Notebook</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Python <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../python/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../python/style/" class="dropdown-item">Style</a>
+</li>
+                                    
+<li>
+    <a href="../../python/types/" class="dropdown-item">Types</a>
+</li>
+                                    
+<li>
+    <a href="../../python/concurrency/" class="dropdown-item">Concurrency</a>
+</li>
+                                    
+<li>
+    <a href="../../python/dunders/" class="dropdown-item">Dunder Methods</a>
+</li>
+                                    
+<li>
+    <a href="../../python/time/" class="dropdown-item">Dates & Time</a>
+</li>
+                                    
+<li>
+    <a href="../../python/logging/" class="dropdown-item">Logging</a>
+</li>
+                                    
+<li>
+    <a href="../../python/classes/" class="dropdown-item">Classes</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">SWE <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">Git</a>
+</li>
+                                    
+<li>
+    <a href="../terminal-cmds/" class="dropdown-item">Terminal Cmds</a>
+</li>
+                                    
+<li>
+    <a href="../microservices/" class="dropdown-item">Microservices</a>
+</li>
+                                    
+<li>
+    <a href="../docker/" class="dropdown-item">Docker</a>
+</li>
+                                    
+<li>
+    <a href="../regex/" class="dropdown-item">Regex</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Multimedia <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../multimedia/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../multimedia/streaming/" class="dropdown-item">Streaming</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Azure <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Storage</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../azure/storage/overview/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../azure/storage/blob_storage/" class="dropdown-item">Blobs</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Networking</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../cloud/networking/vnets.md" class="dropdown-item">Virtual Networks</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Algorithms <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Graphs</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../algorithms/graphs/graphs/" class="dropdown-item">Representations</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/bfs_dfs/" class="dropdown-item">BFS & DFS</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/undirected/" class="dropdown-item">Undirected</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/directed/" class="dropdown-item">Directed</a>
+</li>
+            
+<li>
+    <a href="../../algorithms/graphs/max_flow/" class="dropdown-item">Network Flow</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../../algorithms/analysis/" class="dropdown-item">Analysis</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/sorting/" class="dropdown-item">Sorting</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/heaps/" class="dropdown-item">Heaps</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/greedy/" class="dropdown-item">Greedy</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/dp/" class="dropdown-item">Dynamic Programming</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/divideconquer/" class="dropdown-item">Divide and Conquer</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/tips/" class="dropdown-item">Tips</a>
+</li>
+                                    
+<li>
+    <a href="../../algorithms/complexity/" class="dropdown-item">Complexity Theory</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Data Structures <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../data_structures/overview/" class="dropdown-item">Overview</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/linked-list/" class="dropdown-item">Linked List</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/stack/" class="dropdown-item">Stack</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/queue/" class="dropdown-item">Queue</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/heap/" class="dropdown-item">Heap</a>
+</li>
+                                    
+<li>
+    <a href="../../data_structures/graph/" class="dropdown-item">Graph</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Software Design <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">C++</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/cpp/cmake/" class="dropdown-item">Cmake</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/pointers/" class="dropdown-item">Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/big3/" class="dropdown-item">The Big 3</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/exceptions/" class="dropdown-item">Exception Handling</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/templates/" class="dropdown-item">Templates</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/operator-overloading/" class="dropdown-item">Operator Overloading</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/strong-exception-safety/" class="dropdown-item">Strong Exception Safety</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/smart-pointers/" class="dropdown-item">Smart Pointers</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/inheritance/" class="dropdown-item">Inheritance</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/iterators/" class="dropdown-item">Iterators</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/stl/" class="dropdown-item">STL</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/functors/" class="dropdown-item">Functors</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/lambda/" class="dropdown-item">Lambda Functions</a>
+</li>
+            
+<li>
+    <a href="../../software_design/cpp/misc/" class="dropdown-item">Misc</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Patterns</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../software_design/patterns/patterns/" class="dropdown-item">Overview</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/adapter/" class="dropdown-item">Adapter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/observer/" class="dropdown-item">Observer</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/singleton/" class="dropdown-item">Singleton</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/composite/" class="dropdown-item">Composite</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/interpreter/" class="dropdown-item">Interpreter</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/builder/" class="dropdown-item">Builder</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/visitor/" class="dropdown-item">Visitor</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/iterator/" class="dropdown-item">Iterator</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/bridge/" class="dropdown-item">Bridge</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/command/" class="dropdown-item">Command</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/factory/" class="dropdown-item">Factory</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/state/" class="dropdown-item">State</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/reactor/" class="dropdown-item">Reactor</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/strategy/" class="dropdown-item">Strategy</a>
+</li>
+            
+<li>
+    <a href="../../software_design/patterns/template/" class="dropdown-item">Template</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Programming Languages <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../prog_langs/paradigms/" class="dropdown-item">Programming Paradigms</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch1/" class="dropdown-item">Ch. 1 Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch2/" class="dropdown-item">Ch. 2 History</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch5/" class="dropdown-item">Ch. 5 Names, Bindings, & Scope</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch6/" class="dropdown-item">Ch. 6 Data Types</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch7/" class="dropdown-item">Ch. 7 Expression</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch15/" class="dropdown-item">Ch. 15 Functional Languages: Racket</a>
+</li>
+                                    
+<li>
+    <a href="../../prog_langs/ch16/" class="dropdown-item">Ch. 16 Logical Languages: Prolog</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">AI <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../ai/complexity/" class="dropdown-item">Complex Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../robotics/control/" class="dropdown-item">Control</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+</li>
+                                    
+<li>
+    <a href="../../robotics/hardware/" class="dropdown-item">Hardware</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Digital Systems <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../dig_sys/ch6-assembly/" class="dropdown-item">Assembly</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch7-processor/" class="dropdown-item">Microarchitecture</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch8-mem-sys/" class="dropdown-item">Memory Systems</a>
+</li>
+                                    
+<li>
+    <a href="../../dig_sys/ch9-io-sys/" class="dropdown-item">IO Systems</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Prob & Stats <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../math_science/prob_stats/rv/" class="dropdown-item">Random Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/crvs/" class="dropdown-item">Continuous Random Variables</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/joint-distributions/" class="dropdown-item">Joint Probability Distributions</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/prob_stats/stats/" class="dropdown-item">Statistics</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Science <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../math_science/brain/" class="dropdown-item">The Brain</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/molecular_genetics/" class="dropdown-item">Molecular Genetics</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/dev_psy/" class="dropdown-item">Dev Psychology</a>
+</li>
+                                    
+<li>
+    <a href="../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Web Dev <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../web_dev/static_sites/" class="dropdown-item">Static Sites</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Javascript</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/js/basics/" class="dropdown-item">Basics</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/classes/" class="dropdown-item">Classes</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/objects/" class="dropdown-item">Objects</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/modules/" class="dropdown-item">Modules</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/promises/" class="dropdown-item">Promises</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/jQuery/" class="dropdown-item">jQuery</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/using_node_pkgs/" class="dropdown-item">Node Pkgs</a>
+</li>
+            
+<li>
+    <a href="../../web_dev/js/browser_compatibility/" class="dropdown-item">Browser Compatibility</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">HTML & CSS</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../web_dev/html-css/sass/" class="dropdown-item">Sass</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Databases</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../../databases/dbms/" class="dropdown-item">DBMS</a>
+</li>
+            
+<li>
+    <a href="../../databases/sql/" class="dropdown-item">SQL</a>
+</li>
+            
+<li>
+    <a href="../../databases/mysql/" class="dropdown-item">MySQL</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Misc <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../misc/macos/" class="dropdown-item">MacOS</a>
+</li>
+                                    
+<li>
+    <a href="../../misc/how-to-speak/" class="dropdown-item">How to Speak</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../swe-notes/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../terminal-cmds/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#git-reference" class="nav-link">git reference</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#undoing-things" class="nav-link">undoing things</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#diff" class="nav-link">diff</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#pull-vs-fetch" class="nav-link">pull vs fetch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#switch" class="nav-link">switch</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#branching" class="nav-link">branching</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#stash-changes" class="nav-link">stash changes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#config-preferences" class="nav-link">config preferences:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#how-git-works" class="nav-link">how git works</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#commit-hashes" class="nav-link">commit hashes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="git-reference">git reference</h1>
+<h2 id="undoing-things">undoing things</h2>
+<ul>
+<li><code>git commit --ammend</code> will add any staged changes to previous commit (technically 2nd commit replaces the previous one)<ul>
+<li>only ammend local commits</li>
+</ul>
+</li>
+<li><code>git restore</code> replaces <code>git reset</code>. </li>
+<li>Unstaging changes:<ul>
+<li><code>git reset HEAD &lt;file-name&gt;</code></li>
+<li><code>git restore --staged &lt;file-name&gt;</code></li>
+</ul>
+</li>
+<li>Unmodifying an unstaged modified file: <code>git restore &lt;file&gt;</code> </li>
+<li><a href="https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things">source</a></li>
+</ul>
+<h2 id="diff">diff</h2>
+<ul>
+<li>unadded changes: <code>git diff &lt;file/folder-name&gt;</code></li>
+<li>added changes: <code>git diff --cached &lt;file/folder-name&gt;</code> <ul>
+<li>also works with <code>--staged</code></li>
+</ul>
+</li>
+<li>changes from commit 1 to commit 2: <code>git diff &lt;commit-1-hash&gt; &lt;commit-2-hash&gt;</code><ul>
+<li><code>--stats</code> list changed files + insertions/deletions</li>
+<li><code>--name-only</code> lists name of changed files</li>
+<li><code>--name-status</code> list status of added/deleted/modified/renamed files</li>
+</ul>
+</li>
+<li>changes from previous commit to current commit: <code>git diff HEAD^</code> (<code>HEAD^</code> is previous commit)</li>
+<li>generate output to <code>.diff</code> file:<ul>
+<li><code>git diff -output=patch.diff</code></li>
+<li><code>git diff &gt; patch.diff</code></li>
+<li><code>git diff &gt; changes.patch</code></li>
+</ul>
+</li>
+<li>apply a diff/patch:<ul>
+<li><code>git apply changes.patch</code> (only performs the changes-- they still need to be added/commited)</li>
+</ul>
+</li>
+<li>changes from one branch to another:<ul>
+<li><code>git diff main &lt;file-name&gt;</code> (comparing cur branch to main)</li>
+<li>adding <code>~</code> after branch name will use the previous commit (multiple <code>~</code> goes multiple commits back)</li>
+</ul>
+</li>
+</ul>
+<h2 id="pull-vs-fetch">pull vs fetch</h2>
+<ul>
+<li><code>git fetch</code> will bring down any changes from remote repo but won't change any of your local branchs <ul>
+<li>Only updates <code>.git/</code> directory with an updated version of the remote repo</li>
+<li>To integrate the fetched commits, need to run <code>git merge</code></li>
+</ul>
+</li>
+<li><code>git pull</code> essentially does a fetch followed by a merge into the current branch</li>
+<li>git fetch is the command that says "bring my local copy of the remote repository up to date."</li>
+<li>git pull says "bring the changes in the remote repository to where I keep my own code."</li>
+</ul>
+<p><img alt="" src="../static/gitflow.png" /></p>
+<h2 id="switch">switch</h2>
+<ul>
+<li>new version of checkout</li>
+<li><code>git switch &lt;branch-name&gt;</code><ul>
+<li>use <code>-</code> as branch name to go back to original branch before from before switching</li>
+</ul>
+</li>
+<li>create and switch to new branch: <code>git switch -c &lt;new-branch&gt;</code></li>
+<li>switch to a remote branch (after fetching): <code>git switch -c &lt;branch&gt; --track &lt;remote&gt;/&lt;branch&gt;</code></li>
+</ul>
+<h2 id="branching">branching</h2>
+<h3 id="add-branch">add branch</h3>
+<ul>
+<li>create local branch (doesn't checkout): <code>git branch &lt;new-branch&gt;</code><ul>
+<li>create and automatically checkout a new local-branch: <code>git checkout -b &lt;new-branch&gt;</code> </li>
+</ul>
+</li>
+<li>add local branch to remote repo: <code>git push --set-upstream origin &lt;local-branch&gt;</code><ul>
+<li><code>-u</code> is shorthand for upstream</li>
+</ul>
+</li>
+</ul>
+<h3 id="delete-branch">delete branch</h3>
+<ul>
+<li>Local: <code>git branch -d &lt;local-branch&gt;</code><ul>
+<li><code>-d</code> refuse to delete unmerged/unpushed changes</li>
+<li><code>-D</code> force delete</li>
+</ul>
+</li>
+<li>Remote: <code>git push origin --delete &lt;remote-branch-name&gt;</code></li>
+</ul>
+<h2 id="stash-changes">stash changes</h2>
+<ul>
+<li>Stashing can be used to temporaliy store modified, tracked files in order to change branches</li>
+<li><code>git stash</code> saves the modified and staged changes</li>
+<li><code>git stash list</code> lists the stack of stashed file changes</li>
+<li><code>git stash pop</code> writes working from the top of the stash stack</li>
+<li><code>git stash drop</code> discards the changes from the top of the stash stack</li>
+</ul>
+<h2 id="config-preferences">config preferences:</h2>
+<ul>
+<li>Stored globally in <code>~/.gitconfig</code></li>
+<li><code>git config</code> to update config settings<ul>
+<li><code>--global</code> for global config updates</li>
+<li><code>--local</code> for project specific updates </li>
+</ul>
+</li>
+<li><code>diff.noprefix true</code> removes a/ and b/ prefixes in diff results</li>
+<li><code>credential.helper store</code> and then type in your username and PAT the next time you login <ul>
+<li>Will save and use your login credentials for any future remote requests</li>
+</ul>
+</li>
+<li>can create git aliases <code>git alias</code>:</li>
+</ul>
+<pre><code>[alias]
+    unstaged = diff
+    staged = diff --cached
+    both = diff HEAD 
+</code></pre>
+<ul>
+<li><code>help.autocorrect &lt;tenths-of-seconds&gt;</code> will auto run a mistyped command after specified tenths of a second</li>
+<li><a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration">More Config Settings</a></li>
+</ul>
+<h2 id="how-git-works">how git works</h2>
+<p><a href="http://ftp.newartisans.com/pub/git.from.bottom.up.pdf">how git works from the bottom up</a>
+- index = staging area = cache (all refer to same thing)
+- <a href="https://stackoverflow.com/questions/58003030/what-is-the-git-restore-command-and-what-is-the-difference-between-git-restor">difference between git restore and git reset</a></p>
+<h2 id="commit-hashes">commit hashes</h2>
+<ul>
+<li>Git generates a unique SHA-1 hash (40 char string of hex digits) for every commit and refers to commits by this ID (usually only displays first 7 digits)</li>
+<li>SHA-1 has been compromised (can spoof hashes) so they are moving to SHA-256</li>
+<li>Making changes to previous commits in <code>.git</code> can be detected b/c each commit's hash is based on the previous commit's hash so the change to a previous commit would be easily detected<ul>
+<li>Simple blockchain of basing commit hashes on previous commits and verifying chains of hashes</li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" defer></script>
+        <script src="../../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

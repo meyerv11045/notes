@@ -56,6 +56,18 @@
 <li>
     <a href="../dunders/" class="dropdown-item">Dunder Methods</a>
 </li>
+                                    
+<li>
+    <a href="../time/" class="dropdown-item">Dates & Time</a>
+</li>
+                                    
+<li>
+    <a href="../logging/" class="dropdown-item">Logging</a>
+</li>
+                                    
+<li>
+    <a href="../classes/" class="dropdown-item">Classes</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -63,27 +75,27 @@
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../swe/swe-notes.md" class="dropdown-item">Software Engineering Notebook</a>
+    <a href="../../swe/swe-notes/" class="dropdown-item">Software Engineering Notebook</a>
 </li>
                                     
 <li>
-    <a href="../../swe/git.md" class="dropdown-item">Git</a>
+    <a href="../../swe/git/" class="dropdown-item">Git</a>
 </li>
                                     
 <li>
-    <a href="../../swe/terminal-cmds.md" class="dropdown-item">Terminal Cmds</a>
+    <a href="../../swe/terminal-cmds/" class="dropdown-item">Terminal Cmds</a>
 </li>
                                     
 <li>
-    <a href="../../swe/microservices.md" class="dropdown-item">Microservices</a>
+    <a href="../../swe/microservices/" class="dropdown-item">Microservices</a>
 </li>
                                     
 <li>
-    <a href="../../swe/docker.md" class="dropdown-item">Docker</a>
+    <a href="../../swe/docker/" class="dropdown-item">Docker</a>
 </li>
                                     
 <li>
-    <a href="../../swe/regex.md" class="dropdown-item">Regex</a>
+    <a href="../../swe/regex/" class="dropdown-item">Regex</a>
 </li>
                                 </ul>
                             </li>
@@ -622,6 +634,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#typing-module" class="nav-link">Typing Module</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#enums" class="nav-link">Enums</a>
               <ul class="nav flex-column">
               </ul>
@@ -702,6 +718,40 @@ class Camera:
   extrinsics: Optional[Extrinsics] = None
   intrinsics: Optional[Intrinsics] = None
 </code></pre>
+<h2 id="typing-module">Typing Module</h2>
+<ul>
+<li>
+<p><code>list</code> instead of <code>List</code> is only 3.9+</p>
+</li>
+<li>
+<p>Type alias: <code>Vector = list[float]</code></p>
+</li>
+<li>
+<p>so those two are interchangeable</p>
+</li>
+<li>
+<p>useful for simplifying complex type signatures</p>
+</li>
+<li>
+<p>NewType creates distinct types to catch logical errors </p>
+</li>
+<li>
+<p>declares a type to be a subtype of another</p>
+</li>
+</ul>
+<p>```python
+  from typing import NewType</p>
+<p>UserId = NewType('UserId', int)
+  some_id = UserId(524313)
+  ```</p>
+<ul>
+<li>
+<p>Frameworks expecting callback functions of specific signatures: <code>Callable[[Arg1Type, Arg2Type], ReturnType]</code></p>
+</li>
+<li>
+<p><code>Callable[..., ReturnType]</code> if you don't care about call signature</p>
+</li>
+</ul>
 <h2 id="enums">Enums</h2></div>
             </div>
         </div>
