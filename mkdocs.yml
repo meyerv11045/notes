@@ -100,6 +100,8 @@ nav:
     - 'Ch. 7 Expression': 'prog_langs/ch7.md'
     - 'Ch. 15 Functional Languages: Racket': 'prog_langs/ch15.md'
     - 'Ch. 16 Logical Languages: Prolog': 'prog_langs/ch16.md'
+  - AI:
+    - 'Complex Systems': 'ai/complexity.md'
   - Robotics:
     - 'Control': 'robotics/control.md'
     - 'Behavior Trees': 'robotics/behavior-trees.md'
@@ -120,6 +122,7 @@ nav:
     - 'Dev Psychology': 'math_science/dev_psy.md'
     - 'Current & Resistance': 'math_science/physics/ch25.md'
   - Web Dev:
+    - 'Static Sites': 'web_dev/static_sites.md'
     - Javascript:
       - 'Basics': 'web_dev/js/basics.md'
       - 'Classes': 'web_dev/js/classes.md'

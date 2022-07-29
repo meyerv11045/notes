@@ -1,6 +1,6 @@
 # How to Speak
 
-Notes from the[legendary lecture](https://www.youtube.com/watch?v=Unzc731iCUY) by MIT professor Patrick Winston
+Notes from the [legendary lecture](https://www.youtube.com/watch?v=Unzc731iCUY) by MIT professor Patrick Winston. [Article](https://www.inc.com/justin-bariso/emotional-intelligence-mit-patrick-winston-how-to-communicate-effectively-how-to-write.html) on his advice.
 
 - Success in life mostly depends on :
     1. your ability to speak
