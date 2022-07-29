@@ -1,8 +1,7 @@
 # Style Guide
 
-
-
-
+- [PEP8 Style Guide](https://pep8.org/#introduction)
+- [Google Style Guide](https://google.github.io/styleguide/pyguide.html) 
 
 ## Exceptions
 
@@ -20,14 +19,3 @@
   - numpy arrays can raise exception in implicit boolean context -> test emptiness of `np.array` using `if not arry.size`
 - Avoid using `@staticmethod` and instead write a module level function instead
 - max line length of 80 chars
-  - 
-
-
-
-
-
-add pre-commit type-check (runtime errors -> build-time errors)
-
-how does wheel and setuptools work
-
-how do python packages and modules work
