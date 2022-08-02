@@ -17,8 +17,6 @@ Centers = Mapping[str, Optional[np.ndarray]]
 Detections = Mapping[str, Optional[np.ndarray]]
 ```
 
-
-
 ## Dataclasses
 
 - Setting frozen option makes the types immutable upon being instantiated
@@ -78,9 +76,29 @@ class Camera:
   intrinsics: Optional[Intrinsics] = None
 ```
 
+## Typing Module
+
+- `list` instead of `List` is only 3.9+
+
+- Type alias: `Vector = list[float]`
+
+  - so those two are interchangeable
+  - useful for simplifying complex type signatures
+
+- NewType creates distinct types to catch logical errors 
+
+  - declares a type to be a subtype of another
+
+  ```python
+  from typing import NewType
+  
+  UserId = NewType('UserId', int)
+  some_id = UserId(524313)
+  ```
+
+- Frameworks expecting callback functions of specific signatures: `Callable[[Arg1Type, Arg2Type], ReturnType]`
+
+  - `Callable[..., ReturnType]` if you don't care about call signature
 
 
 ## Enums
-
-
-

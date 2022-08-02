@@ -20,7 +20,7 @@ Manage resources such as IO connections, threads, db connections, etc. by openin
 with open('test.txt','r') as f:
   file_contents = f.read()
 ```
-  
+
 ## Enumerate Functions
 ```python
 names = ['Bob','Steve','Jim']
@@ -155,7 +155,7 @@ with open(file1, 'r'), open(file2, 'w') as f1, f2:
 - `figure` acts as a contianer for all plot elements
 - `axes` contains most of the figures elements and sets the coordinate system
     - will usually contain 2 `axis` elements that control the ticks
-  
+
 ``` python
 import matplotlib.pyplot as plt
 
@@ -193,3 +193,12 @@ plt.show()
     - All 3 versions of python3 are needed for ROS stuff so thats fun
 - `python3 -m module_name` Searches the path for the module and excecutes its contents as the main module (Runs the specified module even if it isnt in the cwd)
 - Note: find symlinks using `ls -l`
+
+## Virtual Environments
+
+- A common directory location for a virtual environment is `.venv`. This name keeps the directory typically hidden in your shell and thus out of the way while giving it a name that explains why the directory exists. It also prevents clashing with `.env` environment variable definition files that some tooling supports.
+
+
+
+
+

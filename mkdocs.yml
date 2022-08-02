@@ -16,6 +16,9 @@ nav:
     - 'Types': 'python/types.md'
     - 'Concurrency': 'python/concurrency.md'
     - 'Dunder Methods': 'python/dunders.md'
+    - 'Dates & Time': 'python/time.md'
+    - 'Logging': 'python/logging.md'
+    - 'Classes': 'python/classes.md'
   - SWE:
     - 'Software Engineering Notebook': 'swe/swe-notes.md'
     - 'Git': 'swe/git.md'
