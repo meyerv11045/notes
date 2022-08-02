@@ -654,6 +654,22 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#ch-8-self-reproducing-computer-programs" class="nav-link">Ch. 8 Self-Reproducing Computer Programs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-9-genetic-algorithms" class="nav-link">Ch. 9 Genetic Algorithms</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-10-cellular-automata-life-and-the-universe" class="nav-link">Ch. 10 Cellular Automata, Life, and the Universe</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-19-past-future-of-complex-systems-research" class="nav-link">Ch. 19 Past &amp; Future of Complex Systems Research</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -686,6 +702,7 @@
 </ul>
 </li>
 <li>"Science has explored the microcosmos and the macrocosmos; we have a good sense of the lay of the land. The great unexplored frontier is complexity." - Heinz Pagels, <em>The Dreams of Reason</em></li>
+<li>What we now call “complex systems” can trace its ancestry to cybernetics and the related field of systems science</li>
 </ul>
 <h2 id="ch-1-what-is-complexity">Ch. 1 What is Complexity?</h2>
 <ul>
@@ -710,6 +727,7 @@
 <li>Since simple rules produce complex behavior in hard-to-predict ways, the macroscopic behavior of such systems is sometimes called <em>emergent</em>. </li>
 <li>alternative definition of a <em>complex system</em>: <strong>a system that exhibits nontrivial emergent and self-organizing behaviors</strong>.</li>
 <li>The central question of the sciences of complexity is how this emergent self-organized behavior comes about</li>
+<li><em>The proper domain of computer science is information processing writ large across all of nature.</em> —Chris Langton (Quoted in Roger Lewin, <em>Complexity: Life at the Edge of Chaos</em>)</li>
 </ul>
 </li>
 </ul>
@@ -1045,6 +1063,82 @@
 </li>
 <li>Simon contends that evolution can design complex systems in nature only if they can be put together like building blocks—that is, only if they are hierachical and nearly decomposible;</li>
 <li>Simon suggests that what the study of complex systems needs is “a theory of hierarchy.”</li>
+</ul>
+<h2 id="ch-8-self-reproducing-computer-programs">Ch. 8 Self-Reproducing Computer Programs</h2>
+<ul>
+<li>Von Neumann’s original self-reproducing automaton (described mathemat- ically but not actually built by von Neumann) similarly contained not only a self-copying program but also the machinery needed for its own interpretation.<ul>
+<li>The complete work was eventually published in 1966 as a book, <em>Theory of Self-Reproducing Automata</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="ch-9-genetic-algorithms">Ch. 9 Genetic Algorithms</h2>
+<ul>
+<li>
+<p>Two inputs:</p>
+<ol>
+<li>Population of candidate algorithms</li>
+<li>Fitness function that assigns a fitness value to each candidate algorithm measuring how well it performed the desired task</li>
+</ol>
+</li>
+<li>
+<p>Repeat the following steps for some number of <em>generations</em>:</p>
+<ol>
+<li>
+<p>Generate an initial population of candidate solutions. The simplest way to create the initial population is just to generate a bunch of random programs (strings), called “individuals.”</p>
+</li>
+<li>
+<p>Calculate the fitness of each individual in the current population.</p>
+</li>
+<li>
+<p>Select some number of the individuals with highest fitness to be the</p>
+<p><em>parents</em> of the next generation.</p>
+</li>
+<li>
+<p>Pair up the selected parents. Each pair produces offspring by</p>
+<p>recombining parts of the parents, with some chance of random mutations, and the offspring enter the new population. The selected parents continue creating offspring until the new population is full (i.e., has the same number of individuals as the initial population). The new population now becomes the current population.</p>
+</li>
+<li>
+<p>Go to step 2.</p>
+</li>
+</ol>
+</li>
+<li>
+<p>the GA will often evolve a solution that works, but it’s hard to see <em>why</em> it works. That is often because GAs find good solutions that are quite different from the ones humans would come up with</p>
+</li>
+<li>
+<p>Evolutionary algorithms are a great tool for exploring the dark corners of design space</p>
+<ul>
+<li>GAs for neural network architecture and hyperparameter tuning?</li>
+</ul>
+</li>
+</ul>
+<h2 id="ch-10-cellular-automata-life-and-the-universe">Ch. 10 Cellular Automata, Life, and the Universe</h2>
+<ul>
+<li>Brain computes in a fundamentally different way than digital computers. Maybe digital computers cannot replicate brain computations at a global scale</li>
+<li>many people have studied computation in nature via an idealized model of a complex system called a <em>cellular automaton</em></li>
+</ul>
+<h2 id="ch-19-past-future-of-complex-systems-research">Ch. 19 Past &amp; Future of Complex Systems Research</h2>
+<ul>
+<li>mathematician Norbert Wiener proposed the science underlying complex systems in both biology and engineering should focus not on the <em>mass</em>, <em>energy</em>, and <em>force</em> concepts of physics, but rather on the concepts of feedback, control, information, communication, and purpose (or “teleology”)<ul>
+<li>created field of cybernetics-- control and communication theory, in machines and animals</li>
+</ul>
+</li>
+<li>H. Ross Ashby’s “Design for a Brain,” an influential proposal for how the ideas of dynamics, information, and feedback should inform neuroscience and psychology</li>
+<li>Norbert Wiener’s books <em>Cybernetics</em> and <em>The Human Use of Human Beings</em>, which attempted to provide a unified overview of the field and its relevance in many disciplines</li>
+<li>A similar effort toward finding common principles, under the name of General System Theory, was launched in the 1950s by the biologist Ludwig von Bertalanffy, who characterized the effort as “the formulation and deduc- tion of those principles which are valid for ‘systems’ in general.” <ul>
+<li>A <em>system</em> is defined in a very general sense: a collection of interacting elements that together produce, by virtue of their interactions, some form of system-wide behavior.</li>
+</ul>
+</li>
+<li>Artificial intelligence, artificial life, systems ecology, systems biology, neural networks, systems analysis, control theory, and the sciences of complexity have all emerged from seeds sown by the cyberneticists and general system theorists. <ul>
+<li>Cybernetics and general system theory have been largely overshadowed by these offspring disciplines </li>
+</ul>
+</li>
+<li>Tough to advance field when we can't even come up with a vocab to describe it adequately (also need the mathematics to describe complex systems in general)</li>
+<li>The mathematician Steven Strogatz puts it this way: “I think we may be missing the conceptual equivalent of calculus, a way of seeing the consequences of myriad interactions that define a complex system. It could be that this ultracalculus, if it were handed to us, would be forever beyond human comprehension. We just don’t know.”</li>
+<li>pursuing these goals will require, as great science always does, an adventurous intellectual spirit and a willingness to risk failure and reproach by going beyond mainstream science into ill-defined and uncharted territory. <ul>
+<li>“One doesn’t discover new lands without consenting to lose sight of the shore.” - André Gide</li>
+</ul>
+</li>
 </ul></div>
             </div>
         </div>
