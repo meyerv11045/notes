@@ -15,6 +15,7 @@
     - dynamics and chaos 
     - evolution
 - "Science has explored the microcosmos and the macrocosmos; we have a good sense of the lay of the land. The great unexplored frontier is complexity." - Heinz Pagels, *The Dreams of Reason*
+- What we now call “complex systems” can trace its ancestry to cybernetics and the related field of systems science
 
 
 
@@ -35,6 +36,7 @@
     -  Since simple rules produce complex behavior in hard-to-predict ways, the macroscopic behavior of such systems is sometimes called *emergent*. 
     - alternative definition of a *complex system*: **a system that exhibits nontrivial emergent and self-organizing behaviors**.
     - The central question of the sciences of complexity is how this emergent self-organized behavior comes about
+    - *The proper domain of computer science is information processing writ large across all of nature.* —Chris Langton (Quoted in Roger Lewin, *Complexity: Life at the Edge of Chaos*)
 
 ### Insect Colonies
 
@@ -288,3 +290,59 @@
     - Near-decomposibility- many more strong interactions within a subsystem than between subsystems
 - Simon contends that evolution can design complex systems in nature only if they can be put together like building blocks—that is, only if they are hierachical and nearly decomposible;
 - Simon suggests that what the study of complex systems needs is “a theory of hierarchy.”
+
+## Ch. 8 Self-Reproducing Computer Programs
+
+- Von Neumann’s original self-reproducing automaton (described mathemat- ically but not actually built by von Neumann) similarly contained not only a self-copying program but also the machinery needed for its own interpretation.
+    - The complete work was eventually published in 1966 as a book, *Theory of Self-Reproducing Automata*
+
+## Ch. 9 Genetic Algorithms
+
+- Two inputs:
+
+    1. Population of candidate algorithms
+    2. Fitness function that assigns a fitness value to each candidate algorithm measuring how well it performed the desired task
+
+- Repeat the following steps for some number of *generations*:
+
+    1. Generate an initial population of candidate solutions. The simplest way to create the initial population is just to generate a bunch of random programs (strings), called “individuals.”
+
+    2. Calculate the fitness of each individual in the current population.
+
+    3. Select some number of the individuals with highest fitness to be the
+
+        *parents* of the next generation.
+
+    4. Pair up the selected parents. Each pair produces offspring by
+
+        recombining parts of the parents, with some chance of random mutations, and the offspring enter the new population. The selected parents continue creating offspring until the new population is full (i.e., has the same number of individuals as the initial population). The new population now becomes the current population.
+
+    5. Go to step 2.
+
+- the GA will often evolve a solution that works, but it’s hard to see *why* it works. That is often because GAs find good solutions that are quite different from the ones humans would come up with
+
+- Evolutionary algorithms are a great tool for exploring the dark corners of design space
+
+    - GAs for neural network architecture and hyperparameter tuning?
+
+## Ch. 10 Cellular Automata, Life, and the Universe
+
+- Brain computes in a fundamentally different way than digital computers. Maybe digital computers cannot replicate brain computations at a global scale
+- many people have studied computation in nature via an idealized model of a complex system called a *cellular automaton*
+
+
+
+## Ch. 19 Past & Future of Complex Systems Research
+
+- mathematician Norbert Wiener proposed the science underlying complex systems in both biology and engineering should focus not on the *mass*, *energy*, and *force* concepts of physics, but rather on the concepts of feedback, control, information, communication, and purpose (or “teleology”)
+    - created field of cybernetics-- control and communication theory, in machines and animals
+- H. Ross Ashby’s “Design for a Brain,” an influential proposal for how the ideas of dynamics, information, and feedback should inform neuroscience and psychology
+- Norbert Wiener’s books *Cybernetics* and *The Human Use of Human Beings*, which attempted to provide a unified overview of the field and its relevance in many disciplines
+- A similar effort toward finding common principles, under the name of General System Theory, was launched in the 1950s by the biologist Ludwig von Bertalanffy, who characterized the effort as “the formulation and deduc- tion of those principles which are valid for ‘systems’ in general.” 
+    - A *system* is defined in a very general sense: a collection of interacting elements that together produce, by virtue of their interactions, some form of system-wide behavior.
+- Artificial intelligence, artificial life, systems ecology, systems biology, neural networks, systems analysis, control theory, and the sciences of complexity have all emerged from seeds sown by the cyberneticists and general system theorists. 
+    - Cybernetics and general system theory have been largely overshadowed by these offspring disciplines 
+- Tough to advance field when we can't even come up with a vocab to describe it adequately (also need the mathematics to describe complex systems in general)
+- The mathematician Steven Strogatz puts it this way: “I think we may be missing the conceptual equivalent of calculus, a way of seeing the consequences of myriad interactions that define a complex system. It could be that this ultracalculus, if it were handed to us, would be forever beyond human comprehension. We just don’t know.”
+- pursuing these goals will require, as great science always does, an adventurous intellectual spirit and a willingness to risk failure and reproach by going beyond mainstream science into ill-defined and uncharted territory. 
+    - “One doesn’t discover new lands without consenting to lose sight of the shore.” - André Gide
