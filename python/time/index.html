@@ -418,6 +418,10 @@
 <li>
     <a href="../../ai/complexity/" class="dropdown-item">Complex Systems</a>
 </li>
+                                    
+<li>
+    <a href="../../ai/guide/" class="dropdown-item">Guide</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -626,6 +630,10 @@
             
             <li class="nav-item" data-level="1"><a href="#time-datetime" class="nav-link">Time &amp; Datetime</a>
               <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#timing-functions" class="nav-link">Timing Functions</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -641,7 +649,28 @@
 <li><code>unix_ts = datetime_obj.timestamp()</code></li>
 <li>Format a datetime object:</li>
 <li><code>datetime_obj.strftime("%Y-%m-%d-%H-%M-%S")</code></li>
-</ul></div>
+</ul>
+<h2 id="timing-functions">Timing Functions</h2>
+<ul>
+<li><code>timeit.timeit(code_str, number=n)</code> is the core timing functionality that will give you average time for code to complete</li>
+<li>example below gets the time for a neural network inference</li>
+</ul>
+<pre><code class="language-python">import torch
+from learning_warmstarts.neural_nets.models import FFNet
+import timeit
+
+n = 10000
+
+model = FFNet((13,1024,2048,240), torch.nn.functional.relu)
+model.eval()
+
+model.load_state_dict(torch.load('SOA.pt'))
+
+with torch.no_grad():
+   dummy_input = torch.randn((13),dtype=torch.float)
+   total_time = timeit.timeit('model(dummy_input)',number=n, globals=globals())
+   print(f'{total_time / n}')
+</code></pre></div>
             </div>
         </div>
 

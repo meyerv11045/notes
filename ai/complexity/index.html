@@ -418,6 +418,10 @@
 <li>
     <a href="./" class="dropdown-item active">Complex Systems</a>
 </li>
+                                    
+<li>
+    <a href="../guide/" class="dropdown-item">Guide</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -602,7 +606,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../robotics/control/" class="nav-link">
+                                <a rel="next" href="../guide/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -663,6 +667,38 @@
               </ul>
             </li>
             <li class="nav-item" data-level="2"><a href="#ch-10-cellular-automata-life-and-the-universe" class="nav-link">Ch. 10 Cellular Automata, Life, and the Universe</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-11-computing-with-particles" class="nav-link">Ch. 11 Computing with Particles</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-12-information-processing-in-living-systems" class="nav-link">Ch. 12 Information Processing in Living Systems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-13-analogy-making-in-computers" class="nav-link">Ch. 13 Analogy Making in Computers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-14-prospects-of-computer-modeling" class="nav-link">Ch. 14 Prospects of Computer Modeling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-15-network-science" class="nav-link">Ch. 15 Network Science</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-16-applying-network-science-to-real-world-problems" class="nav-link">Ch. 16 Applying Network Science to Real-world Problems</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-17-the-mystery-of-scaling" class="nav-link">Ch. 17 The Mystery of Scaling</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#ch-18-evolution-complexified" class="nav-link">Ch. 18 Evolution Complexified</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -956,7 +992,7 @@
 </li>
 <li>Entropy decreases (living systems become more organized as opposed to less as 2nd law of thermodynamics says would happen for an isolated system) because natural selection performs work (the energy for this work comes from individual organisms metabolizing energy from their environments)</li>
 <li>Darwin's theory predated the discovery of DNA (the mechanism explaining how traits get passed from parent to offspring and how variation in those traits occur- mutations/errors during dna repair or replication)</li>
-<li>Mendel’s exper- iments contradicted the widely believed notion of “blending inheritance”— that the offspring’s traits typically will be an average of the parents’ traits.</li>
+<li>Mendel’s experiments contradicted the widely believed notion of “blending inheritance”— that the offspring’s traits typically will be an average of the parents’ traits.</li>
 <li>Darwinism and Mendelism were thought to be opposing schools of view until reconciled in the 1920s<ul>
 <li>The Modern Synthesis- wasn't until statistics was developed (by Ronald Fisher &amp; Francis Galton) and applied, that a mathematical framework (population genetics) was concieved that demonstrated the two evidence based theories complemented each other</li>
 </ul>
@@ -1116,6 +1152,152 @@
 <ul>
 <li>Brain computes in a fundamentally different way than digital computers. Maybe digital computers cannot replicate brain computations at a global scale</li>
 <li>many people have studied computation in nature via an idealized model of a complex system called a <em>cellular automaton</em></li>
+<li>john von neumann showed a cellular automaton with 29 states was equivalent of a universal turing machine</li>
+<li>conway showed game of life is also universal turing machine</li>
+<li>not very good at replicating von-neumann style computations since they are inherently non-von-neumann architecture of parallel computation. therefore the computation is slow and resource inefficient if at all possible for humans to figure out the initial start states</li>
+<li>Wolfram's book <em>New Kinds of Science</em> posits that all natural processes are computations (process information according to set of rules)</li>
+</ul>
+<h2 id="ch-11-computing-with-particles">Ch. 11 Computing with Particles</h2>
+<ul>
+<li>difficult to design cellular automata to perform tasks that require collective decision making among all the cells</li>
+<li>the genetic algorithm managed to evolve a rule whose behavior can be explained in terms of information-processing particles.<ul>
+<li>expirement worked for 1-d cellular automata but could possibly be scaled up to 3-d to explain the computations in the brain as processing information waves</li>
+</ul>
+</li>
+</ul>
+<h2 id="ch-12-information-processing-in-living-systems">Ch. 12 Information Processing in Living Systems</h2>
+<ul>
+<li>The <em>meaning</em> of the input and output information in a Turing machine comes from its interpretation by humans. The meaning of the information created in intermediate steps in the computation also comes from its interpretation (or design) by humans, who understand the steps in terms of commands in a high-level programming language. <ul>
+<li>This higher level of description allows us to understand computations in a human-friendly way that is abstracted from particular details of machine code and hardware.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ch-13-analogy-making-in-computers">Ch. 13 Analogy Making in Computers</h2>
+<ul>
+<li>humans are good at perceiving abstract similarity between two entities or situations by letting concepts “slip” from situation to situation in a fluid way</li>
+<li>takeaways from computer making analogies program:<ul>
+<li>you can’t explore everything, but you don’t know which possibilities are worth exploring without first exploring them. </li>
+<li>You have to be open-minded, but the territory is too vast to explore everything; you need to use probabilities in order for exploration to be fair</li>
+<li>uses ant-colony like optimization algorithm to balance exploration of breadth and depth</li>
+<li>uses temperature to also control how much exploration is done</li>
+</ul>
+</li>
+<li>The ultimate goal of AI is to take humans out of the <em>meaning</em> loop and have the computer itself perceive meaning. This is AI’s hardest problem. analogy making will likely be part of the solution </li>
+</ul>
+<h2 id="ch-14-prospects-of-computer-modeling">Ch. 14 Prospects of Computer Modeling</h2>
+<ul>
+<li>Models are ways for our minds to make sense of observed phenomena in terms of concepts that are familiar to us, concepts that we can get our heads around </li>
+<li>Prediction Models vs. Idea Models<ul>
+<li>Preditiction models are usually mathematical and can be used to predict the future state of a system</li>
+<li>Idea models are relatively simple and meant to gain insights into a general concept without the necessity of making detailed predictions about any specific system (e.g. turing machine, cellular automaton, koch curve, prisoner's dilemma)</li>
+</ul>
+</li>
+<li>Tit for tat was the optimal strategy in the prisoner's dilemma <ul>
+<li>retaliated a defection by defecting the next turn</li>
+<li>forgave a defection if the oppononent began cooperating by also cooperating again</li>
+<li>never was the first to defect (common trait amongst all the best strategies)</li>
+<li><em>strategy was clear and predictable for the opponent, making cooperation much easier</em></li>
+<li>a genetic algorithm evolved a same/similar strategy to the tit for tat strategy proposed by a mathematician</li>
+<li>“nice, retaliatory, forgiving, and clear” are the characteristics Axelrod cited as requirements for success in the repeated Prisoner’s Dilemma.<ul>
+<li>“How to Save the Planet: Be Nice, Retaliatory, Forgiving, and Clear.”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>“Five Rules for the Evolution of Cooperation.”</li>
+<li>all models are wrong in some way, but some are very useful for beginning to address highly complex systems. <ul>
+<li>Independent replication can uncover the hidden unrealistic assumptions and sensitivity to parameters that are part of any idealized model.</li>
+</ul>
+</li>
+</ul>
+<h2 id="ch-15-network-science">Ch. 15 Network Science</h2>
+<ul>
+<li>A major discovery to date of network science is that high-clustering, skewed degree distributions, and hub structure seem to be characteristic of the vast majority of all the natural, social, and technological networks that network scientists have studied.</li>
+<li>the <em>small-world property</em>: a network has this property if it has relatively few long-distance connections but has a small average path-length relative to the total number of nodes. <ul>
+<li>Small-world networks also typically exhibit a high degree of clustering</li>
+<li>It has been hypothesized that at least two conflicting evolutionary selective pressures are responsible: <ul>
+<li>the need for information to travel quickly within the system</li>
+<li>the high cost of creating and maintaining reliable long-distance connections</li>
+<li>Small-world networks solve both these problems by having short average path lengths between nodes in spite of having only a relatively small number of long-distance connections.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>scale free networks = power law degree distribution (e.g. <script type="math/tex">1/k^2</script> for webpages)<ol>
+<li>small # hubs </li>
+<li>nodes with degrees over large range of possible values</li>
+<li>self similarity (invariant under rescaling)</li>
+<li>small-world structure </li>
+</ol>
+</li>
+</ul>
+<h2 id="ch-16-applying-network-science-to-real-world-problems">Ch. 16 Applying Network Science to Real-world Problems</h2>
+<ul>
+<li>Network science includes techniques that can be applied to a huge domain of fields </li>
+<li><em>preferential attachment</em>- networks grow in such a way that nodes with higher degree receive more new links than nodes with lower degree.<ul>
+<li>explains the existence of many scale-free networks in the real world</li>
+<li>other mechanishms also exist that are similar and quite different </li>
+</ul>
+</li>
+<li>studying dynamics of information spread, not just the structure of the network, is important open problem in network science</li>
+<li>Cascading failures- one nodes failure shifts lode to other nodes, that overload and subsequeuntly fail causing a domino chain of failures</li>
+</ul>
+<h3 id="the-brain_1">The Brain</h3>
+<ul>
+<li>Brain has small-world properties which has several benefits from an evolution perspective:<ul>
+<li>more resilient to losing neurons or functional areas (though losing hubs causes more drastic harm)</li>
+<li>more energy efficient structure since signals are not sent to all neurons/functional areas</li>
+<li>greatly facilitates synchronization (groups of neurons firing repeatedly) which is a major mechanism by which the brain transmits information efficiently </li>
+</ul>
+</li>
+<li>The brain can be viewed as a network at several different levels of description; for example, with neurons as nodes and synapses as links, or with entire <em>func- tional areas</em> as nodes and larger-scale connections between them (i.e., groups of neural connections) as links.</li>
+</ul>
+<h3 id="genetic-regulatory-networks">Genetic Regulatory Networks</h3>
+<ul>
+<li>Humans and mustard seeds have roughly same number of genes (25k)</li>
+<li>Our complexity is thought to come from the network of genes regulating each other</li>
+<li>regulatory networks are scale free which makes them resilient (important given the transcription process is prone to errors)</li>
+</ul>
+<h2 id="ch-17-the-mystery-of-scaling">Ch. 17 The Mystery of Scaling</h2>
+<ul>
+<li>metabolism does not scale linearly with an organism's mass becuase the corresponding surface area to distribute the by-product heat over would not scale at the same rate, making larger animals overheat</li>
+<li>If you plot a power law on a double logarithmic plot (both axes are log scale), it will look like a straight line, and the slope of that line will be equal to the power law’s exponent</li>
+<li>Power law distributions <em>are</em> fractals—they are self-similar at all scales of magnification, and a power-law’s exponent gives the dimension of the corresponding fractal, where the dimension quantifies precisely how the distribution’s self-similarity scales with level of magnification<ul>
+<li>fractal structure is one way to generate a power-law distribution; and if you happen to see that some quantity (such as metabolic rate) follows a power-law distribution, then you can hypothesize that there is something about the underlying system that is self-similar or “fractal-like.”</li>
+</ul>
+</li>
+<li>metabolic scaling theory came out of network science and fractals and explains the scaling mystery in organisms</li>
+<li>Understanding power-law distributions, their origins, their significance, and their commonalities across disciplines is currently a very important open problem in many areas of complex systems research.</li>
+</ul>
+<h2 id="ch-18-evolution-complexified">Ch. 18 Evolution Complexified</h2>
+<ul>
+<li>evolutionary developmental biology is answering a lot of questions related to diversity of species and its relationship with genetics and evolution</li>
+<li>genetic regulatory networks allow for much larger space of possibilities than simply the number of genes would indicate (explains large differences in species despite similar number of genes)</li>
+<li>Two types of genes:<ul>
+<li>functional- encode proteins for cell building/maintenance </li>
+<li>regulatory- encode proteins for turning off/on other genes by binding to their corresponding DNA sequences and disallowing or allowing RNA to bind to the gene and complete the transcription and translation process<ul>
+<li>regulatory genes can encode for proteins that regulate other regulatory genes, demonstrating how complex the regulation network can get and how large the combinatorial space of possible genetic expressions is which leads to large diversity in organisms</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stuart Kauffman demonstrated natural selection is in principle not necessary to create a complex creature with Random Boolean Networks (RBNs)<ul>
+<li>a network structure with enough nodes (e.g. gene regulatory network) controlling other nodes will result in the emergence of complex and self-organized behavior</li>
+<li>turned the idea of evolution over time being the key to organisms' complexity on its head</li>
+<li>Kauffman’s book, <em>The Origins of Order</em> talks more about these ideas</li>
+</ul>
+</li>
+<li>Developing accurate models of genetic regulatory networks is currently a very active research area in biology<ul>
+<li>RBNs have severe limatations with noise and make lots of simplifying assumptions that make it less accurate model of genetic regulatory networks</li>
+</ul>
+</li>
+<li>Evolutionary biologist Dan McShea classifies evolutionists into three categories: <ul>
+<li>adaptationists, who believe that natural selection is primary </li>
+<li>historicists, who give credit to historical accident for many evolutionary changes</li>
+<li>structuralists, such as Kauffman, who focus on how organized structure comes about even in the absence of natural selection</li>
+</ul>
+</li>
+<li>Evolutionary biology is still working on answering its most important question: How does complexity in living systems come about through evolution?</li>
 </ul>
 <h2 id="ch-19-past-future-of-complex-systems-research">Ch. 19 Past &amp; Future of Complex Systems Research</h2>
 <ul>
