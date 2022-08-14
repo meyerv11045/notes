@@ -102,6 +102,7 @@ nav:
     - 'Ch. 16 Logical Languages: Prolog': 'prog_langs/ch16.md'
   - AI:
     - 'Complex Systems': 'ai/complexity.md'
+    - 'Guide': 'ai/guide.md'
   - Robotics:
     - 'Control': 'robotics/control.md'
     - 'Behavior Trees': 'robotics/behavior-trees.md'

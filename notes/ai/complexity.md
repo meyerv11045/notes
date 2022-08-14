@@ -17,8 +17,6 @@
 - "Science has explored the microcosmos and the macrocosmos; we have a good sense of the lay of the land. The great unexplored frontier is complexity." - Heinz Pagels, *The Dreams of Reason*
 - What we now call “complex systems” can trace its ancestry to cybernetics and the related field of systems science
 
-
-
 ## Ch. 1 What is Complexity?
 
 - What if we are viewing intelligence from the wrong persepctive
@@ -203,7 +201,7 @@
     - Evolutionary change is constant and gradual via the accumulation of small, favorable variations.
 - Entropy decreases (living systems become more organized as opposed to less as 2nd law of thermodynamics says would happen for an isolated system) because natural selection performs work (the energy for this work comes from individual organisms metabolizing energy from their environments)
 - Darwin's theory predated the discovery of DNA (the mechanism explaining how traits get passed from parent to offspring and how variation in those traits occur- mutations/errors during dna repair or replication)
-- Mendel’s exper- iments contradicted the widely believed notion of “blending inheritance”— that the offspring’s traits typically will be an average of the parents’ traits.
+- Mendel’s experiments contradicted the widely believed notion of “blending inheritance”— that the offspring’s traits typically will be an average of the parents’ traits.
 - Darwinism and Mendelism were thought to be opposing schools of view until reconciled in the 1920s
     - The Modern Synthesis- wasn't until statistics was developed (by Ronald Fisher & Francis Galton) and applied, that a mathematical framework (population genetics) was concieved that demonstrated the two evidence based theories complemented each other
 - Modern Synthesis principles:
@@ -329,8 +327,116 @@
 
 - Brain computes in a fundamentally different way than digital computers. Maybe digital computers cannot replicate brain computations at a global scale
 - many people have studied computation in nature via an idealized model of a complex system called a *cellular automaton*
+- john von neumann showed a cellular automaton with 29 states was equivalent of a universal turing machine
+- conway showed game of life is also universal turing machine
+- not very good at replicating von-neumann style computations since they are inherently non-von-neumann architecture of parallel computation. therefore the computation is slow and resource inefficient if at all possible for humans to figure out the initial start states
+- Wolfram's book *New Kinds of Science* posits that all natural processes are computations (process information according to set of rules)
 
+## Ch. 11 Computing with Particles
 
+- difficult to design cellular automata to perform tasks that require collective decision making among all the cells
+- the genetic algorithm managed to evolve a rule whose behavior can be explained in terms of information-processing particles.
+    - expirement worked for 1-d cellular automata but could possibly be scaled up to 3-d to explain the computations in the brain as processing information waves
+
+## Ch. 12 Information Processing in Living Systems
+
+- The *meaning* of the input and output information in a Turing machine comes from its interpretation by humans. The meaning of the information created in intermediate steps in the computation also comes from its interpretation (or design) by humans, who understand the steps in terms of commands in a high-level programming language. 
+    - This higher level of description allows us to understand computations in a human-friendly way that is abstracted from particular details of machine code and hardware.
+
+## Ch. 13 Analogy Making in Computers
+
+- humans are good at perceiving abstract similarity between two entities or situations by letting concepts “slip” from situation to situation in a fluid way
+- takeaways from computer making analogies program:
+    - you can’t explore everything, but you don’t know which possibilities are worth exploring without first exploring them. 
+    - You have to be open-minded, but the territory is too vast to explore everything; you need to use probabilities in order for exploration to be fair
+    - uses ant-colony like optimization algorithm to balance exploration of breadth and depth
+    - uses temperature to also control how much exploration is done
+- The ultimate goal of AI is to take humans out of the *meaning* loop and have the computer itself perceive meaning. This is AI’s hardest problem. analogy making will likely be part of the solution 
+
+## Ch. 14 Prospects of Computer Modeling
+
+- Models are ways for our minds to make sense of observed phenomena in terms of concepts that are familiar to us, concepts that we can get our heads around 
+- Prediction Models vs. Idea Models
+    - Preditiction models are usually mathematical and can be used to predict the future state of a system
+    - Idea models are relatively simple and meant to gain insights into a general concept without the necessity of making detailed predictions about any specific system (e.g. turing machine, cellular automaton, koch curve, prisoner's dilemma)
+- Tit for tat was the optimal strategy in the prisoner's dilemma 
+    - retaliated a defection by defecting the next turn
+    - forgave a defection if the oppononent began cooperating by also cooperating again
+    - never was the first to defect (common trait amongst all the best strategies)
+    - *strategy was clear and predictable for the opponent, making cooperation much easier*
+    - a genetic algorithm evolved a same/similar strategy to the tit for tat strategy proposed by a mathematician
+    - “nice, retaliatory, forgiving, and clear” are the characteristics Axelrod cited as requirements for success in the repeated Prisoner’s Dilemma.
+        - “How to Save the Planet: Be Nice, Retaliatory, Forgiving, and Clear.”
+- “Five Rules for the Evolution of Cooperation.”
+- all models are wrong in some way, but some are very useful for beginning to address highly complex systems. 
+    - Independent replication can uncover the hidden unrealistic assumptions and sensitivity to parameters that are part of any idealized model.
+
+## Ch. 15 Network Science
+
+- A major discovery to date of network science is that high-clustering, skewed degree distributions, and hub structure seem to be characteristic of the vast majority of all the natural, social, and technological networks that network scientists have studied.
+- the *small-world property*: a network has this property if it has relatively few long-distance connections but has a small average path-length relative to the total number of nodes. 
+    - Small-world networks also typically exhibit a high degree of clustering
+    - It has been hypothesized that at least two conflicting evolutionary selective pressures are responsible: 
+        - the need for information to travel quickly within the system
+        - the high cost of creating and maintaining reliable long-distance connections
+        - Small-world networks solve both these problems by having short average path lengths between nodes in spite of having only a relatively small number of long-distance connections.
+- scale free networks = power law degree distribution (e.g. $1/k^2$ for webpages)
+    1. small # hubs 
+    2. nodes with degrees over large range of possible values
+    3. self similarity (invariant under rescaling)
+    4. small-world structure 
+
+## Ch. 16 Applying Network Science to Real-world Problems
+
+- Network science includes techniques that can be applied to a huge domain of fields 
+- *preferential attachment*- networks grow in such a way that nodes with higher degree receive more new links than nodes with lower degree.
+    - explains the existence of many scale-free networks in the real world
+    - other mechanishms also exist that are similar and quite different 
+- studying dynamics of information spread, not just the structure of the network, is important open problem in network science
+- Cascading failures- one nodes failure shifts lode to other nodes, that overload and subsequeuntly fail causing a domino chain of failures
+
+### The Brain
+
+- Brain has small-world properties which has several benefits from an evolution perspective:
+    - more resilient to losing neurons or functional areas (though losing hubs causes more drastic harm)
+    - more energy efficient structure since signals are not sent to all neurons/functional areas
+    - greatly facilitates synchronization (groups of neurons firing repeatedly) which is a major mechanism by which the brain transmits information efficiently 
+- The brain can be viewed as a network at several different levels of description; for example, with neurons as nodes and synapses as links, or with entire *func- tional areas* as nodes and larger-scale connections between them (i.e., groups of neural connections) as links.
+
+### Genetic Regulatory Networks
+
+- Humans and mustard seeds have roughly same number of genes (25k)
+- Our complexity is thought to come from the network of genes regulating each other
+- regulatory networks are scale free which makes them resilient (important given the transcription process is prone to errors)
+
+## Ch. 17 The Mystery of Scaling
+
+- metabolism does not scale linearly with an organism's mass becuase the corresponding surface area to distribute the by-product heat over would not scale at the same rate, making larger animals overheat
+- If you plot a power law on a double logarithmic plot (both axes are log scale), it will look like a straight line, and the slope of that line will be equal to the power law’s exponent
+- Power law distributions *are* fractals—they are self-similar at all scales of magnification, and a power-law’s exponent gives the dimension of the corresponding fractal, where the dimension quantifies precisely how the distribution’s self-similarity scales with level of magnification
+    - fractal structure is one way to generate a power-law distribution; and if you happen to see that some quantity (such as metabolic rate) follows a power-law distribution, then you can hypothesize that there is something about the underlying system that is self-similar or “fractal-like.”
+- metabolic scaling theory came out of network science and fractals and explains the scaling mystery in organisms
+- Understanding power-law distributions, their origins, their significance, and their commonalities across disciplines is currently a very important open problem in many areas of complex systems research.
+
+## Ch. 18 Evolution Complexified
+
+- evolutionary developmental biology is answering a lot of questions related to diversity of species and its relationship with genetics and evolution
+- genetic regulatory networks allow for much larger space of possibilities than simply the number of genes would indicate (explains large differences in species despite similar number of genes)
+- Two types of genes:
+    - functional- encode proteins for cell building/maintenance 
+    - regulatory- encode proteins for turning off/on other genes by binding to their corresponding DNA sequences and disallowing or allowing RNA to bind to the gene and complete the transcription and translation process
+        - regulatory genes can encode for proteins that regulate other regulatory genes, demonstrating how complex the regulation network can get and how large the combinatorial space of possible genetic expressions is which leads to large diversity in organisms
+- Stuart Kauffman demonstrated natural selection is in principle not necessary to create a complex creature with Random Boolean Networks (RBNs)
+    - a network structure with enough nodes (e.g. gene regulatory network) controlling other nodes will result in the emergence of complex and self-organized behavior
+    - turned the idea of evolution over time being the key to organisms' complexity on its head
+    - Kauffman’s book, *The Origins of Order* talks more about these ideas
+- Developing accurate models of genetic regulatory networks is currently a very active research area in biology
+    - RBNs have severe limatations with noise and make lots of simplifying assumptions that make it less accurate model of genetic regulatory networks
+- Evolutionary biologist Dan McShea classifies evolutionists into three categories: 
+    - adaptationists, who believe that natural selection is primary 
+    - historicists, who give credit to historical accident for many evolutionary changes
+    - structuralists, such as Kauffman, who focus on how organized structure comes about even in the absence of natural selection
+- Evolutionary biology is still working on answering its most important question: How does complexity in living systems come about through evolution?
 
 ## Ch. 19 Past & Future of Complex Systems Research
 
