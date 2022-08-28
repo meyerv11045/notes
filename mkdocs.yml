@@ -103,6 +103,8 @@ nav:
   - AI:
     - 'Complex Systems': 'ai/complexity.md'
     - 'Guide': 'ai/guide.md'
+    - 'Ch. 1 Introduction': 'ai/1-intro.md'
+    - 'Ch. 2 Agents': 'ai/2-agents.md'
   - Robotics:
     - 'Control': 'robotics/control.md'
     - 'Behavior Trees': 'robotics/behavior-trees.md'

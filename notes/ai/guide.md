@@ -2,18 +2,22 @@
 
 ## Neural Networks
 
-- back-propagation is a way to take an error observed at the output units and to “propagate” the blame for that error backward so as to assign proper blame to each of the weights in the network. 
-    - Allows back-propagation to determine how much to change each weight in order to reduce the error. 
+- back-propagation is a way to take an error observed at the output units and to “propagate” the blame for that error backward so as to assign proper blame to each of the weights in the network.
+    - Allows back-propagation to determine how much to change each weight in order to reduce the error.
 - Learning in neural networks simply consists in gradually modifying the weights on connections so that each output’s error gets as close to 0 as possible on all training examples
 - Backprop overcame the learning limitations of perceptron
 - these subsymbolic systems are less brittle on difficult tasks like object recognition compared to symbolic systems however at the cost of explainability/understandability
 - Introduction of ImageNet competition in 2012 which was then effectively solved by CNNs in 2017 with a top-5 accuracy of 98% (82% top-1 accuracy)
-- unlike CNNs, human perception is highly regulated by the context of the situation 
-    - human perception system has more feedback connections than simply feedforward connections 
+- unlike CNNs, human perception is highly regulated by the context of the situation
+    - human perception system has more feedback connections than simply feedforward connections
 - adversarial attacks are a huge flaw in DNNs and beg the question are DNNs even learning the things we want?
 - a prerequisite to trustworthy moral reasoning is general common sense
     - an understanding of causality is important for common sense as is the ability to make analogies
 - understanding limitations of neural networks through studying adversarial attacks
+- machine learning is more accurately: machine inductive inference
+    - that is, machines make predictions based on a series of observations (the training data)
+- there have been attempts at more deductive reasoning machines
+    - Making predictions based on a set of rules all predictions must follow (inductive systems learn approximations of these rules through observing lots of training data)
 
 ## Reinforcement Learning
 
@@ -26,7 +30,7 @@
         - temporal difference learning- the network learns to make its outputs consistent from one iteration to the next, assuming that later iterations give better estimates of value than earlier iterations
 - succcesfull transfer of learned skills in simulation to real world is open problem
 - episode- 1 play of the game
-- iteration- 1 action and state pair 
+- iteration- 1 action and state pair
 - The system doesn’t always choose the action with the highest estimated value in order to balance between exploration and exploitation
 - Standard Search for Checkers and Chess: at a given turn, create a partial game tree using the current board position as the root; apply an evaluation function to the furthest layer in the tree and then use the minimax algorithm to propagate the values up the tree in order to determine which move to make
     - Checkers: 6 possible moves; Chess: 35 possible moves; Go: 250 possible moves
@@ -39,7 +43,7 @@
 - deep q-learning is terrible at generalizing and seems to be learn very superficial solutions without any actual understanding:
     - shifting the paddle a few pixels up and using a previously trained superhuman agent gives poor results
     - hints that the system didn't even learn the concept of paddle or really anything in the game (overattribution to say it did)
-    - also vulnerable to adversarial changes to the state inputs to damage the ability to play well 
+    - also vulnerable to adversarial changes to the state inputs to damage the ability to play well
 - For humans, a crucial part of intelligence is, rather than being able to learn any particular skill, being able to learn to think and to then apply our thinking flexibly to whatever situations or challenges we encounter
 
 ## Barrier of Meaning
@@ -55,7 +59,7 @@
     - simulations appear central to the representation of meaning
     - we understand abstract concepts in terms of core physical knowledge
         - Ex: warm physical feeling and thinking of social warmth activate same brain regions
-        - we understand lots of abstract concepts in terms of metaphors relating them to physical knowlege 
+        - we understand lots of abstract concepts in terms of metaphors relating them to physical knowlege
             - this could be why more abstract concepts like math can be harder for people to grasp, especially in the absence of using metaphors to teach the concepts
     - analogy making in a very general sense as “the perception of a common essence between two things
     - without concepts there can be no thought, and without analogies there can be no concepts
@@ -64,7 +68,7 @@
 
 ## Knowledge, Abstraction, and Analogy
 
-- Works on intuituve physics 
+- Works on intuituve physics
     - N. Watters et al. "Visual Interaction Networks"
     - T.D. Ullman et al. "Mind Game: Game Engines as an Architecture for Intuitive Physics"
     - KK. Kansky eet al. "Schema Networks: Zero-Shot Transfer with a Generative Causal Model of Intuitive Physics"

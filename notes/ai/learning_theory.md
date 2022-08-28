@@ -1,4 +1,0 @@
-- machine learning is more accurately: machine inductive inference
-    - that is, machines make predictions based on a series of observations (the training data)
-- there have been attempts at more deductive reasoning machines
-    - Making predictions based on a set of rules all predictions must follow (inductive systems learn approximations of these rules through observing lots of training data)

@@ -1,0 +1,22 @@
+# Ch. 1 Introduction
+
+- intelligence has a wide variety of definitions
+    - formal one is rationality (doing the "right thing" or making the optimal decision as defined by the objective provided to an agent)
+        - mathematical programming is a subfield concerned with rational decision making
+    - human vs. rational and thought vs. behavior
+- agent- something that acts
+    - Rational agent- acts to achieve best outcome (or best expected outcome in the case of uncertainty)
+- perfect rationality- always taking the exactly optimal action
+- limited rationality- acting appropriately when there is not enough time to do all the computations for an exactly optimal/rational action (oftentimes in complex environments)
+- Value alignment problem- achieving agreement btw our true preferences and the objective we give to a machine
+- dualism- part of the mind outside nature, exempt from physical laws (proposed by descarte)
+- materialism/physicalism/naturalism- the brain operates according to laws of physics and the perception of choices is simply a result of this
+- empricism- concerned with establishing the source of knowledge
+- decision theory- prob theory + utility theory in order to provide a framework for individual decisions made under uncertainty
+    - useful for large economies where each agent does not need to pay attention to other agents' actions
+- game theory- framework for small economies where the actions of one player significantly affect the utility of another
+- Multiagent systems- decisions involving multiple agents
+- operations research- how to make rational decisions when payoffs are the result of several sequential actions
+    - led to markov decision processes and reinforcement learning
+- Rolnick *et al.* (2019) present a 60-page catalog of ways in which machine learning can be used to tackle climate change.
+- previous symbolic systems promoted by Newell and Simon used specific hard-coded facts about the world. what if future neuro-symbolic systems use learned representations of concepts in the world as the symbols and previous symbol manipulation techniques can be used on them
