@@ -422,6 +422,14 @@
 <li>
     <a href="./" class="dropdown-item active">Guide</a>
 </li>
+                                    
+<li>
+    <a href="../1-intro/" class="dropdown-item">Ch. 1 Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../2-agents/" class="dropdown-item">Ch. 2 Agents</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -606,7 +614,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../../robotics/control/" class="nav-link">
+                                <a rel="next" href="../1-intro/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -656,16 +664,16 @@
 <h1 id="ai-a-guide-for-thinking-humans">AI: A Guide for Thinking Humans</h1>
 <h2 id="neural-networks">Neural Networks</h2>
 <ul>
-<li>back-propagation is a way to take an error observed at the output units and to “propagate” the blame for that error backward so as to assign proper blame to each of the weights in the network. <ul>
-<li>Allows back-propagation to determine how much to change each weight in order to reduce the error. </li>
+<li>back-propagation is a way to take an error observed at the output units and to “propagate” the blame for that error backward so as to assign proper blame to each of the weights in the network.<ul>
+<li>Allows back-propagation to determine how much to change each weight in order to reduce the error.</li>
 </ul>
 </li>
 <li>Learning in neural networks simply consists in gradually modifying the weights on connections so that each output’s error gets as close to 0 as possible on all training examples</li>
 <li>Backprop overcame the learning limitations of perceptron</li>
 <li>these subsymbolic systems are less brittle on difficult tasks like object recognition compared to symbolic systems however at the cost of explainability/understandability</li>
 <li>Introduction of ImageNet competition in 2012 which was then effectively solved by CNNs in 2017 with a top-5 accuracy of 98% (82% top-1 accuracy)</li>
-<li>unlike CNNs, human perception is highly regulated by the context of the situation <ul>
-<li>human perception system has more feedback connections than simply feedforward connections </li>
+<li>unlike CNNs, human perception is highly regulated by the context of the situation<ul>
+<li>human perception system has more feedback connections than simply feedforward connections</li>
 </ul>
 </li>
 <li>adversarial attacks are a huge flaw in DNNs and beg the question are DNNs even learning the things we want?</li>
@@ -674,6 +682,14 @@
 </ul>
 </li>
 <li>understanding limitations of neural networks through studying adversarial attacks</li>
+<li>machine learning is more accurately: machine inductive inference<ul>
+<li>that is, machines make predictions based on a series of observations (the training data)</li>
+</ul>
+</li>
+<li>there have been attempts at more deductive reasoning machines<ul>
+<li>Making predictions based on a set of rules all predictions must follow (inductive systems learn approximations of these rules through observing lots of training data)</li>
+</ul>
+</li>
 </ul>
 <h2 id="reinforcement-learning">Reinforcement Learning</h2>
 <ul>
@@ -692,7 +708,7 @@
 </li>
 <li>succcesfull transfer of learned skills in simulation to real world is open problem</li>
 <li>episode- 1 play of the game</li>
-<li>iteration- 1 action and state pair </li>
+<li>iteration- 1 action and state pair</li>
 <li>The system doesn’t always choose the action with the highest estimated value in order to balance between exploration and exploitation</li>
 <li>Standard Search for Checkers and Chess: at a given turn, create a partial game tree using the current board position as the root; apply an evaluation function to the furthest layer in the tree and then use the minimax algorithm to propagate the values up the tree in order to determine which move to make<ul>
 <li>Checkers: 6 possible moves; Chess: 35 possible moves; Go: 250 possible moves</li>
@@ -709,7 +725,7 @@
 <li>deep q-learning is terrible at generalizing and seems to be learn very superficial solutions without any actual understanding:<ul>
 <li>shifting the paddle a few pixels up and using a previously trained superhuman agent gives poor results</li>
 <li>hints that the system didn't even learn the concept of paddle or really anything in the game (overattribution to say it did)</li>
-<li>also vulnerable to adversarial changes to the state inputs to damage the ability to play well </li>
+<li>also vulnerable to adversarial changes to the state inputs to damage the ability to play well</li>
 </ul>
 </li>
 <li>For humans, a crucial part of intelligence is, rather than being able to learn any particular skill, being able to learn to think and to then apply our thinking flexibly to whatever situations or challenges we encounter</li>
@@ -727,7 +743,7 @@
 <li>simulations appear central to the representation of meaning</li>
 <li>we understand abstract concepts in terms of core physical knowledge<ul>
 <li>Ex: warm physical feeling and thinking of social warmth activate same brain regions</li>
-<li>we understand lots of abstract concepts in terms of metaphors relating them to physical knowlege <ul>
+<li>we understand lots of abstract concepts in terms of metaphors relating them to physical knowlege<ul>
 <li>this could be why more abstract concepts like math can be harder for people to grasp, especially in the absence of using metaphors to teach the concepts</li>
 </ul>
 </li>
@@ -742,7 +758,7 @@
 </ul>
 <h2 id="knowledge-abstraction-and-analogy">Knowledge, Abstraction, and Analogy</h2>
 <ul>
-<li>Works on intuituve physics <ul>
+<li>Works on intuituve physics<ul>
 <li>N. Watters et al. "Visual Interaction Networks"</li>
 <li>T.D. Ullman et al. "Mind Game: Game Engines as an Architecture for Intuitive Physics"</li>
 <li>KK. Kansky eet al. "Schema Networks: Zero-Shot Transfer with a Generative Causal Model of Intuitive Physics"</li>
