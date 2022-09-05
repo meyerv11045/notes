@@ -1,4 +1,4 @@
-site_name: The Notebook
+site_name: Notes
 site_url: https://meyerv11045.github.com/notes
 docs_dir: notes
 
@@ -10,6 +10,12 @@ markdown_extensions:
         enable_dollar_delimiter: True
 
 nav:
+  - AI:
+    - 'Complex Systems': 'ai/complexity.md'
+    - 'Guide': 'ai/guide.md'
+    - 'Ch. 1 Introduction': 'ai/1-intro.md'
+    - 'Ch. 2 Agents': 'ai/2-agents.md'
+    - 'Ch. 3 Search': 'ai/3-search.md'
   - Python:
     - 'Overview': 'python/overview.md'
     - 'Style': 'python/style.md'
@@ -19,22 +25,6 @@ nav:
     - 'Dates & Time': 'python/time.md'
     - 'Logging': 'python/logging.md'
     - 'Classes': 'python/classes.md'
-  - SWE:
-    - 'Software Engineering Notebook': 'swe/swe-notes.md'
-    - 'Git': 'swe/git.md'
-    - 'Terminal Cmds': 'swe/terminal-cmds.md'
-    - 'Microservices': 'swe/microservices.md'
-    - 'Docker': 'swe/docker.md'
-    - 'Regex': 'swe/regex.md'
-  - Multimedia:
-    - 'Overview': 'multimedia/overview.md'
-    - 'Streaming': 'multimedia/streaming.md'
-  - Azure:
-    - Storage:
-      - 'Overview': 'azure/storage/overview.md'
-      - 'Blobs': 'azure/storage/blob_storage.md'
-    - Networking:
-      - 'Virtual Networks': 'cloud/networking/vnets.md'
   - Algorithms:
     - Graphs:
       - 'Representations': 'algorithms/graphs/graphs.md'
@@ -90,30 +80,11 @@ nav:
       - 'Reactor': 'software_design/patterns/reactor.md'
       - 'Strategy': 'software_design/patterns/strategy.md'
       - 'Template': 'software_design/patterns/template.md'
-  - Programming Languages:
-    - 'Programming Paradigms': 'prog_langs/paradigms.md'
-    - 'Ch. 1 Introduction': 'prog_langs/ch1.md'
-    - 'Ch. 2 History': 'prog_langs/ch2.md'
-    - 'Ch. 3 Syntax & Semantics': 'prog_langs/ch3.md'
-    - 'Ch. 5 Names, Bindings, & Scope': 'prog_langs/ch5.md'
-    - 'Ch. 6 Data Types': 'prog_langs/ch6.md'
-    - 'Ch. 7 Expression': 'prog_langs/ch7.md'
-    - 'Ch. 15 Functional Languages: Racket': 'prog_langs/ch15.md'
-    - 'Ch. 16 Logical Languages: Prolog': 'prog_langs/ch16.md'
-  - AI:
-    - 'Complex Systems': 'ai/complexity.md'
-    - 'Guide': 'ai/guide.md'
-    - 'Ch. 1 Introduction': 'ai/1-intro.md'
-    - 'Ch. 2 Agents': 'ai/2-agents.md'
   - Robotics:
+    - 'Mobile Robots': 'robotics/13-mobile-robots.md'
     - 'Control': 'robotics/control.md'
     - 'Behavior Trees': 'robotics/behavior-trees.md'
     - 'Hardware': 'robotics/hardware.md'
-  - Digital Systems:
-    - 'Assembly': 'dig_sys/ch6-assembly.md'
-    - 'Microarchitecture': 'dig_sys/ch7-processor.md'
-    - 'Memory Systems': 'dig_sys/ch8-mem-sys.md'
-    - 'IO Systems': 'dig_sys/ch9-io-sys.md'
   - Prob & Stats:
     - 'Random Variables': 'math_science/prob_stats/rv.md'
     - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
@@ -124,23 +95,60 @@ nav:
     - 'Molecular Genetics': 'math_science/molecular_genetics.md'
     - 'Dev Psychology': 'math_science/dev_psy.md'
     - 'Current & Resistance': 'math_science/physics/ch25.md'
-  - Web Dev:
-    - 'Static Sites': 'web_dev/static_sites.md'
-    - Javascript:
-      - 'Basics': 'web_dev/js/basics.md'
-      - 'Classes': 'web_dev/js/classes.md'
-      - 'Objects': 'web_dev/js/objects.md'
-      - 'Modules': 'web_dev/js/modules.md'
-      - 'Promises': 'web_dev/js/promises.md'
-      - 'jQuery': 'web_dev/js/jQuery.md'
-      - 'Node Pkgs': 'web_dev/js/using_node_pkgs.md'
-      - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
-    - HTML & CSS:
-      - 'Sass': 'web_dev/html-css/sass.md'
-    - Databases:
-      - "DBMS": 'databases/dbms.md'
-      - 'SQL': 'databases/sql.md'
-      - 'MySQL': 'databases/mysql.md'
-  - Misc:
+  - Archive:
     - 'MacOS': 'misc/macos.md'
     - 'How to Speak': 'misc/how-to-speak.md'
+
+    - SWE:
+      - 'Software Engineering Notebook': 'swe/swe-notes.md'
+      - 'Git': 'swe/git.md'
+      - 'Terminal Cmds': 'swe/terminal-cmds.md'
+      - 'Microservices': 'swe/microservices.md'
+      - 'Docker': 'swe/docker.md'
+      - 'Regex': 'swe/regex.md'
+
+    - Azure:
+      - Storage:
+        - 'Overview': 'azure/storage/overview.md'
+        - 'Blobs': 'azure/storage/blob_storage.md'
+      - Networking:
+        - 'Virtual Networks': 'cloud/networking/vnets.md'
+
+    - Programming Languages:
+      - 'Programming Paradigms': 'prog_langs/paradigms.md'
+      - 'Ch. 1 Introduction': 'prog_langs/ch1.md'
+      - 'Ch. 2 History': 'prog_langs/ch2.md'
+      - 'Ch. 3 Syntax & Semantics': 'prog_langs/ch3.md'
+      - 'Ch. 5 Names, Bindings, & Scope': 'prog_langs/ch5.md'
+      - 'Ch. 6 Data Types': 'prog_langs/ch6.md'
+      - 'Ch. 7 Expression': 'prog_langs/ch7.md'
+      - 'Ch. 15 Functional Languages: Racket': 'prog_langs/ch15.md'
+      - 'Ch. 16 Logical Languages: Prolog': 'prog_langs/ch16.md'
+
+    - Digital Systems:
+      - 'Assembly': 'dig_sys/ch6-assembly.md'
+      - 'Microarchitecture': 'dig_sys/ch7-processor.md'
+      - 'Memory Systems': 'dig_sys/ch8-mem-sys.md'
+      - 'IO Systems': 'dig_sys/ch9-io-sys.md'
+
+    - Multimedia:
+      - 'Overview': 'multimedia/overview.md'
+      - 'Streaming': 'multimedia/streaming.md'
+
+    - Web Dev:
+      - 'Static Sites': 'web_dev/static_sites.md'
+      - Javascript:
+        - 'Basics': 'web_dev/js/basics.md'
+        - 'Classes': 'web_dev/js/classes.md'
+        - 'Objects': 'web_dev/js/objects.md'
+        - 'Modules': 'web_dev/js/modules.md'
+        - 'Promises': 'web_dev/js/promises.md'
+        - 'jQuery': 'web_dev/js/jQuery.md'
+        - 'Node Pkgs': 'web_dev/js/using_node_pkgs.md'
+        - 'Browser Compatibility': 'web_dev/js/browser_compatibility.md'
+      - HTML & CSS:
+        - 'Sass': 'web_dev/html-css/sass.md'
+      - Databases:
+        - "DBMS": 'databases/dbms.md'
+        - 'SQL': 'databases/sql.md'
+        - 'MySQL': 'databases/mysql.md'
