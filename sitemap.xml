@@ -191,6 +191,41 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://meyerv11045.github.com/notes/dl/activation_functions/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/dl/auto_encoders/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/dl/embeddings/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/dl/overview/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/dl/pytorch/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/dl/ssl/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/dl/transformers/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://meyerv11045.github.com/notes/math_science/brain/</loc>
          <lastmod>2022-09-05</lastmod>
          <changefreq>daily</changefreq>
@@ -212,6 +247,11 @@
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/physics/notes/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/math_science/prob_stats/bayesian/</loc>
          <lastmod>2022-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -246,12 +286,137 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://meyerv11045.github.com/notes/ml/classification/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/clustering/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/dim_red/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/dts/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/feature_scaling/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/model_selection/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/optimization/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/pca/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/regression/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/regularization/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/reinforcement_learning/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/statistical_learning/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/supervised_learning/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ml/svms/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://meyerv11045.github.com/notes/multimedia/overview/</loc>
          <lastmod>2022-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/multimedia/streaming/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/num_methods/factorization/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/num_methods/lin_alg/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/num_methods/math/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/optimization/convergence/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/optimization/method-template/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/optimization/overview/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/optimization/steepest-descent/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/optimization/root-methods/bisection/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/optimization/root-methods/newtons/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/optimization/root-methods/regula_falsi/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/optimization/root-methods/secant/</loc>
          <lastmod>2022-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -367,6 +532,11 @@
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/robotics/hardware/</loc>
+         <lastmod>2022-09-05</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/robotics/mpc/</loc>
          <lastmod>2022-09-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
