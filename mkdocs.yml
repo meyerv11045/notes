@@ -16,6 +16,40 @@ nav:
     - 'Ch. 1 Introduction': 'ai/1-intro.md'
     - 'Ch. 2 Agents': 'ai/2-agents.md'
     - 'Ch. 3 Search': 'ai/3-search.md'
+  - ML:
+    - 'Supervised Learning': 'ml/supervised_learning.md'
+    - 'Regression': 'ml/regression.md'
+    - 'Classification': 'ml/classification.md'
+    - 'Dimensionality Reduction': 'ml/dim_red.md'
+    - 'Clustering': 'ml/clustering.md'
+    - 'Optimization Techniques': 'ml/optimization.md'
+    - 'Feature Scaling': 'ml/feature_scaling.md'
+    - 'Model Selection': 'ml/model_selection.md'
+    - 'Regularization': 'ml/regularization.md'
+    - 'PCA': 'ml/pca.md'
+    - 'SVMs': 'ml/svms.md'
+    - 'Decision Trees': 'ml/dts.md'
+    - 'Reinforcement Learning': 'ml/reinforcement_learning.md'
+  - DL:
+    - 'Overview': 'dl/overview.md'
+    - 'Activation Functions': 'dl/activation_functions.md'
+    - 'PyTorch': 'dl/pytorch.md'
+    - 'AutoEncoders': 'dl/auto_encoders.md'
+    - 'Self-Supervised Learning': 'dl/ssl.md'
+    - 'Embeddings': 'dl/embeddings.md'
+  - Optimization:
+    - 'Overview': 'optimization/overview.md'
+    - 'Convergence': 'optimization/convergence.md'
+    - Root Finding methods:
+      - 'Newtons Method': 'optimization/root-methods/newtons.md'
+      - 'Secant Method': 'optimization/root-methods/secant.md'
+      - 'Bisection': 'optimization/root-methods/bisection.md'
+      - 'Regula Falsi': 'optimization/root-methods/regula_falsi.md'
+    - 'Model Predictive Control': 'optimization/mpc.md'
+  - Numerical Methods:
+    - 'Important Ideas': 'num_methods/math.md'
+    - 'Matrix Factorization': 'num_methods/factorization.md'
+    - 'Linear Algebra': 'num_methods/lin_alg.md'
   - Python:
     - 'Overview': 'python/overview.md'
     - 'Style': 'python/style.md'
@@ -83,6 +117,7 @@ nav:
   - Robotics:
     - 'Mobile Robots': 'robotics/13-mobile-robots.md'
     - 'Control': 'robotics/control.md'
+    - 'MPC': 'robotics/mpc.md'
     - 'Behavior Trees': 'robotics/behavior-trees.md'
     - 'Hardware': 'robotics/hardware.md'
   - Prob & Stats:
@@ -90,6 +125,7 @@ nav:
     - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
     - 'Joint Probability Distributions': 'math_science/prob_stats/joint-distributions.md'
     - 'Statistics': 'math_science/prob_stats/stats.md'
+    - 'Bayesian Thinking': 'math_science/prob_states/bayesian.md'
   - Science:
     - 'The Brain': 'math_science/brain.md'
     - 'Molecular Genetics': 'math_science/molecular_genetics.md'
