@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         
-        <link rel="canonical" href="https://meyerv11045.github.com/notes/prog_langs/ch6/">
+        <link rel="canonical" href="https://meyerv11045.github.com/notes/robotics/13-mobile-robots/">
         <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>Ch. 6 Data Types - Notes</title>
+        <title>Mobile Robots - Notes</title>
         <link href="../../css/bootstrap.min.css" rel="stylesheet">
         <link href="../../css/font-awesome.min.css" rel="stylesheet">
         <link href="../../css/base.css" rel="stylesheet">
@@ -324,24 +324,24 @@
   </li>
                                 </ul>
                             </li>
-                            <li class="dropdown">
+                            <li class="dropdown active">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Robotics <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../../robotics/13-mobile-robots/" class="dropdown-item">Mobile Robots</a>
+    <a href="./" class="dropdown-item active">Mobile Robots</a>
 </li>
                                     
 <li>
-    <a href="../../robotics/control/" class="dropdown-item">Control</a>
+    <a href="../control/" class="dropdown-item">Control</a>
 </li>
                                     
 <li>
-    <a href="../../robotics/behavior-trees/" class="dropdown-item">Behavior Trees</a>
+    <a href="../behavior-trees/" class="dropdown-item">Behavior Trees</a>
 </li>
                                     
 <li>
-    <a href="../../robotics/hardware/" class="dropdown-item">Hardware</a>
+    <a href="../hardware/" class="dropdown-item">Hardware</a>
 </li>
                                 </ul>
                             </li>
@@ -387,7 +387,7 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="dropdown active">
+                            <li class="dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Archive <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
@@ -464,39 +464,39 @@
     <ul class="dropdown-menu">
             
 <li>
-    <a href="../paradigms/" class="dropdown-item">Programming Paradigms</a>
+    <a href="../../prog_langs/paradigms/" class="dropdown-item">Programming Paradigms</a>
 </li>
             
 <li>
-    <a href="../ch1/" class="dropdown-item">Ch. 1 Introduction</a>
+    <a href="../../prog_langs/ch1/" class="dropdown-item">Ch. 1 Introduction</a>
 </li>
             
 <li>
-    <a href="../ch2/" class="dropdown-item">Ch. 2 History</a>
+    <a href="../../prog_langs/ch2/" class="dropdown-item">Ch. 2 History</a>
 </li>
             
 <li>
-    <a href="../ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
+    <a href="../../prog_langs/ch3/" class="dropdown-item">Ch. 3 Syntax & Semantics</a>
 </li>
             
 <li>
-    <a href="../ch5/" class="dropdown-item">Ch. 5 Names, Bindings, & Scope</a>
+    <a href="../../prog_langs/ch5/" class="dropdown-item">Ch. 5 Names, Bindings, & Scope</a>
 </li>
             
 <li>
-    <a href="./" class="dropdown-item active">Ch. 6 Data Types</a>
+    <a href="../../prog_langs/ch6/" class="dropdown-item">Ch. 6 Data Types</a>
 </li>
             
 <li>
-    <a href="../ch7/" class="dropdown-item">Ch. 7 Expression</a>
+    <a href="../../prog_langs/ch7/" class="dropdown-item">Ch. 7 Expression</a>
 </li>
             
 <li>
-    <a href="../ch15/" class="dropdown-item">Ch. 15 Functional Languages: Racket</a>
+    <a href="../../prog_langs/ch15/" class="dropdown-item">Ch. 15 Functional Languages: Racket</a>
 </li>
             
 <li>
-    <a href="../ch16/" class="dropdown-item">Ch. 16 Logical Languages: Prolog</a>
+    <a href="../../prog_langs/ch16/" class="dropdown-item">Ch. 16 Logical Languages: Prolog</a>
 </li>
     </ul>
   </li>
@@ -623,12 +623,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href="../ch5/" class="nav-link">
+                                <a rel="prev" href="../../software_design/patterns/template/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../ch7/" class="nav-link">
+                                <a rel="next" href="../control/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -650,48 +650,8 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#data-types" class="nav-link">Data Types</a>
+            <li class="nav-item" data-level="1"><a href="#ch-13-wheeled-mobile-robots" class="nav-link">Ch. 13 Wheeled Mobile Robots</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#primitive" class="nav-link">Primitive</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#strings" class="nav-link">Strings</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#ordinal-types" class="nav-link">Ordinal Types</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#enumeration-types" class="nav-link">Enumeration Types</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#array-types" class="nav-link">Array Types</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#composite-types" class="nav-link">Composite Types</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#union-type" class="nav-link">Union Type</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#pointer-types" class="nav-link">Pointer Types</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#heap-managementgarbage-collection" class="nav-link">Heap Management/Garbage Collection</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#type-checking" class="nav-link">Type Checking</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
               </ul>
             </li>
         </ul>
@@ -699,329 +659,11 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="data-types">Data Types</h1>
+<h1 id="ch-13-wheeled-mobile-robots">Ch. 13 Wheeled Mobile Robots</h1>
 <ul>
-<li>Defines a set of possible values (the domain) and the pre-defined operations</li>
-<li>Defines how to interpret bit strings of various lengths</li>
-</ul>
-<h2 id="primitive">Primitive</h2>
-<ul>
-<li><em>Integer</em>- almost always an exact reflection of hardware<ul>
-<li>python has unlimited precision ints (other languages limit based on number of bits)</li>
-</ul>
-</li>
-<li><em>Floats</em>- model real numbers (but only as approximations)<ul>
-<li>IEEE Floating Point Standard 754</li>
-<li>float- usually 32 bits</li>
-<li>double- double the precision so often 64 bits</li>
-</ul>
-</li>
-<li><em>Complex</em>- two floats (1 real, 1 complex)</li>
-<li><em>Decimal</em>- attempts were made to store a fixed number of decimal digits in coded form (Binary Coded Decimal) where each digit is encoded separately but was overall a failure <ul>
-<li>Pros: increased accuracy since each digit is represented by 4 bits</li>
-<li>Cons: limited range, wastes memory, not all CPUs have direct hardware support</li>
-<li>Used by business applications for representing money (e.g. C# has a double and decimal type which has more precision)</li>
-</ul>
-</li>
-<li><em>Boolean</em>- implemented as a byte due to byte-addressable memory (can't address single bits)<ul>
-<li>Pros: readability in logic expressions (as opposed to interpreting numeric expressions)</li>
-</ul>
-</li>
-<li>Character- <ul>
-<li>ASCII is a 7-bit character set which is limited and inadequate in the modern age</li>
-<li>UNICODE <ul>
-<li>initially fixed 16-bit representation </li>
-<li>includes the base multilingual plane for non-roman characters</li>
-<li>backwards compatible with ASCII</li>
-<li>still inadequate</li>
-</ul>
-</li>
-<li>UTF-8 <ul>
-<li>variable length for bit representation </li>
-<li>most widely used</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="strings">Strings</h2>
-<ol>
-<li>Static Length<ul>
-<li>compile time descriptor includes the length</li>
-<li>Descriptor- collection of attributes of a variable<ul>
-<li>can be static- maintained by compiler (e.g. C++)</li>
-<li>or can be dynamic- managed at runtime (e.g. Python)</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Limited Dynamic Length <ul>
-<li>run time descriptor includes the maximum length and the current length </li>
-</ul>
-</li>
-<li>Dynamic Length</li>
-</ol>
-<h2 id="ordinal-types">Ordinal Types</h2>
-<ul>
-<li>Type in which the range of possible values can be easily mapped to the set of positive integers</li>
-<li>primitive ordinals in java: integer, char, boolean</li>
-</ul>
-<h2 id="enumeration-types">Enumeration Types</h2>
-<ul>
-<li>user-defined ordinal type</li>
-<li>all possible values, which are amed constants, are provided in the definition</li>
-<li>Pros:<ul>
-<li>readability </li>
-<li>reliability- compiler can perform checks</li>
-</ul>
-</li>
-</ul>
-<h2 id="array-types">Array Types</h2>
-<ul>
-<li>Array- an aggregate of <em>homogeneous data</em> elements where individual elements are identified by position relative to the first </li>
-<li>indexing/subscripting an array is a mapping from indices to elements <ul>
-<li>some languages like Ada, Fortran, and Matlab use () instead of []</li>
-</ul>
-</li>
-<li>index range checking is done:<ul>
-<li>by default: C#, Java, Go</li>
-<li>Not at all: C, C++, Fortran</li>
-</ul>
-</li>
-<li><em>heterogeneous array</em>- one in which elements need not be the same type <ul>
-<li>JS, Perl, Python, Ruby</li>
-<li>heap-dynamic arrays</li>
-<li>oftentimes array elements only contain references to the data stored</li>
-</ul>
-</li>
-</ul>
-<h3 id="subscript-binding-array-categories">Subscript Binding &amp; Array Categories</h3>
-<h4 id="static">Static</h4>
-<ul>
-<li>Statically bound subscript ranges </li>
-<li>Static storage allocation </li>
-<li>Increased efficiency b/c no dynamic (de)allocation</li>
-<li>C, C++ arrays that include <code>static</code> </li>
-</ul>
-<h4 id="fixed-stack-dynamic">Fixed Stack-Dynamic</h4>
-<ul>
-<li>Statically bound subscript ranges</li>
-<li>Storage allocation done at declaration elaboration time</li>
-<li>Increased space efficiency b/c space can be reused during runtime</li>
-<li>C, C++ arrays without<code>static</code></li>
-</ul>
-<h4 id="fixed-heap-dynamic">Fixed Heap-Dynamic</h4>
-<ul>
-<li>Static binding of subscript ranges</li>
-<li>Dynamic storage binding when requested at runtime</li>
-</ul>
-<h4 id="heap-dynamic">Heap-Dynamic</h4>
-<ul>
-<li>Dynamic binding of subscript ranges</li>
-<li>Dynamic storage allocation </li>
-<li>Can change any number of times (more flexible)</li>
-</ul>
-<h3 id="array-implementation">Array Implementation</h3>
-<ul>
-<li>access function for single-dim array:</li>
-</ul>
-<pre><code>address(a[k]) = 
-    address(arr[lower_bound]) + ((k - lower_bound) * element_size)
-</code></pre>
-<ul>
-<li>access function for multi-dim array:</li>
-</ul>
-<pre><code>address(a[i,j]) = 
-    address(a[row_lb, col_lb]) 
-    + (((i - row_lb) * n) + (j - col_lb)) * element_size 
-</code></pre>
-<p><img alt="access for multi-dim array" src="../static/access_multi_array.png" /></p>
-<ul>
-<li>the lower bounds are zero in 0-indexed languages and 1 in 1-indexed languages</li>
-<li>Storing Arrays in Memory:<ul>
-<li>Row-Major order (used by most languages)</li>
-<li>Column-Major order (Fortran &amp; Matlab)</li>
-<li>knowing which affects speed of code<ul>
-<li>row major order means you should process by row to reduce cache misses since cache might store only 1 row at a time</li>
-<li>cache misses and even page swaps are expensive with large matrices</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="associative-arrays">Associative Arrays</h3>
-<ul>
-<li>Unordered collection of data elements indexed by keys </li>
-<li>maps arbitrary indices to values</li>
-<li>elements are (key, value) pairs</li>
-<li>often implemented as hash tables</li>
-</ul>
-<h2 id="composite-types">Composite Types</h2>
-<ul>
-<li>Aggregate of possibly different data elements in whih the individual elements are identified by names</li>
-<li>struct in c/c++ &amp; go, named tuple in python </li>
-<li>from OOP pov, classes are a composite type</li>
-</ul>
-<h2 id="union-type">Union Type</h2>
-<ul>
-<li>
-<p>type whose variables are allowed to store different type values at different times during execution</p>
-</li>
-<li>
-<p>free union- when there is no language support for type checking in the union construct (e.g. C, C++) so it allows you to create unsafe code </p>
-<ul>
-<li>reason why C,C++ are not strongly typed</li>
-</ul>
-</li>
-<li>
-<p>discriminant- type indicator required to be included in a union in certain languages like ML, Haskell, F#</p>
-</li>
-<li>
-<p>Java and C# don't support unions due to safety concerns </p>
-</li>
-</ul>
-<h2 id="pointer-types">Pointer Types</h2>
-<ul>
-<li>
-<p>Variable that takes on values of memory addresses or a special value <code>null</code></p>
-<ul>
-<li>Indirect addressing- using a pointer to step through an array </li>
-<li>Dynamic memory- can access memory locaitions on the heap</li>
-</ul>
-</li>
-<li>
-<p>2 operations:</p>
-<ol>
-<li>Assignment- set a pointer variable's value to a memory address</li>
-<li>Dereferencing- get the value stored at the memory address represented by pointer's value<ul>
-<li>Can be done explicitly or implicitly </li>
-</ul>
-</li>
-</ol>
-</li>
-<li>
-<p>Dangers:</p>
-<ul>
-<li>Dangling Pointers- pointer points to heap-dynamic variable that has been deallocated</li>
-<li>Memory Leak- allocated heap-dynamic variable that is no longer acessible to the user program</li>
-<li>Buffer Overflows- no bounds checking on pointers when using with arrays</li>
-</ul>
-</li>
-<li>
-<p>Necessary for dynamic data structures </p>
-</li>
-</ul>
-<h3 id="reference-types">Reference Types</h3>
-<ul>
-<li>C++ has special kind of pointer type that is used primarily for formal parameters<ul>
-<li>has the advantages of <em>both</em> pass-by-pointer and pass-by-value</li>
-</ul>
-</li>
-<li>Java uses only references and replaces pointers entirely</li>
-<li>C# uses references but also allows pointers in <code>unsafe</code> methods </li>
-</ul>
-<h3 id="solutions-for-dangling-pointers">Solutions for Dangling Pointers</h3>
-<ul>
-<li>Tombstones <ul>
-<li>An extra heap cell is allocated as a pointer to the actual heap-dynamic variable</li>
-<li>Any pointers pointing to the heap-dynamic variable actually point at its tombstone</li>
-<li>If any pointer deallocates the variable, the tombstone is set to null so other pointers now point to null instead of a re-allocated memory address (safer but can still get nullptr dereferencing errors)</li>
-<li>Costly in time and space</li>
-<li>Similar idea to smart pointers</li>
-</ul>
-</li>
-</ul>
-<p><img alt="tombstone" src="../static/tombstones.png" /></p>
-<ul>
-<li>Locks-and-Keys<ul>
-<li>Pointer values are represented as (key, address) pairs </li>
-<li>Heap-dynamic variables are represented as variable plus a cell for an integer lock value</li>
-<li>When a variable is allocated, the lock value is created and plaed in the lock cell <em>and</em> the key of the pointer</li>
-<li>Each dereference must compare the key and the lock</li>
-</ul>
-</li>
-</ul>
-<p><img alt="locks-and-keys" src="../static/locks-and-keys.png" /></p>
-<ul>
-<li>No explicit deallocation permited by the language (e.g. Rust &amp; Java)</li>
-</ul>
-<h2 id="heap-managementgarbage-collection">Heap Management/Garbage Collection</h2>
-<ul>
-<li>Complex runtime process</li>
-<li>Two approaches:<ol>
-<li>Eager- reclamation is gradual/continual (e.g. referenece counters)</li>
-<li>Lazy- reclamation occurs when the list of variable space becomes empty or low (e.g. mark-sweeep &amp; stop-n-copy)</li>
-</ol>
-</li>
-<li>Java uses combination of both techniques</li>
-</ul>
-<h3 id="reference-counter">Reference Counter</h3>
-<ul>
-<li>Maintain a counter in every cell which stores the number of pointers currently pointing at the cell</li>
-<li>Reclaim cells when their count drops to zero</li>
-<li>Pros:<ul>
-<li>Incremental, so no significant delays in app's execution</li>
-</ul>
-</li>
-<li>Cons:<ul>
-<li>Space Required</li>
-<li>Execution time required</li>
-<li>Complications for cells connected in a cycle</li>
-</ul>
-</li>
-</ul>
-<h3 id="mark-and-sweep">Mark-and-Sweep</h3>
-<ul>
-<li>Recursively follow all "live" pointers, marking all discovered structures as useful</li>
-<li>Sweep over the entire heap and reclaim any structures not marked as useful (turn off markers in prep for next time)</li>
-<li>Pros:</li>
-<li>Cons:<ul>
-<li>space required</li>
-<li>execution time required</li>
-</ul>
-</li>
-</ul>
-<h3 id="stop-and-copy">Stop-and-Copy</h3>
-<ul>
-<li>Splits heap memory in half</li>
-<li>All new allocations go into the active half</li>
-<li>At collection time, recursively follow all live pointers and copy all discovered structures to the other half, which becomes the active half</li>
-<li>The inactive half now only contains garbge and is reclaimed all at once</li>
-</ul>
-<h3 id="generational-copiers">Generational Copiers</h3>
-<ul>
-<li>Exploit fact that many objects have short lives while others have long lives</li>
-<li>Keep track of lifetimes (how many collection passes they have survived) and collect long lifetime objects less frequently</li>
-</ul>
-<h3 id="escape-analysis">Escape Analysis</h3>
-<ul>
-<li>Determines if any references to a value escape the function where the value i declared</li>
-<li>If no references escape, the value can be stored on the stack</li>
-<li>Values stored on the stack don't need to be allocated/freed</li>
-<li>Java and Go do this</li>
-</ul>
-<pre><code class="language-java">// car object would be stored on the stack
-public String getCarDesc(){
-  Car car = new Car();
-  String desc = car.genDesc();
-  return desc;
-}   
-</code></pre>
-<h2 id="type-checking">Type Checking</h2>
-<ul>
-<li>ensure operands of an operator are of compatible types<ul>
-<li>include subprogram parameters and assignment statements</li>
-</ul>
-</li>
-<li>If type bindings are static, type checking can be static (i.e. at compile time)</li>
-<li>If type bindings are dynamic, type checking must be dynamic</li>
-<li>Compatible Type- type that is legal for the operator or can be coerced (implicitly converted) by compiler generated code to a legal type</li>
-<li>Strongly Typed Languages- type errors are always detected at compile time or run time<ul>
-<li>No: C, C++</li>
-<li>Almost: Java, C# (allow explicit type conversion which can fail at runtime but pass compiler)</li>
-<li>Yes: F#, ML, Rust</li>
-</ul>
-</li>
+<li>Kinematic Model- how wheel speed maps to robot velocities</li>
+<li>Dynamic Model- how wheel torques map to robot accelerations</li>
+<li>nonholonomic robot- cannot move directly sideways (velocity constraint)</li>
 </ul></div>
             </div>
         </div>
