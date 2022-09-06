@@ -33,8 +33,8 @@
 
     ``` python
     def build_max_heap(A):
-    	for i in range(n/2, 0, -1): #n/2 to 1
-    		max_heapify(A, i)
+      for i in range(n/2, 0, -1): #n/2 to 1
+        max_heapify(A, i)
     ```
 
     - Why start at n/2?
