@@ -56,6 +56,10 @@
 <li>
     <a href="../../ai/3-search/" class="dropdown-item">Ch. 3 Search</a>
 </li>
+                                    
+<li>
+    <a href="../../ai/4-search-cmplx-env/" class="dropdown-item">Ch. 4 Search in Complex Envs</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -129,6 +133,14 @@
                                     
 <li>
     <a href="./" class="dropdown-item active">PyTorch</a>
+</li>
+                                    
+<li>
+    <a href="../cnns/" class="dropdown-item">CNNs</a>
+</li>
+                                    
+<li>
+    <a href="../transformers/" class="dropdown-item">Transformers</a>
 </li>
                                     
 <li>
@@ -533,6 +545,10 @@
 </li>
                                     
 <li>
+    <a href="../../math_science/sym-spec/" class="dropdown-item">The Symbolic Species</a>
+</li>
+                                    
+<li>
     <a href="../../math_science/physics/ch25/" class="dropdown-item">Current & Resistance</a>
 </li>
                                 </ul>
@@ -778,7 +794,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../auto_encoders/" class="nav-link">
+                                <a rel="next" href="../cnns/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -800,25 +816,45 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#pytorch-blitz" class="nav-link">PyTorch Blitz</a>
+            <li class="nav-item" data-level="1"><a href="#pytorch" class="nav-link">PyTorch</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#torchnn-pkg" class="nav-link">torch.nn pkg</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#recap" class="nav-link">recap</a>
+            <li class="nav-item" data-level="2"><a href="#tensor-dimensions" class="nav-link">Tensor Dimensions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#gradient-clipping" class="nav-link">gradient clipping</a>
+            <li class="nav-item" data-level="2"><a href="#models" class="nav-link">Models</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#hooks" class="nav-link">hooks</a>
+            <li class="nav-item" data-level="2"><a href="#loss-functions" class="nav-link">Loss Functions</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#loss-functions" class="nav-link">loss functions</a>
+            <li class="nav-item" data-level="2"><a href="#training" class="nav-link">Training</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#testing" class="nav-link">Testing</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#full-loop" class="nav-link">Full Loop</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#gpu" class="nav-link">GPU</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#data-loading" class="nav-link">Data Loading</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#core-types" class="nav-link">Core Types</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#advanced-techniques" class="nav-link">Advanced Techniques</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -829,40 +865,30 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h1 id="pytorch-blitz">PyTorch Blitz</h1>
-<p>autograd- calculates and stores the gradients for each model param in each parameter's <code>.grad</code> attribute</p>
-<p>simple training loop:</p>
-<pre><code class="language-python">import torch
-
-model = torchvision.models.resnet18(pretrained=True)
-data = torch.rand(1,3,64,64) # 64 x 64 img with 3 channels
-labels = torch.rand(1,1000)
-
-prediction = model(data) # Forward pass
-
-loss = (prediction - labels).sum()
-
-loss.backward() # backward pass (backprop)
-
-# register all the model params in the optimizer
-optimizer = torch.optim.SGD(model.parameters(),lr=1e-2,momentum=0.9)
-optimizer.step() # initiate gradient descent
-</code></pre>
-<p>if a parameter in a NN does not <code>requires_grad</code> then these params are known as frozen meaning the gradients won't be recomputed. NOTE: <code>torch.no_grad</code> also does same thing (<a href="https://pytorch.org/docs/stable/generated/torch.no_grad.html">read more</a>). also useful for finetuning pretrained networks where you only want to modify the params in the classifer layers to make predictions on the new labels:</p>
-<pre><code class="language-python">model = torchvision.models.resnet18(pretrained=True)
-
-# Freeze all the parameters in the network
-for param in model.parameters():
-    param.requires_grad = False
-
-# replace last linear layer (the classifier) with new unfrozen classification layer  
-model.fc = nn.Linear(512, 10)
-
-</code></pre>
-<h2 id="torchnn-pkg">torch.nn pkg</h2>
-<p><code>nn.Module</code> contains layers and a <code>forward(input)</code> method that returns the output. Can build modules of networks that can be used in other networks. Only have to define the forward function and the backward function will be automatically defined using autograd (relies on autograd parsing the operations in the forward function and creating the appropriate computational graph of all the derivatives)</p>
-<p><code>net.parameters()</code> returns the learnable parameters of a nn module</p>
-<p>only supports mini-batch inputs, no single input samples</p>
+<h1 id="pytorch">PyTorch</h1>
+<h2 id="tensor-dimensions">Tensor Dimensions</h2>
+<ul>
+<li>0th dimension is typically the batch<ul>
+<li><code>tensor.size(dim=0)</code> gives the size of the batch</li>
+</ul>
+</li>
+<li>For image data:<ul>
+<li>shape: <code>[B, C, H, W]</code></li>
+<li>Ex: <code>[64, 1, 28, 28]</code> is batch of 64 images with 1 channel of size 28 x 28 pixels</li>
+</ul>
+</li>
+</ul>
+<h2 id="models">Models</h2>
+<h3 id="torchnnmodule"><code>torch.nn.Module</code></h3>
+<ul>
+<li>Subclass this class and define <code>forward()</code> (autograd automatically defines <code>backward()</code>)</li>
+<li>Don't use python list to store the layers (the torch module will not be aware of the parameters so doing <code>model.parameters()</code> will throw an error, e.g. when setting up the optimizer)<ul>
+<li>parameters don't get registered properly</li>
+</ul>
+</li>
+<li>Use <code>torch.nn.Modulelist</code> to keep a list of layers with the torch module being aware of them</li>
+<li>(+) More customizable for complicated networks where <code>forward()</code> is not as trivial</li>
+</ul>
 <pre><code class="language-python">import torch.nn as nn
 import torch.nn.functional as F
 
@@ -887,69 +913,20 @@ class Net(nn.Module):
 
 net = Net()
 </code></pre>
-<p>A loss function takes the (output, target) pair of inputs, and computes a value that estimates how far away the output is from the target. Many are provided by the nn pkg such as <code>nn.MSELoss</code> but you can also define your own </p>
-<p>In order to backpropagate the error/loss, we need to clear the existing gradients (<code>net.zero_grad()</code>) and then call <code>loss.backwards()</code></p>
-<p>https://pytorch.org/docs/stable/nn.html</p>
-<p>updating the weights can be done using the below code since <code>weights = weights - learning rate * gradient</code> for SGD: </p>
-<pre><code class="language-python">learning_rate = 0.01
-for f in net.parameters():
-    f.data.sub_(f.grad.data * learning_rate)
-</code></pre>
-<p>using the torch.optim module lets you easily use other update rules like SGD, Adam, RMSProp, etc. </p>
-<pre><code class="language-python">import torch.optim as optim
-
-# create your optimizer
-optimizer = optim.SGD(net.parameters(), lr=0.01)
-
-# in your training loop:
-optimizer.zero_grad()   # zero the gradient buffers
-output = net(input)
-loss = criterion(output, target)
-loss.backward()
-optimizer.step()    # Does the update
-</code></pre>
-<h2 id="recap">recap</h2>
+<h3 id="torchnnsequential"><code>torch.nn.Sequential</code></h3>
 <ul>
-<li><code>torch.Tensor</code> - A <em>multi-dimensional array</em> with support for autograd operations like <code>backward()</code>. Also <em>holds the gradient</em>w.r.t. the tensor.</li>
-<li><code>nn.Module</code> - Neural network module. <em>Convenient way of encapsulating parameters</em>, with helpers for moving them to GPU, exporting, loading, etc.</li>
-<li><code>nn.Parameter</code> - A kind of Tensor, that is <em>automatically registered as a parameter when assigned as an attribute to a</em> <code>Module</code>.</li>
-<li><code>autograd.Function</code> - Implements <em>forward and backward definitions of an autograd operation</em>. Every <code>Tensor</code> operation creates at least a single <code>Function</code> node that connects to functions that created a <code>Tensor</code> and <em>encodes its history</em>.</li>
+<li>Use <code>torch.nn.Sequential</code> to create a simple network without needing any classes</li>
+<li>Connects the modules in a cascading fashion, so a <code>forward()</code> method does not need to be implemented</li>
+<li>(+) Simple, fast, easy to use, low amount of code</li>
 </ul>
-<h2 id="gradient-clipping">gradient clipping</h2>
-<pre><code class="language-python">optimizer.zero_grad()
-loss.backward()
-
-# by value
-torch.nn.utils.clip_grad_value_(model.parameters(), clip_value=1)
-
-# by norm
-# torch.nn.utils.clip_grad_norm_(model.parameters(), clip_norm=1)
-
-optimizer.step()
-</code></pre>
+<h3 id="pretrained">Pretrained</h3>
 <ul>
-<li>Note that it stacks all the paremeters into a single vector then performs the clipping <ul>
-<li>we want to just clip the gradients from th</li>
+<li><code>torchvision</code> provides access to many common architectures with the ability to download the pretrained weights</li>
+<li><code>model = torchvision.models.resnet18(pretrained=True)</code></li>
 </ul>
-</li>
-</ul>
-<h2 id="hooks">hooks</h2>
+<h2 id="loss-functions">Loss Functions</h2>
 <ul>
-<li>tensor.backward() starts the backward pass on the computational graph with a default starting gradient value of 1.0</li>
-<li>allow us to inspect (and possibly change) gradients as they flow backwards through the graph </li>
-<li>hooks get called on tensors in the order they were added</li>
-<li><code>.retain_grad()</code> stores the grad on non-leaf/intermediate nodes in the computational graph</li>
-<li>when adding hooks to a intermediate node in the forward graph (stored in the backward_hooks dict), the function will also be added as a pre-hook to the corresponding node in the backwards graph to be run on the gradient before the node does its thing</li>
-</ul>
-<pre><code class="language-python">def fn(grad):
-  print(grad)
-  return grad + 2 # if you return nothing, the same gradient as before will be used
-
-c.register_hook(fn)
-</code></pre>
-<h2 id="loss-functions">loss functions</h2>
-<ul>
-<li>Cross Entropy Loss- multiclass classification<ul>
+<li><strong>Cross Entropy Loss</strong>- multiclass classification<ul>
 <li>when used for binary classification it expects 2 output features (e.g. [-2.34, 3.61])</li>
 <li>Can get probability of each class by using softmax <ul>
 <li>does not give meaningful probabilities in case of binary classification (will always be something like [0.3%, 99.7%])</li>
@@ -957,17 +934,220 @@ c.register_hook(fn)
 </li>
 </ul>
 </li>
-<li>
-<p>Binary Cross Entropy Loss- binary classification</p>
-<ul>
+<li><strong>Binary Cross Entropy Loss</strong>- binary classification<ul>
 <li>expects 1 output feature (e.g. [-2.34])</li>
 <li>Can easily get probability of class 1 using sigmoid on the network's output logits</li>
 </ul>
 </li>
-<li>
-<p><a href="https://charlesfrye.github.io/external/2021/08/24/trace-report.html">PyTorch Training Step Dissection</a></p>
+</ul>
+<h2 id="training">Training</h2>
+<ul>
+<li>For mutliclass classifiers, the models traditionally output the logits and then the CrossEntropy loss function computes the softmax as part of the loss evaluation for numerical stability<ul>
+<li>this means for inference/testing the softmax must be applied to the classifiers output to get the final class probabilities (from which the max or top-k max can be taken)</li>
+</ul>
 </li>
-</ul></div>
+</ul>
+<pre><code class="language-python">def train_step(model, optimizer, train_loader, loss_fn, epoch, device):
+  model.train()
+
+  running_loss = 0.0
+  total_correct = 0
+  total_samples = 0
+  for data, targets in train_loader:
+    data = data.to(device)
+    targets = targets.to(device)
+
+    predictions = model(data) # shape: [batch, num classes] (for classifier)
+    loss = loss_fn(predictions, targets)
+
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+
+    class_probs = torch.nn.functional.softmax(predictions, 1)
+
+    class_pred = torch.max(class_probs, 1).indices
+
+    total_correct += sum(targets == class_pred).cpu().item()
+    total_samples += targets.size(dim=0)
+
+    running_loss += loss.item()
+
+  train_loss = running_loss / len(train_loader)
+  train_accuracy = total_correct / total_samples * 100.0
+
+  print(f'{epoch}: Train Loss: {train_loss:.3f} | Train Accuracy: {train_accuracy:.2f}')
+  return train_loss, train_accuracy
+</code></pre>
+<h3 id="freezing-weights">Freezing Weights</h3>
+<ul>
+<li>set <code>parameter.requires_grad = False</code> so the gradient won't be computed</li>
+<li><code>with torch.no_grad():</code> does not compute the gradient for anything done within the context (<a href="https://pytorch.org/docs/stable/generated/torch.no_grad.html">read more</a>)</li>
+<li>useful for finetuning pretrained networks where you only want to modify the params in the classifer layers to make predictions on the new labels:</li>
+</ul>
+<pre><code class="language-python">model = torchvision.models.resnet18(pretrained=True)
+
+# Freeze all the parameters in the network
+for param in model.parameters():
+    param.requires_grad = False
+
+# replace last linear layer (the classifier) with new unfrozen classification layer  
+model.fc = nn.Linear(512, 10)
+
+</code></pre>
+<h2 id="testing">Testing</h2>
+<pre><code class="language-python">def test_classifier(model, test_loader, loss_fn, epoch, device):
+  model.eval()
+
+  running_loss = 0.0
+  total_correct = 0
+  total_samples = 0
+
+  with torch.no_grad():
+
+    for data, targets in test_loader:
+      data = data.to(device)
+      targets = targets.to(device)
+
+      predictions = model(data) # model outputs logits
+
+      running_loss += loss_fn(predictions, targets).item()
+
+      class_probs = torch.nn.functional.softmax(predictions, 1)
+
+      class_pred = torch.max(class_probs, 1).indices
+
+      total_correct += sum(targets == class_pred).cpu().item()
+      total_samples += targets.size(dim=0)
+
+  test_loss = running_loss / len(test_loader)
+  test_accuracy = total_correct / total_samples * 100.0
+
+  print(f'{epoch}: Test Loss: {test_loss:.3f} | Test Accuracy: {test_accuracy:.2f}%')
+
+  return test_loss, test_accuracy
+</code></pre>
+<h2 id="full-loop">Full Loop</h2>
+<pre><code class="language-python">def train_test_loop(epochs, train_loader, test_loader, device):
+  model = nn.Sequential(
+                  nn.Conv2d(1, 10, 5),
+                  nn.ReLU(),
+                  nn.Conv2d(10, 20, 5),
+                  nn.ReLU(),
+                  nn.Flatten(),
+                  nn.Linear(8000, 200),
+                  nn.ReLU(),
+                  nn.Linear(200, 10))
+
+  model.to(device)
+
+  optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+  loss_fn = torch.nn.CrossEntropyLoss()
+
+  train_losses = []
+  train_accuracy = []
+  test_losses = []
+  test_accuracy = []
+
+
+  test_classifier(model, test_loader, loss_fn, -1, device)
+  for epoch in range(epochs):
+    train_loss, train_acc = train_step(model, optimizer, train_loader, loss_fn, epoch, device)
+    train_losses.append(train_loss)
+    train_accuracy.append(train_acc)
+
+    test_loss, test_acc = test_classifier(model, test_loader, loss_fn, epoch, device)
+    test_losses.append(test_loss)
+    test_accuracy.append(test_acc)
+
+  torch.save(model.state_dict(), 'model.pth')
+  torch.save(optimizer.state_dict(), 'optimizer.pth')
+
+  plot_losses(train_losses, test_losses)
+  plot_accuracy(train_accuracy, test_accuracy)
+</code></pre>
+<p>Plot loss/accuracy:</p>
+<pre><code class="language-python">plt.style.use('ggplot')
+
+def plot_losses(train_losses: List[float], test_losses: List[float]):
+  epochs = range(len(train_losses))
+  plt.plot(epochs, train_losses, 'b', label='Training Loss')
+  plt.plot(epochs, test_losses, 'g', label='Test Loss')
+  plt.title('Train vs. Test Loss')
+  plt.xlabel('Epochs')
+  plt.ylabel('Loss')
+  plt.legend()
+  plt.show()
+
+
+def plot_accuracy(train_accuracy: List[float], test_accuracy: List[float]):
+  epochs = range(len(train_accuracy))
+  plt.plot(epochs, train_accuracy, 'b', label='Training Accuracy')
+  plt.plot(epochs, test_accuracy, 'g', label='Test Accuracy')
+  plt.title('Train vs. Test Accuracy')
+  plt.xlabel('Epochs')
+  plt.ylabel('Accuracy (%)')
+  plt.legend()
+  plt.show()
+</code></pre>
+<h2 id="gpu">GPU</h2>
+<ul>
+<li><code>device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")</code></li>
+<li><code>model.to(device)</code> moves the model to the device and does not require reassignment<ul>
+<li>all parameters must be properly registered in the module (no layers in python lists)</li>
+</ul>
+</li>
+<li><code>data.to(device)</code> returns a copy of the tensor on the specified device so in order for it to work you need reassignment: <code>data = data.to(device)</code><ul>
+<li>this is because moving tensors is treated differently than moving models</li>
+</ul>
+</li>
+</ul>
+<h2 id="data-loading">Data Loading</h2>
+<ul>
+<li><a href="https://blog.paperspace.com/dataloaders-abstractions-pytorch/">Overview</a></li>
+<li><a href="https://pytorch.org/docs/stable/data.html">Data Docs</a></li>
+<li><code>pin_memory=True</code> in the dataloader when using the GPU since it reduces a CPU -&gt; CPU copy and makes the transfer more efficient</li>
+</ul>
+<h2 id="core-types">Core Types</h2>
+<ul>
+<li><code>torch.Tensor</code> - A <em>multi-dimensional array</em> with support for autograd operations like <code>backward()</code>. Also <em>holds the gradient</em>w.r.t. the tensor.</li>
+<li><code>nn.Module</code> - Neural network module. <em>Convenient way of encapsulating parameters</em>, with helpers for moving them to GPU, exporting, loading, etc.</li>
+<li><code>nn.Parameter</code> - A kind of Tensor, that is <em>automatically registered as a parameter when assigned as an attribute to a</em> <code>Module</code>.</li>
+<li><code>autograd.Function</code> - Implements <em>forward and backward definitions of an autograd operation</em>. Every <code>Tensor</code> operation creates at least a single <code>Function</code> node that connects to functions that created a <code>Tensor</code> and <em>encodes its history</em>.</li>
+</ul>
+<h2 id="advanced-techniques">Advanced Techniques</h2>
+<ul>
+<li><a href="https://charlesfrye.github.io/external/2021/08/24/trace-report.html">PyTorch Training Step Dissection</a> for advanced performance optimization</li>
+</ul>
+<h3 id="gradient-clipping">Gradient Clipping</h3>
+<pre><code class="language-python">optimizer.zero_grad()
+loss.backward()
+
+# by value
+torch.nn.utils.clip_grad_value_(model.parameters(), clip_value=1)
+
+# by norm
+torch.nn.utils.clip_grad_norm_(model.parameters(), clip_norm=1)
+
+optimizer.step()
+</code></pre>
+<ul>
+<li>Note that it stacks all the paremeters into a single vector then performs the clipping </li>
+</ul>
+<h3 id="hooks">Hooks</h3>
+<ul>
+<li><code>tensor.backward()</code> starts the backward pass on the computational graph with a default starting gradient value of 1.0</li>
+<li>allow us to inspect (and possibly change) gradients as they flow backwards through the graph </li>
+<li>hooks get called on tensors in the order they were added</li>
+<li><code>.retain_grad()</code> stores the grad on non-leaf/intermediate nodes in the computational graph</li>
+<li>when adding hooks to a intermediate node in the forward graph (stored in the backward_hooks dict), the function will also be added as a pre-hook to the corresponding node in the backwards graph to be run on the gradient before the node does its thing</li>
+</ul>
+<pre><code class="language-python">def ex_hook(grad):
+  print(grad)       # or do some other visualization
+  return grad + 2 # if you return nothing, the same gradient as before will be used
+
+c.register_hook(ex_hook)
+</code></pre></div>
             </div>
         </div>
 
