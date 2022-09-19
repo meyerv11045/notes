@@ -36,6 +36,7 @@
 
 - State Space has $9!/2 = 181,400$  unique states
 - branching factor $b = 3$ b/c while 4 directions to move, we will never redo the action to get to the current state (only case it would be 4 is on the first state with the middle being empty, but every subsequent action will be 3)
+- example heuristic: sum of distance for each digit to the goal $G$
 
 ## Search Algos
 
@@ -133,6 +134,7 @@
 
 ### $A^*$ Search
 
+- Combination of UCS (optimal but slow) and Greedy Heuristic search (not optimal but fast)
 - Best-first search with eval fn of $f(n) = g(n) + h(n)$
     - $g(n)$ = path cost from initial state to node $n$
     - $h(n) =$ estimated cost of best/shortest path from $n$ to goal node
@@ -148,9 +150,15 @@
 - Memory usage is a main issue
     - Beam search is a variant that limits the size of the fronteir by keeping only the $k$ nodes with the best $f$-scores (thus fewer nodes are expanded) or by keeping only nodes within $\delta$ of the best $f$-score
     - Iterative-deepening $A^*$ search gives the benfits of $A^*$ w/o the requirement to keep all reached states in memory at the cost of revisiting some states (important and commonly used algorithm)
+    - Simplified Memory Bounded $A*$ (SM$A*$)- perform $A^*$ until space is full 
 
 ## Heuristic Functions
 
 - The cost of an optimal solution to a relaxed problem (fewer restrictions) is an admissible heuristic for the original problem and is therefore consistent
+
+    - ex: euclidean distance is an admissable heuristic in a point-to-point path planning problem
+
 - Can use ml to learn good heuristics from expereince (previously solved problems)
+
+    
 

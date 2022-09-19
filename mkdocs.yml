@@ -16,6 +16,7 @@ nav:
     - 'Ch. 1 Introduction': 'ai/1-intro.md'
     - 'Ch. 2 Agents': 'ai/2-agents.md'
     - 'Ch. 3 Search': 'ai/3-search.md'
+    - 'Ch. 4 Search in Complex Envs': 'ai/4-search-cmplx-env.md'
   - ML:
     - 'Supervised Learning': 'ml/supervised_learning.md'
     - 'Regression': 'ml/regression.md'
@@ -34,6 +35,8 @@ nav:
     - 'Overview': 'dl/overview.md'
     - 'Activation Functions': 'dl/activation_functions.md'
     - 'PyTorch': 'dl/pytorch.md'
+    - 'CNNs': 'dl/cnns.md'
+    - 'Transformers': 'dl/transformers.md'
     - 'AutoEncoders': 'dl/auto_encoders.md'
     - 'Self-Supervised Learning': 'dl/ssl.md'
     - 'Embeddings': 'dl/embeddings.md'
@@ -130,6 +133,7 @@ nav:
     - 'The Brain': 'math_science/brain.md'
     - 'Molecular Genetics': 'math_science/molecular_genetics.md'
     - 'Dev Psychology': 'math_science/dev_psy.md'
+    - 'The Symbolic Species': 'math_science/sym-spec.md'
     - 'Current & Resistance': 'math_science/physics/ch25.md'
   - Archive:
     - 'MacOS': 'misc/macos.md'
