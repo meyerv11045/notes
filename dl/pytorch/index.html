@@ -60,6 +60,10 @@
 <li>
     <a href="../../ai/4-search-cmplx-env/" class="dropdown-item">Ch. 4 Search in Complex Envs</a>
 </li>
+                                    
+<li>
+    <a href="../../ai/nlp/" class="dropdown-item">NLP</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -221,6 +225,10 @@
 </li>
                                     
 <li>
+    <a href="../../python/data-strucs/" class="dropdown-item">Data Structures</a>
+</li>
+                                    
+<li>
     <a href="../../python/style/" class="dropdown-item">Style</a>
 </li>
                                     
@@ -237,6 +245,10 @@
 </li>
                                     
 <li>
+    <a href="../../python/decorators/" class="dropdown-item">Decorators</a>
+</li>
+                                    
+<li>
     <a href="../../python/time/" class="dropdown-item">Dates & Time</a>
 </li>
                                     
@@ -246,6 +258,30 @@
                                     
 <li>
     <a href="../../python/classes/" class="dropdown-item">Classes</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tqdm/" class="dropdown-item">Progress Bars</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sklearn/" class="dropdown-item">Sklearn</a>
+</li>
+                                    
+<li>
+    <a href="../../python/pandas/" class="dropdown-item">Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mpl/" class="dropdown-item">Matplotlib</a>
+</li>
+                                    
+<li>
+    <a href="../../python/jupyter/" class="dropdown-item">Jupyter</a>
+</li>
+                                    
+<li>
+    <a href="../../python/geometry/" class="dropdown-item">Geometry</a>
 </li>
                                 </ul>
                             </li>
@@ -476,6 +512,10 @@
 </li>
     </ul>
   </li>
+                                    
+<li>
+    <a href="../../software_design/di/" class="dropdown-item">Dependency Inversion</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -500,6 +540,31 @@
                                     
 <li>
     <a href="../../robotics/hardware/" class="dropdown-item">Hardware</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../research/zotero/" class="dropdown-item">Zotero</a>
+</li>
+                                    
+<li>
+    <a href="../../research/repro/" class="dropdown-item">Reproducability</a>
+</li>
+                                    
+<li>
+    <a href="../../research/cloud/" class="dropdown-item">Cloud</a>
+</li>
+                                    
+<li>
+    <a href="../../research/julia/" class="dropdown-item">Julia</a>
+</li>
+                                    
+<li>
+    <a href="../../research/latex/" class="dropdown-item">Latex</a>
 </li>
                                 </ul>
                             </li>
@@ -846,6 +911,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#distributed-training" class="nav-link">Distributed Training</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
             <li class="nav-item" data-level="2"><a href="#data-loading" class="nav-link">Data Loading</a>
               <ul class="nav flex-column">
               </ul>
@@ -877,6 +946,20 @@
 <li>Ex: <code>[64, 1, 28, 28]</code> is batch of 64 images with 1 channel of size 28 x 28 pixels</li>
 </ul>
 </li>
+<li><code>torch.squeeze()</code> gets rid of any dimension of length 1</li>
+<li><code>torch.unsqueeze()</code> or <code>tensor[:, None, None]</code> adds dimensions of length 1</li>
+<li><img alt="Tensor Dimensions" src="../static/tensor-dims.png" /><ul>
+<li>negative ints for dimension indicate backward indexing like in lists</li>
+<li><code>dim=-1</code> is the last dimension (e.g. 2 in this case)</li>
+<li><code>dim=-2</code> is the 2nd last dimension (e.g. 1 in this case)</li>
+</ul>
+</li>
+</ul>
+<h3 id="einops">einops</h3>
+<h4 id="rearrange">rearrange</h4>
+<ul>
+<li>Reorder Dimensions: <code>rearrange(imgs, 'b h w c -&gt; b c h w')</code></li>
+<li>Flatten imgs: <code>rearrange(imgs, 'b h w c -&gt; b (h w c)')</code></li>
 </ul>
 <h2 id="models">Models</h2>
 <h3 id="torchnnmodule"><code>torch.nn.Module</code></h3>
@@ -887,6 +970,12 @@
 </ul>
 </li>
 <li>Use <code>torch.nn.Modulelist</code> to keep a list of layers with the torch module being aware of them</li>
+<li>If you have parameters in your model, which should be saved and restored in the <code>state_dict</code>, but not trained by the optimizer, you should register them as buffers (<code>self.register_buffer('param_name', param)</code>)<ul>
+<li>Buffers won’t be returned in <code>model.parameters()</code>, so that the optimizer won’t have a change to update them.</li>
+<li>buffers will also be pushed to correct device if <code>.to(device)</code> called on parent model</li>
+<li><a href="https://discuss.pytorch.org/t/what-is-the-difference-between-register-buffer-and-register-parameter-of-nn-module/32723/10">buffers discussion</a></li>
+</ul>
+</li>
 <li>(+) More customizable for complicated networks where <code>forward()</code> is not as trivial</li>
 </ul>
 <pre><code class="language-python">import torch.nn as nn
@@ -1101,6 +1190,36 @@ def plot_accuracy(train_accuracy: List[float], test_accuracy: List[float]):
 <li>this is because moving tensors is treated differently than moving models</li>
 </ul>
 </li>
+</ul>
+<h2 id="distributed-training">Distributed Training</h2>
+<ul>
+<li>Easiest method is using <code>pip install accelerate</code> library provided by hugging face<ul>
+<li>works with cpu, multiple gpus, tpus, etc. and code remains the same</li>
+</ul>
+</li>
+<li><a href="https://huggingface.co/docs/accelerate/index">docs</a></li>
+</ul>
+<pre><code class="language-python">from accelerate import Accelerator
+
+accelerator = Accelerator()
+
+model, optimizer, training_dataloader, scheduler = accelerator.prepare(
+    model, optimizer, training_dataloader, scheduler
+)
+
+for batch in training_dataloader:
+    optimizer.zero_grad()
+    inputs, targets = batch
+    outputs = model(inputs)
+    loss = loss_function(outputs, targets)
+    accelerator.backward(loss)
+    optimizer.step()
+    scheduler.step()
+</code></pre>
+<ul>
+<li><code>accelerate config</code></li>
+<li><code>accelerate launch {script_name.py} --arg1 --arg2 ...</code></li>
+<li><code>accelerate launch -h</code></li>
 </ul>
 <h2 id="data-loading">Data Loading</h2>
 <ul>

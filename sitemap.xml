@@ -2,797 +2,872 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://meyerv11045.github.com/notes/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ai/1-intro/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ai/2-agents/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ai/3-search/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ai/4-search-cmplx-env/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ai/complexity/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ai/guide/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/ai/nlp/</loc>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/analysis/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/complexity/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/divideconquer/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/dp/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/greedy/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/heaps/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/sorting/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/tips/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/graphs/bfs_dfs/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/graphs/directed/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/graphs/graphs/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/graphs/max_flow/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/algorithms/graphs/undirected/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/azure/networking/vnets/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/azure/storage/blob_storage/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/azure/storage/overview/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/data_structures/binary-tree/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/data_structures/graph/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/data_structures/hash-table/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/data_structures/heap/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/data_structures/linked-list/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/data_structures/overview/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/data_structures/queue/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/data_structures/stack/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/data_structures/template/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/databases/dbms/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/databases/mysql/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/databases/sql/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dig_sys/ch6-assembly/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dig_sys/ch7-processor/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dig_sys/ch8-mem-sys/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dig_sys/ch9-io-sys/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dl/activation_functions/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dl/auto_encoders/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dl/cnns/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dl/embeddings/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dl/overview/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dl/pytorch/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dl/ssl/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/dl/transformers/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/brain/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/dev_psy/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/molecular_genetics/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/sym-spec/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/physics/ch25/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/physics/notes/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/prob_stats/bayesian/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/prob_stats/crvs/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/prob_stats/joint-distributions/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/prob_stats/rv/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/math_science/prob_stats/stats/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/misc/how-to-speak/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/misc/macos/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/classification/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/clustering/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/dim_red/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/dts/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/feature_scaling/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/model_selection/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/optimization/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/pca/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/regression/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/regularization/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/reinforcement_learning/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/statistical_learning/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/supervised_learning/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/ml/svms/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/multimedia/overview/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/multimedia/streaming/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/num_methods/factorization/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/num_methods/lin_alg/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/num_methods/math/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/optimization/convergence/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/optimization/method-template/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/optimization/overview/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/optimization/steepest-descent/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/optimization/root-methods/bisection/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/optimization/root-methods/newtons/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/optimization/root-methods/regula_falsi/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/optimization/root-methods/secant/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/ch1/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/ch15/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/ch16/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/ch2/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/ch3/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/ch5/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/ch6/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/ch7/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/ch9/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/oop/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/prog_langs/paradigms/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/python/classes/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/python/concurrency/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/python/data-strucs/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/python/decorators/</loc>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/python/dunders/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/python/geometry/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/python/jupyter/</loc>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/python/logging/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/python/mpl/</loc>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/python/overview/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/python/pandas/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/python/sklearn/</loc>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/python/style/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/python/time/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/python/tqdm/</loc>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/python/types/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/research/cloud/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/research/julia/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/research/latex/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/research/repro/</loc>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/research/zotero/</loc>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/robotics/13-mobile-robots/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/robotics/behavior-trees/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/robotics/control/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/robotics/hardware/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/robotics/mpc/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://meyerv11045.github.com/notes/software_design/di/</loc>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/big3/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/cmake/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/exceptions/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/functors/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/inheritance/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/iterators/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/lambda/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/misc/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/move-semantics/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/operator-overloading/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/pointers/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/smart-pointers/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/stl/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/strong-exception-safety/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/cpp/templates/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/adapter/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/bridge/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/builder/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/command/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/composite/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/factory/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/interpreter/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/iterator/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/observer/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/patterns/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/reactor/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/singleton/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/state/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/strategy/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/temp/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/template/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/software_design/patterns/visitor/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/swe/docker/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/swe/git/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/swe/microservices/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/swe/regex/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/swe/swe-notes/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/swe/terminal-cmds/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/static_sites/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/html-css/sass/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/js/basics/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/js/browser_compatibility/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/js/classes/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/js/jQuery/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/js/modules/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/js/objects/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/js/promises/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://meyerv11045.github.com/notes/web_dev/js/using_node_pkgs/</loc>
-         <lastmod>2022-09-19</lastmod>
+         <lastmod>2022-12-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

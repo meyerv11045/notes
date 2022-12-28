@@ -60,6 +60,10 @@
 <li>
     <a href="../../ai/4-search-cmplx-env/" class="dropdown-item">Ch. 4 Search in Complex Envs</a>
 </li>
+                                    
+<li>
+    <a href="../../ai/nlp/" class="dropdown-item">NLP</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -221,6 +225,10 @@
 </li>
                                     
 <li>
+    <a href="../data-strucs/" class="dropdown-item">Data Structures</a>
+</li>
+                                    
+<li>
     <a href="../style/" class="dropdown-item">Style</a>
 </li>
                                     
@@ -237,6 +245,10 @@
 </li>
                                     
 <li>
+    <a href="../decorators/" class="dropdown-item">Decorators</a>
+</li>
+                                    
+<li>
     <a href="../time/" class="dropdown-item">Dates & Time</a>
 </li>
                                     
@@ -246,6 +258,30 @@
                                     
 <li>
     <a href="../classes/" class="dropdown-item">Classes</a>
+</li>
+                                    
+<li>
+    <a href="../tqdm/" class="dropdown-item">Progress Bars</a>
+</li>
+                                    
+<li>
+    <a href="../sklearn/" class="dropdown-item">Sklearn</a>
+</li>
+                                    
+<li>
+    <a href="../pandas/" class="dropdown-item">Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../mpl/" class="dropdown-item">Matplotlib</a>
+</li>
+                                    
+<li>
+    <a href="../jupyter/" class="dropdown-item">Jupyter</a>
+</li>
+                                    
+<li>
+    <a href="../geometry/" class="dropdown-item">Geometry</a>
 </li>
                                 </ul>
                             </li>
@@ -476,6 +512,10 @@
 </li>
     </ul>
   </li>
+                                    
+<li>
+    <a href="../../software_design/di/" class="dropdown-item">Dependency Inversion</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -500,6 +540,31 @@
                                     
 <li>
     <a href="../../robotics/hardware/" class="dropdown-item">Hardware</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../research/zotero/" class="dropdown-item">Zotero</a>
+</li>
+                                    
+<li>
+    <a href="../../research/repro/" class="dropdown-item">Reproducability</a>
+</li>
+                                    
+<li>
+    <a href="../../research/cloud/" class="dropdown-item">Cloud</a>
+</li>
+                                    
+<li>
+    <a href="../../research/julia/" class="dropdown-item">Julia</a>
+</li>
+                                    
+<li>
+    <a href="../../research/latex/" class="dropdown-item">Latex</a>
 </li>
                                 </ul>
                             </li>
@@ -794,7 +859,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../style/" class="nav-link">
+                                <a rel="next" href="../data-strucs/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -822,7 +887,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#number-formatting" class="nav-link">Number Formatting</a>
+            <li class="nav-item" data-level="2"><a href="#f-string-formatting" class="nav-link">f-string formatting</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -887,7 +952,22 @@
 <pre><code class="language-python">condition = True
 x = 1 if condition else 0
 </code></pre>
-<h2 id="number-formatting">Number Formatting</h2>
+<h2 id="f-string-formatting">f-string formatting</h2>
+<pre><code class="language-python">number = 12.343562135
+percentage_number = 0.33
+high_number = 12349000212452
+
+print(f'Printing without formatting: {number}'
+      f'\nPrinting the var name: {number = }'
+      f'\nShowing two decimal places: {number:.2f}' # You can choose any number 
+      f'\nChanging characters wide: {number:30}' # The field will be 30 characters wide
+      f'\nForces center alignment: {number:^30}' # For left-aligned use &quot;&lt;&quot; and for right-aligned &quot;&gt;&quot;
+      f'\nFill white spaces: {number:=^30}' # You can fill white spaces with any characters
+      f'\nPrinting percentages: {percentage_number:.2%}' # Multiply by 100 and add % symbol
+      f'\nShowing two decimal places with comma: {high_number:,.2f}' 
+      f'\nPrinting two decimal places with scientific notation: {high_number:.2e}'
+     )
+</code></pre>
 <pre><code class="language-python">num1 = 1_000_000_000
 num2 = 10_000_000
 total = num1 + num2

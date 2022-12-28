@@ -60,6 +60,10 @@
 <li>
     <a href="../../ai/4-search-cmplx-env/" class="dropdown-item">Ch. 4 Search in Complex Envs</a>
 </li>
+                                    
+<li>
+    <a href="../../ai/nlp/" class="dropdown-item">NLP</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -221,6 +225,10 @@
 </li>
                                     
 <li>
+    <a href="../../python/data-strucs/" class="dropdown-item">Data Structures</a>
+</li>
+                                    
+<li>
     <a href="../../python/style/" class="dropdown-item">Style</a>
 </li>
                                     
@@ -237,6 +245,10 @@
 </li>
                                     
 <li>
+    <a href="../../python/decorators/" class="dropdown-item">Decorators</a>
+</li>
+                                    
+<li>
     <a href="../../python/time/" class="dropdown-item">Dates & Time</a>
 </li>
                                     
@@ -246,6 +258,30 @@
                                     
 <li>
     <a href="../../python/classes/" class="dropdown-item">Classes</a>
+</li>
+                                    
+<li>
+    <a href="../../python/tqdm/" class="dropdown-item">Progress Bars</a>
+</li>
+                                    
+<li>
+    <a href="../../python/sklearn/" class="dropdown-item">Sklearn</a>
+</li>
+                                    
+<li>
+    <a href="../../python/pandas/" class="dropdown-item">Pandas</a>
+</li>
+                                    
+<li>
+    <a href="../../python/mpl/" class="dropdown-item">Matplotlib</a>
+</li>
+                                    
+<li>
+    <a href="../../python/jupyter/" class="dropdown-item">Jupyter</a>
+</li>
+                                    
+<li>
+    <a href="../../python/geometry/" class="dropdown-item">Geometry</a>
 </li>
                                 </ul>
                             </li>
@@ -476,6 +512,10 @@
 </li>
     </ul>
   </li>
+                                    
+<li>
+    <a href="../../software_design/di/" class="dropdown-item">Dependency Inversion</a>
+</li>
                                 </ul>
                             </li>
                             <li class="dropdown">
@@ -500,6 +540,31 @@
                                     
 <li>
     <a href="../../robotics/hardware/" class="dropdown-item">Hardware</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Research <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../research/zotero/" class="dropdown-item">Zotero</a>
+</li>
+                                    
+<li>
+    <a href="../../research/repro/" class="dropdown-item">Reproducability</a>
+</li>
+                                    
+<li>
+    <a href="../../research/cloud/" class="dropdown-item">Cloud</a>
+</li>
+                                    
+<li>
+    <a href="../../research/julia/" class="dropdown-item">Julia</a>
+</li>
+                                    
+<li>
+    <a href="../../research/latex/" class="dropdown-item">Latex</a>
 </li>
                                 </ul>
                             </li>
@@ -822,6 +887,14 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-level="2"><a href="#training-tips" class="nav-link">Training Tips</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#interesting" class="nav-link">interesting</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -904,6 +977,86 @@
 </ul>
 </li>
 <li>Weights need to be randomly initialized or else network will suffer from the symmetry problem where all neurons start learning the same thing (need to be able to evolve independently)</li>
+</ul>
+<h2 id="training-tips">Training Tips</h2>
+<ul>
+<li><a href="http://karpathy.github.io/2019/04/25/recipe/">Karpathy's NN Training Recipe</a></li>
+<li><strong>understand your data inside out</strong><ul>
+<li>spend hours looking through examples and determining patterns or corruption in the data </li>
+<li>imbalances </li>
+<li>biases</li>
+<li>your process of classifying the data (hints at architecutre needed)</li>
+<li>understand the form of the variation and if it can be preprocessed out (e.g. remove the x, y variation in the initial state for all the trajectories to reduce amount of variation that has to be learned over)</li>
+<li>viz the data as many ways as possible and watch out for outliers</li>
+</ul>
+</li>
+<li><strong>setup training/eval skeleton and get dumb baselines</strong><ul>
+<li>simplest model possible</li>
+<li>fix random seed to remove a factor of variation and help with debugging</li>
+<li>simplify (e.g. no data augmentation, dropout, bath norm, etc.)</li>
+<li>initialize the network well<ul>
+<li>verify the loss starts at correct value</li>
+<li>set the biases to eliminate hockey-stick loss curves</li>
+</ul>
+</li>
+<li>overfit to one batch<ul>
+<li>batch should be small like 1 or two samples</li>
+<li>verfiy the outputs match the targets when loss driven to 0 (otherwise there is a bug somewhere)</li>
+</ul>
+</li>
+<li>vizualize the inputs to the neural network right before being passed in to ensure no bugs with data preprocessing/augmentation</li>
+<li>visualize model predictions on a fixed test batch over the course of training<ul>
+<li>lets you see the dynamics of how the predictions are moving -&gt; good intuition for how training is progressing</li>
+</ul>
+</li>
+<li>instead of starting with very general code, write for a specific case, make sure it works, and then generalize if needed (making sure you still get the same result)<ul>
+<li>ex: write out loopy version first before vectorizing</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>overfit</strong><ul>
+<li>find a large enough model to overfit the dataset (only focus on driving down the training loss)<ul>
+<li>if no model seems to be able to reach low error rate, something is amiss</li>
+</ul>
+</li>
+<li>then regularize it appropriately (give up some training loss to improve validation/test loss)</li>
+<li>when picking the model go with the simplest possible architecture first and improve from there</li>
+<li>start with Adam with <script type="math/tex">\alpha = 3e-4</script>
+</li>
+<li>build up complexity little by little<ul>
+<li>don't start with all the features available for tabular data, instead start with small subsets and add features one by one, verifying they give the performance boost one would expect</li>
+<li>don't immediatley go for the highest quality input images, instead start with lowest quality images as input and verify whether the higher quality images do boost performance</li>
+</ul>
+</li>
+<li>don't trust learning rate decay defaults (schedule depends greatly on the problem since oftentimes based on current epoch number so can be sent to 0 too early)<ul>
+<li>best practice to turn off learning rate decay and use constant learning rate (can tune this at very end of project if necesary to squeeze a boost)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>regularize</strong>- we have a large model that is well fit to the train set so now we regularize it to improve validation score<ul>
+<li>get more data is always the best way to do it<ul>
+<li>data augmentation can be used</li>
+</ul>
+</li>
+<li>ensembles can be good but tops out at ~5 models</li>
+<li>pretrained networks are nice places to start if available</li>
+<li>reduce dimensionality of input if possible since it just makes it easier to overfit with not enough data for the dimensionality</li>
+<li>can make models smaller by using problem domain knowledge as constraints on the network</li>
+<li>decrease batch size if using batch norm in your network</li>
+<li>can add droopout but watch out b/c it doesn't work well with batch norm</li>
+<li>early stopping- stop based on validation loss (is technically leaking validation data into training but its still commonly used)</li>
+<li>increase weight decay penalty</li>
+<li>visualizing the activations in the network can sometimes help show when something is wrong</li>
+</ul>
+</li>
+<li>ensembles can basically increase 2% accuracy on anything at the cost of the extra training/compute time</li>
+</ul>
+<h2 id="interesting">interesting</h2>
+<ul>
+<li>ImageNet and Alexnet and others can simply be treated as feature extractors on imgs where the learned features are sensitive to semantic concepts while remaining invariant to nuisance/uninteresting variables such as appearance and lighting </li>
+<li>trained neural networks can be used in cost functions and are useful since they are differentiable with respect to their input</li>
 </ul></div>
             </div>
         </div>
