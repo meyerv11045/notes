@@ -1,6 +1,30 @@
 # MySQL
 
+## Joins
+
+- [Viz for left, right, inner, outer joins](https://joins.spathon.com)
+- Self-join- foreign key references a field in the same table (e.g. managerId for employees) [yt vid](https://www.youtube.com/watch?v=7T8b7g7aV1A)
+
+``` mysql
+select employee.name as Employee from Employee as employee 
+join Employee as manager
+on employee.managerId = manager.id
+where employee.salary > manager.salary;
+```
+
+- in order to use an aggregate function (e.g. `count(*)`) in a select statement, must use group by to specify the column to aggregate on [yt vid](https://www.youtube.com/watch?v=nNrgRVIzeHg)
+    - cannot use where (filtering clause) on aggregate function
+        - instead use `having` after the groupby statement
+- find duplicate email addresses:
+
+``` mysql
+select email from Person
+group by email
+having count(*) > 1;
+```
+
 ## Python Access
+
 1. Connect to the MySQL Database, you get a MySQLConnection object.
 	a. To connect to the database, read the database configuration parameters from config.ini using configparser and pass the resulting dictionary to the constructor of the MySQLConnection Object
 2. Instantiate a  MySQLCursor object from the the MySQLConnection object.

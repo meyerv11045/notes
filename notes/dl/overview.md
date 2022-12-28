@@ -30,8 +30,6 @@
         - the most accurate updates computed over the whole batch will have the smoothest convergence
     - Some research suggests the stochastity of smaller batches/single samples in gradient descent can help it escape local minima in the cost function that full batch gradient might get caught in
 
-
-
 ## Weight Initialization
 
 - One way to avoid vanishing and exploding gradients is by initializing the weights to be near the ideal values
@@ -45,3 +43,60 @@
     - used for relu activation
     - takes into account number of inputs and outputs b/c of the back propagation step 
 - Weights need to be randomly initialized or else network will suffer from the symmetry problem where all neurons start learning the same thing (need to be able to evolve independently)
+
+## Training Tips
+
+- [Karpathy's NN Training Recipe](http://karpathy.github.io/2019/04/25/recipe/)
+- **understand your data inside out**
+    - spend hours looking through examples and determining patterns or corruption in the data 
+    - imbalances 
+    - biases
+    - your process of classifying the data (hints at architecutre needed)
+    - understand the form of the variation and if it can be preprocessed out (e.g. remove the x, y variation in the initial state for all the trajectories to reduce amount of variation that has to be learned over)
+    - viz the data as many ways as possible and watch out for outliers
+- **setup training/eval skeleton and get dumb baselines**
+    - simplest model possible
+    - fix random seed to remove a factor of variation and help with debugging
+    - simplify (e.g. no data augmentation, dropout, bath norm, etc.)
+    - initialize the network well
+        - verify the loss starts at correct value
+        - set the biases to eliminate hockey-stick loss curves
+    - overfit to one batch
+        - batch should be small like 1 or two samples
+        - verfiy the outputs match the targets when loss driven to 0 (otherwise there is a bug somewhere)
+    - vizualize the inputs to the neural network right before being passed in to ensure no bugs with data preprocessing/augmentation
+    - visualize model predictions on a fixed test batch over the course of training
+        - lets you see the dynamics of how the predictions are moving -> good intuition for how training is progressing
+    - instead of starting with very general code, write for a specific case, make sure it works, and then generalize if needed (making sure you still get the same result)
+        - ex: write out loopy version first before vectorizing
+- **overfit**
+    - find a large enough model to overfit the dataset (only focus on driving down the training loss)
+        - if no model seems to be able to reach low error rate, something is amiss
+    - then regularize it appropriately (give up some training loss to improve validation/test loss)
+    - when picking the model go with the simplest possible architecture first and improve from there
+    - start with Adam with $\alpha = 3e-4$
+    - build up complexity little by little
+        - don't start with all the features available for tabular data, instead start with small subsets and add features one by one, verifying they give the performance boost one would expect
+        - don't immediatley go for the highest quality input images, instead start with lowest quality images as input and verify whether the higher quality images do boost performance
+    - don't trust learning rate decay defaults (schedule depends greatly on the problem since oftentimes based on current epoch number so can be sent to 0 too early)
+        - best practice to turn off learning rate decay and use constant learning rate (can tune this at very end of project if necesary to squeeze a boost)
+- **regularize**- we have a large model that is well fit to the train set so now we regularize it to improve validation score
+    - get more data is always the best way to do it
+        - data augmentation can be used
+    - ensembles can be good but tops out at ~5 models
+    - pretrained networks are nice places to start if available
+    - reduce dimensionality of input if possible since it just makes it easier to overfit with not enough data for the dimensionality
+    - can make models smaller by using problem domain knowledge as constraints on the network
+    - decrease batch size if using batch norm in your network
+    - can add droopout but watch out b/c it doesn't work well with batch norm
+    - early stopping- stop based on validation loss (is technically leaking validation data into training but its still commonly used)
+    - increase weight decay penalty
+    - visualizing the activations in the network can sometimes help show when something is wrong
+- ensembles can basically increase 2% accuracy on anything at the cost of the extra training/compute time
+
+
+
+## interesting
+
+- ImageNet and Alexnet and others can simply be treated as feature extractors on imgs where the learned features are sensitive to semantic concepts while remaining invariant to nuisance/uninteresting variables such as appearance and lighting 
+- trained neural networks can be used in cost functions and are useful since they are differentiable with respect to their input

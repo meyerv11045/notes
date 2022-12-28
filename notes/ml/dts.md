@@ -4,7 +4,6 @@
 
 - Easily explainable
 - Highly interpretable
--
 
 ## cons
 
@@ -29,5 +28,9 @@
 - Decreasing bias
 - Additive
 
+## Resources
 
-[CS 229 Lecture](https://www.youtube.com/watch?v=wr9gUr-eWdA&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU&index=10)
+- [CS 229 Lecture](https://www.youtube.com/watch?v=wr9gUr-eWdA&list=PLoROMvodv4rMiGQp3WXShtMGgzqpfVfbU&index=10)
+- [Decision Tree Classifier from Scratch](https://www.youtube.com/watch?v=LDRbO9a6XPU)
+    - [Code](https://github.com/random-forests/tutorials/blob/master/decision_tree.ipynb)
+- [AdaBoost Ensemble in Python](https://machinelearningmastery.com/adaboost-ensemble-in-python/)

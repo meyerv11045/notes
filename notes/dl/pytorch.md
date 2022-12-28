@@ -7,8 +7,19 @@
 - For image data:
     - shape: `[B, C, H, W]`
     - Ex: `[64, 1, 28, 28]` is batch of 64 images with 1 channel of size 28 x 28 pixels
+- `torch.squeeze()` gets rid of any dimension of length 1
+- `torch.unsqueeze()` or `tensor[:, None, None]` adds dimensions of length 1
+- ![Tensor Dimensions](static/tensor-dims.png)
+    - negative ints for dimension indicate backward indexing like in lists
+    - `dim=-1` is the last dimension (e.g. 2 in this case)
+    - `dim=-2` is the 2nd last dimension (e.g. 1 in this case)
 
+### einops
 
+#### rearrange
+
+- Reorder Dimensions: `rearrange(imgs, 'b h w c -> b c h w')`
+- Flatten imgs: `rearrange(imgs, 'b h w c -> b (h w c)')`
 
 ## Models
 
@@ -18,6 +29,10 @@
 - Don't use python list to store the layers (the torch module will not be aware of the parameters so doing `model.parameters()` will throw an error, e.g. when setting up the optimizer)
     - parameters don't get registered properly
 - Use `torch.nn.Modulelist` to keep a list of layers with the torch module being aware of them
+- If you have parameters in your model, which should be saved and restored in the `state_dict`, but not trained by the optimizer, you should register them as buffers (`self.register_buffer('param_name', param)`)
+    - Buffers won’t be returned in `model.parameters()`, so that the optimizer won’t have a change to update them.
+    - buffers will also be pushed to correct device if `.to(device)` called on parent model
+    - [buffers discussion](https://discuss.pytorch.org/t/what-is-the-difference-between-register-buffer-and-register-parameter-of-nn-module/32723/10)
 - (+) More customizable for complicated networks where `forward()` is not as trivial
 
 ``` python
@@ -253,6 +268,35 @@ def plot_accuracy(train_accuracy: List[float], test_accuracy: List[float]):
     - all parameters must be properly registered in the module (no layers in python lists)
 - `data.to(device)` returns a copy of the tensor on the specified device so in order for it to work you need reassignment: `data = data.to(device)`
     - this is because moving tensors is treated differently than moving models
+
+## Distributed Training
+
+- Easiest method is using `pip install accelerate` library provided by hugging face
+    - works with cpu, multiple gpus, tpus, etc. and code remains the same
+- [docs](https://huggingface.co/docs/accelerate/index)
+
+``` python
+from accelerate import Accelerator
+
+accelerator = Accelerator()
+
+model, optimizer, training_dataloader, scheduler = accelerator.prepare(
+    model, optimizer, training_dataloader, scheduler
+)
+
+for batch in training_dataloader:
+    optimizer.zero_grad()
+    inputs, targets = batch
+    outputs = model(inputs)
+    loss = loss_function(outputs, targets)
+    accelerator.backward(loss)
+    optimizer.step()
+    scheduler.step()
+```
+
+- `accelerate config`
+- `accelerate launch {script_name.py} --arg1 --arg2 ...`
+- `accelerate launch -h`
 
 
 

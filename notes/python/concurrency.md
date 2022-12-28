@@ -1,5 +1,29 @@
 # Concurrency
 
+multithreading for network bound work
+
+–	no benefit to in CPU intensive processing since its mostly for handling wait times in IO ops efficiently
+
+–	GIL- only 1 thread can run python interpret at a time
+
+–	multiprocessing for cpu bound work
+
+–	what we are using
+
+–	allows you to create programs that run concurrently, bypassing the GIL 
+
+–	each process has its own interpreter and own GIL 
+
+multiprocessing:
+
+–	criteria for code that can be multiprocessed:
+
+–	1) must not reliant on previous outcomes
+
+–	2) Does not need to be executed in a paritcular order
+
+–	3) Does not return anything that would need to be accessed later in the code
+
 ## Threading
 
 - Daemon Threads- background threads that do not prevent program from exiting once there are no non-daemon threads remaining

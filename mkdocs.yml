@@ -17,6 +17,7 @@ nav:
     - 'Ch. 2 Agents': 'ai/2-agents.md'
     - 'Ch. 3 Search': 'ai/3-search.md'
     - 'Ch. 4 Search in Complex Envs': 'ai/4-search-cmplx-env.md'
+    - 'NLP': 'ai/nlp.md'
   - ML:
     - 'Supervised Learning': 'ml/supervised_learning.md'
     - 'Regression': 'ml/regression.md'
@@ -55,13 +56,21 @@ nav:
     - 'Linear Algebra': 'num_methods/lin_alg.md'
   - Python:
     - 'Overview': 'python/overview.md'
+    - 'Data Structures': 'python/data-strucs.md'
     - 'Style': 'python/style.md'
     - 'Types': 'python/types.md'
     - 'Concurrency': 'python/concurrency.md'
     - 'Dunder Methods': 'python/dunders.md'
+    - 'Decorators': 'python/decorators.md'
     - 'Dates & Time': 'python/time.md'
     - 'Logging': 'python/logging.md'
     - 'Classes': 'python/classes.md'
+    - 'Progress Bars': 'python/tqdm.md'
+    - 'Sklearn': 'python/sklearn.md'
+    - 'Pandas': 'python/pandas.md'
+    - 'Matplotlib': 'python/mpl.md'
+    - 'Jupyter': 'python/jupyter.md'
+    - 'Geometry': 'python/geometry.md'
   - Algorithms:
     - Graphs:
       - 'Representations': 'algorithms/graphs/graphs.md'
@@ -117,12 +126,19 @@ nav:
       - 'Reactor': 'software_design/patterns/reactor.md'
       - 'Strategy': 'software_design/patterns/strategy.md'
       - 'Template': 'software_design/patterns/template.md'
+    - 'Dependency Inversion': 'software_design/di.md'
   - Robotics:
     - 'Mobile Robots': 'robotics/13-mobile-robots.md'
     - 'Control': 'robotics/control.md'
     - 'MPC': 'robotics/mpc.md'
     - 'Behavior Trees': 'robotics/behavior-trees.md'
     - 'Hardware': 'robotics/hardware.md'
+  - Research:
+    - 'Zotero': 'research/zotero.md'
+    - 'Reproducability': 'research/repro.md'
+    - 'Cloud': 'research/cloud.md'
+    - 'Julia': 'research/julia.md'
+    - 'Latex': 'research/latex.md'
   - Prob & Stats:
     - 'Random Variables': 'math_science/prob_stats/rv.md'
     - 'Continuous Random Variables': 'math_science/prob_stats/crvs.md'
